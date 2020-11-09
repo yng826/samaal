@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\aboutUs\HeritageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('about-us')->group(function() {
+    // /about-us/heriatage
+    Route::get('heritage', [HeritageController::class, 'index']);
 });
