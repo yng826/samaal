@@ -1,1 +1,153 @@
-//
+@import "./lib/vw";
+// @import "./divide/font";
+@import "./divide/main";
+
+/*
+- CSS 사용 순서
+
+display
+clear
+float
+overflow
+position
+top
+right
+botton
+left
+z-index
+width
+height
+margin
+padding
+background:#color (url) no-repeat x y;
+background-size:;
+border
+color
+font-size
+font-weight
+text-overflow
+text-align
+line-height
+text-indent
+transform
+transition
+box-sizing
+white-space
+
+::after {
+    content: "";
+    display: block;
+    clear: both;
+};
+*/
+
+/* Reset CSS */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: {
+        size: 100%;
+        // family: $font_k;
+    };
+    vertical-align: baseline;
+}
+
+* {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+img, iframe, fieldset {
+    border: 0;
+}
+
+legend {
+    border: 0;
+    background-color: transparent;
+    color: transparent;
+    font: 0/0 a;
+    text-shadow: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    word-break: break-all;
+}
+
+table caption {
+    overflow: hidden !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+i, em, address {
+    font-style: normal;
+}
+
+.cascading select {
+    width: vw(100px);
+    height: vw(200px);
+}
+
+button {
+    border: 0;
+    background: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+input, select {
+    vertical-align: middle;
+    -webkit-appearance: none;
+}
+
+%clear {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin line($lineCount: 1) {
+    /* 사용법 : @include line(라인수) */
+    @if ($lineCount == 1) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    } @else {
+        /* autoprefixer: off */
+        -webkit-box-orient: vertical;
+        /* autoprefixer: on */
+        display: block;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        -webkit-line-clamp: $lineCount;
+    }
+}
