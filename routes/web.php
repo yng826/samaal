@@ -22,3 +22,7 @@ Route::prefix('about-us')->group(function() {
     // /about-us/heriatage
     Route::get('heritage', [HeritageController::class, 'index']);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
