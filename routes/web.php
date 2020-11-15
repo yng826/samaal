@@ -23,6 +23,11 @@ Route::prefix('about-us')->group(function() {
     Route::get('heritage', [HeritageController::class, 'index']);
 });
 
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('menu', Admin\MenuController::class);
+    Route::get('menu/test', [Admin\MenuController::class, 'test']);
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

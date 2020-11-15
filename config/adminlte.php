@@ -243,9 +243,9 @@ return [
         ],
         ['header' => '안녕하세요'],
         [
-            'text' => 'hello',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => '메뉴',
+            'url'  => 'admin/menu',
+            'icon' => 'fas fa-fw fa-bars',
         ],
         [
             'text'        => 'pages',
