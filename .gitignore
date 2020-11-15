@@ -11,3 +11,8 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /ETC
+.vscode/launch.json
+public/css/
+public/js/
+public/vendor/
+resources/lang/vendor/adminlte/
