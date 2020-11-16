@@ -1,6 +1,7 @@
-@import "./lib/vw";
-// @import "./divide/font";
+
+@import "./lib/font";
 @import "./divide/main";
+@import "./divide/layout";
 
 /*
 - CSS 사용 순서
@@ -40,6 +41,7 @@ white-space
     clear: both;
 };
 */
+$font_k: "Notosans", sans-serif;
 
 /* Reset CSS */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, button {
@@ -48,7 +50,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     border: 0;
     font: {
         size: 100%;
-        // family: $font_k;
+        family: $font_k;
     };
     vertical-align: baseline;
 }

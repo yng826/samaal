@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>App Name - @yield('title')</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
         <script src="js/app.js"></script>
     </head>
@@ -13,21 +14,23 @@
             @yield('content')
         </div> --}} -->
         <header class="header">
-            <h1 class="header__logo"><a href="#">SAMA</a></h1>
+            <a href="#" class="header__logo">
+                <img src="images/common/logo.png" alt="SAMA">
+            </a>
             <nav class="header__nav">
                 <ul>
-                    <li>
+                    <li class="header__nav--item">
                         <span>About Us</span>
-                        <ol>
+                        <ol class="header__nav--submenu">
                             <li><a href="#">Story & News</a></li>
                             <li><a href="#">Heritage</a></li>
                             <li><a href="#">Location</a></li>
                             <li><a href="#">Investor Relations</a></li>
                         </ol>
                     </li>
-                    <li>
+                    <li class="header__nav--item">
                         <span>For Business Partners</span>
-                        <ol>
+                        <ol class="header__nav--submenu">
                             <li><a href="#">알루미늄 호일</a></li>
                             <li><a href="#">포장재용</a></li>
                             <li><a href="#">산업/건축용</a></li>
@@ -35,9 +38,9 @@
                             <li><a href="#">Innovation</a></li>
                         </ol>
                     </li>
-                    <li>
+                    <li class="header__nav--item">
                         <span>Work With Us</span>
-                        <ol>
+                        <ol class="header__nav--submenu">
                             <li><a href="#">채용안내</a></li>
                             <li><a href="#">인사제도</a></li>
                             <li><a href="#">조직문화</a></li>

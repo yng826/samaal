@@ -1,0 +1,66 @@
+
+.header {
+    position: relative;
+    height: 90px;
+    padding: 0 40px;
+    z-index: 1;
+    border-bottom: 1px solid #ebebeb;
+    background: #fff;
+    font-size: 0;
+
+    &__logo {
+        position: relative;
+        float: left;
+        height: 100%;
+
+        img {
+            height: 25px;
+            vertical-align: middle;
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+
+    &__nav {
+        height: 100%;
+        text-align: center;
+
+        &--item {
+            display: inline-block;
+            padding: 0 20px;
+            height: 100%;
+            cursor: pointer;
+            vertical-align: middle;
+
+            span {
+                font-size: 19px;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    height: 100%;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        &--submenu {
+            display: none;
+        }
+    }
+}
+
+
+/*모바일 사이즈*/
+@media all and (max-width: 768px) {
+    @import "./lib/vw";
+
+    .header {
+
+    }
+}
