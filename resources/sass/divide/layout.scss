@@ -1,8 +1,11 @@
 
+ @import "./lib/webvw";
+ $titleColor: #1d3669; //확인 후 app.scss 에 다시 쓰기..
+
 .header {
     position: relative;
-    height: 90px;
-    padding: 0 40px;
+    height: vw(90px);
+    padding: 0 vw(40px);
     z-index: 1;
     border-bottom: 1px solid #ebebeb;
     background: #fff;
@@ -14,7 +17,7 @@
         height: 100%;
 
         img {
-            height: 25px;
+            height: vw(25px);
             vertical-align: middle;
         }
 
@@ -27,18 +30,22 @@
     }
 
     &__nav {
+        display: inline-block;
         height: 100%;
+        position: absolute;
+        left: 50%;
         text-align: center;
+        transform: translateX(-50%);
 
         &--item {
             display: inline-block;
-            padding: 0 20px;
+            padding: 0 vw(20px);
             height: 100%;
             cursor: pointer;
             vertical-align: middle;
 
             span {
-                font-size: 19px;
+                font-size: vw(19px);
 
                 &::after {
                     content: "";
@@ -53,10 +60,99 @@
             display: none;
         }
     }
+
+    &__search {
+        float: right;
+        height: 100%;
+
+        ul {
+            display: inline-block;
+            margin-right: vw(29px);
+            vertical-align: middle;
+        }
+
+        li {
+            position: relative;
+            padding-left: vw(20px);
+
+            &:first-child {
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    border-top:vw(8px) solid #000;
+                    border-left:vw(5px) solid transparent;
+                    border-right:vw(5px) solid transparent;
+                }
+            }
+        }
+
+        a {
+            display: block;
+            position: relative;
+            font-size: vw(19px);
+        }
+
+        .language {
+            &__eng {
+                display: none;
+
+                &.on {
+                    display: b;
+                }
+            }
+        }
+
+        .btn-search {
+            display: inline-block;
+            width: vw(32px);
+            height: vw(32px);
+            background: url("../../images/common/btn_search.png") no-repeat;
+            background-size: contain;
+        }
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
 }
 
+/* 서브페이지 레이아웃*/
+.contents-wrap {
+    &__title {
+        position: relative;
+        width: 100%;
+        height: vw(200px);
+        background-color: $titleColor;
 
-/*모바일 사이즈*/
+        h2 {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #fff;
+            font : {
+                size: vw(40px);
+                weight: bold;
+            }
+        }
+    }
+
+    &__section {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* 모바일 사이즈 */
 @media all and (max-width: 768px) {
     @import "./lib/vw";
 

@@ -58,51 +58,13 @@
             </div>
         </header>
 
-        <main class="main">
-            <section class="main-intro">
-                <h2>
-                    <em>삼아</em>가 만드는<br>
-                    <em>지속 가능한 세상</em>
-                </h2>
-                <a href="#">더 알아보기</a>
-            </section>
-            <section class="main-about">
-                <h2>
-                    더 나은
-                    <em>삶의 가치</em>를 위한
-                    <em>삼아의 도전</em>
-                </h2>
-                <a href="#">About Us</a>
-                <div>
-                    <ul>
-                        <li><a href="#">Heritage</a></li>
-                        <li><a href="#">Message from CEO</a></li>
-                        <li><a href="#">CI</a></li>
-                        <li><a href="#">Story & News</a></li>
-                        <li><a href="#">재무정보</a></li>
-                        <li><a href="#">Location</a></li>
-                    </ul>
-                </div>
-            </section>
-            <section class="main-business">
-                <h2>
-                    <em>삼아의 도전</em>이
-                    만들어낸 <em>제품</em>
-                </h2>
-                <a href="#">For Business Partners</a>
-            </section>
-            <section class="main-work">
-                <h2>
-                    삼아에서
-                    도전의 꿈을 꾸다
-                </h2>
-                <a href="#">Work With Us</a>
-                <ul>
-                    <li><a href="#">채용공고</a></li>
-                    <li><a href="#">직무소개</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </section>
+        <main class="about-ci contents-wrap">
+            <div class="contents-wrap__title">
+                <h2>CI</h2>
+            </div>
+            <div class="contents-wrap__section">
+                TEST
+            </div>
         </main>
 
         <footer class="footer">
