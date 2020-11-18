@@ -4,33 +4,25 @@
 @section('content')
 <h1>메뉴</h1>
 <div class="container">
-    <div class="row justify-content-center">
-        <table class="table">
-            <tr>
-                <th class="text-center">id</th>
-                <th class="text-center">메뉴명</th>
-                <th class="text-center">url</th>
-                <th class="text-center">메뉴종류</th>
-                <th class="text-center">depth</th>
-                <th class="text-center">부모ID</th>
-                <th class="text-center">화면노출</th>
-                <th class="text-center">관리</th>
-            </tr>
+    <div class="row">
+
+        <div class="w-100 text-lg">
             @foreach ($menus as $menu)
-            <tr>
-                <td class="text-center">{{ $menu->id }}</td>
-                <td class="text-center">{{ $menu->name }}</td>
-                <td class="text-center">{{ $menu->url }}</td>
-                <td class="text-center">{{ $menu->menu_type }}</td>
-                <td class="text-center">{{ $menu->depth }}</td>
-                <td class="text-center">{{ $menu->parent_id }}</td>
-                <td class="text-center">{{ $menu->is_front }}</td>
-                <td class="text-center"><a class="btn btn-outline-info btn-xs" href="/admin/menu/{{$menu->id}}/edit">수정</button></td>
-            </tr>
+            <span class="border">
+                {{ $menu->name }}
+                <a class="btn btn-outline-info btn-xs" href="/admin/menu/{{ $menu->id }}/edit">수정</a>
+                <a class="btn btn-outline-info btn-xs" href="/admin/menu/create?parent_id={{ $menu->id }}&depth={{ $menu->depth }}">하위 추가</a>
+            </span>
+            <br/>
+
+            @if(isset($menu->childrens) && count($menu->childrens) > 0)
+                @include('admin.menu.menusub',['childrens' => $menu->childrens])
+            @endif
             @endforeach
-        </table>
+        </div>
+
         <div class="col-md-12 text-right">
-            <a class="btn btn-primary text-white" href="/admin/menu/create">추가</a>
+            <a class="btn btn-primary text-white" href="/admin/menu/create?parent_id=0&depth=0">추가</a>
         </div>
     </div>
 </div>
