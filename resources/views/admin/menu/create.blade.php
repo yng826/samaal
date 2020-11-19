@@ -81,10 +81,9 @@
 </div>
 
 <script>
+const menu_create = () => {
 
-const menu = () => {
-
-    const menu_init = () => {
+    const init = () => {
         event_listener();
     };
 
@@ -114,11 +113,11 @@ const menu = () => {
         });
     }
 
-    menu_init();
+    init();
 }
 
 window.onload = function(){
-    menu();
+    menu_create();
 }
 </script>
 @endsection
