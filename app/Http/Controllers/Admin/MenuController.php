@@ -143,6 +143,8 @@ class MenuController extends Controller
     {
         $affected = DB::table('menus')->where('id', $id)->delete();
         $affected = DB::table('menu_keywords')->where('menu_id', $id)->delete();
+
+        return redirect('/admin/menu');
     }
 
     /**

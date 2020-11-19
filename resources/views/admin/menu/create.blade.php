@@ -71,6 +71,8 @@
                     @endforeach
                 </div>
             </div>
+
+            <button type="button" class="btn btn-danger menu-del-btn">삭제</button>
             @endif
 
             <button type="submit" class="btn btn-primary">저장</button>
@@ -83,11 +85,18 @@
 const menu = () => {
 
     const menu_init = () => {
-        keyword_add_event();
-        keyword_del_event();
+        event_listener();
     };
 
-    const keyword_add_event = () => {
+    const event_listener = () => {
+        //메뉴 삭제 버튼 클릭시
+        $('.menu-del-btn').on('click', function() {
+            if (confirm('해당 메뉴를 삭제하시겠습니까?')) {
+                $('input[name=_method]').val('DELETE');
+                $('form').submit();
+            }
+        });
+
         //키워드 추가 버튼 클릭시
         $('.keyword-add-btn').on('click', function() {
             const val = $('#keyword').val();
@@ -97,17 +106,14 @@ const menu = () => {
             html += '</div>';
             $('#keyword-div').append(html);
             $('#keyword').val('');
-
-            keyword_del_event(); //새로운 키워드에 삭제 이벤트 적용을 위해 재호출
         });
-    }
 
-    const keyword_del_event = () => {
         //키워드 삭제 버튼 클릭시
-        $('.keyword-del-btn').on('click', function() {
+        $(document).on('click', '.keyword-del-btn', function() {
             $(this).parent().remove();
         });
     }
+
     menu_init();
 }
 
