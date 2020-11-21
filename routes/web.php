@@ -41,6 +41,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     });
 });
 
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('finance_info', Admin\FinanceInfoController::class);
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
