@@ -1,7 +1,5 @@
 
 @import "./lib/font";
-@import "./divide/main";
-@import "./divide/layout";
 
 /*
 - CSS 사용 순서
@@ -156,3 +154,8 @@ input, select {
         -webkit-line-clamp: $lineCount;
     }
 }
+
+
+@import "./divide/main";
+@import "./divide/layout";
+@import "./divide/aboutUs_storyNews";

@@ -1,0 +1,59 @@
+@import "./lib/webvw";
+/* aboutUs - storyNews - CI*/
+.about-ci {
+    &__contents {
+        display: table;
+        padding: vw(100px) 0 vw(160px);
+    }
+
+    &__title {
+        h2 {
+            padding: vw(80px) 0;
+            line-height: 1;
+        }
+    }
+
+    &__identity {
+        display: table-cell;
+        width: 50%;
+        padding-right: vw(150px);
+
+        &--area {
+            h3 {
+                display: block;
+                padding-bottom: vw(19px);
+                color: $titleColor;
+                font: {
+                    size: vw(25px);
+                    weight: bold;
+                }
+                line-height: 1;
+                border-bottom: vw(2px) solid $titleColor;
+            }
+
+            p {
+                display: block;
+                padding-top: vw(19px);
+                color: #535353;
+                font-size: vw(18px);
+                line-height: vw(32px);
+                letter-spacing: vw(-0.63px);
+                word-break: keep-all;
+            }
+        }
+
+        &--orientation {
+            margin-top: vw(50px);
+        }
+    }
+
+    &__img {
+        display: table-cell;
+        width: 50%;
+        background: url("../../images/about/img_ci.png") no-repeat center / contain;
+    }
+}
+
+
+
+/*모바일 사이즈*/
