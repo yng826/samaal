@@ -1,9 +1,16 @@
-@extends('layouts.admin')
+@extends('adminlte::page')
 
+@section('title', '메뉴')
+
+@section('content_header')
+    <h1>메뉴</h1>
+@stop
 
 @section('content')
-<h1>메뉴</h1>
-<div class="container">
+<div id="app" class="container">
+    <div class="row">
+        <draggable-treeview></draggable-treeview>
+    </div>
     <div class="row">
 
         <div class="w-100 text-lg" id="list">
@@ -45,3 +52,12 @@ window.onload = function(){
 }
 </script>
 @endsection
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin.css">
+@stop
+
+@section('js')
+    {{-- <script src="{{ mix('/js/vendor.js') }}"></script> --}}
+    <script src="{{ mix('/js/admin/menu.js') }}"></script>
+@stop

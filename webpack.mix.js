@@ -12,5 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .babel(['public/js/app.js'], 'public/js/app.es5.js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .js('resources/js/admin/menu.js', 'public/js/admin')
+    .babel(['public/js/admin/menu.js'], 'public/js/admin/menu.es5.js')
+    .autoload({
+        jquery: ['$', 'jQuery', 'jquery'],
+    })
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/admin.scss', 'public/css');
