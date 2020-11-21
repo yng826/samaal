@@ -88,6 +88,14 @@
                     border-left:vw(5px) solid transparent;
                     border-right:vw(5px) solid transparent;
                 }
+                &.on {
+                    &::before {
+                        border-top: 0;
+                        border-bottom:vw(8px) solid #000;
+                        border-left:vw(5px) solid transparent;
+                        border-right:vw(5px) solid transparent;
+                    }
+                }
             }
         }
 
@@ -102,7 +110,9 @@
                 display: none;
 
                 &.on {
-                    display: b;
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
                 }
             }
         }
@@ -207,6 +217,7 @@
             height: vw(60px);
             background-color: #3767c7;
             border-radius: vw(50px);
+            cursor: pointer;
 
             a {
                 position: absolute;
@@ -267,9 +278,9 @@
 
     .copyright {
         display: block;
-        margin-top: 70px;
+        margin-top: vw(70px);
         color: #444;
-        font-size: 16px;
+        font-size: vw(16px);
     }
 }
 

@@ -3,9 +3,12 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import common from './common';
+import about from './aboutUs';
 
 //require('./bootstrap');
 require('./common');
+require('./aboutUs');
 
 window.Vue = require('vue');
 
@@ -31,3 +34,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 // const app = new Vue({
 //     el: '#app',
 // });
+document.addEventListener('DOMContentLoaded', () => {
+    common();
+    about();
+
+});

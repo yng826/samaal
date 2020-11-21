@@ -24,6 +24,9 @@ Route::get('sample', function () {
 
 Route::prefix('about-us')->group(function() {
     // /about-us/heriatage
+    Route::get('locationHeritage', function () {
+        return view('aboutUs.locationHeritage');
+    });
     Route::get('ceo', function () {
         return view('aboutUs.ceo');
     });
