@@ -289,7 +289,7 @@
                     display: inline-block;
                     color: #535353;
                     font : {
-                        size: (18px);
+                        size: vw(18px);
                         weight: bold;
                     }
                     line-height: vw(32px);
@@ -308,7 +308,7 @@
 
                 dd {
                     display: inline-block;
-                    font-size: 18px;
+                    font-size: vw(18px);
                     color: #535353;
                 }
             }
