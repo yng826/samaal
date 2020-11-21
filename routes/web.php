@@ -24,6 +24,12 @@ Route::get('sample', function () {
 
 Route::prefix('about-us')->group(function() {
     // /about-us/heriatage
+    Route::get('ci', function () {
+        return view('aboutUs.aboutCi');
+    });
+    Route::get('story-news', function () {
+        return view('aboutUs.storyNews');
+    });
     Route::get('heritage', [HeritageController::class, 'index']);
 });
 

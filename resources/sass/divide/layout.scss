@@ -298,6 +298,42 @@
     }
 }
 
+/* 페이지네이션 */
+.pagination {
+    text-align: center;
+    font-size: 0;
+
+    a {
+        display: inline-block;
+        margin: 0 vw(15px);
+        vertical-align: middle;
+        line-height: 1;
+    }
+
+    &__number {
+        margin-top: -1px;
+        color: #787878;
+        font-size: vw(20px);
+
+
+        &.active {
+            color: #000;
+        }
+    }
+
+    &__button-prev {
+        width: vw(10px);
+        height: vw(18px);
+        background: url("../images/common/pagenation_prev.png") no-repeat center / contain;
+    }
+
+    &__button-next {
+        width: vw(10px);
+        height: vw(18px);
+        background: url("../images/common/pagenation_next.png") no-repeat center / contain;
+    }
+}
+
 /* 모바일 사이즈 */
 @media all and (max-width: 768px) {
     @import "./lib/vw";

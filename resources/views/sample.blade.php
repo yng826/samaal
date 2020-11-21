@@ -1,7 +1,7 @@
 <!-- Stored in resources/views/child.blade.php -->
 
 {{-- @extends('layouts.main') --}}
-@extends('aboutUs.aboutCi')
+@extends('aboutUs.storyNews')
 
 @section('title', 'Page Title')
 

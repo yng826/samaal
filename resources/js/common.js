@@ -6,16 +6,17 @@ const common = () => {
 
         $lang.on("click",function(){
             // $lang_en.addClass('on');
-            console.log(1);
+
         });
 
+        console.log(1);
     }
 
     const common_init = () => {
         header_lang();
     };
+
     common_init();
 }
 
 export default common;
-
