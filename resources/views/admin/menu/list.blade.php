@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="w-100 text-lg">
+        <div class="w-100 text-lg" id="list">
             @foreach ($menus as $menu)
             <span class="border">
                 {{ $menu->name }}
@@ -26,4 +26,22 @@
         </div>
     </div>
 </div>
+
+<script>
+const menu_list = () => {
+
+    const init = () => {
+        event_listener();
+    };
+
+    const event_listener = () => {
+    }
+
+    init();
+}
+
+window.onload = function(){
+    menu_list();
+}
+</script>
 @endsection
