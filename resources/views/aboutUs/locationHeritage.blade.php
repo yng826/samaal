@@ -62,7 +62,7 @@
 
         <main class="about-location contents-wrap">
             <div class="contents-wrap__title about-location__title">
-                <h2>헤리티 존</h2>
+                <h2>헤리티지 존</h2>
             </div>
             <div class="about-location__contents">
                 <div class="swiper-container about-location__swiper">
