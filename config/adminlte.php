@@ -248,6 +248,11 @@ return [
             'icon' => 'fas fa-fw fa-bars',
         ],
         [
+            'text' => '뉴스',
+            'url'  => 'admin/news',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
+        [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
