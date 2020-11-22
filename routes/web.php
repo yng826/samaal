@@ -24,6 +24,15 @@ Route::get('sample', function () {
 
 Route::prefix('about-us')->group(function() {
     // /about-us/heriatage
+    Route::get('locationPoseung', function () {
+        return view('aboutUs.locationPoseung');
+    });
+    Route::get('locationSeoul', function () {
+        return view('aboutUs.locationSeoul');
+    });
+    Route::get('locationBusan', function () {
+        return view('aboutUs.locationBusan');
+    });
     Route::get('locationHeritage', function () {
         return view('aboutUs.locationHeritage');
     });
