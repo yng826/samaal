@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\aboutUs\HeritageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,28 +25,27 @@ Route::get('sample', function () {
 
 Route::prefix('about-us')->group(function() {
     // /about-us/heriatage
-    Route::get('locationPoseung', function () {
+    Route::get('location/poseung', function () {
         return view('aboutUs.locationPoseung');
-    });
-    Route::get('locationSeoul', function () {
+    })->name('about-us.location.poseung');
+    Route::get('location/seoul', function () {
         return view('aboutUs.locationSeoul');
-    });
-    Route::get('locationBusan', function () {
+    })->name('about-us.location.seoul');
+    Route::get('location/busan', function () {
         return view('aboutUs.locationBusan');
-    });
-    Route::get('locationHeritage', function () {
+    })->name('about-us.location.busan');
+    Route::get('location/heritage', function () {
         return view('aboutUs.locationHeritage');
-    });
+    })->name('about-us.location.heritage');
     Route::get('ceo', function () {
         return view('aboutUs.ceo');
-    });
+    })->name('about-us.ceo');
     Route::get('ci', function () {
         return view('aboutUs.aboutCi');
-    });
+    })->name('about-us.ci');
     Route::get('story-news', function () {
         return view('aboutUs.storyNews');
-    });
-    Route::get('heritage', [HeritageController::class, 'index']);
+    })->name('about-us.story');
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
