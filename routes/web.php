@@ -3,6 +3,7 @@
 use App\Http\Controllers\aboutUs\HeritageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\MenuController as AdminMenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +50,8 @@ Route::prefix('about-us')->group(function() {
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::post('menu/order-update', [AdminMenuController::class, 'orderUpdate']);
     Route::resource('menu', Admin\MenuController::class);
-    // Route::get('menu/test', [Admin\MenuController::class, 'test']);
     Route::get('library', function () {
         return view('admin.test.library');
     });

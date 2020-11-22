@@ -1,18 +1,16 @@
 <template>
-<v-draggable-treeview v-model="items" group="hoge">
-  <template v-slot:prepend="{  }">
-    <v-icon>mdi-file</v-icon>
-  </template>
-  <template v-slot:label="{ item }">
-    <span class="primary--text">{{ item.name }}</span>
-  </template>
-  <template v-slot:append="{ item }">
-    <template
-            v-if="item.children != null && item.children.length > 0"
-    >
-      has {{ item.children.length }} children
+<v-draggable-treeview v-model="items">
+    <template v-slot:prepend="{  }">
+        <v-icon>mdi-file</v-icon>
     </template>
-  </template>
+    <template v-slot:label="{ item }">
+        <span class="primary--text">
+            {{ item.name }}
+            <input type="hidden" name="id" :value="item.id">
+            <a class="btn btn-outline-warning btn-xs" :href="'/admin/menu/' + item.id + '/edit'">수정</a>
+            <a class="btn btn-outline-info btn-xs" :href="'/admin/menu/create?parent_id=' + item.id + '&depth=' + item.depth">하위 추가</a>
+        </span>
+    </template>
 </v-draggable-treeview>
 </template>
 
@@ -29,6 +27,11 @@ import Vuetify from 'vuetify';
 Vue.use(VuetifyDraggableTreeview);
 
 export default Vue.extend({
+    props: {
+        items: {
+            type: Array
+        },
+    },
     components: {
         // draggable,
         VuetifyDraggableTreeview
@@ -41,26 +44,7 @@ export default Vue.extend({
     }),
   data() {
     return {
-      items: [
-          { id: 1,
-          name: "elit",
-          children: [{ id:11, name: "hoge-child1" }] },
-          { id: 2,
-          name: "Magna",
-          children: [
-              { id:21, name: "hoge-child21" },
-              { id:22, name: "hoge-child22" }
-            ] },
-          { id: 3,
-          name: "TEST",
-          children: [
-              { id:31, name: "hoge-child31" },
-              { id:32, name: "hoge-child32" }
-            ] },
-        ],
-        dragged() {
-            console.log('dragged');
-        }
+      items: this.items
     }
   }
 });
