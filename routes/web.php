@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\aboutUs\HeritageController;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -46,6 +47,18 @@ Route::prefix('about-us')->group(function() {
     Route::get('story-news', function () {
         return view('aboutUs.storyNews');
     })->name('about-us.story');
+});
+
+Route::prefix('work-with-us')->middleware('web')->group(function(){
+    // Route::resource('recruit', RecruitController::class);
+    Route::get('job', [JobController::class, 'index'])
+    ->name('work.job');
+    Route::get('job/{id}', [JobController::class, 'show'])
+        ->where('id', '[0-9]+');
+    Route::post('job', [JobController::class, 'store']);
+    Route::post('job/{id}', [JobController::class, 'store'])
+        ->where('id', '[0-9]+');
+    Route::post('job/check', [JobController::class, 'check']);
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
