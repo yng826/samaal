@@ -9,29 +9,19 @@
 @section('content')
 <div id="app" class="container">
     <div class="row">
-        <draggable-treeview></draggable-treeview>
+        <draggable-treeview :items="{{ json_encode($menus) }}"></draggable-treeview>
     </div>
     <div class="row">
-
-        <div class="w-100 text-lg" id="list">
-            @foreach ($menus as $menu)
-            <span class="border">
-                {{ $menu->name }}
-                <a class="btn btn-outline-info btn-xs" href="/admin/menu/{{ $menu->id }}/edit">수정</a>
-                <a class="btn btn-outline-info btn-xs" href="/admin/menu/create?parent_id={{ $menu->id }}&depth={{ $menu->depth }}">하위 추가</a>
-            </span>
-            <br/>
-
-            @if(isset($menu->childrens) && count($menu->childrens) > 0)
-                @include('admin.menu.menusub',['childrens' => $menu->childrens])
-            @endif
-            @endforeach
-        </div>
-
         <div class="col-md-12 text-right">
-            <a class="btn btn-primary text-white" href="/admin/menu/create?parent_id=0&depth=0">추가</a>
+            <button type="button" class="btn btn-primary text-white menu-order-btn">순서저장</button>
+            <button type="button" class="btn btn-primary text-white" onClick="location.href='/admin/menu/create?parent_id=0&depth=0'">추가</button>
         </div>
     </div>
+
+    <form action="/admin/menu/order-update" id="order-form" class="hide" method="POST">
+        @csrf
+        <input type="hidden" name="orders">
+    </form>
 </div>
 
 <script>
@@ -42,6 +32,18 @@ const menu_list = () => {
     };
 
     const event_listener = () => {
+        //순서저장 버튼 클릭시
+        $('.menu-order-btn').on('click', function() {
+            let order_arr = new Array();
+            $('div.v-treeview input[name=id]').each(function(index, item){
+                const depth = $(this).parents('div.v-treeview-node__children').length+1;
+                let parent_id = depth==1 ? 0 : $(this).closest('div.v-treeview-node__children').prev('div.v-treeview-node__root').find('input[name=id]').val();
+
+                order_arr.push({'id': $(this).val(), 'order_id': index+1, 'depth': depth, 'parent_id': parent_id});
+            });
+            $('input[name=orders]').val(JSON.stringify(order_arr));
+            $('#order-form').submit();
+        });
     }
 
     init();
