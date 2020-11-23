@@ -15,18 +15,12 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $arr = [1,2,3,4];
-        $arr2 = [
-            'a'=> 1,
-            'b'=> 2
-        ];
         $menus = DB::table('menus')->orderBy('order_id')->get();
 
         $treeMenu = $this->buildTreeMenu($menus);
 
         return view('admin.menu.list', [
             'menus' => $treeMenu,
-            'arr'   => $arr,
         ]);
     }
 
@@ -53,17 +47,17 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $saved = DB::table('menus')->insert(
-            [
-                'order_id'=> 0,
-                'name'=> $request->name,
-                'url'=> $request->url,
-                'menu_type'=> $request->menu_type,
-                'depth'=> $request->depth,
-                'parent_id'=> $request->parent_id,
-                'is_front'=> $request->is_front,
-                'created_at' => now()
-            ]);
+        $saved = DB::table('menus')
+                ->insert([
+                    'order_id'=> 0,
+                    'name'=> $request->name,
+                    'url'=> $request->url,
+                    'menu_type'=> $request->menu_type,
+                    'depth'=> $request->depth,
+                    'parent_id'=> $request->parent_id,
+                    'is_front'=> $request->is_front,
+                    'created_at' => now()
+                ]);
 
         return redirect('/admin/menu');
     }
@@ -108,28 +102,51 @@ class MenuController extends Controller
     public function update(Request $request, $id)
     {
         $affected = DB::table('menus')
-              ->where('id', $id)
-              ->update([
-                'name' => $request->name,
-                'url' => $request->url,
-                'menu_type' => $request->menu_type,
-                'depth' => $request->depth,
-                'parent_id' => $request->parent_id,
-                'is_front' => $request->is_front,
-                'updated_at' => now(),
-                ]);
+                    ->where('id', $id)
+                    ->update([
+                        'name' => $request->name,
+                        'url' => $request->url,
+                        'menu_type' => $request->menu_type,
+                        'depth' => $request->depth,
+                        'parent_id' => $request->parent_id,
+                        'is_front' => $request->is_front,
+                        'updated_at' => now(),
+                    ]);
 
         $affected = DB::table('menu_keywords')->where('menu_id', $id)->delete();
         foreach ($request->keyword as $keyword) {
             if ($keyword != '') {
                 $affected = DB::table('menu_keywords')
-                    ->insert([
-                        'menu_id' => $id,
-                        'keyword' => $keyword,
-                        ]);
+                            ->insert([
+                                'menu_id' => $id,
+                                'keyword' => $keyword,
+                            ]);
             }
         }
 
+        return redirect('/admin/menu');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function orderUpdate(Request $request)
+    {
+        $orders = json_decode($_POST['orders'], true);
+
+        foreach ($orders as $order) {
+            $affected = DB::table('menus')
+                        ->where('id', $order['id'])
+                        ->update([
+                            'order_id' => $order['order_id'],
+                            'depth' => $order['depth'],
+                            'parent_id' => $order['parent_id'],
+                            'updated_at' => now(),
+                        ]);
+        }
         return redirect('/admin/menu');
     }
 
@@ -158,9 +175,9 @@ class MenuController extends Controller
         $branch = array();
         foreach ($menus as $menu) {
             if ($menu->parent_id == $parentId) {
-                $childrens = $this->buildTreeMenu($menus, $menu->id);
-                if (!empty($childrens)) {
-                    $menu->childrens = $childrens;
+                $children = $this->buildTreeMenu($menus, $menu->id);
+                if (!empty($children)) {
+                    $menu->children = $children;
                 }
                 $branch[] = $menu;
             }
