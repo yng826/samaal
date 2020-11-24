@@ -12,6 +12,9 @@
         <draggable-treeview :items="{{ json_encode($menus) }}"></draggable-treeview>
     </div>
     <div class="row">
+        <draggable-nested-tree></draggable-nested-tree>
+    </div>
+    <div class="row">
         <div class="col-md-12 text-right">
             <button type="button" class="btn btn-primary text-white menu-order-btn">순서저장</button>
             <button type="button" class="btn btn-primary text-white" onClick="location.href='/admin/menu/create?parent_id=0&depth=0'">추가</button>

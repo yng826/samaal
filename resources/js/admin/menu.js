@@ -32,6 +32,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('../components/ExampleComponent.vue').default);
 Vue.component('draggable-treeview', require('../components/DraggableTreeview.vue').default);
+Vue.component('draggable-nested-tree', require('../components/DraggableNestedTree.vue').default);
 // Vue.component('fancy-treeview', require('../components/FancyTree.vue').default);
 
 /**
