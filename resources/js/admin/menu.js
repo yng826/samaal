@@ -31,7 +31,6 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('../components/ExampleComponent.vue').default);
-Vue.component('draggable-treeview', require('../components/DraggableTreeview.vue').default);
 Vue.component('draggable-nested-tree', require('../components/DraggableNestedTree.vue').default);
 // Vue.component('fancy-treeview', require('../components/FancyTree.vue').default);
 

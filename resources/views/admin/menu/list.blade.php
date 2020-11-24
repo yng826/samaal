@@ -9,10 +9,7 @@
 @section('content')
 <div id="app" class="container">
     <div class="row">
-        <draggable-treeview :items="{{ json_encode($menus) }}"></draggable-treeview>
-    </div>
-    <div class="row">
-        <draggable-nested-tree></draggable-nested-tree>
+        <draggable-nested-tree :items="{{ json_encode($menus) }}"></draggable-nested-tree>
     </div>
     <div class="row">
         <div class="col-md-12 text-right">
@@ -38,13 +35,15 @@ const menu_list = () => {
         //순서저장 버튼 클릭시
         $('.menu-order-btn').on('click', function() {
             let order_arr = new Array();
-            $('div.v-treeview input[name=id]').each(function(index, item){
-                const depth = $(this).parents('div.v-treeview-node__children').length+1;
-                let parent_id = depth==1 ? 0 : $(this).closest('div.v-treeview-node__children').prev('div.v-treeview-node__root').find('input[name=id]').val();
+            const id =  $('#treeMenu input[name=id]').val().slice(0, -1).split(','); //자신 아이디(마지막 공백 쉼표 제거)
+            const depth =  $('#treeMenu input[name=depth]').val().split(','); //자신 위치
+            const parent_id =  $('#treeMenu input[name=parent_id]').val().split(','); //부모 아이디
 
-                order_arr.push({'id': $(this).val(), 'order_id': index+1, 'depth': depth, 'parent_id': parent_id});
+            $.each(id, function(index, item){
+                order_arr.push({'id': item, 'order_id': index+1, 'depth': depth[index], 'parent_id': parent_id[index]});
             });
             $('input[name=orders]').val(JSON.stringify(order_arr));
+
             $('#order-form').submit();
         });
     }
