@@ -50,6 +50,12 @@ Route::prefix('about-us')->group(function() {
     })->name('about-us.story');
 });
 
+Route::prefix('business')->group(function() {
+    Route::get('foil', function () {
+        return view('business.foil.main');
+    });
+});
+
 Route::prefix('work-with-us')->middleware('web')->group(function(){
     // Route::resource('recruit', RecruitController::class);
     Route::get('job', [JobController::class, 'index'])
