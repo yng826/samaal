@@ -13,7 +13,6 @@ const about = () => {
         }
     });
 
-
     const about_init = () => {
         locationSwiper();
     };
