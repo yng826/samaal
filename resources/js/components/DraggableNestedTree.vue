@@ -3,8 +3,11 @@
     <div id="treeMenu">
         <Tree :value="treeData" @change="treeTmp">
             <span slot-scope="{node, index, path, tree}">
-                <b @click="tree.toggleFold(node, path)">
-                    {{node.$folded ? ' + ' : ' - '}}
+                <b @click="tree.toggleFold(node, path)"
+                    class="fa"
+                    :class="[
+                    node.$folded ? 'fa-plus-circle text-yellow' : 'fa-minus-circle text-blue'
+                    ]">
                 </b>
                 {{node.name}}
                 <a class="btn btn-outline-warning btn-xs" :href="'/admin/menu/' + node.id + '/edit'">수정</a>
