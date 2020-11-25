@@ -1,0 +1,62 @@
+@import "./lib/webvw";
+.business-foil {
+    position: relative;
+
+    &__title {
+        position: fixed;
+        right: 0;
+        color: #3d3d3d;
+        font: {
+            size: vw(35px);
+        }
+
+        span {
+            color: #3d3d3d;
+            font: {
+                size: vw(37px);
+                weight: bold;
+            }
+
+            em {
+                color: $titleColor;
+            }
+        }
+    }
+
+    .foil-box {
+        width: vw(1175px);
+        $col_width:453/1175*100%;
+
+        &__col {
+            float: left;
+            width: $col_width;
+            margin-right: vw(5px);
+
+            &--item {
+                display: block;
+                width: 100%;
+                margin-right: vw(5px);
+                background-color: red;
+                a {
+                    display: inline-block;
+                }
+
+                &:first-child {
+                    margin-bottom: vw(5px);
+                    height: vw(245px);
+                }
+
+                &:last-child {
+                    height: vw(248px);
+                }
+            }
+        }
+        $line_width: 717/1175*100%;
+        &__inline {
+            display: inline-block;
+            width: $line_width;
+            height: vw(498px);
+            background-color: green;
+        }
+    }
+}

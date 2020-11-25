@@ -3,9 +3,7 @@
         <title>App Name - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
-        <link rel="stylesheet" href="/css/swiper.css">
         <script src="/js/app.js"></script>
-        <script src="/js/swiper.js"></script>
     </head>
     <body>
         <!-- {{-- @section('sidebar')
