@@ -80,6 +80,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('finance_info', Admin\FinanceInfoController::class);
 });
 
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('news_info', Admin\NewsInfoController::class);
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
