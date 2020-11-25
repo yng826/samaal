@@ -1,6 +1,8 @@
 {
     "/js/admin/isoCertification.js": "/js/admin/isoCertification.js",
+    "/js/admin/manifest.js": "/js/admin/manifest.js",
     "/js/admin/menu.js": "/js/admin/menu.js",
+    "/js/admin/vendor.js": "/js/admin/vendor.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",

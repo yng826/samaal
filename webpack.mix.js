@@ -12,12 +12,15 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/admin/menu.js', 'public/js/admin')
-    .babel(['public/js/admin/menu.js'], 'public/js/admin/menu.es5.js')
-    .js('resources/js/admin/isoCertification.js', 'public/js/admin')
-    .babel(['public/js/admin/isoCertification.js'], 'public/js/admin/isoCertification.es5.js')
     .autoload({
         jquery: ['$', 'jQuery', 'jquery'],
     })
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/admin.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css');
+
+mix
+.js('resources/js/admin/menu.js', 'public/js/admin')
+.js('resources/js/admin/isoCertification.js', 'public/js/admin')
+.extract(['vue', 'jquery-ui'], 'public/js/admin/vendor.js')
+.babel(['public/js/admin/menu.js'], 'public/js/admin/menu.es5.js')
+.babel(['public/js/admin/isoCertification.js'], 'public/js/admin/isoCertification.es5.js')
+.sass('resources/sass/admin.scss', 'public/css');
