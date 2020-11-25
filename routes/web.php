@@ -60,6 +60,8 @@ Route::prefix('work-with-us')->middleware('web')->group(function(){
     Route::post('job/{id}', [JobController::class, 'store'])
         ->where('id', '[0-9]+');
     Route::post('job/check', [JobController::class, 'check']);
+
+    Route::resource('edu', Job\EducationController::class);
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
@@ -75,5 +77,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 Auth::routes();
+
+Route::get('/confirm-password', function () {
+    return view('auth.passwords.confirm');
+})->middleware(['auth'])->name('auth.passwords.confirm');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
