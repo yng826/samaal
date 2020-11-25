@@ -4,11 +4,15 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import common from './common';
+import business from './business';
 import about from './aboutUs';
+
 
 //require('./bootstrap');
 require('./common');
+require('./business');
 require('./aboutUs');
+
 
 window.Vue = require('vue');
 
@@ -36,6 +40,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 // });
 document.addEventListener('DOMContentLoaded', () => {
     common();
+    business();
     about();
-
 });
