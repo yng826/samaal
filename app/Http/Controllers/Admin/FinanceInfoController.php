@@ -73,8 +73,11 @@ class FinanceInfoController extends Controller
      */
    /* public function show($info_year)
     {
-        echo 'info_year :'. $info_year;
-    }*/
+        $infos = DB::table('finance_infos')->orderBy('info_year', 'desc')->get();
+        return view('admin.finance_info.list', [
+            'infos' => $infos,
+        ]);
+    } */
 
     /**
      * Show the form for editing the specified resource.
