@@ -14,6 +14,8 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/admin/menu.js', 'public/js/admin')
     .babel(['public/js/admin/menu.js'], 'public/js/admin/menu.es5.js')
+    .js('resources/js/admin/isoCertification.js', 'public/js/admin')
+    .babel(['public/js/admin/isoCertification.js'], 'public/js/admin/isoCertification.es5.js')
     .autoload({
         jquery: ['$', 'jQuery', 'jquery'],
     })
