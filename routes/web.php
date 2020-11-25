@@ -84,6 +84,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('news_info', Admin\NewsInfoController::class);
 });
 
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('iso_certification', Admin\IsoCertificationController::class);
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
