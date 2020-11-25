@@ -82,13 +82,6 @@
 </script>
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin.css">
-@stop
 
-@section('js')
-    {{-- <script src="{{ mix('/js/vendor.js') }}"></script> --}}
-    <script src="{{ mix('/js/admin/menu.js') }}"></script>
-@stop
 
 
