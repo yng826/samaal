@@ -49,7 +49,7 @@ class NewsInfoController extends Controller
                     ->update([
                         'title'=> $request->title,
                         'contents'=> $request->contents,
-                        'img_url'=> $request->img_url,
+                        'img_file_path'=> $request->img_file_path,
                         'url'=> $request->url,
                         'use_yn'=> $request->use_yn,
                         'updated_at' => now(),
@@ -59,7 +59,7 @@ class NewsInfoController extends Controller
             ->insert([
                 'title'=> $request->title,
                 'contents'=> $request->contents,
-                'img_url'=> $request->img_url,
+                'img_file_path'=> $request->img_file_path,
                 'url'=> $request->url,
                 'use_yn'=> $request->use_yn,
                 'created_at' => now()
@@ -117,7 +117,7 @@ class NewsInfoController extends Controller
         ->update([
             'title'=> $request->title,
             'contents'=> $request->contents,
-            'img_url'=> $request->img_url,
+            'img_file_path'=> $request->img_file_path,
             'url'=> $request->url,
             'use_yn'=> $request->use_yn,
             'updated_at' => now(),
