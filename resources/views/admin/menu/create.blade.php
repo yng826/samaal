@@ -96,10 +96,10 @@
                     <div class="col-12">
                         {{-- 수정일때만 보임 --}}
                         @if(isset($menu->id) > 0)
-                        <button type="button" class="btn btn-danger text-white menu-del-btn">삭제</button>
+                        <button type="button" class="btn btn-danger text-white del-btn">삭제</button>
                         @endif
 
-                        <button type="submit" class="btn btn-primary text-white">저장</button>
+                        <button type="button" class="btn btn-primary text-white add-btn">저장</button>
                     </div>
                 </div>
             </div>
@@ -115,8 +115,15 @@ const menu_create = () => {
     };
 
     const event_listener = () => {
-        //메뉴 삭제 버튼 클릭시
-        $('.menu-del-btn').on('click', function() {
+        //저장 버튼 클릭시
+        $('.add-btn').on('click', function() {
+            if (validation()) {
+                $('form').submit();
+            }
+        });
+
+        //삭제 버튼 클릭시
+        $('.del-btn').on('click', function() {
             if (confirm('해당 메뉴를 삭제하시겠습니까?')) {
                 $('input[name=_method]').val('DELETE');
                 $('form').submit();
@@ -138,6 +145,28 @@ const menu_create = () => {
         $(document).on('click', '.keyword-del-btn', function() {
             $(this).parent().remove();
         });
+    }
+
+    const validation = () => {
+        if ($('input[name=name]').val() == '' || $('input[name=name]').val() == null) {
+            alert('메뉴명을 입력해주세요.');
+            $('input[name=name]').focus();
+            return false;
+
+        } else if ($('input[name=url]').val() == '' || $('input[name=url]').val() == null) {
+            alert('URL을 입력해주세요.');
+            $('input[name=url]').focus();
+            return false;
+
+        } else if ($('input[name=menu_type]:checked').val() == '' || $('input[name=menu_type]:checked').val() == null) {
+            alert('메뉴 종류를 선택해주세요.');
+            return false;
+
+        } else if ($('input[name=is_front]:checked').val() == '' || $('input[name=is_front]:checked').val() == null) {
+            alert('사이트 노출을 선택해주세요.');
+            return false;
+        }
+        return true;
     }
 
     init();

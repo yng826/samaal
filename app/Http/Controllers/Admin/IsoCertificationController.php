@@ -44,14 +44,27 @@ class IsoCertificationController extends Controller
      */
     public function store(Request $request)
     {
-        $saved = DB::table('iso_certifications')
-                ->insert([
-                    'first_date'=> date('Y.m.d', strtotime($request->first_date)),
-                    'type'=> $request->type,
-                    'standard'=> $request->standard,
-                    'number'=> $request->number,
-                    'file_path'=> $request->file_path
-                ]);
+        $file = $_FILES['file'];
+        $file_error = $file['error'];
+        $file_name = $file['name'];
+        $upload_name = uniqid().'_'.$file_name;
+        $file_path = 'D:/'.$upload_name;
+
+        if ($file_error > 0) {
+            echo 'Error: ' . $file_error . '<br>';
+        } else {
+            move_uploaded_file($upload_name, $file_path);
+
+            $saved = DB::table('iso_certifications')
+                    ->insert([
+                        'first_date'=> date('Y.m.d', strtotime($request->first_date)),
+                        'type'=> $request->type,
+                        'standard'=> $request->standard,
+                        'number'=> $request->number,
+                        'file_name'=> $file_name,
+                        'file_path'=> $file_path
+                    ]);
+        }
 
         return redirect('/admin/iso_certification');
     }
@@ -76,7 +89,7 @@ class IsoCertificationController extends Controller
     public function edit($id)
     {
         $certification = DB::table('iso_certifications')->where('id', $id)->first();
-        $action = "/admin/iso_certification/{$id}";
+        $action = '/admin/iso_certification/{$id}';
 
         return view('admin.iso_certification.create', [
             'certification'=> $certification,
@@ -93,6 +106,28 @@ class IsoCertificationController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $file = $_FILES['file'];
+        $file_name = '';
+        $file_path = '';
+
+        if(empty($file)) {
+            $file_name = $request->file_name;
+            $file_path = $request->file_path;
+
+        } else {
+            $file = $_FILES['file'];
+            $file_error = $file['error'];
+            $file_name = $file['name'];
+            $upload_name = uniqid().'_'.$file_name;
+            $file_path = 'D:/'.$upload_name;
+
+            if ($file_error > 0) {
+                echo 'Error: ' . $file_error . '<br>';
+            } else {
+                move_uploaded_file($upload_name, $file_path);
+            }
+        }
+
         $affected = DB::table('iso_certifications')
                     ->where('id', $id)
                     ->update([
@@ -100,7 +135,8 @@ class IsoCertificationController extends Controller
                         'type'=> $request->type,
                         'standard'=> $request->standard,
                         'number'=> $request->number,
-                        'file_path'=> $request->file_path,
+                        'file_name'=> $file_name,
+                        'file_path'=> $file_path,
                         'updated_at' => now()
                     ]);
 

@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ $action }}" class="form col-12" method="POST">
+        <form action="{{ $action }}" class="form col-12" method="POST" enctype="multipart/form-data">
             @isset ($certification)
                 @method('PUT')
             @endisset
@@ -42,7 +42,9 @@
                         </div>
                         <div class="form-group">
                             <label for="">파일</label>
-                            <input type="file" accept=".gif, .jpg, .png" class="form-control w-50" name="file_path" value="{{$certification->file_path ?? ''}}">
+                            <input type="file" accept=".gif, .jpeg, .jpg, .png" class="form-control w-50" name="file">
+                            <input type="hidden" name="file_name" value="{{$certification->file_name ?? ''}}">
+                            <input type="hidden" name="file_path" value="{{$certification->file_path ?? ''}}">
                         </div>
                     </div>
                 </div>
@@ -55,7 +57,7 @@
                         <button type="button" class="btn btn-danger text-white del-btn">삭제</button>
                         @endif
 
-                        <button type="submit" class="btn btn-primary text-white">저장</button>
+                        <button type="button" class="btn btn-primary text-white add-btn">저장</button>
                     </div>
                 </div>
             </div>
@@ -71,6 +73,13 @@ const iso_certification_create = () => {
     };
 
     const event_listener = () => {
+        //저장 버튼 클릭시
+        $('.add-btn').on('click', function() {
+            if (validation()) {
+                $('form').submit();
+            }
+        });
+
         //삭제 버튼 클릭시
         $('.del-btn').on('click', function() {
             if (confirm('해당 ISO인증서를 삭제하시겠습니까?')) {
@@ -78,6 +87,34 @@ const iso_certification_create = () => {
                 $('form').submit();
             }
         });
+    }
+
+    const validation = () => {
+        if ($('input[name=first_date]').val() == '' || $('input[name=first_date]').val() == null) {
+            alert('최초인증일을 선택해주세요.');
+            return false;
+
+        } else if ($('input[name=type]').val() == '' || $('input[name=type]').val() == null) {
+            alert('구분을 입력해주세요.');
+            $('input[name=type]').focus();
+            return false;
+
+        } else if ($('input[name=standard]').val() == '' || $('input[name=standard]').val() == null) {
+            alert('인증규격을 입력해주세요.');
+            $('input[name=standard]').focus();
+            return false;
+
+        } else if ($('input[name=number]').val() == '' || $('input[name=number]').val() == null) {
+            alert('인증번호를 입력해주세요.');
+            $('input[name=number]').focus();
+            return false;
+
+        } else if (($('input[name=file_name]').val() == '' || $('input[name=file_name]').val() == null)
+                    && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
+            alert('파일을 선택해주세요.');
+            return false;
+        }
+        return true;
     }
 
     init();
