@@ -40,12 +40,11 @@
                             <label for="">인증번호</label>
                             <input type="text" class="form-control w-50" name="number" value="{{$certification->number ?? ''}}">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="">파일</label>
                             <input type="file" accept=".gif, .jpeg, .jpg, .png" class="form-control w-50" name="file">
-                            <input type="hidden" name="file_name" value="{{$certification->file_name ?? ''}}">
                             <input type="hidden" name="file_path" value="{{$certification->file_path ?? ''}}">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -109,11 +108,12 @@ const iso_certification_create = () => {
             $('input[name=number]').focus();
             return false;
 
-        } else if (($('input[name=file_name]').val() == '' || $('input[name=file_name]').val() == null)
-                    && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
-            alert('파일을 선택해주세요.');
-            return false;
         }
+        // else if (($('input[name=file_path]').val() == '' || $('input[name=file_path]').val() == null)
+        //             && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
+        //     alert('파일을 선택해주세요.');
+        //     return false;
+        // }
         return true;
     }
 
