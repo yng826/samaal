@@ -83,7 +83,7 @@ class MenuController extends Controller
     {
         $menu = DB::table('menus')->where('id', $id)->first();
         $menu_keywords = DB::table('menu_keywords')->where('menu_id', $id)->get();
-        $action = '/admin/menu/{$id}';
+        $action = "/admin/menu/{$id}";
 
         return view('admin.menu.create', [
             'menu'=> $menu,

@@ -47,8 +47,8 @@ class IsoCertificationController extends Controller
         $file = $_FILES['file'];
         $file_error = $file['error'];
         $file_name = $file['name'];
-        $upload_name = uniqid().'_'.$file_name;
-        $file_path = 'D:/'.$upload_name;
+        $upload_name = uniqid(). '_'. $file_name;
+        $file_path = 'D:/'. $upload_name;
 
         if ($file_error > 0) {
             echo 'Error: ' . $file_error . '<br>';
@@ -89,7 +89,7 @@ class IsoCertificationController extends Controller
     public function edit($id)
     {
         $certification = DB::table('iso_certifications')->where('id', $id)->first();
-        $action = '/admin/iso_certification/{$id}';
+        $action = "/admin/iso_certification/{$id}";
 
         return view('admin.iso_certification.create', [
             'certification'=> $certification,
@@ -110,16 +110,15 @@ class IsoCertificationController extends Controller
         $file_name = '';
         $file_path = '';
 
-        if(empty($file)) {
+        if ($file['size'] == 0) {
             $file_name = $request->file_name;
             $file_path = $request->file_path;
 
         } else {
-            $file = $_FILES['file'];
             $file_error = $file['error'];
             $file_name = $file['name'];
-            $upload_name = uniqid().'_'.$file_name;
-            $file_path = 'D:/'.$upload_name;
+            $upload_name = uniqid(). '_'. $file_name;
+            $file_path = 'D:/'. $upload_name;
 
             if ($file_error > 0) {
                 echo 'Error: ' . $file_error . '<br>';
