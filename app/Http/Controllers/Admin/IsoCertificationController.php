@@ -53,7 +53,7 @@ class IsoCertificationController extends Controller
         if ($file_error > 0) {
             echo 'Error: ' . $file_error . '<br>';
         } else {
-            move_uploaded_file($upload_name, $file_path);
+            move_uploaded_file($file_name, $file_path);
 
             $saved = DB::table('iso_certifications')
                     ->insert([
@@ -124,7 +124,7 @@ class IsoCertificationController extends Controller
             if ($file_error > 0) {
                 echo 'Error: ' . $file_error . '<br>';
             } else {
-                move_uploaded_file($upload_name, $file_path);
+                move_uploaded_file($file_name, $file_path);
             }
         }
 

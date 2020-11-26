@@ -53,9 +53,9 @@
                 <div class="row">
                     <div class="col-12">
                         {{-- 수정일때만 보임 --}}
-                        @if(isset($certification->id) > 0)
+                        @isset ($certification)
                         <button type="button" class="btn btn-danger text-white del-btn">삭제</button>
-                        @endif
+                        @endisset
 
                         <button type="button" class="btn btn-primary text-white add-btn">저장</button>
                     </div>

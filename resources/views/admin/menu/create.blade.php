@@ -70,7 +70,7 @@
 
 
                         {{-- 수정일때만 보임 --}}
-                        @if(isset($menu->id) > 0)
+                        @isset ($menu)
                         <div class="form-group">
                             <label>키워드</label>
                             <div class="form-inline">
@@ -87,7 +87,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        @endif
+                        @endisset
                     </div>
                 </div>
             </div>
@@ -95,9 +95,9 @@
                 <div class="row">
                     <div class="col-12">
                         {{-- 수정일때만 보임 --}}
-                        @if(isset($menu->id) > 0)
+                        @isset ($menu)
                         <button type="button" class="btn btn-danger text-white del-btn">삭제</button>
-                        @endif
+                        @endisset
 
                         <button type="button" class="btn btn-primary text-white add-btn">저장</button>
                     </div>
