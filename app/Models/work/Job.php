@@ -14,15 +14,15 @@ class Job extends Model
 
     public static function get($args)
     {
-        $email = isset($args['email']) ? $args['email']: null;
-        $id = isset($args['id']) ? $args['id']: null;
+        $email = $args['email'] ?? null;
+        $id = $args['id'] ?? null;
         return DB::table('job_applications as job')
             ->join('recruits', 'job.recruit_id', '=', 'recruits.id')
             ->when($id, function ($query, $id) {
                 $query->where('job.id', '=', $id);
             })
-            ->when(isset($args['email']), function ($query, $args) {
-                $query->where('email', '=', $args['email']);
+            ->when($email, function ($query, $email) {
+                $query->where('email', '=', $email);
             })
             ->get();
     }

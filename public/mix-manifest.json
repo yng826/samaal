@@ -2,10 +2,11 @@
     "/js/admin/isoCertification.js": "/js/admin/isoCertification.js",
     "/js/admin/manifest.js": "/js/admin/manifest.js",
     "/js/admin/menu.js": "/js/admin/menu.js",
-    "/js/admin/vendor.js": "/js/admin/vendor.js",
-    "/js/app.js": "/js/app.js",
+    "/js/recruit.js": "/js/recruit.js",
+    "/css/vendor.css": "/css/vendor.css",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
+    "/js/vendor.js": "/js/vendor.js",
     "/js/admin/menu.es5.js": "/js/admin/menu.es5.js",
     "/js/admin/isoCertification.es5.js": "/js/admin/isoCertification.es5.js"
 }

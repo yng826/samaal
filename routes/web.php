@@ -5,6 +5,7 @@ use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MenuController as AdminMenuController;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,3 +98,15 @@ Route::get('/confirm-password', function () {
 })->middleware(['auth'])->name('auth.passwords.confirm');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('passport', function() {
+    return view('test.passport');
+})->middleware('auth');
+
+Route::get('/test', function() {
+    return view('test.vue');
+});
+
+Route::get('session', function () {
+    return Session::get('access_token');
+});
