@@ -50,6 +50,12 @@ Route::prefix('about-us')->group(function() {
     })->name('about-us.story');
 });
 
+Route::prefix('business')->group(function() {
+    Route::get('foil', function () {
+        return view('business.foil.main');
+    });
+});
+
 Route::prefix('work-with-us')->middleware('web')->group(function(){
     // Route::resource('recruit', RecruitController::class);
     Route::get('job', [JobController::class, 'index'])
@@ -72,6 +78,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('finance_info', Admin\FinanceInfoController::class);
+});
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('news_info', Admin\NewsInfoController::class);
+});
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('iso_certification', Admin\IsoCertificationController::class);
 });
 
 Auth::routes();

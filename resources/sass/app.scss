@@ -143,9 +143,8 @@ input, select {
         overflow: hidden;
         text-overflow: ellipsis;
     } @else {
-        /* autoprefixer: off */
+        /* autoprefixer: ignore next */
         -webkit-box-orient: vertical;
-        /* autoprefixer: on */
         display: block;
         display: -webkit-box;
         overflow: hidden;
@@ -159,3 +158,4 @@ input, select {
 @import "./divide/main";
 @import "./divide/layout";
 @import "./divide/aboutUs";
+@import "./divide/business";
