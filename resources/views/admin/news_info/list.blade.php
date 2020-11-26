@@ -22,7 +22,7 @@
                         <tr>
                             <th class="text-center" style="width: 80px;">idx</th>
                             <th class="text-center">제목</th>
-                            <th class="text-center">내용</th>
+                            <th class="text-center">요약내용</th>
                             <th class="text-center">이미지 첨부파일</th>
                             <th class="text-center">URL</th>
                             <th class="text-center">사용여부</th>
