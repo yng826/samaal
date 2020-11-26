@@ -114,13 +114,15 @@ class MenuController extends Controller
                     ]);
 
         $affected = DB::table('menu_keywords')->where('menu_id', $id)->delete();
-        foreach ($request->keyword as $keyword) {
-            if ($keyword != '') {
-                $affected = DB::table('menu_keywords')
-                            ->insert([
-                                'menu_id' => $id,
-                                'keyword' => $keyword,
-                            ]);
+        if(!empty($request->keyword)){
+            foreach ($request->keyword as $keyword) {
+                if ($keyword != '') {
+                    $affected = DB::table('menu_keywords')
+                                ->insert([
+                                    'menu_id' => $id,
+                                    'keyword' => $keyword,
+                                ]);
+                }
             }
         }
 
