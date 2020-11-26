@@ -81,4 +81,14 @@ class RecruitController extends Controller
     {
         //
     }
+
+    public function api_index(Request $request)
+    {
+        // postman raw
+        // {
+        //     "id": "hello"
+        // }
+        // return $request->input();
+        return $request->input('id');
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RecruitController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +39,6 @@ Route::post('login', function (Request $request) {
     ];
 });
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('admin')->middleware('auth:api')->group(function () {
+    Route::get('user', [RecruitController::class, 'api_index' ]);
 });
