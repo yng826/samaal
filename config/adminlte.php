@@ -247,6 +247,7 @@ return [
             'url'  => 'admin/menu',
             'icon' => 'fas fa-fw fa-bars',
         ],
+        ['header' => '회사정보'],
         [
             'text' => '재무정보 관리',
             'url'  => 'admin/finance_info',
@@ -262,7 +263,18 @@ return [
             'url'  => 'admin/news',
             'icon' => 'fas fa-fw fa-newspaper',
         ],
+        ['header' => '채용'],
         [
+            'text' => '채용공고',
+            'url'  => 'admin/recruit',
+            'icon' => 'fas fa-fw fa-file-invoice',
+        ],
+        [
+            'text' => '지원내역',
+            'url'  => 'admin/job-applicant',
+            'icon' => 'fas fa-fw fa-file-signature',
+        ],
+        /*[
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
@@ -334,6 +346,7 @@ return [
             'icon_color' => 'cyan',
             'url'        => '#',
         ],
+        */
     ],
 
     /*
