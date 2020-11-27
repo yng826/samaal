@@ -1,25 +1,45 @@
-// import Swiper from 'swiper/bundle';
-// import 'swiper/swiper-bundle.css';
-
-const business = () => {
+const business_foil = () => {
 
     const foilWrap = () => {
-        const test = $(".footer").outerHeight();
-        console.log(test);
-        console.log(window.innerHeight);
 
         $(window).scroll(function() {
+            const height = $(window).scrollTop();
+            const footerHeight = $(".footer").offset().top;
+            const infoHeight = height + $(window).height();
+            console.log(footerHeight);
+            console.log(height);
+            console.log(infoHeight);
 
+            if (infoHeight >= footerHeight){
+                // $('.business-foil__title').css('position','fixed');
+                console.log('up');
+            }
+            else{
+                // $('.business-foil__title').css('position','static');
+                console.log('down');
+            }
         });
-
-
     };
+
+
+    const detailSwiper = new Swiper('.business-detail__contents .swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        }
+    });
 
 
     const business_init = () => {
         foilWrap();
+        detailSwiper();
     };
+
     business_init();
 }
 
-export default business;
+export default business_foil;
+

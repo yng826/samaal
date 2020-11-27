@@ -3,7 +3,6 @@
         <title>App Name - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
-        <script src="/js/vendor.js"></script>
         <script src="/js/app.js"></script>
     </head>
     <body>
@@ -59,44 +58,60 @@
             </div>
         </header>
 
-        <main class="about-location contents-wrap">
-            <div class="contents-wrap__title about-location__title">
-                <h2>헤리티지 존</h2>
+        <main class="business-detail contents-wrap">
+            <div class="contents-wrap__title business-detail__title">
+                <h2>
+                    Capacitor용 Foil
+                    <p>
+                        고전압 축전기의 성능 향상을 위해<br>
+                        세계 시장에 진출한 삼아의 대표 제품
+                    </p>
+                </h2>
             </div>
-            <div class="about-location__contents">
-                <div class="swiper-container about-location__swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
+            <div class="business-detail__contents">
+                <div class="business-detail__slide">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/750X420" alt=""></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/750X420" alt=""></div>
+                        </div>
+                        <div class="swiper-button-next swiper-button"></div>
+                        <div class="swiper-button-prev swiper-button"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-button-next swiper-button"></div>
-                    <div class="swiper-button-prev swiper-button"></div>
-                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="about-location__info">
-                    <div class="about-location__info--map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25503.81890334096!2d126.8481664193355!3d36.96259747413987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b1c0c766d192b%3A0xfc79eb900e59401e!2z6rK96riw64-EIO2Pie2DneyLnCDtj6zsirnsnY0g7Y-J7YOd7ZWt66GcIDky!5e0!3m2!1sko!2skr!4v1605974061805!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <div class="business-detail__info info">
+                    <h3 class="info__title">
+                        Capacitor용 Foil의 용량을 더 늘릴 수 있도록
+                        극박막 알루미늄 호일을 <span>더 얇게 만들 수 없을까요?</span>
+                    </h3>
+                    <p class="info__text">
+                        고전압 축전기의 성능 향상을 필요로 하는 고객 니즈에 따라<br>
+                        박육화에 대한 연구개발로 두께 4.5㎛ 알루미늄 Foil을 생산하여 시장에 공급 중입니다.
+                    </p>
+                    <div class="info__value">
+                        <em>미래가치</em>
+                        <p>다국적 전력기업들의 판매 확대 가능성 높습니다</p>
                     </div>
-                    <div class="about-location__info--address">
-                        <p>
-                            1969년 창립 이래 50여 년,
-                            지금까지 걸어온 <em>삼아의 이야기와
-                            앞으로 걸어갈 이야기를
-                            헤리티지 존에서 만나보세요.</em>
-                        </p>
-                        <dl>
-                            <dt>주소</dt><dd>경기도 평택시 포승읍 평택항로 92</dd><br>
-                            <dt>전화</dt><dd>031-467-6800</dd><br>
-                            <dt>FAX</dt><dd>031-683-6125</dd>
-                        </dl>
-                    </div>
-                    <div class="about-location__info--video">
-                        <!-- 영상 받으면 넣기-->
-                    </div>
+                    <table class="info__table">
+                        <tr class="info__table--title">
+                            <th colspan="2" class="border-left-none">스펙</th>
+                            <th rowspan="2" class="border-right-none">활용 영역</th>
+                        </tr>
+                        <tr class="info__table--title">
+                            <th class="border-left-none">두께</th>
+                            <th>재질</th>
+                        </tr>
+                        <tr>
+                            <td class="border-left-none">4.5㎛ ~ 6㎛</td>
+                            <td>A1235</td>
+                            <td class="border-right-none">축전기</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="business-detail__button">
+                    <button type="button" class="btn-question">제품문의</button>
+                    <button type="button" class="btn-manager">담당자 정보</button>
                 </div>
             </div>
         </main>

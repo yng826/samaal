@@ -13,7 +13,6 @@ require('./common');
 require('./business');
 require('./aboutUs');
 
-
 window.Vue = require('vue');
 
 /**
@@ -38,9 +37,9 @@ Vue.component('passport-clients', require('./components/passport/Clients.vue').d
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+// const app = new Vue({
+//     el: '#app',
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
     common();
