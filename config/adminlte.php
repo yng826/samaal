@@ -248,6 +248,16 @@ return [
             'icon' => 'fas fa-fw fa-bars',
         ],
         [
+            'text' => '재무정보 관리',
+            'url'  => 'admin/finance_info',
+            'icon' => 'fas fa-fw fa-dollar-sign',
+        ],
+        [
+            'text' => 'ISO 인증서',
+            'url'  => 'admin/iso_certification',
+            'icon' => 'fas fa-fw fa-award',
+        ],
+        [
             'text' => '뉴스',
             'url'  => 'admin/news',
             'icon' => 'fas fa-fw fa-newspaper',
