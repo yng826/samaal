@@ -71,7 +71,11 @@ Route::prefix('work-with-us')->middleware('web')->group(function(){
     Route::resource('edu', Job\EducationController::class);
 });
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::get('role', function () {
+    return 'auth';
+})->middleware(['roles:admin']);
+
+Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::post('menu/order-update', [AdminMenuController::class, 'orderUpdate']);
     Route::resource('menu', Admin\MenuController::class);
     Route::get('library', function () {
@@ -79,7 +83,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     });
 });
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::resource('finance_info', Admin\FinanceInfoController::class);
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RecruitController extends Controller
@@ -82,13 +83,14 @@ class RecruitController extends Controller
         //
     }
 
-    public function api_index(Request $request)
+    public function api_index(User $user, Request $request)
     {
         // postman raw
         // {
         //     "id": "hello"
         // }
         // return $request->input();
-        return $request->input('id');
+        // return $request->input();
+        return $request->user();
     }
 }
