@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ $action }}" class="form col-12" method="POST">
+        <form action="{{ $action }}" class="form col-12" method="POST" enctype="multipart/form-data">
             @isset ($info)
                 @method('PUT')
             @endisset
