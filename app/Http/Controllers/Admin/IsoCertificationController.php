@@ -54,7 +54,8 @@ class IsoCertificationController extends Controller
                         'standard'=> $request->standard,
                         'number'=> $request->number,
                         'file_name'=> $request->file('file')->getClientOriginalName(),
-                        'file_path'=> $file_path
+                        'file_path'=> $file_path,
+                        'created_at' => now()
                     ]);
 
         return redirect('/admin/iso_certification');
