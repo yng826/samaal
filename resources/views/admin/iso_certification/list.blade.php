@@ -26,6 +26,7 @@
                             <th class="text-center">구분</th>
                             <th class="text-center">인증규격</th>
                             <th class="text-center">인증번호</th>
+                            <th class="text-center">업로드파일</th>
                             <th class="text-center">등록일</th>
                             <th class="text-center">관리</th>
                         </tr>
@@ -36,6 +37,9 @@
                             <td class="text-center">{{ $certification->type }}</td>
                             <td class="text-center">{{ $certification->standard }}</td>
                             <td class="text-center">{{ $certification->number }}</td>
+                            <td class="text-center">
+                                <a class="btn btn-outline-info btn-xs" href="/admin/iso_certification/file-download?id={{ $certification->id }}">파일</button>
+                            </td>
                             <td class="text-center">{{ $certification->updated_at ?? $certification->created_at}}</td>
                             <td class="text-center">
                                 <a class="btn btn-outline-warning btn-xs" href="/admin/iso_certification/{{ $certification->id }}/edit">수정</button>
