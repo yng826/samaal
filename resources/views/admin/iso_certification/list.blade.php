@@ -49,6 +49,13 @@
                     </table>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    @if($certifications->count())
+                    {{$certifications->links("pagination::bootstrap-4")}}
+                    @endif
+                </div>
+            </div>
         </div>
         <div class="card-footer">
             <div class="row">

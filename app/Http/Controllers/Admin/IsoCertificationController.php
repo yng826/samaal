@@ -16,7 +16,7 @@ class IsoCertificationController extends Controller
      */
     public function index()
     {
-        $certifications = DB::table('iso_certifications')->orderBy('id', 'desc')->get();
+        $certifications = DB::table('iso_certifications')->orderBy('id', 'desc')->paginate(10);
 
         return view('admin.iso_certification.list', [
             'certifications' => $certifications,
