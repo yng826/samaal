@@ -26,7 +26,12 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">분류</label>
-                            <input type="text" class="form-control w-50" name="category" value="{{$faq->category ?? ''}}">
+                            <select class="form-control w-auto" name="category">
+                                <option value="">::선택::</option>
+                                <option value="채용절차" {{ isset($faq) && $faq->category == '채용절차' ? 'selected' :''}}>채용절차</option>
+                                <option value="지원서 작성/수정" {{ isset($faq) && $faq->category == '지원서 작성/수정' ? 'selected' :''}}>지원서 작성/수정</option>
+                                <option value="기타" {{ isset($faq) && $faq->category == '기타' ? 'selected' :''}}>기타</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="">질문</label>
@@ -80,9 +85,8 @@ const faq_create = () => {
     }
 
     const validation = () => {
-        if ($('input[name=category]').val() == '' || $('input[name=category]').val() == null) {
-            alert('분류를 입력해주세요.');
-            $('input[name=category]').focus();
+        if ($('select[name=category]').val() == '' || $('select[name=category]').val() == null) {
+            alert('분류를 선택해주세요.');
             return false;
 
         } else if ($('input[name=question]').val() == '' || $('input[name=question]').val() == null) {
