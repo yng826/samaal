@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+
 <div class="container">
     <div class="card">
         <div class="card-header">
@@ -31,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">요약내용</label><br>
-                            <textarea rows="5" class="form-control w-50" name="contents">{{$info->contents ?? ''}}</textarea>
+                            <textarea rows="5" class="form-control w-50 tinymce-editor" name="contents">{{$info->contents ?? ''}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="">URL</label>
@@ -70,6 +71,9 @@
         </form>
     </div>
 </div>
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 <script>
     const news_create = () => {
 
@@ -79,6 +83,7 @@
         };
 
         const event_listener = () => {
+
              //저장 버튼 클릭시
             $('.add-btn').on('click', function() {
                 if (validation()) {
@@ -93,6 +98,24 @@
                     $('form').submit();
                 }
             });
+
+            var editor_config = {
+                selector: 'textarea.tinymce-editor',
+                directionality: document.dir,
+                path_absolute: "/",
+                menubar: 'edit insert view format table',
+                plugins: [
+                    "advlist autolink lists link image charmap preview hr anchor pagebreak",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen",
+                    "insertdatetime media save table contextmenu directionality",
+                    "paste textcolor colorpicker textpattern"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | fullscreen code",
+                relative_urls: false,
+                language: 'ko_KR',
+                height: 300,
+            }
+        tinymce.init(editor_config);
         }
 
         const use_yn = () => {
@@ -106,29 +129,24 @@
         }
 
         const validation = () => {
-        if ($('input[name=title]').val() == '' || $('input[name=title]').val() == null) {
-            alert('제목을 선택해주세요.');
-            $('input[name=title]').focus();
-            return false;
+            if ($('input[name=title]').val() == '' || $('input[name=title]').val() == null) {
+                alert('제목을 선택해주세요.');
+                $('input[name=title]').focus();
+                return false;
 
-        } else if ($('textarea[name=contents]').val() == '' || $('textarea[name=contents]').val() == null) {
-            alert('요약내용을 입력해주세요.');
-            $('textarea[name=contents]').focus();
-            return false;
+            } else if ($('input[name=url]').val() == '' || $('input[name=url]').val() == null) {
+                alert('URL을 입력해주세요.');
+                $('input[name=url]').focus();
+                return false;
 
-        } else if ($('input[name=url]').val() == '' || $('input[name=url]').val() == null) {
-            alert('URL을 입력해주세요.');
-            $('input[name=url]').focus();
-            return false;
-
+            }
+            else if (($('input[name=img_file_path]').val() == '' || $('input[name=img_file_path]').val() == null)
+                        && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
+                alert('파일을 선택해주세요.');
+                return false;
+            }
+            return true;
         }
-         else if (($('input[name=img_file_path]').val() == '' || $('input[name=img_file_path]').val() == null)
-                     && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
-             alert('파일을 선택해주세요.');
-             return false;
-         }
-        return true;
-    }
 
         init();
     }
