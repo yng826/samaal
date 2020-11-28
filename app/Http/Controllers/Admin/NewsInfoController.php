@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class NewsInfoController extends Controller
 {
@@ -15,7 +16,7 @@ class NewsInfoController extends Controller
      */
     public function index()
     {
-        $infos = DB::table('news_infos')->orderBy('idx', 'desc')->get();
+        $infos = DB::table('news_infos')->orderBy('id', 'desc')->paginate(10);
         return view('admin.news_info.list', [
             'infos' => $infos,
         ]);
@@ -42,14 +43,16 @@ class NewsInfoController extends Controller
      */
     public function store(Request $request)
     {
+        $file_path = Storage::putFile('public/news', $request->file('file')); //파일 저장
 
-        if($request->idx > 0){
+        if($request->id > 0){
             $saved = DB::table('news_infos')
-                    ->where('idx', $request->idx)
+                    ->where('id', $request->id)
                     ->update([
                         'title'=> $request->title,
                         'contents'=> $request->contents,
-                        'img_file_path'=> $request->img_file_path,
+                        'img_file_name'=> $request->file('file')->getClientOriginalName(),
+                        'img_file_path'=> $file_path,
                         'url'=> $request->url,
                         'use_yn'=> $request->use_yn,
                         'updated_at' => now(),
@@ -59,7 +62,8 @@ class NewsInfoController extends Controller
             ->insert([
                 'title'=> $request->title,
                 'contents'=> $request->contents,
-                'img_file_path'=> $request->img_file_path,
+                'img_file_name'=> $request->file('file')->getClientOriginalName(),
+                'img_file_path'=> $file_path,
                 'url'=> $request->url,
                 'use_yn'=> $request->use_yn,
                 'created_at' => now()
@@ -67,6 +71,7 @@ class NewsInfoController extends Controller
         }
 
         return redirect('/admin/news_info');
+
     }
 
     /**
@@ -75,12 +80,12 @@ class NewsInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-  /*  public function show($idx)
+  /*  public function show($id)
     {
-        $infos = DB::table('news_infos')->where('idx', $idx)->first();
+        $infos = DB::table('news_infos')->where('id', $id)->first();
         $action = "/admin/news_infos";
 
-        return view('admin.news_infos.'.$idx, [
+        return view('admin.news_infos.'.$id, [
             'info'=> $infos,
             'action'=> $action,
         ]);
@@ -92,10 +97,10 @@ class NewsInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($idx)
+    public function edit($id)
     {
-        $info = DB::table('news_infos')->where('idx', $idx)->first();
-        $action = "/admin/news_info/{$idx}";
+        $info = DB::table('news_infos')->where('id', $id)->first();
+        $action = "/admin/news_info/{$id}";
 
         return view('admin.news_info.create', [
             'info'=> $info,
@@ -110,19 +115,46 @@ class NewsInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $idx)
+    public function update(Request $request, $id)
     {
+
+        $img_file_name = $request->img_file_name;
+        $img_file_path = $request->img_file_path;
+
+        if (!empty($request->file('file'))) {
+            $file_name = $request->file('file')->getClientOriginalName();
+            $file_path = Storage::putFile('public/news', $request->file('file')); //파일 저장
+        }
+
+
         $affected = DB::table('news_infos')
-        ->where('idx', $idx)
+        ->where('id', $id)
         ->update([
             'title'=> $request->title,
             'contents'=> $request->contents,
-            'img_file_path'=> $request->img_file_path,
+            'img_file_name'=> $img_file_name,
+            'img_file_path'=> $img_file_path,
             'url'=> $request->url,
             'use_yn'=> $request->use_yn,
             'updated_at' => now(),
           ]);
         return redirect('/admin/news_info');
+
+    }
+
+    /**
+     * Upload file download.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function fileDownload(Request $request)
+    {
+        $info = DB::table('news_infos')->where('id', $request->id)->first();
+
+        $file =  Storage::get($info->img_file_path);
+
+        return response($file, 200, ['Content-Disposition' => "attachment; filename={$info->img_file_name}"]);
     }
 
     /**
@@ -131,10 +163,10 @@ class NewsInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idx)
+    public function destroy($id)
     {
         $affected = DB::table('news_infos')
-        ->where('idx', $idx)
+        ->where('id', $id)
         ->delete();
         return redirect('/admin/news_info');
     }

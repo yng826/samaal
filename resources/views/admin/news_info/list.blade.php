@@ -20,7 +20,7 @@
                 <div class="col-12">
                     <table class="table"  style="table-layout: fixed;">
                         <tr>
-                            <th class="text-center" style="width: 80px;">idx</th>
+                            <th class="text-center" style="width: 80px;">id</th>
                             <th class="text-center">제목</th>
                             <th class="text-center">요약내용</th>
                             <th class="text-center">이미지 첨부파일</th>
@@ -32,19 +32,29 @@
 
                         @foreach ($infos as $info)
                         <tr>
-                            <td class="text-center">{{ $info->idx }}</td>
-                            <td class="text-center text-ov">{{ $info->title }}</td>
-                            <td class="text-center text-ov" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ $info->contents }}</td>
-                            <td class="text-center text-ov">{{ $info->img_file_path }}</td>
-                            <td class="text-center text-ov">{{ $info->url }}</td>
-                            <td class="text-center text-ov">{{ $info->use_yn == 'y' ? '사용' :'미사용' }}</td>
-                            <td class="text-center text-ov">{{ $info->updated_at ?? $info->created_at}}</td>
-                            <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/admin/news_info/{{$info->idx}}/edit">수정</button></td>
+                            <td class="text-center">{{ $info->id }}</td>
+                            <td class="text-center">{{ $info->title }}</td>
+                            <td class="text-center" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ $info->contents }}</td>
+                            <td class="text-center">
+                                <a class="btn btn-outline-info btn-xs" href="/admin/news_info/file-download?id={{ $info->id }}">파일</button>
+                            </td>
+                            <td class="text-center">{{ $info->url }}</td>
+                            <td class="text-center">{{ $info->use_yn == 'y' ? '사용' :'미사용' }}</td>
+                            <td class="text-center">{{ $info->updated_at ?? $info->created_at}}</td>
+                            <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/admin/news_info/{{$info->id}}/edit">수정</button></td>
                         </tr>
                         @endforeach
                     </table>
                 </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        @if($infos->count())
+                                {{$infos->links("pagination::bootstrap-4")}}
+                        @endif
+                    </div>
+                </div>
             </div>
+
         </div>
         <div class="card-footer">
             <div class="row">

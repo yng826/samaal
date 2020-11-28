@@ -56,8 +56,14 @@
                             <td class="text-center"><a class="btn btn-outline-info btn-xs" href="/admin/finance_info/{{$info->info_year}}/edit">수정</button></td>
                         </tr>
                         @endforeach
-
                     </table>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        @if($infos->count())
+                                {{$infos->links("pagination::bootstrap-4")}}
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label for="">제목</label>
                             <input type="text" class="form-control w-50" name="title" value="{{$info->title ?? ''}}">
-                            <input type="hidden" class="form-control w-50" name="idx" value="{{$info->idx ?? 0}}">
+                            <input type="hidden" class="form-control w-50" name="id" value="{{$info->id ?? 0}}">
                         </div>
                         <div class="form-group">
                             <label for="">요약내용</label><br>
@@ -47,7 +47,9 @@
                         </div>
                         <div class="form-group">
                             <label for="">이미지 파일</label>
-                            <input type="file" accept=".gif, .jpg, .png" class="form-control w-50 w-50" name="img_file_path" value="{{$info->img_file_path ?? ''}}">
+                            <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="file">
+                            <input type="hidden" name="img_file_name" value="{{$info->img_file_name ?? ''}}">
+                            <input type="hidden" name="img_file_path" value="{{$info->img_file_path ?? ''}}">
                         </div>
                     </div>
                 </div>
@@ -56,11 +58,11 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <button type="submit" class="btn btn-primary text-white">저장</button>
+                        <button type="button" class="btn btn-primary text-white add-btn">저장</button>
                         {{-- 수정일때만 보임 --}}
-                        @if(isset($info->idx) > 0)
+                        @isset ($info)
                         <button type="button" class="btn btn-danger text-white del-btn">삭제</button>
-                        @endif
+                        @endisset
 
                     </div>
                 </div>
@@ -77,6 +79,13 @@
         };
 
         const event_listener = () => {
+             //저장 버튼 클릭시
+            $('.add-btn').on('click', function() {
+                if (validation()) {
+                     $('form').submit();
+                }
+            });
+
             //삭제 버튼 클릭시
             $('.del-btn').on('click', function() {
                 if (confirm('해당 뉴스를 삭제하시겠습니까?')) {
@@ -96,6 +105,31 @@
             });
         }
 
+        const validation = () => {
+        if ($('input[name=title]').val() == '' || $('input[name=title]').val() == null) {
+            alert('제목을 선택해주세요.');
+            $('input[name=title]').focus();
+            return false;
+
+        } else if ($('textarea[name=contents]').val() == '' || $('textarea[name=contents]').val() == null) {
+            alert('요약내용을 입력해주세요.');
+            $('textarea[name=contents]').focus();
+            return false;
+
+        } else if ($('input[name=url]').val() == '' || $('input[name=url]').val() == null) {
+            alert('URL을 입력해주세요.');
+            $('input[name=url]').focus();
+            return false;
+
+        }
+         else if (($('input[name=img_file_path]').val() == '' || $('input[name=img_file_path]').val() == null)
+                     && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
+             alert('파일을 선택해주세요.');
+             return false;
+         }
+        return true;
+    }
+
         init();
     }
 
@@ -107,11 +141,6 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin.css">
-@stop
-
-@section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/vendor.js') }}"></script>
 @stop
 
 
