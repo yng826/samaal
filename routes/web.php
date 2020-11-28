@@ -55,6 +55,9 @@ Route::prefix('business')->group(function() {
     Route::get('foil', function () {
         return view('business.foil.main');
     });
+    Route::get('foil/capacitor', function () {
+        return view('business.foil.capacitor');
+    });
 });
 
 Route::prefix('work-with-us')->middleware('web')->group(function(){

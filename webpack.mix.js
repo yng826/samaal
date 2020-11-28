@@ -12,9 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix
-    //.js('resources/js/app.js', 'public/js')
+    .js('resources/js/app.js', 'public/js')
     .js('resources/js/recruit.js', 'public/js')
-    .extract(['jquery-ui', 'vue', 'bootstrap'], 'public/js/vendor.js')
+    // .extract(['jquery-ui', 'vue', 'bootstrap'], 'public/js/vendor.js')
     .autoload({
         jquery: ['$', 'jQuery', 'jquery'],
     })
