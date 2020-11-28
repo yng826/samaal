@@ -5,6 +5,8 @@ use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MenuController as AdminMenuController;
+use App\Http\Controllers\Admin\NewsInfoController as NewsInfoController;
+use App\Http\Controllers\Admin\IsoCertificationController as IsoCertificationController;
 use Illuminate\Support\Facades\Session;
 
 /*
@@ -94,11 +96,17 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
     Route::resource('news_info', Admin\NewsInfoController::class);
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
+});
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('faq', Admin\FaqController::class);
 });
 
 Auth::routes();

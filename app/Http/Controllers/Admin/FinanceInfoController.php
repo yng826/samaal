@@ -16,7 +16,7 @@ class FinanceInfoController extends Controller
 
     public function index()
     {
-        $infos = DB::table('finance_infos')->orderBy('info_year', 'desc')->get();
+        $infos = DB::table('finance_infos')->orderBy('info_year', 'desc')->paginate(10);
         return view('admin.finance_info.list', [
             'infos' => $infos,
         ]);

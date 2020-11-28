@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class IsoCertificationController extends Controller
 {
@@ -15,7 +16,7 @@ class IsoCertificationController extends Controller
      */
     public function index()
     {
-        $certifications = DB::table('iso_certifications')->orderBy('id', 'desc')->get();
+        $certifications = DB::table('iso_certifications')->orderBy('id', 'desc')->paginate(10);
 
         return view('admin.iso_certification.list', [
             'certifications' => $certifications,
@@ -44,26 +45,18 @@ class IsoCertificationController extends Controller
      */
     public function store(Request $request)
     {
-        // $file = $_FILES['file'];
-        // $file_error = $file['error'];
-        // $file_name = $file['name'];
-        // $file_tmp_name = $file['tmp_name'];
-        // $file_path = 'D:/' . $file_name;
+        $file_path = Storage::putFile('public/iso', $request->file('file')); //파일 저장
 
-        // if ($file_error > 0) {
-        //     echo 'Error: ' . $file_error . '<br>';
-        // } else {
-        //     move_uploaded_file($file_tmp_name, $file_path);
-
-            $saved = DB::table('iso_certifications')
+        $saved = DB::table('iso_certifications')
                     ->insert([
                         'first_date'=> date('Y.m.d', strtotime($request->first_date)),
                         'type'=> $request->type,
                         'standard'=> $request->standard,
                         'number'=> $request->number,
-                        //'file_path'=> $file_path
+                        'file_name'=> $request->file('file')->getClientOriginalName(),
+                        'file_path'=> $file_path,
+                        'created_at' => now()
                     ]);
-        //}
 
         return redirect('/admin/iso_certification');
     }
@@ -105,21 +98,12 @@ class IsoCertificationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $file = $_FILES['file'];
-        // $file_path = $request->file_path;
-
-        // if ($file['size'] > 0) {
-        //     $file_error = $file['error'];
-        //     $file_name = $file['name'];
-        //     $file_tmp_name = $file['tmp_name'];
-        //     $file_path = 'D:/' . $file_name;
-
-        //     if ($file_error > 0) {
-        //         echo 'Error: ' . $file_error . '<br>';
-        //     } else {
-        //         move_uploaded_file($file_tmp_name, $file_path);
-        //     }
-        // }
+        $file_name = $request->file_name;
+        $file_path = $request->file_path;
+        if (!empty($request->file('file'))) {
+            $file_name = $request->file('file')->getClientOriginalName();
+            $file_path = Storage::putFile('public/iso', $request->file('file')); //파일 저장
+        }
 
         $affected = DB::table('iso_certifications')
                     ->where('id', $id)
@@ -128,7 +112,8 @@ class IsoCertificationController extends Controller
                         'type'=> $request->type,
                         'standard'=> $request->standard,
                         'number'=> $request->number,
-                        //'file_path'=> $file_path,
+                        'file_name'=>  $file_name,
+                        'file_path'=>  $file_path,
                         'updated_at' => now()
                     ]);
 
@@ -146,5 +131,20 @@ class IsoCertificationController extends Controller
         $affected = DB::table('iso_certifications')->where('id', $id)->delete();
 
         return redirect('/admin/iso_certification');
+    }
+
+    /**
+     * Upload file download.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function fileDownload(Request $request)
+    {
+        $certification = DB::table('iso_certifications')->where('id', $request->id)->first();
+
+        $file =  Storage::get($certification->file_path);
+
+        return response($file, 200, ['Content-Disposition' => "attachment; filename={$certification->file_name}"]);
     }
 }
