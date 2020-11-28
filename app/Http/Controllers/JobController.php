@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Job as ResourcesJob;
 use App\Models\work\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,21 +21,29 @@ class JobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // Session::put('uuid', '32l4kjcl2k34j');
         // session()->put('uuid', 'test');
         // session(['uuid'=>'304t9j0w435jg']);
         // dd(session()->get('uuid'));
         // Session::flush();
-        $where = ['email' => Session::get('email')];
-        $items = Job::get($where);
+        // $where = ['email' => Session::get('email')];
+        // $items = Job::get($where);
+        // $items = Job::where('')
 
-        return view('workWithUs.job.list', [
-            'pageClass' => 'about-ci',
-            'items' => $items,
-            'status' => $this->status,
-        ]);
+        if ( $request->wantsJson() ) {
+            $user = request()->user();
+            $items = Job::where('user_id', $user->id)->with(['user', 'recruit','educations'])->get();
+            return ResourcesJob::collection($items);
+        } else {
+
+            return view('workWithUs.job.list', [
+                'pageClass' => 'about-ci',
+                // 'items' => $items,
+                'status' => $this->status,
+            ]);
+        }
     }
 
     /**
@@ -66,13 +75,24 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $where = ['id'=> $id];
         DB::enableQueryLog(); // Enable query log
-        $item = Job::get($where);
+        $item = Job::where($where)->with('user')->first();
         // dd(DB::getQueryLog()); // Show results of log
-        return $item;
+        // return $item;
+
+        if ( $request->wantsJson() ) {
+            # code...
+            return $item;
+        } else {
+            return view('workWithUs.job.edit', [
+                'pageClass' => 'about-ci',
+                'item' => $item
+            ]);
+        }
+
         // return DB::table('job_applications as job')
         //     ->join('recruits', 'job.recruit_id', '=', 'recruits.id')
         //     ->where(function ($query) use ($id) {

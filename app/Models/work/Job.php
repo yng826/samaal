@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Models\work;
+namespace App\Models\Work;
 
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 
 class Job extends Model
@@ -12,18 +14,41 @@ class Job extends Model
 
     protected $table = 'job_applications';
 
-    public static function get($args)
+    // 새 속성
+    protected $appends = ['phone_decrypt', 'status_ko'];
+    protected $hidden = ['email_encrypt','phone_encrypt'];
+    protected $ko_status = [
+        'saved' => '저장',
+    ];
+
+    public function getPhoneDecryptAttribute()
     {
-        $email = $args['email'] ?? null;
-        $id = $args['id'] ?? null;
-        return DB::table('job_applications as job')
-            ->join('recruits', 'job.recruit_id', '=', 'recruits.id')
-            ->when($id, function ($query, $id) {
-                $query->where('job.id', '=', $id);
-            })
-            ->when($email, function ($query, $email) {
-                $query->where('email', '=', $email);
-            })
-            ->get();
+        $decrypted = '';
+        try {
+            $decrypted = Crypt::decryptString( $this->phone_encrypt );
+        } catch (DecryptException $e) {
+            //
+        }
+        return $decrypted;
+    }
+
+    public function getStatusKOAttribute()
+    {
+        return $this->ko_status[$this->status];
+    }
+
+    public function educations()
+    {
+        return $this->hasMany('App\Models\Work\Education');
+    }
+
+    public function recruit()
+    {
+        return $this->belongsTo('App\Models\Work\Recruit');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }

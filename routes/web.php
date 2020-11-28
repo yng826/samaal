@@ -60,15 +60,18 @@ Route::prefix('business')->group(function() {
     });
 });
 
-Route::prefix('work-with-us')->middleware('web')->group(function(){
-    // Route::resource('recruit', RecruitController::class);
+
+Route::prefix('work-with-us')->group(function(){
     Route::get('job', [JobController::class, 'index'])
     ->name('work.job');
     Route::get('job/{id}', [JobController::class, 'show'])
-        ->where('id', '[0-9]+');
+    ->where('id', '[0-9]+');
+});
+Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function(){
+    // Route::resource('recruit', RecruitController::class);
     Route::post('job', [JobController::class, 'store']);
-    Route::post('job/{id}', [JobController::class, 'store'])
-        ->where('id', '[0-9]+');
+    // Route::post('job/{id}', [JobController::class, 'store'])
+    //     ->where('id', '[0-9]+');
     Route::post('job/check', [JobController::class, 'check']);
 
     Route::resource('edu', Job\EducationController::class);

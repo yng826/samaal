@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\RecruitController;
 use App\Models\User;
+use App\Models\work\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +31,7 @@ Route::post('login', function (Request $request) {
         // $user = DB::table('users')->where('email', $credentials['email'])->first();
         $user = User::where('email', $credentials['email'])->first();
         $token = $user->createToken('api', []);
+        session(['access_token' => $token->accessToken]);
 
     } else {
 
@@ -35,8 +39,15 @@ Route::post('login', function (Request $request) {
     return [
         'logged' => $logged,
         'user' => $user,
-        'access_token' => $token->accessToken,
+        'token' => $token,
     ];
+});
+
+Route::prefix('work-with-us')->middleware('auth:api')->group(function () {
+    Route::get('job', [JobController::class, 'index']);
+    Route::get('job/{id}', [JobController::class, 'show'])
+    ->where('id', '[0-9]+');
+    Route::get('job/info', [JobController::class, 'index']);
 });
 
 Route::prefix('admin')->middleware('auth:api')->group(function () {
