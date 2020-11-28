@@ -102,6 +102,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
 });
 
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('faq', Admin\FaqController::class);
+});
+
 Auth::routes();
 
 Route::get('/confirm-password', function () {
