@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="/css/app.css">
         <script src="/js/app.js"></script>
     </head>
-    <body>
+    <body class="business">
         <!-- {{-- @section('sidebar')
             This is the master sidebar.
         @show

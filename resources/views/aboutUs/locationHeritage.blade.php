@@ -6,7 +6,7 @@
         <script src="/js/vendor.js"></script>
         <script src="/js/app.js"></script>
     </head>
-    <body>
+    <body class="about">
         <!-- {{-- @section('sidebar')
             This is the master sidebar.
         @show

@@ -7,11 +7,14 @@ import common from './common';
 import business from './business';
 import about from './aboutUs';
 
+import Swiper from 'swiper/bundle';
+window.Swiper = Swiper;
+import 'swiper/swiper-bundle.css';
 
 //require('./bootstrap');
-require('./common');
-require('./business');
-require('./aboutUs');
+// require('./common');
+// require('./business');
+// require('./aboutUs');
 
 window.Vue = require('vue');
 
@@ -41,8 +44,20 @@ Vue.component('passport-clients', require('./components/passport/Clients.vue').d
 //     el: '#app',
 // });
 
-document.addEventListener('DOMContentLoaded', () => {
-    common();
-    business();
-    about();
+const appMethods = {
+    common,
+    business,
+    about
+};
+
+const appInit = () => {
+    const appName = $('body').attr('class');
+    if(appName) [common, appMethods[appName]].forEach(method  => {
+        if(method) method();
+    });
+
+};
+
+document.addEventListener('DOMContentLoaded', async () => {
+    appInit();
 });

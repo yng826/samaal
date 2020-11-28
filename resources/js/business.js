@@ -1,3 +1,4 @@
+
 const business_foil = () => {
 
     const foilWrap = () => {
@@ -19,27 +20,30 @@ const business_foil = () => {
                 console.log('down');
             }
         });
+
+
     };
 
-
-    const detailSwiper = new Swiper('.business-detail__contents .swiper-container', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-        }
-    });
+    const businessSwiper = () => {
+        const swiper  = new Swiper('.business-detail__contents .swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            }
+        });
+    }
 
 
     const business_init = () => {
+        businessSwiper();
         foilWrap();
-        detailSwiper();
+
     };
 
     business_init();
 }
 
 export default business_foil;
-
