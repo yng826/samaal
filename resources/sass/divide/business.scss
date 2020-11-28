@@ -233,7 +233,9 @@
     &__slide {
         display: inline-block;
         width: vw(776px);
+        padding: 0 vw(55px 26px) 0;
         vertical-align: middle;
+        background: url("../images/business/bg_slide.png") no-repeat bottom right;
 
         img {
             width: 100%;
@@ -288,7 +290,8 @@
 
         &__text {
             display: block;
-            margin-bottom: vw(40px);
+            margin-top: vw(20px);
+            margin-bottom: vw(33px);
             color: #535353;
             font-size: vw(18px);
             line-height: vw(32px);
@@ -296,6 +299,7 @@
 
         &__value {
             margin-bottom: vw(20px);
+            font-size: 0;
 
             em {
                 display: inline-block;
@@ -320,6 +324,7 @@
         }
 
         &__table {
+            text-align: center;
 
             &--title {
                 border-top: vw(3px) solid #000;
@@ -329,12 +334,21 @@
             th {
                 padding: vw(10px) 0;
                 border: vw(2px) solid #000;
+                font: {
+                    size: vw(20px);
+                    weight: bold;
+                }
                 vertical-align: middle;
+                line-height: 1;
             }
 
             td {
                 border-left: 1px solid #959595;
                 border-bottom: 1px solid #959595;
+                color: #2e2e2e;
+                font-size: vw(18px);
+                vertical-align: middle;
+                line-height: 1;
             }
 
             .border-left-none {
@@ -343,6 +357,10 @@
 
             .border-right-none {
                 border-right: none;
+            }
+
+            &--bottom {
+                height: vw(111px);
             }
         }
     }
