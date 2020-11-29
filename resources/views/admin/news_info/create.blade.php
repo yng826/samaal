@@ -31,7 +31,7 @@
                             <input type="hidden" class="form-control w-50" name="id" value="{{$info->id ?? 0}}">
                         </div>
                         <div class="form-group">
-                            <label for="">요약내용</label><br>
+                            <label for="">내용</label><br>
                             <textarea rows="5" class="form-control w-50 tinymce-editor" name="contents">{{$info->contents ?? ''}}</textarea>
                         </div>
                         <div class="form-group">
@@ -99,7 +99,8 @@
                 }
             });
 
-            var editor_config = {
+
+            tinymce.init({
                 selector: 'textarea.tinymce-editor',
                 directionality: document.dir,
                 path_absolute: "/",
@@ -114,8 +115,39 @@
                 relative_urls: false,
                 language: 'ko_KR',
                 height: 300,
-            }
-            tinymce.init(editor_config);
+
+                automatic_uploads : false,
+
+                images_upload_handler : function(blobInfo, success, failure) {
+                    var xhr, formData;
+
+                    xhr = new XMLHttpRequest();
+                    xhr.withCredentials = false;
+
+                    xhr.onload = function() {
+                        var json;
+
+                        if (xhr.status != 200) {
+                            failure('HTTP Error: ' + xhr.status);
+                            return;
+                        }
+
+                        json = JSON.parse(xhr.responseText);
+
+                        if (!json || typeof json.file_path != 'string') {
+                            failure('Invalid JSON: ' + xhr.responseText);
+                            return;
+                        }
+
+                        success(json.file_path);
+                    };
+
+                    formData = new FormData();
+                    formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+                    xhr.send(formData);
+                },
+            });
         }
 
         const use_yn = () => {
