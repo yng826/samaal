@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class JobController extends Controller
@@ -27,15 +28,6 @@ class JobController extends Controller
      */
     public function index(Request $request)
     {
-        // Session::put('uuid', '32l4kjcl2k34j');
-        // session()->put('uuid', 'test');
-        // session(['uuid'=>'304t9j0w435jg']);
-        // dd(session()->get('uuid'));
-        // Session::flush();
-        // $where = ['email' => Session::get('email')];
-        // $items = Job::get($where);
-        // $items = Job::where('')
-
         if ( $request->wantsJson() ) {
             $user = request()->user();
             $items = Job::where('user_id', $user->id)->with(['user', 'recruit','educations'])->get();
@@ -68,23 +60,47 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),
-              [
-            //   'user_id' => 'required',
-              'file' => 'required|mimes:jpg,jpeg,png|max:2048',
-             ]);
+        $formData = $request->all();
+        // $validator = Validator::make($request->all(),
+        //       [
+        //       'name' => 'required',
+        //       'name_en' => 'required',
+        //       'birth_day' => 'required',
+        //       'file' => 'required|mimes:jpg,jpeg,png|max:2048',
+        //      ]);
 
-        if ($validator->fails()) {
-                return response()->json(['error'=>$validator->errors()], 401);
-        } else {
-            if ($files = $request->file('file')) {
-                return response()->json(['result'=>'저장'], 200);
+        // if ($validator->fails()) {
+        //         return response()->json(['error'=>$validator->errors()], 401);
+        // } else {
+
+            $user = User::find($formData['user_id']);
+            $user_info = UserInfo::find($formData['user_id']);
+
+            // save user
+            $user->name = $formData['name'];
+            $user->save();
+
+            // save user_info
+            $user_info->name_en = $formData['name_en'];
+            $user_info->birth_day = $formData['birth_day'];
+            $user_info->phone_last = $formData['phone_last'];
+            $user_info->address_1 = $formData['address_1'];
+            $user_info->address_2 = $formData['address_2'];
+            $user_info->save();
+
+            $filePath = '';
+            if ($files = $request->file('pic')) {
+                $filePath = $request->file('pic')->store('job');
+                $filePath = 'storage/'.$filePath;
             }
-        }
-        return [
-            'store',
-            $request->all(),
-        ];
+            $job = new Job;
+            $job->recruit_id = $formData['recruit_id'];
+            $job->user_id = $user->id;
+            $job->file_path = $filePath;
+            $job->status = 'saved';
+            $job->save();
+
+            return $job;
     }
 
     /**
@@ -140,36 +156,38 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $payLoad = json_decode($request->getContent(), true);
-        $user = User::find($payLoad['user_id']);
+        $formData = $request->all();
+        $user = User::find($formData['user_id']);
         $job = Job::find($id);
-        $user_info = UserInfo::find($payLoad['user_id']);
+        $user_info = UserInfo::find($formData['user_id']);
 
         // save user
-        $user->name = $payLoad['user']['name'];
+        $user->name = $formData['name'];
         $user->save();
 
         // save user_info
-        $user_info->name_en = $payLoad['user_info']['name_en'];
-        $user_info->birth_day = $payLoad['user_info']['birth_day'];
-        $user_info->phone_last = $payLoad['phone_last'];
-        $user_info->address_1 = $payLoad['address_1'];
-        $user_info->address_2 = $payLoad['address_2'];
+        $user_info->name_en = $formData['name_en'];
+        $user_info->birth_day = $formData['birth_day'];
+        $user_info->phone_last = substr($formData['phone_decrypt'], -4);
+        $user_info->address_1 = $formData['address_1'];
+        $user_info->address_2 = $formData['address_2'];
         $user_info->save();
 
+        // 파일 저장
+        $filePath = '';
+        if ($files = $request->file('pic')) {
+            // $filePath = Storage::putFile('public/job', $files, 'public'); //파일 저장
+            $filePath = $request->file('pic')->store('job');
+            $filePath = 'storage/'.$filePath;
+        }
         // save job
-        $job->phone_encrypt = Crypt::encryptString($payLoad['phone_decrypt']);
-        $job->address_1 = $payLoad['address_1'];
-        $job->address_2 = $payLoad['address_2'];
-        $job->file_path = $payLoad['file_path'];
-        $job->status = 'pending';
+        $job->phone_encrypt = Crypt::encryptString($formData['phone_decrypt']);
+        $job->address_1 = $formData['address_1'];
+        $job->address_2 = $formData['address_2'];
+        $job->file_path = $filePath;
+        $job->status = 'saved';
         $job->save();
-        return [
-            'update',
-            $payLoad,
-            $user,
-            $job,
-        ];
+        return $job;
     }
 
     /**
