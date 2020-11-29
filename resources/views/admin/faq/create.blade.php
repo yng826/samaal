@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ $action }}" class="form col-12" method="POST" enctype="multipart/form-data">
+        <form action="{{ $action }}" id="faq-form" class="form col-12 col-lg-6" method="POST">
             @isset ($faq)
                 @method('PUT')
             @endisset
@@ -35,11 +35,11 @@
                         </div>
                         <div class="form-group">
                             <label for="">질문</label>
-                            <input type="text" class="form-control w-50" name="question" value="{{$faq->question ?? ''}}">
+                            <input type="text" class="form-control" name="question" value="{{$faq->question ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">답변</label>
-                            <textarea class="form-control w-50" name="answer" rows="5">{{$faq->answer ?? ''}}</textarea>
+                            <textarea class="form-control" name="answer" rows="5">{{$faq->answer ?? ''}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ const faq_create = () => {
         //저장 버튼 클릭시
         $('.add-btn').on('click', function() {
             if (validation()) {
-                $('form').submit();
+                $('#faq-form').submit();
             }
         });
 
@@ -79,7 +79,7 @@ const faq_create = () => {
         $('.del-btn').on('click', function() {
             if (confirm('해당 FAQ를 삭제하시겠습니까?')) {
                 $('input[name=_method]').val('DELETE');
-                $('form').submit();
+                $('#faq-form').submit();
             }
         });
     }

@@ -113,6 +113,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('recruit', Admin\RecruitController::class);
+    Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {

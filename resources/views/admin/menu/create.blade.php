@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <form action="{{ $action }}" class="form col-12" method="POST">
+        <form action="{{ $action }}" id="menu-form" class="form col-12 col-lg-6" method="POST">
             @isset ($menu)
                 @method('PUT')
             @endisset
@@ -27,11 +27,11 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">메뉴명</label>
-                            <input type="text" class="form-control w-50" name="name" value="{{$menu->name ?? ''}}">
+                            <input type="text" class="form-control" name="name" value="{{$menu->name ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">URL</label>
-                            <input type="text" class="form-control w-50" name="url" value="{{$menu->url ?? ''}}">
+                            <input type="text" class="form-control" name="url" value="{{$menu->url ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label>메뉴 종류</label>
@@ -50,11 +50,11 @@
                         </div>
                         <div class="form-group">
                             <label>Depth</label>
-                            <input type="text" class="form-control w-50" name="depth" value="{{ isset($depth) ? $depth+1 : $menu->depth }}" readonly>
+                            <input type="text" class="form-control" name="depth" value="{{ isset($depth) ? $depth+1 : $menu->depth }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="">부모ID</label>
-                            <input type="text" class="form-control w-50" name="parent_id" value="{{ $parent_id ?? $menu->parent_id }}" readonly>
+                            <input type="text" class="form-control" name="parent_id" value="{{ $parent_id ?? $menu->parent_id }}" readonly>
                         </div>
                         <div class="form-group">
                             <label>사이트 노출</label>
@@ -71,9 +71,7 @@
                         @empty($menu)
                         <div class="form-group">
                             <label>키워드</label>
-                            <div class="form-inline">
-                                <input type="text" class="form-control w-50" value="메뉴 추가 후 수정 화면에서 입력 가능합니다." disabled>
-                            </div>
+                            <input type="text" class="form-control w-50" value="수정 화면에서 입력 가능합니다." disabled>
                         </div>
                         @endempty
 
@@ -89,7 +87,7 @@
                             <div id="keyword-div">
                                 @foreach($menu_keywords as $menu_keyword)
                                 <div class="form-inline">
-                                    <input type="text" class="form-control d-inline-block w-50" name="keyword[]" value="{{ $menu_keyword->keyword }}">
+                                    <input type="text" class="form-control w-50" name="keyword[]" value="{{ $menu_keyword->keyword }}">
                                     <button type="button" class="btn btn-danger text-white keyword-del-btn">삭제</button>
                                 </div>
                                 @endforeach
@@ -126,7 +124,7 @@ const menu_create = () => {
         //저장 버튼 클릭시
         $('.add-btn').on('click', function() {
             if (validation()) {
-                $('form').submit();
+                $('#menu-form').submit();
             }
         });
 
@@ -134,7 +132,7 @@ const menu_create = () => {
         $('.del-btn').on('click', function() {
             if (confirm('해당 메뉴를 삭제하시겠습니까?')) {
                 $('input[name=_method]').val('DELETE');
-                $('form').submit();
+                $('#menu-form').submit();
             }
         });
 
@@ -142,7 +140,7 @@ const menu_create = () => {
         $('.keyword-add-btn').on('click', function() {
             const val = $('#keyword').val();
             let html = '<div class="form-inline">';
-            html += '<input type="text" class="form-control d-inline-block w-50" name="keyword[]" value="'+val+'">';
+            html += '<input type="text" class="form-control w-50" name="keyword[]" value="'+val+'">';
             html += '<button type="button" class="btn btn-danger text-white keyword-del-btn">삭제</button>';
             html += '</div>';
             $('#keyword-div').append(html);

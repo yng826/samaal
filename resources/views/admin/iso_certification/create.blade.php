@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ $action }}" class="form col-12" method="POST" enctype="multipart/form-data">
+        <form action="{{ $action }}" id="iso-certification-form" class="form col-12 col-lg-6" method="POST" enctype="multipart/form-data">
             @isset ($certification)
                 @method('PUT')
             @endisset
@@ -30,15 +30,15 @@
                         </div>
                         <div class="form-group">
                             <label for="">구분</label>
-                            <input type="text" class="form-control w-50" name="type" value="{{$certification->type ?? ''}}">
+                            <input type="text" class="form-control" name="type" value="{{$certification->type ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">인증규격</label>
-                            <input type="text" class="form-control w-50" name="standard" value="{{$certification->standard ?? ''}}">
+                            <input type="text" class="form-control" name="standard" value="{{$certification->standard ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">인증번호</label>
-                            <input type="text" class="form-control w-50" name="number" value="{{$certification->number ?? ''}}">
+                            <input type="text" class="form-control" name="number" value="{{$certification->number ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">파일</label>
@@ -76,7 +76,7 @@ const iso_certification_create = () => {
         //저장 버튼 클릭시
         $('.add-btn').on('click', function() {
             if (validation()) {
-                $('form').submit();
+                $('#iso-certification-form').submit();
             }
         });
 
@@ -84,7 +84,7 @@ const iso_certification_create = () => {
         $('.del-btn').on('click', function() {
             if (confirm('해당 ISO인증서를 삭제하시겠습니까?')) {
                 $('input[name=_method]').val('DELETE');
-                $('form').submit();
+                $('#iso-certification-form').submit();
             }
         });
     }

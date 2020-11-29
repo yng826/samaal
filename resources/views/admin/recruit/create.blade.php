@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <form action="{{ $action }}" class="form col-12" method="POST">
+        <form action="{{ $action }}" id="recruit-form" class="form col-12 col-lg-6" method="POST">
             @isset ($recruit)
                 @method('PUT')
             @endisset
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label>제목</label>
-                            <input type="text" class="form-control w-50" name="title" value="{{$recruit->title ?? ''}}">
+                            <input type="text" class="form-control" name="title" value="{{$recruit->title ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label>경력</label>
@@ -64,14 +64,14 @@
                         </div>
                         <div class="form-group">
                             <label for="">지원자격</label>
-                            <textarea class="form-control w-50" name="description" rows="8">{{$recruit->description ?? ''}}</textarea>
+                            <textarea class="form-control" name="description" rows="8">{{$recruit->description ?? ''}}</textarea>
                         </div>
 
                         @empty($recruit)
                         <div class="form-group">
                             <label>키워드</label>
                             <div class="form-inline">
-                                <input type="text" class="form-control w-50" value="채용 공고 추가 후 수정 화면에서 입력 가능합니다." disabled>
+                                <input type="text" class="form-control w-50" value="수정 화면에서 입력 가능합니다." disabled>
                             </div>
                         </div>
                         @endempty
@@ -88,7 +88,7 @@
                             <div id="keyword-div">
                                 @foreach($recruit_keywords as $recruit_keyword)
                                 <div class="form-inline">
-                                    <input type="text" class="form-control d-inline-block w-50" name="keyword[]" value="{{ $recruit_keyword->keyword }}">
+                                    <input type="text" class="form-control w-50" name="keyword[]" value="{{ $recruit_keyword->keyword }}">
                                     <button type="button" class="btn btn-danger text-white keyword-del-btn">삭제</button>
                                 </div>
                                 @endforeach
@@ -125,7 +125,7 @@ const recruit_create = () => {
         //저장 버튼 클릭시
         $('.add-btn').on('click', function() {
             if (validation()) {
-                $('form').submit();
+                $('#recruit-form').submit();
             }
         });
 
@@ -133,7 +133,7 @@ const recruit_create = () => {
         $('.del-btn').on('click', function() {
             if (confirm('해당 채용 공고를 삭제하시겠습니까?')) {
                 $('input[name=_method]').val('DELETE');
-                $('form').submit();
+                $('#recruit-form').submit();
             }
         });
 
@@ -141,7 +141,7 @@ const recruit_create = () => {
         $('.keyword-add-btn').on('click', function() {
             const val = $('#keyword').val();
             let html = '<div class="form-inline">';
-            html += '<input type="text" class="form-control d-inline-block w-50" name="keyword[]" value="'+val+'">';
+            html += '<input type="text" class="form-control w-50" name="keyword[]" value="'+val+'">';
             html += '<button type="button" class="btn btn-danger text-white keyword-del-btn">삭제</button>';
             html += '</div>';
             $('#keyword-div').append(html);
