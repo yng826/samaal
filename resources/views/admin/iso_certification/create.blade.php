@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '메뉴')
+@section('title', 'ISO인증서 관리')
 
 @section('content_header')
     <h1>ISO인증서 관리</h1>
@@ -26,7 +26,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">최초인증일</label>
-                            <input type="text" class="form-control w-50 datepicker" name="first_date" value="{{$certification->first_date ?? ''}}">
+                            <input type="text" class="form-control w-auto datepicker" name="first_date" value="{{$certification->first_date ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">구분</label>
@@ -109,8 +109,7 @@ const iso_certification_create = () => {
             $('input[name=number]').focus();
             return false;
 
-        }
-        else if (($('input[name=file_path]').val() == '' || $('input[name=file_path]').val() == null)
+        } else if (($('input[name=file_path]').val() == '' || $('input[name=file_path]').val() == null)
                     && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
             alert('파일을 선택해주세요.');
             return false;

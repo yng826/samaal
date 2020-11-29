@@ -112,6 +112,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('recruit', Admin\RecruitController::class);
+});
+
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('faq', Admin\FaqController::class);
 });
 
