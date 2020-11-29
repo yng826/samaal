@@ -19,7 +19,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
-                    <table class="table">
+                    <table class="table" style="table-layout: fixed;">
                         <tr>
                             <th class="text-center" rowspan="2">연도</th>
                             <th class="text-center" colspan="5">연결 재무제표</th>

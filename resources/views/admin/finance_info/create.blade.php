@@ -107,10 +107,12 @@
             // 숫자만
             $('#connect_sales, #connect_operating_income, #connect_net_income, #connect_assets, #connect_liability').on('input', function(e){
                 this.value = this.value.replace(/[^0-9]/g, '');
+                this.value = this.value.slice(0, '11');
             });
 
             $('#separate_sales, #separate_operating_income, #separate_net_income, #separate_assets, #separate_liability').on('input', function(e){
                 this.value = this.value.replace(/[^0-9]/g, '');
+                this.value = this.value.slice(0, '11');
             });
 
         }
