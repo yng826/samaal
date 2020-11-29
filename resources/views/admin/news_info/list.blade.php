@@ -20,9 +20,9 @@
                 <div class="col-12">
                     <table class="table"  style="table-layout: fixed;">
                         <tr>
-                            <th class="text-center" style="width: 80px;">id</th>
+                            <th class="text-center" style="width: 80px;">번호</th>
                             <th class="text-center">제목</th>
-                            <th class="text-center">요약내용</th>
+                            <th class="text-center">내용</th>
                             <th class="text-center">이미지 첨부파일</th>
                             <th class="text-center">URL</th>
                             <th class="text-center">사용여부</th>

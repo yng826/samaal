@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '메뉴')
+@section('title', '메뉴 관리')
 
 @section('content_header')
-    <h1>메뉴 설정</h1>
+    <h1>메뉴 관리</h1>
 @stop
 
 @section('content')

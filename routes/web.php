@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MenuController as AdminMenuController;
 use App\Http\Controllers\Admin\NewsInfoController as NewsInfoController;
+use App\Http\Controllers\Admin\IrBoardController as IrBoardController;
 use App\Http\Controllers\Admin\IsoCertificationController as IsoCertificationController;
 use Illuminate\Support\Facades\Session;
 
@@ -96,6 +97,11 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
+    Route::resource('ir_board', Admin\IrBoardController::class);
+});
+
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
     Route::resource('news_info', Admin\NewsInfoController::class);
 });
@@ -103,6 +109,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
+});
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('recruit', Admin\RecruitController::class);
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {

@@ -1,6 +1,7 @@
 {
     "/js/admin/isoCertification.js": "/js/admin/isoCertification.js",
     "/js/admin/menu.js": "/js/admin/menu.js",
+    "/js/admin/recruit.js": "/js/admin/recruit.js",
     "/js/app.js": "/js/app.js",
     "/css/vendor.css": "/css/vendor.css",
     "/css/app.css": "/css/app.css",
@@ -8,5 +9,6 @@
     "/js/job.js": "/js/job.js",
     "/js/recruit.js": "/js/recruit.js",
     "/js/admin/menu.es5.js": "/js/admin/menu.es5.js",
-    "/js/admin/isoCertification.es5.js": "/js/admin/isoCertification.es5.js"
+    "/js/admin/isoCertification.es5.js": "/js/admin/isoCertification.es5.js",
+    "/js/admin/recruit.es5.js": "/js/admin/recruit.es5.js"
 }

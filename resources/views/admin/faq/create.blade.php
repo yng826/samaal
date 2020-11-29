@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '메뉴')
+@section('title', 'FAQ 관리')
 
 @section('content_header')
     <h1>FAQ 관리</h1>

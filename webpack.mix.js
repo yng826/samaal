@@ -25,6 +25,8 @@ mix
 mix
     .js('resources/js/admin/menu.js', 'public/js/admin')
     .js('resources/js/admin/isoCertification.js', 'public/js/admin')
+    .js('resources/js/admin/recruit.js', 'public/js/admin')
     .babel(['public/js/admin/menu.js'], 'public/js/admin/menu.es5.js')
     .babel(['public/js/admin/isoCertification.js'], 'public/js/admin/isoCertification.es5.js')
+    .babel(['public/js/admin/recruit.js'], 'public/js/admin/recruit.es5.js')
     .sass('resources/sass/admin.scss', 'public/css');
