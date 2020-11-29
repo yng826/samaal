@@ -3,7 +3,7 @@
 @section('title', '메뉴')
 
 @section('content_header')
-    <h1>뉴스 관리</h1>
+    <h1>IR 공고 관리</h1>
 @stop
 
 @section('content')
@@ -13,12 +13,12 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <h3>뉴스 추가/수정/삭제</h3>
+                    <h3>IR 공고 추가/수정/삭제</h3>
                 </div>
             </div>
         </div>
         <form action="{{ $action }}" class="form col-12" method="POST" enctype="multipart/form-data">
-            @isset ($info)
+            @isset ($board)
                 @method('PUT')
             @endisset
             @csrf
@@ -26,31 +26,27 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
+                            <label for="">분류</label>
+                            <select class="form-control w-auto" name="category">
+                                <option value="">::선택::</option>
+                                <option value="연결재무" {{ isset($board) && $board->category == '연결재무' ? 'selected' :''}}>연결재무</option>
+                                <option value="별도재무" {{ isset($board) && $board->category == '별도재무' ? 'selected' :''}}>별도재무</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="">제목</label>
-                            <input type="text" class="form-control w-50" name="title" value="{{$info->title ?? ''}}">
-                            <input type="hidden" class="form-control w-50" name="id" value="{{$info->id ?? 0}}">
+                            <input type="text" class="form-control w-50" name="title" value="{{$board->title ?? ''}}">
+                            <input type="hidden" class="form-control w-50" name="id" value="{{$board->id ?? 0}}">
                         </div>
                         <div class="form-group">
-                            <label for="">요약내용</label><br>
-                            <textarea rows="5" class="form-control w-50 tinymce-editor" name="contents">{{$info->contents ?? ''}}</textarea>
+                            <label for="">내용</label><br>
+                            <textarea rows="5" class="form-control w-50 tinymce-editor" name="contents">{{$board->contents ?? ''}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="">URL</label>
-                            <input type="text" class="form-control w-50" name="url" value="{{$info->url ?? ''}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="">사용여부</label>
-                            <input type="hidden" name="use_yn" value="{{$info->use_yn ?? 'n'}}">
-                            <div class="form-check">
-                                <input class="form-check-input" name="use_yn1" type="checkbox" value="y" {{ isset($info) && $info->use_yn == 'y' ? 'checked' :''}}>
-                                <label class="form-check-label">사용</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="">이미지 파일</label>
-                            <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="file">
-                            <input type="hidden" name="img_file_name" value="{{$info->img_file_name ?? ''}}">
-                            <input type="hidden" name="img_file_path" value="{{$info->img_file_path ?? ''}}">
+                            <label for="">첨부 파일</label>
+                            <input type="file" accept="*.*" class="d-block" name="file">
+                            <input type="hidden" name="file_name" value="{{$board->file_name ?? ''}}">
+                            <input type="hidden" name="file_path" value="{{$board->file_path ?? ''}}">
                         </div>
                     </div>
                 </div>
@@ -61,7 +57,7 @@
 
                         <button type="button" class="btn btn-primary text-white add-btn">저장</button>
                         {{-- 수정일때만 보임 --}}
-                        @isset ($info)
+                        @isset ($board)
                         <button type="button" class="btn btn-danger text-white del-btn">삭제</button>
                         @endisset
 
@@ -79,7 +75,6 @@
 
         const init = () => {
             event_listener();
-            use_yn();
         };
 
         const event_listener = () => {
@@ -93,7 +88,7 @@
 
             //삭제 버튼 클릭시
             $('.del-btn').on('click', function() {
-                if (confirm('해당 뉴스를 삭제하시겠습니까?')) {
+                if (confirm('해당 IR공고를 삭제하시겠습니까?')) {
                     $('input[name=_method]').val('DELETE');
                     $('form').submit();
                 }
@@ -118,28 +113,17 @@
             tinymce.init(editor_config);
         }
 
-        const use_yn = () => {
-            $('input[name="use_yn1"]').on('click', function() {
-                if($('input[name="use_yn1"]:checked').length ==0){
-                    $('input[name=use_yn]').val('n');
-                }else{
-                    $('input[name=use_yn]').val('y');
-                }
-            });
-        }
-
         const validation = () => {
-            if ($('input[name=title]').val() == '' || $('input[name=title]').val() == null) {
+            if ($('select[name=category]').val() == '' || $('select[name=category]').val() == null) {
+                alert('분류를 선택해주세요.');
+                return false;
+
+            } else if ($('input[name=title]').val() == '' || $('input[name=title]').val() == null) {
                 alert('제목을 선택해주세요.');
                 $('input[name=title]').focus();
                 return false;
 
-            } else if ($('input[name=url]').val() == '' || $('input[name=url]').val() == null) {
-                alert('URL을 입력해주세요.');
-                $('input[name=url]').focus();
-                return false;
-
-            } else if (($('input[name=img_file_path]').val() == '' || $('input[name=img_file_path]').val() == null)
+            } else if (($('input[name=file_path]').val() == '' || $('input[name=file_path]').val() == null)
                         && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
                 alert('파일을 선택해주세요.');
                 return false;
