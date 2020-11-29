@@ -27,16 +27,16 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">제목</label>
-                            <input type="text" class="form-control w-50" name="title" value="{{$info->title ?? ''}}">
-                            <input type="hidden" class="form-control w-50" name="id" value="{{$info->id ?? 0}}">
+                            <input type="text" class="form-control" name="title" value="{{$info->title ?? ''}}">
+                            <input type="hidden" class="form-control" name="id" value="{{$info->id ?? 0}}">
                         </div>
                         <div class="form-group">
                             <label for="">내용</label><br>
-                            <textarea rows="5" class="form-control w-50 tinymce-editor" name="contents">{{$info->contents ?? ''}}</textarea>
+                            <textarea rows="5" class="form-control tinymce-editor" name="contents">{{$info->contents ?? ''}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="">URL</label>
-                            <input type="text" class="form-control w-50" name="url" value="{{$info->url ?? ''}}">
+                            <input type="text" class="form-control" name="url" value="{{$info->url ?? ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">사용여부</label>

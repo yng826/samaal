@@ -35,12 +35,12 @@
                         </div>
                         <div class="form-group">
                             <label for="">제목</label>
-                            <input type="text" class="form-control w-50" name="title" value="{{$board->title ?? ''}}">
-                            <input type="hidden" class="form-control w-50" name="id" value="{{$board->id ?? 0}}">
+                            <input type="text" class="form-control" name="title" value="{{$board->title ?? ''}}">
+                            <input type="hidden" class="form-control" name="id" value="{{$board->id ?? 0}}">
                         </div>
                         <div class="form-group">
                             <label for="">내용</label><br>
-                            <textarea rows="5" class="form-control w-50 tinymce-editor" name="contents">{{$board->contents ?? ''}}</textarea>
+                            <textarea rows="5" class="form-control tinymce-editor" name="contents">{{$board->contents ?? ''}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="">첨부 파일</label>
