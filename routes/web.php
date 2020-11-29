@@ -61,6 +61,9 @@ Route::prefix('business')->group(function() {
     Route::get('foil/capacitor', function () {
         return view('business.foil.capacitor');
     });
+    Route::get('foil/foil', function () {
+        return view('business.foil.foil');
+    });
 });
 
 

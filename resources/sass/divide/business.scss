@@ -212,6 +212,7 @@
 }
 
 .business-detail {
+    padding-bottom: vw(85px);
 
     &__title {
         padding: vw(73px) 0;
@@ -221,6 +222,7 @@
             font-size: vw(20px);
             line-height: vw(30px);
             font-weight: 400;
+            color: #fff;
         }
     }
 
@@ -235,7 +237,7 @@
         width: vw(776px);
         padding: 0 vw(55px 26px) 0;
         vertical-align: middle;
-        background: url("../images/business/bg_slide.png") no-repeat bottom right;
+        background: url("../images/business/bg_slide.png") no-repeat bottom right / vw(807px) vw(447px);
 
         img {
             width: 100%;
@@ -268,6 +270,17 @@
             background-size: contain;
         }
 
+        .swiper-pagination-bullet {
+            width: vw(15px);
+            height: vw(15px);
+            background-color: #aeaeae;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #223c6f;
+        }
+
     }
 
     .info {
@@ -295,6 +308,7 @@
             color: #535353;
             font-size: vw(18px);
             line-height: vw(32px);
+            word-break: keep-all;
         }
 
         &__value {
@@ -362,6 +376,285 @@
             &--bottom {
                 height: vw(111px);
             }
+        }
+    }
+
+    &__button {
+         margin-top: vw(66px);
+         text-align: center;
+         font-size: 0;
+
+        button {
+            display: inline-block;
+            width: vw(220px);
+            height: vw(80px);
+            margin: 0 vw(15px);
+            color: #fff;
+            font-size: vw(25px);
+            text-align: center;
+            background-color: #000;
+        }
+    }
+}
+
+/* 문의하기 팝업 */
+.question-pop {
+    width: vw(610px);
+
+    &__title {
+        margin-top: vw(7px);
+        text-align: center;
+        line-height: 1;
+
+        h3 {
+            display: inline-block;
+            padding-top: vw(14px);
+            margin: 0 auto;
+            color: #000;
+            font: {
+                size: vw(25px);
+                weight: bold;
+            }
+            border-top: vw(3px) solid #000;
+        }
+    }
+
+    &__info  {
+        padding-top: vw(40px);
+
+        li {
+            margin-bottom: vw(30px);
+            font-size: 0;
+        }
+
+        h4 {
+            display: block;
+            padding-bottom: vw(17px);
+            color: #010101;
+            font-size: vw(20px);
+            line-height: 1;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 0 vw(30px);
+            background-color: #e8ecef;
+            color: #000;
+            border-radius: 5px;
+            border: none;
+
+            &[type=text] {
+                height: vw(65px);
+            }
+
+            &::placeholder {
+                font-size: vw(18px);
+                color: #9f9f9f;
+            }
+
+            &::-webkit-input-placeholder {
+                color: #9f9f9f;
+            }
+
+            &:-ms-input-placeholder  {
+                color: #9f9f9f;
+            }
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            height: vw(140px);
+            padding: vw(30px);
+            background-color: #e8ecef;
+            color: #000;
+            border-radius: 5px;
+            border: none;
+
+            &::placeholder {
+                font-size: vw(18px);
+                color: #9f9f9f;
+            }
+
+            &::-webkit-input-placeholder {
+                font-size: vw(18px);
+                color: #9f9f9f;
+            }
+
+            &:-ms-input-placeholder  {
+                font-size: vw(18px);
+                color: #9f9f9f;
+            }
+        }
+
+        .email-input {
+            display: block;
+
+            &__local {
+                display: inline-block;
+                width: 245/525*100%;
+                vertical-align: middle;
+            }
+
+            &__separator {
+                display: inline-block;
+                width: 35/525*100%;
+                font-size: vw(18px);
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            &__domain {
+                display: inline-block;
+                position: relative;
+                width: 245/525*100%;
+                vertical-align: middle;
+
+                select {
+                    display: inline-block;
+                    width: 100%;
+                    height: vw(65px);
+                    padding: 0 vw(43px) 0vw(30px);
+                    border: none;
+                    background-color: #e8ecef;
+                    font-size: vw(18px);
+                    border-radius: 5px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: vw(28px);
+                    transform: translateY(-50%);
+                    border-top: vw(13px) solid #757575;
+                    border-left: vw(7px) solid transparent;
+                    border-right: vw(7px) solid transparent;
+                }
+            }
+        }
+
+        .privacy-box {
+            padding: vw(28px) vw(30px);
+            height: vw(157px);
+            overflow-y: auto;
+            color: #5b5b5b;
+            font-size: vw(13px);
+            background-color: #e8ecef;
+            border: 1px solid #d7d7d7;
+        }
+    }
+
+    &__form-check {
+        margin-top: vw(15px);
+
+        .form-check {
+            display: inline-block;
+            position: relative;
+            width: vw(20px);
+            height: vw(20px);
+            margin-right: vw(10px);
+            padding: 0;
+            border-radius: 0;
+            vertical-align: middle;
+
+            &:checked::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: vw(20px);
+                height: vw(20px);
+                background: url("../images/common/icon_check.png") no-repeat center;
+            }
+        }
+
+        span {
+            display: inline-block;
+            color: #383838;
+            font-size: vw(13px);
+            vertical-align: middle;
+        }
+    }
+
+    &__submit-btn {
+        display: block;
+        height: vw(80px);
+        padding: 0 vw(106px) 0 vw(51px);
+        margin: vw(44px) auto 0;
+        background: #000 url("../images/common/btn_submit.png") no-repeat ;
+        background-size: vw(46px) vw(42px);
+        background-position: vw(152px) center;
+        font-size: vw(25px);
+        color: #fff;
+    }
+}
+
+/* 담당자 팝업 */
+.manager-pop {
+    width: vw(610px);
+
+    &__title {
+        margin-top: vw(7px);
+        text-align: center;
+        line-height: 1;
+
+        h3 {
+            display: inline-block;
+            padding-top: vw(14px);
+            margin: 0 auto;
+            color: #000;
+            font: {
+                size: vw(25px);
+                weight: bold;
+            }
+            border-top: vw(3px) solid #000;
+        }
+    }
+
+    &__list {
+        display: block;
+        padding-top: vw(40px);
+        font-size: 0;
+        text-align: center;
+
+        dl {
+            display: block;
+            padding-bottom: vw(17px);
+        }
+
+        dt {
+            display: inline-block;
+            position: relative;
+            padding-right: vw(10px);
+            color: #010101;
+            font: {
+                size: vw(20px);
+                weight: bold;
+            }
+            vertical-align: middle;
+
+            &::after{
+                content:"";
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: vw(3px);
+                height: vw(20px);
+                background-color: #010101;
+            }
+
+        }
+
+        dd {
+            display: inline-block;
+            margin-left: vw(7px);
+            color: #010101;
+            font-size: vw(20px);
+            vertical-align: middle;
         }
     }
 }

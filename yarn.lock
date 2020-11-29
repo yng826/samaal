@@ -3452,10 +3452,10 @@
     "inherits" "^2.0.3"
     "minimalistic-assert" "^1.0.1"
 
-"he-tree-vue@^2.0.4-beta2":
-  "integrity" "sha512-Dvf5NfscDWo5ydH+6XMEZ8Prk97/lKhm0gUI8/06HU9xcliFKzeSyn/pTaorWYZ6sCaXIvNpaZVqr0R633lSDA=="
-  "resolved" "https://registry.npmjs.org/he-tree-vue/-/he-tree-vue-2.0.4-beta2.tgz"
-  "version" "2.0.4-beta2"
+"he-tree-vue@^2.0.5":
+  "integrity" "sha512-WGKEQD3t8Q+CJMElR9upd8ROYOmsqeWy5Kbs0ps4NMYXA/tJsxOZKBqNtj33zoWt4TUlRnh1pr/c/goBZx9dPQ=="
+  "resolved" "https://registry.npmjs.org/he-tree-vue/-/he-tree-vue-2.0.5.tgz"
+  "version" "2.0.5"
   dependencies:
     "@babel/runtime" "^7.7.7"
     "draggable-helper" "^5.0.5"
@@ -4851,6 +4851,11 @@
   "integrity" "sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA=="
   "resolved" "https://registry.npmjs.org/object-keys/-/object-keys-1.1.1.tgz"
   "version" "1.1.1"
+
+"object-path@^0.11.5":
+  "integrity" "sha512-jgSbThcoR/s+XumvGMTMf81QVBmah+/Q7K7YduKeKVWL7N111unR2d6pZZarSk6kY/caeNxUDyxOvMWyzoU2eg=="
+  "resolved" "https://registry.npmjs.org/object-path/-/object-path-0.11.5.tgz"
+  "version" "0.11.5"
 
 "object-path@^0.9.2":
   "integrity" "sha1-D9mnT8X60a45aLWGvaXGMr1sBaU="
@@ -6602,6 +6607,11 @@
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
 
+"sweetalert2@^10.10.4":
+  "integrity" "sha512-qQJcqMaN9i5J0W7wrrttPpmZ5Ws6MrffT61asBLiCj+5sme2wII0ZeOGr8EoPrn8Hd56o58D33KcQMy01JodIQ=="
+  "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-10.10.4.tgz"
+  "version" "10.10.4"
+
 "swiper@^6.3.5":
   "integrity" "sha512-MZkkVJ+sXukp6G3Z3BlKayhBjRIQuO1TZaTlH7ooI/0qbH0kkmItFMjFo19nOOsJaDXglA32xqyc9KCtmbJv0w=="
   "resolved" "https://registry.npmjs.org/swiper/-/swiper-6.3.5.tgz"
@@ -7012,7 +7022,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.5.17", "vue@^2.6.4":
+"vue@^2.5.17":
   "integrity" "sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
   "version" "2.6.12"
