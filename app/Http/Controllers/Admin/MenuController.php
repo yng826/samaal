@@ -121,6 +121,7 @@ class MenuController extends Controller
                                 ->insert([
                                     'menu_id' => $id,
                                     'keyword' => $keyword,
+                                    'created_at' => now()
                                 ]);
                 }
             }
