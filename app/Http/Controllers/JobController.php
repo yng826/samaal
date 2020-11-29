@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class JobController extends Controller
 {
@@ -67,6 +68,19 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),
+              [
+            //   'user_id' => 'required',
+              'file' => 'required|mimes:jpg,jpeg,png|max:2048',
+             ]);
+
+        if ($validator->fails()) {
+                return response()->json(['error'=>$validator->errors()], 401);
+        } else {
+            if ($files = $request->file('file')) {
+                return response()->json(['result'=>'저장'], 200);
+            }
+        }
         return [
             'store',
             $request->all(),
@@ -130,8 +144,6 @@ class JobController extends Controller
         $user = User::find($payLoad['user_id']);
         $job = Job::find($id);
         $user_info = UserInfo::find($payLoad['user_id']);
-
-        $saved = 0;
 
         // save user
         $user->name = $payLoad['user']['name'];

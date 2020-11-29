@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
-                    <input type="text" v-model="item.user.email">
+                    <input type="text" v-model="item.user.email" disabled>
                 </div>
                 <div class="form-group">
                     <label for="">현거주지</label>
