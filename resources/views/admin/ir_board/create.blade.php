@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ $action }}" class="form col-12" method="POST" enctype="multipart/form-data">
+        <form action="{{ $action }}" class="form col-12 col-lg-6 board-form" method="POST" enctype="multipart/form-data">
             @isset ($board)
                 @method('PUT')
             @endisset
@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <button type="button" class="btn btn-primary text-white add-btn">저장</button>
+                        <button type="button" class="btn btn-primary text-white save-btn">저장</button>
                         {{-- 수정일때만 보임 --}}
                         @isset ($board)
                         <button type="button" class="btn btn-danger text-white del-btn">삭제</button>
@@ -80,9 +80,9 @@
         const event_listener = () => {
 
              //저장 버튼 클릭시
-            $('.add-btn').on('click', function() {
+            $('.save-btn').on('click', function() {
                 if (validation()) {
-                     $('form').submit();
+                     $('.board-form').submit();
                 }
             });
 
@@ -90,7 +90,7 @@
             $('.del-btn').on('click', function() {
                 if (confirm('해당 IR공고를 삭제하시겠습니까?')) {
                     $('input[name=_method]').val('DELETE');
-                    $('form').submit();
+                    $('.board-form').submit();
                 }
             });
 

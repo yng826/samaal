@@ -25,7 +25,7 @@
                             <th class="text-center" colspan="5">연결 재무제표</th>
                             <th class="text-center" colspan="5">별도 재무제표</th>
                             <th class="text-center" rowspan="2">등록일</th>
-                            <th class="text-center" rowspan="2" colspan="2">관리</th>
+                            <th class="text-center" rowspan="2">관리</th>
                         </tr>
                         <tr>
                             <th class="text-center">매출액</th>

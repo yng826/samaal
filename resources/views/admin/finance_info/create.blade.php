@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ $action }}" class="form col-12" method="POST">
+        <form action="{{ $action }}" class="form col-12 col-lg-6 info-form" method="POST">
             @isset ($info)
                 @method('PUT')
             @endisset
@@ -96,7 +96,7 @@
             //저장 버튼 클릭시
             $('.save-btn').on('click', function() {
                 if (confirm('저장하시겠습니까?')) {
-                    $('form').submit();
+                    $('.info-form').submit();
                 }
             });
 
