@@ -19,6 +19,9 @@ class Job extends Model
     protected $hidden = ['email_encrypt','phone_encrypt'];
     protected $ko_status = [
         'saved' => '저장',
+        'submit' => '제출',
+        'pending' => '처리중',
+        'expired' => '종료',
     ];
 
     public function getPhoneDecryptAttribute()
@@ -50,5 +53,10 @@ class Job extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function userInfo()
+    {
+        return $this->belongsTo('App\Models\UserInfo', 'user_id', 'id');
     }
 }

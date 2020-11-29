@@ -8,7 +8,7 @@
             <h2>지원정보 확인 및 수정</h2>
         </div>
         <div class="contents-wrap__section {{$pageClass}}__contents">
-            <individual-info-component index=1></individual-info-component>
+            <individual-info-component index={{$id}}></individual-info-component>
             {{-- <div class="form-container" title="기본정보">
                 <form action="/api/job/{{ $item->id ?? ''}}" method="post">
                     <div class="form-wrap">

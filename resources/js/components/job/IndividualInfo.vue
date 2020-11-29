@@ -1,19 +1,19 @@
 <template>
     <div class="form-container" title="기본정보">
-        <form :action="'/api/job/'+item.id" method="post" id="individualInfoForm">
+        <form :action="'/api/job/'+item.id" method="post" id="individualInfoForm" @submit.prevent="setInfo(item)">
             <div class="form-wrap">
                 <h3>인적사항</h3>
                 <div class="form-group">
                     <label for="">성명(한글)</label>
-                    <input type="text" v-model="item.name">
+                    <input type="text" v-model="item.user.name">
                 </div>
                 <div class="form-group">
                     <label for="">성명(영문)</label>
-                    <input type="text" v-model="item.name_en">
+                    <input type="text" v-model="item.user_info.name_en">
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <input type="text" v-model="item.birth_day">
+                    <input type="text" v-model="item.user_info.birth_day">
                 </div>
                 <div class="form-group">
                     <label for="">휴대폰번호</label>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
-                    <input type="text" v-model="item.email">
+                    <input type="text" v-model="item.user.email">
                 </div>
                 <div class="form-group">
                     <label for="">현거주지</label>
@@ -35,6 +35,7 @@
                     <figure class="picture">
                         <img src="https://dummyimage.com/200x300/000/fff" alt="">
                     </figure>
+                    <input type="file" name="pic" id="pic">
                     <button class="picture-upload">이미지 업로드</button>
                 </div>
             </div>
@@ -61,7 +62,10 @@ export default {
     data: function() {
         return {
             isAuth: false,
-            item: {}
+            item: {
+                user: { name: '' },
+                user_info: {},
+            }
         }
     },
     mounted: function() {
@@ -83,16 +87,16 @@ export default {
                 console.error(err);
             })
         },
-        setInfo: function() {
-            let individualInfoForm = document.getElementById('individualInfoForm');
-            formData = new FormData(individualInfoForm);
+        setInfo: function(item) {
+            console.log(item);
+
             let headers = getHeader();
-            // headers['content-type'] = 'multipart/form-data';
+            headers['content-type'] = 'multipart/form-data';
             axios({
-                method: 'POST',
+                method: this.item.id ? 'PUT':'POST',
                 url: '/api/work-with-us/job/'+ this.index,
-                headers: getHeader(),
-                data: formData
+                headers: headers,
+                data: item
             })
             .then(res => {
                 console.log(res)

@@ -48,6 +48,8 @@ Route::prefix('work-with-us')->middleware('auth:api')->group(function () {
     Route::get('job/{id}', [JobController::class, 'show'])
     ->where('id', '[0-9]+');
     Route::get('job/info', [JobController::class, 'index']);
+    Route::post('job/{id}', [JobController::class, 'store']);
+    Route::put('job/{id}', [JobController::class, 'update']);
 });
 
 Route::prefix('admin')->middleware('auth:api')->group(function () {

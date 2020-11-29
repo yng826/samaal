@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\Job as ResourcesJob;
+use App\Models\User;
+use App\Models\UserInfo;
 use App\Models\work\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -53,7 +56,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -64,9 +67,10 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        // return 'store';
-        session(['uuid', 'test!@#123123']);
-        return session('uuid');
+        return [
+            'store',
+            $request->all(),
+        ];
     }
 
     /**
@@ -79,7 +83,7 @@ class JobController extends Controller
     {
         $where = ['id'=> $id];
         DB::enableQueryLog(); // Enable query log
-        $item = Job::where($where)->with('user')->first();
+        $item = Job::where($where)->with(['user', 'userInfo'])->first();
         // dd(DB::getQueryLog()); // Show results of log
         // return $item;
 
@@ -89,7 +93,8 @@ class JobController extends Controller
         } else {
             return view('workWithUs.job.edit', [
                 'pageClass' => 'about-ci',
-                'item' => $item
+                'item' => $item,
+                'id' => $id,
             ]);
         }
 
@@ -121,7 +126,38 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $payLoad = json_decode($request->getContent(), true);
+        $user = User::find($payLoad['user_id']);
+        $job = Job::find($id);
+        $user_info = UserInfo::find($payLoad['user_id']);
+
+        $saved = 0;
+
+        // save user
+        $user->name = $payLoad['user']['name'];
+        $user->save();
+
+        // save user_info
+        $user_info->name_en = $payLoad['user_info']['name_en'];
+        $user_info->birth_day = $payLoad['user_info']['birth_day'];
+        $user_info->phone_last = $payLoad['phone_last'];
+        $user_info->address_1 = $payLoad['address_1'];
+        $user_info->address_2 = $payLoad['address_2'];
+        $user_info->save();
+
+        // save job
+        $job->phone_encrypt = Crypt::encryptString($payLoad['phone_decrypt']);
+        $job->address_1 = $payLoad['address_1'];
+        $job->address_2 = $payLoad['address_2'];
+        $job->file_path = $payLoad['file_path'];
+        $job->status = 'pending';
+        $job->save();
+        return [
+            'update',
+            $payLoad,
+            $user,
+            $job,
+        ];
     }
 
     /**
