@@ -64,6 +64,57 @@ Route::prefix('business')->group(function() {
     Route::get('foil/foil', function () {
         return view('business.foil.foil');
     });
+    Route::get('foil/fin', function () {
+        return view('business.foil.fin');
+    });
+    Route::get('foil/decoration', function () {
+        return view('business.foil.decoration');
+    });
+    Route::get('foil/line', function () {
+        return view('business.foil.line');
+    });
+    Route::get('foil/restrictions', function () {
+        return view('business.foil.restrictions');
+    });
+    Route::get('foil/electronic', function () {
+        return view('business.foil.electronic');
+    });
+    Route::get('foil/car', function () {
+        return view('business.foil.car');
+    });
+    Route::get('foil/external', function () {
+        return view('business.foil.external');
+    });
+    Route::get('foil/tab', function () {
+        return view('business.foil.tab');
+    });
+    Route::get('package/retort', function () {
+        return view('business.package.retort');
+    });
+    Route::get('package/watertight', function () {
+        return view('business.package.watertight');
+    });
+    Route::get('package/alu', function () {
+        return view('business.package.alu');
+    });
+    Route::get('package/cigarette', function () {
+        return view('business.package.cigarette');
+    });
+    Route::get('package/refill', function () {
+        return view('business.package.refill');
+    });
+    Route::get('industry/insulation', function () {
+        return view('business.industry.insulation');
+    });
+    Route::get('industry/sidemirror', function () {
+        return view('business.industry.sidemirror');
+    });
+    Route::get('industry/steel', function () {
+        return view('business.industry.steel');
+    });
+    Route::get('industry/paste', function () {
+        return view('business.industry.paste');
+    });
 });
 
 

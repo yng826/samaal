@@ -1,10 +1,10 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    연포장용 Foil
+    LIB Tab재
     <p>
-        제품 가치 보존에 힘써온<br>
-        삼아 대표 아이템
+        다양한 디바이스에 적용 가능한<br>
+        리튬 이온 배터리 양극 단자
     </p>
 @endsection
 
@@ -14,18 +14,19 @@
 @endsection
 
 @section('info__title')
-    <span>제품의 맛과 향을 그대로 간직</span>하는<br>
-    포장재는 없을까요?
+    <span>다양한 기기에서 활용</span>할 수 있는<br>
+    리튬 이온 배터리 양극 단자를 제작해 주세요!
 @endsection
 
 @section('info__text')
-    제품의 포장재에 활용되어<br>
-    내용물 보존기간을 증가시키기 위해 개발했습니다.
+    국내 전지 업체의 본격적인 양산 시점에서 개발한<br>
+    이차전지의 핵심부품입니다
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>다국적 전력기업들의<br>판매 확대 가능성 높습니다</p>
+    <p>블루투스, 웨어러블 디바이스와 같이<br>
+        소형, 경량화 제품으로 확장 추세를 보이고 있습니다</p>
 @endsection
 
 @section('info__table')
@@ -39,10 +40,14 @@
             <th>재질</th>
         </tr>
         <tr class="info__table--bottom">
-            <td class="border-left-none"> 5.5㎛ ~ 40㎛</td>
-            <td>A1235, A8079<br>
-                폭 최대 2090mm</td>
-            <td class="border-right-none">식품포장재, 단열재 등</td>
+            <td class="border-left-none">80㎛ ~150㎛</td>
+            <td>
+                A1235
+            </td>
+            <td class="border-right-none">
+                리튬 이온 배터리의
+                리드탭
+            </td>
         </tr>
     </table>
 @endsection
