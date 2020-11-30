@@ -17,6 +17,8 @@ class FaqController extends Controller
     {
         $faqs = DB::table('faqs')->orderBy('id', 'desc')->paginate(10);
 
+        debug($faqs); // debug
+
         return view('admin.faq.list', [
             'faqs' => $faqs,
         ]);
