@@ -8,11 +8,6 @@ Capacitor용 Foil
 </p>
 @endsection
 
-@section('info__title')
-Capacitor용 Foil의 용량을 더 늘릴 수 있도록<br>
-극박막 알루미늄 호일을 <span>더 얇게 만들 수 없을까요?</span>
-@endsection
-
 @section('swiper-container')
         <div class="swiper-slide"><img src="https://via.placeholder.com/750X420" alt=""></div>
         <div class="swiper-slide"><img src="https://via.placeholder.com/750X420" alt=""></div>

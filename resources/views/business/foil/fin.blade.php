@@ -1,10 +1,10 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    연포장용 Foil
+    열교환기용 Fin재
     <p>
-        제품 가치 보존에 힘써온<br>
-        삼아 대표 아이템
+        자동차에 사용되는 소형·고성능 열교환기용 FIN재<br>
+        50㎛를 국내 최초로 개발
     </p>
 @endsection
 
@@ -14,18 +14,19 @@
 @endsection
 
 @section('info__title')
-    <span>제품의 맛과 향을 그대로 간직</span>하는<br>
-    포장재는 없을까요?
+    점점 가벼워지는 자동차에 알맞게
+    <span>열교환기의 효율도 높여야 합니다</span>
 @endsection
 
 @section('info__text')
-    제품의 포장재에 활용되어<br>
-    내용물 보존기간을 증가시키기 위해 개발했습니다.
+    자동차 경량화에 따른 제품 박육화를 위해
+    국내 Strip Maker와 협업, 국내 최초로 국산화에 성공한 제품입니다.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>다국적 전력기업들의<br>판매 확대 가능성 높습니다</p>
+    <p>전기자동차 배터리의 일정한 내부 온도 유지용 온열기 및<br>
+        냉방기에도 접목할 수 있습니다</p>
 @endsection
 
 @section('info__table')
@@ -39,10 +40,15 @@
             <th>재질</th>
         </tr>
         <tr class="info__table--bottom">
-            <td class="border-left-none"> 5.5㎛ ~ 40㎛</td>
-            <td>A1235, A8079<br>
-                폭 최대 2090mm</td>
-            <td class="border-right-none">식품포장재, 단열재 등</td>
+            <td class="border-left-none">50㎛ ~ 300㎛</td>
+            <td>
+                F308, F309,
+                A3003, BRW04
+            </td>
+            <td class="border-right-none">
+                라디에이터, 히터
+                콘덴서,증발기
+            </td>
         </tr>
     </table>
 @endsection

@@ -113,18 +113,7 @@
                                 </span>
                                 <span class="email-input__separator">@</span>
                                 <span class="email-input__domain">
-                                    <select>
-                                        <option selected="" value="" disabled="">선택해주세요</option>
-                                        <option value="directly">직접입력</option>
-                                        <option value="naver.com">naver.com</option>
-                                        <option value="hanmail.net">hanmail.net</option>
-                                        <option value="daum.net">daum.net</option>
-                                        <option value="gmail.com">gmail.com</option>
-                                        <option value="nate.com">nate.com</option>
-                                        <option value="hotmail.com">hotmail.com</option>
-                                        <option value="outlook.com">outlook.com</option>
-                                        <option value="icloud.com">icloud.com</option>
-                                    </select>
+                                    <input type="text" placeholder="직접입력" value="">
                                 </span>
                             </div>
                         </li>

@@ -1,10 +1,10 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    연포장용 Foil
+    Decoration용 Foil
     <p>
-        제품 가치 보존에 힘써온<br>
-        삼아 대표 아이템
+        고급제품의 포장에 적합한 고품질의<br>
+        고광택 알루미늄 Foil
     </p>
 @endsection
 
@@ -14,18 +14,19 @@
 @endsection
 
 @section('info__title')
-    <span>제품의 맛과 향을 그대로 간직</span>하는<br>
-    포장재는 없을까요?
+    고급 화장품의 가치를 <span>더 돋보이게 만들 수 있는</span><br>
+    포장재는 무엇일까요?
 @endsection
 
 @section('info__text')
-    제품의 포장재에 활용되어<br>
-    내용물 보존기간을 증가시키기 위해 개발했습니다.
+    고급 화장품 튜브를 제조하는 고객의 인쇄 품질 니즈에 부합하기 위해
+    개발한 제품으로 유려한 표면의 고광택이 특징입니다.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>다국적 전력기업들의<br>판매 확대 가능성 높습니다</p>
+    <p>종이와 접합되는 제품의 용도로<br>
+        확대 적용이 가능하여 고급 제품에 적합한 프리미엄 AL-Foil</p>
 @endsection
 
 @section('info__table')
@@ -39,10 +40,14 @@
             <th>재질</th>
         </tr>
         <tr class="info__table--bottom">
-            <td class="border-left-none"> 5.5㎛ ~ 40㎛</td>
-            <td>A1235, A8079<br>
-                폭 최대 2090mm</td>
-            <td class="border-right-none">식품포장재, 단열재 등</td>
+            <td class="border-left-none">7㎛ ~ 12㎛</td>
+            <td>
+                A8079, A1235
+            </td>
+            <td class="border-right-none">
+                고급화장품 튜브,
+                고급 술, 인삼 포장상자
+            </td>
         </tr>
     </table>
 @endsection
