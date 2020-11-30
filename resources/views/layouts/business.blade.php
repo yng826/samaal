@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>App Name - @yield('title')</title>
+        <title>삼아 - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
         <script src="/js/app.js"></script>
@@ -247,6 +247,6 @@
         </footer>
 
         <div class="popup-marsk"></div>
-        {{ mix('/js/business.js') }}
+        <script src="/js/business.js"></script>
     </body>
 </html>

@@ -18,11 +18,28 @@ const business = () => {
 
         $('.question-pop__info').on('submit', (e) => {
             e.preventDefault();
+            if ( !validation() ) {
+
+            }
             console.log('form submit');
             /*
             axios.post();
             */
         });
+    }
+
+    const validation = () => {
+        if ( true ) {
+
+            Swal.fire({
+                title: '에러입니다!',
+                text: '필드를 확인해주세요',
+                icon: 'error',
+                confirmButtonText: '확인'
+            });
+            return false;
+        }
+        return true;
     }
 
     init();
