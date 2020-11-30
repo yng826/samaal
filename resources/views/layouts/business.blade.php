@@ -258,5 +258,6 @@
         </footer>
 
         <div class="popup-marsk"></div>
+        {{ mix('/js/business.js') }}
     </body>
 </html>

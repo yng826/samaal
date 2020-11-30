@@ -6,6 +6,7 @@
     "/css/vendor.css": "/css/vendor.css",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
+    "/js/business.js": "/js/business.js",
     "/js/job.js": "/js/job.js",
     "/js/recruit.js": "/js/recruit.js",
     "/js/admin/menu.es5.js": "/js/admin/menu.es5.js",
