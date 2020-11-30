@@ -18,7 +18,7 @@
         @section('header')
             <header class="header">
                 <a href="#" class="header__logo">
-                    <img src="images/common/logo.png" alt="SAMA">
+                    <img src="/images/common/logo.png" alt="SAMA">
                 </a>
                 <nav class="header__nav">
                     <ul>
