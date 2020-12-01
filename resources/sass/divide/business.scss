@@ -465,6 +465,55 @@
     }
 }
 
+.business-intro {
+    position: relative;
+    width: 100%;
+    margin-left: vw(142px);
+
+    .slide-info {
+        h2 {
+            display: block;
+            font: {
+                size: vw(70px);
+                weight: bold;
+            }
+            line-height: 1;
+        }
+
+        &__link {
+            display: block;
+            width: vw(225);
+            height: vw(59);
+            margin-top: vw(42px);
+            font-size: vw(27px);
+            text-align: center;
+            border: vw(2px) solid #000;
+            border-radius: vw(20px);
+            line-height: 1;
+        }
+
+    }
+
+    &__slide-info {
+        position: absolute !important;
+        left: 0;
+        width: vw(594px);
+    }
+
+    &__slide-img {
+        display: block;
+        width: vw(1164px);
+
+        .swiper-slide {
+            background-color: #000;
+        }
+
+        .swiper-slide-active {
+            background-color: red;
+        }
+    }
+}
+
 /* 문의하기 팝업 */
 .question-pop {
     width: vw(610px);

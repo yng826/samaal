@@ -59,6 +59,9 @@ Route::prefix('about-us')->group(function() {
 });
 
 Route::prefix('business')->group(function() {
+    Route::get('intro', function () {
+        return view('business.intro');
+    });
     Route::get('foil', function () {
         return view('business.foil.main');
     });
