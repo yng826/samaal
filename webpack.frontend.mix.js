@@ -16,6 +16,7 @@ mix
     .js('resources/js/recruit.js', 'public/js')
     .js('resources/js/job.js', 'public/js')
     .js('resources/js/works/business.js', 'public/js')
+    .js('resources/js/works/question.js', 'public/js')
     .extract(['vue','jquery'])
     // .extract(['jquery-ui', 'vue', 'bootstrap'], 'public/js/vendor.js')
     .autoload({

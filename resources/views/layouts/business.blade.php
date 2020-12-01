@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
         <script src="/js/app.js"></script>
+        <script src="/js/question.js"></script>
     </head>
     <body class="business">
         <!-- {{-- @section('sidebar')
@@ -99,27 +100,21 @@
                 <div class="question-pop__title">
                     <h3>문의하기</h3>
                 </div>
-                <form class="question-pop__info">
+                <form action="../../board/question_board" class="question-pop__info question-form" method="POST">
                     <ul>
                         <li>
-                            <h4>제품명</h4>
-                            <input type="text" value="">
+                            <h4>제품명2</h4>
+                            <input type="hidden" class="form-control" name="title" value="{{ $question_title }}">
+                            <input type="hidden" class="form-control" name="category" value="{{ $question_title }}">
+                            <input type="text" class="form-control" id="category" value="{{ $question_title }}" disabled>
                         </li>
                         <li>
                             <h4>작성자 메일 주소</h4>
-                            <div class="input-group email-input">
-                                <span class="email-input__local">
-                                    <input type="text" placeholder="입력해주세요."" value="">
-                                </span>
-                                <span class="email-input__separator">@</span>
-                                <span class="email-input__domain">
-                                    <input type="text" placeholder="직접입력" value="">
-                                </span>
-                            </div>
+                            <input type="text" class="form-control" name="email" placeholder="입력해주세요.">
                         </li>
                         <li>
                             <h4>내용</h4>
-                            <textarea placeholder="입력해주세요."></textarea>
+                            <textarea rows="5" class="form-control tinymce-editor" name="question" placeholder="입력해주세요."></textarea>
                         </li>
                         <li>
                             <h4>개인정보 이용 및 수집 동의</h4>
@@ -144,13 +139,13 @@
                             </div>
                             <div class="question-pop__form-check">
                                 <label class="question-pop__form-check--label">
-                                    <input class="form-check" type="checkbox">
+                                    <input class="form-check" type="checkbox" name="agree">
                                     <span>개인정보 이용 및 수집에 동의 합니다.</span>
                                 </label>
                             </div>
                         </li>
                     </ul>
-                    <button type="submit" class="question-pop__submit-btn">보내기</button>
+                    <button type="button" class="question-pop__submit-btn save-btn">보내기</button>
                 </form>
             </div>
 
@@ -160,7 +155,7 @@
                 <div class="manager-pop__title">
                     <h3>담당자</h3>
                 </div>
-                <dlv class="manager-pop__list">
+                <div class="manager-pop__list">
                     <dl>
                         <dt>담당자</dt>
                         <dd>김승주 팀장</dd>
@@ -250,5 +245,6 @@
         <script src="{{ mix('/js/manifest.js')}}"></script>
         <script src="{{ mix('/js/vendor.js')}}"></script>
         <script src="{{ mix('/js/business.js')}}"></script>
+        <script src="{{ mix('/js/question.js')}}"></script>
     </body>
 </html>

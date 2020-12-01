@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\MenuController as AdminMenuController;
 use App\Http\Controllers\Admin\NewsInfoController as NewsInfoController;
 use App\Http\Controllers\Admin\IrBoardController as IrBoardController;
 use App\Http\Controllers\Admin\IsoCertificationController as IsoCertificationController;
+
+use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
 use Illuminate\Support\Facades\Session;
 
 /*
@@ -59,61 +61,99 @@ Route::prefix('business')->group(function() {
         return view('business.foil.main');
     });
     Route::get('foil/capacitor', function () {
-        return view('business.foil.capacitor');
+        $data = [];
+        $data['question_title'] = 'Capacitor용 Foil';
+        return view('business.foil.capacitor', $data);
     });
     Route::get('foil/foil', function () {
-        return view('business.foil.foil');
+        $data = [];
+        $data['question_title'] = '연포장용 Foil';
+        return view('business.foil.foil', $data);
     });
     Route::get('foil/fin', function () {
-        return view('business.foil.fin');
+        $data = [];
+        $data['question_title'] = '열교환기용 Fin재';
+        return view('business.foil.fin', $data);
     });
     Route::get('foil/decoration', function () {
-        return view('business.foil.decoration');
+        $data = [];
+        $data['question_title'] = 'Decoration용 Foil';
+        return view('business.foil.decoration', $data);
     });
     Route::get('foil/line', function () {
-        return view('business.foil.line');
+        $data = [];
+        $data['question_title'] = 'Hair Line Foil';
+        return view('business.foil.line', $data);
     });
     Route::get('foil/restrictions', function () {
-        return view('business.foil.restrictions');
+        $data = [];
+        $data['question_title'] = '제약용 Foil';
+        return view('business.foil.restrictions', $data);
     });
     Route::get('foil/electronic', function () {
-        return view('business.foil.electronic');
+        $data = [];
+        $data['question_title'] = 'LIB 양극집전체용 > Foil -전자기기용';
+        return view('business.foil.electronic', $data);
     });
     Route::get('foil/car', function () {
-        return view('business.foil.car');
+        $data = [];
+        $data['question_title'] = 'LIB 양극집전체용 > Foil -자동차용';
+        return view('business.foil.car', $data);
     });
     Route::get('foil/external', function () {
-        return view('business.foil.external');
+        $data = [];
+        $data['question_title'] = 'LIB 외장재';
+        return view('business.foil.external', $data);
     });
     Route::get('foil/tab', function () {
-        return view('business.foil.tab');
+        $data = [];
+        $data['question_title'] = 'LIB Tab재';
+        return view('business.foil.tab', $data);
     });
     Route::get('package/retort', function () {
-        return view('business.package.retort');
+        $data = [];
+        $data['question_title'] = '레토르트 포장재';
+        return view('business.package.retort', $data);
     });
     Route::get('package/watertight', function () {
-        return view('business.package.watertight');
+        $data = [];
+        $data['question_title'] = '초발수 리드';
+        return view('business.package.watertight', $data);
     });
     Route::get('package/alu', function () {
-        return view('business.package.alu');
+        $data = [];
+        $data['question_title'] = 'ALU-ALU Cold Forming Foil';
+        return view('business.package.alu', $data);
     });
     Route::get('package/cigarette', function () {
-        return view('business.package.cigarette');
+        $data = [];
+        $data['question_title'] = '담배포장지';
+        return view('business.package.cigarette', $data);
     });
     Route::get('package/refill', function () {
-        return view('business.package.refill');
+        $data = [];
+        $data['question_title'] = '리필파우치';
+        return view('business.package.refill', $data);
     });
     Route::get('industry/insulation', function () {
-        return view('business.industry.insulation');
+        $data = [];
+        $data['question_title'] = '진공단열재용 필름';
+        return view('business.industry.insulation', $data);
     });
     Route::get('industry/sidemirror', function () {
-        return view('business.industry.sidemirror');
+        $data = [];
+        $data['question_title'] = '자동차용 사이드 미러 열선용 소재';
+        return view('business.industry.sidemirror', $data);
     });
     Route::get('industry/steel', function () {
-        return view('business.industry.steel');
+        $data = [];
+        $data['question_title'] = 'Steel/Aluminium Laminated Tape';
+        return view('business.industry.steel', $data);
     });
     Route::get('industry/paste', function () {
-        return view('business.industry.paste');
+        $data = [];
+        $data['question_title'] = '알루미늄 페이스트';
+        return view('business.industry.paste', $data);
     });
 });
 
@@ -172,6 +212,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('faq', Admin\FaqController::class);
+});
+
+Route::prefix('board')->group(function () {
+    Route::get('question_board/{category}', [QuestionBoardController::class, 'create']);
+    Route::resource('question_board', Board\QuestionBoardController::class);
 });
 
 Auth::routes();

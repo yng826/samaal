@@ -85,7 +85,7 @@
 
 
 <script>
-    const menu_create = () => {
+    const finance_create = () => {
 
         const init = () => {
             event_listener();
@@ -121,7 +121,7 @@
     }
 
     window.onload = function(){
-        menu_create();
+        finance_create();
     }
 </script>
 @endsection
