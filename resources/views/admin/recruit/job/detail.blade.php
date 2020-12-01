@@ -68,6 +68,27 @@
 
                     </table>
                 </div>
+                <div class="col-12">
+                    <table class="table">
+                        <tr>
+                            <th class="text-center align-middle" rowspan="{{ count($job->careers)+1 }}">경력사항</th>
+                            <th class="text-center">회사명</th>
+                            <th class="text-center">근무기간</th>
+                            <th class="text-center">직위</th>
+                            <th class="text-center">담당업무</th>
+                        </tr>
+
+                        @foreach ($job->careers as $career)
+                        <tr>
+                            <td class="text-center">{{ $career->career_name }}</td>
+                            <td class="text-center">{{ $career->career_start. ' ~ '. $career->career_end }}</td>
+                            <td class="text-center">{{ $career->career_position }}</td>
+                            <td class="text-center">{{ $career->career_role }}</td>
+                        </tr>
+                        @endforeach
+
+                    </table>
+                </div>
             </div>
         </div>
 

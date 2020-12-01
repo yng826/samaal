@@ -45,6 +45,11 @@ class Job extends Model
         return $this->hasMany('App\Models\Work\Education');
     }
 
+    public function careers()
+    {
+        return $this->hasMany('App\Models\Work\Career');
+    }
+
     public function recruit()
     {
         return $this->belongsTo('App\Models\Work\Recruit');
