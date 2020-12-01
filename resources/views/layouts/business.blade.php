@@ -247,6 +247,8 @@
         </footer>
 
         <div class="popup-marsk"></div>
-        <script src="/js/business.js"></script>
+        <script src="{{ mix('/js/manifest.js')}}"></script>
+        <script src="{{ mix('/js/vendor.js')}}"></script>
+        <script src="{{ mix('/js/business.js')}}"></script>
     </body>
 </html>

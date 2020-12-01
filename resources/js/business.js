@@ -59,7 +59,7 @@ const business_foil = () => {
         questionPop();
     };
 
-    business_init();
+    // business_init();
 }
 
 export default business_foil;

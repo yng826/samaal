@@ -8,15 +8,6 @@
 // require('../common');
 require('jquery-ui/ui/widgets/datepicker');
 window.Vue = require('vue');
-// import VuetifyDraggableTreeview from 'vuetify-draggable-treeview'
-// import "vuetify/dist/vuetify.css";
-// Vue.use(VuetifyDraggableTreeview);
-// import Vuetify from 'vuetify';
-// Vue.use(Vuetify, {
-//     component: {
-//         VuetifyDraggableTreeview
-//     }
-// });
 
 
 /**
