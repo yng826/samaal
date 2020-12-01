@@ -10,6 +10,8 @@
 import axios from 'axios';
 import {getHeader} from './config';
 import User from './job/User';
+// import Count from './job/Count'
+// import Vuex from 'vuex'
 
 require('./bootstrap');
 
@@ -17,6 +19,7 @@ require('./bootstrap');
 
 
 window.Vue = require('vue');
+// Vue.use(Vuex);
 
 // console.log(getHeader());
 
@@ -38,6 +41,8 @@ window.Vue = require('vue');
 Vue.component('login-component', require('./components/job/Login.vue').default);
 Vue.component('applicant-list-component', require('./components/job/ApplicantList.vue').default);
 Vue.component('individual-info-component', require('./components/job/IndividualInfo.vue').default);
+Vue.component('education-component', require('./components/job/Education.vue').default);
+Vue.component('career-component', require('./components/job/Career.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -47,12 +52,15 @@ Vue.component('individual-info-component', require('./components/job/IndividualI
 window.$ = window.jQuery = require('jquery');
 
 
-
+import {JobStore} from './job/Store'
 document.addEventListener('DOMContentLoaded', () => {
-    console.log($('#email').val());
 
     const app = new Vue({
         el: '#app',
+        store: JobStore
     });
+
+    console.log('init job');
+
 
 });

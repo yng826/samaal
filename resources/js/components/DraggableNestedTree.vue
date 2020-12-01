@@ -5,6 +5,7 @@
             <span slot-scope="{node, index, path, tree}">
                 <b @click="tree.toggleFold(node, path)"
                     class="fa"
+                    :key="index"
                     :class="[
                     node.$folded ? 'fa-plus-circle text-yellow' : 'fa-minus-circle text-blue'
                     ]">

@@ -34,9 +34,9 @@ export default {
             axios.get('/api/work-with-us/job/', {
                 'headers': getHeader()
             })
-                .then((res)=> {
-                    this.items = res.data.data
-                });
+            .then((res)=> {
+                this.items = res.data.data
+            });
         } else {
             console.log('no auth');
         }
