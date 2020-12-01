@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Work\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class RecruitJobController extends Controller
 {
@@ -14,7 +16,7 @@ class RecruitJobController extends Controller
      * @param  int  $recruit_id
      * @return \Illuminate\Http\Response
      */
-    public function index($recruit_id)
+    public function index(Request $request, $recruit_id)
     {
         $recruits = DB::table('recruits')->orderBy('id', 'desc')->get();
 
@@ -22,15 +24,17 @@ class RecruitJobController extends Controller
             $recruit_id = $recruits[0]->id;
         }
 
-        $jobs = DB::table('job_applications')
-                ->leftJoin('users', 'job_applications.user_id', '=', 'users.id')
-                ->where('job_applications.recruit_id', $recruit_id)
-                ->select('job_applications.*', 'users.name')
-                ->orderBy('job_applications.id', 'desc')
-                ->paginate(10);
+        if (empty($request->status)) {
+            $where = ['recruit_id' => $recruit_id];
+        } else {
+            $where = ['recruit_id' => $recruit_id, 'status' => $request->status];
+        }
+
+        $jobs = Job::where($where)->with(['user'])->orderBy('id', 'desc')->paginate(10);
 
         return view('admin.recruit.job.list', [
             'recruit_id' => $recruit_id,
+            'status' => $request->status,
             'recruits' => $recruits,
             'jobs' => $jobs,
         ]);
@@ -60,12 +64,17 @@ class RecruitJobController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  int  $recruit_id
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($recruit_id, $id)
     {
-        //
+        $job = Job::find($id)->with(['user', 'userInfo', 'educations'])->first();
+
+        return view('admin.recruit.job.detail', [
+            'job' => $job,
+        ]);
     }
 
     /**
@@ -83,12 +92,19 @@ class RecruitJobController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  int  $recruit_id
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $recruit_id, $id)
     {
-        //
+        $affected = DB::table('job_applications')
+                    ->where('id', $id)
+                    ->update([
+                        'status'=> $request->status
+                    ]);
+
+        return redirect("/admin/recruit/{$recruit_id}/job/{$id}");
     }
 
     /**
@@ -100,5 +116,22 @@ class RecruitJobController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Upload file download.
+     *
+     * @param  int  $recruit_id
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function fileDownload($recruit_id, $id)
+    {
+        $job = Job::find($id)->first();
+
+        $file = Storage::get($job->file_path);
+        $ext = pathinfo(storage_path(). $job->file_path, PATHINFO_EXTENSION);
+
+        return response($file, 200, ['Content-Disposition' => "attachment; filename=profile.". $ext]);
     }
 }

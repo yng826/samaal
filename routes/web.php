@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\MenuController as AdminMenuController;
 use App\Http\Controllers\Admin\NewsInfoController as NewsInfoController;
 use App\Http\Controllers\Admin\IrBoardController as IrBoardController;
 use App\Http\Controllers\Admin\IsoCertificationController as IsoCertificationController;
+use App\Http\Controllers\Admin\RecruitJobController as RecruitJobController;
 
 use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
 use Illuminate\Support\Facades\Session;
@@ -207,6 +208,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('recruit', Admin\RecruitController::class);
+    Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
     Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 
