@@ -80,15 +80,15 @@
                         <div class="form-group">
                             <label>키워드</label>
                             <div class="form-inline">
-                                <input type="text" class="form-control w-50" id="keyword">
-                                <button type="button" class="btn btn-primary text-white keyword-add-btn">추가</button>
+                                <input type="text" class="form-control w-50 mb-1" id="keyword">
+                                <button type="button" class="btn btn-primary text-white mb-1 keyword-add-btn">추가</button>
                             </div>
 
                             <div id="keyword-div">
                                 @foreach($menu_keywords as $menu_keyword)
                                 <div class="form-inline">
-                                    <input type="text" class="form-control w-50" name="keyword[]" value="{{ $menu_keyword->keyword }}">
-                                    <button type="button" class="btn btn-danger text-white keyword-del-btn">삭제</button>
+                                    <input type="text" class="form-control w-50 mb-1" name="keyword[]" value="{{ $menu_keyword->keyword }}">
+                                    <button type="button" class="btn btn-danger text-white mb-1 keyword-del-btn">삭제</button>
                                 </div>
                                 @endforeach
                             </div>
@@ -140,8 +140,8 @@ const menu_create = () => {
         $('.keyword-add-btn').on('click', function() {
             const val = $('#keyword').val();
             let html = '<div class="form-inline">';
-            html += '<input type="text" class="form-control w-50" name="keyword[]" value="'+val+'">';
-            html += '<button type="button" class="btn btn-danger text-white keyword-del-btn">삭제</button>';
+            html += '<input type="text" class="form-control w-50 mb-1" name="keyword[]" value="'+val+'">';
+            html += '<button type="button" class="btn btn-danger text-white mb-1 keyword-del-btn">삭제</button>';
             html += '</div>';
             $('#keyword-div').append(html);
             $('#keyword').val('');
@@ -186,4 +186,9 @@ window.onload = function(){
 
 @section('css')
     <link rel="stylesheet" href="/css/admin.css">
+@stop
+
+@section('js')
+    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
+    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
 @stop

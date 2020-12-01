@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '메뉴')
+@section('title', '재무정보 관리')
 
 @section('content_header')
     <h1>재무정보 관리</h1>
@@ -130,4 +130,8 @@
     <link rel="stylesheet" href="/css/admin.css">
 @stop
 
+@section('js')
+    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
+    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+@stop
 

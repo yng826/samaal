@@ -8,8 +8,10 @@ use App\Http\Controllers\Admin\MenuController as AdminMenuController;
 use App\Http\Controllers\Admin\NewsInfoController as NewsInfoController;
 use App\Http\Controllers\Admin\IrBoardController as IrBoardController;
 use App\Http\Controllers\Admin\IsoCertificationController as IsoCertificationController;
+use App\Http\Controllers\Admin\RecruitJobController as RecruitJobController;
 
 use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
+use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
 use Illuminate\Support\Facades\Session;
 
 /*
@@ -174,6 +176,10 @@ Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function
     Route::resource('edu', Job\EducationController::class);
 });
 
+Route::prefix('board')->group(function () {
+    Route::resource('question_board', Board\QuestionBoardController::class);
+});
+
 Route::get('role', function () {
     return 'auth';
 })->middleware(['roles:admin']);
@@ -207,6 +213,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('recruit', Admin\RecruitController::class);
+    Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
     Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 
@@ -214,9 +221,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('faq', Admin\FaqController::class);
 });
 
-Route::prefix('board')->group(function () {
-    Route::get('question_board/{category}', [QuestionBoardController::class, 'create']);
-    Route::resource('question_board', Board\QuestionBoardController::class);
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('question_admin', Admin\QuestionAdminController::class);
+    Route::get('question_admin/{id}', [QuestionAdminController::class, 'show'])
+    ->where('id', '[0-9]+');
 });
 
 Auth::routes();
