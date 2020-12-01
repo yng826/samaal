@@ -71,7 +71,7 @@
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 <script>
-    const news_create = () => {
+    const ir_create = () => {
 
         const init = () => {
             event_listener();
@@ -166,7 +166,7 @@
     }
 
     window.onload = function(){
-        news_create();
+        ir_create();
     }
 </script>
 @endsection
