@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'IR 공고 관리')
+@section('title', '문의 관리')
 
 @section('content_header')
-    <h1>IR 공고 관리</h1>
+    <h1>문의 관리</h1>
 @stop
 @section('content')
 <div class="container">
@@ -11,7 +11,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <h3>IR 공고 리스트</h3>
+                    <h3>문의 리스트</h3>
                 </div>
             </div>
         </div>
@@ -21,25 +21,30 @@
                     <table class="table"  style="table-layout: fixed;">
                         <tr>
                             <th class="text-center" style="width: 80px;">번호</th>
-                            <th class="text-center">분류</th>
                             <th class="text-center">제목</th>
+                            <th class="text-center">문의 분류/제품명</th>
+                            <th class="text-center">작성자 메일 주소</th>
                             <th class="text-center">내용</th>
-                            <th class="text-center">첨부파일</th>
+                            <th class="text-center">답글 여부</th>
                             <th class="text-center">등록/수정일</th>
-                            <th class="text-center" style="width: 80px;">관리</th>
+                            <th class="text-center" style="width: 100px;">관리</th>
                         </tr>
 
                         @foreach ($boards as $board)
                         <tr>
                             <td class="text-center">{{ $board->id }}</td>
-                            <td class="text-center">{{ $board->category }}</td>
                             <td class="text-center">{{ $board->title }}</td>
-                            <td class="text-center" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{!! $board->contents !!}</td>
-                            <td class="text-center">
-                                <a class="btn btn-outline-info btn-xs" href="/admin/ir_board/file-download?id={{ $board->id }}">파일</button>
-                            </td>
+                            <td class="text-center">{{ $board->category }}</td>
+                            <td class="text-center">{{ $board->email }}</td>
+                            <td class="text-center" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{!! $board->question !!}</td>
+                            <td class="text-center">{{ $board->state_yn == 'y' ? '답변 완료' :'' }}</td>
                             <td class="text-center">{{ $board->updated_at ?? $board->created_at}}</td>
-                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/ir_board/{{$board->id}}/edit">수정</button></td>
+                            @if ($board->state_yn == 'y')
+                                <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/admin/question_admin/{{$board->id}}">상세보기</button></td>
+                            @else
+                                <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/question_admin/{{$board->id}}/edit">답글추가</button></td>
+                            @endif
+
                         </tr>
                         @endforeach
                     </table>
@@ -50,14 +55,6 @@
                                 {{$boards->links("pagination::bootstrap-4")}}
                         @endif
                     </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="card-footer">
-            <div class="row">
-                <div class="col-12 text-right">
-                    <a class="btn btn-primary text-white" href="/admin/ir_board/create">IR공고 추가</a>
                 </div>
             </div>
         </div>

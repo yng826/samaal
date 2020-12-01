@@ -256,7 +256,7 @@ return [
         [
             'text' => 'IR공고 관리',
             'url'  => 'admin/ir_board',
-            'icon' => 'fas fa-fw fa-dollar-sign',
+            'icon' => 'fas fa-fw fa-file-alt',
         ],
         [
             'text' => 'ISO 인증서',
@@ -267,6 +267,12 @@ return [
             'text' => '뉴스 관리',
             'url'  => 'admin/news_info',
             'icon' => 'fas fa-fw fa-newspaper',
+        ],
+        ['header' => '문의'],
+        [
+            'text' => '문의 관리',
+            'url'  => 'admin/question_admin',
+            'icon' => 'fas fa-fw fa-comment-dots',
         ],
         ['header' => '채용'],
         [
