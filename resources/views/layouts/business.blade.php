@@ -103,7 +103,7 @@
                 <form action="../../board/question_board" class="question-pop__info question-form" method="POST">
                     <ul>
                         <li>
-                            <h4>제품명2</h4>
+                            <h4>제품명</h4>
                             <input type="hidden" class="form-control" name="title" value="{{ $question_title }}">
                             <input type="hidden" class="form-control" name="category" value="{{ $question_title }}">
                             <input type="text" class="form-control" id="category" value="{{ $question_title }}" disabled>
