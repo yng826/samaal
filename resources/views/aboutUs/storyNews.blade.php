@@ -181,5 +181,8 @@
                 <p class="copyright">ⓒ 2020 SAMA. ALL RIGHTS RESERVED. DESIGNED BY DOMOBRODEUR</p>
             </div>
         </footer>
+
+        <script src="{{ mix('/js/manifest.js')}}"></script>
+        <script src="{{ mix('/js/vendor.js')}}"></script>
     </body>
 </html>
