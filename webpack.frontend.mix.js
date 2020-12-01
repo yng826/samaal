@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-merge-manifest');
 
 /*
  |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ mix
     .js('resources/js/works/business.js', 'public/js')
     .js('resources/js/works/question.js', 'public/js')
     .extract(['vue','jquery'])
+    .mergeManifest ()
     .autoload({
         jquery: ['$', 'jQuery', 'jquery'],
     })
-    .mergeManifest ()
     .sass('resources/sass/vendor.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css');
