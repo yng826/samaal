@@ -274,6 +274,11 @@ return [
             'url'  => 'admin/question_admin',
             'icon' => 'fas fa-fw fa-comment-dots',
         ],
+        [
+            'text' => 'FAQ 관리',
+            'url'  => 'admin/faq',
+            'icon' => 'fas fa-fw fa-comments',
+        ],
         ['header' => '채용'],
         [
             'text' => '채용공고',
@@ -282,7 +287,7 @@ return [
         ],
         [
             'text' => '지원내역',
-            'url'  => 'admin/job-applicant',
+            'url'  => 'admin/recruit/0/job',
             'icon' => 'fas fa-fw fa-file-signature',
         ],
         /*[

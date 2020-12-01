@@ -45,6 +45,41 @@ class Job extends Model
         return $this->hasMany('App\Models\Work\Education');
     }
 
+    public function careers()
+    {
+        return $this->hasMany('App\Models\Work\Career');
+    }
+
+    public function military()
+    {
+        return $this->hasOne('App\Models\Work\Military');
+    }
+
+    public function awards()
+    {
+        return $this->hasMany('App\Models\Work\Award');
+    }
+
+    public function certificates()
+    {
+        return $this->hasMany('App\Models\Work\Certificate');
+    }
+
+    public function languages()
+    {
+        return $this->hasMany('App\Models\Work\Language');
+    }
+
+    public function oas()
+    {
+        return $this->hasMany('App\Models\Work\Oa');
+    }
+
+    public function overseasStudys()
+    {
+        return $this->hasMany('App\Models\Work\OverseasStudy');
+    }
+
     public function recruit()
     {
         return $this->belongsTo('App\Models\Work\Recruit');
