@@ -70,7 +70,7 @@ class RecruitJobController extends Controller
      */
     public function show($recruit_id, $id)
     {
-        $job = Job::find($id)->with(['user', 'userInfo', 'educations', 'careers'])->first();
+        $job = Job::where('id', $id)->with(['user', 'userInfo', 'educations', 'careers'])->first();
 
         return view('admin.recruit.job.detail', [
             'job' => $job,
@@ -127,7 +127,7 @@ class RecruitJobController extends Controller
      */
     public function fileDownload($recruit_id, $id)
     {
-        $job = Job::find($id)->first();
+        $job = Job::where('id', $id)->first();
 
         $file = Storage::get($job->file_path);
         $ext = pathinfo(storage_path(). $job->file_path, PATHINFO_EXTENSION);

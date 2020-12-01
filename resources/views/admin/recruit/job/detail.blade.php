@@ -25,17 +25,17 @@
                                 <img src="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/file-download" height="120" />
                             </td>
                             <th class="text-center">한글</th>
-                            <td>{{ $job->user->name }}</td>
+                            <td>{{ $job->user->name ?? '' }}</td>
                             <th class="text-center">영문</th>
-                            <td>{{ $job->userInfo->name_en }}</td>
+                            <td>{{ $job->userInfo->name_en ?? '' }}</td>
                             <th class="text-center">생년월일</th>
-                            <td>{{ $job->userInfo->birth_day }}</td>
+                            <td>{{ $job->userInfo->birth_day ?? '' }}</td>
                         </tr>
                         <tr>
                             <th class="text-center">연락처</th>
                             <td>{{ $job->phone_decrypt }}</td>
                             <th class="text-center">이메일</th>
-                            <td>{{ $job->user->email }}</td>
+                            <td>{{ $job->user->email ?? '' }}</td>
                             <th class="text-center"></th>
                             <td></td>
                         </tr>
