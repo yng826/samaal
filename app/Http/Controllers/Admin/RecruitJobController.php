@@ -70,7 +70,9 @@ class RecruitJobController extends Controller
      */
     public function show($recruit_id, $id)
     {
-        $job = Job::where('id', $id)->with(['user', 'userInfo', 'educations', 'careers'])->first();
+        $job = Job::where('id', $id)
+                ->with(['user', 'userInfo', 'educations', 'careers', 'military', 'awards', 'certificates', 'languages', 'oas', 'overseasStudys'])
+                ->first();
 
         return view('admin.recruit.job.detail', [
             'job' => $job,
