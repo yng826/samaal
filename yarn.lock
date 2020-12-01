@@ -5935,6 +5935,10 @@ vuedraggable@^2.24.3:
   dependencies:
     sortablejs "1.10.2"
 
+vuejs-datepicker@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/vuejs-datepicker/-/vuejs-datepicker-1.6.2.tgz#83c1e8fd4108e7f1d01c061a7e344918f25e47ae"
+
 vuetify-draggable-treeview@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/vuetify-draggable-treeview/-/vuetify-draggable-treeview-0.0.6.tgz"
@@ -5942,6 +5946,10 @@ vuetify-draggable-treeview@^0.0.6:
 vuetify@^2.3.19:
   version "2.3.19"
   resolved "https://registry.npmjs.org/vuetify/-/vuetify-2.3.19.tgz"
+
+vuex@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.0.tgz#95efa56a58f7607c135b053350833a09e01aa813"
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"
