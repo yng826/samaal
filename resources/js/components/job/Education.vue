@@ -50,13 +50,6 @@ export default {
     mounted: function() {
         this.isAuth = getAuth();
         if ( this.isAuth ) {
-            // const user = getUser();
-            // axios.get('/api/work-with-us/job/', {
-            //     'headers': getHeader()
-            // })
-            // .then((res)=> {
-            //     this.items = res.data.data
-            // });
         } else {
             console.log('no auth');
         }
@@ -72,7 +65,7 @@ export default {
             });
         },
         removeItem: function(index) {
-            this.items.splice(index);
+            this.items.splice(index, 1);
             Swal.fire({
                 title: '임시삭제되었습니다!',
                 text: '저장해야 완전삭제됩니다.',

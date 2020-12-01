@@ -62,7 +62,7 @@ export default {
             });
         },
         removeItem: function(index) {
-            this.items.splice(index);
+            this.items.splice(index, 1);
             Swal.fire({
                 title: '임시삭제되었습니다!',
                 text: '저장해야 완전삭제됩니다.',

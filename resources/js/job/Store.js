@@ -19,6 +19,10 @@ export const JobStore = new Vuex.Store({
         ]
     },
     mutations: {
+        deleteEdu(state, payload) {
+
+            // return state.edu = payload
+        },
         updateEdu(state, payload) {
             return state.edu = payload
         },
