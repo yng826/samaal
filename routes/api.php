@@ -52,6 +52,18 @@ Route::prefix('work-with-us')->middleware('auth:api')->group(function () {
     Route::put('job/{id}', [JobController::class, 'update']);
 });
 
+
+Route::prefix('job-detail')->middleware(['auth:api'])->group(function () {
+    Route::resource('award', JobDetail\AwardController::class);
+    Route::resource('career', JobDetail\CareerController::class);
+    Route::resource('certificate', JobDetail\CertificateController::class);
+    Route::resource('education', JobDetail\EducationController::class);
+    Route::resource('language', JobDetail\LanguageController::class);
+    Route::resource('military', JobDetail\MilitaryController::class);
+    Route::resource('oa', JobDetail\OaController::class);
+    Route::resource('overseas_study', JobDetail\OverseasStudyController::class);
+});
+
 Route::prefix('admin')->middleware('auth:api')->group(function () {
     Route::get('user', [RecruitController::class, 'api_index' ]);
 });

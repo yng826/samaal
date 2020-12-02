@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Job;
+namespace App\Http\Controllers\JobDetail;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EducationController extends Controller
+class LanguageController extends Controller
 {
     /**
      * Display a listing of the resource.
