@@ -320,4 +320,23 @@
     }
 }
 
-/*모바일 사이즈*/
+/*태블릿 세로 사이즈*/
+@media all and (min-width:768px) and (max-width:1023px) {
+    .about-ci {
+        &__identity {
+            &--area {
+                h3 {
+                    font: {
+                        size: vw(60px);
+                    }
+                }
+
+                p {
+                    font-size: vw(36px);
+                    line-height: vw(64px);
+                }
+            }
+        }
+    }
+
+}

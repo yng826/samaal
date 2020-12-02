@@ -379,11 +379,28 @@
     z-index: 1;
 }
 
+/* 태블릿 세로 사이즈 */
+@media all and (min-width:768px) and (max-width:1023px) {
+    // @import "./lib/vw";
+
+    /* 서브페이지 레이아웃*/
+    .contents-wrap {
+        &__title {
+            h2 {
+                font : {
+                    size: vw(80px);
+                }
+            }
+        }
+
+        &__section {
+            max-width: vw(1600px);
+        }
+    }
+}
+
 /* 모바일 사이즈 */
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
     @import "./lib/vw";
 
-    .header {
-
-    }
 }
