@@ -42,6 +42,13 @@ const common = () => {
             }
         })
 
+        $(".header__m-nav--gnb__item").on("click",function(){
+            $(this)
+                .toggleClass("on")
+                .siblings()
+                .removeClass("on");
+        })
+
     }
 
     const common_init = () => {

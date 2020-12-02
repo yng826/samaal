@@ -526,10 +526,23 @@
                         font-weight: bold;
                         color: #000;
                     }
+                    cursor: pointer;
 
                     a {
                         font-size: 23px;
                         color: #000;
+                    }
+
+                    &.on {
+                        .menu__sub {
+                            display: block;
+                        }
+                    }
+                }
+
+                .menu {
+                    &__sub {
+                        display: none;
                     }
                 }
             }
