@@ -1,7 +1,7 @@
 <template>
     <div class="career-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>경력사항 <button @click.prevent="removeItem(id)">삭제</button></h3>
+            <h3>경력사항 {{ job_id }} <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
             <div class="form-group">
                 <label for="career_start">근무기간</label>
                 <Datepicker class="inline-block" name="career_start" :language="ko" v-model="item.career_start" format="yyyy-MM-dd"></Datepicker>
@@ -33,7 +33,7 @@ import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 export default {
-    props: ['action'],
+    props: ['job_id'],
     components: {
         Datepicker,
     },
@@ -54,6 +54,7 @@ export default {
     methods: {
         addItem: function() {
             this.items.push({
+                job_id: job_id,
                 career_start: "",
                 career_end: "",
                 career_name: "",
@@ -72,13 +73,27 @@ export default {
         },
         saveItems: function() {
             // this.$store.commit('updateCareer', items);
-            console.log(this.$store.state);
-            Swal.fire({
-                title: '저장되었습니다!',
-                // text: '계속 이용하시기 바랍니다.',
-                icon: 'success',
-                confirmButtonText: '확인'
-            });
+            let headers = getHeader();
+            // headers['content-type'] = 'multipart/form-data';
+            let url, method;
+            url = '/job-detail/career/' + job_id;
+            method = 'post';
+            axios({
+                method: method,
+                url: url,
+                headers: headers,
+                data: {career: this.$store.state.career}
+            })
+            .then(res => {
+                Swal.fire({
+                    title: '저장되었습니다!',
+                    icon: 'success',
+                    confirmButtonText: '확인'
+                });
+            })
+            .catch(err => {
+                console.error(err);
+            })
         }
     }
 }

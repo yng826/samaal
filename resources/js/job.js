@@ -43,6 +43,12 @@ Vue.component('applicant-list-component', require('./components/job/ApplicantLis
 Vue.component('individual-info-component', require('./components/job/IndividualInfo.vue').default);
 Vue.component('education-component', require('./components/job/Education.vue').default);
 Vue.component('career-component', require('./components/job/Career.vue').default);
+Vue.component('military-component', require('./components/job/Military.vue').default);
+Vue.component('oa-component', require('./components/job/OA.vue').default);
+Vue.component('language-component', require('./components/job/Language.vue').default);
+Vue.component('award-component', require('./components/job/Award.vue').default);
+Vue.component('certificate-component', require('./components/job/Certificate.vue').default);
+Vue.component('overseas-component', require('./components/job/OverseasStudy.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -61,6 +67,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     console.log('init job');
-
 
 });

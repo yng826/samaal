@@ -52,19 +52,16 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import {getHeader, getAuth, getUser, apiDomain} from '../../config'
 export default {
-    props: ['index'],
+    props: ['job_id'],
     computed: {
         job () { return this.$store.state.job },
         user () { return this.$store.state.user },
         user_info () { return this.$store.state.user_info },
+        oversea () { return this.$store.state.oversea },
     },
     data: function() {
         return {
             isAuth: false,
-            // item: {
-            //     user: { name: '' },
-            //     user_info: {},
-            // }
         }
     },
     mounted: function() {
@@ -75,12 +72,36 @@ export default {
     },
     methods: {
         getInfo: function() {
-            axios.get('/api/work-with-us/job/'+ this.index,{
+            axios.get('/api/work-with-us/job/'+ this.job_id,{
                 'headers': getHeader()
             })
             .then(res => {
+                // this.$store.state.oversea = res.data.overseas_studys;
                 // console.log(res.data);
-                this.item = res.data;
+                this.$store.state.job = {
+                    address_1: res.data.address_1,
+                    address_2: res.data.address_2,
+                    cover_letter: res.data.cover_letter,
+                    file_path: res.data.file_path,
+                    id: res.data.id,
+                    phone_decrypt: res.data.phone_decrypt,
+                    recruit_id: res.data.recruit_id,
+                    status: res.data.status,
+                    status_ko: res.data.status_ko,
+                    created_at: res.data.created_at,
+                    updated_at: res.data.updated_at,
+                    user_id: res.data.user_id,
+                };
+                this.$store.state.user = res.data.user;
+                this.$store.state.user_info = res.data.user_info;
+                this.$store.state.award = res.data.awards;
+                this.$store.state.career = res.data.careers;
+                this.$store.state.certificate = res.data.certificates;
+                this.$store.state.education = res.data.educations;
+                this.$store.state.language = res.data.languages;
+                this.$store.state.military = res.data.military;
+                this.$store.state.oa = res.data.oas;
+                this.$store.state.oversea = res.data.overseas_studys;
             })
             .catch(err => {
                 console.error(err);

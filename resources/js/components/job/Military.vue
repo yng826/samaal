@@ -1,29 +1,29 @@
 <template>
-    <div class="education-container">
+    <div class="military-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>학력사항 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+            <h3>병역사항</h3>
+            <input type="hidden" name="id" v-model="item.id">
             <div class="form-group">
-                <label for="school_name">학교명</label>
-                <input type="text" name="school_name" v-model="item.school_name">
+                <label for="military_type">구분/구별</label>
+                <input type="text" name="military_type" v-model="item.military_type">
             </div>
             <div class="form-group">
-                <label for="edu_major">전공</label>
-                <input type="text" name="edu_major" v-model="item.edu_major">
+                <label for="military_discharge">제대구분</label>
+                <input type="text" name="military_discharge" v-model="item.military_discharge">
             </div>
             <div class="form-group">
-                <label for="edu_grade">성적</label>
-                <input type="text" name="edu_grade" v-model="item.edu_grade">
+                <label for="military_rank">계급</label>
+                <input type="text" name="military_rank" v-model="item.military_rank">
             </div>
             <div class="form-group">
-                <label for="graduation">성적</label>
-                <input type="text" name="graduation" v-model="item.graduation">
+                <label for="military_exemption">군면제사유</label>
+                <input type="text" name="military_exemption" v-model="item.military_exemption">
             </div>
             <div class="form-group">
-                <label for="edu_start">재학기간</label>
-                <Datepicker class="inline-block" name="edu_start" :language="ko" v-model="item.edu_start" format="yyyy-MM-dd"></Datepicker>
-                <Datepicker class="inline-block" name="edu_end" :language="ko" v-model="item.edu_end" format="yyyy-MM-dd"></Datepicker>
+                <label for="military_duration_start">군복무기간</label>
+                <Datepicker class="inline-block" name="military_duration_start" :military="ko" v-model="item.military_duration_start" format="yyyy-MM-dd"></Datepicker>
+                <Datepicker class="inline-block" name="military_duration_end" :military="ko" v-model="item.military_duration_end" format="yyyy-MM-dd"></Datepicker>
             </div>
-            <div>{{ item.status_ko }}</div>
         </form>
         <div class="button-group">
             <button class="btn-add" @click="addItem">추가</button>
@@ -40,10 +40,12 @@ import {getHeader, getAuth, getUser} from '../../config'
 export default {
     props: ['action'],
     components: {
-        Datepicker
+        Datepicker,
     },
     computed: {
-        items () { return this.$store.state.education }
+        items () {
+        return this.$store.state.military
+        }
     },
     data: function() {
         return {
@@ -52,21 +54,19 @@ export default {
         }
     },
     mounted: function() {
-        this.isAuth = getAuth();
-        if ( this.isAuth ) {
-        } else {
-            console.log('no auth');
-        }
+        // this.isAuth = getAuth();
     },
     methods: {
         addItem: function() {
             this.items.push({
-                school_name: "",
-                edu_major: "",
-                edu_grade: "",
-                edu_start: "",
-                edu_end: "",
-                graduation: "",
+                id: '',
+                military_type: '',
+                military_discharge: '',
+                military_rank: '',
+                military_exemption: '',
+                military_duration_start: '',
+                military_duration_end: '',
+
             });
         },
         removeItem: function(id, index) {
@@ -81,7 +81,7 @@ export default {
                     if ( id ) {
                         let headers = getHeader();
                         let url, method;
-                        url = '/api/job-detail/education/' + id;
+                        url = '/api/job-detail/military/' + id;
                         method = 'delete';
                         axios({
                             method: method,
@@ -122,7 +122,7 @@ export default {
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
-            url = '/api/job-detail/education/' + this.job_id;
+            url = '/api/job-detail/military/' + this.job_id;
             method = 'put';
             axios({
                 method: method,

@@ -18,6 +18,7 @@ mix
     .js('resources/js/job.js', 'public/js')
     .js('resources/js/works/business.js', 'public/js')
     .js('resources/js/works/question.js', 'public/js')
+    .sourceMaps()
     .extract(['vue','jquery'])
     .mergeManifest ()
     .autoload({

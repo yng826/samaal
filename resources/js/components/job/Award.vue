@@ -1,29 +1,19 @@
 <template>
-    <div class="education-container">
+    <div class="award-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>학력사항 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+            <h3>수상경력 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
             <div class="form-group">
-                <label for="school_name">학교명</label>
-                <input type="text" name="school_name" v-model="item.school_name">
+                <label for="award_name">시상명</label>
+                <input type="text" name="award_name" v-model="item.award_name">
             </div>
             <div class="form-group">
-                <label for="edu_major">전공</label>
-                <input type="text" name="edu_major" v-model="item.edu_major">
+                <label for="award_group_name">단체명</label>
+                <input type="text" name="award_group_name" v-model="item.award_group_name">
             </div>
             <div class="form-group">
-                <label for="edu_grade">성적</label>
-                <input type="text" name="edu_grade" v-model="item.edu_grade">
+                <label for="award_date">수상일</label>
+                <Datepicker class="inline-block" name="award_date" :language="ko" v-model="item.award_date" format="yyyy-MM-dd"></Datepicker>
             </div>
-            <div class="form-group">
-                <label for="graduation">성적</label>
-                <input type="text" name="graduation" v-model="item.graduation">
-            </div>
-            <div class="form-group">
-                <label for="edu_start">재학기간</label>
-                <Datepicker class="inline-block" name="edu_start" :language="ko" v-model="item.edu_start" format="yyyy-MM-dd"></Datepicker>
-                <Datepicker class="inline-block" name="edu_end" :language="ko" v-model="item.edu_end" format="yyyy-MM-dd"></Datepicker>
-            </div>
-            <div>{{ item.status_ko }}</div>
         </form>
         <div class="button-group">
             <button class="btn-add" @click="addItem">추가</button>
@@ -38,12 +28,14 @@ import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 export default {
-    props: ['action'],
+    props: ['job_id'],
     components: {
-        Datepicker
+        Datepicker,
     },
     computed: {
-        items () { return this.$store.state.education }
+        items () {
+        return this.$store.state.award
+        }
     },
     data: function() {
         return {
@@ -52,21 +44,15 @@ export default {
         }
     },
     mounted: function() {
-        this.isAuth = getAuth();
-        if ( this.isAuth ) {
-        } else {
-            console.log('no auth');
-        }
+        // this.isAuth = getAuth();
     },
     methods: {
         addItem: function() {
             this.items.push({
-                school_name: "",
-                edu_major: "",
-                edu_grade: "",
-                edu_start: "",
-                edu_end: "",
-                graduation: "",
+                id: "",
+                award_name: "",
+                award_group_name: "",
+                award_date: "",
             });
         },
         removeItem: function(id, index) {
@@ -81,7 +67,7 @@ export default {
                     if ( id ) {
                         let headers = getHeader();
                         let url, method;
-                        url = '/api/job-detail/education/' + id;
+                        url = '/api/job-detail/award/' + id;
                         method = 'delete';
                         axios({
                             method: method,
@@ -122,7 +108,7 @@ export default {
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
-            url = '/api/job-detail/education/' + this.job_id;
+            url = '/api/job-detail/award/' + this.job_id;
             method = 'put';
             axios({
                 method: method,

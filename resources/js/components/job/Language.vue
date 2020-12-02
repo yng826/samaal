@@ -1,29 +1,28 @@
 <template>
-    <div class="education-container">
+    <div class="language-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>학력사항 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+            <h3>외국어 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
             <div class="form-group">
-                <label for="school_name">학교명</label>
-                <input type="text" name="school_name" v-model="item.school_name">
+                <label for="language_type">구분</label>
+                <input type="text" name="language_type" v-model="item.language_type">
             </div>
             <div class="form-group">
-                <label for="edu_major">전공</label>
-                <input type="text" name="edu_major" v-model="item.edu_major">
+                <label for="language_name">TEST명</label>
+                <input type="text" name="language_name" v-model="item.language_name">
             </div>
             <div class="form-group">
-                <label for="edu_grade">성적</label>
-                <input type="text" name="edu_grade" v-model="item.edu_grade">
+                <label for="language_grade">점수/등급</label>
+                <input type="text" name="language_grade" v-model="item.language_grade">
             </div>
             <div class="form-group">
-                <label for="graduation">성적</label>
-                <input type="text" name="graduation" v-model="item.graduation">
+                <label for="language_level">회화수준</label>
+                <input type="text" name="language_level" v-model="item.language_level">
             </div>
             <div class="form-group">
-                <label for="edu_start">재학기간</label>
-                <Datepicker class="inline-block" name="edu_start" :language="ko" v-model="item.edu_start" format="yyyy-MM-dd"></Datepicker>
-                <Datepicker class="inline-block" name="edu_end" :language="ko" v-model="item.edu_end" format="yyyy-MM-dd"></Datepicker>
+                <label for="language_start">재학기간</label>
+                <Datepicker class="inline-block" name="language_start" :language="ko" v-model="item.language_start" format="yyyy-MM-dd"></Datepicker>
+                <Datepicker class="inline-block" name="language_end" :language="ko" v-model="item.language_end" format="yyyy-MM-dd"></Datepicker>
             </div>
-            <div>{{ item.status_ko }}</div>
         </form>
         <div class="button-group">
             <button class="btn-add" @click="addItem">추가</button>
@@ -40,10 +39,12 @@ import {getHeader, getAuth, getUser} from '../../config'
 export default {
     props: ['action'],
     components: {
-        Datepicker
+        Datepicker,
     },
     computed: {
-        items () { return this.$store.state.education }
+        items () {
+        return this.$store.state.language
+        }
     },
     data: function() {
         return {
@@ -52,21 +53,18 @@ export default {
         }
     },
     mounted: function() {
-        this.isAuth = getAuth();
-        if ( this.isAuth ) {
-        } else {
-            console.log('no auth');
-        }
+        // this.isAuth = getAuth();
     },
     methods: {
         addItem: function() {
             this.items.push({
-                school_name: "",
-                edu_major: "",
-                edu_grade: "",
-                edu_start: "",
-                edu_end: "",
-                graduation: "",
+                id: "",
+                language_type: "",
+                language_start: "",
+                language_end: "",
+                language_name: "",
+                language_grade: "",
+                language_level: "",
             });
         },
         removeItem: function(id, index) {
@@ -81,13 +79,13 @@ export default {
                     if ( id ) {
                         let headers = getHeader();
                         let url, method;
-                        url = '/api/job-detail/education/' + id;
+                        url = '/api/job-detail/language/' + id;
                         method = 'delete';
                         axios({
                             method: method,
                             url: url,
                             headers: headers,
-                            data: {oa: this.$store.state.oa}
+                            data: {language: this.$store.state.language}
                         })
                         .then(res => {
                             Swal.fire({
@@ -120,31 +118,12 @@ export default {
         },
         saveItems: function() {
             console.log(this.$store.state);
-            let headers = getHeader();
-            let url, method;
-            url = '/api/job-detail/education/' + this.job_id;
-            method = 'put';
-            axios({
-                method: method,
-                url: url,
-                headers: headers,
-                data: {oa: this.$store.state.oa}
-            })
-            .then(res => {
-                Swal.fire({
-                    title: '저장되었습니다!',
-                    icon: 'success',
-                    confirmButtonText: '확인'
-                });
-            })
-            .catch(err => {
-                Swal.fire({
-                    title: '삭제에 실패했습니다!',
-                    icon: 'danger',
-                    confirmButtonText: '확인'
-                });
-                console.error(err);
-            })
+            Swal.fire({
+                title: '저장되었습니다!',
+                // text: '계속 이용하시기 바랍니다.',
+                icon: 'success',
+                confirmButtonText: '확인'
+            });
         }
     }
 }

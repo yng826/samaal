@@ -1,29 +1,33 @@
 <template>
-    <div class="education-container">
+    <div class="overseas_study-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>학력사항 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+            <h3>해외연수 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+            <input type="hidden" name="id" v-model="item.id">
             <div class="form-group">
-                <label for="school_name">학교명</label>
+                <label for="country_name">국가/도시</label>
+                <input type="text" name="country_name" v-model="item.country_name">
+            </div>
+            <div class="form-group">
+                <label for="school_name">학교/단체</label>
                 <input type="text" name="school_name" v-model="item.school_name">
             </div>
             <div class="form-group">
-                <label for="edu_major">전공</label>
-                <input type="text" name="edu_major" v-model="item.edu_major">
+                <label for="overseas_study_start">기간</label>
+                <Datepicker class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
+                <Datepicker class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
             </div>
             <div class="form-group">
-                <label for="edu_grade">성적</label>
-                <input type="text" name="edu_grade" v-model="item.edu_grade">
+                <label for="overseas_study_name">연수명</label>
+                <input type="text" name="overseas_study_name" v-model="item.overseas_study_name">
             </div>
             <div class="form-group">
-                <label for="graduation">성적</label>
-                <input type="text" name="graduation" v-model="item.graduation">
+                <label for="overseas_study_purpose">연수목적</label>
+                <input type="text" name="overseas_study_purpose" v-model="item.overseas_study_purpose">
             </div>
             <div class="form-group">
-                <label for="edu_start">재학기간</label>
-                <Datepicker class="inline-block" name="edu_start" :language="ko" v-model="item.edu_start" format="yyyy-MM-dd"></Datepicker>
-                <Datepicker class="inline-block" name="edu_end" :language="ko" v-model="item.edu_end" format="yyyy-MM-dd"></Datepicker>
+                <label for="overseas_study_contents">연수내용</label>
+                <input type="text" name="overseas_study_contents" v-model="item.overseas_study_contents">
             </div>
-            <div>{{ item.status_ko }}</div>
         </form>
         <div class="button-group">
             <button class="btn-add" @click="addItem">추가</button>
@@ -38,12 +42,14 @@ import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 export default {
-    props: ['action'],
+    props: ['job_id'],
     components: {
-        Datepicker
+        Datepicker,
     },
     computed: {
-        items () { return this.$store.state.education }
+        items () {
+            return this.$store.state.oversea
+        }
     },
     data: function() {
         return {
@@ -52,21 +58,19 @@ export default {
         }
     },
     mounted: function() {
-        this.isAuth = getAuth();
-        if ( this.isAuth ) {
-        } else {
-            console.log('no auth');
-        }
+        // this.isAuth = getAuth();
     },
     methods: {
         addItem: function() {
             this.items.push({
+                id: "",
+                country_name: "",
                 school_name: "",
-                edu_major: "",
-                edu_grade: "",
-                edu_start: "",
-                edu_end: "",
-                graduation: "",
+                overseas_study_start: "",
+                overseas_study_end: "",
+                overseas_study_name: "",
+                overseas_study_position: "",
+                overseas_study_role: "",
             });
         },
         removeItem: function(id, index) {
@@ -81,13 +85,13 @@ export default {
                     if ( id ) {
                         let headers = getHeader();
                         let url, method;
-                        url = '/api/job-detail/education/' + id;
+                        url = '/api/job-detail/overseas_study/' + id;
                         method = 'delete';
                         axios({
                             method: method,
                             url: url,
                             headers: headers,
-                            data: {oa: this.$store.state.oa}
+                            data: {oversea: this.$store.state.oversea}
                         })
                         .then(res => {
                             Swal.fire({
@@ -122,13 +126,13 @@ export default {
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
-            url = '/api/job-detail/education/' + this.job_id;
+            url = '/api/job-detail/overseas_study/' + this.job_id;
             method = 'put';
             axios({
                 method: method,
                 url: url,
                 headers: headers,
-                data: {oa: this.$store.state.oa}
+                data: {oversea: this.$store.state.oversea}
             })
             .then(res => {
                 Swal.fire({
