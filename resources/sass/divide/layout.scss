@@ -38,6 +38,7 @@
 
         &--item {
             display: inline-block;
+            position: relative;
             padding: 0 vw(20px);
             height: 100%;
             cursor: pointer;
@@ -51,6 +52,54 @@
                     display: inline-block;
                     height: 100%;
                     vertical-align: middle;
+                }
+            }
+
+            &.on {
+                color: $titleColor;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: vw(5px);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $titleColor;
+                }
+
+                .header__nav--submenu {
+                    position: absolute;
+                    left: 0;
+                    display: block;
+                    width: vw(275px);
+                    border: 1px solid #b2b6c4;
+                    background-color: #fff;
+                    text-align: left;
+
+                    li {
+                        display: block;
+                        height: vw(41px);
+                        padding-left: vw(19px);
+                        color: #000;
+                        font-size: vw(15px);
+                        line-height: vw(41px);
+                        border-bottom: 1px solid #b2b6c4;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        a {
+                            display: block;
+
+                            &:hover {
+                                color: $titleColor;
+                                font-weight: bold;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -382,6 +431,110 @@
 /* 태블릿 세로 사이즈 */
 @media all and (min-width:768px) and (max-width:1023px) {
     // @import "./lib/vw";
+
+    .header {
+
+        &__logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__m-nav {
+            height: vw(90px);
+            width: vw(41px);
+            position: absolute;
+            left: vw(47px);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            cursor: pointer;
+
+            span {
+                background: #000;
+                position: absolute;
+                width: vw(41px);
+                height: vw(3px);
+                display: block;
+                right: 0;
+                transition: all .3s ease-in-out;
+                overflow: hidden;
+
+                &:first-child {
+                    top: vw(30px);
+                }
+
+                &:nth-child(2) {
+                    top: vw(44px);
+                }
+
+                &:nth-child(3) {
+                    top: vw(58px);
+                }
+            }
+
+            &.on{
+                span:first-child {
+                    transform: rotate(45deg);
+                    top: vw(35px);
+                    left: vw(9px);
+                    width: 20px;
+                }
+
+                span:nth-child(2) {
+                    transform: rotate(-45deg);
+                    top: vw(35px);
+                    left: vw(9px);
+                    width: 20px;
+                }
+
+                span:nth-child(3) {
+                    display: none
+                }
+            }
+
+            &--gnb {
+                position: absolute;
+                overflow: hidden;
+                transition: all .3s ease-in-out;
+                left: -100%;
+                width: 100%;
+                float: none;
+                position: fixed;
+                z-index: -1;
+                background: #fff;
+                top: 0;
+                height: 100%;
+                z-index: 1;
+
+                &.on {
+                    display: block;
+                    left: -5%;
+                    width: 110%;
+                    padding: 5%;
+                }
+
+                &__item {
+                    padding: 30px vw(47px) 0;
+                    span {
+                        font-size: 30px;
+                        font-weight: bold;
+                        color: #000;
+                    }
+
+                    a {
+                        font-size: 23px;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
 
     /* 서브페이지 레이아웃*/
     .contents-wrap {

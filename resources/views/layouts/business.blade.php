@@ -1,10 +1,8 @@
 <html>
     <head>
-        <title>삼아 - @yield('title')</title>
+        <title>App Name - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
-        <script src="/js/app.js"></script>
-        <script src="/js/question.js"></script>
     </head>
     <body class="business">
         <!-- {{-- @section('sidebar')
@@ -67,7 +65,7 @@
             </div>
             <div class="business-detail__contents">
                 <div class="business-detail__slide">
-                    <div class="swiper-container">
+                    <div class="swiper-container business-detail-swiper">
                         <div class="swiper-wrapper">
                             @yield('swiper-container')
                         </div>
@@ -75,7 +73,6 @@
                         <div class="swiper-button-prev swiper-button"></div>
                         <div class="swiper-pagination"></div>
                     </div>
-
                 </div>
                 <div class="business-detail__info info">
                     <h3 class="info__title">
@@ -244,7 +241,6 @@
         <div class="popup-marsk"></div>
         <script src="{{ mix('/js/manifest.js')}}"></script>
         <script src="{{ mix('/js/vendor.js')}}"></script>
-        <script src="{{ mix('/js/business.js')}}"></script>
-        <script src="{{ mix('/js/question.js')}}"></script>
+        <script src="{{ mix('/js/app.js')}}"></script>
     </body>
 </html>

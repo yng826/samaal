@@ -3,9 +3,8 @@
         <title>App Name - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
-        <script src="js/app.js"></script>
     </head>
-    <body>
+    <body class="about">
         <!-- {{-- @section('sidebar')
             This is the master sidebar.
         @show
@@ -48,6 +47,42 @@
                     </li>
                 </ul>
             </nav>
+            <div class="header__m-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="header__m-nav--gnb">
+                <li class="header__m-nav--gnb__item menu">
+                    <span class="menu__title">About US</span>
+                    <ul class="menu__sub">
+                        <li><a href="">Heritage</a></li>
+                        <li><a href="">Message from CEO</a></li>
+                        <li><a href="">Story & News</a></li>
+                        <li><a href="">재무정보</a></li>
+                        <li><a href="">Location</a></li>
+                    </ul>
+                </li>
+                <li class="header__m-nav--gnb__item menu">
+                    <span class="menu__title">For Business Partners</span>
+                    <ul class="menu__sub">
+                        <li><a href="#">알루미늄 호일</a></li>
+                        <li><a href="#">포장재</a></li>
+                        <li><a href="#">산업/건축용</a></li>
+                        <li><a href="#">Speciality</a></li>
+                        <li><a href="#">Innovation</a></li>
+                    </ul>
+                </li>
+                <li class="header__m-nav--gnb__item menu">
+                    <span class="menu__title">Work With Us</span>
+                    <ul class="menu__sub">
+                        <li><a href="#">채용공고</a></li>
+                        <li><a href="#">직무소개</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+
             <div class="header__search">
                 <ul>
                     <li class="language__kor"><a href="#">KOR</a></li>
@@ -151,5 +186,8 @@
                 <p class="copyright">ⓒ 2020 SAMA. ALL RIGHTS RESERVED. DESIGNED BY DOMOBRODEUR</p>
             </div>
         </footer>
+        <script src="{{ mix('/js/manifest.js') }}"></script>
+        <script src="{{ mix('/js/vendor.js') }}"></script>
+        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>

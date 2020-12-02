@@ -4,11 +4,11 @@ const about = () => {
     const locationSwiper = () => {
         const swiper = new Swiper('.about-location .swiper-container', {
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.about-location .swiper-button-next',
+                prevEl: '.about-location .swiper-button-prev',
             },
             pagination: {
-                el: '.swiper-pagination',
+                el: '.about-location .swiper-pagination',
             }
         });
     }

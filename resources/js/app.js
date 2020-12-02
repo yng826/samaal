@@ -4,8 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import common from './common';
-import business from './business';
 import about from './aboutUs';
+import business from './business';
 
 import Swiper from 'swiper/bundle';
 window.Swiper = Swiper;

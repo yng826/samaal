@@ -3,7 +3,6 @@
         <title>App Name - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
-        <script src="/js/app.js"></script>
     </head>
     <body>
         <!-- {{-- @section('sidebar')
@@ -62,23 +61,23 @@
             <div class="swiper-container business-intro__slide-info slide-info">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <h2>알루미늄 Foil</h2>
+                        <h2>알루미늄 Foil 1</h2>
                         <a href="#" class="slide-info__link">더 알아보기</a>
                     </div>
                     <div class="swiper-slide">
-                        <h2>포장재</h2>
+                        <h2>포장재  2</h2>
                         <a href="#" class="slide-info__link">더 알아보기</a>
                     </div>
                     <div class="swiper-slide">
-                        <h2>산업건축용</h2>
+                        <h2>산업건축용 3 </h2>
                         <a href="#" class="slide-info__link">더 알아보기</a>
                     </div>
                     <div class="swiper-slide">
-                        <h2>Speciality</h2>
+                        <h2>Speciality 4</h2>
                         <a href="#" class="slide-info__link">더 알아보기</a>
                     </div>
                     <div class="swiper-slide">
-                        <h2>Innovation</h2>
+                        <h2>Innovation 5</h2>
                         <a href="#" class="slide-info__link innovation-btn">더 알아보기</a>
                         <ul class="innovation-btn__box">
                             <li>
@@ -92,7 +91,7 @@
                 </div>
             </div>
 
-            <div class="swiper-container business-intro__slide-img">
+            <div class="swiper-container business-intro__slide-img" style="width: 500px;">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">1<img src="https://via.placeholder.com/400X600" alt=""></div>
                   <div class="swiper-slide">2<img src="https://via.placeholder.com/400X600" alt=""></div>
@@ -175,10 +174,31 @@
                 <p class="copyright">ⓒ 2020 SAMA. ALL RIGHTS RESERVED. DESIGNED BY DOMOBRODEUR</p>
             </div>
         </footer>
-
-
         <script src="{{ mix('/js/manifest.js')}}"></script>
         <script src="{{ mix('/js/vendor.js')}}"></script>
-        <script src="{{ mix('/js/business.js')}}"></script>
+        <script src="{{ mix('/js/app.js')}}"></script>
+        <script>
+            var galleryThumbs = new Swiper('.business-intro__slide-info', {
+                slidesPerView: 1,
+                loop: true,
+                loopedSlides: 4,
+            });
+            var galleryTop = new Swiper('.business-intro__slide-img', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            centeredSlides: false,
+            loop: true,
+            loopedSlides: 4,
+            pagination: {
+                el: '.business-intro__slide-img .swiper-pagination',
+              },
+              navigation: {
+                nextEl: '.business-intro__slide-img .swiper-button-next',
+                prevEl: '.business-intro__slide-img .swiper-button-prev',
+              },
+          });
+          galleryTop.controller.control = galleryThumbs;
+          galleryThumbs.controller.control = galleryTop;
+        </script>
     </body>
 </html>
