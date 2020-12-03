@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\JobDetail;
 
 use App\Http\Controllers\Controller;
+use App\Models\Work\Military;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -71,30 +72,47 @@ class MilitaryController extends Controller
     public function update(Request $request, $id)
     {
         if (empty($request->military['id'])) {
-            $affected = DB::table('job_applications_military')
-                        ->insert([
-                            'job_id' => $id,
-                            'military_type' => $request->military['military_type'],
-                            'military_discharge' => $request->military['military_discharge'],
-                            'military_rank' => $request->military['military_rank'],
-                            'military_exemption' => $request->military['military_exemption'],
-                            'military_duration_start' => date('Y-m-d', strtotime($request->military['military_duration_start'])),
-                            'military_duration_end' => date('Y-m-d', strtotime($request->military['military_duration_end'])),
-                        ]);
+            $military = new Military();
+            $military->job_id = $id;
+            $military->military_type = $request->military['military_type'];
+            $military->military_discharge = $request->military['military_discharge'];
+            $military->military_rank = $request->military['military_rank'];
+            $military->military_exemption = $request->military['military_exemption'];
+            $military->military_duration_start = date('Y-m-d', strtotime($request->military['military_duration_start']));
+            $military->military_duration_end = date('Y-m-d', strtotime($request->military['military_duration_end']));
+            $military->save();
+            // $affected = DB::table('job_applications_military')
+            //             ->insert([
+            //                 'job_id' => $id,
+            //                 'military_type' => $request->military['military_type'],
+            //                 'military_discharge' => $request->military['military_discharge'],
+            //                 'military_rank' => $request->military['military_rank'],
+            //                 'military_exemption' => $request->military['military_exemption'],
+            //                 'military_duration_start' => date('Y-m-d', strtotime($request->military['military_duration_start'])),
+            //                 'military_duration_end' => date('Y-m-d', strtotime($request->military['military_duration_end'])),
+            //             ]);
         } else {
-            $affected = DB::table('job_applications_military')
-                        ->where('id', $request->military['id'])
-                        ->update([
-                            'military_type' => $request->military['military_type'],
-                            'military_discharge' => $request->military['military_discharge'],
-                            'military_rank' => $request->military['military_rank'],
-                            'military_exemption' => $request->military['military_exemption'],
-                            'military_duration_start' => date('Y-m-d', strtotime($request->military['military_duration_start'])),
-                            'military_duration_end' => date('Y-m-d', strtotime($request->military['military_duration_end'])),
-                        ]);
+            $military = Military::find($request->military['id'])->first();
+            $military->military_type = $request->military['military_type'];
+            $military->military_discharge = $request->military['military_discharge'];
+            $military->military_rank = $request->military['military_rank'];
+            $military->military_exemption = $request->military['military_exemption'];
+            $military->military_duration_start = date('Y-m-d', strtotime($request->military['military_duration_start']));
+            $military->military_duration_end = date('Y-m-d', strtotime($request->military['military_duration_end']));
+            $military->save();
+            // $affected = DB::table('job_applications_military')
+            //             ->where('id', $request->military['id'])
+            //             ->update([
+            //                 'military_type' => $request->military['military_type'],
+            //                 'military_discharge' => $request->military['military_discharge'],
+            //                 'military_rank' => $request->military['military_rank'],
+            //                 'military_exemption' => $request->military['military_exemption'],
+            //                 'military_duration_start' => date('Y-m-d', strtotime($request->military['military_duration_start'])),
+            //                 'military_duration_end' => date('Y-m-d', strtotime($request->military['military_duration_end'])),
+            //             ]);
         }
 
-        return 1;
+        return $military;
     }
 
     /**

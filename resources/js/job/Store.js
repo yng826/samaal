@@ -13,21 +13,12 @@ export const JobStore = new Vuex.Store({
         certificate: [{}],
         education: [{}],
         language: [{}],
-        military: {
-            id: '',
-            military_type: '',
-            military_discharge: '',
-            military_rank: '',
-            military_exemption: '',
-            military_duration_start: '',
-            military_duration_end: '',
-        },
+        military: {},
         oa: [{}],
         oversea: [{}],
     },
     mutations: {
         deleteEdu(state, payload) {
-
             // return state.edu = payload
         },
         updateEdu(state, payload) {
@@ -36,5 +27,19 @@ export const JobStore = new Vuex.Store({
         updateCareer(state, payload) {
             return state.career = payload
         },
+    },
+    getters: {
+        getMilitary() {
+            return {
+                id: '',
+                job_id: '',
+                military_type: '',
+                military_discharge: '',
+                military_rank: '',
+                military_exemption: '',
+                military_duration_start: '',
+                military_duration_end: '',
+            }
+        }
     }
 })

@@ -9,6 +9,8 @@ class Military extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $table = 'job_applications_military';
 
     public function job()
