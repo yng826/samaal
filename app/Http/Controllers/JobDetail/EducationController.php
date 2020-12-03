@@ -70,7 +70,33 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        foreach ($request->education as $education) {
+            if (empty($education['id'])) {
+                $affected = DB::table('job_applications_education')
+                            ->insert([
+                                'job_id' => $id,
+                                'school_name' => $education['school_name'],
+                                'edu_major' => $education['edu_major'],
+                                'edu_grade' => $education['edu_grade'],
+                                'edu_start' => date('Y-m-d', strtotime($education['edu_start'])),
+                                'edu_end' => date('Y-m-d', strtotime($education['edu_end'])),
+                                'graduation' => $education['graduation'],
+                            ]);
+            } else {
+                $affected = DB::table('job_applications_education')
+                            ->where('id', $education['id'])
+                            ->update([
+                                'school_name' => $education['school_name'],
+                                'edu_major' => $education['edu_major'],
+                                'edu_grade' => $education['edu_grade'],
+                                'edu_start' => date('Y-m-d', strtotime($education['edu_start'])),
+                                'edu_end' => date('Y-m-d', strtotime($education['edu_end'])),
+                                'graduation' => $education['graduation'],
+                            ]);
+            }
+        }
+
+        return 1;
     }
 
     /**
@@ -81,6 +107,8 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $affected = DB::table('job_applications_education')->where('id', $id)->delete();
+
+        return 1;
     }
 }

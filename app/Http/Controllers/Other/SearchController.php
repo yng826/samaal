@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\JobDetail;
+namespace App\Http\Controllers\Other;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class CertificateController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -70,27 +69,7 @@ class CertificateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        foreach ($request->certificate as $certificate) {
-            if (empty($certificate['id'])) {
-                $affected = DB::table('job_applications_certificate')
-                            ->insert([
-                                'job_id' => $id,
-                                'certificate_name' => $certificate['certificate_name'],
-                                'certificate_issuer' => $certificate['certificate_issuer'],
-                                'certificate_date' => date('Y-m-d', strtotime($certificate['certificate_date'])),
-                            ]);
-            } else {
-                $affected = DB::table('job_applications_certificate')
-                            ->where('id', $certificate['id'])
-                            ->update([
-                                'certificate_name' => $certificate['certificate_name'],
-                                'certificate_issuer' => $certificate['certificate_issuer'],
-                                'certificate_date' => date('Y-m-d', strtotime($certificate['certificate_date'])),
-                            ]);
-            }
-        }
-
-        return 1;
+        //
     }
 
     /**
@@ -101,8 +80,6 @@ class CertificateController extends Controller
      */
     public function destroy($id)
     {
-        $affected = DB::table('job_applications_certificate')->where('id', $id)->delete();
-
-        return 1;
+        //
     }
 }

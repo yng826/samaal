@@ -340,6 +340,18 @@
         position: relative;
         width: 100%;
         background-color: $titleColor;
+        &.pd-20 {
+            padding: vw(20px 0);
+        }
+        &.pd-30 {
+            padding: vw(30px 0);
+        }
+        &.pd-40 {
+            padding: vw(40px 0);
+        }
+        &.pd-50 {
+            padding: vw(50px 0);
+        }
 
         h2 {
             display: block;

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\JobDetail;
+namespace App\Http\Controllers\IR;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class CertificateController extends Controller
+class FinanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -47,7 +47,32 @@ class CertificateController extends Controller
      */
     public function show($id)
     {
-        //
+        $ir = []; // 그래프, 표
+        $ir_boards = []; // 전자공고
+        if ($id == 'consolidated') {  // 연결재무제표
+
+            $ir = DB::table('finance_infos')
+                   ->select('info_year', 'connect_sales','connect_operating_income', 'connect_net_income', 'connect_assets', 'connect_liability')
+                   ->orderBy('info_year', 'desc')->take(3)->get();
+
+            $ir_boards = DB::table('ir_boards')->where('category','연결재무')->orderBy('id', 'desc');
+
+
+        } else { // 별도재무제표
+
+            $ir = DB::table('finance_infos')
+                   ->select('info_year', 'separate_sales','separate_operating_income', 'separate_net_income', 'separate_assets', 'separate_liability')
+                   ->orderBy('info_year', 'desc')->take(3)->get();
+
+            $ir_boards = DB::table('ir_boards')->where('category','별도재무')->orderBy('id', 'desc');
+        }
+
+        $data = [];
+        $data['ir'] = $ir;
+        $data['ir_boards'] = $ir_boards;
+
+        debug($data);
+        return view('aboutUs.financial', $data);
     }
 
     /**
@@ -70,27 +95,7 @@ class CertificateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        foreach ($request->certificate as $certificate) {
-            if (empty($certificate['id'])) {
-                $affected = DB::table('job_applications_certificate')
-                            ->insert([
-                                'job_id' => $id,
-                                'certificate_name' => $certificate['certificate_name'],
-                                'certificate_issuer' => $certificate['certificate_issuer'],
-                                'certificate_date' => date('Y-m-d', strtotime($certificate['certificate_date'])),
-                            ]);
-            } else {
-                $affected = DB::table('job_applications_certificate')
-                            ->where('id', $certificate['id'])
-                            ->update([
-                                'certificate_name' => $certificate['certificate_name'],
-                                'certificate_issuer' => $certificate['certificate_issuer'],
-                                'certificate_date' => date('Y-m-d', strtotime($certificate['certificate_date'])),
-                            ]);
-            }
-        }
-
-        return 1;
+        //
     }
 
     /**
@@ -101,8 +106,6 @@ class CertificateController extends Controller
      */
     public function destroy($id)
     {
-        $affected = DB::table('job_applications_certificate')->where('id', $id)->delete();
-
-        return 1;
+        //
     }
 }

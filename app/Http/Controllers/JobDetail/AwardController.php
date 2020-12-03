@@ -4,6 +4,7 @@ namespace App\Http\Controllers\JobDetail;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AwardController extends Controller
 {
@@ -69,7 +70,27 @@ class AwardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        foreach ($request->award as $award) {
+            if (empty($award['id'])) {
+                $affected = DB::table('job_applications_award')
+                            ->insert([
+                                'job_id' => $id,
+                                'award_name' => $award['award_name'],
+                                'award_group_name' => $award['award_group_name'],
+                                'award_date' => date('Y-m-d', strtotime($award['award_date'])),
+                            ]);
+            } else {
+                $affected = DB::table('job_applications_award')
+                            ->where('id', $award['id'])
+                            ->update([
+                                'award_name' => $award['award_name'],
+                                'award_group_name' => $award['award_group_name'],
+                                'award_date' => date('Y-m-d', strtotime($award['award_date'])),
+                            ]);
+            }
+        }
+
+        return 1;
     }
 
     /**
@@ -80,6 +101,8 @@ class AwardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $affected = DB::table('job_applications_award')->where('id', $id)->delete();
+
+        return 1;
     }
 }
