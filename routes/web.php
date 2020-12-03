@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\RecruitJobController as RecruitJobController;
 
 use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
 use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
+use App\Http\Controllers\IR\FinanceController;
 use Illuminate\Support\Facades\Session;
 
 /*
@@ -56,6 +57,8 @@ Route::prefix('about-us')->group(function() {
     Route::get('story-news', function () {
         return view('aboutUs.storyNews');
     })->name('about-us.story');
+
+    Route::get('ir/financial/{type}', [FinanceController::class, 'show']);
 });
 
 Route::prefix('business')->group(function() {
