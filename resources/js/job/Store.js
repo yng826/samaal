@@ -8,11 +8,11 @@ export const JobStore = new Vuex.Store({
         job: {},
         user: {},
         user_info: {},
-        award: [],
-        career: [],
-        certificate: [],
-        education: [],
-        language: [],
+        award: [{}],
+        career: [{}],
+        certificate: [{}],
+        education: [{}],
+        language: [{}],
         military: {
             id: '',
             military_type: '',
@@ -22,8 +22,8 @@ export const JobStore = new Vuex.Store({
             military_duration_start: '',
             military_duration_end: '',
         },
-        oa: [],
-        oversea: [],
+        oa: [{}],
+        oversea: [{}],
     },
     mutations: {
         deleteEdu(state, payload) {

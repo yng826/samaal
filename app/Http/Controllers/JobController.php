@@ -113,7 +113,8 @@ class JobController extends Controller
     {
         $where = ['id'=> $id];
         DB::enableQueryLog(); // Enable query log
-        $item = Job::where($where)->with(['user', 'userInfo'])->first();
+        $item = Job::where($where)->with(
+            ['user','userInfo','educations','careers','military','awards','certificates','languages','oas','overseasStudys','recruit'])->first();
         // dd(DB::getQueryLog()); // Show results of log
         // return $item;
 

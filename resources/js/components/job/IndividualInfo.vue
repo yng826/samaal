@@ -68,6 +68,12 @@ export default {
         this.isAuth = getAuth();
         if (this.isAuth) {
             this.getInfo();
+        } else {
+            Swal.fire({
+                title: '로그인해주세요!',
+                icon: 'danger',
+                confirmButtonText: '확인'
+            });
         }
     },
     methods: {
