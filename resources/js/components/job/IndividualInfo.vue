@@ -40,7 +40,10 @@
                         <!-- <img :src="'/'+job.file_path" alt="" style="height: 300px;" v-if="job.file_path"> -->
                         <img src="https://via.placeholder.com/200X300" alt="">
                     </figure>
-                    <input type="file" name="pic" id="pic">
+                    <label for="pic" class="input-file-trigger">
+                        이미지 업로드
+                        <input type="file" name="pic" id="pic">
+                    </label>
                 </div>
             </div>
             <div class="button-group">
@@ -54,7 +57,9 @@
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import {getHeader, getAuth, getUser, apiDomain} from '../../config'
+import Language from './Language.vue'
 export default {
+  components: { Language },
     props: ['job_id'],
     computed: {
         job () { return this.$store.state.job },
