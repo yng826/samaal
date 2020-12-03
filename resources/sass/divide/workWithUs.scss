@@ -18,8 +18,9 @@
     }
 
     &__progress {
-        height: vw(250px);
+        // height: vw(250px);
         width: 100%;
+        padding: vw(56px) 0;
         margin-bottom: vw(18px);
         border: 1px solid #bcc0c3;
         background-color: #fff;
@@ -27,7 +28,7 @@
         ul {
             width: vw(657px);
             display: table;
-            margin: vw(56px) auto 0;
+            margin: 0 auto;
             counter-reset: step;
 
             li {
@@ -129,6 +130,7 @@
                 }
 
                 em {
+                    display: inline-block;
                     font-size: vw(15px);
                 }
             }
@@ -138,7 +140,7 @@
 
                 label {
                     display: inline-block;
-                    width: vw(132px);
+                    width: vw(173px);
                     color: #010101;
                     font-size: vw(20px);
                     vertical-align: top;
@@ -147,12 +149,13 @@
                 input {
                     display: inline-block;
                     padding: 0 vw(19px);
-                    width: vw(351px);
+                    width: vw(500px);
                     height: vw(54px);
                     background-color: #e8ecef;
                     border-radius: vw(5px);
                     border: none;
                     vertical-align: top;
+                    font-size: vw(18px);
 
                     &::-webkit-input-placeholder {
                         color: #9f9f9f;
@@ -173,6 +176,31 @@
                         margin-bottom: vw(10px);
                     }
                 }
+
+                .input_date-group {
+                    display: inline-block;
+                    width: vw(500px);
+                    vertical-align: middle;
+                    font-size: 0;
+
+                    span {
+                        display: inline-block;
+                        width: 8%;
+                        vertical-align: middle;
+                        font-size: vw(18px);
+                        text-align: center;;
+                    }
+
+                    .inline-block {
+                        display: inline-block;
+                        width: 46%;
+                        vertical-align: middle;
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
 
@@ -180,6 +208,18 @@
         .form-left {
             display: inline-block;
             width: 60%;
+
+            .form-group {
+
+                label {
+                    width: vw(132px);
+                }
+
+                input {
+                    width: vw(351px);
+                }
+
+            }
         }
 
         // 사진업로드
@@ -188,6 +228,30 @@
             width: vw(209px);
 
             .form-group {
+                .picture {
+                    position: relative;
+                    width: 100%;
+                    height: vw(300px);
+                    background-color: #e8ecef;
+
+                    .picture-text {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        font-size: vw(18px);
+                        color: #9f9f9f;
+                        text-align: center;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
                 .input-file-trigger {
                     display: block;
                     position: relative;
@@ -197,7 +261,7 @@
                     background: $titleColor;
                     color: #fff;
                     font: {
-                        size: vw(15px);
+                        size: vw(18px);
                         weight: 600;
                     }
                     line-height: vw(55px);
@@ -220,21 +284,21 @@
 
 }
 
-/*태블릿 세로 사이즈*/
-@media all and (min-width:768px) and (max-width:1023px) {
-    .about-ci {
-        &__identity {
-            &--area {
-                h3 {
-                    font: {
-                        size: vw(60px);
-                    }
-                }
 
-                p {
-                    font-size: vw(36px);
-                    line-height: vw(64px);
-                }
+/*태블릿 세로 사이즈*/
+@media all and (min-width:768px) and (min-width: 1024px)  {
+    @import "./lib/vw";
+
+    .work-apply {
+        &__contents {
+            max-width: vw(662px);
+            padding-top: vw(38px);
+            margin: 0 auto;
+        }
+
+        &__progress {
+            ul {
+                width: vw(534px);
             }
         }
     }

@@ -11,35 +11,35 @@
                 </div>
                 <div class="form-group">
                     <label for="">성명(영문)</label>
-                    <input type="text" name="name_en" v-model="user_info.name_en">
+                    <input type="text" name="name_en" v-model="user_info.name_en" placeholder="입력해주세요.">
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <input type="text" name="birth_day" v-model="user_info.birth_day">
+                    <input type="text" name="birth_day" v-model="user_info.birth_day" placeholder="입력해주세요.">
                 </div>
                 <div class="form-group">
                     <label for="">휴대폰번호</label>
-                    <input type="text" name="phone_decrypt" v-model="job.phone_decrypt">
+                    <input type="text" name="phone_decrypt" v-model="job.phone_decrypt" placeholder="입력해주세요.">
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
-                    <input type="text" name="email" v-model="user.email" disabled>
+                    <input type="text" name="email" v-model="user.email" disabled placeholder="입력해주세요.">
                 </div>
                 <div class="form-group">
                     <label for="">현거주지</label>
                     <div class="input-gorup">
-                        <input type="text" name="address_1" v-model="job.address_1">
-                        <input type="text" name="address_2" v-model="job.address_2">
+                        <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요.">
+                        <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요.">
                     </div>
                 </div>
             </div>
             <div class="form-wrap form-img">
                 <h3>사진업로드<em>(최근 3개월내)</em></h3>
                 <div class="form-group">
-                    <figure class="picture">
+                    <div class="picture">
+                        <span class="picture-text">사진을<br> 등록해주세요.</span>
                         <!-- <img :src="'/'+job.file_path" alt="" style="height: 300px;" v-if="job.file_path"> -->
-                        <img src="https://via.placeholder.com/200X300" alt="">
-                    </figure>
+                    </div>
                     <label for="pic" class="input-file-trigger">
                         이미지 업로드
                         <input type="file" name="pic" id="pic">
@@ -50,7 +50,6 @@
                 <button>저장</button>
             </div>
         </form>
-        <hr>
     </div>
 </template>
 <script>
