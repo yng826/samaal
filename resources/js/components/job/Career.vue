@@ -114,6 +114,7 @@ export default {
                     }
                     this.items.splice(index, 1);
                 } else if (result.isDenied) {
+                    this.isSended = true;
                 }
             });
 
