@@ -105,7 +105,7 @@ export default {
                 this.$store.state.certificate = res.data.certificates;
                 this.$store.state.education = res.data.educations;
                 this.$store.state.language = res.data.languages;
-                this.$store.state.military = res.data.military;
+                this.$store.state.military = res.data.military ? res.data.military : this.$store.getters.getMilitary;
                 this.$store.state.oa = res.data.oas;
                 this.$store.state.oversea = res.data.overseas_studys;
             })

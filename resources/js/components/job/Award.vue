@@ -41,6 +41,7 @@ export default {
         return {
             ko: ko,
             isAuth: false,
+            isSended: false,
         }
     },
     mounted: function() {
@@ -56,6 +57,10 @@ export default {
             });
         },
         removeItem: function(id, index) {
+            if ( this.isSended ) {
+                return false;
+            }
+            this.isSended = true;
             Swal.fire({
                 title: '삭제하시겠습니까?',
                 showDenyButton: true,
@@ -73,9 +78,10 @@ export default {
                             method: method,
                             url: url,
                             headers: headers,
-                            data: {oa: this.$store.state.oa}
+                            data: {award: this.$store.state.award}
                         })
                         .then(res => {
+                            this.isSended = false;
                             Swal.fire({
                                 title: '삭제되었습니다!',
                                 icon: 'success',
@@ -83,6 +89,7 @@ export default {
                             });
                         })
                         .catch(err => {
+                            this.isSended = false;
                             Swal.fire({
                                 title: '삭제에 실패했습니다!',
                                 icon: 'danger',
@@ -91,6 +98,7 @@ export default {
                             console.error(err);
                         })
                     } else {
+                        this.isSended = false;
                         Swal.fire({
                             title: '삭제되었습니다!',
                             icon: 'success',
@@ -99,12 +107,15 @@ export default {
 
                     }
                     this.items.splice(index, 1);
-                } else if (result.isDenied) {
                 }
             });
 
         },
         saveItems: function() {
+            if ( this.isSended ) {
+                return false;
+            }
+            this.isSended = true;
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
@@ -114,9 +125,10 @@ export default {
                 method: method,
                 url: url,
                 headers: headers,
-                data: {oa: this.$store.state.oa}
+                data: {award: this.$store.state.award}
             })
             .then(res => {
+                this.isSended = false;
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',
@@ -124,8 +136,9 @@ export default {
                 });
             })
             .catch(err => {
+                this.isSended = false;
                 Swal.fire({
-                    title: '삭제에 실패했습니다!',
+                    title: '저장에 실패했습니다!',
                     icon: 'danger',
                     confirmButtonText: '확인'
                 });

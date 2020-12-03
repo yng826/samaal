@@ -28,7 +28,7 @@ import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 export default {
-    props: ['action'],
+    props: ['job_id'],
     components: {
         Datepicker,
     },
@@ -41,6 +41,7 @@ export default {
         return {
             ko: ko,
             isAuth: false,
+            isSended: false,
         }
     },
     mounted: function() {
@@ -55,23 +56,94 @@ export default {
                 certificate_date: "",
             });
         },
-        removeItem: function(index) {
-            this.items.splice(index, 1);
+        removeItem: function(id, index) {
+            if ( this.isSended ) {
+                return false;
+            }
+            this.isSended = true;
             Swal.fire({
-                title: '임시삭제되었습니다!',
-                text: '저장해야 완전삭제됩니다.',
-                icon: 'warning',
-                confirmButtonText: '확인'
+                title: '삭제하시겠습니까?',
+                showDenyButton: true,
+                confirmButtonText: `네`,
+                denyButtonText: `아니오`,
+                }).then((result) => {
+                if (result.isConfirmed) {
+
+                    if ( id ) {
+                        let headers = getHeader();
+                        let url, method;
+                        url = '/api/job-detail/certificate/' + id;
+                        method = 'delete';
+                        axios({
+                            method: method,
+                            url: url,
+                            headers: headers,
+                            data: {certificate: this.$store.state.certificate}
+                        })
+                        .then(res => {
+                            this.isSended = false;
+                            Swal.fire({
+                                title: '삭제되었습니다!',
+                                icon: 'success',
+                                confirmButtonText: '확인'
+                            });
+                        })
+                        .catch(err => {
+                            this.isSended = false;
+                            Swal.fire({
+                                title: '삭제에 실패했습니다!',
+                                icon: 'danger',
+                                confirmButtonText: '확인'
+                            });
+                            console.error(err);
+                        })
+                    } else {
+                        this.isSended = false;
+                        Swal.fire({
+                            title: '삭제되었습니다!',
+                            icon: 'success',
+                            confirmButtonText: '확인'
+                        });
+
+                    }
+                    this.items.splice(index, 1);
+                }
             });
+
         },
         saveItems: function() {
+            if ( this.isSended ) {
+                return false;
+            }
+            this.isSended = true;
             console.log(this.$store.state);
-            Swal.fire({
-                title: '저장되었습니다!',
-                // text: '계속 이용하시기 바랍니다.',
-                icon: 'success',
-                confirmButtonText: '확인'
-            });
+            let headers = getHeader();
+            let url, method;
+            url = '/api/job-detail/certificate/' + this.job_id;
+            method = 'put';
+            axios({
+                method: method,
+                url: url,
+                headers: headers,
+                data: {certificate: this.$store.state.certificate}
+            })
+            .then(res => {
+                this.isSended = false;
+                Swal.fire({
+                    title: '저장되었습니다!',
+                    icon: 'success',
+                    confirmButtonText: '확인'
+                });
+            })
+            .catch(err => {
+                this.isSended = false;
+                Swal.fire({
+                    title: '저장에 실패했습니다!',
+                    icon: 'danger',
+                    confirmButtonText: '확인'
+                });
+                console.error(err);
+            })
         }
     }
 }
