@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\IR;
+namespace App\Http\Controllers\Other;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class FinanceController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class FinanceController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -47,32 +46,7 @@ class FinanceController extends Controller
      */
     public function show($id)
     {
-        $ir = []; // 그래프, 표
-        $ir_boards = []; // 전자공고
-        if ($id == 'consolidated') {  // 연결재무제표
-
-            $ir = DB::table('finance_infos')
-                   ->select('info_year', 'connect_sales','connect_operating_income', 'connect_net_income', 'connect_assets', 'connect_liability')
-                   ->orderBy('info_year', 'desc')->take(3)->get();
-
-            $ir_boards = DB::table('ir_boards')->where('category','연결재무')->orderBy('id', 'desc');
-
-
-        } else { // 별도재무제표
-
-            $ir = DB::table('finance_infos')
-                   ->select('info_year', 'separate_sales','separate_operating_income', 'separate_net_income', 'separate_assets', 'separate_liability')
-                   ->orderBy('info_year', 'desc')->take(3)->get();
-
-            $ir_boards = DB::table('ir_boards')->where('category','별도재무')->orderBy('id', 'desc');
-        }
-
-        $data = [];
-        $data['ir'] = $ir;
-        $data['ir_boards'] = $ir_boards;
-
-        debug($data);
-        return view('aboutUs.financial', $data);
+        //
     }
 
     /**

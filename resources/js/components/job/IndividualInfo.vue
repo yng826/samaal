@@ -3,7 +3,7 @@
         <form :action="'/api/job/'+job.id" method="post" id="individualInfoForm" @submit.prevent="setInfo(job)">
             <input type="hidden" name="user_id" v-model="user.id"/>
             <input type="hidden" name="job_id" v-model="job.id"/>
-            <div class="form-wrap">
+            <div class="form-wrap form-left">
                 <h3>인적사항</h3>
                 <div class="form-group">
                     <label for="">성명(한글)</label>
@@ -27,15 +27,18 @@
                 </div>
                 <div class="form-group">
                     <label for="">현거주지</label>
-                    <input type="text" name="address_1" v-model="job.address_1">
-                    <input type="text" name="address_2" v-model="job.address_2">
+                    <div class="input-gorup">
+                        <input type="text" name="address_1" v-model="job.address_1">
+                        <input type="text" name="address_2" v-model="job.address_2">
+                    </div>
                 </div>
             </div>
-            <div class="form-wrap">
-                <h3>사진업로드</h3>
+            <div class="form-wrap form-img">
+                <h3>사진업로드<em>(최근 3개월내)</em></h3>
                 <div class="form-group">
                     <figure class="picture">
-                        <img :src="'/'+job.file_path" alt="" style="height: 300px;" v-if="job.file_path">
+                        <!-- <img :src="'/'+job.file_path" alt="" style="height: 300px;" v-if="job.file_path"> -->
+                        <img src="https://via.placeholder.com/200X300" alt="">
                     </figure>
                     <input type="file" name="pic" id="pic">
                 </div>

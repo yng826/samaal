@@ -1,0 +1,193 @@
+@import "./lib/webvw";
+/* 지원하기 */
+.work-apply {
+    background-color: #e8ecef;
+
+    &__title {
+
+        h2 {
+            padding: vw(56px) 0;
+            line-height: 1;
+        }
+    }
+
+    &__contents {
+        max-width: vw(1302px);
+        padding-top: vw(50px);
+        margin: 0 auto;
+    }
+
+    &__progress {
+        height: vw(250px);
+        width: 100%;
+        margin-bottom: vw(18px);
+        border: 1px solid #bcc0c3;
+        background-color: #fff;
+
+        ul {
+            width: vw(657px);
+            display: table;
+            margin: vw(56px) auto 0;
+            counter-reset: step;
+
+            li {
+                display: table-cell;
+                position: relative;
+                width: 25%;
+                color: #4a4a4a;
+                font: {
+                    size: vw(20px);
+                    weight: 600;
+                }
+                text-align: center;
+                vertical-align: top;
+
+                &:before {
+                    content: counter(step);
+                    counter-increment: step;
+                    display: block;
+                    width: vw(74px);
+                    height: vw(73px);
+                    position: relative;
+                    line-height: vw(74px);
+                    font-size: vw(28px);
+                    color: #acacac;
+                    background: white;
+                    border-radius: 50%;
+                    margin: 0 auto vw(17px);
+                    border: vw(5px) solid #acacac;
+                    text-align: center;
+                    z-index: 1;
+                }
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: vw(3px);
+                    background: #acacac;
+                    position: absolute;
+                    left: -50%;
+                    top: vw(35px);
+                }
+
+                &:first-child:after  {
+                    content: none;
+                }
+
+                &.on {
+                    color: $titleColor;
+
+                    &::before {
+                        content: "";
+                        counter-increment: none;
+                        background: $titleColor url("../images/work/hire_progress_check.png") no-repeat;
+                        background-size: contain;
+                        border: vw(5px) solid $titleColor;
+                    }
+
+                    &::after {
+                        background-color: $titleColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .form-container {
+        width: 100%;
+        margin-bottom: vw(18px);
+        border: 1px solid #bcc0c3;
+        background-color: #fff;
+
+        form {
+            padding: vw(70px 240px 90px);
+        }
+
+        .form-wrap {
+
+            h3 {
+                display: inline-block;
+                padding-top: vw(11px);
+                color: #010101;
+                font: {
+                    size: vw(25px);
+                    weight: bold;
+                }
+                line-height: 1;
+                border-top: vw(4px) solid #000;
+            }
+
+            .form-group {
+
+                label {
+                    display: inline-block;
+                    width: vw(132px);
+                    color: #010101;
+                    font-size: vw(20px);
+                    vertical-align: top;
+                }
+
+                input {
+                    display: inline-block;
+                    padding: 0 vw(19px);
+                    width: vw(351px);
+                    height: vw(54px);
+                    background-color: #e8ecef;
+                    border-radius: 13px;
+                    border: none;
+                    vertical-align: top;
+
+                    &::-webkit-input-placeholder {
+                        color: #9f9f9f;
+                    }
+
+                    &::-ms-input-placeholder {
+                        color: #9f9f9f;
+                    }
+                }
+
+                .input-gorup {
+                    display: inline-block;
+                    width: vw(351px);
+
+                    input {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .form-left {
+            display: inline-block;
+            width: 60%;
+        }
+
+        .form-img {
+            display: inline-block;
+            width: vw(209px);
+        }
+    }
+
+}
+
+/*태블릿 세로 사이즈*/
+@media all and (min-width:768px) and (max-width:1023px) {
+    .about-ci {
+        &__identity {
+            &--area {
+                h3 {
+                    font: {
+                        size: vw(60px);
+                    }
+                }
+
+                p {
+                    font-size: vw(36px);
+                    line-height: vw(64px);
+                }
+            }
+        }
+    }
+
+}

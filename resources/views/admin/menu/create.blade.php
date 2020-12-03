@@ -67,6 +67,17 @@
                               <label for="is_front2" class="form-check-label">아니오</label>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label>통합검색 카테고리 노출</label>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" id="is_search_category1" name="is_search_category" value="1" {{ isset($menu) && $menu->is_search_category == 1 ? 'checked' :''}}>
+                              <label for="is_search_category1" class="form-check-label">예</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" id="is_search_category2" name="is_search_category" value="0" {{ isset($menu) && $menu->is_search_category == 0 ? 'checked' :''}}>
+                              <label for="is_search_category2" class="form-check-label">아니오</label>
+                            </div>
+                        </div>
 
                         @empty($menu)
                         <div class="form-group">
@@ -170,6 +181,10 @@ const menu_create = () => {
 
         } else if ($('input[name=is_front]:checked').val() == '' || $('input[name=is_front]:checked').val() == null) {
             alert('사이트 노출을 선택해주세요.');
+            return false;
+
+        } else if ($('input[name=is_search_category]:checked').val() == '' || $('input[name=is_search_category]:checked').val() == null) {
+            alert('통합검색 카테고리 노출을 선택해주세요.');
             return false;
         }
         return true;
