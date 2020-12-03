@@ -70,7 +70,31 @@ class CareerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        foreach ($request->career as $career) {
+            if (empty($career['id'])) {
+                $affected = DB::table('job_applications_career')
+                            ->insert([
+                                'job_id' => $id,
+                                'career_start' => date('Y-m-d', strtotime($career['career_start'])),
+                                'career_end' => date('Y-m-d', strtotime($career['career_end'])),
+                                'career_name' => $career['career_name'],
+                                'career_position' => $career['career_position'],
+                                'career_role' => $career['career_role'],
+                            ]);
+            } else {
+                $affected = DB::table('job_applications_career')
+                            ->where('id', $career['id'])
+                            ->update([
+                                'career_start' => date('Y-m-d', strtotime($career['career_start'])),
+                                'career_end' => date('Y-m-d', strtotime($career['career_end'])),
+                                'career_name' => $career['career_name'],
+                                'career_position' => $career['career_position'],
+                                'career_role' => $career['career_role'],
+                            ]);
+            }
+        }
+
+        return 1;
     }
 
     /**
@@ -81,6 +105,8 @@ class CareerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $affected = DB::table('job_applications_career')->where('id', $id)->delete();
+
+        return 1;
     }
 }
