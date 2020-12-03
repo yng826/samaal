@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\NewsInfoController as NewsInfoController;
 use App\Http\Controllers\Admin\IrBoardController as IrBoardController;
 use App\Http\Controllers\Admin\IsoCertificationController as IsoCertificationController;
 use App\Http\Controllers\Admin\RecruitJobController as RecruitJobController;
-
+use App\Http\Controllers\Recruit\RecruitListController as RecruitListController;
 use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
 use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
 use App\Http\Controllers\IR\FinanceController;
@@ -185,6 +185,13 @@ Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function
 Route::prefix('board')->group(function () {
     Route::resource('question_board', Board\QuestionBoardController::class);
 });
+
+Route::prefix('recruit')->group(function () {
+
+    Route::get('recruit_list/search/{id}', [RecruitListController::class, 'search']);
+    Route::resource('recruit_list', Recruit\RecruitListController::class);
+});
+
 
 Route::get('role', function () {
     return 'auth';
