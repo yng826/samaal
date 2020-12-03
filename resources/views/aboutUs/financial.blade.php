@@ -21,6 +21,16 @@
                    financial
                 </h2>
             </div>
+            <nav class="">
+                <ul>
+                    <li class="">
+                        <a href="/about-us/ir/financial/consolidated">연결재무제표</a></li>
+                    </li>
+                    <li class="">
+                        <a href="/about-us/ir/financial/separate">별도재무제표</a></li>
+                    </li>
+                </ul>
+            </nav>
             <div class="contents-wrap__section">
                 <h3>매출액</h3>
                <img src="https://dummyimage.com/400x600/000/fff" alt="">
