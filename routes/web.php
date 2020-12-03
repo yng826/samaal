@@ -176,7 +176,7 @@ Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function
     //     ->where('id', '[0-9]+');
     Route::post('job/check', [JobController::class, 'check']);
 
-    Route::resource('edu', Job\EducationController::class);
+    // Route::resource('edu', Job\EducationController::class);
 });
 
 Route::prefix('board')->group(function () {
