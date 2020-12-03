@@ -35,7 +35,7 @@ class JobController extends Controller
         } else {
 
             return view('workWithUs.job.list', [
-                'pageClass' => 'about-ci',
+                'pageClass' => 'work-apply',
                 // 'items' => $items,
                 'status' => $this->status,
             ]);
@@ -123,7 +123,7 @@ class JobController extends Controller
             return $item;
         } else {
             return view('workWithUs.job.edit', [
-                'pageClass' => 'about-ci',
+                'pageClass' => 'work-apply',
                 'item' => $item,
                 'id' => $id,
             ]);
