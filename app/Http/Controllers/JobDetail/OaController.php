@@ -4,6 +4,7 @@ namespace App\Http\Controllers\JobDetail;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OaController extends Controller
 {
@@ -69,7 +70,25 @@ class OaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        foreach ($request->oa as $oa) {
+            if (empty($oa['id'])) {
+                $affected = DB::table('job_applications_oa')
+                            ->insert([
+                                'job_id' => $id,
+                                'oa_name' => $oa['oa_name'],
+                                'oa_level' => $oa['oa_level'],
+                            ]);
+            } else {
+                $affected = DB::table('job_applications_oa')
+                            ->where('id', $oa['id'])
+                            ->update([
+                                'oa_name' => $oa['oa_name'],
+                                'oa_level' => $oa['oa_level'],
+                            ]);
+            }
+        }
+
+        return 1;
     }
 
     /**
@@ -80,6 +99,8 @@ class OaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $affected = DB::table('job_applications_oa')->where('id', $id)->delete();
+
+        return 1;
     }
 }

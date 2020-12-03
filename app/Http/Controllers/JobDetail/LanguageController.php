@@ -4,6 +4,7 @@ namespace App\Http\Controllers\JobDetail;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LanguageController extends Controller
 {
@@ -69,7 +70,31 @@ class LanguageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        foreach ($request->language as $language) {
+            if (empty($language['id'])) {
+                $affected = DB::table('job_applications_language')
+                            ->insert([
+                                'job_id' => $id,
+                                'language_type' => $language['language_type'],
+                                'language_name' => $language['language_name'],
+                                'language_grade' => $language['language_grade'],
+                                'language_start' => date('Y-m-d', strtotime($language['language_start'])),
+                                'language_end' => date('Y-m-d', strtotime($language['language_end'])),
+                            ]);
+            } else {
+                $affected = DB::table('job_applications_language')
+                            ->where('id', $language['id'])
+                            ->update([
+                                'language_type' => $language['language_type'],
+                                'language_name' => $language['language_name'],
+                                'language_grade' => $language['language_grade'],
+                                'language_start' => date('Y-m-d', strtotime($language['language_start'])),
+                                'language_end' => date('Y-m-d', strtotime($language['language_end'])),
+                            ]);
+            }
+        }
+
+        return 1;
     }
 
     /**
@@ -80,6 +105,8 @@ class LanguageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $affected = DB::table('job_applications_language')->where('id', $id)->delete();
+
+        return 1;
     }
 }
