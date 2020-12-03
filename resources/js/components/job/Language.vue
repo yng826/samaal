@@ -37,7 +37,7 @@ import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 export default {
-    props: ['action'],
+    props: ['job_id'],
     components: {
         Datepicker,
     },
@@ -50,6 +50,7 @@ export default {
         return {
             ko: ko,
             isAuth: false,
+            isSended: false,
         }
     },
     mounted: function() {
@@ -68,6 +69,10 @@ export default {
             });
         },
         removeItem: function(id, index) {
+            if ( this.isSended ) {
+                return false;
+            }
+            this.isSended = true;
             Swal.fire({
                 title: '삭제하시겠습니까?',
                 showDenyButton: true,
@@ -88,6 +93,7 @@ export default {
                             data: {language: this.$store.state.language}
                         })
                         .then(res => {
+                            this.isSended = false;
                             Swal.fire({
                                 title: '삭제되었습니다!',
                                 icon: 'success',
@@ -95,6 +101,7 @@ export default {
                             });
                         })
                         .catch(err => {
+                            this.isSended = false;
                             Swal.fire({
                                 title: '삭제에 실패했습니다!',
                                 icon: 'danger',
@@ -103,6 +110,7 @@ export default {
                             console.error(err);
                         })
                     } else {
+                        this.isSended = false;
                         Swal.fire({
                             title: '삭제되었습니다!',
                             icon: 'success',
@@ -112,18 +120,44 @@ export default {
                     }
                     this.items.splice(index, 1);
                 } else if (result.isDenied) {
+                    this.isSended = true;
                 }
             });
 
         },
         saveItems: function() {
+            if ( this.isSended ) {
+                return false;
+            }
+            this.isSended = true;
             console.log(this.$store.state);
-            Swal.fire({
-                title: '저장되었습니다!',
-                // text: '계속 이용하시기 바랍니다.',
-                icon: 'success',
-                confirmButtonText: '확인'
-            });
+            let headers = getHeader();
+            let url, method;
+            url = '/api/job-detail/language/' + this.job_id;
+            method = 'put';
+            axios({
+                method: method,
+                url: url,
+                headers: headers,
+                data: {language: this.$store.state.language}
+            })
+            .then(res => {
+                this.isSended = false;
+                Swal.fire({
+                    title: '저장되었습니다!',
+                    icon: 'success',
+                    confirmButtonText: '확인'
+                });
+            })
+            .catch(err => {
+                this.isSended = false;
+                Swal.fire({
+                    title: '저장에 실패했습니다!',
+                    icon: 'danger',
+                    confirmButtonText: '확인'
+                });
+                console.error(err);
+            })
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="military-container">
-        <form v-for="(item, id) in items" :key="id" >
+        <form>
             <h3>병역사항</h3>
             <input type="hidden" name="id" v-model="item.id">
             <div class="form-group">
@@ -26,8 +26,7 @@
             </div>
         </form>
         <div class="button-group">
-            <button class="btn-add" @click="addItem">추가</button>
-            <button class="btn-save" @click="saveItems">저장</button>
+            <button class="btn-save" @click="saveItem">저장</button>
         </div>
     </div>
 </template>
@@ -38,88 +37,34 @@ import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 export default {
-    props: ['action'],
+    props: ['job_id'],
     components: {
         Datepicker,
     },
     computed: {
-        items () {
-        return this.$store.state.military
+        item () {
+            return this.$store.state.military;
         }
     },
     data: function() {
         return {
             ko: ko,
             isAuth: false,
+            isSended: false,
         }
     },
     mounted: function() {
         // this.isAuth = getAuth();
     },
     methods: {
-        addItem: function() {
-            this.items.push({
-                id: '',
-                military_type: '',
-                military_discharge: '',
-                military_rank: '',
-                military_exemption: '',
-                military_duration_start: '',
-                military_duration_end: '',
-
-            });
-        },
-        removeItem: function(id, index) {
-            Swal.fire({
-                title: '삭제하시겠습니까?',
-                showDenyButton: true,
-                confirmButtonText: `네`,
-                denyButtonText: `아니오`,
-                }).then((result) => {
-                if (result.isConfirmed) {
-
-                    if ( id ) {
-                        let headers = getHeader();
-                        let url, method;
-                        url = '/api/job-detail/military/' + id;
-                        method = 'delete';
-                        axios({
-                            method: method,
-                            url: url,
-                            headers: headers,
-                            data: {oa: this.$store.state.oa}
-                        })
-                        .then(res => {
-                            Swal.fire({
-                                title: '삭제되었습니다!',
-                                icon: 'success',
-                                confirmButtonText: '확인'
-                            });
-                        })
-                        .catch(err => {
-                            Swal.fire({
-                                title: '삭제에 실패했습니다!',
-                                icon: 'danger',
-                                confirmButtonText: '확인'
-                            });
-                            console.error(err);
-                        })
-                    } else {
-                        Swal.fire({
-                            title: '삭제되었습니다!',
-                            icon: 'success',
-                            confirmButtonText: '확인'
-                        });
-
-                    }
-                    this.items.splice(index, 1);
-                } else if (result.isDenied) {
-                }
-            });
-
-        },
-        saveItems: function() {
+        saveItem: function() {
+            if ( this.isSended ) {
+                return false;
+            }
+            this.isSended = true;
             console.log(this.$store.state);
+            this.$store.state.military.job_id = this.job_id;
+
             let headers = getHeader();
             let url, method;
             url = '/api/job-detail/military/' + this.job_id;
@@ -128,9 +73,12 @@ export default {
                 method: method,
                 url: url,
                 headers: headers,
-                data: {oa: this.$store.state.oa}
+                data: {military: this.$store.state.military}
             })
             .then(res => {
+                this.$store.state.military.id = res.data.id;
+                this.isSended = false;
+                console.log(this.$store.state.military);
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',
@@ -138,8 +86,9 @@ export default {
                 });
             })
             .catch(err => {
+                this.isSended = false;
                 Swal.fire({
-                    title: '삭제에 실패했습니다!',
+                    title: '저장에 실패했습니다!',
                     icon: 'danger',
                     confirmButtonText: '확인'
                 });
