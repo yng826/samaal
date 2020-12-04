@@ -46,7 +46,7 @@
                 <div class="question-pop__title">
                     <h3>문의하기</h3>
                 </div>
-                <form action="../../board/question_board" class="question-pop__info question-form" method="POST">
+                <form action="/board/question_board" class="question-pop__info question-form" method="POST">
                     <ul>
                         <li>
                             <h4>제품명</h4>

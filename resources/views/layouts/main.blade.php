@@ -6,13 +6,6 @@
         <script src="js/app.js"></script>
     </head>
     <body>
-        <!-- {{-- @section('sidebar')
-            This is the master sidebar.
-        @show
-
-        <div class="container">
-            @yield('content')
-        </div> --}} -->
         <header class="header">
             <a href="#" class="header__logo">
                 <img src="/images/common/logo.png" alt="SAMA">

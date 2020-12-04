@@ -6,29 +6,29 @@
                 <li class="footer__nav-list--item">
                     <h3>About Us</h3>
                     <ul>
-                        <li><a href="#">Heritage</a></li>
-                        <li><a href="#">Message</a></li>
-                        <li><a href="#">Story & News</a></li>
-                        <li><a href="#">재무정보</a></li>
-                        <li><a href="#">Location</a></li>
+                        <li><a href="/">Heritage</a></li>
+                        <li><a href="/about-us/ceo">Message</a></li>
+                        <li><a href="/about-us/story-news">Story & News</a></li>
+                        <li><a href="/about-us/ir/financial/consolidated">재무정보</a></li>
+                        <li><a href="/about-us/location/seoul">Location</a></li>
                     </ul>
                 </li>
                 <li class="footer__nav-list--item">
                     <h3>For Business Partners</h3>
                     <ul>
-                        <li><a href="#">알루미늄 호일</a></li>
-                        <li><a href="#">포장재</a></li>
-                        <li><a href="#">산업/건축용</a></li>
-                        <li><a href="#">Speciality</a></li>
-                        <li><a href="#">Innovation</a></li>
+                        <li><a href="/business/foil/foil">알루미늄 호일</a></li>
+                        <li><a href="/">포장재</a></li>
+                        <li><a href="/">산업/건축용</a></li>
+                        <li><a href="/">Speciality</a></li>
+                        <li><a href="/">Innovation</a></li>
                     </ul>
                 </li>
                 <li class="footer__nav-list--item">
                     <h3>Work With Us</h3>
                     <ul>
-                        <li><a href="#">채용공고</a></li>
-                        <li><a href="#">직무소개</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="/">채용공고</a></li>
+                        <li><a href="/">직무소개</a></li>
+                        <li><a href="/">FAQ</a></li>
                     </ul>
                 </li>
                 <li class="footer__nav-list--item">
@@ -43,14 +43,14 @@
             </ul>
         </div>
         <div class="footer__inner">
-            <div class="droplist-box">
+            {{-- <div class="droplist-box">
                 <button class="droplist-box__button">패밀리사이트</button>
                 <!-- <ul class="droplist">
                     <li id="" class="droplist__item"><a href="#">패밀리1</a></li>
                     <li id="" class="droplist__item"><a href="#">패밀리2</a></li>
                     <li id="" class="droplist__item"><a href="#">패밀리3</a></li>
                 </ul> -->
-            </div>
+            </div> --}}
             <div class="droplist-box">
                 <button class="droplist-box__button">개인정보처리방침</button>
                 <!-- <ul class="droplist">
