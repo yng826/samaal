@@ -50,7 +50,7 @@
     &__img {
         display: table-cell;
         width: 50%;
-        background: url("../images/about/img_ci.png") no-repeat center / contain;
+        background: url("../images/about/web_img_ci.png") no-repeat center / contain;
     }
 }
 
@@ -338,5 +338,49 @@
             }
         }
     }
+}
 
+/* 모바일 사이즈 */
+@media all and (max-width: 767px) {
+    @import "./lib/vw";
+
+    .about-ci {
+        &__contents {
+            max-width: 100%;
+            padding: vw(0 69px 88px);
+        }
+
+        &__title {
+            h2 {
+                padding: vw(86px 0 94px);
+                line-height: 1;
+            }
+        }
+
+        &__identity {
+            display: block;
+            width: 100%;
+            padding-right: 0;
+
+            &--area {
+                h3 {
+                    padding-top: vw(69px);
+                    padding-bottom: vw(44px);
+                    font-size: vw(36px);
+                }
+
+                p {
+                    font-size: vw(22px);
+                    line-height: vw(37px);
+                }
+            }
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: vw(840px);
+            background: url("../images/about/m/m_img_ci.jpg") no-repeat center / contain;
+        }
+    }
 }
