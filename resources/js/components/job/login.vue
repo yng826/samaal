@@ -1,23 +1,25 @@
 <template>
-    <div>
-        <form id="login-form" :action="action" method="POST" @submit.prevent="sendPost" v-if="!isAuth">
-            <div class="form-group">
-                <label for="name">성명</label>
-                <input type="text" name="name" id="name" v-model="name">
-            </div>
-            <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="text" name="email" id="email" v-model="email">
-            </div>
-            <div class="form-group">
-                <label for="password">비밀번호</label>
-                <input type="password" name="password" id="password" v-model="password">
-            </div>
-            <div class="form-group">
-                <a href="">비밀번호를 잊으셨나요?</a>
-            </div>
-            <button type="submit">확인하기</button>
-        </form>
+    <div class="form-container">
+        <div class="form-wrap">
+            <form id="login-form" :action="action" method="POST" @submit.prevent="sendPost" v-if="!isAuth">
+                <div class="form-group">
+                    <label for="name">성명</label>
+                    <input type="text" name="name" id="name" v-model="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="text" name="email" id="email" v-model="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" name="password" id="password" v-model="password">
+                </div>
+                <div class="form-group">
+                    <a href="">비밀번호를 잊으셨나요?</a>
+                </div>
+                <button type="submit">확인하기</button>
+            </form>
+        </div>
     </div>
 </template>
 <script>
