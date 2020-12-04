@@ -34,6 +34,7 @@ export default {
             email: '',
             password: '',
             isAuth: false,
+            isSubmit: false,
         }
     },
     mounted: function() {
@@ -62,8 +63,16 @@ export default {
                     msg: '비밀번호를 입력해주세요',
                 };
             }
+            return {
+                result: true,
+                msg: '',
+            }
         },
         sendPost: function () {
+            if ( this.isSubmit ) {
+                return false;
+            }
+            this.isSubmit = true;
             const validate = this.validation();
             if ( !validate.result ) {
                 Swal.fire({
@@ -73,10 +82,19 @@ export default {
                 });
                 return false;
             }
-            User.login({
+            let logged = User.login({
                 email: this.email,
                 password: this.password,
             });
+
+            console.log(logged);
+            logged.then( res => {
+                console.log( res );
+                this.isSubmit = false;
+            }).catch( err => {
+                console.error(err);
+                this.isSubmit = false;
+            })
         }
     }
 }
