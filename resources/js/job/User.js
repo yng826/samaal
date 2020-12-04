@@ -12,7 +12,7 @@ class User {
     }
 
     login (data) {
-        axios.post('/api/login', {
+        return axios.post('/api/login', {
             'email': data.email,
             'password': data.password
         })
@@ -33,12 +33,21 @@ class User {
                 });
             } else {
                 Swal.fire({
-                    title: '실패했습니다!',
+                    title: '로그인에 실패했습니다!',
                     text: '이메일, 비밀번호를 확인해주세요',
                     icon: 'error',
                     confirmButtonText: '확인'
-                })
+                });
             }
+            return res;
+        }).catch( err => {
+            console.error(err);
+            Swal.fire({
+                title: '문제가 생겼습니다!',
+                text: '잠시후에 다시 시도해주세요',
+                icon: 'error',
+                confirmButtonText: '확인'
+            });
         })
     }
 }
