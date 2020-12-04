@@ -78,8 +78,8 @@ export default {
         } else {
             Swal.fire({
                 title: '로그인해주세요!',
-                icon: 'danger',
-                confirmButtonText: '확인'
+                icon: 'info',
+                confirmButtonText: '<a href="/work-with-us/job/">확인</a>'
             });
         }
     },
