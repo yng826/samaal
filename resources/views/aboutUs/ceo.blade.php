@@ -3,7 +3,6 @@
         <title>App Name - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
-        <script src="/js/app.js"></script>
     </head>
     <body id="app" class="about-ceo">
         <!-- {{-- @section('sidebar')
@@ -48,5 +47,8 @@
 
 
         @include('shared.footer')
+        <script src="{{ mix('/js/manifest.js') }}"></script>
+        <script src="{{ mix('/js/vendor.js') }}"></script>
+        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>
