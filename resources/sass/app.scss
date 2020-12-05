@@ -90,12 +90,51 @@ legend {
     text-shadow: none;
 }
 
+$tableBorderColor : #333;
 table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     table-layout: fixed;
     word-break: break-all;
+    thead,
+    tbody {
+        th, td {
+            padding: 5px;
+            border: 1px solid $tableBorderColor;
+            &:first-child {
+                border-left: none;
+            }
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+    thead {
+        tr {
+            th {
+                border: 1px solid $tableBorderColor;
+                border-top-width: 2px;
+                border-bottom-width: 2px;
+                &:first-child {
+                    border-left: none;
+                }
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            th {
+                text-align: center;
+            }
+            td {
+
+            }
+        }
+    }
 }
 
 table caption {

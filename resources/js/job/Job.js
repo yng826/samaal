@@ -39,6 +39,7 @@ window.Vue = require('vue');
 // Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue').default);
 // Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue').default);
 Vue.component('login-component', require('../components/job/Login.vue').default);
+Vue.component('join-component', require('../components/job/Join.vue').default);
 Vue.component('applicant-list-component', require('../components/job/ApplicantList.vue').default);
 Vue.component('individual-info-component', require('../components/job/IndividualInfo.vue').default);
 Vue.component('education-component', require('../components/job/Education.vue').default);

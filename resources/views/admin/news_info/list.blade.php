@@ -24,7 +24,6 @@
                             <th class="text-center">제목</th>
                             <th class="text-center">내용</th>
                             <th class="text-center">이미지 첨부파일</th>
-                            <th class="text-center">URL</th>
                             <th class="text-center">사용여부</th>
                             <th class="text-center">등록/수정일</th>
                             <th class="text-center" style="width: 80px;">관리</th>
@@ -39,7 +38,6 @@
                                 {{-- <a class="btn btn-outline-info btn-xs" href="/admin/news_info/file-download?id={{ $info->id }}">파일</button> --}}
                                 <img src="/admin/news_info/file-download?id={{ $info->id }}" width="100" />
                             </td>
-                            <td class="text-center"><a href="{{ $info->url }}">{{ $info->url }}</a></td>
                             <td class="text-center">{{ $info->use_yn == 'y' ? '사용' :'미사용' }}</td>
                             <td class="text-center">{{ $info->updated_at ?? $info->created_at}}</td>
                             <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/news_info/{{$info->id}}/edit">수정</button></td>

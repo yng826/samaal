@@ -80,7 +80,7 @@
 
                     &::before {
                         content: "";
-                        counter-increment: none;
+                        counter-increment: step;
                         background: $titleColor url("../images/work/hire_progress_check.png") no-repeat;
                         background-size: contain;
                         border: vw(5px) solid $titleColor;

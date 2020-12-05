@@ -18,7 +18,7 @@ class NewsInfoController extends Controller
     {
         $infos = DB::table('news_infos')->orderBy('id', 'desc')->paginate(10);
         return view('admin.news_info.list', [
-            'infos' => $infos,
+            'infos' => $infos
         ]);
     }
 
@@ -53,7 +53,6 @@ class NewsInfoController extends Controller
                         'contents'=> $request->contents,
                         'img_file_name'=> $request->file('file')->getClientOriginalName(),
                         'img_file_path'=> $file_path,
-                        'url'=> $request->url,
                         'use_yn'=> $request->use_yn,
                         'updated_at' => now(),
                     ]);
@@ -64,7 +63,6 @@ class NewsInfoController extends Controller
                 'contents'=> $request->contents,
                 'img_file_name'=> $request->file('file')->getClientOriginalName(),
                 'img_file_path'=> $file_path,
-                'url'=> $request->url,
                 'use_yn'=> $request->use_yn,
                 'created_at' => now()
             ]);
@@ -134,7 +132,6 @@ class NewsInfoController extends Controller
             'contents'=> $request->contents,
             'img_file_name'=> $img_file_name,
             'img_file_path'=> $img_file_path,
-            'url'=> $request->url,
             'use_yn'=> $request->use_yn,
             'updated_at' => now(),
           ]);

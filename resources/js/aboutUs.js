@@ -44,8 +44,8 @@ const about = () => {
     }
 
     // aboutUs - heritage
+    // heritage swiper
     const heritageSwiper = () => {
-
         const swiperImg = new Swiper('.about-heritage__slide .about-heritage__slide--img', {
             loop: true,
             slidesPerView: 2,
@@ -64,12 +64,46 @@ const about = () => {
         });
         swiperYear.controller.control = swiperImg;
         swiperImg.controller.control = swiperYear;
+    };
+
+    const news_close = () => {
+        var header = document.getElementById('header');
+
+         $('.news-btn').on("click",function(){
+
+             $(".storyNews-pop").show();
+             $(".popup-marsk").show();
+
+             news($(this).attr('id').toString());
+
+         });
+
+        $(".popup-marsk , .layer-popup__close-btn").on("click",function(){
+            $(".layer-popup").hide();
+            $(".popup-marsk").hide();
+        });
+
+
+    }
+
+    function news(id) {
+        id = id.split('news-btn-')[1];
+
+        $.ajax({
+            url: "/about-us/story-news/"+id,
+            type: "get",
+        }).done(function(data) {
+            $('div[name=title]').html(data.new.title);
+            $('div[name=contents]').html(data.new.contents);
+            $('img[name=id]').attr('src','/admin/news_info/file-download?id='+data.new.id);
+        });
     }
 
     const about_init = () => {
         locationSwiper();
         storyTopButton();
         heritageSwiper();
+        news_close();
     };
 
     about_init();

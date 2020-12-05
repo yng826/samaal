@@ -58,10 +58,18 @@ const common = () => {
         });
     }
 
+    const question_pop = () => {
+        $('.question-btn').on('click', function (e) {
+            e.preventDefault();
+            alert();
+        });
+    }
+
     const common_init = () => {
         header_lang();
         header_nav();
         footer_top();
+        question_pop();
     };
 
     common_init();

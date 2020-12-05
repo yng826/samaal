@@ -49,7 +49,9 @@ class JobController extends Controller
      */
     public function create()
     {
-
+        return view('workWithUs.job.create', [
+            'pageClass' => 'work-apply',
+        ]);
     }
 
     /**

@@ -16,5 +16,5 @@
 
 @section('script')
     @parent
-    <script src="{{ mix('/js/job.js') }}"></script>
+    <script src="{{ asset('/js/job.js') }}"></script>
 @endsection

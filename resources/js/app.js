@@ -57,7 +57,7 @@ const appInit = () => {
             if(method) method();
         })
     } else {
-        // common();
+        common();
     };
 
 };

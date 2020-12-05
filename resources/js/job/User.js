@@ -11,6 +11,11 @@ class User {
         return this.name;
     }
 
+    validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
     login (data) {
         return axios.post('/api/login', {
             'email': data.email,
