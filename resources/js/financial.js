@@ -247,7 +247,6 @@ const financial = () => {
         });
     };
 
-    console.log('financial');
     init();
 }
 

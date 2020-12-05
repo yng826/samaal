@@ -85,6 +85,7 @@
             &--text {
                 padding: vw(19px 25px);
             }
+
             figure {
                 width: 100%;
                 height: vw(298px);
@@ -136,6 +137,10 @@
                 margin-right: 0;
             }
         }
+    }
+
+    &__top-btn {
+        display: none;
     }
 
     .pagination {
@@ -322,6 +327,7 @@
 
 /*태블릿 세로 사이즈*/
 @media all and (min-width:768px) and (max-width:1023px) {
+    /* aboutUs - storyNews - CI */
     .about-ci {
         &__identity {
             &--area {
@@ -339,6 +345,67 @@
         }
     }
 
+    /* aboutUs - storyNews - News */
+    .about-storyNews {
+        &__contents {
+            max-width: vw(1600px);
+            position: relative;
+        }
+
+        &__list {
+
+            &-item {
+                width: calc(50% - 2.6%);
+                margin-bottom: vw(53px);
+
+                &--text {
+                    padding: vw(38px 50px);
+                }
+
+                figure {
+                    height: vw(600px);
+                }
+
+                h3 {
+                    font: {
+                        size: vw(50px);
+                    }
+                }
+
+                p {
+                    font : {
+                        size: vw(36px);
+                    }
+                }
+            }
+        }
+
+        &__top-btn {
+            display: inline-block;
+            position: fixed;
+            bottom: vw(40px);
+            right: 5%;
+            width: vw(140px);
+            height: vw(140px);
+            border: 1px solid #bebebe;
+            background-color: #fff;
+            color: #000;
+            font: {
+                size: vw(35px);
+                weight: vw(bold);
+            }
+            text-align: center;
+            line-height: vw(200px);
+            cursor: pointer;
+            background: url("../images/about/m/icon_top.jpg") no-repeat center vw(30px);
+        }
+
+        .pagination {
+            margin-top: vw(120px);
+        }
+    }
+
+    /* aboutUs - ceoMessage*/
     .about-ceo {
         &__contents {
             padding: vw(1200px 60px 72px);
@@ -363,12 +430,64 @@
             line-height: vw(64px);
         }
     }
+
+    /* aboutUs - location */
+    .about-location {
+
+        &__swiper {
+            height: vw(1000px);
+        }
+
+        &__contents {
+            width: vw(1780px);
+            margin: vw(-150px) auto 0;
+            background-color: #fff;
+        }
+
+        &__info {
+
+            &--map {
+                height: vw(690px);
+            }
+
+            &--address  {
+                p {
+                    width: 100%;
+                    font-size: vw(50px);
+                    line-height: vw(74px);
+                }
+
+                dl {
+
+                    dt {
+                        font-size: vw(36px);
+                        line-height: vw(64px);
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            width: vw(4px);
+                            height: vw(30px);
+                            margin: 0 vw(14px);
+                            background-color: #535353;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    dd {
+                        font-size: vw(36px);
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* 모바일 사이즈 */
 @media all and (max-width: 767px) {
     @import "./lib/vw";
 
+    /* aboutUs - storyNews - CI */
     .about-ci {
         &__contents {
             max-width: 100%;
@@ -409,6 +528,86 @@
         }
     }
 
+    /* aboutUs - storyNews - News */
+    .about-storyNews {
+        &__contents {
+            max-width: vw(610px);
+            padding-bottom: vw(120px);
+        }
+
+        &__title {
+            padding: vw(86px 0 84px);
+            font-size: vw(45px);
+        }
+
+        &__list {
+            ul {
+                margin-right:0;
+            }
+
+            &-item {
+                float: initial;
+                width: 100%;
+                margin-bottom: vw(53px);
+
+                &--text {
+                    padding: vw(18px 36px 37px);
+                }
+
+                figure {
+                    height: vw(343px);
+                }
+
+                h3 {
+                    padding-top: vw(14px);
+                    padding-left: vw(9px);
+                    font: {
+                        size: vw(30px);
+                    }
+
+                    &:before {
+                        width: vw(13px);
+                        height: vw(13px);
+                    }
+                }
+
+                p {
+                    padding-left: vw(9px);
+                    font : {
+                        size: vw(20px);
+                    }
+                    line-height: vw(35px);
+                }
+            }
+        }
+
+        &__top-btn {
+            display: inline-block;
+            position: fixed;
+            bottom: vw(40px);
+            right: 5%;
+            padding: vw(48px) 0 vw(12px);
+            width: vw(77px);
+            border: 1px solid #bebebe;
+            background-color: #fff;
+            color: #000;
+            font: {
+                size: vw(20px);
+                weight: vw(bold);
+            }
+            text-align: center;
+            cursor: pointer;
+            background: #fff url("../images/about/m/icon_top.jpg") no-repeat center vw(15px);
+            background-size: vw(37px) vw(21px);
+            line-height: 1;
+        }
+
+        .pagination {
+            margin-top: vw(60px);
+        }
+    }
+
+    /* aboutUs - ceoMessage*/
     .about-ceo {
         &__contents {
             padding: vw(502px 65px 150px);
@@ -429,6 +628,90 @@
             padding-top: vw(50px);
             font-size: vw(22px);
             line-height: vw(37px);
+        }
+    }
+
+    /* aboutUs - location */
+    .about-location {
+        &__contents {
+            width: 100%;
+            margin: 0;
+        }
+
+        &__title {
+            position: initial;
+            height: auto;
+
+            h2 {
+                padding: vw(86px 0 94px);
+                font-size: vw(47px);
+            }
+        }
+
+        &__swiper {
+            height: vw(439px);
+
+            .swiper-button {
+                width: vw(79px);
+                height: vw(79px);
+            }
+
+            .swiper-pagination-bullet {
+                width: vw(17px);
+                height: vw(17px);
+            }
+        }
+
+        &__info {
+            display: block;
+            position: relative;
+            padding: 0 0 vw(100px);
+
+            &--map {
+                display: block;
+                width: 100%;
+                height: vw(447px);
+                padding-top: vw(200px);
+            }
+
+            &--address  {
+                display: block;
+                width: 100%;
+                padding:0;
+
+                p {
+                    position: absolute;
+                    top: vw(30px);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 76%;
+                    font-size: vw(27px);
+                    line-height: vw(45px);
+                }
+
+                dl {
+                    padding-left: vw(133px);
+
+                    dt {
+                        font-size: vw(21px);
+                        line-height: vw(37px);
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            width: vw(4px);
+                            height: vw(30px);
+                            margin: 0 vw(14px);
+                            background-color: #535353;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    dd {
+                        font-size: vw(21px);
+                    }
+                }
+            }
         }
     }
 }

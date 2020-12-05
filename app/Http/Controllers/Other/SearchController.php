@@ -18,21 +18,24 @@ class SearchController extends Controller
         $categorys = DB::table('menus')->where('is_search_category', true)->orderBy('order_id')->get();
 
         $newKeywords = [];
-        $where = [];
         if(!empty($request->keyword)) {
-            $where[] = ['menu_keywords.keyword', 'like', '%'. $request->keyword. '%'];
+            $menus = DB::table('menus')->orderBy('order_id')->get();
 
-            if($request->category != 0) {
-                $where[] = ['menu_keywords.menu_id', '=', $request->category];
+            $where[] = ['menu_keywords.keyword', 'LIKE', '%'. $request->keyword. '%'];
+
+            $ids = [];
+            if($request->category > 0) {
+                $ids = explode(',', $this->ids($menus, $request->category). $request->category);
             }
 
             $keywords = DB::table('menu_keywords')
                         ->leftJoin('menus', 'menu_keywords.menu_id', '=', 'menus.id')
                         ->where($where)
+                        ->when(!empty($ids), function ($query) use ($ids) {
+                            return $query->whereIn('menu_keywords.menu_id', $ids);
+                        })
                         ->select('menus.*', 'menu_keywords.keyword')
                         ->orderBy('order_id')->get();
-
-            $menus = DB::table('menus')->orderBy('order_id')->get();
 
             foreach ($keywords as $keyword) {
                 $names = $this->names($menus, $keyword->parent_id). $keyword->name;
@@ -116,7 +119,7 @@ class SearchController extends Controller
     }
 
     /**
-     * Get names.
+     * Get parent names.
      *
      * @param  array  $menus
      * @return array $parent_id
@@ -131,5 +134,25 @@ class SearchController extends Controller
             }
         }
         return $names;
+    }
+
+    /**
+     * Get children ids.
+     *
+     * @param  array  $menus
+     * @return array $parent_id
+     */
+    public function ids($menus, $id)
+    {
+        $ids = '';
+        foreach ($menus as $menu) {
+            if ($menu->parent_id == $id) {
+                if (strlen($menu->url) > 2) {
+                    $ids = $menu->id. ','. $ids;
+                }
+                $ids = $this->ids($menus, $menu->id). $ids;
+            }
+        }
+        return $ids;
     }
 }
