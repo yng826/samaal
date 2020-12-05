@@ -33,38 +33,38 @@
             </nav>
             <div class="contents-wrap__section" style="text-align: center;">
                 <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="text-align: center;">매출액</h3>
-                    <div style="width:400px; height:200px">
+                    <h3 style="width:300px; text-align: center;">매출액</h3>
+                    <div style="width:300px; height:200px">
                         <canvas id="sales"></canvas>
                     </div>
                 </div>
                 <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="text-align: center;">영업이익</h3>
-                    <div style="width:400px; height:200px">
+                    <h3 style="width:300px; text-align: center;">영업이익</h3>
+                    <div style="width:300px; height:200px">
                         <canvas id="operating_income"></canvas>
                     </div>
                 </div>
                 <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="text-align: center;">당기순이익</h3>
-                    <div style="width:400px; height:200px">
+                    <h3 style="width:300px; text-align: center;">당기순이익</h3>
+                    <div style="width:300px; height:200px">
                         <canvas id="net_income"></canvas>
                     </div>
                 </div>
                 <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="text-align: center;">자산</h3>
-                    <div style="width:400px; height:200px">
+                    <h3 style="width:300px; text-align: center;">자산</h3>
+                    <div style="width:300px; height:200px">
                         <canvas id="assets"></canvas>
                     </div>
                 </div>
                 <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="text-align: center;">부채</h3>
-                    <div style="width:400px; height:200px">
+                    <h3 style="width:300px; text-align: center;">부채</h3>
+                    <div style="width:300px; height:200px">
                         <canvas id="liability"></canvas>
                     </div>
                 </div>
                 <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="text-align: center;">자본</h3>
-                    <div style="width:400px; height:200px">
+                    <h3 style="width:300px; text-align: center;">자본</h3>
+                    <div style="width:300px; height:200px">
                         <canvas id="capital"></canvas>
                     </div>
                 </div>
