@@ -58,6 +58,7 @@ $bodyClass = 'about';
             <a href="#" class="pagination__number">6</a>
             <a href="#" class="pagination__button-next"></a>
         </div>
+        <div class="about-storyNews__top-btn">TOP</div>
     </div>
 </main>
 @endsection
