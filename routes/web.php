@@ -193,6 +193,10 @@ Route::prefix('recruit')->group(function () {
     Route::resource('recruit_list', Recruit\RecruitListController::class);
 });
 
+Route::prefix('other')->group(function () {
+    Route::resource('search', Other\SearchController::class);
+});
+
 
 Route::get('role', function () {
     return 'auth';
