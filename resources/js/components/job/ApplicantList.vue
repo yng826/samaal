@@ -1,20 +1,26 @@
 <template>
-    <table class="table" v-if="isAuth">
-        <tr>
-            <th>공고명</th>
-            <th>접수기한</th>
-            <th>지원정보</th>
-            <th>상태</th>
-        </tr>
-        <tr v-for="(item, id) in items" :key="id" >
-            <td>{{ item.recruit.title }}</td>
-            <td>{{ item.recruit.end_date }}</td>
-            <td>
-                <a :href="'/work-with-us/job/'+ item.id" class="btn btn-primary">수정/삭제</a>
-            </td>
-            <td>{{ item.status_ko }}</td>
-        </tr>
-    </table>
+    <div class="form-container">
+        <table class="table" v-if="isAuth">
+            <thead>
+                <tr>
+                    <th>공고명</th>
+                    <th>접수기한</th>
+                    <th>지원정보</th>
+                    <th>상태</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, id) in items" :key="id" >
+                    <td>{{ item.recruit.title }}</td>
+                    <td>{{ item.recruit.end_date }}</td>
+                    <td>
+                        <a :href="'/work-with-us/job/'+ item.id" class="btn btn-primary">수정/삭제</a>
+                    </td>
+                    <td>{{ item.status_ko }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 <script>
 import axios from 'axios'
