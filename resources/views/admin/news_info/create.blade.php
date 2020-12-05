@@ -35,10 +35,6 @@
                             <textarea rows="5" class="form-control tinymce-editor" name="contents">{{$info->contents ?? ''}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="">URL</label>
-                            <input type="text" class="form-control" name="url" value="{{$info->url ?? ''}}">
-                        </div>
-                        <div class="form-group">
                             <label for="">사용여부</label>
                             <input type="hidden" name="use_yn" value="{{$info->use_yn ?? 'n'}}">
                             <div class="form-check">
@@ -164,11 +160,6 @@
             if ($('input[name=title]').val() == '' || $('input[name=title]').val() == null) {
                 alert('제목을 선택해주세요.');
                 $('input[name=title]').focus();
-                return false;
-
-            } else if ($('input[name=url]').val() == '' || $('input[name=url]').val() == null) {
-                alert('URL을 입력해주세요.');
-                $('input[name=url]').focus();
                 return false;
 
             } else if (($('input[name=img_file_path]').val() == '' || $('input[name=img_file_path]').val() == null)

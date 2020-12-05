@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\RecruitJobController as RecruitJobController;
 use App\Http\Controllers\Recruit\RecruitListController as RecruitListController;
 use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
 use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
+
+use App\Http\Controllers\aboutUs\StoryNewsController as StoryNewsController;
 use App\Http\Controllers\IR\FinanceController;
 use Illuminate\Support\Facades\Session;
 
@@ -54,9 +56,9 @@ Route::prefix('about-us')->group(function() {
     Route::get('ci', function () {
         return view('aboutUs.aboutCi');
     })->name('about-us.ci');
-    Route::get('story-news', function () {
-        return view('aboutUs.storyNews');
-    })->name('about-us.story');
+    Route::get('story-news', [StoryNewsController::class, 'index'])->name('story-news');
+
+    Route::get('story-news/{id}', [StoryNewsController::class, 'show']);
 
     Route::get('ir/financial/{type}', [FinanceController::class, 'show']);
     Route::get('ir_board/financial/{id}', [FinanceController::class, 'ir_board_info']);
