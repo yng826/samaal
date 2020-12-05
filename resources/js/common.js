@@ -28,19 +28,17 @@ const common = () => {
 			};
         });
 
-        // 태블릿 사이즈 이하 header nav
+        // 모바일 이하 header nav
+        const mobileGnb = $(".header__m-nav--gnb");
         $(".header__m-nav").on("click",function(){
-            if($(this).hasClass("on")){
-                $(this).removeClass("on");
-                $("body").removeClass("hidden");
-                $(".header__m-nav--gnb").removeClass("on");
-
-            } else{
-                $(this).addClass("on");
-                $("body").addClass("hidden");
-                $(".header__m-nav--gnb").addClass("on");
-            }
+            $(".gnb-marsk").show();
+            mobileGnb.addClass("on");
         })
+
+        $(".header__m-nav--gnb .close-btn").on("click",function(){
+            mobileGnb.removeClass("on");
+            $(".gnb-marsk").hide();
+        });
 
         $(".header__m-nav--gnb__item").on("click",function(){
             $(this)
