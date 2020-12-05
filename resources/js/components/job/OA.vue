@@ -57,6 +57,8 @@ export default {
             Swal.fire({
                 title: '삭제하시겠습니까?',
                 showDenyButton: true,
+                allowOutsideClick: false,ideClick: false,
+                allowOutsideClick: false,ideClick: false,
                 confirmButtonText: `네`,
                 denyButtonText: `아니오`,
                 }).then((result) => {
@@ -101,7 +103,7 @@ export default {
                     }
                     this.items.splice(index, 1);
                 } else if (result.isDenied) {
-                    this.isSended = true;
+                    this.isSended = false;;
                 }
             });
 
