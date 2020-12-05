@@ -59,6 +59,7 @@ Route::prefix('about-us')->group(function() {
     })->name('about-us.story');
 
     Route::get('ir/financial/{type}', [FinanceController::class, 'show']);
+    Route::get('ir_board/financial/{id}', [FinanceController::class, 'ir_board_info']);
 });
 
 Route::prefix('business')->group(function() {

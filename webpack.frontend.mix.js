@@ -18,6 +18,7 @@ mix
     .js('resources/js/job.js', 'public/js')
     .js('resources/js/business.js', 'public/js')
     .js('resources/js/question.js', 'public/js')
+    .js('resources/js/financial.js', 'public/js')
     .sourceMaps()
     .extract(['vue','jquery'])
     .mergeManifest ()
