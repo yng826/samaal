@@ -1,32 +1,34 @@
 <template>
-    <div class="overseas_study-container">
+    <div class="overseas_study-container form-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>해외연수 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
-            <input type="hidden" name="id" v-model="item.id">
-            <div class="form-group">
-                <label for="country_name">국가/도시</label>
-                <input type="text" name="country_name" v-model="item.country_name">
-            </div>
-            <div class="form-group">
-                <label for="school_name">학교/단체</label>
-                <input type="text" name="school_name" v-model="item.school_name">
-            </div>
-            <div class="form-group">
-                <label for="overseas_study_start">기간</label>
-                <Datepicker class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
-                <Datepicker class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
-            </div>
-            <div class="form-group">
-                <label for="overseas_study_name">연수명</label>
-                <input type="text" name="overseas_study_name" v-model="item.overseas_study_name">
-            </div>
-            <div class="form-group">
-                <label for="overseas_study_purpose">연수목적</label>
-                <input type="text" name="overseas_study_purpose" v-model="item.overseas_study_purpose">
-            </div>
-            <div class="form-group">
-                <label for="overseas_study_contents">연수내용</label>
-                <input type="text" name="overseas_study_contents" v-model="item.overseas_study_contents">
+            <div class="form-wrap">
+                <h3>해외연수 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <input type="hidden" name="id" v-model="item.id">
+                <div class="form-group">
+                    <label for="country_name">국가/도시</label>
+                    <input type="text" name="country_name" v-model="item.country_name">
+                </div>
+                <div class="form-group">
+                    <label for="school_name">학교/단체</label>
+                    <input type="text" name="school_name" v-model="item.school_name">
+                </div>
+                <div class="form-group">
+                    <label for="overseas_study_start">기간</label>
+                    <Datepicker class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
+                    <Datepicker class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
+                </div>
+                <div class="form-group">
+                    <label for="overseas_study_name">연수명</label>
+                    <input type="text" name="overseas_study_name" v-model="item.overseas_study_name">
+                </div>
+                <div class="form-group">
+                    <label for="overseas_study_purpose">연수목적</label>
+                    <input type="text" name="overseas_study_purpose" v-model="item.overseas_study_purpose">
+                </div>
+                <div class="form-group">
+                    <label for="overseas_study_contents">연수내용</label>
+                    <input type="text" name="overseas_study_contents" v-model="item.overseas_study_contents">
+                </div>
             </div>
         </form>
         <div class="button-group">

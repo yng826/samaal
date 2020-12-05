@@ -1,28 +1,30 @@
 <template>
-    <div class="military-container">
+    <div class="military-container form-container">
         <form>
-            <h3>병역사항</h3>
-            <input type="hidden" name="id" v-model="item.id">
-            <div class="form-group">
-                <label for="military_type">구분/구별</label>
-                <input type="text" name="military_type" v-model="item.military_type">
-            </div>
-            <div class="form-group">
-                <label for="military_discharge">제대구분</label>
-                <input type="text" name="military_discharge" v-model="item.military_discharge">
-            </div>
-            <div class="form-group">
-                <label for="military_rank">계급</label>
-                <input type="text" name="military_rank" v-model="item.military_rank">
-            </div>
-            <div class="form-group">
-                <label for="military_exemption">군면제사유</label>
-                <input type="text" name="military_exemption" v-model="item.military_exemption">
-            </div>
-            <div class="form-group">
-                <label for="military_duration_start">군복무기간</label>
-                <Datepicker class="inline-block" name="military_duration_start" :military="ko" v-model="item.military_duration_start" format="yyyy-MM-dd"></Datepicker>
-                <Datepicker class="inline-block" name="military_duration_end" :military="ko" v-model="item.military_duration_end" format="yyyy-MM-dd"></Datepicker>
+            <div class="form-wrap">
+                <h3>병역사항</h3>
+                <input type="hidden" name="id" v-model="item.id">
+                <div class="form-group">
+                    <label for="military_type">구분/구별</label>
+                    <input type="text" name="military_type" v-model="item.military_type">
+                </div>
+                <div class="form-group">
+                    <label for="military_discharge">제대구분</label>
+                    <input type="text" name="military_discharge" v-model="item.military_discharge">
+                </div>
+                <div class="form-group">
+                    <label for="military_rank">계급</label>
+                    <input type="text" name="military_rank" v-model="item.military_rank">
+                </div>
+                <div class="form-group">
+                    <label for="military_exemption">군면제사유</label>
+                    <input type="text" name="military_exemption" v-model="item.military_exemption">
+                </div>
+                <div class="form-group">
+                    <label for="military_duration_start">군복무기간</label>
+                    <Datepicker class="inline-block" name="military_duration_start" :military="ko" v-model="item.military_duration_start" format="yyyy-MM-dd"></Datepicker>
+                    <Datepicker class="inline-block" name="military_duration_end" :military="ko" v-model="item.military_duration_end" format="yyyy-MM-dd"></Datepicker>
+                </div>
             </div>
         </form>
         <div class="button-group">

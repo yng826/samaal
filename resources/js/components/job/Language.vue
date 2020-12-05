@@ -1,27 +1,29 @@
 <template>
-    <div class="language-container">
+    <div class="language-container form-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>외국어 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
-            <div class="form-group">
-                <label for="language_type">구분</label>
-                <input type="text" name="language_type" v-model="item.language_type">
-            </div>
-            <div class="form-group">
-                <label for="language_name">TEST명</label>
-                <input type="text" name="language_name" v-model="item.language_name">
-            </div>
-            <div class="form-group">
-                <label for="language_grade">점수/등급</label>
-                <input type="text" name="language_grade" v-model="item.language_grade">
-            </div>
-            <div class="form-group">
-                <label for="language_level">회화수준</label>
-                <input type="text" name="language_level" v-model="item.language_level">
-            </div>
-            <div class="form-group">
-                <label for="language_start">재학기간</label>
-                <Datepicker class="inline-block" name="language_start" :language="ko" v-model="item.language_start" format="yyyy-MM-dd"></Datepicker>
-                <Datepicker class="inline-block" name="language_end" :language="ko" v-model="item.language_end" format="yyyy-MM-dd"></Datepicker>
+            <div class="form-wrap">
+                <h3>외국어 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <div class="form-group">
+                    <label for="language_type">구분</label>
+                    <input type="text" name="language_type" v-model="item.language_type">
+                </div>
+                <div class="form-group">
+                    <label for="language_name">TEST명</label>
+                    <input type="text" name="language_name" v-model="item.language_name">
+                </div>
+                <div class="form-group">
+                    <label for="language_grade">점수/등급</label>
+                    <input type="text" name="language_grade" v-model="item.language_grade">
+                </div>
+                <div class="form-group">
+                    <label for="language_level">회화수준</label>
+                    <input type="text" name="language_level" v-model="item.language_level">
+                </div>
+                <div class="form-group">
+                    <label for="language_start">재학기간</label>
+                    <Datepicker class="inline-block" name="language_start" :language="ko" v-model="item.language_start" format="yyyy-MM-dd"></Datepicker>
+                    <Datepicker class="inline-block" name="language_end" :language="ko" v-model="item.language_end" format="yyyy-MM-dd"></Datepicker>
+                </div>
             </div>
         </form>
         <div class="button-group">

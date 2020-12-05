@@ -1,18 +1,20 @@
 <template>
-    <div class="award-container">
+    <div class="award-container form-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>수상경력 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
-            <div class="form-group">
-                <label for="award_name">시상명</label>
-                <input type="text" name="award_name" v-model="item.award_name">
-            </div>
-            <div class="form-group">
-                <label for="award_group_name">단체명</label>
-                <input type="text" name="award_group_name" v-model="item.award_group_name">
-            </div>
-            <div class="form-group">
-                <label for="award_date">수상일</label>
-                <Datepicker class="inline-block" name="award_date" :language="ko" v-model="item.award_date" format="yyyy-MM-dd"></Datepicker>
+            <div class="form-wrap">
+                <h3>수상경력 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <div class="form-group">
+                    <label for="award_name">시상명</label>
+                    <input type="text" name="award_name" v-model="item.award_name">
+                </div>
+                <div class="form-group">
+                    <label for="award_group_name">단체명</label>
+                    <input type="text" name="award_group_name" v-model="item.award_group_name">
+                </div>
+                <div class="form-group">
+                    <label for="award_date">수상일</label>
+                    <Datepicker class="inline-block" name="award_date" :language="ko" v-model="item.award_date" format="yyyy-MM-dd"></Datepicker>
+                </div>
             </div>
         </form>
         <div class="button-group">

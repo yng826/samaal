@@ -1,23 +1,25 @@
 <template>
-    <div class="career-container">
+    <div class="career-container form-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>경력사항 {{ job_id }} <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
-            <div class="form-group">
-                <label for="career_start">근무기간</label>
-                <Datepicker class="inline-block" name="career_start" :language="ko" v-model="item.career_start" format="yyyy-MM-dd"></Datepicker>
-                <Datepicker class="inline-block" name="career_end" :language="ko" v-model="item.career_end" format="yyyy-MM-dd"></Datepicker>
-            </div>
-            <div class="form-group">
-                <label for="career_name">직장명</label>
-                <input type="text" name="career_name" v-model="item.career_name">
-            </div>
-            <div class="form-group">
-                <label for="career_position">직위/근무부서</label>
-                <input type="text" name="career_position" v-model="item.career_position">
-            </div>
-            <div class="form-group">
-                <label for="career_role">담당업무</label>
-                <input type="text" name="career_role" v-model="item.career_role">
+            <div class="form-wrap">
+                <h3>경력사항 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <div class="form-group">
+                    <label for="career_start">근무기간</label>
+                    <Datepicker class="inline-block" name="career_start" :language="ko" v-model="item.career_start" format="yyyy-MM-dd"></Datepicker>
+                    <Datepicker class="inline-block" name="career_end" :language="ko" v-model="item.career_end" format="yyyy-MM-dd"></Datepicker>
+                </div>
+                <div class="form-group">
+                    <label for="career_name">직장명</label>
+                    <input type="text" name="career_name" v-model="item.career_name">
+                </div>
+                <div class="form-group">
+                    <label for="career_position">직위/근무부서</label>
+                    <input type="text" name="career_position" v-model="item.career_position">
+                </div>
+                <div class="form-group">
+                    <label for="career_role">담당업무</label>
+                    <input type="text" name="career_role" v-model="item.career_role">
+                </div>
             </div>
         </form>
         <div class="button-group">

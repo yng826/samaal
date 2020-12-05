@@ -1,14 +1,16 @@
 <template>
-    <div class="oa-container">
+    <div class="oa-container form-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>PC사용능력 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
-            <div class="form-group">
-                <label for="oa_name">사용가능OA</label>
-                <input type="text" name="oa_name" v-model="item.oa_name">
-            </div>
-            <div class="form-group">
-                <label for="oa_level">OA수준</label>
-                <input type="text" name="oa_level" v-model="item.oa_level">
+            <div class="form-wrap">
+                <h3>PC사용능력 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <div class="form-group">
+                    <label for="oa_name">사용가능OA</label>
+                    <input type="text" name="oa_name" v-model="item.oa_name">
+                </div>
+                <div class="form-group">
+                    <label for="oa_level">OA수준</label>
+                    <input type="text" name="oa_level" v-model="item.oa_level">
+                </div>
             </div>
         </form>
         <div class="button-group">

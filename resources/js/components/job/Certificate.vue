@@ -1,18 +1,20 @@
 <template>
-    <div class="certificate-container">
+    <div class="certificate-container form-container">
         <form v-for="(item, id) in items" :key="id" >
-            <h3>자격면허 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
-            <div class="form-group">
-                <label for="certificate_date">근무기간</label>
-                <Datepicker class="inline-block" name="certificate_date" :language="ko" v-model="item.certificate_date" format="yyyy-MM-dd"></Datepicker>
-            </div>
-            <div class="form-group">
-                <label for="certificate_name">자격증명</label>
-                <input type="text" name="certificate_name" v-model="item.certificate_name">
-            </div>
-            <div class="form-group">
-                <label for="certificate_issuer">발행처</label>
-                <input type="text" name="certificate_issuer" v-model="item.certificate_issuer">
+            <div class="form-wrap">
+                <h3>자격면허 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <div class="form-group">
+                    <label for="certificate_date">근무기간</label>
+                    <Datepicker class="inline-block" name="certificate_date" :language="ko" v-model="item.certificate_date" format="yyyy-MM-dd"></Datepicker>
+                </div>
+                <div class="form-group">
+                    <label for="certificate_name">자격증명</label>
+                    <input type="text" name="certificate_name" v-model="item.certificate_name">
+                </div>
+                <div class="form-group">
+                    <label for="certificate_issuer">발행처</label>
+                    <input type="text" name="certificate_issuer" v-model="item.certificate_issuer">
+                </div>
             </div>
         </form>
         <div class="button-group">
