@@ -217,29 +217,19 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
     Route::resource('ir_board', Admin\IrBoardController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
     Route::resource('news_info', Admin\NewsInfoController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('recruit', Admin\RecruitController::class);
     Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
     Route::resource('recruit.job', Admin\RecruitJobController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('faq', Admin\FaqController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('question_admin', Admin\QuestionAdminController::class);
     Route::get('question_admin/{id}', [QuestionAdminController::class, 'show'])
     ->where('id', '[0-9]+');
