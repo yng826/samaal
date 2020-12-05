@@ -168,6 +168,8 @@ Route::prefix('business')->group(function() {
 
 
 Route::prefix('work-with-us')->group(function(){
+    Route::get('recruit', [RecruitListController::class, 'index']);
+    Route::get('recruit/{id}', [RecruitListController::class, 'show']);
     Route::get('job', [JobController::class, 'index'])
     ->name('work.job');
     Route::get('job/{id}', [JobController::class, 'show'])
@@ -175,10 +177,10 @@ Route::prefix('work-with-us')->group(function(){
 });
 Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function(){
     // Route::resource('recruit', RecruitController::class);
-    Route::post('job', [JobController::class, 'store']);
+    // Route::post('job', [JobController::class, 'store']);
     // Route::post('job/{id}', [JobController::class, 'store'])
     //     ->where('id', '[0-9]+');
-    Route::post('job/check', [JobController::class, 'check']);
+    // Route::post('job/check', [JobController::class, 'check']);
 
     // Route::resource('edu', Job\EducationController::class);
 });
@@ -187,10 +189,11 @@ Route::prefix('board')->group(function () {
     Route::resource('question_board', Board\QuestionBoardController::class);
 });
 
-Route::prefix('recruit')->group(function () {
+Route::prefix('work-with-us')->group(function () {
 
-    Route::get('recruit_list/search/{id}', [RecruitListController::class, 'search']);
-    Route::resource('recruit_list', Recruit\RecruitListController::class);
+    // Route::get('recruit/search/{id}', [RecruitListController::class, 'search']);
+    // Route::resource('recruit', [RecruitListController::class, 'index']);
+    // Route::resource('recruit/{id}', [RecruitListController::class, 'show']);
 });
 
 Route::prefix('other')->group(function () {
