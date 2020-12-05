@@ -5,8 +5,11 @@
                 <h3>경력사항 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
                 <div class="form-group">
                     <label for="career_start">근무기간</label>
-                    <Datepicker class="inline-block" name="career_start" :language="ko" v-model="item.career_start" format="yyyy-MM-dd"></Datepicker>
-                    <Datepicker class="inline-block" name="career_end" :language="ko" v-model="item.career_end" format="yyyy-MM-dd"></Datepicker>
+                    <div class="input_date-group">
+                        <Datepicker class="inline-block" name="career_start" :language="ko" v-model="item.career_start" format="yyyy-MM-dd"></Datepicker>
+                        <span>~</span>
+                        <Datepicker class="inline-block" name="career_end" :language="ko" v-model="item.career_end" format="yyyy-MM-dd"></Datepicker>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="career_name">직장명</label>

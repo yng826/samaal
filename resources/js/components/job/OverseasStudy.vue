@@ -14,8 +14,11 @@
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_start">기간</label>
-                    <Datepicker class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
-                    <Datepicker class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
+                    <div class="input_date-group">
+                        <Datepicker class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
+                        <span>~</span>
+                        <Datepicker class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_name">연수명</label>

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>삼아알미늄 - @yield('title')</title>
+    <title>{{ config('app.name', '삼아알미늄') }} - @yield('title')</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class={{ $bodyClass ?? '' }}>
     <div id="app">
         @include('shared.header')
 
@@ -20,9 +20,10 @@
     </div>
     @section('script')
     <!-- Scripts -->
-    <script src="{{ asset('js/manifest.js') }}" defer></script>
-    <script src="{{ asset('js/vendor.js') }}" defer></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/manifest.js') }}"></script>
+    <script src="{{ mix('js/vendor.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
+    <!-- Scripts -->
     @show
 </body>
 </html>
