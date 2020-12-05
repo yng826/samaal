@@ -1,6 +1,7 @@
 
 const about = () => {
 
+    //aboutUs - location
     // location page 슬라이드
     const locationSwiper = () => {
         const swiper = new Swiper('.about-location .swiper-container', {
@@ -14,6 +15,7 @@ const about = () => {
         });
     }
 
+    // aboutUs - storyNews - News
     // 스토리뉴스 top button
     const storyTopButton = () => {
         $(window).scroll(function(){
@@ -41,9 +43,33 @@ const about = () => {
         });
     }
 
+    // aboutUs - heritage
+    const heritageSwiper = () => {
+
+        const swiperImg = new Swiper('.about-heritage__slide .about-heritage__slide--img', {
+            loop: true,
+            slidesPerView: 2,
+            loopedSlides: 17,
+            centeredSlides: true,
+        });
+        const swiperYear = new Swiper('.about-heritage__slide .about-heritage__slide--year', {
+            loop: true,
+            slidesPerView: 7,
+            loopedSlides: 17,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+        swiperYear.controller.control = swiperImg;
+        swiperImg.controller.control = swiperYear;
+    }
+
     const about_init = () => {
         locationSwiper();
         storyTopButton();
+        heritageSwiper();
     };
 
     about_init();

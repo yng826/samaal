@@ -325,6 +325,170 @@
     }
 }
 
+/* aboutUs - heritage */
+.about-heritage {
+    &__top-img {
+        display: block;
+        width: 100%;
+        height: vw(270px);
+        background: url("../images/about/heritage/img_top.jpg")no-repeat;
+        background-size: cover;
+    }
+
+    &__contents {
+        max-width: vw(1376px);
+        margin: 0 auto;
+    }
+
+    &__info {
+        padding: vw(88px 831px 220px 0);
+        background: url("../images/about/heritage/img_right.jpg")no-repeat right top / contain;
+
+        &--title {
+            display: block;
+            padding-bottom: vw(34px);
+            color: $titleColor;
+            font-size: vw(25px);
+            font-weight: bold;
+            line-height: vw(37px);
+        }
+
+        &--text {
+            display: block;
+            color: #383838;
+            font-size: vw(18px);
+            line-height: vw(32px);
+            word-break: keep-all;
+        }
+    }
+
+    &__slide {
+        padding: vw(200px) 0 ;
+
+        .about-heritage__slide--img {
+            width: vw(837px);
+            height: vw(630px);
+
+            .swiper-wrapper {
+                padding-top: vw(63px);
+                height: vw(504px);
+                width: vw(344px);
+            }
+
+            .swiper-slide {
+                text-align: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                width: auto;
+                // height: vw(504px);
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                transition: -webkit-transform 0.3s linear;
+                transition: transform 0.3s linear;
+                transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+            }
+
+            .swiper-slide:before{
+                content: '';
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                transition: all 0.5s;
+            }
+
+            .swiper-slide-active{
+                display: inline-block;
+                vertical-align: middle;
+                z-index: 2;
+                height: vw(630px);
+                width: vw(430px);
+                margin-top: vw(-63px);
+                -webkit-transform: scale(1.01);
+                transform: scale(1.01);
+            }
+
+            .swiper-slide-active:before {
+                display: none;
+            }
+        }
+
+        .about-heritage__slide--year {
+            width: vw(589px);
+            margin-top: vw(53px);
+            padding: 0 vw(58px);
+
+            .swiper-slide {
+                font-size: vw(28px);
+                color: #8d8d8d;
+                text-align: center;
+            }
+
+            .swiper-slide-active {
+                color: $titleColor;
+                font-weight: bold;
+            }
+
+            .swiper-button-prev {
+                width: vw(58px);
+                left: 0;
+                background-color: #fff;
+            }
+
+            .swiper-button-next {
+                width: vw(58px);
+                right: 0;
+                background-color: #fff;
+            }
+
+            .swiper-button-prev::after{
+                display: inline-block;
+                width: vw(72px);
+                height: vw(32px);
+                background: url("../images/about/heritage/arrow_prev.jpg") no-repeat left;
+                background-size: contain;
+                font-size: 0;
+            }
+
+            .swiper-button-next::after{
+                display: inline-block;
+                width: vw(72px);
+                height: vw(32px);
+                background: url("../images/about/heritage/arrow_next.jpg") no-repeat right;
+                background-size: contain;
+                font-size: 0;
+            }
+            // .swiper-button-next,
+            // .swiper-button-prev {
+            //     position: initial;
+            //     display: inline-block;
+            //     vertical-align: middle;
+            // }
+        }
+    }
+}
+
+
+
 /*태블릿 세로 사이즈*/
 @media all and (min-width:768px) and (max-width:1023px) {
     /* aboutUs - storyNews - CI */

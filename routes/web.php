@@ -57,6 +57,9 @@ Route::prefix('about-us')->group(function() {
     Route::get('story-news', function () {
         return view('aboutUs.storyNews');
     })->name('about-us.story');
+    Route::get('heritage', function () {
+        return view('aboutUs.heritage');
+    })->name('about-us.heritage');
 
     Route::get('ir/financial/{type}', [FinanceController::class, 'show']);
     Route::get('ir_board/financial/{id}', [FinanceController::class, 'ir_board_info']);
