@@ -7,7 +7,7 @@
                     <label for="career_start">근무기간</label>
                     <div class="input_date-group">
                         <Datepicker class="inline-block" name="career_start" :language="ko" v-model="item.career_start" format="yyyy-MM-dd"></Datepicker>
-                        <span>~</span>
+                        <span class="from-arrow">~</span>
                         <Datepicker class="inline-block" name="career_end" :language="ko" v-model="item.career_end" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>

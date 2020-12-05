@@ -183,12 +183,16 @@
                     vertical-align: middle;
                     font-size: 0;
 
-                    span {
+                    .from-arrow {
                         display: inline-block;
                         width: 8%;
                         vertical-align: middle;
                         font-size: vw(18px);
                         text-align: center;;
+                    }
+
+                    span {
+                        font-size: vw(18px);
                     }
 
                     .inline-block {

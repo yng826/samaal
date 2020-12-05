@@ -691,6 +691,18 @@
             padding: vw(90px 70px);
         }
 
+        &__m-top {
+            content: "";
+            display: block;
+            width: vw(50px);
+            height: vw(45px);
+            position: absolute;
+            top: vw(45px);
+            left: 50%;
+            background: url("../images/common/m/icon_footer.png")no-repeat;
+            background-size: contain;
+        }
+
         &__logo {
             display: none;
         }
@@ -741,18 +753,6 @@
 
         .copyright {
             display: none;
-        }
-
-        &::before {
-            content: "";
-            display: block;
-            width: vw(50px);
-            height: vw(45px);
-            position: absolute;
-            top: vw(45px);
-            left: 50%;
-            background: url("../images/common/m/icon_footer.png")no-repeat;
-            background-size: contain;
         }
     }
 

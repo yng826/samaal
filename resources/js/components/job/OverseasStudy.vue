@@ -16,7 +16,7 @@
                     <label for="overseas_study_start">기간</label>
                     <div class="input_date-group">
                         <Datepicker class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
-                        <span>~</span>
+                        <span class="from-arrow">~</span>
                         <Datepicker class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
