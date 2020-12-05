@@ -410,6 +410,25 @@
     }
 
     .about-ceo {
+        &__contents {
+            padding: vw(502px 65px 150px);
+            margin-top: 0;
+            font-size: 0;
+            background: url("../images/about/m/img_ceo.jpg") no-repeat left top;
+            background-size: 100% vw(439px);
+        }
 
+        &__title {
+            padding-bottom: vw(36px);
+            font-size: vw(36px);
+            line-height: vw(60px);
+        }
+
+        &__text {
+            width: 100%;
+            padding-top: vw(50px);
+            font-size: vw(22px);
+            line-height: vw(37px);
+        }
     }
 }

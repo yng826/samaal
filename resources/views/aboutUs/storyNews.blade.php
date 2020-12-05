@@ -1,3 +1,8 @@
+
+@php
+$bodyClass = 'about';
+@endphp
+
 @extends('layouts.default')
 
 @section('contents')

@@ -36,6 +36,10 @@
         text-align: center;
         transform: translateX(-50%);
 
+        ul {
+            height: 100%;
+        }
+
         &--item {
             display: inline-block;
             position: relative;

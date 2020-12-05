@@ -1,4 +1,5 @@
 <footer class="footer">
+    <div class="footer__m-top"></div>
     <div class="footer__wrap">
         <h1 class="footer__logo">SAMA</h1>
         <div class="footer__nav">
