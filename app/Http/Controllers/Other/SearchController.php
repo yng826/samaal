@@ -13,12 +13,39 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $menus = DB::table('menus')->where('is_search_category', true)->orderBy('order_id')->get();
+        $categorys = DB::table('menus')->where('is_search_category', true)->orderBy('order_id')->get();
+
+        $newKeywords = [];
+        $where = [];
+        if(!empty($request->keyword)) {
+            $where[] = ['menu_keywords.keyword', 'like', '%'. $request->keyword. '%'];
+
+            if($request->category != 0) {
+                $where[] = ['menu_keywords.menu_id', '=', $request->category];
+            }
+
+            $keywords = DB::table('menu_keywords')
+                        ->leftJoin('menus', 'menu_keywords.menu_id', '=', 'menus.id')
+                        ->where($where)
+                        ->select('menus.*', 'menu_keywords.keyword')
+                        ->orderBy('order_id')->get();
+
+            $menus = DB::table('menus')->orderBy('order_id')->get();
+
+            foreach ($keywords as $keyword) {
+                $names = $this->names($menus, $keyword->parent_id). $keyword->name;
+
+                $keyword->names = $names;
+                $newKeywords[] = $keyword;
+            }
+        }
 
         return view('other.search', [
-            'menus' => $menus,
+            'keyword' => $request->keyword,
+            'categorys' => $categorys,
+            'keywords' => $newKeywords,
         ]);
     }
 
@@ -46,37 +73,12 @@ class SearchController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-        $where = [];
-        if(!empty($request->keyword)) {
-            $where['keyword'] = '%'. $request->keyword. '%';
-        }
-        if($id != 0) {
-            $where['menu_keywords.menu_id'] =  $id;
-        }
-
-        $keywords = DB::table('menu_keywords')
-                        ->leftJoin('menus', 'menu_keywords.menu_id', '=', 'menus.id')
-                        ->where($where)
-                        ->select('menus.*', 'menu_keywords.keyword')
-                        ->orderBy('order_id')->get();
-
-        $menus = DB::table('menus')->orderBy('order_id')->get();
-
-        $newKeywords = array();
-        foreach ($keywords as $keyword) {
-            $names = $this->names($menus, $keyword->parent_id). $keyword->name;
-
-            $keyword->names = $names;
-            $newKeywords[] = $keyword;
-        }
-
-        return $newKeywords;
+        //
     }
 
     /**
