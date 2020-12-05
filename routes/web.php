@@ -172,6 +172,8 @@ Route::prefix('work-with-us')->group(function(){
     Route::get('recruit/{id}', [RecruitListController::class, 'show']);
     Route::get('job', [JobController::class, 'index'])
     ->name('work.job');
+    Route::get('job/create', [JobController::class, 'create'])
+    ->name('work.job');
     Route::get('job/{id}', [JobController::class, 'show'])
     ->where('id', '[0-9]+');
 });
