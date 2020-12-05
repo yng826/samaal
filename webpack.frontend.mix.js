@@ -15,10 +15,11 @@ require('laravel-mix-merge-manifest');
 mix
     .js('resources/js/app.js', 'public/js')
     .js('resources/js/recruit.js', 'public/js')
-    .js('resources/js/job.js', 'public/js')
+    .js('resources/js/job/Job.js', 'public/js')
     .js('resources/js/business.js', 'public/js')
     .js('resources/js/question.js', 'public/js')
     .js('resources/js/financial.js', 'public/js')
+    .js('resources/js/other/search.js', 'public/js')
     .sourceMaps()
     .extract(['vue','jquery'])
     .mergeManifest ()

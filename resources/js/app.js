@@ -52,9 +52,13 @@ const appMethods = {
 
 const appInit = () => {
     const appName = $('body').attr('class');
-    if(appName) [common, appMethods[appName]].forEach(method  => {
-        if(method) method();
-    });
+    if(appName) {
+        [common, appMethods[appName]].forEach(method  => {
+            if(method) method();
+        })
+    } else {
+        // common();
+    };
 
 };
 

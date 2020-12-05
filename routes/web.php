@@ -168,6 +168,8 @@ Route::prefix('business')->group(function() {
 
 
 Route::prefix('work-with-us')->group(function(){
+    Route::get('recruit', [RecruitListController::class, 'index']);
+    Route::get('recruit/{id}', [RecruitListController::class, 'show']);
     Route::get('job', [JobController::class, 'index'])
     ->name('work.job');
     Route::get('job/{id}', [JobController::class, 'show'])
@@ -175,10 +177,10 @@ Route::prefix('work-with-us')->group(function(){
 });
 Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function(){
     // Route::resource('recruit', RecruitController::class);
-    Route::post('job', [JobController::class, 'store']);
+    // Route::post('job', [JobController::class, 'store']);
     // Route::post('job/{id}', [JobController::class, 'store'])
     //     ->where('id', '[0-9]+');
-    Route::post('job/check', [JobController::class, 'check']);
+    // Route::post('job/check', [JobController::class, 'check']);
 
     // Route::resource('edu', Job\EducationController::class);
 });
@@ -187,10 +189,15 @@ Route::prefix('board')->group(function () {
     Route::resource('question_board', Board\QuestionBoardController::class);
 });
 
-Route::prefix('recruit')->group(function () {
+Route::prefix('work-with-us')->group(function () {
 
-    Route::get('recruit_list/search/{id}', [RecruitListController::class, 'search']);
-    Route::resource('recruit_list', Recruit\RecruitListController::class);
+    // Route::get('recruit/search/{id}', [RecruitListController::class, 'search']);
+    // Route::resource('recruit', [RecruitListController::class, 'index']);
+    // Route::resource('recruit/{id}', [RecruitListController::class, 'show']);
+});
+
+Route::prefix('other')->group(function () {
+    Route::resource('search', Other\SearchController::class);
 });
 
 
@@ -213,29 +220,19 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
     Route::resource('ir_board', Admin\IrBoardController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
     Route::resource('news_info', Admin\NewsInfoController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('recruit', Admin\RecruitController::class);
     Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
     Route::resource('recruit.job', Admin\RecruitJobController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('faq', Admin\FaqController::class);
-});
 
-Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('question_admin', Admin\QuestionAdminController::class);
     Route::get('question_admin/{id}', [QuestionAdminController::class, 'show'])
     ->where('id', '[0-9]+');
