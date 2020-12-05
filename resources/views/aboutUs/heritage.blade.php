@@ -45,7 +45,6 @@
                   <div class="swiper-slide"><img src="/images/about/heritage/slide_2017.jpg" alt=""></div>
                 </div>
             </div>
-
             <div class="about-heritage__slide--year swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">1969</div>
@@ -70,6 +69,7 @@
                 <div class="swiper-button-next"></div>
             </div>
         </div>
+        <p class="about-heritage__text">* 지속가능한 세상을 위해 UN 지속가능 발전 목표(SDGs) 색상을 활용했습니다.</p>
     </div>
 </main>
 

@@ -338,6 +338,7 @@
     &__contents {
         max-width: vw(1376px);
         margin: 0 auto;
+        padding-bottom: vw(200px);
     }
 
     &__info {
@@ -363,7 +364,7 @@
     }
 
     &__slide {
-        padding: vw(200px) 0 ;
+        padding-top: vw(200px);
 
         .about-heritage__slide--img {
             width: vw(837px);
@@ -484,6 +485,17 @@
             //     vertical-align: middle;
             // }
         }
+    }
+
+    &__text {
+        position: absolute;
+        right: vw(38px);
+        display: block;
+        padding-top: vw(18px);
+        text-align: right;
+        color: #8d8d8d;
+        font-size: vw(15px);
+        line-height: vw(32px);
     }
 }
 
@@ -643,6 +655,82 @@
                     }
                 }
             }
+        }
+    }
+
+    /* aboutUs - heritage */
+    .about-heritage {
+
+        &__contents {
+            max-width: vw(1600px);
+            margin: 0 auto;
+            padding-bottom: vw(200px);
+        }
+
+        &__info {
+            padding: vw(88px 831px 220px 0);
+
+            &--title {
+                padding-bottom: vw(68px);
+                font-size: vw(50px);
+                line-height: vw(74px);
+                word-break: keep-all;
+            }
+
+            &--text {
+                font-size: vw(30px);
+                line-height: vw(64px);
+                word-break: keep-all;
+            }
+        }
+
+        &__slide  {
+            padding-top: vw(400px);
+
+            .about-heritage__slide--img {
+                width: vw(1674px);
+                height: vw(1260px);
+
+                .swiper-wrapper {
+                    padding-top: vw(126px);
+                    height: vw(1008px);
+                    width: vw(688px);
+                }
+
+                .swiper-slide-active {
+                    height: vw(1260px);
+                    width: vw(860px);
+                    margin-top: vw(-126px);
+                }
+            }
+
+            .about-heritage__slide--year {
+                width: vw(1178px);
+                margin-top: vw(106px);
+                padding: 0 vw(116px) !important;
+
+                .swiper-slide {
+                    font-size: vw(56px);
+                }
+
+                .swiper-button-prev,
+                .swiper-button-next {
+                    width: vw(116px);
+                }
+
+                .swiper-button-prev::after,
+                .swiper-button-next::after {
+                    width: vw(144px);
+                    height: vw(64px);
+                }
+            }
+        }
+
+        &__text {
+            right: vw(76px);
+            padding-top: vw(36px);
+            font-size: vw(30px);
+            line-height: vw(64px);
         }
     }
 }
