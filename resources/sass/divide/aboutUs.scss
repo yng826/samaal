@@ -431,6 +431,56 @@
         }
     }
 
+    /* aboutUs - location */
+    .about-location {
+
+        &__swiper {
+            height: vw(1000px);
+        }
+
+        &__contents {
+            width: vw(1780px);
+            margin: vw(-150px) auto 0;
+            background-color: #fff;
+        }
+
+        &__info {
+
+            &--map {
+                height: vw(690px);
+            }
+
+            &--address  {
+                p {
+                    width: 100%;
+                    font-size: vw(50px);
+                    line-height: vw(74px);
+                }
+
+                dl {
+
+                    dt {
+                        font-size: vw(36px);
+                        line-height: vw(64px);
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            width: vw(4px);
+                            height: vw(30px);
+                            margin: 0 vw(14px);
+                            background-color: #535353;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    dd {
+                        font-size: vw(36px);
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* 모바일 사이즈 */
@@ -557,7 +607,6 @@
         }
     }
 
-
     /* aboutUs - ceoMessage*/
     .about-ceo {
         &__contents {
@@ -579,6 +628,90 @@
             padding-top: vw(50px);
             font-size: vw(22px);
             line-height: vw(37px);
+        }
+    }
+
+    /* aboutUs - location */
+    .about-location {
+        &__contents {
+            width: 100%;
+            margin: 0;
+        }
+
+        &__title {
+            position: initial;
+            height: auto;
+
+            h2 {
+                padding: vw(86px 0 94px);
+                font-size: vw(47px);
+            }
+        }
+
+        &__swiper {
+            height: vw(439px);
+
+            .swiper-button {
+                width: vw(79px);
+                height: vw(79px);
+            }
+
+            .swiper-pagination-bullet {
+                width: vw(17px);
+                height: vw(17px);
+            }
+        }
+
+        &__info {
+            display: block;
+            position: relative;
+            padding: 0 0 vw(100px);
+
+            &--map {
+                display: block;
+                width: 100%;
+                height: vw(447px);
+                padding-top: vw(200px);
+            }
+
+            &--address  {
+                display: block;
+                width: 100%;
+                padding:0;
+
+                p {
+                    position: absolute;
+                    top: vw(30px);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 76%;
+                    font-size: vw(27px);
+                    line-height: vw(45px);
+                }
+
+                dl {
+                    padding-left: vw(133px);
+
+                    dt {
+                        font-size: vw(21px);
+                        line-height: vw(37px);
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            width: vw(4px);
+                            height: vw(30px);
+                            margin: 0 vw(14px);
+                            background-color: #535353;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    dd {
+                        font-size: vw(21px);
+                    }
+                }
+            }
         }
     }
 }
