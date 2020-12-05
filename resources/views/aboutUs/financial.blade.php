@@ -21,76 +21,142 @@
                    financial
                 </h2>
             </div>
-            <nav class="">
-                <ul>
-                    <li class="">
+            <nav class="" style="text-align: center;">
+                <ul >
+                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;" >
                         <a href="/about-us/ir/financial/consolidated">연결재무제표</a></li>
                     </li>
-                    <li class="">
+                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">
                         <a href="/about-us/ir/financial/separate">별도재무제표</a></li>
                     </li>
                 </ul>
             </nav>
-            <div class="contents-wrap__section">
-                <h3>매출액</h3>
-               <img src="https://dummyimage.com/400x600/000/fff" alt="">
-               <img src="https://dummyimage.com/400x600/A00/fff" alt="">
+            <div class="contents-wrap__section" style="text-align: center;">
+                <div class="chart" style="width: 400px;display: inline-block;">
+                    <h3 style="text-align: center;">매출액</h3>
+                    <div style="width:400px; height:200px">
+                        <canvas id="sales"></canvas>
+                    </div>
+                </div>
+                <div class="chart" style="width: 400px;display: inline-block;">
+                    <h3 style="text-align: center;">영업이익</h3>
+                    <div style="width:400px; height:200px">
+                        <canvas id="operating_income"></canvas>
+                    </div>
+                </div>
+                <div class="chart" style="width: 400px;display: inline-block;">
+                    <h3 style="text-align: center;">당기순이익</h3>
+                    <div style="width:400px; height:200px">
+                        <canvas id="net_income"></canvas>
+                    </div>
+                </div>
+                <div class="chart" style="width: 400px;display: inline-block;">
+                    <h3 style="text-align: center;">자산</h3>
+                    <div style="width:400px; height:200px">
+                        <canvas id="assets"></canvas>
+                    </div>
+                </div>
+                <div class="chart" style="width: 400px;display: inline-block;">
+                    <h3 style="text-align: center;">부채</h3>
+                    <div style="width:400px; height:200px">
+                        <canvas id="liability"></canvas>
+                    </div>
+                </div>
+                <div class="chart" style="width: 400px;display: inline-block;">
+                    <h3 style="text-align: center;">자본</h3>
+                    <div style="width:400px; height:200px">
+                        <canvas id="capital"></canvas>
+                    </div>
+                </div>
             </div>
             <div class="contents-wrap__section">
-                <h3>재무정보 3개년 요약</h3>
+                <h3 style="text-align: center;">재무정보 3개년 요약</h3>
                 <table class="table">
                     <tr>
-                        <th>sdfasd</th>
-                        <th>vg srg</th>
-                        <th>v56yugr</th>
-                        <th>5467huty</th>
+                        <th></th>
+                        @foreach ($info_year as $year)
+                            <th class="text-center">{{ $year }}</th>
+                        @endforeach
                     </tr>
                     <tr>
-                        <th>43,905,834</th>
-                        <td>43,905,834</td>
-                        <td>43,905,834</td>
-                        <td>43,905,834</td>
+                        <th>매출액</th>
+                        @foreach ($sales as $sales_text)
+                            <td class="text-center">{{ $sales_text }}</td>
+                        @endforeach
                     </tr>
                     <tr>
-                        <th>12,453,754</th>
-                        <td>12,453,754</td>
-                        <td>12,453,754</td>
-                        <td>12,453,754</td>
+                        <th>영업이익</th>
+                        @foreach ($operating_income as $operating_income_text)
+                            <td class="text-center">{{ $operating_income_text }}</td>
+                        @endforeach
                     </tr>
                     <tr>
-                        <th>4,546,366</th>
-                        <td>4,546,366</td>
-                        <td>4,546,366</td>
-                        <td>4,546,366</td>
+                        <th>당기순이익</th>
+                        @foreach ($net_income as $net_income_text)
+                            <td class="text-center">{{ $net_income_text }}</td>
+                        @endforeach
+                    </tr>
+                    <tr>
+                        <th>자산</th>
+                        @foreach ($assets as $assets_text)
+                            <td class="text-center">{{ $assets_text }}</td>
+                        @endforeach
+                    </tr>
+                    <tr>
+                        <th>부채</th>
+                        @foreach ($liability as $liability_text)
+                            <td class="text-center">{{ $liability_text }}</td>
+                        @endforeach
+                    </tr>
+                    <tr>
+                        <th>자본총계</th>
+                        @foreach ($capital as $capital_text)
+                            <td class="text-center">{{ $capital_text }}</td>
+                        @endforeach
                     </tr>
                 </table>
             </div>
+<financial-component ></financial-component>
             <div class="contents-wrap__section">
-                <h3>전자공고</h3>
+                <h3 style="text-align: center;">전자공고</h3>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>tt5t44</th>
-                            <th>tt5t44</th>
-                            <th>tt5t44</th>
-                            <th>tt5t44</th>
-                            <th>tt5t44</th>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>등록일</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($ir_boards as $ir_board)
                         <tr>
-                            <td>gsf;ldkghsd;lk</td>
-                            <td>gsf;ldkghsd;lk</td>
-                            <td>gsf;ldkghsd;lk</td>
-                            <td>gsf;ldkghsd;lk</td>
-                            <td>gsf;ldkghsd;lk</td>
+                            <td class="text-center">{{ $ir_board->id }}</td>
+                            <td class="text-center" v-on:click.prevent="ir_board({{ $ir_board->id }})"> {{ $ir_board->title }}</a></td>
+                            <td class="text-center">{{ $ir_board->updated_at ?? $ir_board->created_at}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
+            <div class="" style="text-align: center;">
+                <button type="button" onclick="location.href='#' " style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">DART 바로가기</button>
+            </div>
         </main>
 
-
         @include('shared.footer')
+
+        <script>
+            var info_year = @json($info_year);
+            var sales = @json($sales);
+            var operating_income = @json($operating_income);
+            var net_income = @json($net_income);
+            var assets = @json($assets);
+            var liability = @json($liability);
+            var capital = @json($capital);
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="{{ mix('/js/manifest.js') }}"></script>
+        <script src="{{ mix('/js/vendor.js') }}"></script>
+        <script src="{{ mix('/js/financial.js') }}"></script>
     </body>
 </html>
