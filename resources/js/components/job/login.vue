@@ -20,14 +20,19 @@
                 <button type="submit">확인하기</button>
             </form>
         </div>
+        <VSpinner v-if="isSubmit"></VSpinner>
     </div>
 </template>
 <script>
 import User from '../../job/User'
 import {getHeader, getAuth, getUser} from '../../config'
 import Swal from 'sweetalert2'
+import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
     props: ['action'],
+    components: {
+        VSpinner
+    },
     data: function() {
         return {
             name: '',
@@ -80,6 +85,7 @@ export default {
                     icon: 'error',
                     confirmButtonText: '확인'
                 });
+                this.isSubmit = false;
                 return false;
             }
             let logged = User.login({
