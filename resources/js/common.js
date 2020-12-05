@@ -49,9 +49,19 @@ const common = () => {
 
     }
 
+    const footer_top = () => {
+        $(".footer__m-top").click(function(){
+            $('html, body').animate({
+                scrollTop : 0
+            }, 400);
+            return false;
+        });
+    }
+
     const common_init = () => {
         header_lang();
         header_nav();
+        footer_top();
     };
 
     common_init();
