@@ -61,11 +61,11 @@ window.$ = window.jQuery = require('jquery');
 import {JobStore} from './job/Store'
 document.addEventListener('DOMContentLoaded', () => {
 
-    const app = new Vue({
-        el: '#app',
-        store: JobStore
-    });
-
-    console.log('init job');
-
+    if ( typeof vueApp == 'undefined' ) {
+        const vueApp = new Vue({
+            el: '#app',
+            store: JobStore
+        });
+        console.log('init job');
+    }
 });

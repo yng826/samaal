@@ -50,16 +50,21 @@
                 <button>저장</button>
             </div>
         </form>
+        <VSpinner v-if="isSubmit"></VSpinner>
     </div>
 </template>
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import {getHeader, getAuth, getUser, apiDomain} from '../../config'
+import VSpinner from 'vue-spinner/src/BeatLoader'
 import Language from './Language.vue'
 export default {
   components: { Language },
     props: ['job_id'],
+    components: {
+        VSpinner
+    },
     computed: {
         job () { return this.$store.state.job },
         user () { return this.$store.state.user },
@@ -69,6 +74,7 @@ export default {
     data: function() {
         return {
             isAuth: false,
+            isSubmit: true,
         }
     },
     mounted: function() {
@@ -81,6 +87,7 @@ export default {
                 icon: 'info',
                 confirmButtonText: '<a href="/work-with-us/job/">확인</a>'
             });
+            this.isSubmit = false;
         }
     },
     methods: {
@@ -115,20 +122,23 @@ export default {
                 this.$store.state.military = res.data.military ? res.data.military : this.$store.getters.getMilitary;
                 this.$store.state.oa = res.data.oas;
                 this.$store.state.oversea = res.data.overseas_studys;
+                this.isSubmit = false;
             })
             .catch(err => {
                 console.error(err);
+                this.isSubmit = false;
             })
         },
         setInfo: function(item) {
+            this.isSubmit = true;
             var form = document.querySelector('#individualInfoForm');
             var formData = new FormData(form);
-            formData._method = this.job.id ? 'PUT': 'POST';
+            formData._method = this.job_id ? 'PUT': 'POST';
 
             let headers = getHeader();
             headers['content-type'] = 'multipart/form-data';
 
-            let url = '/api/work-with-us/job/'+ this.index;
+            let url = '/api/work-with-us/job/'+ this.job_id;
             if (this.job.id) {
                 url += '?_method=PUT';
             }
@@ -148,17 +158,13 @@ export default {
                     icon: 'success',
                     confirmButtonText: '확인'
                 });
+                this.isSubmit = false;
             })
             .catch(err => {
                 console.error(err);
+                this.isSubmit = false;
             })
         }
-        // sendPost: function () {
-        //     User.login({
-        //         email: this.email,
-        //         password: this.password,
-        //     });
-        // }
     }
 }
 </script>

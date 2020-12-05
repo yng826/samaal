@@ -3,7 +3,7 @@
 @section('title', '지원서')
 
 @section('main')
-    <main id="app" class="{{$pageClass}} contents-wrap">
+    <main class="{{$pageClass}} contents-wrap">
         <div class="contents-wrap__title {{$pageClass}}__title">
             <h2>지원하기</h2>
         </div>
@@ -29,6 +29,7 @@
     </main>
 @endsection
 
-<script src="{{ mix('/js/manifest.js') }}"></script>
-<script src="{{ mix('/js/vendor.js') }}"></script>
-<script src="{{ mix('/js/job.js') }}"></script>
+@section('script')
+    @parent
+    <script src="{{ asset('js/job.js') }}" defer></script>
+@endsection
