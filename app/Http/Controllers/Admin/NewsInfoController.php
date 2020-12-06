@@ -121,8 +121,7 @@ class NewsInfoController extends Controller
 
         if (!empty($request->file('file'))) {
             $file_name = $request->file('file')->getClientOriginalName();
-
-            // $file_path = Storage::putFile('news', $request->file('file')); //파일 저장
+            $img_file_name = $file_name;
             $file_path = $request->file('file')->store('news');
             $img_file_path = $file_path;
         }

@@ -18,7 +18,7 @@ $bodyClass = 'about';
                         <a href="javascript:;" class="news-btn" id="news-btn-{{ $info->id }}">
                         <input type="hidden"  value="{{ $info->id }}">
                         <figure>
-                            <img src="/admin/news_info/file-download?id={{ $info->id }}" alt="" width="508" height="298">
+                            <img src="/storage/{{ $info->img_file_path }}" alt="" width="508" height="298">
                         </figure>
                         <div class="about-storyNews__list-item--text" style="height: 80px;">
                             <h3>{{ $info->title }}</h3>
@@ -56,7 +56,6 @@ $bodyClass = 'about';
                     </div>
                     <div class="form-group">
                         <label for="">내용</label><br>
-                        {{-- <input type="text" class="form-control" name="contents" value="" disabled> --}}
                         <div class="form-control" name="contents" style="overflow-x:auto; width:350px; height:200px; border: 1px solid #313131;"></div>
                     </div>
                 </div>
