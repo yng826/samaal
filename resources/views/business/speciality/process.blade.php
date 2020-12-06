@@ -19,7 +19,7 @@
         </div>
         <div class="content-01 speciality-process__tab-content on">
             <p class="content-01__text">
-                삼아알미늄은 최고의 압연 기술력을 바탕으로
+                삼아알미늄은 최고의 압연 기술력을 바탕으로<br>
                 앞으로도 꾸준히 고객과 함께 업계의 리더로서 책임을 다하겠습니다.
             </p>
             <ul class="content-01__list">
