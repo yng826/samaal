@@ -58,6 +58,18 @@ const business = () => {
         });
     };
 
+    // 공정과정 tab
+    const processTab = () => {
+        $(".speciality-process__tab--item").click(function(){
+            $(".speciality-process__tab--item").removeClass('on');
+            $(".speciality-process__tab-content").removeClass('on');
+            $(this).addClass('on');
+            $("."+$(this).data('id')).addClass('on');
+        });
+    };
+
+
+
     const eventListener = () => {
         const txt = $('.question-pop__submit-btn').html();
     }
@@ -74,6 +86,7 @@ const business = () => {
         foilWrap();
         questionPop();
         businessSwiper();
+        processTab();
     };
 
     business_init();

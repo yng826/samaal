@@ -171,6 +171,11 @@ Route::prefix('business')->group(function() {
         $data['question_title'] = '알루미늄 페이스트';
         return view('business.industry.paste', $data);
     });
+    Route::get('speciality/process', function () {
+        $data = [];
+        $data['question_title'] = '공정과정';
+        return view('business.speciality.process', $data);
+    });
 });
 
 

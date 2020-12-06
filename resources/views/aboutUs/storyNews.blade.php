@@ -12,17 +12,17 @@ $bodyClass = 'about';
     </div>
     <div class="about-storyNews__contents">
         <div class="about-storyNews__list">
-            <ul  style="table-layout: fixed;">
+            <ul>
                 @foreach ($infos as $info)
-                <li class="about-storyNews__list-item" style="margin: 10px;">
+                <li class="about-storyNews__list-item">
                         <a href="javascript:;" class="news-btn" id="news-btn-{{ $info->id }}">
                         <input type="hidden"  value="{{ $info->id }}">
                         <figure>
-                            <img src="/admin/news_info/file-download?id={{ $info->id }}" alt="" width="508" height="298">
+                            <img src="/admin/news_info/file-download?id={{ $info->id }}" alt="">
                         </figure>
-                        <div class="about-storyNews__list-item--text" style="height: 80px;">
+                        <div class="about-storyNews__list-item--text">
                             <h3>{{ $info->title }}</h3>
-                            <div style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap; height: 50px;">{!! $info->contents !!}</div>
+                            <div>{!! $info->contents !!}</div>
                         </div>
                     </a>
                 </li>

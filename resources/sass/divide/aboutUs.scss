@@ -78,6 +78,7 @@
         &-item {
             float: left;
             width: calc(33.33% - 2.6%);
+            margin-bottom: vw(20px);
             border: 1px solid #ccc;
             box-sizing: border-box;
             margin-right: vw(42px);
@@ -124,6 +125,7 @@
 
             p {
                 display: block;
+                min-height: vw(50px);
                 padding-left: vw(10px);
                 color: #2a2a2a;
                 font : {
@@ -141,6 +143,7 @@
 
     &__top-btn {
         display: none;
+        font-size: 0;
     }
 
     .pagination {
@@ -575,7 +578,6 @@
             width: vw(140px);
             height: vw(140px);
             border: 1px solid #bebebe;
-            background-color: #fff;
             color: #000;
             font: {
                 size: vw(35px);
@@ -584,7 +586,7 @@
             text-align: center;
             line-height: vw(200px);
             cursor: pointer;
-            background: url("../images/about/m/icon_top.jpg") no-repeat center vw(30px);
+            background:#fff url("../images/about/m/icon_top.jpg") no-repeat center vw(30px);
         }
 
         .pagination {
@@ -852,7 +854,6 @@
             padding: vw(48px) 0 vw(12px);
             width: vw(77px);
             border: 1px solid #bebebe;
-            background-color: #fff;
             color: #000;
             font: {
                 size: vw(20px);

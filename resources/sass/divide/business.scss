@@ -1,4 +1,6 @@
 @import "./lib/webvw";
+
+/* 알루미늄 호일, 포장재용, 산업/건축용 content */
 .business-foil {
     position: relative;
 
@@ -211,6 +213,7 @@
     }
 }
 
+/* 알루미늄 호일, 포장재용, 산업/건축용 layout */
 .business-detail {
     padding-bottom: vw(85px);
 
@@ -465,6 +468,7 @@
     }
 }
 
+/* business intro */
 .business-intro {
     position: relative;
     width: 100%;
@@ -772,6 +776,64 @@
             color: #010101;
             font-size: vw(20px);
             vertical-align: middle;
+        }
+    }
+}
+
+/* 공정과정 */
+.speciality-process {
+
+    &__title {
+        padding: vw(57px) 0;
+        font-size: vw(40px);
+        line-height: 1;
+    }
+
+    &__contents {
+        max-width: vw(1021px);
+        margin: 0 auto;
+    }
+
+    &__tab {
+        width: 100%;
+        font-size: 0;
+
+        &--item {
+            display: inline-block;
+            width: calc(33.33% - #{vw(6px)});
+            margin-right: vw(-6px);
+            padding: vw(23px) 0;
+            font-size: vw(20px);
+            background-color: #cdcdcd;
+            text-align: center;
+            color: #fff;
+            line-height: 1;
+
+            &.on {
+                position: relative;
+                font-weight: bold;
+                color: $titleColor;
+                background-color: #fff;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: vw(5px);
+                    background-color: $titleColor;
+
+                }
+            }
+        }
+    }
+
+    &__content {
+        display: none;
+
+        &.on {
+            display: block;
         }
     }
 }
