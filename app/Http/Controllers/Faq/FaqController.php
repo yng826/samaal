@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Faq;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FaqController extends Controller
 {
@@ -12,9 +13,20 @@ class FaqController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $category = $request->category;
+
+        $faqs = DB::table('faqs')
+                        ->when(!empty($category), function ($query) use ($category) {
+                            return $query->where('category', $category);
+                        })
+                        ->orderBy('category', 'DESC')->get();
+
+        return view('faq.faq', [
+            'category' => $request->category,
+            'faqs' => $faqs,
+        ]);
     }
 
     /**
