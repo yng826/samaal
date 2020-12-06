@@ -1,7 +1,7 @@
 <template>
-    <div class="form-container">
+    <div class="form-container" v-if="!isAuth">
         <div class="form-wrap">
-            <form id="login-form" :action="action" method="POST" @submit.prevent="sendPost" v-if="!isAuth">
+            <form id="login-form" :action="action" method="POST" @submit.prevent="sendPost">
                 <div class="form-group">
                     <label for="name">성명</label>
                     <input type="text" name="name" id="name" v-model="name" ref="name">

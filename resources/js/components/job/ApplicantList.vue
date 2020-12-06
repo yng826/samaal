@@ -1,6 +1,6 @@
 <template>
-    <div class="form-container">
-        <table class="table" v-if="isAuth">
+    <div class="form-container" v-if="isAuth">
+        <table class="table">
             <thead>
                 <tr>
                     <th>공고명</th>
