@@ -67,6 +67,7 @@ export default {
     methods: {
         addItem: function() {
             this.items.push({
+                id: "",
                 school_name: "",
                 edu_major: "",
                 edu_grade: "",
@@ -76,6 +77,14 @@ export default {
             });
         },
         removeItem: function(id, index) {
+            if ( this.items.length == 1 ) {
+                Swal.fire({
+                    title: '삭제할 수 없습니다',
+                    icon: 'error',
+                    confirmButtonText: '확인'
+                });
+                return false;
+            }
             if ( this.isSended ) {
                 return false;
             }
@@ -112,7 +121,7 @@ export default {
                             this.isSended = false;
                             Swal.fire({
                                 title: '삭제에 실패했습니다!',
-                                icon: 'danger',
+                                icon: 'error',
                                 confirmButtonText: '확인'
                             });
                             console.error(err);
@@ -161,7 +170,7 @@ export default {
                 this.isSended = false;
                 Swal.fire({
                     title: '저장에 실패했습니다!',
-                    icon: 'danger',
+                    icon: 'error',
                     confirmButtonText: '확인'
                 });
                 console.error(err);

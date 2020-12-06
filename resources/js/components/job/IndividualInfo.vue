@@ -112,16 +112,20 @@ export default {
                     updated_at: res.data.updated_at,
                     user_id: res.data.user_id,
                 };
-                this.$store.state.user = res.data.user;
-                this.$store.state.user_info = res.data.user_info;
-                this.$store.state.award = res.data.awards;
-                this.$store.state.career = res.data.careers;
-                this.$store.state.certificate = res.data.certificates;
-                this.$store.state.education = res.data.educations;
-                this.$store.state.language = res.data.languages;
-                this.$store.state.military = res.data.military ? res.data.military : this.$store.getters.getMilitary;
-                this.$store.state.oa = res.data.oas;
-                this.$store.state.oversea = res.data.overseas_studys;
+                this.$store.state.user = res.data.user ? {
+                    id: res.data.user.id,
+                    name: res.data.user.name,
+                    email: res.data.user.email,
+                } : this.$store.getters.getUser;
+                this.$store.state.user_info = res.data.user_info.length ? res.data.user_info : this.$store.getters.getDefaultUserInfo;
+                this.$store.state.award = res.data.awards.length ? res.data.awards : this.$store.getters.getDefaultAwards;
+                this.$store.state.career = res.data.careers.length ? res.data.careers : this.$store.getters.getDefaultCareers;
+                this.$store.state.certificate = res.data.certificates.length ? res.data.certificates : this.$store.getters.getDefaultCertificates;
+                this.$store.state.education = res.data.educations.length ? res.data.educations : this.$store.getters.getDefaultEducations;
+                this.$store.state.language = res.data.languages.length ? res.data.languages : this.$store.getters.getDefaultLanguages;
+                this.$store.state.military = res.data.military ? res.data.military : this.$store.getters.getDefaultMilitary;
+                this.$store.state.oa = res.data.oas.length ? res.data.oas : this.$store.getters.getDefaultOas;
+                this.$store.state.oversea = res.data.overseas_studys.length ? res.data.overseas_studys : this.$store.getters.getDefaultOverseasStudys;
                 this.isSubmit = false;
             })
             .catch(err => {
