@@ -29,18 +29,18 @@
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="content-01__list--item">
-                    <span>분리, 분단</span>
-                    <stron>Separating/Slitting</stron>
+                    <span class="lang-korea">분리, 분단</span>
+                    <stron class="lang-english">Separating/Slitting</stron>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="content-01__list--item">
-                    <span>연화</span>
-                    <stron>Annealing</stron>
+                    <span class="lang-korea">연화</span>
+                    <stron class="lang-english">Annealing</stron>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="content-01__list--item">
-                    <span>포장</span>
-                    <stron>Packaging</stron>
+                    <span class="lang-korea">포장</span>
+                    <stron class="lang-english">Packaging</stron>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>

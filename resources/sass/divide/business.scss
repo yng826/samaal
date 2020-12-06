@@ -850,8 +850,20 @@
             padding-top: vw(70px);
 
             &--item {
-                span {}
-                strong {}
+                .lang-korea {
+                    display: block;
+                    color: #000;
+                    font: {
+                        size: vw(20px);
+                        weight: bold;
+                    }
+                }
+
+                .lang-english {
+                    display: block;
+                    color: #000;
+                    font-size: vw(18px);
+                }
 
             }
 
