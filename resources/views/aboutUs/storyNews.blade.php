@@ -22,7 +22,7 @@ $bodyClass = 'about';
                         </figure>
                         <div class="about-storyNews__list-item--text" style="height: 80px;">
                             <h3>{{ $info->title }}</h3>
-                            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{!! $info->contents !!}</p>
+                            <div style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap; height: 50px;">{!! $info->contents !!}</div>
                         </div>
                     </a>
                 </li>
