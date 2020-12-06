@@ -26,11 +26,11 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">분류</label>
-                            <select class="form-control w-auto" name="category">
+                            <select class="form-control w-auto" name="category_id">
                                 <option value="">::선택::</option>
-                                <option value="채용절차" {{ isset($faq) && $faq->category == '채용절차' ? 'selected' :''}}>채용절차</option>
-                                <option value="지원서 작성/수정" {{ isset($faq) && $faq->category == '지원서 작성/수정' ? 'selected' :''}}>지원서 작성/수정</option>
-                                <option value="기타" {{ isset($faq) && $faq->category == '기타' ? 'selected' :''}}>기타</option>
+                                <option value="1" {{ isset($faq) && $faq->category_id == 1 ? 'selected' :''}}>채용절차</option>
+                                <option value="2" {{ isset($faq) && $faq->category_id == 2 ? 'selected' :''}}>지원서 작성/수정</option>
+                                <option value="3" {{ isset($faq) && $faq->category_id == 3 ? 'selected' :''}}>기타</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -85,7 +85,7 @@ const faq_create = () => {
     }
 
     const validation = () => {
-        if ($('select[name=category]').val() == '' || $('select[name=category]').val() == null) {
+        if ($('select[name=category_id]').val() == '' || $('select[name=category_id]').val() == null) {
             alert('분류를 선택해주세요.');
             return false;
 

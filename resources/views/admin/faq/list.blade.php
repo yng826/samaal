@@ -30,7 +30,15 @@
                         @foreach ($faqs as $faq)
                         <tr>
                             <td class="text-center">{{ $faq->id }}</td>
-                            <td class="text-center">{{ $faq->category }}</td>
+                            <td class="text-center">
+                                @if ($faq->category_id == 1)
+                                    채용절차
+                                @elseif ($faq->category_id == 2)
+                                    지원서 작성/수정
+                                @elseif ($faq->category_id == 3)
+                                    기타
+                                @endif
+                            </td>
                             <td class="text-center">{{ $faq->question }}</td>
                             <td class="text-center">{{ $faq->updated_at ?? $faq->created_at}}</td>
                             <td class="text-center">
