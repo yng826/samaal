@@ -19,10 +19,11 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
-                    <table class="table">
+                    <h4>인적사항</h4>
+                    <table class="table table-bordered">
                         <tr>
                             <td class="text-center" rowspan="3">
-                                <img src="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/file-download" height="120" />
+                                <img src="/storage/{{ $job->file_path }}" height="120" />
                             </td>
                             <th class="text-center">한글</th>
                             <td>{{ $job->user->name ?? '' }}</td>
@@ -35,9 +36,7 @@
                             <th class="text-center">연락처</th>
                             <td>{{ $job->phone_decrypt }}</td>
                             <th class="text-center">이메일</th>
-                            <td>{{ $job->user->email ?? '' }}</td>
-                            <th class="text-center"></th>
-                            <td></td>
+                            <td colspan="3">{{ $job->user->email ?? '' }}</td>
                         </tr>
                         <tr>
                             <th class="text-center">주소</th>
@@ -46,9 +45,9 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
+                    <h4>병역사항</h4>
+                    <table class="table table-bordered">
                         <tr>
-                            <th class="text-center align-middle" rowspan="2">병역사항</th>
                             <th class="text-center">구분/군별</th>
                             <th class="text-center">제대구분</th>
                             <th class="text-center">계급</th>
@@ -65,9 +64,9 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
+                    <h4>학력사항</h4>
+                    <table class="table table-bordered">
                         <tr>
-                            <th class="text-center align-middle" rowspan="{{ count($job->educations)+1 }}">학력사항</th>
                             <th class="text-center">학교명</th>
                             <th class="text-center">전공</th>
                             <th class="text-center">재학기간</th>
@@ -87,9 +86,9 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
+                    <h4>수상경력</h4>
+                    <table class="table table-bordered">
                         <tr>
-                            <th class="text-center align-middle" rowspan="{{ count($job->awards)+1 }}">수상경력</th>
                             <th class="text-center">시상명</th>
                             <th class="text-center">단체명</th>
                             <th class="text-center">수상일</th>
@@ -105,9 +104,9 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
+                    <h4>자격면허</h4>
+                    <table class="table table-bordered">
                         <tr>
-                            <th class="text-center align-middle" rowspan="{{ count($job->certificates)+1 }}">자격면허</th>
                             <th class="text-center">취득일</th>
                             <th class="text-center">자격증명</th>
                             <th class="text-center">발행처</th>
@@ -123,9 +122,9 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
+                    <h4>해외연수</h4>
+                    <table class="table table-bordered">
                         <tr>
-                            <th class="text-center align-middle" rowspan="{{ count($job->overseasStudys)+1 }}">해외연수</th>
                             <th class="text-center">국가/도시</th>
                             <th class="text-center">학교/단체</th>
                             <th class="text-center">기간</th>
@@ -147,9 +146,9 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
+                    <h4>외국어</h4>
+                    <table class="table table-bordered">
                         <tr>
-                            <th class="text-center align-middle" rowspan="{{ count($job->languages)+1 }}">외국어</th>
                             <th class="text-center">구분</th>
                             <th class="text-center">TEST명</th>
                             <th class="text-center">점수/등급</th>
@@ -169,9 +168,9 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
+                    <h4>PC사용능력</h4>
+                    <table class="table table-bordered">
                         <tr>
-                            <th class="text-center align-middle" rowspan="{{ count($job->oas)+1 }}">PC사용능력</th>
                             <th class="text-center">사용 가능 OA</th>
                             <th class="text-center">수준</th>
                         </tr>
@@ -185,9 +184,9 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
+                    <h4>경력사항</h4>
+                    <table class="table table-bordered">
                         <tr>
-                            <th class="text-center align-middle" rowspan="{{ count($job->careers)+1 }}">경력사항</th>
                             <th class="text-center">회사명</th>
                             <th class="text-center">근무기간</th>
                             <th class="text-center">직위</th>
@@ -205,10 +204,8 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table class="table">
-                        <tr>
-                            <th class="text-center">자기소개서</th>
-                        </tr>
+                    <h4>자기소개서</h4>
+                    <table class="table table-bordered">
                         <tr>
                             <td>{!! nl2br(e($job->cover_letter)) !!}</td>
                         </tr>
@@ -223,7 +220,7 @@
                     <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
                         @method('PUT')
                         @csrf
-                        <div class="form-group form-inline">
+                        <div class="form-group form-inline pull-right">
                             <label class="mr-1">처리상태</label>
                             <select class="form-control w-auto mr-1" name="status">
                                 <option value="">::선택::</option>

@@ -93,7 +93,7 @@ class JobController extends Controller
             $filePath = '';
             if ($files = $request->file('pic')) {
                 $filePath = $request->file('pic')->store('job');
-                $filePath = 'storage/'.$filePath;
+                $filePath = $filePath;
             }
             $job = new Job;
             $job->recruit_id = $formData['recruit_id'];
@@ -181,7 +181,7 @@ class JobController extends Controller
         if ($files = $request->file('pic')) {
             // $filePath = Storage::putFile('public/job', $files, 'public'); //파일 저장
             $filePath = $request->file('pic')->store('job');
-            $filePath = 'storage/'.$filePath;
+            $filePath = $filePath;
         }
         // save job
         $job->phone_encrypt = Crypt::encryptString($formData['phone_decrypt']);
