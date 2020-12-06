@@ -74,3 +74,30 @@
 </main>
 
 @endsection
+
+@section('script')
+    @parent
+    {<script>
+        // aboutUs - heritage
+       // heritage swiper
+       var swiperImg = new Swiper('.about-heritage__slide--img', {
+           loop: true,
+           slidesPerView: 2,
+           loopedSlides: 17,
+           centeredSlides: true,
+       });
+       var swiperYear = new Swiper('.about-heritage__slide--year', {
+           loop: true,
+           slidesPerView: 7,
+           loopedSlides: 17,
+           centeredSlides: true,
+           navigation: {
+               nextEl: '.swiper-button-next',
+               prevEl: '.swiper-button-prev',
+           }
+       });
+       swiperYear.controller.control = swiperImg;
+       swiperImg.controller.control = swiperYear;
+
+   </script>
+@endsection

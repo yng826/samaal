@@ -45,7 +45,7 @@ class IsoCertificationController extends Controller
      */
     public function store(Request $request)
     {
-        $file_path = Storage::putFile('iso', $request->file('file')); //파일 저장
+        $file_path = $request->file('file')->store('iso'); //파일 저장
 
         $saved = DB::table('iso_certifications')
                     ->insert([
@@ -102,7 +102,7 @@ class IsoCertificationController extends Controller
         $file_path = $request->file_path;
         if (!empty($request->file('file'))) {
             $file_name = $request->file('file')->getClientOriginalName();
-            $file_path = Storage::putFile('iso', $request->file('file')); //파일 저장
+            $file_path = $request->file('file')->store('iso'); //파일 저장
         }
 
         $affected = DB::table('iso_certifications')
