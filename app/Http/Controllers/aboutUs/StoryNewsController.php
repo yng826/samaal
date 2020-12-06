@@ -16,12 +16,12 @@ class StoryNewsController extends Controller
      */
     public function index()
     {
-        $infos = DB::table('news_infos')->where('use_yn', 'y')->orderBy('id', 'desc')->paginate(9);
+        $infos = DB::table('news_infos')->where('use_yn', 'y')->orderBy('id', 'desc')->paginate(6);
         $cnt = DB::table('news_infos')->where('use_yn', 'y')->count();
 
-        $cnt = (int)ceil($cnt/9);
+        $cnt = (int)ceil($cnt/6);
 
-        return view('aboutUs.storyNews', [
+        return view('aboutUs.story.list', [
             'infos' => $infos,
             'cnt' => $cnt
         ]);
@@ -56,12 +56,12 @@ class StoryNewsController extends Controller
      */
     public function show($id)
     {
-        $new = DB::table('news_infos')->where('id', $id)->first();
+        $news = DB::table('news_infos')->where('id', $id)->first();
         $action = "/admin/news_infos";
 
-        debug($new);
+        debug($news);
 
-        return response()->json(["new"=>$new], 200);
+        // return response()->json(["new"=>$new], 200);
 
 
         // $infos = DB::table('news_infos')->where('use_yn', 'y')->orderBy('id', 'desc')->paginate(9);
@@ -70,11 +70,9 @@ class StoryNewsController extends Controller
         // $cnt = (int)ceil($cnt/9);
 
         // debug($cnt);
-        // return view('aboutUs.storyNews', [
-        //     'infos' => $infos,
-        //     'cnt' => $cnt/9,
-        //     'new' => $new
-        // ]);
+        return view('aboutUs.story.show', [
+            'news' => $news,
+        ]);
     }
 
     /**
