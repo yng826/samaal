@@ -8,8 +8,9 @@
             <li class="header__nav--item">
                 <span>About Us</span>
                 <ol class="header__nav--submenu">
-                    <li><a href="#">Story & News</a></li>
                     <li><a href="#">Heritage</a></li>
+                    <li><a href="#">CEO Message</a></li>
+                    <li><a href="#">Story & News</a></li>
                     <li><a href="#">Location</a></li>
                     <li><a href="#">Investor Relations</a></li>
                 </ol>
@@ -49,11 +50,11 @@
             <li class="header__m-nav--gnb__item menu">
                 <span class="menu__title">About US</span>
                 <ul class="menu__sub">
-                    <li><a href="">Heritage</a></li>
-                    <li><a href="">Message from CEO</a></li>
-                    <li><a href="">Story & News</a></li>
-                    <li><a href="">재무정보</a></li>
-                    <li><a href="">Location</a></li>
+                    <li><a href="#">Heritage</a></li>
+                    <li><a href="#">CEO Message</a></li>
+                    <li><a href="#">Story & News</a></li>
+                    <li><a href="#">Location</a></li>
+                    <li><a href="#">Investor Relations</a></li>
                 </ul>
             </li>
             <li class="header__m-nav--gnb__item menu">

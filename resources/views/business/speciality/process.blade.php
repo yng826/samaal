@@ -24,8 +24,8 @@
             </p>
             <ul class="content-01__list">
                 <li class="content-01__list--item">
-                    <span>압연</span>
-                    <stron>Roughing</stron>
+                    <span class="lang-korea">압연</span>
+                    <stron class="lang-english">Roughing</stron>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="content-01__list--item">

@@ -856,16 +856,16 @@
             }
 
             &--item:nth-child(1) {
-                background: url() no-repeat;
+                background: url("../images/business/speciality/img_process_01.jpg") no-repeat;
             }
             &--item:nth-child(2) {
-                color: blue;
+                background: url("../images/business/speciality/img_process_02.jpg") no-repeat;
             }
             &--item:nth-child(3) {
-                color: green;
+                background: url("../images/business/speciality/img_process_03.jpg") no-repeat;
             }
             &--item:nth-child(4) {
-                color: yellowgreen;
+                background: url("../images/business/speciality/img_process_04.jpg") no-repeat;
             }
         }
     }
