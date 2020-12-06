@@ -35,11 +35,14 @@
                             <label class="mr-1">상태</label>
                             <select class="form-control w-auto" name="status">
                                 <option value="">::전체::</option>
-                                <option value="saved" {{ $status == 'saved' ? 'selected' :''}}>저장</option>
+                                <option value="saved" {{ $status == 'saved' ? 'selected' :''}}>미제출</option>
                                 <option value="submit" {{ $status == 'submit' ? 'selected' :''}}>제출</option>
                                 <option value="pending" {{ $status == 'pending' ? 'selected' :''}}>처리중</option>
                                 <option value="expired" {{ $status == 'expired' ? 'selected' :''}}>종료</option>
                             </select>
+                        </div>
+                        <div class="form-group ml-1">
+                            <button type="button" class="btn btn-info text-white search-btn">검색</button>
                         </div>
                     </div>
                 </div>
@@ -60,17 +63,21 @@
                             <td class="text-center">{{ $job->user->name }}</td>
                             <td class="text-center">{{ $job->ko_status }}
                                 @if ($job->status == 'saved')
-                                저장
+                                    미제출
                                 @elseif ($job->status == 'submit')
-                                제출
+                                    제출
                                 @elseif ($job->status == 'pending')
-                                처리중
+                                    처리중
                                 @elseif ($job->status == 'expired')
-                                종료
+                                    종료
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-outline-info btn-xs {{ $job->status == 'saved' ? 'disabled' :''}}" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}">상세보기</button>
+                                @if ($job->status == 'saved')
+                                    작성중
+                                @else
+                                    <a class="btn btn-outline-info btn-xs" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}">상세보기</button>
+                                @endif
                             </td>
                             <td class="text-center">{{ $job->updated_at ?? $job->created_at}}</td>
                         </tr>
@@ -97,8 +104,8 @@ const job_list = () => {
     };
 
     const event_listener = () => {
-        //채용공고 변경시
-        $('select[name=recruit_id], select[name=status]').on('change', function() {
+        //검색버튼 클릭시
+        $('.search-btn').on('click', function() {
             $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+$('select[name=status]').val());
         });
     }

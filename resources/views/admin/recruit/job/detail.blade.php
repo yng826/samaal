@@ -18,10 +18,9 @@
                     <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
                         @method('PUT')
                         @csrf
-                        <div class="form-group form-inline pull-right">
-                            <label class="mr-1">처리상태</label>
+                        <div class="form-group form-inline">
                             <select class="form-control w-auto mr-1" name="status">
-                                <option value="">::선택::</option>
+                                <option value="">::처리상태::</option>
                                 <option value="pending" {{ $job->status == 'pending' ? 'selected' :''}}>처리중</option>
                                 <option value="expired" {{ $job->status == 'expired' ? 'selected' :''}}>종료</option>
                             </select>
@@ -35,7 +34,7 @@
             <div class="row">
                 <div class="col-12">
                     <h4>인적사항</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <td class="text-center" rowspan="3">
                                 <img src="/storage/{{ $job->file_path }}" height="120" />
@@ -61,7 +60,7 @@
                 </div>
                 <div class="col-12">
                     <h4>병역사항</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <th class="text-center">구분/군별</th>
                             <th class="text-center">제대구분</th>
@@ -80,7 +79,7 @@
                 </div>
                 <div class="col-12">
                     <h4>학력사항</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <th class="text-center">학교명</th>
                             <th class="text-center">전공</th>
@@ -102,7 +101,7 @@
                 </div>
                 <div class="col-12">
                     <h4>수상경력</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <th class="text-center">시상명</th>
                             <th class="text-center">단체명</th>
@@ -120,7 +119,7 @@
                 </div>
                 <div class="col-12">
                     <h4>자격면허</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <th class="text-center">취득일</th>
                             <th class="text-center">자격증명</th>
@@ -138,7 +137,7 @@
                 </div>
                 <div class="col-12">
                     <h4>해외연수</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <th class="text-center">국가/도시</th>
                             <th class="text-center">학교/단체</th>
@@ -162,7 +161,7 @@
                 </div>
                 <div class="col-12">
                     <h4>외국어</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <th class="text-center">구분</th>
                             <th class="text-center">TEST명</th>
@@ -184,7 +183,7 @@
                 </div>
                 <div class="col-12">
                     <h4>PC사용능력</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <th class="text-center">사용 가능 OA</th>
                             <th class="text-center">수준</th>
@@ -200,7 +199,7 @@
                 </div>
                 <div class="col-12">
                     <h4>경력사항</h4>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <tr>
                             <th class="text-center">회사명</th>
                             <th class="text-center">근무기간</th>
