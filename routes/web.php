@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\RecruitJobController as RecruitJobController;
 use App\Http\Controllers\Recruit\RecruitListController as RecruitListController;
 use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
 use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
+use App\Http\Controllers\Faq\FaqController as FaqController;
+use App\Http\Controllers\Other\SearchController as SearchController;
 
 use App\Http\Controllers\aboutUs\StoryNewsController as StoryNewsController;
 use App\Http\Controllers\IR\FinanceController;
@@ -205,7 +207,11 @@ Route::prefix('work-with-us')->group(function () {
 });
 
 Route::prefix('other')->group(function () {
-    Route::resource('search', Other\SearchController::class);
+    Route::get('search', [SearchController::class, 'index']);
+});
+
+Route::prefix('faq')->group(function () {
+    Route::get('faq', [FaqController::class, 'index']);
 });
 
 
