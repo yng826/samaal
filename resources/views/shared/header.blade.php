@@ -8,11 +8,11 @@
             <li class="header__nav--item">
                 <span>About Us</span>
                 <ol class="header__nav--submenu">
-                    <li><a href="#">Heritage</a></li>
-                    <li><a href="#">CEO Message</a></li>
-                    <li><a href="#">Story & News</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="/about-us/heritage/">Heritage</a></li>
+                    <li><a href="/about-us/ceo/">CEO Message</a></li>
+                    <li><a href="/about-us/story-news/">Story & News</a></li>
+                    <li><a href="/about-us/location/seoul/">Location</a></li>
+                    <li><a href="/about-us/ir/consolidated">Investor Relations</a></li>
                 </ol>
             </li>
             <li class="header__nav--item">
@@ -28,7 +28,7 @@
             <li class="header__nav--item">
                 <span>Work With Us</span>
                 <ol class="header__nav--submenu">
-                    <li><a href="#">채용안내</a></li>
+                    <li><a href="/work-with-us/recruit/">채용안내</a></li>
                     <li><a href="#">인사제도</a></li>
                     <li><a href="#">조직문화</a></li>
                 </ol>
