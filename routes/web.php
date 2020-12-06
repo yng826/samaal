@@ -214,6 +214,11 @@ Route::prefix('faq')->group(function () {
 });
 
 
+Route::prefix('admin')->group(function () {
+    Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
+    Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
+
+});
 Route::get('role', function () {
     return 'auth';
 })->middleware(['roles:admin']);
@@ -231,10 +236,10 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
+    //Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
     Route::resource('ir_board', Admin\IrBoardController::class);
 
-    Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
+    //Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
     Route::resource('news_info', Admin\NewsInfoController::class);
 
     Route::get('iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
