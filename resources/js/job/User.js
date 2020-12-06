@@ -16,6 +16,38 @@ class User {
         return re.test(email);
     }
 
+    getAuth() {
+        return window.localStorage.getItem('authUser');
+    }
+
+    setAuth(data) {
+        let authUser = {};
+        authUser.access_token = data.token.accessToken;
+        authUser.user = data.user;
+        console.log('setAuth:::', authUser);
+        window.localStorage.setItem('authUser', JSON.stringify(authUser));
+    }
+
+    join(data) {
+        return axios.post('/api/join', {
+            'email': data.email,
+            'password': data.password,
+            'name': data.name,
+            'phone': data.phone,
+            'birth_day': data.birth_day,
+        }).then( (res) => {
+            if (res.data.result == 'success') {
+                this.setAuth(res.data);
+            } else {
+                console.error(res);
+            }
+            return res.data;
+        }).catch( res => {
+            console.error(res);
+            return res;
+        })
+    }
+
     login (data) {
         return axios.post('/api/login', {
             'email': data.email,
@@ -23,18 +55,12 @@ class User {
         })
         .then((res)=> {
             if ( res.data.logged ) {
-                let authUser = {};
-                authUser.access_token = res.data.token.accessToken;
-                // authUser.email = data.email;
-                authUser.user = res.data.user;
-                console.log(authUser);
-                window.localStorage.setItem('authUser', JSON.stringify(authUser));
-
+                this.setAuth(res.data);
                 Swal.fire({
                     title: '확인되었습니다!',
                     text: '계속 이용하시기 바랍니다.',
                     icon: 'success',
-                    confirmButtonText: '<a href="">확인</a>'
+                    confirmButtonText: '확인'
                 });
             } else {
                 Swal.fire({

@@ -35,9 +35,9 @@ class RecruitListController extends Controller
             ->get();
         */
 
-        debug($recruits);
         return view('workWithUs.recruit.list', [
             'recruits' => $recruits,
+            'pageClass' => 'work-apply',
         ]);
     }
 
@@ -60,6 +60,7 @@ class RecruitListController extends Controller
         debug($recruits);
         return view('recruit.recruit_list', [
             'recruits' => $recruits,
+            'pageClass' => 'work-apply',
         ]);
     }
 
@@ -80,5 +81,12 @@ class RecruitListController extends Controller
         ]);
     }
 
-
+    public function join($id)
+    {
+        $recruit = DB::table('recruits')->where('id', $id)->first();
+        return view('workWithUs.job.create', [
+            'recruit_id' => $recruit->id,
+            'pageClass' => 'work-apply',
+        ]);
+    }
 }

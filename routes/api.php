@@ -3,10 +3,13 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RecruitController;
 use App\Models\User;
+use App\Models\UserInfo;
 use App\Models\work\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -41,6 +44,69 @@ Route::post('login', function (Request $request) {
         'user' => $user,
         'token' => $token,
     ];
+});
+
+Route::post('join', function (Request $request) {
+    $recruit_id = $request->recruit_id;
+    $email = $request->email;
+    $password = $request->password;
+    $name = $request->name;
+    $phone_decrypt = $request->phone;
+    $birth_day = $request->birth_day;
+
+    $result = [];
+    $result['result'] = 'fail';
+    $result['msg'] = '';
+    $user = User::where('email', $email)->first();
+    if ( $user ) {
+        $result['msg'] = '이력이 존재합니다. 지원내역을 확인해주세요';
+        $result['user'] = $user;
+    } else {
+        $user = new User;
+        $user->name = $name;
+        $user->email = $email;
+        $user->role = 'user';
+        $user->password = Hash::make($password);
+
+        $user_info = new UserInfo;
+        $user_info->birth_day = substr($birth_day, 0, 10);
+        $user_info->phone_encrypt = Crypt::encrypt($phone_decrypt);
+        $user_info->phone_last = substr($phone_decrypt, -4);
+
+        $job = new Job;
+        $job->recruit_id = $recruit_id;
+        $job->phone_encrypt = Crypt::encrypt($phone_decrypt);
+        $job->phone_last = substr($phone_decrypt, -4);
+        $job->status = 'saved';
+
+
+        try {
+            DB::transaction(function () use ($user, $user_info, $job) {
+                $user->save();
+
+                $user_info->id = $user->id;
+                $user_info->save();
+
+                $job->user_id = $user->id;
+                $job->save();
+            });
+            $token = $user->createToken('api', []);
+            session(['access_token' => $token->accessToken]);
+
+            $result['result'] = 'success';
+            $result['user'] = $user;
+            $result['token'] = $token;
+            $result['job_id'] = $job->id;
+            $result['msg'] = '인적사항 입력에 성공했습니다.';
+        } catch (\Throwable $th) {
+            $result['result'] = 'success';
+            $result['user'] = $user;
+            $result['token'] = $token;
+            $result['msg'] = '입력에 실패했습니다. 다시 시도해주세요.';
+        }
+    }
+
+    return $result;
 });
 
 Route::prefix('work-with-us')->middleware('auth:api')->group(function () {

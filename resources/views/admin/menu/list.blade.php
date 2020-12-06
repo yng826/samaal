@@ -77,7 +77,7 @@ window.onload = function(){
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
-    <script src="{{ mix('/js/admin/menu.es5.js') }}"></script>
+    <script src="{{ asset('/js/admin/manifest.js') }}"></script>
+    <script src="{{ asset('/js/admin/vendor.js') }}"></script>
+    <script src="{{ asset('/js/admin/menu.es5.js') }}"></script>
 @stop

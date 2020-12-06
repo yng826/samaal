@@ -146,7 +146,7 @@ export default {
             if (this.job.id) {
                 url += '?_method=PUT';
             }
-            axios({
+            return axios({
                 method: 'POST',
                 url: url,
                 data: formData,
