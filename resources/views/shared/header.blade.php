@@ -76,7 +76,7 @@
             </li>
         </ul>
     </div>
-    <div class="gnb-marsk"></div>
+    <div class="gnb-mask"></div>
 
     <div class="header__search">
         <ul>

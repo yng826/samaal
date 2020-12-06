@@ -30,18 +30,18 @@ const business = () => {
     const questionPop = () => {
         $(".btn-question").on("click",function(){
             $(".question-pop").show();
-            $(".popup-marsk").show();
+            $(".popup-mask").show();
         });
 
         $(".btn-manager").on("click",function(){
             $(".manager-pop").show();
-            $(".popup-marsk").show();
+            $(".popup-mask").show();
         });
 
 
-        $(".popup-marsk , .layer-popup__close-btn").on("click",function(){
+        $(".popup-mask , .layer-popup__close-btn").on("click",function(){
             $(".layer-popup").hide();
-            $(".popup-marsk").hide();
+            $(".popup-mask").hide();
         });
     };
 
