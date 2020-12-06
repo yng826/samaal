@@ -43,9 +43,7 @@ class NewsInfoController extends Controller
      */
     public function store(Request $request)
     {
-        // $file_path = Storage::putFile('public/news', $request->file('file')); //파일 저장
-        $file_path = '/store/'.$request->file('file')->store('news');
-
+        $file_path = Storage::putFile('news', $request->file('file')); //파일 저장
         if($request->id > 0){
             $saved = DB::table('news_infos')
                     ->where('id', $request->id)
@@ -122,9 +120,9 @@ class NewsInfoController extends Controller
 
         if (!empty($request->file('file'))) {
             $file_name = $request->file('file')->getClientOriginalName();
-            // $file_path = Storage::putFile('public/news', $request->file('file')); //파일 저장
-            $file_path = $request->file('file')->store('news');
-            $img_file_path = '/storage/'.$file_path;
+
+            $file_path = Storage::putFile('news', $request->file('file')); //파일 저장
+            $img_file_path = $file_path;
         }
 
 

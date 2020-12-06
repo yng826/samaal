@@ -43,8 +43,7 @@ class IrBoardController extends Controller
      */
     public function store(Request $request)
     {
-        $file_path = Storage::putFile('public/ir', $request->file('file')); //파일 저장
-
+        $file_path = Storage::putFile('ir', $request->file('file')); //파일 저장
         if($request->id > 0){
             $saved = DB::table('ir_boards')
                     ->where('id', $request->id)
@@ -121,7 +120,9 @@ class IrBoardController extends Controller
 
         if (!empty($request->file('file'))) {
             $file_name = $request->file('file')->getClientOriginalName();
-            $file_path = Storage::putFile('public/news', $request->file('file')); //파일 저장
+
+            $file_path = Storage::putFile('ir', $request->file('file')); //파일 저장
+            //$file_path = $request->file('file')->store('ir');
         }
 
 
