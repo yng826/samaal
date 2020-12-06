@@ -23,7 +23,6 @@
                             <th class="text-center" style="width: 80px;">번호</th>
                             <th class="text-center">분류</th>
                             <th class="text-center">제목</th>
-                            <th class="text-center">내용</th>
                             <th class="text-center">첨부파일</th>
                             <th class="text-center">등록/수정일</th>
                             <th class="text-center" style="width: 80px;">관리</th>
@@ -34,7 +33,6 @@
                             <td class="text-center">{{ $board->id }}</td>
                             <td class="text-center">{{ $board->category }}</td>
                             <td class="text-center">{{ $board->title }}</td>
-                            <td class="text-center" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{!! $board->contents !!}</td>
                             <td class="text-center">
                                 <a class="btn btn-outline-info btn-xs" href="/admin/ir_board/file-download?id={{ $board->id }}">파일</button>
                             </td>

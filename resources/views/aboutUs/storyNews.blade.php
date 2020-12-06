@@ -14,13 +14,13 @@ $bodyClass = 'about';
         <div class="about-storyNews__list">
             <ul  style="table-layout: fixed;">
                 @foreach ($infos as $info)
-                <li class="about-storyNews__list-item">
+                <li class="about-storyNews__list-item" style="margin: 10px;">
                         <a href="javascript:;" class="news-btn" id="news-btn-{{ $info->id }}">
                         <input type="hidden"  value="{{ $info->id }}">
                         <figure>
                             <img src="/admin/news_info/file-download?id={{ $info->id }}" alt="" width="508" height="298">
                         </figure>
-                        <div class="about-storyNews__list-item--text">
+                        <div class="about-storyNews__list-item--text" style="height: 80px;">
                             <h3>{{ $info->title }}</h3>
                             <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{!! $info->contents !!}</p>
                         </div>
