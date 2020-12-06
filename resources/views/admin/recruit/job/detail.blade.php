@@ -11,8 +11,23 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-12">
+                <div class="col-9 col-xl-10">
                     <h3>채용 지원자 상세</h3>
+                </div>
+                <div class="col-3 col-xl-2">
+                    <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
+                        @method('PUT')
+                        @csrf
+                        <div class="form-group form-inline pull-right">
+                            <label class="mr-1">처리상태</label>
+                            <select class="form-control w-auto mr-1" name="status">
+                                <option value="">::선택::</option>
+                                <option value="pending" {{ $job->status == 'pending' ? 'selected' :''}}>처리중</option>
+                                <option value="expired" {{ $job->status == 'expired' ? 'selected' :''}}>종료</option>
+                            </select>
+                            <button type="button" class="btn btn-primary text-white edit-btn">변경</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -210,26 +225,6 @@
                             <td>{!! nl2br(e($job->cover_letter)) !!}</td>
                         </tr>
                     </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-footer">
-            <div class="row">
-                <div class="col-12">
-                    <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
-                        @method('PUT')
-                        @csrf
-                        <div class="form-group form-inline pull-right">
-                            <label class="mr-1">처리상태</label>
-                            <select class="form-control w-auto mr-1" name="status">
-                                <option value="">::선택::</option>
-                                <option value="pending" {{ $job->status == 'pending' ? 'selected' :''}}>처리중</option>
-                                <option value="expired" {{ $job->status == 'expired' ? 'selected' :''}}>종료</option>
-                            </select>
-                            <button type="button" class="btn btn-primary text-white edit-btn">변경</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
