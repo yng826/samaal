@@ -11,3 +11,10 @@
 @import '~jquery-ui/themes/base/all.css';
 @import '~vuetify/dist/vuetify.min.css';
 @import '~material-design-icons-iconfont/dist/material-design-icons.css';
+
+html {
+    font-size: 14px;
+}
+.tree-node {
+    box-shadow: rgba(0,0,0,0.3) 3px 3px 5px;
+}
