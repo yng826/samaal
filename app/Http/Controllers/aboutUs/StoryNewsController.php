@@ -18,11 +18,12 @@ class StoryNewsController extends Controller
     {
         $infos = DB::table('news_infos')->where('use_yn', 'y')->orderBy('id', 'desc')->paginate(9);
         $cnt = DB::table('news_infos')->where('use_yn', 'y')->count();
+
         $cnt = (int)ceil($cnt/9);
 
         return view('aboutUs.storyNews', [
             'infos' => $infos,
-            'cnt' => $cnt/9
+            'cnt' => $cnt
         ]);
     }
 
