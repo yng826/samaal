@@ -17,8 +17,8 @@ $bodyClass = 'about';
                 <li class="about-storyNews__list-item">
                         <a href="/about-us/story-news/{{$info->id}}" class="news-btn" id="news-btn-{{ $info->id }}">
                         <input type="hidden"  value="{{ $info->id }}">
-                        <figure>
-                            <img src="/storage/{{ $info->img_file_path }}" alt="">
+                        <figure style="background-image:url(http://placeimg.com/640/480/animals);">
+                            {{-- <img src="/storage/{{ $info->img_file_path }}" alt=""> --}}
                         </figure>
                         <div class="about-storyNews__list-item--text">
                             <h3>{{ $info->title }}</h3>
