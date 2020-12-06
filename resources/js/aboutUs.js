@@ -43,29 +43,6 @@ const about = () => {
         });
     }
 
-    // aboutUs - heritage
-    // heritage swiper
-    const heritageSwiper = () => {
-        const swiperImg = new Swiper('.about-heritage__slide .about-heritage__slide--img', {
-            loop: true,
-            slidesPerView: 2,
-            loopedSlides: 17,
-            centeredSlides: true,
-        });
-        const swiperYear = new Swiper('.about-heritage__slide .about-heritage__slide--year', {
-            loop: true,
-            slidesPerView: 7,
-            loopedSlides: 17,
-            centeredSlides: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            }
-        });
-        swiperYear.controller.control = swiperImg;
-        swiperImg.controller.control = swiperYear;
-    };
-
     const news_close = () => {
         var header = document.getElementById('header');
 
@@ -102,7 +79,6 @@ const about = () => {
     const about_init = () => {
         locationSwiper();
         storyTopButton();
-        heritageSwiper();
         news_close();
     };
 
