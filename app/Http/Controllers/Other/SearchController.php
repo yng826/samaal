@@ -21,16 +21,14 @@ class SearchController extends Controller
         if(!empty($request->keyword)) {
             $menus = DB::table('menus')->orderBy('order_id')->get();
 
-            $where[] = ['menu_keywords.keyword', 'LIKE', '%'. $request->keyword. '%'];
-
             $ids = [];
             if($request->category > 0) {
                 $ids = explode(',', $this->ids($menus, $request->category). $request->category);
             }
 
             $keywords = DB::table('menu_keywords')
-                        ->leftJoin('menus', 'menu_keywords.menu_id', '=', 'menus.id')
-                        ->where($where)
+                        ->join('menus', 'menu_keywords.menu_id', '=', 'menus.id')
+                        ->where('menu_keywords.keyword', 'LIKE', '%'. $request->keyword. '%')
                         ->when(!empty($ids), function ($query) use ($ids) {
                             return $query->whereIn('menu_keywords.menu_id', $ids);
                         })
