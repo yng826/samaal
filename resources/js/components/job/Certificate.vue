@@ -11,11 +11,11 @@
                 </div>
                 <div class="form-group">
                     <label for="certificate_name">자격증명</label>
-                    <input type="text" name="certificate_name" v-model="item.certificate_name">
+                    <input type="text" name="certificate_name" v-model="item.certificate_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="certificate_issuer">발행처</label>
-                    <input type="text" name="certificate_issuer" v-model="item.certificate_issuer">
+                    <input type="text" name="certificate_issuer" v-model="item.certificate_issuer" placeholder="입력해주세요">
                 </div>
             </div>
         </form>

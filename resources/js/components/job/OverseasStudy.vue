@@ -6,11 +6,11 @@
                 <input type="hidden" name="id" v-model="item.id">
                 <div class="form-group">
                     <label for="country_name">국가/도시</label>
-                    <input type="text" name="country_name" v-model="item.country_name">
+                    <input type="text" name="country_name" v-model="item.country_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_name">학교/단체</label>
-                    <input type="text" name="school_name" v-model="item.school_name">
+                    <input type="text" name="school_name" v-model="item.school_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_start">기간</label>
@@ -22,15 +22,15 @@
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_name">연수명</label>
-                    <input type="text" name="overseas_study_name" v-model="item.overseas_study_name">
+                    <input type="text" name="overseas_study_name" v-model="item.overseas_study_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_purpose">연수목적</label>
-                    <input type="text" name="overseas_study_purpose" v-model="item.overseas_study_purpose">
+                    <input type="text" name="overseas_study_purpose" v-model="item.overseas_study_purpose" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_contents">연수내용</label>
-                    <input type="text" name="overseas_study_contents" v-model="item.overseas_study_contents">
+                    <input type="text" name="overseas_study_contents" v-model="item.overseas_study_contents" placeholder="입력해주세요">
                 </div>
             </div>
         </form>

@@ -97,6 +97,9 @@ export default {
             logged.then( res => {
                 console.log( res );
                 this.isSubmit = false;
+                if ( res.data.logged == true) {
+                    window.location.href = window.location.href;
+                }
             }).catch( err => {
                 console.error(err);
                 this.isSubmit = false;

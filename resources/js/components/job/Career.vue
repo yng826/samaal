@@ -2,7 +2,7 @@
     <div class="career-container form-container">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
-                <h3>경력사항 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <h3>경력사항 <button @click.prevent="removeItem(item.id, id)" class="danger">삭제</button></h3>
                 <div class="form-group">
                     <label for="career_start">근무기간</label>
                     <div class="input_date-group">
@@ -13,15 +13,15 @@
                 </div>
                 <div class="form-group">
                     <label for="career_name">직장명</label>
-                    <input type="text" name="career_name" v-model="item.career_name">
+                    <input type="text" name="career_name" v-model="item.career_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="career_position">직위/근무부서</label>
-                    <input type="text" name="career_position" v-model="item.career_position">
+                    <input type="text" name="career_position" v-model="item.career_position" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="career_role">담당업무</label>
-                    <input type="text" name="career_role" v-model="item.career_role">
+                    <input type="text" name="career_role" v-model="item.career_role" placeholder="입력해주세요">
                 </div>
             </div>
         </form>

@@ -35,6 +35,7 @@ class User {
             'name': data.name,
             'phone': data.phone,
             'birth_day': data.birth_day,
+            'recruit_id': data.recruit_id,
         }).then( (res) => {
             if (res.data.result == 'success') {
                 this.setAuth(res.data);

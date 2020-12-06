@@ -2,22 +2,23 @@
     <div class="education-container form-container">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
-                <h3>학력사항 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <h3>학력사항</h3>
+                <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)">삭제</button>
                 <div class="form-group">
                     <label for="school_name">학교명</label>
-                    <input type="text" name="school_name" v-model="item.school_name">
+                    <input type="text" name="school_name" v-model="item.school_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="edu_major">전공</label>
-                    <input type="text" name="edu_major" v-model="item.edu_major">
+                    <input type="text" name="edu_major" v-model="item.edu_major" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="edu_grade">성적</label>
-                    <input type="text" name="edu_grade" v-model="item.edu_grade">
+                    <input type="text" name="edu_grade" v-model="item.edu_grade" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
-                    <label for="graduation">성적</label>
-                    <input type="text" name="graduation" v-model="item.graduation">
+                    <label for="graduation">졸업구분</label>
+                    <input type="text" name="graduation" v-model="item.graduation" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="edu_start">재학기간</label>
@@ -32,7 +33,7 @@
         </form>
         <div class="button-group">
             <button class="btn-add" @click="addItem">추가</button>
-            <button class="btn-save" @click="saveItems">저장</button>
+            <button class="btn btn-success btn-save" @click="saveItems">저장</button>
         </div>
     </div>
 </template>

@@ -6,19 +6,19 @@
                 <input type="hidden" name="id" v-model="item.id">
                 <div class="form-group">
                     <label for="military_type">구분/구별</label>
-                    <input type="text" name="military_type" v-model="item.military_type">
+                    <input type="text" name="military_type" v-model="item.military_type" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="military_discharge">제대구분</label>
-                    <input type="text" name="military_discharge" v-model="item.military_discharge">
+                    <input type="text" name="military_discharge" v-model="item.military_discharge" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="military_rank">계급</label>
-                    <input type="text" name="military_rank" v-model="item.military_rank">
+                    <input type="text" name="military_rank" v-model="item.military_rank" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="military_exemption">군면제사유</label>
-                    <input type="text" name="military_exemption" v-model="item.military_exemption">
+                    <input type="text" name="military_exemption" v-model="item.military_exemption" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="military_duration_start">군복무기간</label>

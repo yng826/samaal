@@ -69,7 +69,7 @@ export default {
     },
     methods: {
         gotoJob: function() {
-            window.location.href = '/work-with-us/job/' + this.recruit_id;
+            window.location.href = '/work-with-us/job/';
         },
 
         validation: function() {
@@ -157,6 +157,7 @@ export default {
                 email: this.email,
                 phone: this.phone,
                 password: this.password,
+                recruit_id: this.recruit_id,
             });
 
             console.log(logged);

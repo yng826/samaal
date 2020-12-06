@@ -5,19 +5,19 @@
                 <h3>외국어 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
                 <div class="form-group">
                     <label for="language_type">구분</label>
-                    <input type="text" name="language_type" v-model="item.language_type">
+                    <input type="text" name="language_type" v-model="item.language_type" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="language_name">TEST명</label>
-                    <input type="text" name="language_name" v-model="item.language_name">
+                    <input type="text" name="language_name" v-model="item.language_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="language_grade">점수/등급</label>
-                    <input type="text" name="language_grade" v-model="item.language_grade">
+                    <input type="text" name="language_grade" v-model="item.language_grade" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="language_level">회화수준</label>
-                    <input type="text" name="language_level" v-model="item.language_level">
+                    <input type="text" name="language_level" v-model="item.language_level" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="language_start">재학기간</label>

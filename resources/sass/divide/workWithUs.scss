@@ -3,6 +3,29 @@
 .work-apply {
     background-color: #e8ecef;
 
+    button,
+    .btn {
+        font-size: vw(28px);
+        background: #EEE;
+        padding: 5px 10px;
+        border-radius: 5px;
+        &.btn-success {
+            background-color: #3445a3;
+            color: white;
+        }
+        &.btn-info {
+            background-color: #32c3a2;
+            color: white;
+        }
+        &.btn-danger {
+            background-color: #b43b3b;
+            color: white;
+        }
+        &.float-right{
+            float: right;
+        }
+    }
+
     &__title {
 
         h2 {
@@ -100,9 +123,10 @@
         margin-bottom: vw(18px);
         border: 1px solid #bcc0c3;
         background-color: #fff;
+        padding: vw(70px 240px 70px);
+        box-sizing: border-box;
 
         form {
-            padding: vw(70px 240px 70px);
         }
 
         .form-wrap {

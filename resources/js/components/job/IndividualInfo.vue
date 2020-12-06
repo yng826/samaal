@@ -36,9 +36,8 @@
             <div class="form-wrap form-img">
                 <h3>사진업로드<em>(최근 3개월내)</em></h3>
                 <div class="form-group">
-                    <div class="picture">
-                        <span class="picture-text">사진을<br> 등록해주세요.</span>
-                        <!-- <img :src="'/'+job.file_path" alt="" style="height: 300px;" v-if="job.file_path"> -->
+                    <div class="picture" v-bind:style="pic">
+                        <span class="picture-text" v-if="!job.file_path">사진을<br> 등록해주세요.</span>
                     </div>
                     <label for="pic" class="input-file-trigger">
                         이미지 업로드
@@ -53,6 +52,12 @@
         <VSpinner v-if="isSubmit"></VSpinner>
     </div>
 </template>
+<style>
+.picture {
+    background-size: cover;
+    background-position: center;
+}
+</style>
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
@@ -70,6 +75,18 @@ export default {
         user () { return this.$store.state.user },
         user_info () { return this.$store.state.user_info },
         oversea () { return this.$store.state.oversea },
+        pic() {
+            if ( this.$store.state.job ) {
+                return {
+                    'background-image': 'url(/storage/'+ this.$store.state.job.file_path +')',
+                };
+            } else {
+                return {
+                    'background-image': 'none',
+                };
+
+            }
+        }
     },
     data: function() {
         return {
@@ -97,7 +114,7 @@ export default {
             })
             .then(res => {
                 // this.$store.state.oversea = res.data.overseas_studys;
-                // console.log(res.data);
+                console.log(res.data);
                 this.$store.state.job = {
                     address_1: res.data.address_1,
                     address_2: res.data.address_2,
@@ -117,7 +134,7 @@ export default {
                     name: res.data.user.name,
                     email: res.data.user.email,
                 } : this.$store.getters.getUser;
-                this.$store.state.user_info = res.data.user_info.length ? res.data.user_info : this.$store.getters.getDefaultUserInfo;
+                this.$store.state.user_info = res.data.user_info ? res.data.user_info : this.$store.getters.getDefaultUserInfo;
                 this.$store.state.award = res.data.awards.length ? res.data.awards : this.$store.getters.getDefaultAwards;
                 this.$store.state.career = res.data.careers.length ? res.data.careers : this.$store.getters.getDefaultCareers;
                 this.$store.state.certificate = res.data.certificates.length ? res.data.certificates : this.$store.getters.getDefaultCertificates;

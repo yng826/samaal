@@ -75,6 +75,10 @@ class RecruitListController extends Controller
     {
         $recruit = DB::table('recruits')->where('id', $id)->first();
 
+        if ( !$recruit ) {
+            abort(404);
+        }
+
         // return json_encode($recruit);
         return view('workWithUs.recruit.show', [
             'recruit'=> $recruit
@@ -84,6 +88,10 @@ class RecruitListController extends Controller
     public function join($id)
     {
         $recruit = DB::table('recruits')->where('id', $id)->first();
+
+        if ( !$recruit ) {
+            abort(404);
+        }
         return view('workWithUs.job.create', [
             'recruit_id' => $recruit->id,
             'pageClass' => 'work-apply',

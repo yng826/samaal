@@ -102,6 +102,7 @@ table {
         th, td {
             padding: 5px;
             border: 1px solid $tableBorderColor;
+            font-size: 12px;
             &:first-child {
                 border-left: none;
             }
@@ -131,7 +132,9 @@ table {
                 text-align: center;
             }
             td {
-
+                vertical-align: middle;
+                text-align: center;
+                word-break: keep-all;
             }
         }
     }

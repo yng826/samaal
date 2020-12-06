@@ -5,11 +5,11 @@
                 <h3>PC사용능력 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
                 <div class="form-group">
                     <label for="oa_name">사용가능OA</label>
-                    <input type="text" name="oa_name" v-model="item.oa_name">
+                    <input type="text" name="oa_name" v-model="item.oa_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="oa_level">OA수준</label>
-                    <input type="text" name="oa_level" v-model="item.oa_level">
+                    <input type="text" name="oa_level" v-model="item.oa_level" placeholder="입력해주세요">
                 </div>
             </div>
         </form>

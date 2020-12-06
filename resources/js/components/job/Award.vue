@@ -5,11 +5,11 @@
                 <h3>수상경력 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
                 <div class="form-group">
                     <label for="award_name">시상명</label>
-                    <input type="text" name="award_name" v-model="item.award_name">
+                    <input type="text" name="award_name" v-model="item.award_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="award_group_name">단체명</label>
-                    <input type="text" name="award_group_name" v-model="item.award_group_name">
+                    <input type="text" name="award_group_name" v-model="item.award_group_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="award_date">수상일</label>
