@@ -1,7 +1,7 @@
 <template>
     <div class="form-container">
         <div class="form-wrap">
-            <form id="login-form" :action="action" method="POST" @submit.prevent="sendPost">
+            <form id="login-form" method="POST" @submit.prevent="sendPost">
                 <div class="form-group">
                     <label for="name">성명</label>
                     <input type="text" name="name" id="name" v-model="name" ref="name">
@@ -42,7 +42,7 @@ import {getHeader, getAuth, getUser} from '../../config'
 import Swal from 'sweetalert2'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['action'],
+    props: ['recruit_id'],
     components: {
         Datepicker,
         VSpinner
@@ -62,10 +62,15 @@ export default {
     },
     mounted: function() {
         this.isAuth = getAuth();
+        if ( this.isAuth ) {
+            this.gotoJob();
+        }
         // require('../../job/User')
     },
     methods: {
-
+        gotoJob: function() {
+            window.location.href = '/work-with-us/job/' + this.recruit_id;
+        },
 
         validation: function() {
             if ( this.name == '' ) {
@@ -123,6 +128,15 @@ export default {
             }
         },
         sendPost: function () {
+            if ( User.getAuth() ) {
+                Swal.fire({
+                    title: '지원내역이 존재합니다!',
+                    text: '입사지원내역 확인을 해주세요',
+                    icon: 'error',
+                    confirmButtonText: '확인'
+                });
+                return false;
+            }
             if ( this.isSubmit ) {
                 return false;
             }
@@ -130,7 +144,7 @@ export default {
             const validate = this.validation();
             if ( !validate.result ) {
                 Swal.fire({
-                    title: validate.msg,
+                    text: validate.msg,
                     icon: 'error',
                     confirmButtonText: '확인'
                 });
@@ -149,6 +163,25 @@ export default {
             logged.then( res => {
                 console.log( res );
                 this.isSubmit = false;
+                if ( res.result == 'success' ) {
+                    Swal.fire({
+                        title: '저장에 성공했습니다',
+                        icon: 'success',
+                        text: res.msg,
+                        confirmButtonText: '확인'
+                    }).then(result => {
+                        if (result.isConfirmed) {
+                            this.gotoJob();
+                        }}
+                    );
+                } else {
+                    Swal.fire({
+                        title: '저장에 실패했습니다',
+                        icon: 'error',
+                        text: res.msg,
+                        confirmButtonText: '확인'
+                    })
+                }
             }).catch( err => {
                 console.error(err);
                 this.isSubmit = false;

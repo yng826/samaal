@@ -16,7 +16,7 @@
                     <li>제출하기</li>
                 </ul>
             </div>
-            <join-component></join-component>
+            <join-component recruit_id="{{$recruit_id}}"></join-component>
         </div>
     </main>
 @endsection
