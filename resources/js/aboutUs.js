@@ -49,15 +49,15 @@ const about = () => {
          $('.news-btn').on("click",function(){
 
              $(".storyNews-pop").show();
-             $(".popup-marsk").show();
+             $(".popup-mask").show();
 
              news($(this).attr('id').toString());
 
          });
 
-        $(".popup-marsk , .layer-popup__close-btn").on("click",function(){
+        $(".popup-mask , .layer-popup__close-btn").on("click",function(){
             $(".layer-popup").hide();
-            $(".popup-marsk").hide();
+            $(".popup-mask").hide();
         });
 
 

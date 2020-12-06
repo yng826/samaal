@@ -63,7 +63,7 @@ $bodyClass = 'about';
             </div>
         </div>
     </div>
-    <div class="popup-marsk"></div>
+    <div class="popup-mask"></div>
 </div>
 
 </main>

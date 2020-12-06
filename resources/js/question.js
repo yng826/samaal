@@ -20,7 +20,7 @@ const question = () => {
                     confirmButtonText: '확인'
                 });
                 $(".layer-popup").hide();
-                $(".popup-marsk").hide();
+                $(".popup-mask").hide();
             }
         });
     }

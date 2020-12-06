@@ -801,7 +801,7 @@
         &--item {
             display: inline-block;
             width: calc(33.33% - #{vw(6px)});
-            margin-right: vw(-6px);
+            margin-right: vw(6px);
             padding: vw(23px) 0;
             font-size: vw(20px);
             background-color: #cdcdcd;
@@ -829,11 +829,44 @@
         }
     }
 
-    &__content {
+    &__tab-content {
         display: none;
 
         &.on {
             display: block;
+        }
+    }
+
+    .content-01 {
+        padding-top: vw(69px);
+
+        &__text {
+            font-size: vw(18px);
+            line-height: vw(32px);
+            color: #535353;
+        }
+
+        &__list {
+            padding-top: vw(70px);
+
+            &--item {
+                span {}
+                strong {}
+
+            }
+
+            &--item:nth-child(1) {
+                background: url("../images/business/speciality/img_process_01.jpg") no-repeat;
+            }
+            &--item:nth-child(2) {
+                background: url("../images/business/speciality/img_process_02.jpg") no-repeat;
+            }
+            &--item:nth-child(3) {
+                background: url("../images/business/speciality/img_process_03.jpg") no-repeat;
+            }
+            &--item:nth-child(4) {
+                background: url("../images/business/speciality/img_process_04.jpg") no-repeat;
+            }
         }
     }
 }

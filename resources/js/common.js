@@ -31,13 +31,13 @@ const common = () => {
         // 모바일 이하 header nav
         const mobileGnb = $(".header__m-nav--gnb");
         $(".header__m-nav").on("click",function(){
-            $(".gnb-marsk").show();
+            $(".gnb-mask").show();
             mobileGnb.addClass("on");
         })
 
         $(".header__m-nav--gnb .close-btn").on("click",function(){
             mobileGnb.removeClass("on");
-            $(".gnb-marsk").hide();
+            $(".gnb-mask").hide();
         });
 
         $(".header__m-nav--gnb__item").on("click",function(){
