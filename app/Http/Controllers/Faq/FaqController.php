@@ -15,16 +15,16 @@ class FaqController extends Controller
      */
     public function index(Request $request)
     {
-        $category = $request->category;
+        $category_id = $request->category_id;
 
         $faqs = DB::table('faqs')
-                        ->when(!empty($category), function ($query) use ($category) {
-                            return $query->where('category', $category);
+                        ->when(!empty($category_id), function ($query) use ($category_id) {
+                            return $query->where('category_id', $category_id);
                         })
-                        ->orderBy('category', 'DESC')->get();
+                        ->orderBy('category_id')->get();
 
         return view('faq.faq', [
-            'category' => $request->category,
+            'category_id' => $request->category_id,
             'faqs' => $faqs,
         ]);
     }

@@ -17,8 +17,6 @@ class FaqController extends Controller
     {
         $faqs = DB::table('faqs')->orderBy('id', 'desc')->paginate(10);
 
-        debug($faqs); // debug
-
         return view('admin.faq.list', [
             'faqs' => $faqs,
         ]);
@@ -48,7 +46,7 @@ class FaqController extends Controller
     {
         $saved = DB::table('faqs')
                     ->insert([
-                        'category'=> $request->category,
+                        'category_id'=> $request->category_id,
                         'question'=> $request->question,
                         'answer'=> $request->answer,
                         'created_at' => now()
@@ -97,7 +95,7 @@ class FaqController extends Controller
         $affected = DB::table('faqs')
                     ->where('id', $id)
                     ->update([
-                        'category'=> $request->category,
+                        'category_id'=> $request->category_id,
                         'question'=> $request->question,
                         'answer'=> $request->answer,
                         'updated_at' => now()
