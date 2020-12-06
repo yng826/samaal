@@ -16,11 +16,11 @@
                 </ol>
             </li>
             <li class="header__nav--item">
-                <span>For Business Partners</span>
+                <span><a href="#">For Business Partners</a></span>
                 <ol class="header__nav--submenu">
-                    <li><a href="#">알루미늄 호일</a></li>
-                    <li><a href="#">포장재용</a></li>
-                    <li><a href="#">산업/건축용</a></li>
+                    <li><a href="/business/foil/capacitor/">알루미늄 호일</a></li>
+                    <li><a href="/business/package/watertight">포장재용</a></li>
+                    <li><a href="/business/industry/insulation">산업/건축용</a></li>
                     <li><a href="#">Speciality</a></li>
                     <li><a href="#">Innovation</a></li>
                 </ol>

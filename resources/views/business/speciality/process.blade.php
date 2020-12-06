@@ -19,7 +19,7 @@
         </div>
         <div class="content-01 speciality-process__tab-content on">
             <p class="content-01__text">
-                삼아알미늄은 최고의 압연 기술력을 바탕으로
+                삼아알미늄은 최고의 압연 기술력을 바탕으로<br>
                 앞으로도 꾸준히 고객과 함께 업계의 리더로서 책임을 다하겠습니다.
             </p>
             <ul class="content-01__list">
@@ -29,18 +29,18 @@
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="content-01__list--item">
-                    <span>분리, 분단</span>
-                    <stron>Separating/Slitting</stron>
+                    <span class="lang-korea">분리, 분단</span>
+                    <stron class="lang-english">Separating/Slitting</stron>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="content-01__list--item">
-                    <span>연화</span>
-                    <stron>Annealing</stron>
+                    <span class="lang-korea">연화</span>
+                    <stron class="lang-english">Annealing</stron>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="content-01__list--item">
-                    <span>포장</span>
-                    <stron>Packaging</stron>
+                    <span class="lang-korea">포장</span>
+                    <stron class="lang-english">Packaging</stron>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>
