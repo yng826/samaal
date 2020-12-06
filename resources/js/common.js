@@ -14,7 +14,7 @@ const common = () => {
 
     const header_nav = () => {
         // header menu mouseover 했을 경우
-         $(".header__nav--item").mouseover(function(){
+         $(".header__nav--item").on('mouseover', function(){
 			$(this).addClass("on");
 				if(
 					$(this).hasClass("on")
@@ -22,7 +22,7 @@ const common = () => {
 			$(".header__nav .header__nav--item").not(this).removeClass("on");
 		});
 
-		$(".header__nav--item").mouseout(function(){
+		$(".header__nav--item").on('mouseout', function(){
 			if($(this).hasClass("on")){
 				$(this).removeClass("on")
 			};
