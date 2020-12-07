@@ -1,11 +1,10 @@
-@import "./lib/webvw";
 /* 지원하기 */
 .work-apply {
     background-color: #e8ecef;
 
     button,
     .btn {
-        font-size: vw(28px);
+        font-size: 28px;
         background: #EEE;
         padding: 5px 10px;
         border-radius: 5px;
@@ -29,28 +28,28 @@
     &__title {
 
         h2 {
-            padding: vw(56px) 0;
+            padding: 56px 0;
             line-height: 1;
         }
     }
 
     &__contents {
-        max-width: vw(1302px);
-        padding-top: vw(50px);
-        padding-bottom: vw(50px);
+        max-width: 1302px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         margin: 0 auto;
     }
 
     &__progress {
         // height: vw(250px);
         width: 100%;
-        padding: vw(56px) 0;
-        margin-bottom: vw(18px);
+        padding: 56px 0;
+        margin-bottom: 18px;
         border: 1px solid #bcc0c3;
         background-color: #fff;
 
         ul {
-            width: vw(657px);
+            width: 657px;
             display: table;
             margin: 0 auto;
             counter-reset: step;
@@ -61,7 +60,7 @@
                 width: 25%;
                 color: #4a4a4a;
                 font: {
-                    size: vw(20px);
+                    size: 20px;
                     weight: 600;
                 }
                 text-align: center;
@@ -71,16 +70,16 @@
                     content: counter(step);
                     counter-increment: step;
                     display: block;
-                    width: vw(74px);
-                    height: vw(73px);
+                    width: 74px;
+                    height: 73px;
                     position: relative;
-                    line-height: vw(74px);
-                    font-size: vw(28px);
+                    line-height: 74px;
+                    font-size: 28px;
                     color: #acacac;
                     background: white;
                     border-radius: 50%;
-                    margin: 0 auto vw(17px);
-                    border: vw(5px) solid #acacac;
+                    margin: 0 auto 17px;
+                    border: 5px solid #acacac;
                     text-align: center;
                     z-index: 1;
                 }
@@ -88,11 +87,11 @@
                 &::after {
                     content: '';
                     width: 100%;
-                    height: vw(3px);
+                    height: 3px;
                     background: #acacac;
                     position: absolute;
                     left: -50%;
-                    top: vw(35px);
+                    top: 35px;
                 }
 
                 &:first-child:after  {
@@ -107,7 +106,7 @@
                         counter-increment: step;
                         background: $titleColor url("../images/work/hire_progress_check.png") no-repeat;
                         background-size: contain;
-                        border: vw(5px) solid $titleColor;
+                        border: 5px solid $titleColor;
                     }
 
                     &::after {
@@ -120,10 +119,10 @@
 
     .form-container {
         width: 100%;
-        margin-bottom: vw(18px);
+        margin-bottom: 18px;
         border: 1px solid #bcc0c3;
         background-color: #fff;
-        padding: vw(70px 240px 70px);
+        padding: 70px 240px 70px;
         box-sizing: border-box;
 
         form {
@@ -134,11 +133,11 @@
             h3 {
                 display: inline-block;
                 position: relative;
-                padding-top: vw(11px);
-                margin-bottom: vw(30px);
+                padding-top: 11px;
+                margin-bottom: 30px;
                 color: #010101;
                 font: {
-                    size: vw(25px);
+                    size: 25px;
                     weight: bold;
                 }
                 line-height: 1;
@@ -149,38 +148,38 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: vw(93px);
-                    height: vw(4px);
+                    width: 93px;
+                    height: 4px;
                     background-color: #000;
                 }
 
                 em {
                     display: inline-block;
-                    font-size: vw(15px);
+                    font-size: 15px;
                 }
             }
 
             .form-group {
-                margin-bottom: vw(20px);
+                margin-bottom: 20px;
 
                 label {
                     display: inline-block;
-                    width: vw(173px);
+                    width: 173px;
                     color: #010101;
-                    font-size: vw(20px);
+                    font-size: 20px;
                     vertical-align: top;
                 }
 
                 input {
                     display: inline-block;
-                    padding: 0 vw(19px);
-                    width: vw(500px);
-                    height: vw(54px);
+                    padding: 0 19px;
+                    width: 500px;
+                    height: 54px;
                     background-color: #e8ecef;
-                    border-radius: vw(5px);
+                    border-radius: 5px;
                     border: none;
                     vertical-align: top;
-                    font-size: vw(18px);
+                    font-size: 18px;
 
                     &::-webkit-input-placeholder {
                         color: #9f9f9f;
@@ -193,18 +192,18 @@
 
                 .input-gorup {
                     display: inline-block;
-                    width: vw(351px);
+                    width: 351px;
 
                     input {
                         display: block;
                         width: 100%;
-                        margin-bottom: vw(10px);
+                        margin-bottom: 10px;
                     }
                 }
 
                 .input_date-group {
                     display: inline-block;
-                    width: vw(500px);
+                    width: 500px;
                     vertical-align: middle;
                     font-size: 0;
 
@@ -212,12 +211,12 @@
                         display: inline-block;
                         width: 8%;
                         vertical-align: middle;
-                        font-size: vw(18px);
+                        font-size: 18px;
                         text-align: center;;
                     }
 
                     span {
-                        font-size: vw(18px);
+                        font-size: 18px;
                     }
 
                     .inline-block {
@@ -241,11 +240,11 @@
             .form-group {
 
                 label {
-                    width: vw(132px);
+                    width: 132px;
                 }
 
                 input {
-                    width: vw(351px);
+                    width: 351px;
                 }
 
             }
@@ -254,13 +253,13 @@
         // 사진업로드
         .form-img {
             float: right;
-            width: vw(209px);
+            width: 209px;
 
             .form-group {
                 .picture {
                     position: relative;
                     width: 100%;
-                    height: vw(300px);
+                    height: 300px;
                     background-color: #e8ecef;
 
                     .picture-text {
@@ -270,7 +269,7 @@
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%,-50%);
-                        font-size: vw(18px);
+                        font-size: 18px;
                         color: #9f9f9f;
                         text-align: center;
                     }
@@ -285,15 +284,15 @@
                     display: block;
                     position: relative;
                     width: 100%;
-                    height: vw(55px);
-                    margin-top: vw(20px);
+                    height: 55px;
+                    margin-top: 20px;
                     background: $titleColor;
                     color: #fff;
                     font: {
-                        size: vw(18px);
+                        size: 18px;
                         weight: 600;
                     }
-                    line-height: vw(55px);
+                    line-height: 55px;
                     text-align: center;
                     cursor: pointer;
 
@@ -313,6 +312,181 @@
 
 }
 
+/* 웹 1600 사이즈 */
+@media all and (max-width: 1600px) {
+    @import "./lib/webvw";
+
+    /* 지원하기 */
+    .work-apply {
+
+        button,
+        .btn {
+            font-size: vw(28px);
+            padding: vw(5px 10px);
+            border-radius: vw(5px);
+        }
+
+        &__title {
+            h2 {
+                padding: vw(56px) 0;
+            }
+        }
+
+        &__contents {
+            max-width: vw(1302px);
+            padding-top: vw(50px);
+            padding-bottom: vw(50px);
+        }
+
+        &__progress {
+            padding: vw(56px) 0;
+            margin-bottom: vw(18px);
+
+            ul {
+                width: vw(657px);
+
+                li {
+                    font: {
+                        size: vw(20px);
+                    }
+
+                    &:before {
+                        width: vw(74px);
+                        height: vw(73px);
+                        line-height: vw(74px);
+                        font-size: vw(28px);
+                        border-radius: 50%;
+                        margin: 0 auto vw(17px);
+                        border: vw(5px) solid #acacac;
+                    }
+
+                    &::after {
+                        height: vw(3px);
+                        top: vw(35px);
+                    }
+
+                    &.on {
+
+                        &::before {
+                            border: vw(5px) solid $titleColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .form-container {
+            margin-bottom: vw(18px);
+            padding: vw(70px 240px 70px);
+
+            .form-wrap {
+
+                h3 {
+                    padding-top: vw(11px);
+                    margin-bottom: vw(30px);
+
+                    font: {
+                        size: vw(25px);
+                    }
+
+                    &::before {
+                        width: vw(93px);
+                        height: vw(4px);
+                    }
+
+                    em {
+                        font-size: vw(15px);
+                    }
+                }
+
+                .form-group {
+                    margin-bottom: vw(20px);
+
+                    label {
+                        width: vw(173px);
+                        font-size: vw(20px);
+                    }
+
+                    input {
+                        padding: 0 vw(19px);
+                        width: vw(500px);
+                        height: vw(54px);
+                        border-radius: vw(5px);
+                        font-size: vw(18px);
+                    }
+
+                    .input-gorup {
+                        width: vw(351px);
+
+                        input {
+                            margin-bottom: vw(10px);
+                        }
+                    }
+
+                    .input_date-group {
+                        width: vw(500px);
+
+                        .from-arrow {
+                            font-size: vw(18px);
+                        }
+
+                        span {
+                            font-size: vw(18px);
+                        }
+                    }
+                }
+            }
+
+            // 인적사항 form
+            .form-left {
+
+                .form-group {
+
+                    label {
+                        width: vw(132px);
+                    }
+
+                    input {
+                        width: vw(351px);
+                    }
+
+                }
+            }
+
+            // 사진업로드
+            .form-img {
+                width: vw(209px);
+
+                .form-group {
+                    .picture {
+                        width: 100%;
+                        height: vw(300px);
+
+                        .picture-text {
+                            font-size: vw(18px);
+                        }
+                    }
+
+                    .input-file-trigger {
+                        height: vw(55px);
+                        margin-top: vw(20px);
+
+                        font: {
+                            size: vw(18px);
+                        }
+                        line-height: vw(55px);
+
+                        input {
+                            padding: 14px 0;
+
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
 
 /*태블릿 세로 사이즈*/
 @media all and (min-width: 1024px)  {

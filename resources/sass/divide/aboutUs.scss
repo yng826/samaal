@@ -126,10 +126,10 @@
 
             p {
                 display: block;
-                min-height: 50px;
+                height: 50px;
                 padding-left: 10px;
                 color: #2a2a2a;
-                white-space: nowrap;
+
                 font : {
                     size: 18px;
                     weight: 400;
@@ -598,7 +598,7 @@
                 }
 
                 p {
-                    min-height: vw(50px);
+                    height: vw(50px);
                     padding-left: vw(10px);
                     font : {
                         size: vw(18px);
@@ -805,7 +805,6 @@
     }
 }
 
-
 /*태블릿 세로 사이즈*/
 @media all and (min-width:768px) and (max-width:1023px) {
     @import "./lib/webvw";
@@ -856,6 +855,7 @@
                 }
 
                 p {
+                    height: vw(100px);
                     font : {
                         size: vw(36px);
                     }
@@ -1130,6 +1130,7 @@
                 }
 
                 p {
+                    height: vw(70px);
                     padding-left: vw(9px);
                     font : {
                         size: vw(20px);
