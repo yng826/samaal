@@ -1,14 +1,14 @@
 @extends('layouts.default')
 
 @section('contents')
-    <main class="contents-wrap">
-        <div class="contents-wrap__title pd-20">
-        <h2 class="about-ir__title">
-            인증 현황
-        </h2>
+    <main class="contents-wrap speciality-iso">
+        <div class="contents-wrap__title speciality-iso__title">
+            <h2>
+                인증 현황
+            </h2>
         </div>
-        <div class="contents-wrap__section">
-            <table>
+        <div class="speciality-iso__section">
+            <table class="speciality-iso__table">
                 <tr>
                     <th>구분</th>
                     <th>인증규격</th>
@@ -17,13 +17,16 @@
                 </tr>
                 @foreach ($certifications as $certification)
                 <tr>
-                    <td>{{ $certification->type }}</td>
+                    <td class="sort">{{ $certification->type }}</td>
                     <td>{{ $certification->standard }}</td>
                     <td>{{ $certification->number }}</td>
                     <td class="text-center">
                         {{ $certification->first_date }}
-                        <a href="/business/speciality/iso_certification/file-download?id={{ $certification->id }}">[PDF파일]</a>
-                        <img src="/storage/{{ $certification->img_file_path }}" height="50" />
+                        <div class="file-box">
+                            <a href="/business/speciality/iso_certification/file-download?id={{ $certification->id }}" class="btn-download">[PDF파일]</a>
+                            <a href="#" class="btn-preview">]</a>
+                        </div>
+                        {{-- <img src="/storage/{{ $certification->img_file_path }}" height="50" /> --}}
                     </td>
                 </tr>
                 @endforeach

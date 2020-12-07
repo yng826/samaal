@@ -1031,6 +1031,74 @@
     }
 }
 
+/* 인증 현황 */
+.speciality-iso {
+
+    &__title {
+        padding: 56px 0;
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    &__section {
+        max-width: 1382px ;
+        padding: 70px 0;
+        margin: 0 auto;
+    }
+
+    &__table {
+        th {
+            padding: 18px 0;
+            font-size: 20px;
+            line-height: 1;
+            border: 2px solid #000;
+        }
+
+        td {
+            padding: 23px 0;
+            color: #444444;
+            font-size: 20px;
+            line-height: 1;
+            border: 2 px solid #b7b7b7;
+        }
+
+        .sort {
+            font-weight: bold;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .file-box {
+            display: inline-block;
+            margin-left: 15px;
+            font-size: 0;
+            vertical-align: middle;
+
+            a {
+                display: inline-block;
+                margin: 0 4px;
+                vertical-align: middle;
+                font-size: 0;
+                background-size: contain;
+            }
+        }
+
+        .btn-download {
+            width: 28px;
+            height: 30px;
+            background: url("../images/business/speciality/btn-download.png") no-repeat;
+        }
+
+        .btn-preview {
+            width: 31px;
+            height: 31px;
+            background: url("../images/business/speciality/btn-preview.png") no-repeat;
+        }
+    }
+}
+
 
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
@@ -1660,4 +1728,59 @@
             }
         }
     }
+
+    /* 인증 현황 */
+    .speciality-iso {
+
+        &__title {
+            padding: vw(56px 0);
+
+            h2 {
+                font-size: vw(40px);
+            }
+        }
+
+        &__section {
+            max-width: vw(1382px );
+            padding: vw(70px 0);
+        }
+
+        &__table {
+            th {
+                padding: vw(18px 0);
+                font-size: vw(20px);
+                border: vw(2px) solid #000;
+            }
+
+            td {
+                padding: vw(23px 0);
+                font-size: vw(20px);
+                border: vw(2) px solid #b7b7b7;
+            }
+
+            .sort {
+                font-size: vw(20px);
+            }
+
+            .file-box {
+                margin-left: vw(15px);
+
+                a {
+                    margin: vw(0 4px);
+                }
+            }
+
+            .btn-download {
+                width: vw(28px);
+                height: vw(30px);
+            }
+
+            .btn-preview {
+                width: vw(31px);
+                height: vw(31px);
+
+            }
+        }
+    }
+
 }
