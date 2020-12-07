@@ -836,7 +836,7 @@
         }
     }
 
-    .content-01 {
+    .process-layout {
         padding: 69px 0 77px;
 
         &__text {
@@ -925,6 +925,12 @@
                 }
 
             }
+        }
+    }
+
+    .content-01 {
+
+        &__list {
 
             &--item:nth-child(1) {
                 background: url("../images/business/speciality/img_content01_process_01.jpg") no-repeat left top / 155px 180px;
@@ -955,95 +961,8 @@
     }
 
     .content-02 {
-        padding: 69px 0 77px;
-
-        &__text {
-            font-size: 18px;
-            line-height: 32px;
-            color: #535353;
-            text-align: center;
-            word-break: keep-all;
-
-            span {
-                display: block;
-                margin: 30px 0;
-                color: #535353;
-                font-size: 18px;
-                font-weight: bold;
-            }
-        }
 
         &__list {
-            padding: 70px;
-            text-align: center;
-            font-size: 0;
-
-            &--item {
-                display: inline-block;
-                position: relative;
-                width: 155px;
-                padding-right: 58px;
-                padding-top: 180px;
-                vertical-align: top;
-
-                .lang-korea {
-                    display: block;
-                    color: #000;
-                    font: {
-                        size: 20px;
-                        weight: bold;
-                    }
-                    text-align: center;
-                }
-
-                .lang-english {
-                    display: block;
-                    color: #000;
-                    font-size: 18px;
-                    text-align: center;
-                }
-
-                .popup-btn {
-                    display: block;
-                    position: relative;
-                    width: 125px;
-                    height: 30px;
-                    margin: 10px auto 0;
-                    padding-left:13px;
-                    border: 1px solid $titleColor;
-                    color: $titleColor;
-                    font-size: 18px;
-                    text-align: left;
-
-                    &::after {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        right: 11px;
-                        border-top: 5px solid transparent;
-                        border-left: 11px solid $titleColor;
-                        border-bottom: 5px solid transparent;
-                    }
-                }
-
-                &::after {
-                    content:"";
-                    display: inline-block;
-                    position: absolute;
-                    right: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    margin: 0 8px;
-                    width: 42px;
-                    height: 42px;
-                    background: url("../images/business/speciality/arrow_process.jpg") no-repeat;
-                    background-size: contain;
-                    vertical-align: middle;
-                }
-
-            }
 
             &--item:nth-child(1) {
                 background: url("../images/business/speciality/img_content02_process_01.jpg") no-repeat left top / 155px 180px;
@@ -1074,95 +993,11 @@
     }
 
     .content-03 {
-        padding: 69px 0 77px;
-
-        &__text {
-            font-size: 18px;
-            line-height: 32px;
-            color: #535353;
-            text-align: center;
-            word-break: keep-all;
-
-            span {
-                display: block;
-                margin: 30px 0;
-                color: #535353;
-                font-size: 18px;
-                font-weight: bold;
-            }
+        .process-layout__list {
+            padding: 70px 0;
         }
 
         &__list {
-            padding: 70px 0;
-            text-align: center;
-            font-size: 0;
-
-            &--item {
-                display: inline-block;
-                position: relative;
-                width: 155px;
-                padding-right: 58px;
-                padding-top: 180px;
-                vertical-align: top;
-
-                .lang-korea {
-                    display: block;
-                    color: #000;
-                    font: {
-                        size: 20px;
-                        weight: bold;
-                    }
-                    text-align: center;
-                }
-
-                .lang-english {
-                    display: block;
-                    color: #000;
-                    font-size: 18px;
-                    text-align: center;
-                }
-
-                .popup-btn {
-                    display: block;
-                    position: relative;
-                    width: 125px;
-                    height: 30px;
-                    margin: 10px auto 0;
-                    padding-left:13px;
-                    border: 1px solid $titleColor;
-                    color: $titleColor;
-                    font-size: 18px;
-                    text-align: left;
-
-                    &::after {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        right: 11px;
-                        border-top: 5px solid transparent;
-                        border-left: 11px solid $titleColor;
-                        border-bottom: 5px solid transparent;
-                    }
-                }
-
-                &::after {
-                    content:"";
-                    display: inline-block;
-                    position: absolute;
-                    right: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    margin: 0 8px;
-                    width: 42px;
-                    height: 42px;
-                    background: url("../images/business/speciality/arrow_process.jpg") no-repeat;
-                    background-size: contain;
-                    vertical-align: middle;
-                }
-
-            }
 
             &--item:nth-child(1) {
                 background: url("../images/business/speciality/img_content03_process_01.jpg") no-repeat left top / 155px 175px;
@@ -1647,7 +1482,7 @@
     .speciality-process {
 
         &__title {
-            padding: vw(57px) 0;
+            padding: vw(57px 0);
             font-size: vw(40px);
         }
 
@@ -1658,9 +1493,10 @@
         &__tab {
 
             &--item {
+                display: inline-block;
                 width: calc(33.33% - #{vw(6px)});
                 margin-right: vw(6px);
-                padding: vw(23px) 0;
+                padding: vw(23px 0);
                 font-size: vw(20px);
 
                 &.on {
@@ -1672,16 +1508,21 @@
             }
         }
 
-        .content-01 {
-            padding-top: vw(69px);
+        .process-layout {
+            padding: vw(69px 0 77px);
 
             &__text {
                 font-size: vw(18px);
                 line-height: vw(32px);
+
+                span {
+                    margin: vw(30px 0);
+                    font-size: vw(18px);
+                }
             }
 
             &__list {
-                padding-top: vw(70px);
+                padding: vw(70px);
 
                 &--item {
                     width: vw(155px);
@@ -1689,7 +1530,6 @@
                     padding-top: vw(180px);
 
                     .lang-korea {
-
                         font: {
                             size: vw(20px);
                         }
@@ -1702,7 +1542,8 @@
                     .popup-btn {
                         width: vw(125px);
                         height: vw(30px);
-                        padding-left:vw(13px);
+                        margin: vw(10px auto 0);
+                        padding-left: vw(13px);
                         font-size: vw(18px);
 
                         &::after {
@@ -1714,16 +1555,18 @@
                     }
 
                     &::after {
-                        transform: translateY(-50%);
-                        margin: 0 vw(8px);
+                        margin: vw(0 8px);
                         width: vw(42px);
                         height: vw(42px);
-                        background: url("../images/business/speciality/arrow_process.jpg") no-repeat;
-                        background-size: contain;
-                        vertical-align: middle;
                     }
 
                 }
+            }
+        }
+
+        .content-01 {
+
+            &__list {
 
                 &--item:nth-child(1) {
                     background: url("../images/business/speciality/img_content01_process_01.jpg") no-repeat left top / vw(155px) vw(180px);
@@ -1743,7 +1586,78 @@
                     }
                 }
             }
+
+            &__img {
+                margin-top: vw(70px);
+                width: vw(1020px);
+                height: vw(1931px);
+                background: url("../images/business/speciality/img_content01.jpg") no-repeat center / contain;
+            }
+        }
+
+        .content-02 {
+
+            &__list {
+
+                &--item:nth-child(1) {
+                    background: url("../images/business/speciality/img_content02_process_01.jpg") no-repeat left top / vw(155px) vw(180px);
+                }
+                &--item:nth-child(2) {
+                    background: url("../images/business/speciality/img_content02_process_02.jpg") no-repeat left top / vw(155px) vw(180px);
+                }
+                &--item:nth-child(3) {
+                    background: url("../images/business/speciality/img_content02_process_03.jpg") no-repeat left top / vw(155px) vw(180px);
+                }
+                &--item:nth-child(4) {
+                    padding-right: 0;
+                    background: url("../images/business/speciality/img_content02_process_04.jpg") no-repeat left top / vw(155px) vw(180px);
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+
+            &__img {
+                margin-top: vw(70px);
+                width: vw(1020px);
+                height: vw(1931px);
+                background: url("../images/business/speciality/img_content02.jpg") no-repeat center / contain;
+            }
+        }
+
+        .content-03 {
+            &__list {
+
+                &--item:nth-child(1) {
+                    background: url("../images/business/speciality/img_content03_process_01.jpg") no-repeat left top / vw(155px) vw(175px);
+                }
+                &--item:nth-child(2) {
+                    background: url("../images/business/speciality/img_content03_process_02.jpg") no-repeat left top / vw(155px) vw(175px);
+                }
+                &--item:nth-child(3) {
+                    background: url("../images/business/speciality/img_content03_process_03.jpg") no-repeat left top / vw(155px) vw(175px);
+                }
+                &--item:nth-child(4) {
+                    background: url("../images/business/speciality/img_content03_process_03.jpg") no-repeat left top / vw(155px) vw(175px);
+                }
+                &--item:nth-child(5) {
+                    padding-right: 0;
+                    background: url("../images/business/speciality/img_content03_process_04.jpg") no-repeat left top / vw(155px) vw(175px);
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+
+            &__img {
+                display: block;
+                margin-top: vw(70px);
+                width: vw(1020px);
+                height: vw(1931px);
+                background: url("../images/business/speciality/img_content02.jpg") no-repeat center / contain;
+            }
         }
     }
-
 }
