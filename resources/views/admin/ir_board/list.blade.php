@@ -34,10 +34,10 @@
                             <td class="text-center">{{ $board->category }}</td>
                             <td class="text-center">{{ $board->title }}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-info btn-xs" href="/admin/ir_board/file-download?id={{ $board->id }}">파일</button>
+                                <a class="btn btn-outline-info btn-xs" href="/admin/ir_board/file-download?id={{ $board->id }}">파일</a>
                             </td>
                             <td class="text-center">{{ $board->updated_at ?? $board->created_at}}</td>
-                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/ir_board/{{$board->id}}/edit">수정</button></td>
+                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/ir_board/{{$board->id}}/edit">수정</a></td>
                         </tr>
                         @endforeach
                     </table>

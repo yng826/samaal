@@ -42,7 +42,7 @@
                             <td class="text-center">{{ $faq->question }}</td>
                             <td class="text-center">{{ $faq->updated_at ?? $faq->created_at}}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-warning btn-xs" href="/admin/faq/{{ $faq->id }}/edit">수정</button>
+                                <a class="btn btn-outline-warning btn-xs" href="/admin/faq/{{ $faq->id }}/edit">수정</a>
                             </td>
                         </tr>
                         @endforeach

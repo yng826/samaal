@@ -36,7 +36,7 @@
                             <td class="text-center">{{ $recruit->title }}</td>
                             <td class="text-center">{{ $recruit->updated_at ?? $recruit->created_at}}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-warning btn-xs" href="/admin/recruit/{{ $recruit->id }}/edit">수정</button>
+                                <a class="btn btn-outline-warning btn-xs" href="/admin/recruit/{{ $recruit->id }}/edit">수정</a>
                             </td>
                         </tr>
                         @endforeach

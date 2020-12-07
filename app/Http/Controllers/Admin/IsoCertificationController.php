@@ -45,7 +45,8 @@ class IsoCertificationController extends Controller
      */
     public function store(Request $request)
     {
-        $file_path = $request->file('file')->store('iso'); //파일 저장
+        $img_file_path = $request->file('img_file')->store('iso'); //이미지파일 저장
+        $pdf_file_path = $request->file('pdf_file')->store('iso'); //PDF파일 저장
 
         $saved = DB::table('iso_certifications')
                     ->insert([
@@ -53,8 +54,10 @@ class IsoCertificationController extends Controller
                         'type'=> $request->type,
                         'standard'=> $request->standard,
                         'number'=> $request->number,
-                        'file_name'=> $request->file('file')->getClientOriginalName(),
-                        'file_path'=> $file_path,
+                        'img_file_name'=> $request->file('img_file')->getClientOriginalName(),
+                        'img_file_path'=> $img_file_path,
+                        'pdf_file_name'=> $request->file('pdf_file')->getClientOriginalName(),
+                        'pdf_file_path'=> $pdf_file_path,
                         'created_at' => now()
                     ]);
 
@@ -98,11 +101,17 @@ class IsoCertificationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $file_name = $request->file_name;
-        $file_path = $request->file_path;
-        if (!empty($request->file('file'))) {
-            $file_name = $request->file('file')->getClientOriginalName();
-            $file_path = $request->file('file')->store('iso'); //파일 저장
+        $img_file_name = $request->img_file_name;
+        $img_file_path = $request->img_file_path;
+        $pdf_file_name = $request->pdf_file_name;
+        $pdf_file_path = $request->pdf_file_path;
+        if (!empty($request->file('img_file'))) {
+            $img_file_name = $request->file('img_file')->getClientOriginalName();
+            $img_file_path = $request->file('img_file')->store('iso'); //이미지파일 저장
+        }
+        if (!empty($request->file('pdf_file'))) {
+            $pdf_file_name = $request->file('pdf_file')->getClientOriginalName();
+            $pdf_file_path = $request->file('pdf_file')->store('iso'); //PDF파일 저장
         }
 
         $affected = DB::table('iso_certifications')
@@ -112,8 +121,10 @@ class IsoCertificationController extends Controller
                         'type'=> $request->type,
                         'standard'=> $request->standard,
                         'number'=> $request->number,
-                        'file_name'=>  $file_name,
-                        'file_path'=>  $file_path,
+                        'img_file_name'=>  $img_file_name,
+                        'img_file_path'=>  $img_file_path,
+                        'pdf_file_name'=>  $pdf_file_name,
+                        'pdf_file_path'=>  $pdf_file_path,
                         'updated_at' => now()
                     ]);
 
@@ -143,8 +154,9 @@ class IsoCertificationController extends Controller
     {
         $certification = DB::table('iso_certifications')->where('id', $request->id)->first();
 
-        $file =  Storage::get($certification->file_path);
+        $file =  Storage::get($request->type=='img' ? $certification->img_file_path : $certification->pdf_file_path);
+        $file_name =  $request->type=='img' ? $certification->img_file_name : $certification->pdf_file_name;
 
-        return response($file, 200, ['Content-Disposition' => "attachment; filename={$certification->file_name}"]);
+        return response($file, 200, ['Content-Disposition' => "attachment; filename={$file_name}"]);
     }
 }

@@ -38,11 +38,12 @@
                             <td class="text-center">{{ $certification->standard }}</td>
                             <td class="text-center">{{ $certification->number }}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-info btn-xs" href="/admin/iso_certification/file-download?id={{ $certification->id }}">파일</button>
+                                <a class="btn btn-outline-info btn-xs mr-2" href="/admin/iso_certification/file-download?id={{ $certification->id }}&type=img">이미지파일</a>
+                                <a class="btn btn-outline-info btn-xs" href="/admin/iso_certification/file-download?id={{ $certification->id }}&type=pdf">PDF파일</a>
                             </td>
                             <td class="text-center">{{ $certification->updated_at ?? $certification->created_at}}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-warning btn-xs" href="/admin/iso_certification/{{ $certification->id }}/edit">수정</button>
+                                <a class="btn btn-outline-warning btn-xs" href="/admin/iso_certification/{{ $certification->id }}/edit">수정</a>
                             </td>
                         </tr>
                         @endforeach
