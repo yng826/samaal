@@ -1,14 +1,13 @@
-@import "./lib/webvw";
 /* aboutUs - storyNews - CI */
 .about-ci {
     &__contents {
         display: table;
-        padding: vw(100px) 0 vw(160px);
+        padding:100px 0 160px;
     }
 
     &__title {
         h2 {
-            padding: vw(80px) 0;
+            padding: 80px 0;
             line-height: 1;
         }
     }
@@ -16,34 +15,34 @@
     &__identity {
         display: table-cell;
         width: 50%;
-        padding-right: vw(150px);
+        padding-right: 150px;
 
         &--area {
             h3 {
                 display: block;
-                padding-bottom: vw(19px);
+                padding-bottom: 19px;
                 color: $titleColor;
                 font: {
-                    size: vw(25px);
+                    size: 25px;
                     weight: bold;
                 }
                 line-height: 1;
-                border-bottom: vw(2px) solid $titleColor;
+                border-bottom: 2px solid $titleColor;
             }
 
             p {
                 display: block;
-                padding-top: vw(19px);
+                padding-top: 19px;
                 color: #535353;
-                font-size: vw(18px);
-                line-height: vw(32px);
-                letter-spacing: vw(-0.63px);
+                font-size: 18px;
+                line-height: 32px;
+                letter-spacing: -0.63px;
                 word-break: keep-all;
             }
         }
 
         &--orientation {
-            margin-top: vw(50px);
+            margin-top: 50px;
         }
     }
 
@@ -57,12 +56,12 @@
 /* aboutUs - storyNews - News */
 .about-storyNews {
     &__title {
-        padding: vw(60px) 0 vw(50px);
+        padding: 60px 0 50px;
     }
 
     &__contents {
-        max-width: vw(1614px);
-        padding: vw(60px) 0 vw(90px);
+        max-width: 1614px;
+        padding: 60px 0 90px;
         margin: 0 auto;
     }
 
@@ -78,18 +77,18 @@
         &-item {
             float: left;
             width: calc(33.33% - 2.6%);
-            margin-bottom: vw(20px);
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             box-sizing: border-box;
-            margin-right: vw(42px);
+            margin-right: 42px;
 
             &--text {
-                padding: vw(19px 25px);
+                padding: 19px 25px;
             }
 
             figure {
                 width: 100%;
-                height: vw(298px);
+                height: 298px;
                 border-bottom: 1px solid #ccc;
                 background-size: cover;
                 background-position: center;
@@ -102,11 +101,11 @@
 
             h3 {
                 display: block;
-                padding: vw(9px 0 21px 10px);
+                padding: 9px 0 21px 10px;
                 position: relative;
                 color: #2a2a2a;
                 font: {
-                    size: vw(25px);
+                    size: 25px;
                     weight: bold;
                 }
                 line-height: 1;
@@ -118,8 +117,8 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: vw(10px);
-                    height: vw(10px);
+                    width: 10px;
+                    height: 10px;
                     border-radius: 50%;
                     background-color: #3767c7;
                 }
@@ -127,12 +126,12 @@
 
             p {
                 display: block;
-                min-height: vw(50px);
-                padding-left: vw(10px);
+                min-height: 50px;
+                padding-left: 10px;
                 color: #2a2a2a;
                 white-space: nowrap;
                 font : {
-                    size: vw(18px);
+                    size: 18px;
                     weight: 400;
                 }
                 @include line(2);
@@ -150,28 +149,28 @@
     }
 
     .pagination {
-        margin-top: vw(60px);
+        margin-top: 60px;
     }
 }
 
 /* aboutUs - ceoMessage*/
 .about-ceo {
     &__contents {
-        padding: 0 0 vw(72px) vw(1173px);
-        margin-top: vw(103px);
+        padding: 0 0 72px 1173px;
+        margin-top: 103px;
         font-size: 0;
-        background: url("../images/about/img_ceo.jpg") no-repeat left top/ vw(1079px) vw(620px);
+        background: url("../images/about/img_ceo.jpg") no-repeat left top/ 1079px 620px;
     }
 
     &__title {
-        padding-bottom: vw(35px);
+        padding-bottom: 35px;
         color: #000;
         font: {
-            size: vw(25px);
+            size: 25px;
             weight: 400;
         }
         border-bottom: 1px solid $titleColor;
-        line-height: vw(34px);
+        line-height: 34px;
 
         em {
             color: $titleColor;
@@ -184,14 +183,14 @@
     }
 
     &__text {
-        width: vw(584px);
-        padding-top: vw(35px);
+        width: 584px;
+        padding-top: 35px;
         color: #2a2a2a;
-        font-size: vw(18px);
-        line-height: vw(32px);
+        font-size: 18px;
+        line-height: 32px;
 
         p {
-            padding-bottom: vw(15px);
+            padding-bottom: 15px;
             word-break: keep-all;
         }
     }
@@ -202,15 +201,15 @@
 
     &__title {
         position: static;
-        height: vw(400px);
+        height: 400px;
 
         h2 {
-            padding-top: vw(57px);
+            padding-top: 57px;
         }
     }
 
     &__swiper {
-        height: vw(500px);
+        height: 500px;
 
         img {
             width: 100%;
@@ -218,8 +217,8 @@
         }
 
         .swiper-button {
-            width: vw(79px);
-            height: vw(79px);
+            width: 79px;
+            height: 79px;
             font-size: 0;
 
             &::after {
@@ -237,12 +236,12 @@
         }
 
         .swiper-pagination {
-            bottom: vw(30px) !important;
+            bottom: 30px !important;
         }
 
         .swiper-pagination-bullet {
-            width: vw(17px);
-            height: vw(17px);
+            width: 17px;
+            height: 17px;
             background-color: #4e4e4e;
             opacity: 1;
 
@@ -254,38 +253,38 @@
     }
 
     &__contents {
-        width: vw(890px);
-        margin: vw(-258px) auto 0;
+        width: 890px;
+        margin: -258px auto 0;
         background-color: #fff;
     }
 
     &__info {
         display: table;
         width: 100%;
-        padding-top: vw(20px);
-        padding-bottom: vw(62px);
+        padding-top: 20px;
+        padding-bottom: 62px;
         @extend %clear;
 
         &--map {
             display: table-cell;
             // float: left;
             width: 50%;
-            height: vw(345px);
+            height: 345px;
         }
 
         &--address {
             display: table-cell;
             width: 50%;
-            padding-left: vw(50px);
+            padding-left: 50px;
             vertical-align: middle;
 
             p {
                 display: block;
-                width: vw(370px);
+                width: 370px;
                 color: #000;
-                font-size: vw(25px);
+                font-size: 25px;
                 word-break: keep-all;
-                line-height: vw(37px);
+                line-height: 37px;
 
                 em {
                     font-weight: bold;
@@ -294,23 +293,23 @@
 
             dl {
                 display: block;
-                padding-top: vw(32px);
+                padding-top: 32px;
 
                 dt {
                     display: inline-block;
                     color: #535353;
                     font : {
-                        size: vw(18px);
+                        size: 18px;
                         weight: bold;
                     }
-                    line-height: vw(32px);
+                    line-height: 32px;
 
                     &::after {
                         content: "";
                         display: inline-block;
-                        width: vw(2px);
-                        height: vw(15px);
-                        margin: 0 vw(7px);
+                        width: 2px;
+                        height: 15px;
+                        margin: 0 7px;
                         background-color: #535353;
                         vertical-align: middle;
                     }
@@ -319,14 +318,14 @@
 
                 dd {
                     display: inline-block;
-                    font-size: vw(18px);
+                    font-size: 18px;
                     color: #535353;
                 }
             }
         }
 
         &--video {
-            margin-top: vw(20px);
+            margin-top: 20px;
         }
     }
 }
@@ -336,50 +335,50 @@
     &__top-img {
         display: block;
         width: 100%;
-        height: vw(270px);
+        height: 270px;
         background: url("../images/about/heritage/img_top.jpg")no-repeat;
         background-size: cover;
     }
 
     &__contents {
-        max-width: vw(1376px);
+        max-width: 1376px;
         margin: 0 auto;
-        padding-bottom: vw(200px);
+        padding-bottom: 200px;
     }
 
     &__info {
-        padding: vw(88px 831px 220px 0);
+        padding: 88px 831px 220px 0;
         background: url("../images/about/heritage/img_right.jpg")no-repeat right top / contain;
 
         &--title {
             display: block;
-            padding-bottom: vw(34px);
+            padding-bottom: 34px;
             color: $titleColor;
-            font-size: vw(25px);
+            font-size: 25px;
             font-weight: bold;
-            line-height: vw(37px);
+            line-height: 37px;
         }
 
         &--text {
             display: block;
             color: #383838;
-            font-size: vw(18px);
-            line-height: vw(32px);
+            font-size: 18px;
+            line-height: 32px;
             word-break: keep-all;
         }
     }
 
     &__slide {
-        padding-top: vw(200px);
+        padding-top: 200px;
 
         .about-heritage__slide--img {
-            width: vw(837px);
-            height: vw(630px);
+            width: 837px;
+            height: 630px;
 
             .swiper-wrapper {
-                padding-top: vw(63px);
-                height: vw(504px);
-                width: vw(344px);
+                padding-top: 63px;
+                height: 504px;
+                width: 344px;
             }
 
             .swiper-slide {
@@ -427,9 +426,9 @@
                 display: inline-block;
                 vertical-align: middle;
                 z-index: 2;
-                height: vw(630px);
-                width: vw(430px);
-                margin-top: vw(-63px);
+                height: 630px;
+                width: 430px;
+                margin-top: -63px;
                 -webkit-transform: scale(1.01);
                 transform: scale(1.01);
             }
@@ -440,12 +439,12 @@
         }
 
         .about-heritage__slide--year {
-            width: vw(589px);
-            margin-top: vw(53px);
-            padding: 0 vw(58px);
+            width: 589px;
+            margin-top: 53px;
+            padding: 0 58px;
 
             .swiper-slide {
-                font-size: vw(28px);
+                font-size: 28px;
                 color: #8d8d8d;
                 text-align: center;
             }
@@ -473,21 +472,21 @@
             }
 
             .swiper-button-prev {
-                width: vw(58px);
+                width: 58px;
                 left: 0;
                 background-color: #fff;
             }
 
             .swiper-button-next {
-                width: vw(58px);
+                width: 58px;
                 right: 0;
                 background-color: #fff;
             }
 
             .swiper-button-prev::after{
                 display: inline-block;
-                width: vw(72px);
-                height: vw(32px);
+                width: 72px;
+                height: 32px;
                 background: url("../images/about/heritage/arrow_prev.jpg") no-repeat left;
                 background-size: contain;
                 font-size: 0;
@@ -495,8 +494,8 @@
 
             .swiper-button-next::after{
                 display: inline-block;
-                width: vw(72px);
-                height: vw(32px);
+                width: 72px;
+                height: 32px;
                 background: url("../images/about/heritage/arrow_next.jpg") no-repeat right;
                 background-size: contain;
                 font-size: 0;
@@ -506,20 +505,311 @@
 
     &__text {
         position: absolute;
-        right: vw(38px);
+        right: 38px;
         display: block;
-        padding-top: vw(18px);
+        padding-top: 18px;
         text-align: right;
         color: #8d8d8d;
-        font-size: vw(15px);
-        line-height: vw(32px);
+        font-size: 15px;
+        line-height: 32px;
+    }
+}
+
+/* 웹 1600 사이즈 */
+@media all and (max-width: 1600px) {
+    @import "./lib/webvw";
+
+    /* aboutUs - storyNews - CI */
+    .about-ci {
+        &__contents {
+            padding: vw(100px) 0 vw(160px);
+        }
+
+        &__title {
+            h2 {
+                padding: vw(80px) 0;
+            }
+        }
+
+        &__identity {
+            padding-right: vw(150px);
+
+            &--area {
+                h3 {
+                    padding-bottom: vw(19px);
+                    font: {
+                        size: vw(25px);
+                    }
+                    border-bottom: vw(2px) solid $titleColor;
+                }
+
+                p {
+                    padding-top: vw(19px);
+                    font-size: vw(18px);
+                    line-height: vw(32px);
+                    letter-spacing: vw(-0.63px);
+                }
+            }
+
+            &--orientation {
+                margin-top: vw(50px);
+            }
+        }
+
+        &__img {
+            width: 50%;
+        }
+    }
+
+    /* aboutUs - storyNews - News */
+    .about-storyNews {
+        &__title {
+            padding: vw(60px) 0 vw(50px);
+        }
+
+        &__contents {
+            max-width: vw(1614px);
+            padding: vw(60px) 0 vw(90px);
+        }
+
+        &__list {
+            &-item {
+                margin-bottom: vw(20px);
+                margin-right: vw(42px);
+
+                &--text {
+                    padding: vw(19px 25px);
+                }
+
+                figure {
+                    height: vw(298px);
+                }
+
+                h3 {
+                    padding: vw(9px 0 21px 10px);
+                    font: {
+                        size: vw(25px);
+                    }
+
+                    &:before {
+                        width: vw(10px);
+                        height: vw(10px);
+                    }
+                }
+
+                p {
+                    min-height: vw(50px);
+                    padding-left: vw(10px);
+                    font : {
+                        size: vw(18px);
+                    }
+                }
+            }
+        }
+        .pagination {
+            margin-top: vw(60px);
+        }
+    }
+
+    /* aboutUs - ceoMessage*/
+    .about-ceo {
+        &__contents {
+            padding: 0 0 vw(72px) vw(1173px);
+            margin-top: vw(103px);
+            background: url("../images/about/img_ceo.jpg") no-repeat left top/ vw(1079px) vw(620px);
+        }
+
+        &__title {
+            padding-bottom: vw(35px);
+            font: {
+                size: vw(25px);
+
+            }
+            line-height: vw(34px);
+        }
+
+        &__text {
+            width: vw(584px);
+            padding-top: vw(35px);
+            font-size: vw(18px);
+            line-height: vw(32px);
+            p {
+                padding-bottom: vw(15px);
+            }
+        }
+    }
+
+    /* aboutUs - location */
+    .about-location {
+
+        &__title {
+            height: vw(400px);
+
+            h2 {
+                padding-top: vw(57px);
+            }
+        }
+
+        &__swiper {
+            height: vw(500px);
+
+            .swiper-button {
+                width: vw(79px);
+                height: vw(79px);
+            }
+
+            .swiper-pagination {
+                bottom: vw(30px) !important;
+            }
+
+            .swiper-pagination-bullet {
+                width: vw(17px);
+                height: vw(17px);
+            }
+
+        }
+
+        &__contents {
+            width: vw(890px);
+            margin: vw(-258px) auto 0;
+        }
+
+        &__info {
+            padding-top: vw(20px);
+            padding-bottom: vw(62px);
+
+            &--map {
+                height: vw(345px);
+            }
+
+            &--address {
+                padding-left: vw(50px);
+
+                p {
+                    width: vw(370px);
+                    font-size: vw(25px);
+                    line-height: vw(37px);
+                }
+
+                dl {
+                    padding-top: vw(32px);
+
+                    dt {
+
+                        font : {
+                            size: vw(18px);
+                        }
+                        line-height: vw(32px);
+
+                        &::after {
+                            width: vw(2px);
+                            height: vw(15px);
+                            margin: 0 vw(7px);
+                        }
+
+                    }
+
+                    dd {
+                        font-size: vw(18px);
+                    }
+                }
+            }
+
+            &--video {
+                margin-top: vw(20px);
+            }
+        }
+    }
+
+    /* aboutUs - heritage */
+    .about-heritage {
+        &__top-img {
+            height: vw(270px);
+        }
+
+        &__contents {
+            max-width: vw(1376px);
+            padding-bottom: vw(200px);
+        }
+
+        &__info {
+            padding: vw(88px 831px 220px 0);
+
+            &--title {
+                padding-bottom: vw(34px);
+                font-size: vw(25px);
+                line-height: vw(37px);
+            }
+
+            &--text {
+                font-size: vw(18px);
+                line-height: vw(32px);
+            }
+        }
+
+        &__slide {
+            padding-top: vw(200px);
+
+            .about-heritage__slide--img {
+                width: vw(837px);
+                height: vw(630px);
+
+                .swiper-wrapper {
+                    padding-top: vw(63px);
+                    height: vw(504px);
+                    width: vw(344px);
+                }
+
+                .swiper-slide-active{
+                    height: vw(630px);
+                    width: vw(430px);
+                    margin-top: vw(-63px);
+                }
+            }
+
+            .about-heritage__slide--year {
+                width: vw(589px);
+                margin-top: vw(53px);
+                padding: 0 vw(58px);
+
+                .swiper-slide {
+                    font-size: vw(28px);
+                }
+
+                .swiper-button-prev {
+                    width: vw(58px);
+                }
+
+                .swiper-button-next {
+                    width: vw(58px);
+                }
+
+                .swiper-button-prev::after{
+                    width: vw(72px);
+                    height: vw(32px);
+                }
+
+                .swiper-button-next::after{
+                    width: vw(72px);
+                    height: vw(32px);
+                }
+            }
+        }
+
+        &__text {
+            right: vw(38px);
+            padding-top: vw(18px);
+            font-size: vw(15px);
+            line-height: vw(32px);
+        }
     }
 }
 
 
-
 /*태블릿 세로 사이즈*/
 @media all and (min-width:768px) and (max-width:1023px) {
+    @import "./lib/webvw";
+
     /* aboutUs - storyNews - CI */
     .about-ci {
         &__identity {
