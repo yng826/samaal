@@ -1,20 +1,18 @@
-@import "./lib/webvw";
-
 /* 알루미늄 호일, 포장재용, 산업/건축용 content */
 .business-foil {
     position: relative;
 
     &__title {
         position: fixed;
-        top: vw(358px);
-        right: vw(120px);
+        top: 358px;
+        right: 120px;
         // transform: translateY(-50%);
         color: #3d3d3d;
         font: {
-            size: vw(35px);
+            size: 35px;
         }
         text-align: center;
-        line-height: vw(70px);
+        line-height: 70px;
 
         h2 {
             font-weight: 400;
@@ -23,7 +21,7 @@
         span {
             color: #3d3d3d;
             font: {
-                size: vw(37px);
+                size: 37px;
                 weight: bold;
             }
 
@@ -37,11 +35,11 @@
         span {
             display: block;
             position: absolute;
-            bottom: vw(40px);
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
-            width: vw(50px);
-            height: vw(45px);
+            width: 50px;
+            height: 45px;
             background: url("../images/business/arrow.png") no-repeat;
             background-size: contain;
             -moz-animation: bounce 3s infinite;
@@ -103,27 +101,27 @@
 
     .foil-box {
         position: relative;
-        width: vw(1175px);
+        width: 1175px;
 
         $col_width:453/1175*100%;
         &__col {
             float: left;
             width: $col_width;
-            margin-right: vw(5px);
+            margin-right: 5px;
 
             &--item {
                 display: block;
                 position: relative;
                 width: 100%;
-                margin-right: vw(5px);
-                margin-bottom: vw(5px);
+                margin-right: 5px;
+                margin-bottom: 5px;
 
                 &:first-child {
-                    height: vw(245px);
+                    height: 245px;
                 }
 
                 &:last-child {
-                    height: vw(248px);
+                    height: 248px;
                 }
             }
         }
@@ -133,22 +131,22 @@
             display: inline-block;
             position: relative;
             width: $line_width;
-            height: vw(498px);
-            margin-bottom: vw(5px);
+            height: 498px;
+            margin-bottom: 5px;
         }
 
         &__block {
             &--item {
                 position: relative;
                 display: inline-block;
-                margin-bottom: vw(5px);
-                height: vw(327px);
+                margin-bottom: 5px;
+                height: 327px;
 
                 $block_first_width: 698/1175*100%;
                 &:nth-child(1) {
                     float: left;
                     width: $block_first_width;
-                    margin-right: vw(5px);
+                    margin-right: 5px;
                 }
 
                 $block_first_width: 472/1175*100%;
@@ -167,11 +165,11 @@
         &__text {
             display: block;
             position: absolute;
-            right: vw(36px);
-            top: vw(40px);
+            right: 36px;
+            top: 40px;
             color: $titleColor;
             font: {
-                size: vw(34px);
+                size: 34px;
                 weight: bold;
             }
         }
@@ -215,12 +213,12 @@
 
 /* 알루미늄 호일, 포장재용, 산업/건축용 layout */
 .business-detail {
-    padding-bottom: vw(85px);
+    padding-bottom: 85px;
 
     &__title {
-        height: vw(270px);
+        height: 270px;
         position: relative;
-        // padding: vw(73px) 0;
+        // padding: 73px) 0;
 
         h2 {
             position: absolute;
@@ -231,10 +229,10 @@
 
         em {
             display: block;
-            margin-top: vw(23px);
+            margin-top: 23px;
             color: #fff;
             font: {
-                size: vw(25px);
+                size: 25px;
                 weight: 400;
             }
             line-height:1;
@@ -243,26 +241,26 @@
         p {
 
             display: block;
-            margin-top: vw(15px);
-            font-size: vw(20px);
-            line-height: vw(30px);
+            margin-top: 15px;
+            font-size: 20px;
+            line-height: 30px;
             font-weight: 400;
             color: #fff;
         }
     }
 
     &__contents {
-        max-width: vw(1497px);
-        padding-top: vw(63px);
+        max-width: 1497px;
+        padding-top: 63px;
         margin: 0 auto;
     }
 
     &__slide {
         display: inline-block;
-        width: vw(776px);
-        padding: 0 vw(55px 26px) 0;
+        width: 776px;
+        padding: 0 55px 26px 0;
         vertical-align: middle;
-        background: url("../images/business/bg_slide.png") no-repeat bottom right / vw(807px) vw(447px);
+        background: url("../images/business/bg_slide.png") no-repeat bottom right / 807px 447px;
 
         img {
             width: 100%;
@@ -270,14 +268,14 @@
         }
 
         .swiper-container {
-            width: vw(750px);
-            height: vw(420px);
+            width: 750px;
+            height: 420px;
             border: 1px solid #f4f4f4;
         }
 
         .swiper-button {
-            width: vw(79px);
-            height: vw(79px);
+            width: 79px;
+            height: 79px;
             font-size: 0;
 
             &::after {
@@ -296,8 +294,8 @@
         }
 
         .swiper-pagination-bullet {
-            width: vw(15px);
-            height: vw(15px);
+            width: 15px;
+            height: 15px;
             background-color: #aeaeae;
             opacity: 1;
         }
@@ -310,16 +308,16 @@
 
     .info {
         display: inline-block;
-        width: vw(652px);
+        width: 652px;
         vertical-align: middle;
 
         &__title {
             display: block;
             font: {
-                size: vw(25px);
+                size: 25px;
                 weight: bold;
             }
-            line-height: vw(37px);
+            line-height: 37px;
 
             span {
                 color: #1b366a;
@@ -328,25 +326,25 @@
 
         &__text {
             display: block;
-            margin-top: vw(20px);
-            margin-bottom: vw(33px);
+            margin-top: 20px;
+            margin-bottom: 33px;
             color: #535353;
-            font-size: vw(18px);
-            line-height: vw(32px);
+            font-size: 18px;
+            line-height: 32px;
             word-break: keep-all;
         }
 
         &__value {
             display: table;
-            margin-bottom: vw(20px);
+            margin-bottom: 20px;
             font-size: 0;
 
             em {
                 display: table-cell;
-                height: vw(41px);
-                padding-right: vw(20px);
+                height: 41px;
+                padding-right: 20px;
                 font: {
-                    size: vw(25px);
+                    size: 25px;
                     weight: bold;
                 }
                 vertical-align: middle;
@@ -356,13 +354,13 @@
 
             p {
                 display: table-cell;
-                padding-left: vw(29px);
+                padding-left: 29px;
                 color: #535353;
-                font-size: vw(15px);
+                font-size: 15px;
                 word-break: keep-all;
                 vertical-align: middle;
-                line-height: vw(22px);
-                border-left: vw(3px) solid #000;
+                line-height: 22px;
+                border-left: 3px solid #000;
             }
         }
 
@@ -371,24 +369,24 @@
 
             &--title {
                 &:nth-child(1) {
-                    border-top: vw(3px) solid #000;
+                    border-top: 3px solid #000;
 
                     th:last-child {
-                        border-bottom: vw(3px) solid #000;
+                        border-bottom: 3px solid #000;
                     }
                 }
 
                 &:nth-child(2) {
-                    border-bottom: vw(3px) solid #000;
+                    border-bottom: 3px solid #000;
                 }
 
             }
 
             th {
-                padding: vw(10px) 0;
-                border: vw(2px) solid #000;
+                padding: 10px 0;
+                border: 2px solid #000;
                 font: {
-                    size: vw(20px);
+                    size: 20px;
                     weight: bold;
                 }
                 vertical-align: middle;
@@ -399,9 +397,9 @@
                 border-left: 1px solid #959595;
                 border-bottom: 1px solid #959595;
                 color: #2e2e2e;
-                font-size: vw(18px);
+                font-size: 18px;
                 vertical-align: middle;
-                line-height: vw(26px);
+                line-height: 26px;
                 word-break: keep-all;
             }
 
@@ -414,18 +412,18 @@
             }
 
             .border-bottom {
-                border-bottom: vw(3px) solid #000;
+                border-bottom: 3px solid #000;
             }
 
             &--bottom {
-                height: vw(111px);
+                height: 111px;
             }
 
             &.add-table {
-                margin-top: vw(28px);
+                margin-top: 28px;
 
                 .list-title {
-                    font-size: vw(18px);
+                    font-size: 18px;
                 }
 
                 .list {
@@ -436,14 +434,14 @@
                         vertical-align: top;
 
                         li {
-                            text-indent: vw(-10px);
-                            margin-left: vw(10px);
+                            text-indent: -10px;
+                            margin-left: 10px;
                         }
                     }
                 }
 
                 td {
-                    padding: vw(24px 0 24px 28px);
+                    padding: 24px 0 24px 28px;
                     text-align: left;
                 }
             }
@@ -451,17 +449,17 @@
     }
 
     &__button {
-         margin-top: vw(66px);
+         margin-top: 66px;
          text-align: center;
          font-size: 0;
 
         button {
             display: inline-block;
-            width: vw(220px);
-            height: vw(80px);
-            margin: 0 vw(15px);
+            width: 220px;
+            height: 80px;
+            margin: 0 15px;
             color: #fff;
-            font-size: vw(25px);
+            font-size: 25px;
             text-align: center;
             background-color: #000;
         }
@@ -472,13 +470,13 @@
 .business-intro {
     position: relative;
     width: 100%;
-    margin-left: vw(142px);
+    margin-left: 142px;
 
     .slide-info {
         h2 {
             display: block;
             font: {
-                size: vw(70px);
+                size: 70px;
                 weight: bold;
             }
             line-height: 1;
@@ -486,13 +484,13 @@
 
         &__link {
             display: block;
-            width: vw(225);
-            height: vw(59);
-            margin-top: vw(42px);
-            font-size: vw(27px);
+            width: 225;
+            height: 59;
+            margin-top: 42px;
+            font-size: 27px;
             text-align: center;
-            border: vw(2px) solid #000;
-            border-radius: vw(20px);
+            border: 2px solid #000;
+            border-radius: 20px;
             line-height: 1;
         }
 
@@ -501,12 +499,12 @@
     &__slide-info {
         position: absolute !important;
         left: 0;
-        width: vw(594px);
+        width: 594px;
     }
 
     &__slide-img {
         display: block;
-        width: vw(1164px);
+        width: 1164px;
 
         .swiper-slide {
             background-color: #000;
@@ -520,57 +518,57 @@
 
 /* 문의하기 팝업 */
 .question-pop {
-    width: vw(610px);
+    width: 610px;
 
     &__title {
-        margin-top: vw(7px);
+        margin-top: 7px;
         text-align: center;
         line-height: 1;
 
         h3 {
             display: inline-block;
-            padding-top: vw(14px);
+            padding-top: 14px;
             margin: 0 auto;
             color: #000;
             font: {
-                size: vw(25px);
+                size: 25px;
                 weight: bold;
             }
-            border-top: vw(3px) solid #000;
+            border-top: 3px solid #000;
         }
     }
 
     &__info  {
-        padding-top: vw(40px);
+        padding-top: 40px;
 
         li {
-            margin-bottom: vw(30px);
+            margin-bottom: 30px;
             font-size: 0;
         }
 
         h4 {
             display: block;
-            padding-bottom: vw(17px);
+            padding-bottom: 17px;
             color: #010101;
-            font-size: vw(20px);
+            font-size: 20px;
             line-height: 1;
         }
 
         input {
             display: block;
             width: 100%;
-            padding: 0 vw(30px);
+            padding: 0 30px;
             background-color: #e8ecef;
             color: #000;
             border-radius: 5px;
             border: none;
 
             &[type=text] {
-                height: vw(65px);
+                height: 65px;
             }
 
             &::placeholder {
-                font-size: vw(18px);
+                font-size: 18px;
                 color: #9f9f9f;
             }
 
@@ -586,25 +584,25 @@
         textarea {
             display: block;
             width: 100%;
-            height: vw(140px);
-            padding: vw(30px);
+            height: 140px;
+            padding: 30px;
             background-color: #e8ecef;
             color: #000;
             border-radius: 5px;
             border: none;
 
             &::placeholder {
-                font-size: vw(18px);
+                font-size: 18px;
                 color: #9f9f9f;
             }
 
             &::-webkit-input-placeholder {
-                font-size: vw(18px);
+                font-size: 18px;
                 color: #9f9f9f;
             }
 
             &:-ms-input-placeholder  {
-                font-size: vw(18px);
+                font-size: 18px;
                 color: #9f9f9f;
             }
         }
@@ -621,7 +619,7 @@
             &__separator {
                 display: inline-block;
                 width: 35/525*100%;
-                font-size: vw(18px);
+                font-size: 18px;
                 text-align: center;
                 vertical-align: middle;
             }
@@ -635,11 +633,11 @@
                 input {
                     display: inline-block;
                     width: 100%;
-                    height: vw(65px);
-                    padding: 0 vw(43px) 0vw(30px);
+                    height: 65px;
+                    padding: 0 43px 0 30px;
                     border: none;
                     background-color: #e8ecef;
-                    font-size: vw(18px);
+                    font-size: 18px;
                     border-radius: 5px;
                 }
 
@@ -648,35 +646,35 @@
                 //     display: block;
                 //     position: absolute;
                 //     top: 50%;
-                //     right: vw(28px);
+                //     right: 28px);
                 //     transform: translateY(-50%);
-                //     border-top: vw(13px) solid #757575;
-                //     border-left: vw(7px) solid transparent;
-                //     border-right: vw(7px) solid transparent;
+                //     border-top: 13px) solid #757575;
+                //     border-left: 7px) solid transparent;
+                //     border-right: 7px) solid transparent;
                 // }
             }
         }
 
         .privacy-box {
-            padding: vw(28px) vw(30px);
-            height: vw(157px);
+            padding: 28px 30px;
+            height: 157px;
             overflow-y: auto;
             color: #5b5b5b;
-            font-size: vw(13px);
+            font-size: 13px;
             background-color: #e8ecef;
             border: 1px solid #d7d7d7;
         }
     }
 
     &__form-check {
-        margin-top: vw(15px);
+        margin-top: 15px;
 
         .form-check {
             display: inline-block;
             position: relative;
-            width: vw(20px);
-            height: vw(20px);
-            margin-right: vw(10px);
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
             padding: 0;
             border-radius: 0;
             vertical-align: middle;
@@ -685,8 +683,8 @@
                 content: "";
                 display: block;
                 position: absolute;
-                width: vw(20px);
-                height: vw(20px);
+                width: 20px;
+                height: 20px;
                 background: url("../images/common/icon_check.png") no-repeat center;
             }
         }
@@ -694,64 +692,64 @@
         span {
             display: inline-block;
             color: #383838;
-            font-size: vw(13px);
+            font-size: 13px;
             vertical-align: middle;
         }
     }
 
     &__submit-btn {
         display: block;
-        height: vw(80px);
-        padding: 0 vw(106px) 0 vw(51px);
-        margin: vw(44px) auto 0;
+        height: 80px;
+        padding: 0 106px 0 51px;
+        margin: 44px auto 0;
         background: #000 url("../images/common/btn_submit.png") no-repeat ;
-        background-size: vw(46px) vw(42px);
-        background-position: vw(152px) center;
-        font-size: vw(25px);
+        background-size: 46px 42px;
+        background-position: 152px center;
+        font-size: 25px;
         color: #fff;
     }
 }
 
 /* 담당자 팝업 */
 .manager-pop {
-    width: vw(610px);
+    width: 610px;
 
     &__title {
-        margin-top: vw(7px);
+        margin-top: 7px;
         text-align: center;
         line-height: 1;
 
         h3 {
             display: inline-block;
-            padding-top: vw(14px);
+            padding-top: 14px;
             margin: 0 auto;
             color: #000;
             font: {
-                size: vw(25px);
+                size: 25px;
                 weight: bold;
             }
-            border-top: vw(3px) solid #000;
+            border-top: 3px solid #000;
         }
     }
 
     &__list {
         display: block;
-        padding-top: vw(40px);
+        padding-top: 40px;
         font-size: 0;
         text-align: center;
 
         dl {
             display: block;
-            padding-bottom: vw(17px);
+            padding-bottom: 17px;
         }
 
         dt {
             display: inline-block;
             position: relative;
-            padding-right: vw(10px);
+            padding-right: 10px;
             color: #010101;
             font: {
-                size: vw(20px);
+                size: 20px;
                 weight: bold;
             }
             vertical-align: middle;
@@ -763,8 +761,8 @@
                 right: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                width: vw(3px);
-                height: vw(20px);
+                width: 3px;
+                height: 20px;
                 background-color: #010101;
             }
 
@@ -772,9 +770,9 @@
 
         dd {
             display: inline-block;
-            margin-left: vw(7px);
+            margin-left: 7px;
             color: #010101;
-            font-size: vw(20px);
+            font-size: 20px;
             vertical-align: middle;
         }
     }
@@ -784,13 +782,13 @@
 .speciality-process {
 
     &__title {
-        padding: vw(57px) 0;
-        font-size: vw(40px);
+        padding: 57px 0;
+        font-size: 40px;
         line-height: 1;
     }
 
     &__contents {
-        max-width: vw(1021px);
+        max-width: 1021px;
         margin: 0 auto;
     }
 
@@ -800,10 +798,10 @@
 
         &--item {
             display: inline-block;
-            width: calc(33.33% - #{vw(6px)});
-            margin-right: vw(6px);
-            padding: vw(23px) 0;
-            font-size: vw(20px);
+            width: calc(33.33% - 6px);
+            margin-right: 6px;
+            padding: 23px 0;
+            font-size: 20px;
             background-color: #cdcdcd;
             text-align: center;
             color: #fff;
@@ -822,7 +820,7 @@
                     position: absolute;
                     bottom: 0;
                     width: 100%;
-                    height: vw(5px);
+                    height: 5px;
                     background-color: $titleColor;
 
                 }
@@ -839,33 +837,33 @@
     }
 
     .content-01 {
-        padding-top: vw(69px);
+        padding-top: 69px;
 
         &__text {
-            font-size: vw(18px);
-            line-height: vw(32px);
+            font-size: 18px;
+            line-height: 32px;
             color: #535353;
             text-align: center;
         }
 
         &__list {
-            padding-top: vw(70px);
+            padding-top: 70px;
             text-align: center;
             font-size: 0;
 
             &--item {
                 display: inline-block;
                 position: relative;
-                width: vw(155px);
-                padding-right: vw(58px);
-                padding-top: vw(180px);
+                width: 155px;
+                padding-right: 58px;
+                padding-top: 180px;
                 vertical-align: top;
 
                 .lang-korea {
                     display: block;
                     color: #000;
                     font: {
-                        size: vw(20px);
+                        size: 20px;
                         weight: bold;
                     }
                     text-align: center;
@@ -874,20 +872,20 @@
                 .lang-english {
                     display: block;
                     color: #000;
-                    font-size: vw(18px);
+                    font-size: 18px;
                     text-align: center;
                 }
 
                 .popup-btn {
                     display: block;
                     position: relative;
-                    width: vw(125px);
-                    height: vw(30px);
+                    width: 125px;
+                    height: 30px;
                     margin: 0 auto;
-                    padding-left:vw(13px);
+                    padding-left:13px;
                     border: 1px solid $titleColor;
                     color: $titleColor;
-                    font-size: vw(18px);
+                    font-size: 18px;
                     text-align: left;
 
                     &::after {
@@ -896,10 +894,10 @@
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
-                        right: vw(11px);
-                        border-top: vw(5px) solid transparent;
-                        border-left: vw(11px) solid $titleColor;
-                        border-bottom: vw(5px) solid transparent;
+                        right: 11px;
+                        border-top: 5px solid transparent;
+                        border-left: 11px solid $titleColor;
+                        border-bottom: 5px solid transparent;
                     }
                 }
 
@@ -910,9 +908,9 @@
                     right: 0;
                     top: 50%;
                     transform: translateY(-50%);
-                    margin: 0 vw(8px);
-                    width: vw(42px);
-                    height: vw(42px);
+                    margin: 0 8px;
+                    width: 42px;
+                    height: 42px;
                     background: url("../images/business/speciality/arrow_process.jpg") no-repeat;
                     background-size: contain;
                     vertical-align: middle;
@@ -921,17 +919,17 @@
             }
 
             &--item:nth-child(1) {
-                background: url("../images/business/speciality/img_process_01.jpg") no-repeat left top / vw(155px) vw(180px);
+                background: url("../images/business/speciality/img_process_01.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(2) {
-                background: url("../images/business/speciality/img_process_02.jpg") no-repeat left top / vw(155px) vw(180px);
+                background: url("../images/business/speciality/img_process_02.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(3) {
-                background: url("../images/business/speciality/img_process_03.jpg") no-repeat left top / vw(155px) vw(180px);
+                background: url("../images/business/speciality/img_process_03.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(4) {
                 padding-right: 0;
-                background: url("../images/business/speciality/img_process_04.jpg") no-repeat left top / vw(155px) vw(180px);
+                background: url("../images/business/speciality/img_process_04.jpg") no-repeat left top / 155px 180px;
 
                 &::after {
                     display: none;
@@ -939,4 +937,556 @@
             }
         }
     }
+}
+
+
+/* 웹 1600 사이즈 */
+@media all and (max-width: 1600px) {
+    @import "./lib/webvw";
+    /* 알루미늄 호일, 포장재용, 산업/건축용 content */
+    .business-foil {
+
+        &__title {
+            top: vw(358px);
+            right: vw(120px);
+
+            font: {
+                size: vw(35px);
+            }
+
+            line-height: vw(70px);
+
+            span {
+                font: {
+                    size: vw(37px);
+                }
+            }
+        }
+
+        .arrow-effect {
+            span {
+                bottom: vw(40px);
+                width: vw(50px);
+                height: vw(45px);
+            }
+        }
+
+        .foil-box {
+            width: vw(1175px);
+
+            $col_width:453/1175*100%;
+            &__col {
+                margin-right: vw(5px);
+
+                &--item {
+                    margin-right: vw(5px);
+                    margin-bottom: vw(5px);
+
+                    &:first-child {
+                        height: vw(245px);
+                    }
+
+                    &:last-child {
+                        height: vw(248px);
+                    }
+                }
+            }
+
+            $line_width: 717/1175*100%;
+            &__inline {
+                width: $line_width;
+                height: vw(498px);
+                margin-bottom: vw(5px);
+            }
+
+            &__block {
+                &--item {
+                    margin-bottom: vw(5px);
+                    height: vw(327px);
+
+                    $block_first_width: 698/1175*100%;
+                    &:nth-child(1) {
+                        width: $block_first_width;
+                        margin-right: vw(5px);
+                    }
+
+                    $block_first_width: 472/1175*100%;
+                    &:nth-child(2) {
+                        width: $block_first_width;
+                    }
+                }
+            }
+
+            &__text {
+                right: vw(36px);
+                top: vw(40px);
+                font: {
+                    size: vw(34px);
+                }
+            }
+        }
+    }
+
+    /* 알루미늄 호일, 포장재용, 산업/건축용 layout */
+    .business-detail {
+        padding-bottom: vw(85px);
+
+        &__title {
+            height: vw(270px);
+
+            em {
+                margin-top: vw(23px);
+                font: {
+                    size: vw(25px);
+                }
+            }
+
+            p {
+                margin-top: vw(15px);
+                font-size: vw(20px);
+                line-height: vw(30px);
+            }
+        }
+
+        &__contents {
+            max-width: vw(1497px);
+            padding-top: vw(63px);
+        }
+
+        &__slide {
+            width: vw(776px);
+            padding: 0 vw(55px 26px) 0;
+            background: url("../images/business/bg_slide.png") no-repeat bottom right / vw(807px) vw(447px);
+
+            .swiper-container {
+                width: vw(750px);
+                height: vw(420px);
+            }
+
+            .swiper-button {
+                width: vw(79px);
+                height: vw(79px);
+            }
+
+            .swiper-pagination-bullet {
+                width: vw(15px);
+                height: vw(15px);
+            }
+        }
+
+        .info {
+            width: vw(652px);
+
+            &__title {
+                font: {
+                    size: vw(25px);
+                }
+                line-height: vw(37px);
+            }
+
+            &__text {
+                margin-top: vw(20px);
+                margin-bottom: vw(33px);
+                font-size: vw(18px);
+                line-height: vw(32px);
+            }
+
+            &__value {
+                margin-bottom: vw(20px);
+
+                em {
+                    height: vw(41px);
+                    padding-right: vw(20px);
+                    font: {
+                        size: vw(25px);
+                    }
+                }
+
+                p {
+                    padding-left: vw(29px);
+                    font-size: vw(15px);
+                    line-height: vw(22px);
+                    border-left: vw(3px) solid #000;
+                }
+            }
+
+            &__table {
+
+                &--title {
+                    &:nth-child(1) {
+                        border-top: vw(3px) solid #000;
+
+                        th:last-child {
+                            border-bottom: vw(3px) solid #000;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        border-bottom: vw(3px) solid #000;
+                    }
+
+                }
+
+                th {
+                    padding: vw(10px) 0;
+                    border: vw(2px) solid #000;
+                    font: {
+                        size: vw(20px);
+                        weight: bold;
+                    }
+                }
+
+                td {
+                    font-size: vw(18px);
+                    line-height: vw(26px);
+                }
+
+                .border-bottom {
+                    border-bottom: vw(3px) solid #000;
+                }
+
+                &--bottom {
+                    height: vw(111px);
+                }
+
+                &.add-table {
+                    margin-top: vw(28px);
+
+                    .list-title {
+                        font-size: vw(18px);
+                    }
+
+                    .list {
+
+                        ul {
+
+                            li {
+                                text-indent: vw(-10px);
+                                margin-left: vw(10px);
+                            }
+                        }
+                    }
+
+                    td {
+                        padding: vw(24px 0 24px 28px);
+                    }
+                }
+            }
+        }
+
+        &__button {
+            margin-top: vw(66px);
+
+            button {
+                width: vw(220px);
+                height: vw(80px);
+                margin: 0 vw(15px);
+                font-size: vw(25px);
+            }
+        }
+    }
+
+    /* business intro */
+    .business-intro {
+        margin-left: vw(142px);
+
+        .slide-info {
+            h2 {
+                font: {
+                    size: vw(70px);
+                }
+            }
+
+            &__link {
+                width: vw(225);
+                height: vw(59);
+                margin-top: vw(42px);
+                font-size: vw(27px);
+                border: vw(2px) solid #000;
+                border-radius: vw(20px);
+            }
+
+        }
+
+        &__slide-info {
+            width: vw(594px);
+        }
+
+        &__slide-img {
+            width: vw(1164px);
+        }
+    }
+
+    /* 문의하기 팝업 */
+    .question-pop {
+        width: vw(610px);
+
+        &__title {
+            margin-top: vw(7px);
+
+            h3 {
+                padding-top: vw(14px);
+                font: {
+                    size: vw(25px);
+                }
+                border-top: vw(3px) solid #000;
+            }
+        }
+
+        &__info  {
+            padding-top: vw(40px);
+
+            li {
+                margin-bottom: vw(30px);
+            }
+
+            h4 {
+                padding-bottom: vw(17px);
+                font-size: vw(20px);
+            }
+
+            input {
+                padding: 0 vw(30px);
+                border-radius: vw(5px);
+
+                &[type=text] {
+                    height: vw(65px);
+                }
+
+                &::placeholder {
+                    font-size: vw(18px);
+                }
+            }
+
+            textarea {
+                height: vw(140px);
+                padding: vw(30px);
+                border-radius: vw(5px);
+
+                &::placeholder {
+                    font-size: vw(18px);
+                }
+
+                &::-webkit-input-placeholder {
+                    font-size: vw(18px);
+                }
+
+                &:-ms-input-placeholder  {
+                    font-size: vw(18px);
+                }
+            }
+
+            .email-input {
+
+                &__separator {
+                    font-size: vw(18px);
+                }
+
+                &__domain {
+                    width: 245/525*100%;
+
+                    input {
+                        height: vw(65px);
+                        padding: 0 vw(43px) 0vw(30px);
+                        font-size: vw(18px);
+                        border-radius: vw(5px);
+                    }
+
+                    // &::after {
+                    //     content: "";
+                    //     display: block;
+                    //     position: absolute;
+                    //     top: 50%;
+                    //     right: vw(28px);
+                    //     transform: translateY(-50%);
+                    //     border-top: vw(13px) solid #757575;
+                    //     border-left: vw(7px) solid transparent;
+                    //     border-right: vw(7px) solid transparent;
+                    // }
+                }
+            }
+
+            .privacy-box {
+                padding: vw(28px) vw(30px);
+                height: vw(157px);
+                font-size: vw(13px);
+            }
+        }
+
+        &__form-check {
+            margin-top: vw(15px);
+
+            .form-check {
+                width: vw(20px);
+                height: vw(20px);
+                margin-right: vw(10px);
+
+                &:checked::after {
+                    width: vw(20px);
+                    height: vw(20px);
+                }
+            }
+
+            span {
+                font-size: vw(13px);
+            }
+        }
+
+        &__submit-btn {
+            height: vw(80px);
+            padding: 0 vw(106px) 0 vw(51px);
+            margin: vw(44px) auto 0;
+            background-size: vw(46px) vw(42px);
+            background-position: vw(152px) center;
+            font-size: vw(25px);
+        }
+    }
+
+    /* 담당자 팝업 */
+    .manager-pop {
+        width: vw(610px);
+
+        &__title {
+            margin-top: vw(7px);
+
+            h3 {
+                padding-top: vw(14px);
+                font: {
+                    size: vw(25px);
+                }
+                border-top: vw(3px) solid #000;
+            }
+        }
+
+        &__list {
+            padding-top: vw(40px);
+
+            dl {
+                padding-bottom: vw(17px);
+            }
+
+            dt {
+                padding-right: vw(10px);
+
+                font: {
+                    size: vw(20px);
+                }
+
+                &::after{
+                    width: vw(3px);
+                    height: vw(20px);
+                }
+
+            }
+
+            dd {
+                margin-left: vw(7px);
+                font-size: vw(20px);
+            }
+        }
+    }
+
+    /* 공정과정 */
+    .speciality-process {
+
+        &__title {
+            padding: vw(57px) 0;
+            font-size: vw(40px);
+        }
+
+        &__contents {
+            max-width: vw(1021px);
+        }
+
+        &__tab {
+
+            &--item {
+                width: calc(33.33% - #{vw(6px)});
+                margin-right: vw(6px);
+                padding: vw(23px) 0;
+                font-size: vw(20px);
+
+                &.on {
+
+                    &::after {
+                        height: vw(5px);
+                    }
+                }
+            }
+        }
+
+        .content-01 {
+            padding-top: vw(69px);
+
+            &__text {
+                font-size: vw(18px);
+                line-height: vw(32px);
+            }
+
+            &__list {
+                padding-top: vw(70px);
+
+                &--item {
+                    width: vw(155px);
+                    padding-right: vw(58px);
+                    padding-top: vw(180px);
+
+                    .lang-korea {
+
+                        font: {
+                            size: vw(20px);
+                        }
+                    }
+
+                    .lang-english {
+                        font-size: vw(18px);
+                    }
+
+                    .popup-btn {
+                        width: vw(125px);
+                        height: vw(30px);
+                        padding-left:vw(13px);
+                        font-size: vw(18px);
+
+                        &::after {
+                            right: vw(11px);
+                            border-top: vw(5px) solid transparent;
+                            border-left: vw(11px) solid $titleColor;
+                            border-bottom: vw(5px) solid transparent;
+                        }
+                    }
+
+                    &::after {
+                        transform: translateY(-50%);
+                        margin: 0 vw(8px);
+                        width: vw(42px);
+                        height: vw(42px);
+                        background: url("../images/business/speciality/arrow_process.jpg") no-repeat;
+                        background-size: contain;
+                        vertical-align: middle;
+                    }
+
+                }
+
+                &--item:nth-child(1) {
+                    background: url("../images/business/speciality/img_process_01.jpg") no-repeat left top / vw(155px) vw(180px);
+                }
+                &--item:nth-child(2) {
+                    background: url("../images/business/speciality/img_process_02.jpg") no-repeat left top / vw(155px) vw(180px);
+                }
+                &--item:nth-child(3) {
+                    background: url("../images/business/speciality/img_process_03.jpg") no-repeat left top / vw(155px) vw(180px);
+                }
+                &--item:nth-child(4) {
+                    padding-right: 0;
+                    background: url("../images/business/speciality/img_process_04.jpg") no-repeat left top / vw(155px) vw(180px);
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
 }
