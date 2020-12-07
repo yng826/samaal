@@ -33,7 +33,7 @@
                             <td class="text-center">{{ $info->title }}</td>
                             <td class="text-center">{{ $info->use_yn == 'y' ? '사용' :'미사용' }}</td>
                             <td class="text-center">{{ $info->updated_at ?? $info->created_at}}</td>
-                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/news_info/{{$info->id}}/edit">수정</button></td>
+                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/news_info/{{$info->id}}/edit">수정</a></td>
                         </tr>
                         @endforeach
                     </table>

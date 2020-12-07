@@ -7,13 +7,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MenuController as AdminMenuController;
 use App\Http\Controllers\Admin\NewsInfoController as NewsInfoController;
 use App\Http\Controllers\Admin\IrBoardController as IrBoardController;
-use App\Http\Controllers\Admin\IsoCertificationController as IsoCertificationController;
+use App\Http\Controllers\Admin\IsoCertificationController as AdminIsoCertificationController;
 use App\Http\Controllers\Admin\RecruitJobController as RecruitJobController;
 use App\Http\Controllers\Recruit\RecruitListController as RecruitListController;
 use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
 use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
 use App\Http\Controllers\Faq\FaqController as FaqController;
 use App\Http\Controllers\Other\SearchController as SearchController;
+use App\Http\Controllers\Iso\IsoCertificationController as IsoCertificationController;
 
 use App\Http\Controllers\aboutUs\StoryNewsController as StoryNewsController;
 use App\Http\Controllers\IR\FinanceController;
@@ -176,6 +177,9 @@ Route::prefix('business')->group(function() {
         $data['question_title'] = '공정과정';
         return view('business.speciality.process', $data);
     });
+
+    Route::get('speciality/iso_certification', [IsoCertificationController::class, 'index']);
+    Route::get('speciality/iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
 });
 
 
@@ -248,7 +252,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     //Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
     Route::resource('news_info', Admin\NewsInfoController::class);
 
-    Route::get('iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
+    Route::get('iso_certification/file-download', [AdminIsoCertificationController::class, 'fileDownload']);
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
 
     Route::resource('recruit', Admin\RecruitController::class);

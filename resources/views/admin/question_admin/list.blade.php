@@ -40,9 +40,9 @@
                             <td class="text-center">{{ $board->state_yn == 'y' ? '답변 완료' :'' }}</td>
                             <td class="text-center">{{ $board->updated_at ?? $board->created_at}}</td>
                             @if ($board->state_yn == 'y')
-                                <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/admin/question_admin/{{$board->id}}">상세보기</button></td>
+                                <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/admin/question_admin/{{$board->id}}">상세보기</a></td>
                             @else
-                                <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/question_admin/{{$board->id}}/edit">답글추가</button></td>
+                                <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/question_admin/{{$board->id}}/edit">답글추가</a></td>
                             @endif
 
                         </tr>

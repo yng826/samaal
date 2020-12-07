@@ -76,7 +76,7 @@
                                 @if ($job->status == 'saved')
                                     작성중
                                 @else
-                                    <a class="btn btn-outline-info btn-xs" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}">상세보기</button>
+                                    <a class="btn btn-outline-info btn-xs" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}">상세보기</a>
                                 @endif
                             </td>
                             <td class="text-center">{{ $job->updated_at ?? $job->created_at}}</td>
