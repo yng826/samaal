@@ -65,7 +65,7 @@ Route::prefix('about-us')->group(function() {
     Route::get('story-news', [StoryNewsController::class, 'index'])->name('story-news');
     Route::get('story-news/{id}', [StoryNewsController::class, 'show']);
 
-    Route::get('ir/financial/{type}', [FinanceController::class, 'show']);
+    Route::get('ir/{type}', [FinanceController::class, 'show']);
     Route::get('ir_board/financial/{id}', [FinanceController::class, 'ir_board_info']);
 });
 
