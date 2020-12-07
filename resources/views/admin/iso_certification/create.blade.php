@@ -41,10 +41,16 @@
                             <input type="text" class="form-control" name="number" value="{{$certification->number ?? ''}}">
                         </div>
                         <div class="form-group">
-                            <label for="">파일</label>
-                            <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="file">
-                            <input type="hidden" name="file_name" value="{{$certification->file_name ?? ''}}">
-                            <input type="hidden" name="file_path" value="{{$certification->file_path ?? ''}}">
+                            <label for="">이미지파일</label>
+                            <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file">
+                            <input type="hidden" name="img_file_name" value="{{$certification->img_file_name ?? ''}}">
+                            <input type="hidden" name="img_file_path" value="{{$certification->img_file_path ?? ''}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="">PDF파일</label>
+                            <input type="file" accept=".pdf" class="d-block" name="pdf_file">
+                            <input type="hidden" name="pdf_file_name" value="{{$certification->pdf_file_name ?? ''}}">
+                            <input type="hidden" name="pdf_file_path" value="{{$certification->pdf_file_path ?? ''}}">
                         </div>
                     </div>
                 </div>
@@ -109,9 +115,14 @@ const iso_certification_create = () => {
             $('input[name=number]').focus();
             return false;
 
-        } else if (($('input[name=file_path]').val() == '' || $('input[name=file_path]').val() == null)
-                    && ($('input[name=file]').val() == '' || $('input[name=file]').val() == null)) {
-            alert('파일을 선택해주세요.');
+        } else if (($('input[name=img_file_path]').val() == '' || $('input[name=img_file_path]').val() == null)
+                    && ($('input[name=img_file]').val() == '' || $('input[name=img_file]').val() == null)) {
+            alert('이미지파일을 선택해주세요.');
+            return false;
+
+        } else if (($('input[name=pdf_file_path]').val() == '' || $('input[name=pdf_file_path]').val() == null)
+                    && ($('input[name=pdf_file]').val() == '' || $('input[name=pdf_file]').val() == null)) {
+            alert('PDF파일을 선택해주세요.');
             return false;
         }
         return true;
