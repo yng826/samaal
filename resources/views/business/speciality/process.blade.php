@@ -45,21 +45,94 @@
                 </li>
             </ul>
             <p class="content-01__text">
-                세계 최대 작업 폭 2,100mm의 최첨단 압연기를 비롯
-                분리기, 분단기, 핀홀 검사기 등의 최신 생산설비
-
+                세계 최대 작업 폭 2,100mm의 최첨단 압연기를 비롯<br>
+                분리기, 분단기, 핀홀 검사기 등의 최신 생산설비<br>
                 <span>국내 최초로 4.5㎛ 중합 압연 성공</span>
-
-                국/내외에서 인정하는
+                국/내외에서 인정하는<br>
                 리튬이온배터리(Lithium-Ion Battery, LIB) 양극집전체용 AL-Foill
             </p>
             <div class="content-01__img"></div>
         </div>
+
         <div class="content-02 speciality-process__tab-content">
-            test2
+            <p class="content-02__text">
+                1969년 담배포장용 알루미늄박지 생산을 시작한 이래 일반 식품포장재에서<br>
+                제약, 건축, 산업용 포장재에 이르는 다양한 포장분야에서 뛰어난 품질과 개발능력으로 업계를 선도하고 있습니다.
+            </p>
+            <ul class="content-02__list">
+                <li class="content-02__list--item">
+                    <span class="lang-korea">인쇄기</span>
+                    <stron class="lang-english">Printing</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+                <li class="content-02__list--item">
+                    <span class="lang-korea">라미네이터</span>
+                    <stron class="lang-english">Laminator</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+                <li class="content-02__list--item">
+                    <span class="lang-korea">분단기</span>
+                    <stron class="lang-english">Slitting</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+                <li class="content-02__list--item">
+                    <span class="lang-korea">제대기</span>
+                    <stron class="lang-english">Bag Making</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+            </ul>
+            <p class="content-02__text">
+                인쇄기, 라미네이터, 제대기를 비롯한 최신의 첨단화된 가공설비를 도입<br>
+                <span>
+                    국내 최초로 레토르트 파우치 및 제약용 Alu-Alu Cold Forming Foil, 리필 파우치,<br>
+                    통신 케이블 차폐용 LAP Tape/Steel Tape 등 수많은 제품을 개발
+                </span>
+                초발수 LID 제품, 난연성 및 강도를 보강한<br>
+                복합강화 진공 단열재용 외피재를 국내 최초로 개발
+            </p>
+            <div class="content-02__img"></div>
         </div>
         <div class="content-03 speciality-process__tab-content">
-            test3
+            <p class="content-03__text">
+                1974년 국내 최초로 알루미늄 페이스트 생산 시작.<br>
+                알루미늄박 생산과정에서 발생하는 SCRAP에 가치를 부가하여 수입대체는 물론<br>
+                선박, 건설, 자동차 등 산업전반의 발전에 기여하고 있습니다
+            </p>
+            <ul class="content-03__list">
+                <li class="content-03__list--item">
+                    <span class="lang-korea">분쇄</span>
+                    <stron class="lang-english">smash</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+                <li class="content-03__list--item">
+                    <span class="lang-korea">분급</span>
+                    <stron class="lang-english">classification</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+                <li class="content-03__list--item">
+                    <span class="lang-korea">오일제거</span>
+                    <stron class="lang-english">fliter</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+                <li class="content-03__list--item">
+                    <span class="lang-korea">혼합</span>
+                    <stron class="lang-english">Mixer</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+                <li class="content-03__list--item">
+                    <span class="lang-korea">포장</span>
+                    <stron class="lang-english">Packagin</stron>
+                    <a href="#" class="popup-btn">동영상 보기</a>
+                </li>
+            </ul>
+            <p class="content-03__text">
+                연간 24,000톤의 생산 능력을 갖추고 있으며, <br>
+                오랜 생산 경험과 기술로 국내 최고의 제품을 공급하고 있습니다.
+                <span>
+                    전반적인 산업의 성장과 고급화에 발맞춰서<br>
+                    끊임없는 기술 도전으로 세계수준의 프리미엄 제품개발을 향해 나가고 있습니다.
+                </span>
+            </p>
         </div>
     </div>
 </main>
