@@ -177,6 +177,11 @@ Route::prefix('business')->group(function() {
         $data['question_title'] = '공정과정';
         return view('business.speciality.process', $data);
     });
+    Route::get('innovation/rnd', function () {
+        $data = [];
+        $data['question_title'] = '공정과정';
+        return view('business.innovation.rnd', $data);
+    });
 
     Route::get('innovation/iso_certification', [IsoCertificationController::class, 'index']);
     Route::get('innovation/iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
