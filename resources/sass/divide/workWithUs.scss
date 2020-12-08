@@ -316,7 +316,7 @@
 .introduction-introjob {
     &__title {
         text-align: center;
-        margin-top: 90px auto 100px;
+        margin: 90px auto 100px;
 
         h2 {
             display: block;
@@ -337,6 +337,7 @@
 
         strong {
             display: block;
+            font-size: 25px;
             color: $titleColor;
         }
     }
@@ -348,19 +349,25 @@
 
     &__list {
         font-size: 0;
+        margin-left: 20px;
 
         &--item {
             // float: left;
             display: inline-block;
             width: calc(33.33% - 20px);
             margin-right: 20px;
+            margin-bottom: 49px;
             border-bottom: 1px solid $titleColor;
+            vertical-align: top;
 
             h3 {
                 display: block;
+                height: 67px;
                 padding-left: 28px;
                 color: #fff;
                 font-size: 30px;
+                line-height: 65px;
+                background-size: 85px 67px;
             }
 
             &:nth-child(odd) h3{
@@ -370,8 +377,128 @@
             &:nth-child(even) h3{
                 background-color: #3767c7;
             }
+
+            &:nth-child(odd) li {
+                &::before {
+                    background-color: $titleColor;
+                }
+            }
+
+            &:nth-child(even) li{
+                &::before {
+                    background-color: #3767c7;
+                }
+            }
+
+            &:nth-child(odd) .btn-link{
+                color: $titleColor;
+                border: 3px solid $titleColor;
+            }
+
+            &:nth-child(even) .btn-link{
+                color: #3767c7;
+                border: 3px solid #3767c7;
+            }
+
+            .content-box {
+                margin-top: 30px;
+                text-align: center;
+            }
+
+            ul {
+                height: 300px;
+            }
+
+            li {
+                display: block;
+                padding-left:29px;
+                position: relative;
+                margin-bottom: 19px;
+                color: #000;
+                font-size: 18px;
+                line-height: 30px;
+                text-align: left;
+                word-break: keep-all;
+                letter-spacing: -0.63px;
+                text-align: left;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 5px;
+                    top: 11px;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                }
+            }
+
+            .mb-7 {
+                li {
+                    margin-bottom: 7px;
+                }
+            }
+
+            .text-team {
+                display: block;
+                margin-bottom: 30px;
+                color: 20px;
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 1;
+                letter-spacing: -0.63px;
+                text-align: center;
+            }
+
+            .btn-link {
+                display: inline-block;
+                width: 170px;
+                height: 48px;
+                margin: 0 auto 30px;
+                font-size: 20px;
+                line-height: 48px;
+                text-align: center;
+            }
         }
     }
+
+    .title-production {
+        background: url("../images/work/img_production.png") no-repeat right center / 85px 67px;
+    }
+
+    .title-sales {
+        background: url("../images/work/img_sales.png") no-repeat right center / 85px 67px;
+    }
+
+    .title-warranty {
+        background: url("../images/work/img_warranty.png") no-repeat right center / 85px 67px;
+    }
+
+    .title-businessSupport {
+        background: url("../images/work/img_businessSupport.png") no-repeat right center / 85px 67px;
+    }
+
+    .title-productionSupport {
+        background: url("../images/work/img_productionSupport.png") no-repeat right center / 85px 67px;
+    }
+
+    .title-rnd {
+        background: url("../images/work/img_rnd.png") no-repeat right center / 85px 67px;
+    }
+
+    .title-equipment {
+        background: url("../images/work/img_equipment.png") no-repeat right center / 85px 67px;
+    }
+
+    .title-safety {
+        background: url("../images/work/img_safety.png") no-repeat right center / 85px 67px;
+    }
+
+    .title-it {
+        background: url("../images/work/img_it.png") no-repeat right center / 85px 67px;
+    }
+
 }
 
 /* 웹 1600 사이즈 */
