@@ -11,11 +11,16 @@ const siteIntro = () => {
         console.log(ww);
         if ( ww > 1000 ) {
             console.log('desktop');
-            $.fn.fullpage.destroy('all');
+            if ( $('#fullpage').hasClass('fullpage-wrapper') ) {
+                $.fn.fullpage.destroy('all');
+            }
         } else {
             console.log('mobile');
             if ( !$('#fullpage').hasClass('fullpage-wrapper') || $('#fullpage').hasClass('fp-destroyed')) {
-                $('#fullpage').fullpage();
+                $('#fullpage').fullpage({
+                    sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+                    navigation: true
+                });
             }
         }
     }
