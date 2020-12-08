@@ -3,36 +3,23 @@
         <img src="/images/common/logo.png" alt="SAMA">
     </a>
 
+
     <nav class="header__nav">
         <ul>
+            @foreach ($treeMenu as $menu)
             <li class="header__nav--item">
-                <span>About Us</span>
-                <ol class="header__nav--submenu">
-                    <li><a href="/about-us/heritage/">Heritage</a></li>
-                    <li><a href="/about-us/ceo/">CEO Message</a></li>
-                    <li><a href="/about-us/story-news/">Story & News</a></li>
-                    <li><a href="/about-us/location/seoul/">Location</a></li>
-                    <li><a href="/about-us/ir/consolidated">Investor Relations</a></li>
-                </ol>
+                @if(isset($menu->children) && count($menu->children) > 0)
+                    <span>{{ $menu->name }}</span>
+                    <ol class="header__nav--submenu">
+                        @foreach($menu->children as $children)
+                        <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
+                        @endforeach
+                    </ol>
+                @else
+                    <span><a href="{{ $menu->url }}">{{ $menu->name }}</a></span>
+                @endif
             </li>
-            <li class="header__nav--item">
-                <span><a href="#">For Business Partners</a></span>
-                <ol class="header__nav--submenu">
-                    <li><a href="/business/foil/capacitor/">알루미늄 호일</a></li>
-                    <li><a href="/business/package/watertight">포장재용</a></li>
-                    <li><a href="/business/industry/insulation">산업/건축용</a></li>
-                    <li><a href="#">Speciality</a></li>
-                    <li><a href="#">Innovation</a></li>
-                </ol>
-            </li>
-            <li class="header__nav--item">
-                <span>Work With Us</span>
-                <ol class="header__nav--submenu">
-                    <li><a href="/work-with-us/recruit/">채용안내</a></li>
-                    <li><a href="#">인사제도</a></li>
-                    <li><a href="#">조직문화</a></li>
-                </ol>
-            </li>
+            @endforeach
         </ul>
     </nav>
 
@@ -47,34 +34,20 @@
             <button type="button" class="close-btn">닫기</button>
         </div>
         <ul class="header__m-nav--gnb__list">
+            @foreach ($treeMenu as $menu)
             <li class="header__m-nav--gnb__item menu">
-                <span class="menu__title">About US</span>
-                <ul class="menu__sub">
-                    <li><a href="#">Heritage</a></li>
-                    <li><a href="#">CEO Message</a></li>
-                    <li><a href="#">Story & News</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                </ul>
+                @if(isset($menu->children) && count($menu->children) > 0)
+                    <span class="menu__title">{{ $menu->name }}</span>
+                    <ul class="menu__sub">
+                        @foreach($menu->children as $children)
+                        <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
+                        @endforeach
+                    </ul>
+                @else
+                    <span class="menu__title"><a href="{{ $menu->url }}">{{ $menu->name }}</a></span>
+                @endif
             </li>
-            <li class="header__m-nav--gnb__item menu">
-                <span class="menu__title">For Business Partners</span>
-                <ul class="menu__sub">
-                    <li><a href="#">알루미늄 호일</a></li>
-                    <li><a href="#">포장재</a></li>
-                    <li><a href="#">산업/건축용</a></li>
-                    <li><a href="#">Speciality</a></li>
-                    <li><a href="#">Innovation</a></li>
-                </ul>
-            </li>
-            <li class="header__m-nav--gnb__item menu">
-                <span class="menu__title">Work With Us</span>
-                <ul class="menu__sub">
-                    <li><a href="#">채용공고</a></li>
-                    <li><a href="#">직무소개</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </li>
+            @endforeach
         </ul>
     </div>
     <div class="gnb-mask"></div>

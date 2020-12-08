@@ -18,7 +18,7 @@ class IsoCertificationController extends Controller
     {
         $certifications = DB::table('iso_certifications')->orderBy('id', 'desc')->get();
 
-        return view('business.speciality.isoCertification', [
+        return view('business.innovation.isoCertification', [
             'certifications' => $certifications,
         ]);
     }

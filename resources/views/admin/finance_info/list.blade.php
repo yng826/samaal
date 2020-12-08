@@ -19,6 +19,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
+                    <h6 class="text-right">(단위: 백만원)</h6>
                     <table class="table" style="table-layout: fixed;">
                         <tr>
                             <th class="text-center" rowspan="2">연도</th>
@@ -42,16 +43,16 @@
                         @foreach ($infos as $info)
                         <tr>
                             <td class="text-center">{{ $info->info_year }}</td>
-                            <td class="text-center">{{ $info->connect_sales }}</td>
-                            <td class="text-center">{{ $info->connect_operating_income }}</td>
-                            <td class="text-center">{{ $info->connect_net_income }}</td>
-                            <td class="text-center">{{ $info->connect_assets }}</td>
-                            <td class="text-center">{{ $info->connect_liability }}</td>
-                            <td class="text-center">{{ $info->separate_sales }}</td>
-                            <td class="text-center">{{ $info->separate_operating_income }}</td>
-                            <td class="text-center">{{ $info->separate_net_income }}</td>
-                            <td class="text-center">{{ $info->separate_assets }}</td>
-                            <td class="text-center">{{ $info->separate_liability }}</td>
+                            <td class="text-center">{{ number_format($info->connect_sales) }}</td>
+                            <td class="text-center">{{ number_format($info->connect_operating_income) }}</td>
+                            <td class="text-center">{{ number_format($info->connect_net_income) }}</td>
+                            <td class="text-center">{{ number_format($info->connect_assets) }}</td>
+                            <td class="text-center">{{ number_format($info->connect_liability) }}</td>
+                            <td class="text-center">{{ number_format($info->separate_sales) }}</td>
+                            <td class="text-center">{{ number_format($info->separate_operating_income) }}</td>
+                            <td class="text-center">{{ number_format($info->separate_net_income) }}</td>
+                            <td class="text-center">{{ number_format($info->separate_assets) }}</td>
+                            <td class="text-center">{{ number_format($info->separate_liability) }}</td>
                             <td class="text-center">{{ $info->updated_at ?? $info->created_at}}</td>
                             <td class="text-center"><a class="btn btn-outline-warning btn-xs" href="/admin/finance_info/{{$info->info_year}}/edit">수정</a></td>
                         </tr>

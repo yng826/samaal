@@ -11,8 +11,8 @@
                     ]">
                 </b>
                 {{node.name}}
-                <a class="btn btn-outline-warning btn-xs" :href="'/admin/menu/' + node.id + '/edit'">수정</a>
-                <a class="btn btn-outline-info btn-xs" :href="'/admin/menu/create?parent_id=' + node.id + '&depth=' + node.depth">하위 추가</a>
+                <a class="btn btn-outline-warning btn-xs" :href="pathname + '/' + node.id + '/edit'">수정</a>
+                <a class="btn btn-outline-info btn-xs" :href="pathname + '/create?parent_id=' + node.id + '&depth=' + node.depth">하위 추가</a>
             </span>
         </Tree>
 
@@ -38,6 +38,7 @@ export default {
     data() {
         return {
             treeData: this.items,
+            pathname: new URL(location.href).pathname,
             id: '', //자신 아이디
             depth: '', //자신 위치
             parent_id: '' //부모 아이디

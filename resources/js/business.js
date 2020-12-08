@@ -68,7 +68,18 @@ const business = () => {
         });
     };
 
-
+    // R&D swiper
+    const rndSwiper = () => {
+        var detailSlide  = new Swiper('.innovation-rnd-swiper', {
+            navigation: {
+                nextEl: '.innovation-rnd-swiper .swiper-button-next',
+                prevEl: '.innovation-rnd-swiper .swiper-button-prev',
+            },
+            pagination: {
+                el: '.innovation-rnd-swiper .swiper-pagination',
+            }
+        });
+    };
 
     const eventListener = () => {
         const txt = $('.question-pop__submit-btn').html();
@@ -87,6 +98,7 @@ const business = () => {
         questionPop();
         businessSwiper();
         processTab();
+        rndSwiper();
     };
 
     business_init();
