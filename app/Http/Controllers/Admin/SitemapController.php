@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class MenuController extends Controller
+class SitemapController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = DB::table('menus')->orderBy('order_id')->get();
+        $sitemaps = DB::table('sitemaps')->orderBy('order_id')->get();
 
-        $treeMenu = $this->buildTreeMenu($menus);
+        $treeSitemap = $this->buildTreeSitemap($sitemaps);
 
-        return view('admin.menu.list', [
-            'menus' => $treeMenu,
+        return view('admin.sitemap.list', [
+            'sitemaps' => $treeSitemap,
         ]);
     }
 
@@ -31,8 +31,8 @@ class MenuController extends Controller
      */
     public function create(Request $request)
     {
-        $action = '/admin/menu';
-        return view('admin.menu.create', [
+        $action = '/admin/sitemap';
+        return view('admin.sitemap.create', [
             'parent_id' => $request->parent_id,
             'depth' => $request->depth,
             'action' => $action,
@@ -47,19 +47,20 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $saved = DB::table('menus')
+        $saved = DB::table('sitemaps')
                 ->insert([
                     'order_id'=> 0,
                     'name'=> $request->name,
                     'url'=> $request->url,
-                    'menu_type'=> $request->menu_type,
+                    'sitemap_type'=> $request->sitemap_type,
                     'depth'=> $request->depth,
                     'parent_id'=> $request->parent_id,
                     'is_front'=> $request->is_front,
+                    'is_search_category' => $request->is_search_category,
                     'created_at' => now()
                 ]);
 
-        return redirect('/admin/menu');
+        return redirect('/admin/sitemap');
     }
 
     /**
@@ -81,11 +82,13 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        $menu = DB::table('menus')->where('id', $id)->first();
-        $action = "/admin/menu/{$id}";
+        $sitemap = DB::table('sitemaps')->where('id', $id)->first();
+        $sitemap_keywords = DB::table('sitemap_keywords')->where('sitemap_id', $id)->get();
+        $action = "/admin/sitemap/{$id}";
 
-        return view('admin.menu.create', [
-            'menu'=> $menu,
+        return view('admin.sitemap.create', [
+            'sitemap'=> $sitemap,
+            'sitemap_keywords'=> $sitemap_keywords,
             'action'=> $action,
         ]);
     }
@@ -99,19 +102,34 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $affected = DB::table('menus')
+        $affected = DB::table('sitemaps')
                     ->where('id', $id)
                     ->update([
                         'name' => $request->name,
                         'url' => $request->url,
-                        'menu_type' => $request->menu_type,
+                        'sitemap_type' => $request->sitemap_type,
                         'depth' => $request->depth,
                         'parent_id' => $request->parent_id,
                         'is_front' => $request->is_front,
+                        'is_search_category' => $request->is_search_category,
                         'updated_at' => now(),
                     ]);
 
-        return redirect('/admin/menu');
+        $affected = DB::table('sitemap_keywords')->where('sitemap_id', $id)->delete();
+        if(!empty($request->keyword)){
+            foreach ($request->keyword as $keyword) {
+                if ($keyword != '') {
+                    $affected = DB::table('sitemap_keywords')
+                                ->insert([
+                                    'sitemap_id' => $id,
+                                    'keyword' => $keyword,
+                                    'created_at' => now()
+                                ]);
+                }
+            }
+        }
+
+        return redirect('/admin/sitemap');
     }
 
     /**
@@ -125,7 +143,7 @@ class MenuController extends Controller
         $orders = json_decode($_POST['orders'], true);
 
         foreach ($orders as $order) {
-            $affected = DB::table('menus')
+            $affected = DB::table('sitemaps')
                         ->where('id', $order['id'])
                         ->update([
                             'order_id' => $order['order_id'],
@@ -134,7 +152,7 @@ class MenuController extends Controller
                             'updated_at' => now(),
                         ]);
         }
-        return redirect('/admin/menu');
+        return redirect('/admin/sitemap');
     }
 
     /**
@@ -145,27 +163,28 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $affected = DB::table('menus')->where('id', $id)->delete();
+        $affected = DB::table('sitemaps')->where('id', $id)->delete();
+        $affected = DB::table('sitemap_keywords')->where('sitemap_id', $id)->delete();
 
-        return redirect('/admin/menu');
+        return redirect('/admin/sitemap');
     }
 
     /**
-     * Build tree menu.
+     * Build tree sitemap.
      *
-     * @param  array  $menus
+     * @param  array  $sitemaps
      * @return array $branch
      */
-    public function buildTreeMenu($menus, $parentId = 0)
+    public function buildTreeSitemap($sitemaps, $parentId = 0)
     {
         $branch = array();
-        foreach ($menus as $menu) {
-            if ($menu->parent_id == $parentId) {
-                $children = $this->buildTreeMenu($menus, $menu->id);
+        foreach ($sitemaps as $sitemap) {
+            if ($sitemap->parent_id == $parentId) {
+                $children = $this->buildTreeSitemap($sitemaps, $sitemap->id);
                 if (!empty($children)) {
-                    $menu->children = $children;
+                    $sitemap->children = $children;
                 }
-                $branch[] = $menu;
+                $branch[] = $sitemap;
             }
         }
         return $branch;

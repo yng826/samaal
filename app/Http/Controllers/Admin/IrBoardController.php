@@ -43,7 +43,8 @@ class IrBoardController extends Controller
      */
     public function store(Request $request)
     {
-        $file_path = $request->file('file')->store('ir');//파일 저장
+        $img_file_path = $request->file('img_file')->store('ir'); //이미지파일 저장
+        $pdf_file_path = $request->file('pdf_file')->store('ir'); //PDF파일 저장
         if($request->id > 0){
             $saved = DB::table('ir_boards')
                     ->where('id', $request->id)
@@ -51,8 +52,10 @@ class IrBoardController extends Controller
                         'category'=> $request->category,
                         'title'=> $request->title,
                         'contents'=> $request->contents,
-                        'file_name'=> $request->file('file')->getClientOriginalName(),
-                        'file_path'=> $file_path,
+                        'img_file_name'=> $request->file('img_file')->getClientOriginalName(),
+                        'img_file_path'=> $img_file_path,
+                        'pdf_file_name'=> $request->file('pdf_file')->getClientOriginalName(),
+                        'pdf_file_path'=> $pdf_file_path,
                         'updated_at' => now(),
                     ]);
         }else{
@@ -61,8 +64,10 @@ class IrBoardController extends Controller
                 'category'=> $request->category,
                 'title'=> $request->title,
                 'contents'=> $request->contents,
-                'file_name'=> $request->file('file')->getClientOriginalName(),
-                'file_path'=> $file_path,
+                'img_file_name'=> $request->file('img_file')->getClientOriginalName(),
+                'img_file_path'=> $img_file_path,
+                'pdf_file_name'=> $request->file('pdf_file')->getClientOriginalName(),
+                'pdf_file_path'=> $pdf_file_path,
                 'created_at' => now()
             ]);
         }
@@ -97,6 +102,7 @@ class IrBoardController extends Controller
     public function edit($id)
     {
         $board = DB::table('ir_boards')->where('id', $id)->first();
+
         $action = "/admin/ir_board/{$id}";
 
         return view('admin.ir_board.create', [
@@ -115,13 +121,17 @@ class IrBoardController extends Controller
     public function update(Request $request, $id)
     {
 
-        $file_name = $request->file_name;
-        $file_path = $request->file_path;
-
-        if (!empty($request->file('file'))) {
-            $file_name = $request->file('file')->getClientOriginalName();
-
-            $file_path = $request->file('file')->store('ir');//파일 저장
+        $img_file_name = $request->img_file_name;
+        $img_file_path = $request->img_file_path;
+        $pdf_file_name = $request->pdf_file_name;
+        $pdf_file_path = $request->pdf_file_path;
+        if (!empty($request->file('img_file'))) {
+            $img_file_name = $request->file('img_file')->getClientOriginalName();
+            $img_file_path = $request->file('img_file')->store('ir'); //이미지파일 저장
+        }
+        if (!empty($request->file('pdf_file'))) {
+            $pdf_file_name = $request->file('pdf_file')->getClientOriginalName();
+            $pdf_file_path = $request->file('pdf_file')->store('ir'); //PDF파일 저장
         }
 
 
@@ -131,8 +141,10 @@ class IrBoardController extends Controller
             'category'=> $request->category,
             'title'=> $request->title,
             'contents'=> $request->contents,
-            'file_name'=> $file_name,
-            'file_path'=> $file_path,
+            'img_file_name'=>  $img_file_name,
+            'img_file_path'=>  $img_file_path,
+            'pdf_file_name'=>  $pdf_file_name,
+            'pdf_file_path'=>  $pdf_file_path,
             'updated_at' => now(),
           ]);
         return redirect('/admin/ir_board');
@@ -149,9 +161,10 @@ class IrBoardController extends Controller
     {
         $board = DB::table('ir_boards')->where('id', $request->id)->first();
 
-        $file =  Storage::get($board->file_path);
+        $file =  Storage::get($request->type=='img' ? $board->img_file_path : $board->pdf_file_path);
+        $file_name =  $request->type=='img' ? $board->img_file_name : $board->pdf_file_name;
 
-        return response($file, 200, ['Content-Disposition' => "attachment; filename={$board->file_name}"]);
+        return response($file, 200, ['Content-Disposition' => "attachment; filename={$file_name}"]);
     }
 
     /**

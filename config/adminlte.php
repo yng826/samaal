@@ -241,10 +241,15 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => '안녕하세요'],
+        ['header' => '메뉴'],
         [
-            'text' => '메뉴',
+            'text' => '메뉴 관리',
             'url'  => 'admin/menu',
+            'icon' => 'fas fa-fw fa-bars',
+        ],
+        [
+            'text' => '사이트맵 관리',
+            'url'  => 'admin/sitemap',
             'icon' => 'fas fa-fw fa-bars',
         ],
         ['header' => '회사정보'],
