@@ -67,44 +67,6 @@
                               <label for="is_front2" class="form-check-label">아니오</label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>통합검색 카테고리 노출</label>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="is_search_category1" name="is_search_category" value="1" {{ isset($menu) && $menu->is_search_category == 1 ? 'checked' :''}}>
-                              <label for="is_search_category1" class="form-check-label">예</label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="is_search_category2" name="is_search_category" value="0" {{ isset($menu) && $menu->is_search_category == 0 ? 'checked' :''}}>
-                              <label for="is_search_category2" class="form-check-label">아니오</label>
-                            </div>
-                        </div>
-
-                        @empty($menu)
-                        <div class="form-group">
-                            <label>키워드</label>
-                            <input type="text" class="form-control w-50" value="수정 화면에서 입력 가능합니다." disabled>
-                        </div>
-                        @endempty
-
-                        {{-- 수정일때만 보임 --}}
-                        @isset ($menu)
-                        <div class="form-group">
-                            <label>키워드</label>
-                            <div class="form-inline">
-                                <input type="text" class="form-control w-50 mb-1" id="keyword">
-                                <button type="button" class="btn btn-primary text-white mb-1 keyword-add-btn">추가</button>
-                            </div>
-
-                            <div id="keyword-div">
-                                @foreach($menu_keywords as $menu_keyword)
-                                <div class="form-inline">
-                                    <input type="text" class="form-control w-50 mb-1" name="keyword[]" value="{{ $menu_keyword->keyword }}">
-                                    <button type="button" class="btn btn-danger text-white mb-1 keyword-del-btn">삭제</button>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        @endisset
                     </div>
                 </div>
             </div>
@@ -146,22 +108,6 @@ const menu_create = () => {
                 $('#menu-form').submit();
             }
         });
-
-        //키워드 추가 버튼 클릭시
-        $('.keyword-add-btn').on('click', function() {
-            const val = $('#keyword').val();
-            let html = '<div class="form-inline">';
-            html += '<input type="text" class="form-control w-50 mb-1" name="keyword[]" value="'+val+'">';
-            html += '<button type="button" class="btn btn-danger text-white mb-1 keyword-del-btn">삭제</button>';
-            html += '</div>';
-            $('#keyword-div').append(html);
-            $('#keyword').val('');
-        });
-
-        //키워드 삭제 버튼 클릭시
-        $(document).on('click', '.keyword-del-btn', function() {
-            $(this).parent().remove();
-        });
     }
 
     const validation = () => {
@@ -181,10 +127,6 @@ const menu_create = () => {
 
         } else if ($('input[name=is_front]:checked').val() == '' || $('input[name=is_front]:checked').val() == null) {
             alert('사이트 노출을 선택해주세요.');
-            return false;
-
-        } else if ($('input[name=is_search_category]:checked').val() == '' || $('input[name=is_search_category]:checked').val() == null) {
-            alert('통합검색 카테고리 노출을 선택해주세요.');
             return false;
         }
         return true;

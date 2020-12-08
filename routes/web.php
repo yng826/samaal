@@ -5,6 +5,7 @@ use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MenuController as AdminMenuController;
+use App\Http\Controllers\Admin\SitemapController as AdminSitemapController;
 use App\Http\Controllers\Admin\NewsInfoController as NewsInfoController;
 use App\Http\Controllers\Admin\IrBoardController as IrBoardController;
 use App\Http\Controllers\Admin\IsoCertificationController as AdminIsoCertificationController;
@@ -236,6 +237,14 @@ Route::get('role', function () {
 Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::post('menu/order-update', [AdminMenuController::class, 'orderUpdate']);
     Route::resource('menu', Admin\MenuController::class);
+    Route::get('library', function () {
+        return view('admin.test.library');
+    });
+});
+
+Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
+    Route::post('sitemap/order-update', [AdminSitemapController::class, 'orderUpdate']);
+    Route::resource('sitemap', Admin\SitemapController::class);
     Route::get('library', function () {
         return view('admin.test.library');
     });
