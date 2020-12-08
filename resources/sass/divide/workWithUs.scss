@@ -312,6 +312,68 @@
 
 }
 
+/* 직무소개 */
+.introduction-introjob {
+    &__title {
+        text-align: center;
+        margin-top: 90px auto 100px;
+
+        h2 {
+            display: block;
+            margin-bottom: 30px;
+            color: #000;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        p {
+            display: block;
+            margin-bottom: 40px;
+            color: #000;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        strong {
+            display: block;
+            color: $titleColor;
+        }
+    }
+
+    &__contents {
+        max-width: 1510px;
+        margin: 0 auto;
+    }
+
+    &__list {
+        font-size: 0;
+
+        &--item {
+            // float: left;
+            display: inline-block;
+            width: calc(33.33% - 20px);
+            margin-right: 20px;
+            border-bottom: 1px solid $titleColor;
+
+            h3 {
+                display: block;
+                padding-left: 28px;
+                color: #fff;
+                font-size: 30px;
+            }
+
+            &:nth-child(odd) h3{
+                background-color: $titleColor;
+            }
+
+            &:nth-child(even) h3{
+                background-color: #3767c7;
+            }
+        }
+    }
+}
+
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
     @import "./lib/webvw";

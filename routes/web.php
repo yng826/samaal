@@ -199,6 +199,10 @@ Route::prefix('work-with-us')->group(function(){
     ->name('work.job');
     Route::get('job/{id}', [JobController::class, 'show'])
     ->where('id', '[0-9]+');
+
+    Route::get('introduction/introjob', function () {
+        return view('workWithUs.introduction.introjob');
+    })->name('work-with-us.introduction.introjob');
 });
 Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function(){
     // Route::resource('recruit', RecruitController::class);
