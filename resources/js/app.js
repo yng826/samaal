@@ -6,6 +6,7 @@
 import common from './common';
 import about from './aboutUs';
 import business from './business';
+import siteIntro from './siteIntro';
 
 import Swiper from 'swiper/bundle';
 window.Swiper = Swiper;
@@ -47,12 +48,14 @@ Vue.component('passport-clients', require('./components/passport/Clients.vue').d
 const appMethods = {
     common,
     business,
-    about
+    about,
+    siteIntro,
 };
 
 const appInit = () => {
     const appName = $('body').attr('class');
     if(appName) {
+        console.log(appName);
         [common, appMethods[appName]].forEach(method  => {
             if(method) method();
         })
