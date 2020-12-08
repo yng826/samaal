@@ -26,5 +26,5 @@ mix
     .autoload({
         jquery: ['$', 'jQuery', 'jquery'],
     })
-    .sass('resources/sass/vendor.scss', 'public/css')
+    // .sass('resources/sass/vendor.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css');

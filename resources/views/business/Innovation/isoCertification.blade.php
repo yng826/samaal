@@ -23,7 +23,7 @@
                     <td class="text-center">
                         {{ $certification->first_date }}
                         <div class="file-box">
-                            <a href="/business/speciality/iso_certification/file-download?id={{ $certification->id }}" class="btn-download">[PDF파일]</a>
+                            <a href="/business/innovation/iso_certification/file-download?id={{ $certification->id }}" class="btn-download">[PDF파일]</a>
                             <a href="#" class="btn-preview">]</a>
                         </div>
                         {{-- <img src="/storage/{{ $certification->img_file_path }}" height="50" /> --}}

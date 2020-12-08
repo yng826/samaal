@@ -178,8 +178,8 @@ Route::prefix('business')->group(function() {
         return view('business.speciality.process', $data);
     });
 
-    Route::get('speciality/iso_certification', [IsoCertificationController::class, 'index']);
-    Route::get('speciality/iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
+    Route::get('innovation/iso_certification', [IsoCertificationController::class, 'index']);
+    Route::get('innovation/iso_certification/file-download', [IsoCertificationController::class, 'fileDownload']);
 });
 
 
