@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('contents')
-    <div id="fullpage">
+    <div id="fullpage" class="fp-destroyed">
         <div class="section">Some section</div>
         <div class="section">Some section</div>
         <div class="section">Some section</div>

@@ -17,7 +17,10 @@ const siteIntro = () => {
         } else {
             console.log('mobile');
             if ( !$('#fullpage').hasClass('fullpage-wrapper') || $('#fullpage').hasClass('fp-destroyed')) {
-                $('#fullpage').fullpage();
+                $('#fullpage').fullpage({
+                    sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+                    navigation: true
+                });
             }
         }
     }
