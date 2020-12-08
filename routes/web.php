@@ -32,7 +32,10 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('intro', [
+        'bodyClass' => 'siteIntro',
+    ]);
 });
 
 Route::get('sample', function () {

@@ -20,6 +20,7 @@ mix
     .js('resources/js/question.js', 'public/js')
     .js('resources/js/financial.js', 'public/js')
     .js('resources/js/other/search.js', 'public/js')
+    .js('resources/js/siteIntro.js', 'public/js')
     .sourceMaps()
     .extract(['vue','jquery'])
     .mergeManifest ()
