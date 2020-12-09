@@ -73,12 +73,13 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    @if($ir_boards->count())
-                            {{$ir_boards->links("pagination::bootstrap-4")}}
-                    @endif
-                </div>
+            <br />
+            <div class="pagination">
+                <a href="/about-us/ir/board/list?page=1" class="pagination__button-prev"></a>
+                @for($i=1; $i<$cnt+1; $i++)
+                    <a href="/about-us/ir/board/list?page={{ $i }}" class="pagination__number">{{ $i }}</a>
+                @endfor
+                <a href="/about-us/ir/board/list?page={{ $cnt }}" class="pagination__button-next"></a>
             </div>
             <div class="" style="text-align: center;">
                 <button type="button" onclick="location.href='#' " style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">DART 바로가기</button>

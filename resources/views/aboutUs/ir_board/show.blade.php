@@ -70,21 +70,7 @@
 
         <script src="{{ mix('/js/manifest.js') }}"></script>
         <script src="{{ mix('/js/vendor.js') }}"></script>
-        <script>// using plain js
 
-        // if you use bundler
-        var SimpleLightbox = require('simple-lightbox');
-
-
-            new SimpleLightbox({elements: '.img a'});
-
-            // or if using jQuery
-        $('.img a').simpleLightbox();
-        SimpleLightbox.open({
-            items: ['/storage/{{ $ir_board->img_file_path }}']
-        });
-
-        </script>
     </body>
 </html>
 

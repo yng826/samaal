@@ -16,8 +16,13 @@ class FinanceController extends Controller
     public function index()
     {
         $ir_boards = DB::table('ir_boards')->orderBy('id', 'desc')->paginate(10);
+        $cnt = DB::table('ir_boards')->orderBy('id', 'desc')->count();
+
+        $cnt = (int)ceil($cnt/10);
+
         return view('aboutUs.ir_board.list', [
             'ir_boards' => $ir_boards,
+            'cnt' => $cnt
         ]);
     }
 
