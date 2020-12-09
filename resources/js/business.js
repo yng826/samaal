@@ -68,6 +68,15 @@ const business = () => {
         });
     };
 
+    // 공정과정 라이트박스
+    const processLightbox = () => {
+        var SimpleLightbox = require('simple-lightbox');
+        require('simple-lightbox/dist/simpleLightbox.min.css');
+        require('fullpage.js');
+
+        new SimpleLightbox({elements: '.speciality-process .process-layout__list--item a.popup-btn'});
+    };
+
     // R&D swiper
     const rndSwiper = () => {
         var detailSlide  = new Swiper('.innovation-rnd-swiper', {
@@ -81,8 +90,8 @@ const business = () => {
         });
     };
 
-    // ISO 인증
-    const isoCertification = () => {
+    // ISO 인증 라이트박스
+    const isoCertificationLightbox = () => {
         var SimpleLightbox = require('simple-lightbox');
         require('simple-lightbox/dist/simpleLightbox.min.css');
         require('fullpage.js');
@@ -107,8 +116,9 @@ const business = () => {
         questionPop();
         businessSwiper();
         processTab();
+        processLightbox();
         rndSwiper();
-        isoCertification();
+        isoCertificationLightbox();
     };
 
     business_init();

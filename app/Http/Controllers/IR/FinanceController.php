@@ -5,6 +5,7 @@ namespace App\Http\Controllers\IR;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class FinanceController extends Controller
 {
@@ -169,5 +170,14 @@ class FinanceController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function fileDownload(Request $request)
+    {
+        $ir_boards = DB::table('ir_boards')->where('id', $request->id)->first();
+
+        $file =  Storage::get($ir_boards->pdf_file_path);
+
+        return response($file, 200, ['Content-Disposition' => "attachment; filename={$ir_boards->pdf_file_name}"]);
     }
 }

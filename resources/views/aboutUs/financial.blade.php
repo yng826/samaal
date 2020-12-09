@@ -21,67 +21,67 @@
                    financial
                 </h2>
             </div>
-            <nav class="" style="text-align: center;">
+            <nav class="about-ir__nav">
                 <ul >
-                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;" >
+                    <li class="about-ir__li">
                         <a href="/about-us/ir/consolidated">연결재무제표</a></li>
                     </li>
-                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">
+                    <li class="about-ir__li">
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
-                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">
+                    <li class="about-ir__li">
                         <a href="/about-us/ir/board/list">전자공고</a></li>
                     </li>
                 </ul>
             </nav>
-            <div class="contents-wrap__section" style="text-align: center;">
-                <div class="chart" style="width: 500px;display: inline-block;">
-                    <h3 style="width:400px; text-align: center;">매출액</h3>
-                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
-                    <div style="width:400px; height:200px">
+            <div class="contents-wrap__section">
+                <div class="about-ir__chart">
+                    <h3>매출액</h3>
+                    <h6>(단위: 백만원)</h6>
+                    <div>
                         <canvas id="sales"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 500px;display: inline-block;">
-                    <h3 style="width:400px; text-align: center;">영업이익</h3>
-                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
-                    <div style="width:400px; height:200px">
+                <div class="about-ir__chart">
+                    <h3>영업이익</h3>
+                    <h6>(단위: 백만원)</h6>
+                    <div>
                         <canvas id="operating_income"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 500px;display: inline-block;">
-                    <h3 style="width:400px; text-align: center;">당기순이익</h3>
-                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
-                    <div style="width:400px; height:200px">
+                <div class="about-ir__chart">
+                    <h3>당기순이익</h3>
+                    <h6>(단위: 백만원)</h6>
+                    <div>
                         <canvas id="net_income"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 500px;display: inline-block;">
-                    <h3 style="width:400px; text-align: center;">자산</h3>
-                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
-                    <div style="width:400px; height:200px">
+                <div class="about-ir__chart">
+                    <h3>자산</h3>
+                    <h6>(단위: 백만원)</h6>
+                    <div>
                         <canvas id="assets"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 500px;display: inline-block;">
-                    <h3 style="width:400px; text-align: center;">부채</h3>
-                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
-                    <div style="width:400px; height:200px">
+                <div class="about-ir__chart">
+                    <h3>부채</h3>
+                    <h6>(단위: 백만원)</h6>
+                    <div>
                         <canvas id="liability"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 500px;display: inline-block;">
-                    <h3 style="width:400px; text-align: center;">자본</h3>
-                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
-                    <div style="width:400px; height:200px">
+                <div class="about-ir__chart">
+                    <h3>자본</h3>
+                    <h6>(단위: 백만원)</h6>
+                    <div>
                         <canvas id="capital"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="contents-wrap__section">
-                <h3 style="text-align: center;">재무정보 3개년 요약</h3>
+            <div class="contents-wrap__section .about-ir__table">
+                <h3>재무정보 3개년 요약</h3>
                 <table class="table">
-                    <tr>
+                    <tr class="text-center">
                         <th></th>
                         @foreach ($info_year as $year)
                             <th class="text-center">{{ $year }}</th>
