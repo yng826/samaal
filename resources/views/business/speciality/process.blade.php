@@ -25,22 +25,22 @@
             <ul class="process-layout__list">
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">압연</span>
-                    <stron class="lang-english">Roughing</stron>
-                    <a href="https://youtu.be/7pr4iP3_XlM" class="popup-btn">동영상 보기</a>
+                    <strong class="lang-english">Roughing</strong>
+                    <a href="http://www.youtube.com/embed/7pr4iP3_XlM?&autoplay=true" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">분리, 분단</span>
-                    <stron class="lang-english">Separating/Slitting</stron>
-                    <a href="https://youtu.be/OR90YT2BtH0" class="popup-btn">동영상 보기</a>
+                    <strong class="lang-english">Separating/Slitting</strong>
+                    <a href="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">연화</span>
-                    <stron class="lang-english">Annealing</stron>
+                    <strong class="lang-english">Annealing</strong>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">포장</span>
-                    <stron class="lang-english">Packaging</stron>
+                    <strong class="lang-english">Packaging</strong>
                     <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>
