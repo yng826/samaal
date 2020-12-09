@@ -81,6 +81,15 @@ const business = () => {
         });
     };
 
+    // ISO 인증
+    const isoCertification = () => {
+        var SimpleLightbox = require('simple-lightbox');
+        require('simple-lightbox/dist/simpleLightbox.min.css');
+        require('fullpage.js');
+
+        new SimpleLightbox({elements: '.speciality-iso .file-box a.btn-preview'});
+    };
+
     const eventListener = () => {
         const txt = $('.question-pop__submit-btn').html();
     }
@@ -99,6 +108,7 @@ const business = () => {
         businessSwiper();
         processTab();
         rndSwiper();
+        isoCertification();
     };
 
     business_init();
