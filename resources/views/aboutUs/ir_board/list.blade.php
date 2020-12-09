@@ -77,7 +77,15 @@
             <div class="pagination">
                 <a href="/about-us/ir/board/list?page=1" class="pagination__button-prev"></a>
                 @for($i=1; $i<$cnt+1; $i++)
-                    <a href="/about-us/ir/board/list?page={{ $i }}" class="pagination__number">{{ $i }}</a>
+                    <?php
+                        $style='';
+                    ?>
+                    @if ($_GET['page'] == $i)
+                    <?php
+                        $style='color: blue';
+                    ?>
+                    @endif
+                    <a href="/about-us/ir/board/list?page={{ $i }}" class="pagination__number"style="{{ $style }}">{{ $i }}</a>
                 @endfor
                 <a href="/about-us/ir/board/list?page={{ $cnt }}" class="pagination__button-next"></a>
             </div>
