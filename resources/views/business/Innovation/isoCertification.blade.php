@@ -17,7 +17,11 @@
                 </tr>
                 @foreach ($certifications as $certification)
                 <tr>
-                    <td class="sort">{{ $certification->type }}</td>
+                    @if ($loop->first || $certification->type != $certifications[$loop->index - 1]->type)
+                        <td class="sort" rowspan="{{ $certifications->where('type', $certification->type)->count() }}">
+                            {{ $certification->type }}
+                        </td>
+                    @endif
                     <td>{{ $certification->standard }}</td>
                     <td>{{ $certification->number }}</td>
                     <td class="text-center">
