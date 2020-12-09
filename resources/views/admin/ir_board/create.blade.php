@@ -26,14 +26,6 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="">분류</label>
-                            <select class="form-control w-auto" name="category">
-                                <option value="">::선택::</option>
-                                <option value="연결재무" {{ isset($board) && $board->category == '연결재무' ? 'selected' :''}}>연결재무</option>
-                                <option value="별도재무" {{ isset($board) && $board->category == '별도재무' ? 'selected' :''}}>별도재무</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="">제목</label>
                             <input type="text" class="form-control" name="title" value="{{$board->title ?? ''}}">
                             <input type="hidden" class="form-control" name="id" value="{{$board->id ?? 0}}">
@@ -151,11 +143,7 @@
         }
 
         const validation = () => {
-            if ($('select[name=category]').val() == '' || $('select[name=category]').val() == null) {
-                alert('분류를 선택해주세요.');
-                return false;
-
-            } else if ($('input[name=title]').val() == '' || $('input[name=title]').val() == null) {
+            if ($('input[name=title]').val() == '' || $('input[name=title]').val() == null) {
                 alert('제목을 선택해주세요.');
                 $('input[name=title]').focus();
                 return false;

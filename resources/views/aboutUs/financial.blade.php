@@ -24,47 +24,56 @@
             <nav class="" style="text-align: center;">
                 <ul >
                     <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;" >
-                        <a href="/about-us/ir/financial/consolidated">연결재무제표</a></li>
+                        <a href="/about-us/ir/consolidated">연결재무제표</a></li>
                     </li>
                     <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">
-                        <a href="/about-us/ir/financial/separate">별도재무제표</a></li>
+                        <a href="/about-us/ir/separate">별도재무제표</a></li>
+                    </li>
+                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">
+                        <a href="/about-us/ir/board/list">전자공고</a></li>
                     </li>
                 </ul>
             </nav>
             <div class="contents-wrap__section" style="text-align: center;">
-                <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="width:300px; text-align: center;">매출액</h3>
-                    <div style="width:300px; height:200px">
+                <div class="chart" style="width: 500px;display: inline-block;">
+                    <h3 style="width:400px; text-align: center;">매출액</h3>
+                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
+                    <div style="width:400px; height:200px">
                         <canvas id="sales"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="width:300px; text-align: center;">영업이익</h3>
-                    <div style="width:300px; height:200px">
+                <div class="chart" style="width: 500px;display: inline-block;">
+                    <h3 style="width:400px; text-align: center;">영업이익</h3>
+                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
+                    <div style="width:400px; height:200px">
                         <canvas id="operating_income"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="width:300px; text-align: center;">당기순이익</h3>
-                    <div style="width:300px; height:200px">
+                <div class="chart" style="width: 500px;display: inline-block;">
+                    <h3 style="width:400px; text-align: center;">당기순이익</h3>
+                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
+                    <div style="width:400px; height:200px">
                         <canvas id="net_income"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="width:300px; text-align: center;">자산</h3>
-                    <div style="width:300px; height:200px">
+                <div class="chart" style="width: 500px;display: inline-block;">
+                    <h3 style="width:400px; text-align: center;">자산</h3>
+                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
+                    <div style="width:400px; height:200px">
                         <canvas id="assets"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="width:300px; text-align: center;">부채</h3>
-                    <div style="width:300px; height:200px">
+                <div class="chart" style="width: 500px;display: inline-block;">
+                    <h3 style="width:400px; text-align: center;">부채</h3>
+                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
+                    <div style="width:400px; height:200px">
                         <canvas id="liability"></canvas>
                     </div>
                 </div>
-                <div class="chart" style="width: 400px;display: inline-block;">
-                    <h3 style="width:300px; text-align: center;">자본</h3>
-                    <div style="width:300px; height:200px">
+                <div class="chart" style="width: 500px;display: inline-block;">
+                    <h3 style="width:400px; text-align: center;">자본</h3>
+                    <h3 style="width:400px; text-align: center;font-size: 70%;">(단위: 백만원)</h3>
+                    <div style="width:400px; height:200px">
                         <canvas id="capital"></canvas>
                     </div>
                 </div>
@@ -81,65 +90,40 @@
                     <tr>
                         <th>매출액</th>
                         @foreach ($sales as $sales_text)
-                            <td class="text-center">{{ $sales_text }}</td>
+                            <td class="text-center">{{ number_format($sales_text) }}</td>
                         @endforeach
                     </tr>
                     <tr>
                         <th>영업이익</th>
                         @foreach ($operating_income as $operating_income_text)
-                            <td class="text-center">{{ $operating_income_text }}</td>
+                            <td class="text-center">{{ number_format($operating_income_text) }}</td>
                         @endforeach
                     </tr>
                     <tr>
                         <th>당기순이익</th>
                         @foreach ($net_income as $net_income_text)
-                            <td class="text-center">{{ $net_income_text }}</td>
+                            <td class="text-center">{{ number_format($net_income_text) }}</td>
                         @endforeach
                     </tr>
                     <tr>
                         <th>자산</th>
                         @foreach ($assets as $assets_text)
-                            <td class="text-center">{{ $assets_text }}</td>
+                            <td class="text-center">{{ number_format($assets_text) }}</td>
                         @endforeach
                     </tr>
                     <tr>
                         <th>부채</th>
                         @foreach ($liability as $liability_text)
-                            <td class="text-center">{{ $liability_text }}</td>
+                            <td class="text-center">{{ number_format($liability_text) }}</td>
                         @endforeach
                     </tr>
                     <tr>
                         <th>자본총계</th>
                         @foreach ($capital as $capital_text)
-                            <td class="text-center">{{ $capital_text }}</td>
+                            <td class="text-center">{{ number_format($capital_text) }}</td>
                         @endforeach
                     </tr>
                 </table>
-            </div>
-<financial-component ></financial-component>
-            <div class="contents-wrap__section">
-                <h3 style="text-align: center;">전자공고</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>등록일</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($ir_boards as $ir_board)
-                        <tr>
-                            <td class="text-center">{{ $ir_board->id }}</td>
-                            <td class="text-center" v-on:click.prevent="ir_board({{ $ir_board->id }})"> {{ $ir_board->title }}</a></td>
-                            <td class="text-center">{{ $ir_board->updated_at ?? $ir_board->created_at}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div class="" style="text-align: center;">
-                <button type="button" onclick="location.href='#' " style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">DART 바로가기</button>
             </div>
         </main>
 
@@ -155,6 +139,8 @@
             var capital = @json($capital);
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
         <script src="{{ mix('/js/manifest.js') }}"></script>
         <script src="{{ mix('/js/vendor.js') }}"></script>
         <script src="{{ mix('/js/financial.js') }}"></script>

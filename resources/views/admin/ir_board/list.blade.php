@@ -21,7 +21,6 @@
                     <table class="table"  style="table-layout: fixed;">
                         <tr>
                             <th class="text-center" style="width: 80px;">번호</th>
-                            <th class="text-center">분류</th>
                             <th class="text-center">제목</th>
                             <th class="text-center">첨부파일</th>
                             <th class="text-center">등록/수정일</th>
@@ -31,7 +30,6 @@
                         @foreach ($boards as $board)
                         <tr>
                             <td class="text-center">{{ $board->id }}</td>
-                            <td class="text-center">{{ $board->category }}</td>
                             <td class="text-center">{{ $board->title }}</td>
                             <td class="text-center">
                                 <a class="btn btn-outline-info btn-xs mr-2" href="/admin/ir_board/file-download?id={{ $board->id }}&type=img">이미지파일</a>

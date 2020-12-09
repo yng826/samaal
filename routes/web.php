@@ -71,7 +71,8 @@ Route::prefix('about-us')->group(function() {
     Route::get('story-news/{id}', [StoryNewsController::class, 'show']);
 
     Route::get('ir/{type}', [FinanceController::class, 'show']);
-    Route::get('ir_board/financial/{id}', [FinanceController::class, 'ir_board_info']);
+    Route::get('ir/board/list', [FinanceController::class, 'index']);
+    Route::get('ir/board/file-download', [FinanceController::class, 'fileDownload']);
 });
 
 Route::prefix('business')->group(function() {

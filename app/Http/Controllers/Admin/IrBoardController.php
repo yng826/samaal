@@ -49,7 +49,6 @@ class IrBoardController extends Controller
             $saved = DB::table('ir_boards')
                     ->where('id', $request->id)
                     ->update([
-                        'category'=> $request->category,
                         'title'=> $request->title,
                         'contents'=> $request->contents,
                         'img_file_name'=> $request->file('img_file')->getClientOriginalName(),
@@ -61,7 +60,6 @@ class IrBoardController extends Controller
         }else{
             $saved = DB::table('ir_boards')
             ->insert([
-                'category'=> $request->category,
                 'title'=> $request->title,
                 'contents'=> $request->contents,
                 'img_file_name'=> $request->file('img_file')->getClientOriginalName(),
@@ -138,7 +136,6 @@ class IrBoardController extends Controller
         $affected = DB::table('ir_boards')
         ->where('id', $id)
         ->update([
-            'category'=> $request->category,
             'title'=> $request->title,
             'contents'=> $request->contents,
             'img_file_name'=>  $img_file_name,

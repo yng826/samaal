@@ -1,8 +1,14 @@
 import axios from 'axios'
 import Swal from 'sweetalert2';
+
 const financial = () => {
     const init = () => {
         chart();
+    };
+
+    const numberWithCommas = x => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // return Number(x).toLocaleString();
     };
 
     const chart = () => {
@@ -16,6 +22,16 @@ const financial = () => {
             data: {
                 labels: info_year,
                 datasets: [{
+                    datalabels: {
+                        clamp: true,
+                        anchor:'end',
+                        align:'end',
+                        color: [
+                            'black',
+                            'black',
+                            'rgba(28, 54, 105, 1)'
+                        ],
+                    },
                     data: window.sales,
                     backgroundColor: [
                         'rgba(55, 104, 199, 1)',
@@ -31,6 +47,22 @@ const financial = () => {
                 }]
             },
             options: {
+                plugins: {
+                    datalabels: {
+                        formatter:function(value){
+                            return numberWithCommas(value);
+                          }
+                    }
+                },
+                tooltips: {
+                    callbacks: {
+                      label: (tooltipItem, data) => {
+                        const value =
+                          data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        return numberWithCommas(value);
+                      }
+                    }
+                },
                 legend:
                 {
                     display: false
@@ -39,13 +71,17 @@ const financial = () => {
                 scales: {
                     yAxes: [{
                         ticks: {
+                            userCallback: (value, index, values) => {
+                              return numberWithCommas(value);
+                            },
                             beginAtZero:true
-                        }
+                          }
                     }],
                     xAxes: [{
                         barPercentage: 0.5
                     }]
                 }
+
             }
         });
 
@@ -56,6 +92,16 @@ const financial = () => {
             data: {
                 labels: info_year,
                 datasets: [{
+                    datalabels: {
+                        clamp: true,
+                        anchor:'end',
+                        align:'end',
+                        color: [
+                            'black',
+                            'black',
+                            'rgba(28, 54, 105, 1)'
+                        ],
+                    },
                     data: window.operating_income,
                     backgroundColor: [
                         'rgba(55, 104, 199, 1)',
@@ -71,6 +117,22 @@ const financial = () => {
                 }]
             },
             options: {
+                plugins: {
+                    datalabels: {
+                        formatter:function(value){
+                            return numberWithCommas(value);
+                          }
+                    }
+                },
+                tooltips: {
+                    callbacks: {
+                      label: (tooltipItem, data) => {
+                        const value =
+                          data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        return numberWithCommas(value);
+                      }
+                    }
+                },
                 legend:
                 {
                     display: false
@@ -79,15 +141,21 @@ const financial = () => {
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:true
-                        }
+                            userCallback: (value, index, values) => {
+                              return numberWithCommas(value);
+                            },
+                            beginAtZero:true,
+                            // suggestedMax: 10
+                          }
                     }],
                     xAxes: [{
                         barPercentage: 0.5
                     }]
                 }
+
             }
         });
+
         // 우선 컨텍스트를 가져옵니다.
         var ctx = document.getElementById("net_income").getContext('2d');
         var net_income = new Chart(ctx, {
@@ -95,6 +163,16 @@ const financial = () => {
             data: {
                 labels: info_year,
                 datasets: [{
+                    datalabels: {
+                        clamp: true,
+                        anchor:'end',
+                        align:'end',
+                        color: [
+                            'black',
+                            'black',
+                            'rgba(28, 54, 105, 1)'
+                        ]
+                    },
                     data: window.net_income,
                     backgroundColor: [
                         'rgba(55, 104, 199, 1)',
@@ -110,6 +188,22 @@ const financial = () => {
                 }]
             },
             options: {
+                plugins: {
+                    datalabels: {
+                        formatter:function(value){
+                            return numberWithCommas(value);
+                          }
+                    }
+                },
+                tooltips: {
+                    callbacks: {
+                      label: (tooltipItem, data) => {
+                        const value =
+                          data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        return numberWithCommas(value);
+                      }
+                    }
+                },
                 legend:
                 {
                     display: false
@@ -118,15 +212,21 @@ const financial = () => {
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:true
-                        }
+                            userCallback: (value, index, values) => {
+                              return numberWithCommas(value);
+                            },
+                            beginAtZero:true,
+                            // suggestedMax: 10
+                          }
                     }],
                     xAxes: [{
                         barPercentage: 0.5
                     }]
                 }
+
             }
         });
+
         // 우선 컨텍스트를 가져옵니다.
         var ctx = document.getElementById("assets").getContext('2d');
         var assets = new Chart(ctx, {
@@ -134,6 +234,16 @@ const financial = () => {
             data: {
                 labels: info_year,
                 datasets: [{
+                    datalabels: {
+                        clamp: true,
+                        anchor:'end',
+                        align:'end',
+                        color: [
+                            'black',
+                            'black',
+                            'rgba(28, 54, 105, 1)'
+                        ],
+                    },
                     data: window.assets,
                     backgroundColor: [
                         'rgba(55, 104, 199, 1)',
@@ -149,6 +259,22 @@ const financial = () => {
                 }]
             },
             options: {
+                plugins: {
+                    datalabels: {
+                        formatter:function(value){
+                            return numberWithCommas(value);
+                          }
+                    }
+                },
+                tooltips: {
+                    callbacks: {
+                      label: (tooltipItem, data) => {
+                        const value =
+                          data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        return numberWithCommas(value);
+                      }
+                    }
+                },
                 legend:
                 {
                     display: false
@@ -157,13 +283,18 @@ const financial = () => {
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:true
-                        }
+                            userCallback: (value, index, values) => {
+                              return numberWithCommas(value);
+                            },
+                            beginAtZero:true,
+                            // suggestedMax: 10
+                          }
                     }],
                     xAxes: [{
                         barPercentage: 0.5
                     }]
                 }
+
             }
         });
 
@@ -174,6 +305,16 @@ const financial = () => {
             data: {
                 labels: info_year,
                 datasets: [{
+                    datalabels: {
+                        clamp: true,
+                        anchor:'end',
+                        align:'end',
+                        color: [
+                            'black',
+                            'black',
+                            'rgba(28, 54, 105, 1)'
+                        ],
+                    },
                     data: window.liability,
                     backgroundColor: [
                         'rgba(55, 104, 199, 1)',
@@ -189,6 +330,22 @@ const financial = () => {
                 }]
             },
             options: {
+                plugins: {
+                    datalabels: {
+                        formatter:function(value){
+                            return numberWithCommas(value);
+                          }
+                    }
+                },
+                tooltips: {
+                    callbacks: {
+                      label: (tooltipItem, data) => {
+                        const value =
+                          data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        return numberWithCommas(value);
+                      }
+                    }
+                },
                 legend:
                 {
                     display: false
@@ -197,15 +354,21 @@ const financial = () => {
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:true
-                        }
+                            userCallback: (value, index, values) => {
+                              return numberWithCommas(value);
+                            },
+                            beginAtZero:true,
+                            // suggestedMax: 10
+                          }
                     }],
                     xAxes: [{
                         barPercentage: 0.5
                     }]
                 }
+
             }
         });
+
         // 우선 컨텍스트를 가져옵니다.
         var ctx = document.getElementById("capital").getContext('2d');
         var capital = new Chart(ctx, {
@@ -213,6 +376,16 @@ const financial = () => {
             data: {
                 labels: info_year,
                 datasets: [{
+                    datalabels: {
+                        clamp: true,
+                        anchor:'end',
+                        align:'end',
+                        color: [
+                            'black',
+                            'black',
+                            'rgba(28, 54, 105, 1)'
+                        ],
+                    },
                     data: window.capital,
                     backgroundColor: [
                         'rgba(55, 104, 199, 1)',
@@ -228,6 +401,22 @@ const financial = () => {
                 }]
             },
             options: {
+                plugins: {
+                    datalabels: {
+                        formatter:function(value){
+                            return numberWithCommas(value);
+                          }
+                    }
+                },
+                tooltips: {
+                    callbacks: {
+                      label: (tooltipItem, data) => {
+                        const value =
+                          data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        return numberWithCommas(value);
+                      }
+                    }
+                },
                 legend:
                 {
                     display: false
@@ -236,13 +425,18 @@ const financial = () => {
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:true
-                        }
+                            userCallback: (value, index, values) => {
+                              return numberWithCommas(value);
+                            },
+                            beginAtZero:true,
+                            // suggestedMax: 10
+                          }
                     }],
                     xAxes: [{
                         barPercentage: 0.5
                     }]
                 }
+
             }
         });
     };
