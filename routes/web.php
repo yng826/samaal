@@ -209,6 +209,9 @@ Route::prefix('work-with-us')->group(function(){
     })->name('work-with-us.introduction.introjob');
 
     // 생산 production
+    Route::get('introduction/interview-production', function () {
+        return view('workWithUs.introduction.interviewProduction');
+    });
 
     // 영업 Sales
     Route::get('introduction/interview-sales', function () {

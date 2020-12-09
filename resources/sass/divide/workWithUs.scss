@@ -620,6 +620,35 @@
     }
 }
 
+/* FAQ */
+.work-faq {
+    background-color: #e8ecef;
+
+    &__title {
+        padding: 72px 0;
+
+        h2 {
+            display: block;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        p {
+            display: block;
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 35px;
+        }
+    }
+
+    &__section {
+        max-width: 1272px;
+        margin: 0 auto;
+    }
+}
+
 
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
