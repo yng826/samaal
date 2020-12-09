@@ -104,7 +104,7 @@
                     &::before {
                         content: "";
                         counter-increment: step;
-                        background: $titleColor url("../images/work/hire_progress_check.png") no-repeat;
+                        background: $titleColor url("/images/work/hire_progress_check.png") no-repeat;
                         background-size: contain;
                         border: 5px solid $titleColor;
                     }
@@ -464,39 +464,39 @@
     }
 
     .title-production {
-        background: url("../images/work/img_production.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_production.png") no-repeat right center / 85px 67px;
     }
 
     .title-sales {
-        background: url("../images/work/img_sales.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_sales.png") no-repeat right center / 85px 67px;
     }
 
     .title-warranty {
-        background: url("../images/work/img_warranty.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_warranty.png") no-repeat right center / 85px 67px;
     }
 
     .title-businessSupport {
-        background: url("../images/work/img_businessSupport.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_businessSupport.png") no-repeat right center / 85px 67px;
     }
 
     .title-productionSupport {
-        background: url("../images/work/img_productionSupport.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_productionSupport.png") no-repeat right center / 85px 67px;
     }
 
     .title-rnd {
-        background: url("../images/work/img_rnd.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_rnd.png") no-repeat right center / 85px 67px;
     }
 
     .title-equipment {
-        background: url("../images/work/img_equipment.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_equipment.png") no-repeat right center / 85px 67px;
     }
 
     .title-safety {
-        background: url("../images/work/img_safety.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_safety.png") no-repeat right center / 85px 67px;
     }
 
     .title-it {
-        background: url("../images/work/img_it.png") no-repeat right center / 85px 67px;
+        background: url("/images/work/img_it.png") no-repeat right center / 85px 67px;
     }
 
 }

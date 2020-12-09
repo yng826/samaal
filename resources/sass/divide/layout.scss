@@ -174,7 +174,7 @@
             display: inline-block;
             width: 32px;
             height: 32px;
-            background: url("../../images/common/btn_search.png") no-repeat;
+            background: url("/images/common/btn_search.png") no-repeat;
             background-size: contain;
         }
         &::after {
@@ -291,7 +291,7 @@
                 height: 60px;
                 position: absolute;
                 right: 0;
-                background: #1d3669 url("../images/common/icon-question.png")no-repeat center / 15px 21px;
+                background: #1d3669 url("/images/common/icon-question.png")no-repeat center / 15px 21px;
                 border-radius: 50%;
 
             }
@@ -400,13 +400,13 @@
     &__button-prev {
         width: 10px;
         height: 18px;
-        background: url("../images/common/pagenation_prev.png") no-repeat center / contain;
+        background: url("/images/common/pagenation_prev.png") no-repeat center / contain;
     }
 
     &__button-next {
         width: 10px;
         height: 18px;
-        background: url("../images/common/pagenation_next.png") no-repeat center / contain;
+        background: url("/images/common/pagenation_next.png") no-repeat center / contain;
     }
 }
 
@@ -427,7 +427,7 @@
         right: -15px;
         width: 100%;
         height: 30px;
-        background: url("../images/common/btn_close.png") no-repeat right / contain;
+        background: url("/images/common/btn_close.png") no-repeat right / contain;
         font-size: 0;
     }
 }
@@ -580,7 +580,7 @@
                 &::after{
                     width: vw(60px);
                     height: vw(60px);
-                    background: #1d3669 url("../images/common/icon-question.png")no-repeat center / vw(15px) vw(21px);
+                    background: #1d3669 url("/images/common/icon-question.png")no-repeat center / vw(15px) vw(21px);
 
                 }
             }
@@ -710,13 +710,13 @@
         &__button-prev {
             width: vw(20px);
             height: vw(36px);
-            background: url("../images/common/pagenation_prev.png") no-repeat center / contain;
+            background: url("/images/common/pagenation_prev.png") no-repeat center / contain;
         }
 
         &__button-next {
             width: vw(20px);
             height: vw(36px);
-            background: url("../images/common/pagenation_next.png") no-repeat center / contain;
+            background: url("/images/common/pagenation_next.png") no-repeat center / contain;
         }
     }
 }
@@ -809,7 +809,7 @@
                     h2 {
                         display: inline-block;
                         margin-top: vw(33px);
-                        background:url("../images/common/logo.png") no-repeat;
+                        background:url("/images/common/logo.png") no-repeat;
                         background-size: contain;
                         width: vw(110px);
                         height: vw(25px);
@@ -821,7 +821,7 @@
                         font-size: 0;
                         width: vw(28px);
                         height: vw(30px);
-                        background: url("../images/common/m/btn_clsoe_gnb.png")no-repeat;
+                        background: url("/images/common/m/btn_clsoe_gnb.png")no-repeat;
                         background-size: contain;
                     }
                 }
@@ -852,7 +852,7 @@
                             transform: translateY(-50%);
                             width: vw(36px);
                             height: vw(21px);
-                            background: url("../images/common/m/gnb_down.png")no-repeat;
+                            background: url("/images/common/m/gnb_down.png")no-repeat;
                             background-size: contain;
                         }
                     }
@@ -872,7 +872,7 @@
 
                         span {
                             &::after {
-                                background: url("../images/common/m/gnb_up.png")no-repeat;
+                                background: url("/images/common/m/gnb_up.png")no-repeat;
                                 background-size: contain;
                             }
                         }
@@ -928,7 +928,7 @@
             .btn-search {
                 width: vw(39px);
                 height: vw(39px);
-                background: url("../../images/common/m/icon_search.png") no-repeat;
+                background: url("/images/common/m/icon_search.png") no-repeat;
                 background-size: contain;
             }
         }
@@ -952,7 +952,7 @@
             position: absolute;
             top: vw(45px);
             left: 50%;
-            background: url("../images/common/m/icon_footer.png")no-repeat;
+            background: url("/images/common/m/icon_footer.png")no-repeat;
             background-size: contain;
             cursor: pointer;
         }
@@ -1028,13 +1028,13 @@
         &__button-prev {
             width: vw(10px);
             height: vw(18px);
-            background: url("../images/common/pagenation_prev.png") no-repeat center / contain;
+            background: url("/images/common/pagenation_prev.png") no-repeat center / contain;
         }
 
         &__button-next {
             width: vw(10px);
             height: vw(18px);
-            background: url("../images/common/pagenation_next.png") no-repeat center / contain;
+            background: url("/images/common/pagenation_next.png") no-repeat center / contain;
         }
     }
 }

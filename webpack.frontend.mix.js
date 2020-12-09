@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+var LiveReloadPlugin = require('webpack-livereload-plugin');
 require('laravel-mix-merge-manifest');
 
 /*
@@ -28,4 +29,12 @@ mix
         jquery: ['$', 'jQuery', 'jquery'],
     })
     // .sass('resources/sass/vendor.scss', 'public/css')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .options ({
+        processCssUrls : false
+    })
+    .webpackConfig({
+        plugins: [
+            new LiveReloadPlugin()
+        ]
+    });

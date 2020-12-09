@@ -40,7 +40,7 @@
             transform: translateX(-50%);
             width: 50px;
             height: 45px;
-            background: url("../images/business/arrow.png") no-repeat;
+            background: url("/images/business/arrow.png") no-repeat;
             background-size: contain;
             -moz-animation: bounce 3s infinite;
             -webkit-animation: bounce 3s infinite;
@@ -175,35 +175,35 @@
         }
 
         .item-foil {
-            background: url("../images/business/foil/img_foil.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_foil.jpg") no-repeat center / contain;
             &:hover {
                 background: #8b8e92;
             }
         }
 
         .item-fin {
-            background: url("../images/business/foil/img_fin.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_fin.jpg") no-repeat center / contain;
             &:hover {
                 background: #8b8e92;
             }
         }
 
         .item-capacitor {
-            background: url("../images/business/foil/img_capacitor.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_capacitor.jpg") no-repeat center / contain;
             &:hover {
                 background: #8b8e92;
             }
         }
 
         .item-decoration {
-            background: url("../images/business/foil/img_decoration.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_decoration.jpg") no-repeat center / contain;
             &:hover {
                 background: #8b8e92;
             }
         }
 
         .item-line {
-            background: url("../images/business/foil/img_line.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_line.jpg") no-repeat center / contain;
             &:hover {
                 background: #8b8e92;
             }
@@ -260,7 +260,7 @@
         width: 776px;
         padding: 0 55px 26px 0;
         vertical-align: middle;
-        background: url("../images/business/bg_slide.png") no-repeat bottom right / 807px 447px;
+        background: url("/images/business/bg_slide.png") no-repeat bottom right / 807px 447px;
 
         img {
             width: 100%;
@@ -284,12 +284,12 @@
         }
 
         .swiper-button-next {
-            background: url("../images/about/location_next.png")no-repeat;
+            background: url("/images/about/location_next.png")no-repeat;
             background-size: contain;
         }
 
         .swiper-button-prev {
-            background: url("../images/about/location_prev.png")no-repeat;
+            background: url("/images/about/location_prev.png")no-repeat;
             background-size: contain;
         }
 
@@ -685,7 +685,7 @@
                 position: absolute;
                 width: 20px;
                 height: 20px;
-                background: url("../images/common/icon_check.png") no-repeat center;
+                background: url("/images/common/icon_check.png") no-repeat center;
             }
         }
 
@@ -702,7 +702,7 @@
         height: 80px;
         padding: 0 106px 0 51px;
         margin: 44px auto 0;
-        background: #000 url("../images/common/btn_submit.png") no-repeat ;
+        background: #000 url("/images/common/btn_submit.png") no-repeat ;
         background-size: 46px 42px;
         background-position: 152px center;
         font-size: 25px;
@@ -919,7 +919,7 @@
                     margin: 0 8px;
                     width: 42px;
                     height: 42px;
-                    background: url("../images/business/speciality/arrow_process.jpg") no-repeat;
+                    background: url("/images/business/speciality/arrow_process.jpg") no-repeat;
                     background-size: contain;
                     vertical-align: middle;
                 }
@@ -933,17 +933,17 @@
         &__list {
 
             &--item:nth-child(1) {
-                background: url("../images/business/speciality/img_content01_process_01.jpg") no-repeat left top / 155px 180px;
+                background: url("/images/business/speciality/img_content01_process_01.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(2) {
-                background: url("../images/business/speciality/img_content01_process_02.jpg") no-repeat left top / 155px 180px;
+                background: url("/images/business/speciality/img_content01_process_02.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(3) {
-                background: url("../images/business/speciality/img_content01_process_03.jpg") no-repeat left top / 155px 180px;
+                background: url("/images/business/speciality/img_content01_process_03.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(4) {
                 padding-right: 0;
-                background: url("../images/business/speciality/img_content01_process_04.jpg") no-repeat left top / 155px 180px;
+                background: url("/images/business/speciality/img_content01_process_04.jpg") no-repeat left top / 155px 180px;
 
                 &::after {
                     display: none;
@@ -956,7 +956,7 @@
             margin-top: 70px;
             width: 1020px;
             height: 1931px;
-            background: url("../images/business/speciality/img_content01.jpg") no-repeat center / contain;
+            background: url("/images/business/speciality/img_content01.jpg") no-repeat center / contain;
         }
     }
 
@@ -965,17 +965,17 @@
         &__list {
 
             &--item:nth-child(1) {
-                background: url("../images/business/speciality/img_content02_process_01.jpg") no-repeat left top / 155px 180px;
+                background: url("/images/business/speciality/img_content02_process_01.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(2) {
-                background: url("../images/business/speciality/img_content02_process_02.jpg") no-repeat left top / 155px 180px;
+                background: url("/images/business/speciality/img_content02_process_02.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(3) {
-                background: url("../images/business/speciality/img_content02_process_03.jpg") no-repeat left top / 155px 180px;
+                background: url("/images/business/speciality/img_content02_process_03.jpg") no-repeat left top / 155px 180px;
             }
             &--item:nth-child(4) {
                 padding-right: 0;
-                background: url("../images/business/speciality/img_content02_process_04.jpg") no-repeat left top / 155px 180px;
+                background: url("/images/business/speciality/img_content02_process_04.jpg") no-repeat left top / 155px 180px;
 
                 &::after {
                     display: none;
@@ -988,7 +988,7 @@
             margin-top: 70px;
             width: 1020px;
             height: 1931px;
-            background: url("../images/business/speciality/img_content02.jpg") no-repeat center / contain;
+            background: url("/images/business/speciality/img_content02.jpg") no-repeat center / contain;
         }
     }
 
@@ -1000,20 +1000,20 @@
         &__list {
 
             &--item:nth-child(1) {
-                background: url("../images/business/speciality/img_content03_process_01.jpg") no-repeat left top / 155px 175px;
+                background: url("/images/business/speciality/img_content03_process_01.jpg") no-repeat left top / 155px 175px;
             }
             &--item:nth-child(2) {
-                background: url("../images/business/speciality/img_content03_process_02.jpg") no-repeat left top / 155px 175px;
+                background: url("/images/business/speciality/img_content03_process_02.jpg") no-repeat left top / 155px 175px;
             }
             &--item:nth-child(3) {
-                background: url("../images/business/speciality/img_content03_process_03.jpg") no-repeat left top / 155px 175px;
+                background: url("/images/business/speciality/img_content03_process_03.jpg") no-repeat left top / 155px 175px;
             }
             &--item:nth-child(4) {
-                background: url("../images/business/speciality/img_content03_process_03.jpg") no-repeat left top / 155px 175px;
+                background: url("/images/business/speciality/img_content03_process_03.jpg") no-repeat left top / 155px 175px;
             }
             &--item:nth-child(5) {
                 padding-right: 0;
-                background: url("../images/business/speciality/img_content03_process_04.jpg") no-repeat left top / 155px 175px;
+                background: url("/images/business/speciality/img_content03_process_04.jpg") no-repeat left top / 155px 175px;
 
                 &::after {
                     display: none;
@@ -1026,7 +1026,7 @@
             margin-top: 70px;
             width: 1020px;
             height: 1931px;
-            background: url("../images/business/speciality/img_content02.jpg") no-repeat center / contain;
+            background: url("/images/business/speciality/img_content02.jpg") no-repeat center / contain;
         }
     }
 }
@@ -1088,13 +1088,13 @@
         .btn-download {
             width: 28px;
             height: 30px;
-            background: url("../images/business/speciality/btn-download.png") no-repeat;
+            background: url("/images/business/speciality/btn-download.png") no-repeat;
         }
 
         .btn-preview {
             width: 31px;
             height: 31px;
-            background: url("../images/business/speciality/btn-preview.png") no-repeat;
+            background: url("/images/business/speciality/btn-preview.png") no-repeat;
         }
     }
 }
@@ -1146,7 +1146,7 @@
         width: 750px;
         padding: 0 30px 30px 0;
         vertical-align: middle;
-        background: url("../images/business/bg_slide.png") no-repeat bottom right / 807px 447px;
+        background: url("/images/business/bg_slide.png") no-repeat bottom right / 807px 447px;
 
         img {
             width: 100%;
@@ -1170,12 +1170,12 @@
         }
 
         .swiper-button-next {
-            background: url("../images/about/location_next.png")no-repeat;
+            background: url("/images/about/location_next.png")no-repeat;
             background-size: contain;
         }
 
         .swiper-button-prev {
-            background: url("../images/about/location_prev.png")no-repeat;
+            background: url("/images/about/location_prev.png")no-repeat;
             background-size: contain;
         }
 
@@ -1220,7 +1220,7 @@
         width: 607px;
         height: 576px;
         margin: 69px auto 0;
-        background: url("../images/business/innovation/img_rnd.jpg") no-repeat;
+        background: url("/images/business/innovation/img_rnd.jpg") no-repeat;
         background-size: contain;
     }
 }
@@ -1342,7 +1342,7 @@
         &__slide {
             width: vw(776px);
             padding: 0 vw(55px 26px) 0;
-            background: url("../images/business/bg_slide.png") no-repeat bottom right / vw(807px) vw(447px);
+            background: url("/images/business/bg_slide.png") no-repeat bottom right / vw(807px) vw(447px);
 
             .swiper-container {
                 width: vw(750px);
@@ -1763,17 +1763,17 @@
             &__list {
 
                 &--item:nth-child(1) {
-                    background: url("../images/business/speciality/img_content01_process_01.jpg") no-repeat left top / vw(155px) vw(180px);
+                    background: url("/images/business/speciality/img_content01_process_01.jpg") no-repeat left top / vw(155px) vw(180px);
                 }
                 &--item:nth-child(2) {
-                    background: url("../images/business/speciality/img_content01_process_02.jpg") no-repeat left top / vw(155px) vw(180px);
+                    background: url("/images/business/speciality/img_content01_process_02.jpg") no-repeat left top / vw(155px) vw(180px);
                 }
                 &--item:nth-child(3) {
-                    background: url("../images/business/speciality/img_content01_process_03.jpg") no-repeat left top / vw(155px) vw(180px);
+                    background: url("/images/business/speciality/img_content01_process_03.jpg") no-repeat left top / vw(155px) vw(180px);
                 }
                 &--item:nth-child(4) {
                     padding-right: 0;
-                    background: url("../images/business/speciality/img_content01_process_04.jpg") no-repeat left top / vw(155px) vw(180px);
+                    background: url("/images/business/speciality/img_content01_process_04.jpg") no-repeat left top / vw(155px) vw(180px);
 
                     &::after {
                         display: none;
@@ -1785,7 +1785,7 @@
                 margin-top: vw(70px);
                 width: vw(1020px);
                 height: vw(1931px);
-                background: url("../images/business/speciality/img_content01.jpg") no-repeat center / contain;
+                background: url("/images/business/speciality/img_content01.jpg") no-repeat center / contain;
             }
         }
 
@@ -1794,17 +1794,17 @@
             &__list {
 
                 &--item:nth-child(1) {
-                    background: url("../images/business/speciality/img_content02_process_01.jpg") no-repeat left top / vw(155px) vw(180px);
+                    background: url("/images/business/speciality/img_content02_process_01.jpg") no-repeat left top / vw(155px) vw(180px);
                 }
                 &--item:nth-child(2) {
-                    background: url("../images/business/speciality/img_content02_process_02.jpg") no-repeat left top / vw(155px) vw(180px);
+                    background: url("/images/business/speciality/img_content02_process_02.jpg") no-repeat left top / vw(155px) vw(180px);
                 }
                 &--item:nth-child(3) {
-                    background: url("../images/business/speciality/img_content02_process_03.jpg") no-repeat left top / vw(155px) vw(180px);
+                    background: url("/images/business/speciality/img_content02_process_03.jpg") no-repeat left top / vw(155px) vw(180px);
                 }
                 &--item:nth-child(4) {
                     padding-right: 0;
-                    background: url("../images/business/speciality/img_content02_process_04.jpg") no-repeat left top / vw(155px) vw(180px);
+                    background: url("/images/business/speciality/img_content02_process_04.jpg") no-repeat left top / vw(155px) vw(180px);
 
                     &::after {
                         display: none;
@@ -1816,7 +1816,7 @@
                 margin-top: vw(70px);
                 width: vw(1020px);
                 height: vw(1931px);
-                background: url("../images/business/speciality/img_content02.jpg") no-repeat center / contain;
+                background: url("/images/business/speciality/img_content02.jpg") no-repeat center / contain;
             }
         }
 
@@ -1824,20 +1824,20 @@
             &__list {
 
                 &--item:nth-child(1) {
-                    background: url("../images/business/speciality/img_content03_process_01.jpg") no-repeat left top / vw(155px) vw(175px);
+                    background: url("/images/business/speciality/img_content03_process_01.jpg") no-repeat left top / vw(155px) vw(175px);
                 }
                 &--item:nth-child(2) {
-                    background: url("../images/business/speciality/img_content03_process_02.jpg") no-repeat left top / vw(155px) vw(175px);
+                    background: url("/images/business/speciality/img_content03_process_02.jpg") no-repeat left top / vw(155px) vw(175px);
                 }
                 &--item:nth-child(3) {
-                    background: url("../images/business/speciality/img_content03_process_03.jpg") no-repeat left top / vw(155px) vw(175px);
+                    background: url("/images/business/speciality/img_content03_process_03.jpg") no-repeat left top / vw(155px) vw(175px);
                 }
                 &--item:nth-child(4) {
-                    background: url("../images/business/speciality/img_content03_process_03.jpg") no-repeat left top / vw(155px) vw(175px);
+                    background: url("/images/business/speciality/img_content03_process_03.jpg") no-repeat left top / vw(155px) vw(175px);
                 }
                 &--item:nth-child(5) {
                     padding-right: 0;
-                    background: url("../images/business/speciality/img_content03_process_04.jpg") no-repeat left top / vw(155px) vw(175px);
+                    background: url("/images/business/speciality/img_content03_process_04.jpg") no-repeat left top / vw(155px) vw(175px);
 
                     &::after {
                         display: none;
@@ -1850,7 +1850,7 @@
                 margin-top: vw(70px);
                 width: vw(1020px);
                 height: vw(1931px);
-                background: url("../images/business/speciality/img_content02.jpg") no-repeat center / contain;
+                background: url("/images/business/speciality/img_content02.jpg") no-repeat center / contain;
             }
         }
     }
@@ -1937,7 +1937,7 @@
         &__slide {
             width: vw(750px);
             padding: vw(0 30px 30px 0);
-            background: url("../images/business/bg_slide.png") no-repeat bottom right / vw(807px) vw(447px);
+            background: url("/images/business/bg_slide.png") no-repeat bottom right / vw(807px) vw(447px);
 
             .swiper-container {
                 width: vw(750px);
