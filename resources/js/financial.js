@@ -1,6 +1,8 @@
 import axios from 'axios'
 import Swal from 'sweetalert2';
 
+var SimpleLightbox = require('simple-lightbox');
+
 const financial = () => {
     const init = () => {
         chart();
@@ -16,7 +18,6 @@ const financial = () => {
         // alert("eventListener"+info_year);
         // 우선 컨텍스트를 가져옵니다.
         var ctx = document.getElementById("sales").getContext('2d');
-
         var sales = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -74,7 +75,8 @@ const financial = () => {
                             userCallback: (value, index, values) => {
                               return numberWithCommas(value);
                             },
-                            beginAtZero:true
+                            beginAtZero:true,
+                            //max: Math.max.apply(this, window.sales)
                           }
                     }],
                     xAxes: [{

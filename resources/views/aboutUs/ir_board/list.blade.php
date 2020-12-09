@@ -4,18 +4,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/app.css">
         <script src="/js/app.js"></script>
-        <style>
-            .ir-contents{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-              }
-            .ir-contents p{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-              }
-        </style>
     </head>
     <body id="app" class="about-ir">
         <!-- {{-- @section('sidebar')
@@ -33,29 +21,29 @@
                    financial
                 </h2>
             </div>
-            <nav class="" style="text-align: center;">
+            <nav class="about-ir__nav">
                 <ul >
-                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;" >
+                    <li class="about-ir__li">
                         <a href="/about-us/ir/consolidated">연결재무제표</a></li>
                     </li>
-                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">
+                    <li class="about-ir__li">
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
-                    <li class="" style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">
+                    <li class="about-ir__li">
                         <a href="/about-us/ir/board/list">전자공고</a></li>
                     </li>
                 </ul>
             </nav>
-            <div class="contents-wrap__section">
-                <h3 style="text-align: center;">전자공고</h3><br />
+            <div class="contents-wrap__section" id="about-ir__board">
+                <h3>전자공고</h3><br />
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width: 80px;">번호</th>
+                            <th class="text-center .about-ir__no">번호</th>
                             <th class="text-center">제목</th>
                             <th class="text-center">내용</th>
                             <th class="text-center">등록/수정일</th>
-                            <th class="text-center" style="width: 80px;">관리</th>
+                            <th class="text-center .about-ir__no">관리</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,7 +51,7 @@
                         <tr>
                             <td class="text-center">{{ $ir_board->id }}</td>
                             <td class="text-center"> {{ $ir_board->title }}</a></td>
-                            <td class="text-center" style="table-layout: fixed;">
+                            <td class="text-center .about-ir__fixed">
                                 <div class="ir-contents">{!! $ir_board->contents !!}</div>
                             </td>
                             <td class="text-center">{{ $ir_board->updated_at ?? $ir_board->created_at}}</td>
@@ -89,8 +77,8 @@
                 @endfor
                 <a href="/about-us/ir/board/list?page={{ $cnt }}" class="pagination__button-next"></a>
             </div>
-            <div class="" style="text-align: center;">
-                <button type="button" onclick="location.href='#' " style="width: 200px;display: inline-block;margin-top: 20px;height: 50px;">DART 바로가기</button>
+            <div class="about-ir__link">
+                <button type="button" onclick="location.href='#' ">DART 바로가기</button>
             </div>
         </main>
 
