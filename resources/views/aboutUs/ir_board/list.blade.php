@@ -77,10 +77,10 @@
             <div class="pagination">
                 <a href="/about-us/ir/board/list?page=1" class="pagination__button-prev"></a>
                 @for($i=1; $i<$cnt+1; $i++)
-                    <?php
-                        $style='';
-                    ?>
-                    @if ($_GET['page'] == $i)
+                <?php
+                    $style='';
+                ?>
+                    @if (isset($_GET['page']) && $_GET['page'] == $i)
                     <?php
                         $style='color: blue';
                     ?>
