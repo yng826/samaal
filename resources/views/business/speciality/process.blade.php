@@ -26,12 +26,12 @@
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">압연</span>
                     <stron class="lang-english">Roughing</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
+                    <a href="https://youtu.be/7pr4iP3_XlM" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">분리, 분단</span>
                     <stron class="lang-english">Separating/Slitting</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
+                    <a href="https://youtu.be/OR90YT2BtH0" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">연화</span>
