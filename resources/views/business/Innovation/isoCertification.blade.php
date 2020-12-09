@@ -1,3 +1,7 @@
+@php
+    $bodyClass = 'business';
+@endphp
+
 @extends('layouts.default')
 
 @section('contents')
@@ -28,9 +32,8 @@
                         {{ $certification->first_date }}
                         <div class="file-box">
                             <a href="/business/innovation/iso_certification/file-download?id={{ $certification->id }}" class="btn-download">[PDF파일]</a>
-                            <a href="#" class="btn-preview">]</a>
+                            <a href="/storage/{{ $certification->img_file_path }}" class="btn-preview"></a>
                         </div>
-                        {{-- <img src="/storage/{{ $certification->img_file_path }}" height="50" /> --}}
                     </td>
                 </tr>
                 @endforeach
