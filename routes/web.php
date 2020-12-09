@@ -207,6 +207,31 @@ Route::prefix('work-with-us')->group(function(){
     Route::get('introduction/introjob', function () {
         return view('workWithUs.introduction.introjob');
     })->name('work-with-us.introduction.introjob');
+
+    // 생산 production
+
+    // 영업 Sales
+    Route::get('introduction/interview-sales', function () {
+        return view('workWithUs.introduction.interviewSales');
+    });
+
+    //품질보증 Warranty
+    Route::get('introduction/interview-warranty', function () {
+        return view('workWithUs.introduction.interviewwarranty');
+    });
+
+    // 경영지원 businessSupport
+
+    // 생산지원 productionSupport
+
+    // R&D rnd
+
+    // 설비 equipment
+
+    // 환경안전 safety
+
+    // IT it
+
 });
 Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function(){
     // Route::resource('recruit', RecruitController::class);
