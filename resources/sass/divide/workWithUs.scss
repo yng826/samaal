@@ -646,6 +646,110 @@
     &__section {
         max-width: 1272px;
         margin: 0 auto;
+
+        &--tab {
+            width: 100%;
+            font-size: 0;
+
+            li {
+                display: inline-block;
+                position: relative;
+                width: calc(25% - 5px);
+                height: 67px;
+                margin-left: 5px;
+                background-color: #cdcdcd;
+                text-align: center;
+                cursor: pointer;
+                color: #fff;
+                font-size: 20px;
+                line-height: 67px;
+
+                &.on {
+                    color: $titleColor;
+                    background-color: #fff;
+                    color: $titleColor;
+                    font-weight: bold;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom:0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background-color: $titleColor;
+                    }
+
+                    &:hover {
+                        background-color: #fff;
+                    }
+                }
+
+                &:hover {
+                    background-color: #cccfdc;
+                }
+            }
+        }
+
+        &--list {
+            display: none;
+            padding-top: 59px;
+            padding-bottom: 83px;
+            font-size: 0;
+
+            &__item {
+                border: 1px solid #bcc0c2;
+                margin-bottom: 18px;
+                cursor: pointer;
+
+                .question-box {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    padding: 63px 50px 45px;
+                    background-color: #fff;
+                    box-sizing: border-box;
+
+                    .sortation {
+                        display: block;
+                        margin-bottom: 17px;
+                        color: #4a4a4a;
+                        font-size: 25px;
+                        font-weight: bold;
+                        line-height: 1;
+                    }
+
+                    .question {
+                        display: block;
+                        color: #4a4a4a;
+                        font-size: 22px;
+                        font-weight: 400;
+                        line-height: 28px;
+                    }
+                }
+
+                .answer {
+                    display: none;
+                    height: auto;
+                    padding: 39px 49px;
+                    border-top: 1px solid #999c9d;
+                    background-color: #d1e0ff;
+                    color: $titleColor;
+                    font-size: 22px;
+                    box-sizing: border-box;
+                }
+
+                &.on {
+                    .answer {
+                        display: block;
+                    }
+                }
+            }
+
+            &.on {
+                display: block;
+            }
+        }
     }
 }
 
@@ -1110,6 +1214,75 @@
             &--right {
                 margin-bottom: vw(100px);
                 padding-left: vw(570px);
+            }
+        }
+    }
+
+    /* FAQ */
+    .work-faq {
+
+        &__title {
+            padding: vw(72px 0);
+
+            h2 {
+                font-size: vw(40px);
+            }
+
+            p {
+                margin-top: vw(15px);
+                font-size: vw(20px);
+                line-height: vw(35px);
+            }
+        }
+
+        &__section {
+            max-width: vw(1272px);
+
+            &--tab {
+
+                li {
+                    width: calc(25% - #{vw(5px)});
+                    height: vw(67px);
+                    margin-left: vw(5px);
+                    font-size: vw(20px);
+                    line-height: vw(67px);
+
+                    &.on {
+
+                        &::after {
+                            height: vw(5px);
+                        }
+
+                    }
+                }
+            }
+
+            &--list {
+                padding-top: vw(59px);
+                padding-bottom: vw(83px);
+
+                &__item {
+                    margin-bottom: vw(18px);
+
+                    .question-box {
+                        padding: vw(63px 50px 45px);
+
+                        .sortation {
+                            margin-bottom: vw(17px);
+                            font-size: vw(25px);
+                        }
+
+                        .question {
+                            font-size: vw(22px);
+                            line-height: vw(28px);
+                        }
+                    }
+
+                    .answer {
+                        padding: vw(39px 49px);
+                        font-size: vw(22px);
+                    }
+                }
             }
         }
     }

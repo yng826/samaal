@@ -7,6 +7,7 @@ import common from './common';
 import about from './aboutUs';
 import business from './business';
 import siteIntro from './siteIntro';
+import work from './work';
 
 import Swiper from 'swiper/bundle';
 window.Swiper = Swiper;
@@ -50,6 +51,7 @@ const appMethods = {
     business,
     about,
     siteIntro,
+    work
 };
 
 const appInit = () => {

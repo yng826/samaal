@@ -15,9 +15,17 @@
             "{{ $keyword }}"에 대해 <br/> 총 {{ count($keywords) }}건의 검색결과가 있습니다.
         </div>
         <div class="contents-wrap__section">
-            <button type="button" id="category-0">전체</button>
+            <button type="button" id="category-0">전체 {{ count($keywords) }} ||</button>
             @foreach ($categorys as $category)
-            <button type="button" id="category-{{ $category->id }}">{{ $category->name }}</button>
+                @php
+                    $array =  "";
+                @endphp
+                @if (isset(array_count_values(array_column($keywords, 'id'))[$category->id]))
+                    @php
+                        $array =  array_count_values(array_column($keywords, 'id'))[$category->id];
+                    @endphp
+                @endif
+                <button type="button" id="category-{{ $category->id }}">{{ $category->name }} {{ $array }}</button> ||
             @endforeach
         </div>
         <div class="contents-wrap__section">
