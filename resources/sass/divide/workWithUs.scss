@@ -838,6 +838,7 @@
         max-width: 1406px;
         margin: 0 auto;
         padding: 60px 0;
+        font-size: 0;
 
         &--item {
             display: inline-block;
@@ -933,7 +934,139 @@
             }
         }
     }
+
+    /* 채용공고 상세 */
+    &__detail {
+        background-color: #e8ecef;
+        text-align: center;
+
+        &-wrap {
+            max-width: 1302px;
+            margin: 50px auto 50px;
+            padding: 90px 174px 100px;
+            background-color: #fff;
+        }
+
+        .comer-box {
+            width: 100%;
+            text-align: center;
+            font-size: 0;
+
+            span {
+                display: inline-block;
+                padding: 0 10px;
+                color: #4a4a4a;
+                font-size: 20px;
+                font-weight: 400;
+                vertical-align: middle;
+                line-height: 1;
+
+                &.on {
+                    font-weight: bolder;
+                }
+
+                &:first-child {
+                    position: relative;
+                }
+
+                &:first-child::after {
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 2px;
+                    height: 22px;
+                    background-color: #4a4a4a;
+                }
+            }
+        }
+
+        h3 {
+            display: block;
+            width: 100%;
+            padding: 19px 0 14px;
+            font-size: 40px;
+            color: $titleColor;
+            line-height: 1;
+            border-bottom: 2px solid #d7d7d7;
+            letter-spacing: -1.4px;
+            line-height: 53px;
+        }
+
+        .keywords {
+            margin-top: 18px;
+            line-height: 1;
+
+            li {
+                display: inline-block;
+                font-size: 18px;
+                color: #4a4a4a;
+                line-height: 1;
+            }
+        }
+
+        &-list {
+            margin-top: 49px;
+
+            &--item {
+                display: inline-block;
+                width: calc(50% - 50px);
+                vertical-align: top;
+                font-size: 0;
+
+                dt {
+                    display: inline-block;
+                    color: #4a4a4a;
+                    font-size: 18px;
+                    font-weight: bold;
+                    vertical-align: top;
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 2px;
+                        height: 16px;
+                        margin: 0 6px;
+                        background-color: #4a4a4a;
+                        vertical-align: middle;
+                    }
+                }
+
+                dd {
+                    display: inline-block;
+                    color: #4a4a4a;
+                    font-size: 18px;
+                    font-weight: 400;
+                    vertical-align: top;
+                    word-break: keep-all;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 40px;
+                    color: #4a4a4a;
+                    word-break: keep-all;
+                }
+            }
+
+            &--title {
+                display: inline-block;
+                padding-top: 11px;
+                margin-bottom: 30px;
+                color: #010101;
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 1;
+                border-top: 3px solid #000;
+            }
+        }
+    }
+
 }
+
+
+
 
 
 
