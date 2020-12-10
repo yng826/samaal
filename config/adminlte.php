@@ -252,6 +252,11 @@ return [
             'url'  => 'admin/sitemap',
             'icon' => 'fas fa-fw fa-bars',
         ],
+        [
+            'text' => '카테고리 관리',
+            'url'  => 'admin/category',
+            'icon' => 'fas fa-fw fa-bars',
+        ],
         ['header' => '회사정보'],
         [
             'text' => '재무정보 관리',

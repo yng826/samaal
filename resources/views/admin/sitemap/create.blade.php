@@ -49,6 +49,15 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="">통합 검색 카테고리</label>
+                            <select class="form-control w-auto" name="category_id">
+                                <option value="0">::선택::</option>
+                                @foreach ($categorys as $category)
+                                    <option value="{{ $category->id }}" {{ isset($sitemap) && $sitemap->category_id == $category->id ? 'selected' :''}}>{{ $category->category }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Depth</label>
                             <input type="text" class="form-control" name="depth" value="{{ isset($depth) ? $depth+1 : $sitemap->depth }}" readonly>
                         </div>
@@ -65,17 +74,6 @@
                             <div class="form-check">
                               <input class="form-check-input" type="radio" id="is_front2" name="is_front" value="0" {{ isset($sitemap) && $sitemap->is_front == 0 ? 'checked' :''}}>
                               <label for="is_front2" class="form-check-label">아니오</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>통합검색 카테고리 노출</label>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="is_search_category1" name="is_search_category" value="1" {{ isset($sitemap) && $sitemap->is_search_category == 1 ? 'checked' :''}}>
-                              <label for="is_search_category1" class="form-check-label">예</label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="is_search_category2" name="is_search_category" value="0" {{ isset($sitemap) && $sitemap->is_search_category == 0 ? 'checked' :''}}>
-                              <label for="is_search_category2" class="form-check-label">아니오</label>
                             </div>
                         </div>
 
@@ -181,10 +179,6 @@ const sitemap_create = () => {
 
         } else if ($('input[name=is_front]:checked').val() == '' || $('input[name=is_front]:checked').val() == null) {
             alert('사이트 노출을 선택해주세요.');
-            return false;
-
-        } else if ($('input[name=is_search_category]:checked').val() == '' || $('input[name=is_search_category]:checked').val() == null) {
-            alert('통합검색 카테고리 노출을 선택해주세요.');
             return false;
         }
         return true;

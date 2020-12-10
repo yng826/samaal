@@ -15,7 +15,9 @@ use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardControlle
 use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
 use App\Http\Controllers\Faq\FaqController as FaqController;
 use App\Http\Controllers\Other\SearchController as SearchController;
+use App\Http\Controllers\Other\SitemapController as SitemapController;
 use App\Http\Controllers\Iso\IsoCertificationController as IsoCertificationController;
+use App\Http\Controllers\category\CategoryController as CategoryController;
 
 use App\Http\Controllers\aboutUs\StoryNewsController as StoryNewsController;
 use App\Http\Controllers\IR\FinanceController;
@@ -276,6 +278,7 @@ Route::prefix('work-with-us')->group(function () {
 
 Route::prefix('other')->group(function () {
     Route::get('search', [SearchController::class, 'index']);
+    Route::get('sitemap', [SitemapController::class, 'index']);
 });
 
 Route::prefix('faq')->group(function () {
@@ -331,6 +334,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('question_admin', Admin\QuestionAdminController::class);
     Route::get('question_admin/{id}', [QuestionAdminController::class, 'show'])
     ->where('id', '[0-9]+');
+
+    Route::resource('category', Admin\CategoryController::class);
 });
 
 Auth::routes();
