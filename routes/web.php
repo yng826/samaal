@@ -21,6 +21,7 @@ use App\Http\Controllers\category\CategoryController as CategoryController;
 
 use App\Http\Controllers\aboutUs\StoryNewsController as StoryNewsController;
 use App\Http\Controllers\IR\FinanceController;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 /*
@@ -356,4 +357,24 @@ Route::get('/test', function() {
 
 Route::get('session', function () {
     return Session::get('access_token');
+});
+
+Route::get('send', function () {
+
+    // dd(config('mail.mailers.smtp.encryption'));
+
+    $user = [
+        'email'=>'yng826@gmail.com',
+        'name'=>'이혁'
+    ];
+
+    $data = [
+        'name' => '이혁',
+        'content' => '입사지원하셨습니다'
+    ];
+
+    Mail::send('emails.mail', $data, function($message) use ($user) {
+        $message->from(config('mail.mailers.smtp.username'), 'SAMA');
+        $message->to($user['email'], $user['name'])->subject('Welcome!');
+    });
 });
