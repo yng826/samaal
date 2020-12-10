@@ -841,9 +841,96 @@
 
         &--item {
             display: inline-block;
+            padding: 50px 70px;
             width: calc(50% - 28px);
-            margin-left: 20px;
+            margin: 0 0 20px 20px;
             background-color: #fff;
+            border: 1px solid #bcc0c2;
+            box-sizing: border-box;
+            text-align: center;
+
+            .comer-box {
+                width: 100%;
+                text-align: center;
+                font-size: 0;
+
+                span {
+                    display: inline-block;
+                    padding: 0 10px;
+                    color: #4a4a4a;
+                    font-size: 20px;
+                    font-weight: 400;
+                    vertical-align: middle;
+                    line-height: 1;
+
+                    &.on {
+                        font-weight: bolder;
+                    }
+
+                    &:first-child {
+                        position: relative;
+                    }
+
+                    &:first-child::after {
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 2px;
+                        height: 22px;
+                        background-color: #4a4a4a;
+                    }
+                }
+            }
+
+            h3 {
+                display: block;
+                width: 100%;
+                padding: 19px 0 14px;
+                font-size: 40px;
+                color: $titleColor;
+                line-height: 1;
+                border-bottom: 2px solid #d7d7d7;
+                letter-spacing: -1.4px;
+            }
+
+            .keywords {
+                margin-top: 18px;
+                line-height: 1;
+
+                li {
+                    display: inline-block;
+                    font-size: 18px;
+                    color: #4a4a4a;
+                    line-height: 1;
+                }
+            }
+
+            .date-range {
+                display: block;
+                margin-top: 29px;
+                color: #010101;
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 1;
+            }
+
+            .btn-link {
+                display: block;
+
+                a {
+                    display: inline-block;
+                    width: 220px;
+                    margin-top: 49px;
+                    padding: 27px 0;
+                    color: #fff;
+                    font-size: 25px;
+                    font-weight: bold;
+                    line-height: 1;
+                    background-color: $titleColor;
+                }
+            }
         }
     }
 }
@@ -1286,6 +1373,106 @@
             }
         }
     }
+
+    /* 채용공고 */
+    .work-recruit {
+        &__title {
+            padding: vw(57px 0);
+
+            h2 {
+                font-size: vw(40px);
+            }
+
+            p {
+                font-size: vw(20px);
+                line-height: vw(35px);
+
+            }
+        }
+
+        &__search {
+            width: vw(462px);
+            margin: vw(27px auto 26px);
+
+            &--wrap {
+                width: vw(462px);
+                height: vw(65px);
+                padding-left: vw(26px);
+                padding-right: vw(72px);
+                border: vw(5px) solid $titleColor;
+
+                input {
+                    font-size: vw(25px);
+                }
+
+                .btn-search {
+                    width: vw(72px);
+                    height: vw(56px);
+                    background: url("/images/work/icon_search.png") no-repeat center  / vw(36px);
+                }
+            }
+
+            &--text {
+                padding-top: vw(15px);
+                font-size: vw(18px);
+            }
+
+        }
+
+        &__list {
+            max-width: vw(1406px);
+            padding: vw(60px 0);
+
+            &--item {
+                padding: vw(50px 70px);
+                width: calc(50% - #{vw(28px)});
+                margin: vw(0 0 20px 20px);
+
+                .comer-box {
+                    span {
+                        padding: vw(0 10px);
+                        font-size: vw(20px);
+
+                        &:first-child::after {
+                            width: vw(2px);
+                            height: vw(22px);
+                        }
+                    }
+                }
+
+                h3 {
+                    padding: vw(19px 0 14px);
+                    font-size: vw(40px);
+                    border-bottom: vw(2px) solid #d7d7d7;
+                    letter-spacing: vw(-1.4px);
+                }
+
+                .keywords {
+                    margin-top: vw(18px);
+
+                    li {
+                        font-size: vw(18px);
+                    }
+                }
+
+                .date-range {
+                    margin-top: vw(29px);
+                    font-size: vw(25px);
+                }
+
+                .btn-link {
+
+                    a {
+                        width: vw(220px);
+                        margin-top: vw(49px);
+                        padding: vw(27px 0);
+                        font-size: vw(25px);
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 /*태블릿 세로 사이즈*/
