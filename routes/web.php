@@ -224,17 +224,34 @@ Route::prefix('work-with-us')->group(function(){
     });
 
     // 경영지원 businessSupport
+    Route::get('introduction/interview-businessSupport', function () {
+        return view('workWithUs.introduction.interviewbusinessSupport');
+    });
 
     // 생산지원 productionSupport
+    Route::get('introduction/interview-productionSupport', function () {
+        return view('workWithUs.introduction.interviewproductionSupport');
+    });
 
     // R&D rnd
+    Route::get('introduction/interview-rnd', function () {
+        return view('workWithUs.introduction.interviewrnd');
+    });
 
     // 설비 equipment
+    Route::get('introduction/interview-equipment', function () {
+        return view('workWithUs.introduction.interviewequipment');
+    });
 
     // 환경안전 safety
+    Route::get('introduction/interview-safety', function () {
+        return view('workWithUs.introduction.interviewsafety');
+    });
 
     // IT it
-
+    Route::get('introduction/interview-it', function () {
+        return view('workWithUs.introduction.interviewit');
+    });
 });
 Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function(){
     // Route::resource('recruit', RecruitController::class);

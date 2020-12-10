@@ -38,14 +38,14 @@
         "resolve-url-loader": "^2.3.1",
         "sass-loader": "^8.0.0",
         "simple-lightbox": "^2.1.0",
-        "sweetalert2": "^10.11.1",
-        "swiper": "^6.3.5",
+        "sweetalert2": "^10.12.4",
+        "swiper": "^6.4.1",
         "vue": "^2.5.17",
         "vue-spinner": "^1.0.4",
         "vue-template-compiler": "^2.6.10",
         "vuedraggable": "^2.24.3",
         "vuejs-datepicker": "^1.6.2",
-        "vuetify": "^2.3.19",
+        "vuetify": "^2.3.21",
         "vuetify-draggable-treeview": "^0.0.6",
         "vuex": "^3.6.0"
     }

@@ -30,7 +30,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀 : 생산팀, 생산관리팀</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-production" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
@@ -50,7 +50,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀 : 국내영업팀, 해외영업팀, 부산사무소, 영업관리팀</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-sales" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
@@ -71,7 +71,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀 : 품질관리팀, 품질환경사무국</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-warranty" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
@@ -94,7 +94,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀 : 기획감사팀, 총무팀, 경리팀, 구매팀</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-businessSupport" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
@@ -112,7 +112,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀: 관리팀, 노무팀</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-productionSupport" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
@@ -128,7 +128,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀: 생산기술팀, 연구개발팀</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-rnd" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
@@ -145,7 +145,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀: 설비기술팀, 관리기술팀, 보전팀</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-equipment" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
@@ -158,7 +158,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀 : 환경안전팀</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-safety" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
@@ -175,7 +175,7 @@
                         </li>
                     </ul>
                     <span class="text-team">소속팀 : 환경안전팀</span>
-                    <a href="#" class="btn-link">직무 인터뷰 보기</a>
+                    <a href="/work-with-us/introduction/interview-it" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
         </ul>
