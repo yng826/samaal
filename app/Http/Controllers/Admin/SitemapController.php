@@ -31,8 +31,11 @@ class SitemapController extends Controller
      */
     public function create(Request $request)
     {
+        $categorys = DB::table('sitemap_categorys')->get();
+
         $action = '/admin/sitemap';
         return view('admin.sitemap.create', [
+            'categorys' => $categorys,
             'parent_id' => $request->parent_id,
             'depth' => $request->depth,
             'action' => $action,
@@ -50,13 +53,13 @@ class SitemapController extends Controller
         $saved = DB::table('sitemaps')
                 ->insert([
                     'order_id'=> 0,
+                    'category_id'=> $request->category_id,
                     'name'=> $request->name,
                     'url'=> $request->url,
                     'sitemap_type'=> $request->sitemap_type,
                     'depth'=> $request->depth,
                     'parent_id'=> $request->parent_id,
                     'is_front'=> $request->is_front,
-                    'is_search_category' => $request->is_search_category,
                     'created_at' => now()
                 ]);
 
@@ -82,11 +85,14 @@ class SitemapController extends Controller
      */
     public function edit($id)
     {
+        $categorys = DB::table('sitemap_categorys')->get();
+
         $sitemap = DB::table('sitemaps')->where('id', $id)->first();
         $sitemap_keywords = DB::table('sitemap_keywords')->where('sitemap_id', $id)->get();
         $action = "/admin/sitemap/{$id}";
 
         return view('admin.sitemap.create', [
+            'categorys'=> $categorys,
             'sitemap'=> $sitemap,
             'sitemap_keywords'=> $sitemap_keywords,
             'action'=> $action,
@@ -105,13 +111,13 @@ class SitemapController extends Controller
         $affected = DB::table('sitemaps')
                     ->where('id', $id)
                     ->update([
+                        'category_id'=> $request->category_id,
                         'name' => $request->name,
                         'url' => $request->url,
                         'sitemap_type' => $request->sitemap_type,
                         'depth' => $request->depth,
                         'parent_id' => $request->parent_id,
                         'is_front' => $request->is_front,
-                        'is_search_category' => $request->is_search_category,
                         'updated_at' => now(),
                     ]);
 
