@@ -25,7 +25,6 @@
                     <ul>
                         @foreach ($recruits as $item)
                         <li class="work-recruit__list--item">
-
                             <div class="comer-box">
                                 <span class="on">신입</span>
                                 <span>영업</span>
@@ -41,7 +40,9 @@
                             <div class="date-range">
                                 {{ $item->start_date }} ~ {{ $item->end_date }}
                             </div>
-                            <a href="#" class="btn-link">자세히보기</a>
+                            <div class="btn-link">
+                                <a href="#">자세히보기</a>
+                            </div>
                         </li>
                         @endforeach
                     </ul>
