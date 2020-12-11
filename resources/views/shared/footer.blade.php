@@ -4,43 +4,18 @@
         <h1 class="footer__logo">SAMA</h1>
         <div class="footer__nav">
             <ul class="footer__nav-list">
+                @foreach ($treeSitemap as $sitemap)
                 <li class="footer__nav-list--item">
-                    <h3>About Us</h3>
+                    <h3>{{ $sitemap->name }}</h3>
                     <ul>
-                        <li><a href="/">Heritage</a></li>
-                        <li><a href="/about-us/ceo">Message</a></li>
-                        <li><a href="/about-us/story-news">Story & News</a></li>
-                        <li><a href="/about-us/ir/financial/consolidated">재무정보</a></li>
-                        <li><a href="/about-us/location/seoul">Location</a></li>
+                    @if(isset($sitemap->children) && count($sitemap->children) > 0)
+                        @foreach($sitemap->children as $children)
+                            <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
+                        @endforeach
+                    @endif
                     </ul>
                 </li>
-                <li class="footer__nav-list--item">
-                    <h3>For Business Partners</h3>
-                    <ul>
-                        <li><a href="/business/foil/foil">알루미늄 호일</a></li>
-                        <li><a href="/">포장재</a></li>
-                        <li><a href="/">산업/건축용</a></li>
-                        <li><a href="/">Speciality</a></li>
-                        <li><a href="/">Innovation</a></li>
-                    </ul>
-                </li>
-                <li class="footer__nav-list--item">
-                    <h3>Work With Us</h3>
-                    <ul>
-                        <li><a href="/">채용공고</a></li>
-                        <li><a href="/">직무소개</a></li>
-                        <li><a href="/">FAQ</a></li>
-                    </ul>
-                </li>
-                <li class="footer__nav-list--item">
-                    <h3>Others</h3>
-                    <ul>
-                        <li><a href="#">사이트맵</a></li>
-                        <li><a href="#">통합검색</a></li>
-                        <li><a href="#">통합문의</a></li>
-                        <li><a href="#">약관 및 정책</a></li>
-                    </ul>
-                </li>
+                @endforeach
             </ul>
         </div>
         <div class="footer__inner">
