@@ -10,8 +10,8 @@
 @endsection
 
 @section('swiper-container')
-    <div class="swiper-slide"><img src="https://via.placeholder.com/750X420" alt=""></div>
-    <div class="swiper-slide"><img src="https://via.placeholder.com/750X420" alt=""></div>
+    <div class="swiper-slide"><div class="slide-img" style="background-image:url(/images/business/foil/img_alu.jpg);"></div></div>
+    <div class="swiper-slide"><div class="slide-img" style="background-image:url(/images/business/foil/img_alu_hover.jpg);"></div></div>
 @endsection
 
 @section('info__title')
