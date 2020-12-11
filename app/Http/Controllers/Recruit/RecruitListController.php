@@ -36,6 +36,7 @@ class RecruitListController extends Controller
         */
 
         return view('workWithUs.recruit.list', [
+            'keyword' => $keyword,
             'recruits' => $recruits,
             'pageClass' => 'work-apply',
         ]);
