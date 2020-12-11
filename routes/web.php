@@ -180,9 +180,10 @@ Route::prefix('business')->group(function() {
         $data['question_title'] = '알루미늄 페이스트';
         return view('business.industry.paste', $data);
     });
-    Route::get('speciality/process', function () {
+    Route::get('speciality/process/{type?}', function ($no = 1) {
         $data = [];
         $data['question_title'] = '공정과정';
+        $data['no'] = $no;
         return view('business.speciality.process', $data);
     });
     Route::get('innovation/rnd', function () {

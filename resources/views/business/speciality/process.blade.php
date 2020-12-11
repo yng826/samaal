@@ -12,9 +12,9 @@
     <div class="contents-wrap__section speciality-process__contents">
         <div class="speciality-process__tab">
             <ul>
-                <li data-id="content-01" class="speciality-process__tab--item on">압연</li>
-                <li data-id="content-02" class="speciality-process__tab--item">가공</li>
-                <li data-id="content-03" class="speciality-process__tab--item">알루미늄페이스트</li>
+                <li data-id="content-01" class="speciality-process__tab--item {{ $no==1 ? 'on' : '' }}">압연</li>
+                <li data-id="content-02" class="speciality-process__tab--item {{ $no==2 ? 'on' : '' }}">가공</li>
+                <li data-id="content-03" class="speciality-process__tab--item {{ $no==3 ? 'on' : '' }}">알루미늄페이스트</li>
             </ul>
         </div>
         <div class="content-01 speciality-process__tab-content on process-layout">
