@@ -52,11 +52,11 @@
                         </dl>
                         <dl>
                             <dt>접수방법</dt>
-                            <dd>삼아 웹사이트 접속 후 채용 페이지<br><em>‘Work With Us’에서 온라인 지원</em></dd>
+                            <dd>삼아 웹사이트 접속 후 채용 페이지<br><em class="main-color text-bold">‘Work With Us’에서 온라인 지원</em></dd>
                         </dl>
                         <dl>
                             <dt>합격자 확인</dt>
-                            <dd>삼아 웹사이트 내 ‘지원결과 확인’ 메뉴에서 확인 가능 </dd>
+                            <dd>삼아 웹사이트 내 ‘지원결과 확인’ <br>메뉴에서 확인 가능 </dd>
                         </dl>
                     </li>
 
@@ -68,8 +68,8 @@
                     <li class="work-recruit__detail-list--item">
                         <h4 class="work-recruit__detail-list--title">지원 자격</h4>
                         <p>- 기졸업 및 2022년 2월 졸업 예정자 </p>
-                        <p>- 병역면제 혹은 병역을 마친 자,해외 출장에 결격 사유가 없는 자</p>
-                        <p>- 국가등록장애인 및 국가보훈대상자는 관계법령에 의해 우대 </p>
+                        <p>- 병역면제 혹은 병역을 마친 자,<br>해외 출장에 결격 사유가 없는 자</p>
+                        <p>- 국가등록장애인 및 국가보훈대상자는<br> 관계법령에 의해 우대 </p>
                     </li>
                     <li class="work-recruit__detail-list--item">
                         <h4 class="work-recruit__detail-list--title">채용 문의</h4>
@@ -79,14 +79,17 @@
                 <div class="work-recruit__detail-list--bottom">
                     <h4 class="work-recruit__detail-list--title">진행절차</h4>
                     <ul class="procedure">
-                        <li>입사지원</li>
-                        <li>서류전형</li>
-                        <li>면접전형<em>(AI면접포함)</em></li>
-                        <li>채용검진</li>
-                        <li>최종합격</li>
+                        <li><span>입사지원</span></li>
+                        <li><span>서류전형</span></li>
+                        <li><span>면접전형<em>(AI면접포함)</em></span></li>
+                        <li><span>채용검진</span></li>
+                        <li><span>최종합격</span></li>
                     </ul>
                 </div>
-
+            </div>
+            <div class="work-recruit__detail--button">
+                <a href="#" class="but-apply">지원하기</a>
+                <a href="#" class="but-revise">지원내역 확인 및 수정</a>
             </div>
         </div>
     </div>
