@@ -24,7 +24,7 @@
                             <ul>
                             @if (isset($sitemap->children[$i]->children))
                                 @foreach ($sitemap->children[$i]->children as $depth3)
-                                    <li><a href="{{ $depth3->url }}">{{ $depth3->name }}</a></li>
+                                    <li><a href="{{ $depth3->url }}">{!! str_replace(' > ', '<br/>', $depth3->name) !!}</a></li>
                                 @endforeach
                             @endif
                             </ul>
