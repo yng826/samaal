@@ -517,8 +517,12 @@
 }
 
 /* 문의하기 팝업 */
+.all-q-pop{
+    margin-top: 250px !important;
+}
 .question-pop {
     width: 610px;
+    margin-top: 50px;
 
     &__title {
         margin-top: 7px;
@@ -552,6 +556,30 @@
             color: #010101;
             font-size: 20px;
             line-height: 1;
+        }
+
+        select {
+            display: block;
+            width: 100%;
+            padding: 0 30px;
+            background-color: #e8ecef;
+            color: #000;
+            border-radius: 5px;
+            border: none;
+            height: 65px;
+
+            &::placeholder {
+                font-size: 18px;
+                color: #9f9f9f;
+            }
+
+            &::-webkit-input-placeholder {
+                color: #9f9f9f;
+            }
+
+            &:-ms-input-placeholder  {
+                color: #9f9f9f;
+            }
         }
 
         input {
@@ -1506,7 +1534,6 @@
     /* 문의하기 팝업 */
     .question-pop {
         width: vw(610px);
-
         &__title {
             margin-top: vw(7px);
 
@@ -1538,6 +1565,16 @@
                 &[type=text] {
                     height: vw(65px);
                 }
+
+                &::placeholder {
+                    font-size: vw(18px);
+                }
+            }
+
+            select {
+                padding: 0 vw(30px);
+                border-radius: vw(5px);
+                height: vw(65px);
 
                 &::placeholder {
                     font-size: vw(18px);
