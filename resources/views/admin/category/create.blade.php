@@ -30,6 +30,10 @@
                             <input type="text" class="form-control" name="category" value="{{$category->category ?? ''}}">
                             <input type="hidden" class="form-control" name="id" value="{{$category->id ?? 0}}">
                         </div>
+                        <div class="form-group">
+                            <label for="">순번</label>
+                            <input type="text" class="form-control" name="order_id" value="{{$category->order_id ?? ''}}">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,6 +84,10 @@
             if ($('input[name=category]').val() == '' || $('input[name=category]').val() == null) {
                 alert('카테고리를 선택해주세요.');
                 $('input[name=category]').focus();
+                return false;
+            }else if ($('input[name=order_id]').val() == '' || $('input[name=order_id]').val() == null) {
+                alert('순번을 선택해주세요.');
+                $('input[name=order_id]').focus();
                 return false;
             }
             return true;

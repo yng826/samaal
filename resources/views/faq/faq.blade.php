@@ -57,14 +57,55 @@
 
             <div class="work-faq__section--list work-faq-02">
                 <!-- 채용절차 질문 리스트-->
+                @foreach ($faqs as $faq)
+                    @if ($faq->category_id == 1)
+                    <div class="work-faq__section--list__item">
+                        <div class="question-box">
+                            <div class="sortation">
+                                채용절차
+                            </div>
+                            <div class="question">{{ $faq->question }}</div>
+                        </div>
+
+                        <div class="answer">{!! nl2br(e($faq->answer)) !!}</div>
+                    </div>
+                    @endif
+                @endforeach
             </div>
 
             <div class="work-faq__section--list work-faq-03">
                 <!-- 지원서 작성/수정 질문 리스트-->
+                @foreach ($faqs as $faq)
+                    @if ($faq->category_id == 2)
+                    <div class="work-faq__section--list__item">
+                        <div class="question-box">
+                            <div class="sortation">
+                                지원서 작성/수정
+                            </div>
+                            <div class="question">{{ $faq->question }}</div>
+                        </div>
+
+                        <div class="answer">{!! nl2br(e($faq->answer)) !!}</div>
+                    </div>
+                    @endif
+                @endforeach
             </div>
 
             <div class="work-faq__section--list work-faq-04">
                 <!-- 기타 질문 리스트-->
+                @foreach ($faqs as $faq)
+                    @if ($faq->category_id == 3)
+                    <div class="work-faq__section--list__item">
+                        <div class="question-box">
+                            <div class="sortation">
+                                기타
+                            </div>
+                            <div class="question">{{ $faq->question }}</div>
+                        </div>
+                        <div class="answer">{!! nl2br(e($faq->answer)) !!}</div>
+                    </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </main>

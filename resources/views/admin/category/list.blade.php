@@ -22,6 +22,7 @@
                         <tr>
                             <th class="text-center" style="width: 80px;">번호</th>
                             <th class="text-center">카테고리명</th>
+                            <th class="text-center">순번</th>
                             <th class="text-center">등록/수정일</th>
                             <th class="text-center" style="width: 80px;">관리</th>
                         </tr>
@@ -30,6 +31,7 @@
                         <tr>
                             <td class="text-center">{{ $category->id }}</td>
                             <td class="text-center">{{ $category->category }}</td>
+                            <td class="text-center">{{ $category->order_id }}</td>
                             <td class="text-center">{{ $category->updated_at ?? $category->created_at}}</td>
                             <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/category/{{$category->id}}/edit">수정</a></td>
                         </tr>

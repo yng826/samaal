@@ -15,39 +15,42 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {
-        $categorys = DB::table('sitemaps')->where('is_search_category', true)->orderBy('order_id')->get();
+        $categorys = DB::table('sitemap_categorys')->orderBy('order_id')->get();
 
         $newKeywords = [];
+        $newCategoryKeywords = [];
         if(!empty($request->keyword)) {
             $sitemaps = DB::table('sitemaps')->orderBy('order_id')->get();
 
-            $ids = [];
-            if($request->category > 0) {
-                $ids = explode(',', $this->ids($sitemaps, $request->category). $request->category);
-            }
 
             $keywords = DB::table('sitemap_keywords')
-                        ->join('sitemaps', 'sitemap_keywords.sitemap_id', '=', 'sitemaps.id')
-                        ->where('sitemap_keywords.keyword', 'LIKE', '%'. $request->keyword. '%')
-                        ->when(!empty($ids), function ($query) use ($ids) {
-                            return $query->whereIn('sitemap_keywords.sitemap_id', $ids);
-                        })
-                        ->when(empty($ids), function ($query) {
-                            return $query->whereRaw('LENGTH(sitemaps.url) > 2');
-                        })
-                        ->select('sitemaps.*', 'sitemap_keywords.keyword')
-                        ->orderBy('order_id')->get();
+                            ->join('sitemaps', 'sitemap_keywords.sitemap_id', '=', 'sitemaps.id')
+                            ->where('sitemap_keywords.keyword', 'LIKE', '%'. $request->keyword. '%')
+                            ->whereRaw('LENGTH(sitemaps.url) > 2')
+                            ->select('sitemaps.*', 'sitemap_keywords.keyword')
+                            ->orderBy('order_id')->get();
 
             foreach ($keywords as $keyword) {
                 $names = $this->names($sitemaps, $keyword->parent_id). $keyword->name;
-
                 $keyword->names = $names;
-                $newKeywords[] = $keyword;
+
+                $newCategoryKeywords[] = $keyword;
+
+                if($request->category > 0){
+                    if($keyword->category_id == $request->category){
+                        $newKeywords[] = $keyword;
+                    }
+                }else{
+                    $newKeywords[] = $keyword;
+                }
             }
+            debug($newKeywords);
+            debug($newCategoryKeywords);
         }
 
         return view('other.search', [
             'keyword' => $request->keyword,
+            'categoryKeywords' => $newCategoryKeywords,
             'categorys' => $categorys,
             'keywords' => $newKeywords,
         ]);

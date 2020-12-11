@@ -48,12 +48,14 @@ class CategoryController extends Controller
                     ->where('id', $request->id)
                     ->update([
                         'category'=> $request->category,
+                        'order_id'=> $request->order_id,
                         'updated_at' => now(),
                     ]);
         }else{
             $saved = DB::table('sitemap_categorys')
             ->insert([
                 'category'=> $request->category,
+                'order_id'=> $request->order_id,
                 'created_at' => now()
             ]);
         }
@@ -93,6 +95,7 @@ class CategoryController extends Controller
 
         return view('admin.category.create', [
             'category'=> $category,
+            'order_id'=> $request->order_id,
             'action'=> $action,
         ]);
     }
