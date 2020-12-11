@@ -41,7 +41,7 @@
                 </div>
             </div>
             <!-- 문의하기 팝업 -->
-            <div class="question-pop layer-popup">
+            <div class="question-pop layer-popup q-pop">
                 <button class="question-pop__close-btn layer-popup__close-btn" type="button">닫기</button>
                 <div class="question-pop__title">
                     <h3>문의하기</h3>
@@ -50,17 +50,17 @@
                     <ul>
                         <li>
                             <h4>제품명</h4>
-                            <input type="hidden" class="form-control" name="title" value="{{ $question_title }}">
-                            <input type="hidden" class="form-control" name="category" value="{{ $question_title }}">
-                            <input type="text" class="form-control" id="category" value="{{ $question_title }}" disabled>
+                            <input type="hidden" class="form-control" name="title" id="title" value="{{ $question_title }}">
+                            <input type="hidden" class="form-control" name="category" id="category" value="{{ $question_title }}">
+                            <input type="text" class="form-control" id="category1" value="{{ $question_title }}" disabled>
                         </li>
                         <li>
                             <h4>작성자 메일 주소</h4>
-                            <input type="text" class="form-control" name="email" placeholder="입력해주세요.">
+                            <input type="text" class="form-control" name="email" id="email" placeholder="입력해주세요.">
                         </li>
                         <li>
                             <h4>내용</h4>
-                            <textarea rows="5" class="form-control tinymce-editor" name="question" placeholder="입력해주세요."></textarea>
+                            <textarea rows="5" class="form-control tinymce-editor" name="question" id="question" placeholder="입력해주세요."></textarea>
                         </li>
                         <li>
                             <h4>개인정보 이용 및 수집 동의</h4>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="question-pop__form-check">
                                 <label class="question-pop__form-check--label">
-                                    <input class="form-check" type="checkbox" name="agree">
+                                    <input class="form-check" type="checkbox" name="agree" id="agree">
                                     <span>개인정보 이용 및 수집에 동의 합니다.</span>
                                 </label>
                             </div>

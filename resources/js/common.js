@@ -59,9 +59,15 @@ const common = () => {
     }
 
     const question_pop = () => {
-        $('.question-btn').on('click', function (e) {
-            e.preventDefault();
-            alert();
+
+        $('.question-btn').on('click', function () {
+            $(".all-q-pop").show();
+            $(".popup-mask").show();
+        });
+
+        $(".all-popup-mask , .layer-popup__close-btn").on("click",function(){
+            $(".layer-popup").hide();
+            $(".popup-mask").hide();
         });
     }
 

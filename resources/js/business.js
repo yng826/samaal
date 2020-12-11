@@ -29,7 +29,7 @@ const business = () => {
     // business 문의하기 팝업
     const questionPop = () => {
         $(".btn-question").on("click",function(){
-            $(".question-pop").show();
+            $(".q-pop").show();
             $(".popup-mask").show();
         });
 
