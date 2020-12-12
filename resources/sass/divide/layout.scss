@@ -534,7 +534,7 @@
     .footer {
         &__wrap {
             // max-width: vw(1613px);
-            padding: vw(90px 20px 70px);
+            padding: vw(90px 30px 70px);
         }
 
         &__logo {
@@ -688,11 +688,154 @@
 /* 태블릿 세로, 가로 사이즈 */
 @media all and (min-width: 768px) and (max-width: 1024px)  {
     @import "./lib/webvw";
-    .footer {
-        &__inner {
-            .question-btn {
-                width: vw(200px);
+
+    .header {
+        height: vw(180px);
+        padding: 0 vw(80px);
+
+        &__logo {
+
+            img {
+                height: vw(52px);
             }
+        }
+
+        &__nav {
+
+            &--item {
+                padding: 0 vw(40px);
+
+                span {
+                    font-size: vw(30px);
+                }
+
+                &.on {
+
+                    &::after {
+                        height: vw(10px);
+                    }
+
+                    .header__nav--submenu {
+                        width: vw(550px);
+
+                        li {
+                            height: vw(82px);
+                            padding-left: vw(38px);
+                            font-size: vw(30px);
+                            line-height: vw(82px);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__search {
+            ul {
+                margin-right: vw(58px);
+            }
+
+            li {
+                padding-left: vw(40px);
+
+                &:first-child {
+                    &::before {
+                        border-top:vw(16px) solid #000;
+                        border-left:vw(10px) solid transparent;
+                        border-right:vw(10px) solid transparent;
+                    }
+                    &.on {
+                        &::before {
+                            border-bottom:vw(16px) solid #000;
+                            border-left:vw(10px) solid transparent;
+                            border-right:vw(10px) solid transparent;
+                        }
+                    }
+                }
+            }
+
+            a {
+                font-size: vw(38px);
+            }
+
+            .btn-search {
+                width: vw(64px);
+                height: vw(64px);
+            }
+        }
+    }
+
+    .footer {
+
+        &__nav-list {
+            &--item {
+
+                h3 {
+                    font : {
+                        size: vw(36px);
+                    }
+                }
+                a {
+                    margin-bottom: vw(24px);
+                    font : {
+                        size: vw(36px);
+                    }
+
+                }
+
+            }
+        }
+
+        &__inner {
+            padding-top: vw(30px);
+
+            .question-btn {
+                width: vw(346px);
+                height: vw(120px);
+                border-radius: vw(100px);
+                cursor: pointer;
+
+                a {
+                    left: vw(66px);
+                    font : {
+                        size: vw(32px);
+                    }
+                }
+
+                &::after{
+                    width: vw(120px);
+                    height: vw(120px);
+                    background: #1d3669 url("/images/common/icon-question.png")no-repeat center / vw(30px) vw(42px);
+
+                }
+            }
+
+
+            .droplist-box {
+                margin-right: vw(40px);
+
+                &__button {
+                    padding: vw(0 48px);
+                    height: vw(112px);
+                    width: vw(510px);
+
+                    font : {
+                        size: vw(32px);
+                    }
+
+
+                    &::after {
+                        padding: vw(10px);
+                        right: vw(48px);
+                        top: 46%;
+                        border-width: vw(0 4px 4px 0);
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            margin-top: vw(140px);
+            font-size: vw(32px);
         }
     }
 

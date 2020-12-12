@@ -132,7 +132,7 @@
                 </div>
             </li>
             <li class="introduction-introjob__list--item">
-                <h3 class="title-equipment">>설비</h3>
+                <h3 class="title-equipment">설비</h3>
                 <div class="content-box">
                     <ul>
                         <li>

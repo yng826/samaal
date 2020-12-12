@@ -470,7 +470,6 @@
             .text-team {
                 display: block;
                 margin-bottom: 30px;
-                color: 20px;
                 font-size: 20px;
                 font-weight: bold;
                 line-height: 1;
@@ -744,6 +743,7 @@
                         font-size: 25px;
                         font-weight: bold;
                         line-height: 1;
+                        word-break: break-all;
                     }
 
                     .question {
@@ -752,6 +752,7 @@
                         font-size: 22px;
                         font-weight: 400;
                         line-height: 28px;
+                        word-break: break-all;
                     }
                 }
 
@@ -764,6 +765,7 @@
                     color: $titleColor;
                     font-size: 22px;
                     box-sizing: border-box;
+                    word-break: break-all;
                 }
 
                 &.on {
@@ -1441,7 +1443,6 @@
 
                 .text-team {
                     margin-bottom: vw(30px);
-                    color: vw(20px);
                     font-size: vw(20px);
                     letter-spacing: vw(-0.63px);
                 }
@@ -1864,6 +1865,271 @@
         }
     }
 
+     /* 직무소개 */
+     .introduction-introjob {
+        &__title {
+            margin: vw(90px auto 100px);
+
+            h2 {
+                margin-bottom: vw(30px);
+                font-size: vw(50px);
+            }
+
+            p {
+                margin-bottom: vw(40px);
+                font-size: vw(30px);
+                line-height: vw(35px);
+            }
+
+            strong {
+                font-size: vw(30px);
+            }
+        }
+
+        &__contents {
+            max-width: vw(3020px);
+        }
+
+        &__list {
+            margin-left: vw(20px);
+
+            &--item {
+                width: calc(33.33% - #{vw(20px)});
+                margin-right: vw(20px);
+                margin-bottom: vw(49px);
+
+                h3 {
+                    height: vw(87px);
+                    padding-left: vw(28px);
+                    font-size: vw(40px);
+                    line-height: vw(85px);
+                    background-size: vw(95px 87px);
+                }
+
+                &:nth-child(odd) .btn-link{
+                    border: vw(3px) solid $titleColor;
+                }
+
+                &:nth-child(even) .btn-link{
+                    border: vw(3px) solid #3767c7;
+                }
+
+                .content-box {
+                    margin-top: vw(30px);
+                }
+
+                ul {
+                    height: vw(500px);
+                }
+
+                li {
+                    padding-left: vw(29px);
+                    margin-bottom: vw(19px);
+                    font-size: vw(30px);
+                    line-height: vw(35px);
+                    letter-spacing: vw(-0.63px);
+
+                    &::before {
+                        left: vw(5px);
+                        top: vw(11px);
+                        width: vw(8px);
+                        height: vw(8px);
+                    }
+                }
+
+                .mb-7 {
+                    li {
+                        margin-bottom: vw(7px);
+                    }
+                }
+
+                .text-team {
+                    margin-bottom: vw(30px);
+                    font-size: vw(25px);
+                    letter-spacing: vw(-0.63px);
+                }
+
+                .btn-link {
+                    width: vw(340px);
+                    height: vw(70px);
+                    margin: vw(0 auto 30px);
+                    font-size: vw(30px);
+                    line-height: vw(75px);
+                }
+            }
+        }
+
+        .title-production {
+            background: url("/images/work/img_production.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-sales {
+            background: url("/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-warranty {
+            background: url("/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-businessSupport {
+            background: url("/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-productionSupport {
+            background: url("/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-rnd {
+            background: url("/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-equipment {
+            background: url("/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-safety {
+            background: url("/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-it {
+            background: url("/images/work/img_it.png") no-repeat right center / vw(85px 67px);
+        }
+
+    }
+
+    /* 직무 인터뷰 */
+    .introduction-interview  {
+
+        &__title {
+            padding: vw(116px 118px);
+
+            h2 {
+                font-size: vw(80px);
+            }
+
+            p {
+                margin-top: vw(44px);
+                font-size: vw(50px);
+            }
+        }
+
+        &__contents {
+            max-width: vw(1400px);
+        }
+
+        &__team {
+            padding: vw(140px 134px);
+
+            h3 {
+                margin-bottom: vw(22px);
+                font-size: vw(80px);
+            }
+
+            p {
+                font-size: vw(50px);
+                line-height: vw(77px);
+            }
+        }
+
+        &__qna {
+            padding-top: vw(70px);
+
+            .question {
+                margin-bottom: vw(39px);
+                font-size: vw(60px);
+                text-indent: vw(-42px);
+                margin-left: vw(55px);
+                text-align: left;
+            }
+
+            .answer {
+                font-size: vw(50px);
+                line-height: vw(77px);
+                text-align: left;
+            }
+
+            &--left {
+                margin-bottom: vw(100px);
+                padding-right: 0;
+                width: 100%;
+            }
+
+            &--right {
+                margin-bottom: vw(100px);
+                padding-left: 0;
+                width: 100%;
+            }
+        }
+    }
+
+    /* FAQ */
+    .work-faq {
+
+        &__title {
+            padding: vw(144px 0);
+
+            h2 {
+                font-size: vw(80px);
+            }
+
+            p {
+                margin-top: vw(30px);
+                font-size: vw(40px);
+                line-height: vw(70px);
+            }
+        }
+
+        &__section {
+            max-width: vw(2544px);
+
+            &--tab {
+
+                li {
+                    width: calc(25% - #{vw(10px)});
+                    height: vw(124px);
+                    margin-left: vw(10px);
+                    font-size: vw(40px);
+                    line-height: vw(124px);
+
+                    &.on {
+
+                        &::after {
+                            height: vw(10px);
+                        }
+
+                    }
+                }
+            }
+
+            &--list {
+                padding: vw(118px 100px 166px);
+
+                &__item {
+                    margin-bottom: vw(36px);
+
+                    .question-box {
+                        padding: vw(126px 100px 90px);
+
+                        .sortation {
+                            margin-bottom: vw(34px);
+                            font-size: vw(50px);
+                        }
+
+                        .question {
+                            font-size: vw(44px);
+                            line-height: vw(56px);
+                        }
+                    }
+
+                    .answer {
+                        padding: vw(78px 58px);
+                        font-size: vw(44px);
+                    }
+                }
+            }
+        }
+    }
+
      /* 채용공고 */
      .work-recruit {
 
@@ -2094,8 +2360,297 @@
 @media all and (max-width: 767px) {
     @import "./lib/vw";
 
-    /* 채용공고 */
-    .work-recruit {
+    /* 직무소개 */
+    .introduction-introjob {
+        padding: 0 vw(70px);
+
+        &__title {
+            margin: vw(72px auto 74px);
+
+            h2 {
+                margin-bottom: vw(27px);
+                font-size: vw(48px);
+            }
+
+            p {
+                margin-bottom: vw(32px);
+                font-size: vw(21px);
+                line-height: vw(33px);
+            }
+
+            strong {
+                font-size: vw(28px);
+                font-weight: 400;
+            }
+        }
+
+        &__contents {
+            max-width: vw(750px);
+        }
+
+        &__list {
+            margin-left: 0;
+
+            &--item {
+                width: 100%;
+                margin-right: vw(20px);
+                margin-bottom: vw(49px);
+
+                h3 {
+                    height: vw(83px);
+                    padding-left: vw(40px);
+                    font-size: vw(45px);
+                    line-height: vw(83px);
+                    background-size: vw(83px 83px);
+                    font-weight: 400;
+                }
+
+                &:nth-child(odd) .btn-link{
+                    border: vw(3px) solid $titleColor;
+                }
+
+                &:nth-child(even) .btn-link{
+                    border: vw(3px) solid #3767c7;
+                }
+
+                .content-box {
+                    margin-top: vw(30px);
+                }
+
+                ul {
+                    height: auto;
+                }
+
+                li {
+                    padding-left: vw(29px);
+                    margin-bottom: vw(34px);
+                    font-size: vw(18px);
+                    line-height: vw(30px);
+                    letter-spacing: vw(-0.63px);
+
+                    &::before {
+                        left: vw(5px);
+                        top: vw(11px);
+                        width: vw(8px);
+                        height: vw(8px);
+                    }
+                }
+
+                .mb-7 {
+                    li {
+                        margin-bottom: vw(34px);
+                    }
+                }
+
+                .text-team {
+                    margin-bottom: vw(30px);
+                    font-size: vw(27px);
+                    letter-spacing: vw(-0.63px);
+                    line-height: vw(33px);
+                    word-break: keep-all;
+                }
+
+                .btn-link {
+                    width: vw(212px);
+                    height: vw(60px);
+                    margin: vw(0 auto 37px);
+                    font-size: vw(24px);
+                    line-height: vw(60px);
+                }
+            }
+        }
+
+        .title-production {
+            background: url("/images/work/img_production.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-sales {
+            background: url("/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-warranty {
+            background: url("/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-businessSupport {
+            background: url("/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-productionSupport {
+            background: url("/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-rnd {
+            background: url("/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-equipment {
+            background: url("/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-safety {
+            background: url("/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-it {
+            background: url("/images/work/img_it.png") no-repeat right center / vw(85px 67px);
+        }
+
+    }
+
+    /* 직무 인터뷰 */
+    .introduction-interview  {
+
+        &__title {
+            padding: vw(57px 65px);
+
+            h2 {
+                font-size: vw(35px);
+            }
+
+            p {
+                margin-top: vw(30px);
+                font-size: vw(24px);
+                letter-spacing: vw(-0.84px);
+            }
+        }
+
+        &__contents {
+            max-width: vw(750px);
+            padding: vw(0 70px);
+        }
+
+        &__team {
+            padding: vw(51px 0);
+
+            h3 {
+                margin-bottom: vw(31px);
+                font-size: vw(50px);
+            }
+
+            p {
+                font-size: vw(27px);
+                line-height: vw(45px);
+                word-break: keep-all;
+            }
+        }
+
+        &__qna {
+            padding-top: vw(41px);
+
+            .question {
+                margin-bottom: vw(17px);
+                font-size: vw(25px);
+                text-indent: 0;
+                margin-left: 0;
+                text-align: left;
+            }
+
+            .answer {
+                font-size: vw(20px);
+                line-height: vw(35px);
+                text-align: left;
+            }
+
+            &--left {
+                margin-bottom: vw(54px);
+                padding-right: 0;
+                width: 100%;
+            }
+
+            &--right {
+                margin-bottom: vw(54px);
+                padding-left: 0;
+                width: 100%;
+            }
+        }
+    }
+
+     /* FAQ */
+     .work-faq {
+
+        &__title {
+            padding: vw(99px 0);
+
+            h2 {
+                font-size: vw(50px);
+            }
+
+            p {
+                margin-top: vw(30px);
+                font-size: vw(26px);
+                line-height: vw(44px);
+            }
+        }
+
+        &__section {
+            max-width: vw(750px);
+
+            &--tab {
+                ul {
+                    padding: vw(3px);
+                    background-color: #fff;
+                }
+
+                li {
+                    position: relative;
+                    width: calc(25% - #{vw(3px)});
+                    height: vw(116px);
+                    margin-left: vw(3px);
+                    font-size: vw(27px);
+                    line-height: vw(35px);
+
+                    &.on {
+
+                        &::after {
+                            height: vw(6px);
+                        }
+
+                    }
+
+                    span {
+                        display: block;
+                        width: 100%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        word-break: keep-all;
+                    }
+                }
+            }
+
+            &--list {
+                padding: vw(44px 43px 75px);
+
+                &__item {
+                    margin-bottom: vw(17px);
+
+                    .question-box {
+                        padding: vw(44px 45px 53px);
+
+                        .sortation {
+                            margin-bottom: vw(26px);
+                            font-size: vw(40px);
+                        }
+
+                        .question {
+                            font-size: vw(32px);
+                            line-height: vw(44px);
+                        }
+                    }
+
+                    .answer {
+                        padding: vw(43px 45px 42px);
+                        font-size: vw(32px);
+                    }
+                }
+            }
+        }
+    }
+
+     /* 채용공고 */
+     .work-recruit {
 
         &__title {
             padding: vw(80px 0);
