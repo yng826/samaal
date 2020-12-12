@@ -719,6 +719,7 @@
                 width: 20px;
                 height: 20px;
                 background: url("/images/common/icon_check.png") no-repeat center;
+                background-size: cover;
             }
         }
 
@@ -745,6 +746,7 @@
 
 /* 담당자 팝업 */
 .manager-pop {
+    position: fixed;
     width: 610px;
 
     &__title {
@@ -2053,6 +2055,7 @@
         &__slide {
             width: 100%;
             background: none;
+            padding:0;
 
             .slide-img {
                 width: vw(1500px);
@@ -2183,6 +2186,186 @@
                 height: vw(160px);
                 margin: 0 vw(30px);
                 font-size: vw(50px);
+            }
+        }
+    }
+
+      /* 문의하기 팝업 */
+      .question-pop {
+        width: vw(1220px);
+        &__title {
+            margin-top: vw(14px);
+
+            h3 {
+                padding-top: vw(28px);
+                font: {
+                    size: vw(50px);
+                }
+                border-top: vw(6px) solid #000;
+            }
+        }
+
+        &__info  {
+            padding-top: vw(80px);
+
+            li {
+                margin-bottom: vw(60px);
+            }
+
+            h4 {
+                padding-bottom: vw(34px);
+                font-size: vw(40px);
+            }
+
+            input {
+                padding: 0 vw(60px);
+                border-radius: vw(10px);
+
+                &[type=text] {
+                    height: vw(130px);
+                    font-size: vw(36px);
+                }
+
+                &::placeholder {
+                    font-size: vw(36px);
+                }
+            }
+
+            select {
+                padding: 0 vw(60px);
+                border-radius: vw(10px);
+                height: vw(130px);
+
+                &::placeholder {
+                    font-size: vw(36px);
+                }
+            }
+
+            textarea {
+                height: vw(280px);
+                padding: vw(60px);
+                border-radius: vw(10px);
+                font-size: vw(36px);
+
+                &::placeholder {
+                    font-size: vw(36px);
+                }
+
+                &::-webkit-input-placeholder {
+                    font-size: vw(36px);
+                }
+
+                &:-ms-input-placeholder  {
+                    font-size: vw(36px);
+                }
+            }
+
+            .email-input {
+
+                &__separator {
+                    font-size: vw(36px);
+                }
+
+                &__domain {
+                    width: 245/525*100%;
+
+                    input {
+                        height: vw(130px);
+                        padding: 0 vw(86px) 0vw(60px);
+                        font-size: vw(36px);
+                        border-radius: vw(10px);
+                    }
+
+                    // &::after {
+                    //     content: "";
+                    //     display: block;
+                    //     position: absolute;
+                    //     top: 50%;
+                    //     right: vw(28px);
+                    //     transform: translateY(-50%);
+                    //     border-top: vw(13px) solid #757575;
+                    //     border-left: vw(7px) solid transparent;
+                    //     border-right: vw(7px) solid transparent;
+                    // }
+                }
+            }
+
+            .privacy-box {
+                padding: vw(36px) vw(60px);
+                height: vw(314px);
+                font-size: vw(23px);
+            }
+        }
+
+        &__form-check {
+            margin-top: vw(30px);
+
+            .form-check {
+                width: vw(40px);
+                height: vw(40px);
+                margin-right: vw(20px);
+
+                &:checked::after {
+                    width: vw(40px);
+                    height: vw(40px);
+                }
+            }
+
+            span {
+                font-size: vw(26px);
+            }
+        }
+
+        &__submit-btn {
+            height: vw(160px);
+            padding: 0 vw(212px) 0 vw(102px);
+            margin: vw(88px) auto 0;
+            background-size: vw(92px) vw(84px);
+            background-position: vw(300px) center;
+            font-size: vw(50px);
+        }
+    }
+
+     /* 담당자 팝업 */
+     .manager-pop {
+        width: vw(1220px);
+
+        &__title {
+            margin-top: vw(14px);
+
+            h3 {
+                padding-top: vw(28px);
+                font: {
+                    size: vw(50px);
+                }
+                border-top: vw(6px) solid #000;
+            }
+        }
+
+        &__list {
+            padding-top: vw(80px);
+
+            dl {
+                padding-bottom: vw(34px);
+            }
+
+            dt {
+                padding-right: vw(20px);
+
+                font: {
+                    size: vw(40px);
+                }
+
+                &::after{
+                    width: vw(6px);
+                    height: vw(40px);
+                }
+
+            }
+
+            dd {
+                margin-left: vw(4px);
+                font-size: vw(40px);
             }
         }
     }
@@ -2388,6 +2571,186 @@
                 height: vw(90px);
                 margin: 0 vw(10px);
                 font-size: vw(28px);
+            }
+        }
+    }
+    /* 문의하기 팝업 */
+    .question-pop {
+        width: vw(525px);
+
+        &__title {
+            margin-top: 0;
+
+            h3 {
+                padding-top: vw(22px);
+                font: {
+                    size: vw(39px);
+                }
+                border-top: vw(3px) solid #000;
+            }
+        }
+
+        &__info  {
+            padding-top: vw(36px);
+
+            li {
+                margin-bottom: vw(60px);
+            }
+
+            h4 {
+                padding-bottom: vw(34px);
+                font-size: vw(31px);
+            }
+
+            input {
+                padding: 0 vw(30px);
+                border-radius: vw(10px);
+
+                &[type=text] {
+                    height: vw(75px);
+                    font-size: vw(24px);
+                }
+
+                &::placeholder {
+                    font-size: vw(24px);
+                }
+            }
+
+            select {
+                padding: 0 vw(30px);
+                border-radius: vw(10px);
+                height: vw(130px);
+
+                &::placeholder {
+                    font-size: vw(24px);
+                }
+            }
+
+            textarea {
+                height: vw(280px);
+                padding: vw(30px);
+                border-radius: vw(10px);
+                font-size: vw(36px);
+
+                &::placeholder {
+                    font-size: vw(24px);
+                }
+
+                &::-webkit-input-placeholder {
+                    font-size: vw(24px);
+                }
+
+                &:-ms-input-placeholder  {
+                    font-size: vw(24px);
+                }
+            }
+
+            .email-input {
+
+                &__separator {
+                    font-size: vw(24px);
+                }
+
+                &__domain {
+                    width: 245/525*100%;
+
+                    input {
+                        height: vw(130px);
+                        padding: 0 vw(86px) 0vw(60px);
+                        font-size: vw(36px);
+                        border-radius: vw(10px);
+                    }
+
+                    // &::after {
+                    //     content: "";
+                    //     display: block;
+                    //     position: absolute;
+                    //     top: 50%;
+                    //     right: vw(28px);
+                    //     transform: translateY(-50%);
+                    //     border-top: vw(13px) solid #757575;
+                    //     border-left: vw(7px) solid transparent;
+                    //     border-right: vw(7px) solid transparent;
+                    // }
+                }
+            }
+
+            .privacy-box {
+                padding: vw(25px) vw(30px);
+                height: vw(314px);
+                font-size: vw(24px);
+            }
+        }
+
+        &__form-check {
+            margin-top: vw(30px);
+
+            .form-check {
+                width: vw(40px);
+                height: vw(40px);
+                margin-right: vw(20px);
+
+                &:checked::after {
+                    width: vw(40px);
+                    height: vw(40px);
+                }
+            }
+
+            span {
+                font-size: vw(26px);
+            }
+        }
+
+        &__submit-btn {
+            height: vw(90px);
+            padding: 0 vw(121px) 0 vw(42px);
+            margin: vw(29px) auto 0;
+            background-size: vw(50px) vw(46px);
+            background-position: vw(155px) center;
+            font-size: vw(28px);
+        }
+    }
+
+    /* 담당자 팝업 */
+    .manager-pop {
+        width: vw(527px);
+
+        &__title {
+            margin-top: 0;
+
+            h3 {
+                padding-top: vw(22px);
+                font: {
+                    size: vw(39px);
+                }
+                border-top: vw(3px) solid #000;
+            }
+        }
+
+        &__list {
+            padding-top: vw(80px);
+
+            dl {
+                padding-bottom: vw(34px);
+            }
+
+            dt {
+                padding-right: vw(12px);
+
+                font: {
+                    size: vw(30px);
+                }
+
+                &::after{
+                    width: vw(4px);
+                    height: vw(30px);
+                }
+
+            }
+
+            dd {
+                margin-left: vw(13px);
+                font-size: vw(31px);
             }
         }
     }

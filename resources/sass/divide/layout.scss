@@ -419,7 +419,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: #fff;
-    z-index: 2;
+    z-index: 101;
 
     &__close-btn {
         display: block;
@@ -441,7 +441,7 @@
     height: 100%;
     background-color: #000;
     opacity: 0.8;
-    z-index: 1;
+    z-index: 100;
 }
 
 
@@ -717,6 +717,16 @@
             width: vw(20px);
             height: vw(36px);
             background: url("/images/common/pagenation_next.png") no-repeat center / contain;
+        }
+    }
+
+    /* layer popup 공통 */
+    .layer-popup {
+        padding: vw(60px 84px 120px 86px);
+
+        &__close-btn {
+            right: vw(-30px);
+            height: vw(60px);
         }
     }
 }
@@ -1035,6 +1045,16 @@
             width: vw(10px);
             height: vw(18px);
             background: url("/images/common/pagenation_next.png") no-repeat center / contain;
+        }
+    }
+
+    /* layer popup 공통 */
+    .layer-popup {
+        padding: vw(27px 43px 34px);
+
+        &__close-btn {
+            right: 0;
+            height: vw(38px);
         }
     }
 }
