@@ -33,6 +33,7 @@ Route::post('login', function (Request $request) {
         $logged = true;
         // $user = DB::table('users')->where('email', $credentials['email'])->first();
         $user = User::where('email', $credentials['email'])->first();
+        $job = Job::where('user_id', $user->id)->get()->pluck('id');
         $token = $user->createToken('api', []);
         session(['access_token' => $token->accessToken]);
 
@@ -42,6 +43,7 @@ Route::post('login', function (Request $request) {
     return [
         'logged' => $logged,
         'user' => $user,
+        'job' => $job,
         'token' => $token,
     ];
 });
@@ -109,13 +111,30 @@ Route::post('join', function (Request $request) {
     return $result;
 });
 
+Route::post('find', function (Request $request) {
+    $user = User::where([
+        'name' => $request->name,
+        'email' => $request->email,
+    ])->first();
+
+    $result = [];
+    $result['result'] = 'success';
+    $result['user'] = $user;
+    $result['name'] = $request->name;
+    $result['email'] = $request->email;
+    return $result;
+});
+
 Route::prefix('work-with-us')->middleware('auth:api')->group(function () {
     Route::get('job', [JobController::class, 'index']);
     Route::get('job/{id}', [JobController::class, 'show'])
     ->where('id', '[0-9]+');
     Route::get('job/info', [JobController::class, 'index']);
+    Route::get('job/search/{recruit_id}', [JobController::class, 'search']);
     Route::post('job', [JobController::class, 'store']);
     Route::put('job/{id}', [JobController::class, 'update']);
+
+    // Route::get('recruit', [RecruitController::class, 'show']);
 });
 
 

@@ -209,4 +209,14 @@ class JobController extends Controller
         Session::put('email', $request->email);
         return redirect( route('work.job') )->with('hello', 'world');
     }
+
+    public function search(Request $request, $recruit_id)
+    {
+        $job = Job::where([
+            'recruit_id'=> $recruit_id,
+            'user_id' => $request->user()->id,
+        ])->first();
+
+        return $job;
+    }
 }

@@ -12,11 +12,8 @@
                         <input type="text" name="email" id="email" v-model="email" ref="email">
                     </div>
                     <div class="form-group">
-                        <label for="password">비밀번호</label>
-                        <input type="password" name="password" id="password" v-model="password" ref="password">
-                    </div>
-                    <div class="form-group">
-                        <a href="" @click.prevent="openFindPassword">비밀번호를 잊으셨나요?</a>
+                        <label for="phone">핸드폰번호</label>
+                        <input type="text" name="phone" id="phone" v-model="phone" ref="phone">
                     </div>
                     <button type="submit">확인하기</button>
                 </form>
@@ -33,7 +30,7 @@ import {getHeader, getAuth, getUser} from '../../config'
 import Swal from 'sweetalert2'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['action','is_check_auth','job_id', 'request_id'],
+    props: ['action','is_check_auth','job_id'],
     components: {
         VSpinner
     },
@@ -41,7 +38,7 @@ export default {
         return {
             name: '',
             email: '',
-            password: '',
+            phone: '',
             isAuth: false,
             isSubmit: false,
             isOpen: false,
@@ -50,8 +47,8 @@ export default {
     },
     mounted: function() {
         this.$root.$on('openPopup', (args1) => {
-            if (args1 == 'login') {
-                console.log('open Login');
+            console.log('FindPassword:::open popup', args1);
+            if (args1 == 'password') {
                 this.isOpen = true;
             }
         });
@@ -79,12 +76,6 @@ export default {
                     msg: '이메일을 입력해주세요',
                 };
             }
-            if ( this.password == '' ) {
-                return {
-                    result: false,
-                    msg: '비밀번호를 입력해주세요',
-                };
-            }
             return {
                 result: true,
                 msg: '',
@@ -105,27 +96,20 @@ export default {
                 this.isSubmit = false;
                 return false;
             }
-            let logged = User.login({
+            let finded = User.find({
+                name: this.name,
                 email: this.email,
-                password: this.password,
             });
 
-            console.log(logged);
-            logged.then( res => {
+            console.log(finded);
+            finded.then( res => {
                 console.log( res );
                 this.isSubmit = false;
-                if ( res.data.logged == true) {
-                    console.log(this.request_id);
-                    window.location.href = window.location.href;
-                }
+                this.$root.$emit('closePopup');
             }).catch( err => {
                 console.error(err);
                 this.isSubmit = false;
             })
-        },
-        openFindPassword: function() {
-            this.$root.$emit('closePopup');
-            this.$root.$emit('openPopup', 'password');
         }
     }
 }

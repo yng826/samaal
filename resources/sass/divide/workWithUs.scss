@@ -1,5 +1,6 @@
 /* 지원하기 */
-.work-apply {
+.work-apply,
+.popup-container {
     background-color: #e8ecef;
 
     button,
@@ -310,6 +311,32 @@
         }
     }
 
+}
+
+.popup-container {
+    position: absolute;
+    z-index: 999;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    .form-container {
+        padding: 20px;
+        margin-bottom: 0;
+        .form-wrap {
+            .form-group {
+                input {
+                    width: 50%;
+                }
+                .input_date-group {
+                    width: 50%;
+                    .inline-block {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* 직무소개 */
