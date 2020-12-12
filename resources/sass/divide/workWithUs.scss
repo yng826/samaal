@@ -2333,244 +2333,6 @@
 @media all and (max-width: 767px) {
     @import "./lib/vw";
 
-    /* 채용공고 */
-    .work-recruit {
-
-        &__title {
-            padding: vw(80px 0);
-
-            h2 {
-                font-size: vw(50px);
-            }
-
-            p {
-                font-size: vw(26px);
-                line-height: vw(44px);
-            }
-        }
-
-        &__search {
-            width: auto;
-            padding: vw(43px 44px 39px);
-
-            &--wrap {
-                width: 100%;
-                height: vw(85px);
-                padding-left: vw(47px);
-                padding-right: vw(90px);
-                border: vw(5px) solid $titleColor;
-
-                input {
-                    font-size: vw(40px);
-                }
-
-                .btn-search {
-                    padding: vw(14px 17px);
-                    width: vw(80px);
-                    height: vw(75px);
-                    background: url("/images/work/icon_search.png") no-repeat center / vw(46px) vw(46px);
-                }
-            }
-
-            &--text {
-                padding-top: vw(30px);
-                font-size: vw(26px);
-            }
-
-        }
-
-        &__list {
-            max-width: 100%;
-            padding: vw(39px 0);
-
-            ul {
-                padding: 0 vw(43px);
-            }
-
-            &--item {
-                padding: vw(42px 70px 47px);
-                width: 100%;
-                margin: vw(0 0 30px 0);
-
-                .comer-box {
-                    span {
-                        padding: vw(0 20px);
-                        font-size: vw(30px);
-
-                        &:first-child::after {
-                            width: vw(3px);
-                            height: vw(34px);
-                        }
-                    }
-                }
-
-                h3 {
-                    padding: vw(24px 0 30px);
-                    font-size: vw(48px);
-                    border-bottom: vw(2px) solid #d7d7d7;
-                    letter-spacing: vw(-2.8px);
-                    line-height: vw(64px);
-                    word-break: keep-all;
-                }
-
-                .keywords {
-                    margin-top: vw(26px);
-
-                    li {
-                        font-size: vw(20px);
-                        line-height: vw(32px);
-                    }
-                }
-
-                .date-range {
-                    margin-top: vw(22px);
-                    font-size: vw(26px);
-                }
-
-                .btn-link {
-
-                    a {
-                        width: vw(205px);
-                        margin-top: vw(28px);
-                        padding: vw(14px 0);
-                        font-size: vw(27px);
-                    }
-                }
-            }
-        }
-
-        /* 채용공고 상세 */
-        &__detail {
-            padding: vw(40px 43px 50px);
-            &-wrap {
-                max-width: vw(750px);
-                padding: vw(42px 0 72px);
-            }
-
-            .comer-box {
-
-                span {
-                    padding: vw(0 11px);
-                    font-size: vw(30px);
-
-
-                    &:first-child::after {
-                        width: vw(3px);
-                        height: vw(34px);
-                    }
-                }
-            }
-
-            h3 {
-                width: vw(522px);
-                padding: vw(24px 0 30px);
-                font-size: vw(48px);
-                border-bottom: vw(2px) solid #d7d7d7;
-                letter-spacing: vw(-2.8px);
-                line-height: vw(64px);
-                margin: 0 auto;
-            }
-
-            .keywords {
-                margin-top: vw(26px);
-
-                li {
-                    font-size: vw(20px);
-                    line-height: vw(32px);
-                }
-            }
-
-            &-list {
-                margin-top: vw(53px);
-                padding: 0 vw(54px);
-
-                &--item {
-                    width: 100%;
-                    padding: 0;
-                    margin-bottom: vw(53px);
-
-                    dl {
-                        margin-bottom: vw(8px);
-                    }
-
-                    dt {
-                        font-size: vw(21px);
-                        line-height: 1;
-                        line-height: vw(43px);
-
-                        &::after {
-                            width: vw(3px);
-                            height: vw(21px);
-                            margin: vw(0 12px);
-                        }
-                    }
-
-                    dd {
-                        font-size: vw(21px);
-                        line-height: 1;
-                        line-height: vw(43px);
-                    }
-
-                    p {
-                        margin-bottom: vw(8px);
-                        font-size: vw(21px);
-                        line-height: vw(43px);
-                    }
-                }
-
-                &--title {
-                    padding-top: vw(19px);
-                    margin-bottom: vw(30px);
-                    font-size: vw(35px);
-                    border-top: vw(5px) solid #000;
-                }
-
-                &--bottom {
-                    .procedure {
-                        padding: vw(0 70px);
-
-                        li {
-                            width: vw(130px);
-                            height: vw(130px);
-                            margin-right: vw(21px);
-                            border: vw(4px) solid $titleColor;
-                            font-size: vw(25px);
-
-                            em {
-                                font-size: vw(14px);
-                            }
-
-
-                            &::after {
-                                right: vw(-20px);
-                                width: vw(10px);
-                                height: vw(20px);
-                            }
-                        }
-                    }
-                }
-            }
-
-            &--button {
-                padding-top: vw(34px);
-
-                a {
-                    padding: vw(14px 0);
-                    font-size: vw(27px);
-                }
-
-                .but-apply {
-                    width: vw(205px);
-                    margin-right: vw(25px);
-                }
-
-                .but-revise {
-                    width: vw(284px);
-                }
-            }
-        }
-    }
-
     /* 직무소개 */
     .introduction-introjob {
         padding: 0 vw(70px);
@@ -2855,6 +2617,244 @@
                         padding: vw(43px 45px 42px);
                         font-size: vw(32px);
                     }
+                }
+            }
+        }
+    }
+
+     /* 채용공고 */
+     .work-recruit {
+
+        &__title {
+            padding: vw(80px 0);
+
+            h2 {
+                font-size: vw(50px);
+            }
+
+            p {
+                font-size: vw(26px);
+                line-height: vw(44px);
+            }
+        }
+
+        &__search {
+            width: auto;
+            padding: vw(43px 44px 39px);
+
+            &--wrap {
+                width: 100%;
+                height: vw(85px);
+                padding-left: vw(47px);
+                padding-right: vw(90px);
+                border: vw(5px) solid $titleColor;
+
+                input {
+                    font-size: vw(40px);
+                }
+
+                .btn-search {
+                    padding: vw(14px 17px);
+                    width: vw(80px);
+                    height: vw(75px);
+                    background: url("/images/work/icon_search.png") no-repeat center / vw(46px) vw(46px);
+                }
+            }
+
+            &--text {
+                padding-top: vw(30px);
+                font-size: vw(26px);
+            }
+
+        }
+
+        &__list {
+            max-width: 100%;
+            padding: vw(39px 0);
+
+            ul {
+                padding: 0 vw(43px);
+            }
+
+            &--item {
+                padding: vw(42px 70px 47px);
+                width: 100%;
+                margin: vw(0 0 30px 0);
+
+                .comer-box {
+                    span {
+                        padding: vw(0 20px);
+                        font-size: vw(30px);
+
+                        &:first-child::after {
+                            width: vw(3px);
+                            height: vw(34px);
+                        }
+                    }
+                }
+
+                h3 {
+                    padding: vw(24px 0 30px);
+                    font-size: vw(48px);
+                    border-bottom: vw(2px) solid #d7d7d7;
+                    letter-spacing: vw(-2.8px);
+                    line-height: vw(64px);
+                    word-break: keep-all;
+                }
+
+                .keywords {
+                    margin-top: vw(26px);
+
+                    li {
+                        font-size: vw(20px);
+                        line-height: vw(32px);
+                    }
+                }
+
+                .date-range {
+                    margin-top: vw(22px);
+                    font-size: vw(26px);
+                }
+
+                .btn-link {
+
+                    a {
+                        width: vw(205px);
+                        margin-top: vw(28px);
+                        padding: vw(14px 0);
+                        font-size: vw(27px);
+                    }
+                }
+            }
+        }
+
+        /* 채용공고 상세 */
+        &__detail {
+            padding: vw(40px 43px 50px);
+            &-wrap {
+                max-width: vw(750px);
+                padding: vw(42px 0 72px);
+            }
+
+            .comer-box {
+
+                span {
+                    padding: vw(0 11px);
+                    font-size: vw(30px);
+
+
+                    &:first-child::after {
+                        width: vw(3px);
+                        height: vw(34px);
+                    }
+                }
+            }
+
+            h3 {
+                width: vw(522px);
+                padding: vw(24px 0 30px);
+                font-size: vw(48px);
+                border-bottom: vw(2px) solid #d7d7d7;
+                letter-spacing: vw(-2.8px);
+                line-height: vw(64px);
+                margin: 0 auto;
+            }
+
+            .keywords {
+                margin-top: vw(26px);
+
+                li {
+                    font-size: vw(20px);
+                    line-height: vw(32px);
+                }
+            }
+
+            &-list {
+                margin-top: vw(53px);
+                padding: 0 vw(54px);
+
+                &--item {
+                    width: 100%;
+                    padding: 0;
+                    margin-bottom: vw(53px);
+
+                    dl {
+                        margin-bottom: vw(8px);
+                    }
+
+                    dt {
+                        font-size: vw(21px);
+                        line-height: 1;
+                        line-height: vw(43px);
+
+                        &::after {
+                            width: vw(3px);
+                            height: vw(21px);
+                            margin: vw(0 12px);
+                        }
+                    }
+
+                    dd {
+                        font-size: vw(21px);
+                        line-height: 1;
+                        line-height: vw(43px);
+                    }
+
+                    p {
+                        margin-bottom: vw(8px);
+                        font-size: vw(21px);
+                        line-height: vw(43px);
+                    }
+                }
+
+                &--title {
+                    padding-top: vw(19px);
+                    margin-bottom: vw(30px);
+                    font-size: vw(35px);
+                    border-top: vw(5px) solid #000;
+                }
+
+                &--bottom {
+                    .procedure {
+                        padding: vw(0 70px);
+
+                        li {
+                            width: vw(130px);
+                            height: vw(130px);
+                            margin-right: vw(21px);
+                            border: vw(4px) solid $titleColor;
+                            font-size: vw(25px);
+
+                            em {
+                                font-size: vw(14px);
+                            }
+
+
+                            &::after {
+                                right: vw(-20px);
+                                width: vw(10px);
+                                height: vw(20px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--button {
+                padding-top: vw(34px);
+
+                a {
+                    padding: vw(14px 0);
+                    font-size: vw(27px);
+                }
+
+                .but-apply {
+                    width: vw(205px);
+                    margin-right: vw(25px);
+                }
+
+                .but-revise {
+                    width: vw(284px);
                 }
             }
         }
