@@ -21,16 +21,16 @@
             <div class="work-faq__section--tab">
                 <ul>
                     <li class="tab-item on" data-tab="work-faq-01">
-                        전체
+                        <span>전체</span>
                     </li>
                     <li class="tab-item" data-tab="work-faq-02">
-                        채용절차
+                        <span>채용절차</span>
                     </li>
                     <li class="tab-item" data-tab="work-faq-03">
-                        지원서 작성/수정
+                        <span>지원서 작성 / 수정</span>
                     </li>
                     <li class="tab-item" data-tab="work-faq-04">
-                        기타
+                        <span>기타</span>
                     </li>
                 </ul>
             </div>
