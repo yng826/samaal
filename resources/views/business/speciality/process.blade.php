@@ -12,9 +12,9 @@
     <div class="contents-wrap__section speciality-process__contents">
         <div class="speciality-process__tab">
             <ul>
-                <li data-id="content-01" class="speciality-process__tab--item {{ $type=='roll' ? 'on' : '' }}">압연</li>
-                <li data-id="content-02" class="speciality-process__tab--item {{ $type=='manufacture' ? 'on' : '' }}">가공</li>
-                <li data-id="content-03" class="speciality-process__tab--item {{ $type=='paste' ? 'on' : '' }}">알루미늄페이스트</li>
+                <li data-id="content-01" class="speciality-process__tab--item {{ $type=='roll' ? 'on' : '' }}"><span>압연</span></li>
+                <li data-id="content-02" class="speciality-process__tab--item {{ $type=='manufacture' ? 'on' : '' }}"><span>가공</span></li>
+                <li data-id="content-03" class="speciality-process__tab--item {{ $type=='paste' ? 'on' : '' }}"><span>알루미늄페이스트</span></li>
             </ul>
         </div>
         <div class="content-01 speciality-process__tab-content on process-layout">
@@ -102,27 +102,22 @@
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">분쇄</span>
                     <stron class="lang-english">smash</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">분급</span>
                     <stron class="lang-english">classification</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">오일제거</span>
                     <stron class="lang-english">fliter</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">혼합</span>
                     <stron class="lang-english">Mixer</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">포장</span>
                     <stron class="lang-english">Packagin</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>
             <p class="content-03__text">
