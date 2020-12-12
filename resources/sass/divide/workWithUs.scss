@@ -766,10 +766,10 @@
         p {
             font-size: 20px;
             line-height: 35px;
-            font-weight: bold;
+            font-weight: 400;
 
             em {
-                font-weight: 600;
+                font-weight: bold;
             }
         }
     }
@@ -1820,9 +1820,9 @@
 }
 
 /*태블릿 세로 사이즈*/
-@media all and (min-width: 1024px)  {
-    @import "./lib/vw";
-
+@media all and (min-width:768px) and (max-width:1024px) {
+    @import "./lib/webvw";
+    /* 지원하기 */
     .work-apply {
         &__contents {
             max-width: vw(662px);
@@ -1837,4 +1837,470 @@
         }
     }
 
+     /* 채용공고 */
+     .work-recruit {
+
+        &__title {
+            padding: vw(28px 0);
+
+            h2 {
+                font-size: vw(80px);
+            }
+
+            p {
+                font-size: vw(50px);
+                line-height: vw(70px);
+            }
+        }
+
+        &__search {
+            width: vw(924px);
+            padding: vw(50px 0 50px);
+
+            &--wrap {
+                width: vw(928px);
+                height: vw(130px);
+                padding-left: vw(52px);
+                padding-right: vw(144px);
+                border: vw(10px) solid $titleColor;
+
+                input {
+                    font-size: vw(50px);
+                }
+
+                .btn-search {
+                    width: vw(144px);
+                    height: vw(112px);
+                    background: url("/images/work/icon_search.png") no-repeat center  / vw(72px);
+                }
+            }
+
+            &--text {
+                padding-top: vw(30px);
+                font-size: vw(36px);
+            }
+
+        }
+
+        &__list {
+            max-width: vw(2812px);
+            padding: vw(120px 0);
+
+            ul {
+                padding: 0 vw(100px);
+            }
+
+            &--item {
+                padding: vw(100px 140px);
+                width: 100%;
+                margin: vw(0 0 40px 0);
+
+                .comer-box {
+                    span {
+                        padding: vw(0 20px);
+                        font-size: vw(40px);
+
+                        &:first-child::after {
+                            width: vw(4px);
+                            height: vw(44px);
+                        }
+                    }
+                }
+
+                h3 {
+                    padding: vw(38px 0 28px);
+                    font-size: vw(80px);
+                    border-bottom: vw(4px) solid #d7d7d7;
+                    letter-spacing: vw(-2.8px);
+                }
+
+                .keywords {
+                    margin-top: vw(36px);
+
+                    li {
+                        font-size: vw(36px);
+                    }
+                }
+
+                .date-range {
+                    margin-top: vw(38px);
+                    font-size: vw(50px);
+                }
+
+                .btn-link {
+
+                    a {
+                        width: vw(440px);
+                        margin-top: vw(98px);
+                        padding: vw(54px 0);
+                        font-size: vw(50px);
+                    }
+                }
+            }
+        }
+
+        /* 채용공고 상세 */
+        &__detail {
+            padding: vw(100px 50px 100px);
+
+            &-wrap {
+                max-width: vw(1908px);
+                padding: vw(150px 100px 150px);
+            }
+
+            .comer-box {
+                span {
+                    padding: vw(0 30px);
+                    font-size: vw(36px);
+
+
+                    &:first-child::after {
+                        width: vw(2px);
+                        height: vw(32px);;
+                    }
+                }
+            }
+
+            h3 {
+                padding: vw(29px 0 24px);
+                font-size: vw(50px);
+                border-bottom: vw(2px) solid #d7d7d7;
+                letter-spacing: vw(-1.4px);
+                line-height: vw(53px);
+            }
+
+            .keywords {
+                margin-top: vw(18px);
+
+                li {
+                    font-size: vw(30px);
+                }
+            }
+
+            &-list {
+                margin-top: vw(49px);
+
+                &--item {
+                    width: calc(50% - #{vw(50px)});
+                    padding: vw(0 20px);
+                    margin-bottom: vw(50px);
+
+                    dl {
+                        margin-bottom: vw(10px);
+                    }
+
+                    dt {
+                        font-size: vw(36px);
+
+                        &::after {
+                            width: vw(2px);
+                            height: vw(36px);
+                            margin: vw(0 12px);
+                        }
+                    }
+
+                    dd {
+                        font-size: vw(36px);
+                    }
+
+                    p {
+                        margin-bottom: vw(20px);
+                        font-size: vw(36px);
+                        line-height: vw(45px);
+                    }
+                }
+
+                &--title {
+                    padding-top: vw(11px);
+                    margin-bottom: vw(30px);
+                    font-size: vw(40px);
+                    border-top: vw(3px) solid #000;
+                }
+
+                &--bottom {
+                    .procedure {
+
+                        li {
+                            width: vw(252px);
+                            height: vw(252px);
+                            margin-right: vw(56px);
+                            border: vw(4px) solid $titleColor;
+                            font-size: vw(44px);
+
+                            em {
+                                font-size: vw(32px);
+                            }
+
+
+                            &::after {
+                                right: vw(-46px);
+                                width: vw(18px);
+                                height: vw(34px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--button {
+                padding-top: vw(50px);
+
+                a {
+                    padding: vw(28px 0);
+                    font-size: vw(44px);
+                }
+
+                .but-apply {
+                    width: vw(440px);
+                    margin-right: vw(60px);
+                }
+
+                .but-revise {
+                    width: vw(500px);
+                }
+            }
+        }
+    }
+}
+
+/* 모바일 사이즈 */
+@media all and (max-width: 767px) {
+    @import "./lib/vw";
+
+    /* 채용공고 */
+    .work-recruit {
+
+        &__title {
+            padding: vw(80px 0);
+
+            h2 {
+                font-size: vw(50px);
+            }
+
+            p {
+                font-size: vw(26px);
+                line-height: vw(44px);
+            }
+        }
+
+        &__search {
+            width: auto;
+            padding: vw(43px 44px 39px);
+
+            &--wrap {
+                width: 100%;
+                height: vw(85px);
+                padding-left: vw(47px);
+                padding-right: vw(90px);
+                border: vw(5px) solid $titleColor;
+
+                input {
+                    font-size: vw(40px);
+                }
+
+                .btn-search {
+                    padding: vw(14px 17px);
+                    width: vw(80px);
+                    height: vw(75px);
+                    background: url("/images/work/icon_search.png") no-repeat center / vw(46px) vw(46px);
+                }
+            }
+
+            &--text {
+                padding-top: vw(30px);
+                font-size: vw(26px);
+            }
+
+        }
+
+        &__list {
+            max-width: 100%;
+            padding: vw(39px 0);
+
+            ul {
+                padding: 0 vw(43px);
+            }
+
+            &--item {
+                padding: vw(42px 70px 47px);
+                width: 100%;
+                margin: vw(0 0 30px 0);
+
+                .comer-box {
+                    span {
+                        padding: vw(0 20px);
+                        font-size: vw(30px);
+
+                        &:first-child::after {
+                            width: vw(3px);
+                            height: vw(34px);
+                        }
+                    }
+                }
+
+                h3 {
+                    padding: vw(24px 0 30px);
+                    font-size: vw(48px);
+                    border-bottom: vw(2px) solid #d7d7d7;
+                    letter-spacing: vw(-2.8px);
+                    line-height: vw(64px);
+                    word-break: keep-all;
+                }
+
+                .keywords {
+                    margin-top: vw(26px);
+
+                    li {
+                        font-size: vw(20px);
+                        line-height: vw(32px);
+                    }
+                }
+
+                .date-range {
+                    margin-top: vw(22px);
+                    font-size: vw(26px);
+                }
+
+                .btn-link {
+
+                    a {
+                        width: vw(205px);
+                        margin-top: vw(28px);
+                        padding: vw(14px 0);
+                        font-size: vw(27px);
+                    }
+                }
+            }
+        }
+
+        /* 채용공고 상세 */
+        &__detail {
+            padding: vw(40px 43px 50px);
+            &-wrap {
+                max-width: vw(750px);
+                padding: vw(42px 0 72px);
+            }
+
+            .comer-box {
+
+                span {
+                    padding: vw(0 11px);
+                    font-size: vw(30px);
+
+
+                    &:first-child::after {
+                        width: vw(3px);
+                        height: vw(34px);
+                    }
+                }
+            }
+
+            h3 {
+                width: vw(522px);
+                padding: vw(24px 0 30px);
+                font-size: vw(48px);
+                border-bottom: vw(2px) solid #d7d7d7;
+                letter-spacing: vw(-2.8px);
+                line-height: vw(64px);
+                margin: 0 auto;
+            }
+
+            .keywords {
+                margin-top: vw(26px);
+
+                li {
+                    font-size: vw(20px);
+                    line-height: vw(32px);
+                }
+            }
+
+            &-list {
+                margin-top: vw(53px);
+                padding: 0 vw(54px);
+
+                &--item {
+                    width: 100%;
+                    padding: 0;
+                    margin-bottom: vw(53px);
+
+                    dl {
+                        margin-bottom: vw(8px);
+                    }
+
+                    dt {
+                        font-size: vw(21px);
+                        line-height: 1;
+                        line-height: vw(43px);
+
+                        &::after {
+                            width: vw(3px);
+                            height: vw(21px);
+                            margin: vw(0 12px);
+                        }
+                    }
+
+                    dd {
+                        font-size: vw(21px);
+                        line-height: 1;
+                        line-height: vw(43px);
+                    }
+
+                    p {
+                        margin-bottom: vw(8px);
+                        font-size: vw(21px);
+                        line-height: vw(43px);
+                    }
+                }
+
+                &--title {
+                    padding-top: vw(19px);
+                    margin-bottom: vw(30px);
+                    font-size: vw(35px);
+                    border-top: vw(5px) solid #000;
+                }
+
+                &--bottom {
+                    .procedure {
+
+                        li {
+                            width: vw(94px);
+                            height: vw(94px);
+                            margin-right: vw(21px);
+                            border: vw(4px) solid $titleColor;
+                            font-size: vw(19px);
+
+                            em {
+                                font-size: vw(14px);
+                            }
+
+
+                            &::after {
+                                right: vw(-20px);
+                                width: vw(10px);
+                                height: vw(20px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--button {
+                padding-top: vw(34px);
+
+                a {
+                    padding: vw(14px 0);
+                    font-size: vw(27px);
+                }
+
+                .but-apply {
+                    width: vw(205px);
+                    margin-right: vw(25px);
+                }
+
+                .but-revise {
+                    width: vw(284px);
+                }
+            }
+        }
+    }
 }
