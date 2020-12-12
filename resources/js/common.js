@@ -49,6 +49,32 @@ const common = () => {
 
     }
 
+    const TopButton = () => {
+        $(window).scroll(function(){
+            // top button 생김
+            if ($(this).scrollTop()) {
+                $(".top-btn").fadeIn();
+            } else {
+                $(".top-btn").fadeOut();
+            }
+
+            // top button position
+            if($(window).scrollTop() + $(window).height() < $(document).height() - $(".footer").height()) {
+                $('.top-btn').css({'position':'fixed','bottom':'1%','right': '5%'});
+            }
+            if($(window).scrollTop() + $(window).height() > $(document).height() - $(".footer").height()) {
+                $('.top-btn').css({'position':'absolute','bottom':'1%','right':'5%'});
+            }
+        });
+
+         // top button click
+         $(".top-btn").click(function(){
+            $('html, body').animate({
+                scrollTop : 0
+            }, 400);
+        });
+    }
+
     const footer_top = () => {
         $(".footer__m-top").click(function(){
             $('html, body').animate({
@@ -74,6 +100,7 @@ const common = () => {
     const common_init = () => {
         header_lang();
         header_nav();
+        TopButton();
         footer_top();
         question_pop();
     };

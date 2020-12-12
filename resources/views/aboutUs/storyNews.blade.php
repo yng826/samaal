@@ -72,6 +72,7 @@ $bodyClass = 'about';
         </div>
     </div>
     <div class="popup-mask"></div>
+    <div class="top-btn">TOP</div>
 </div>
 
 </main>

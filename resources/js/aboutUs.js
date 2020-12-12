@@ -16,33 +16,6 @@ const about = () => {
     }
 
     // aboutUs - storyNews - News
-    // 스토리뉴스 top button
-    const storyTopButton = () => {
-        $(window).scroll(function(){
-            // top button 생김
-            if ($(this).scrollTop()) {
-                $(".about-storyNews__top-btn").fadeIn();
-            } else {
-                $(".about-storyNews__top-btn").fadeOut();
-            }
-
-            // top button position
-            if($(window).scrollTop() + $(window).height() < $(document).height() - $(".footer").height()) {
-                $('.about-storyNews__top-btn').css({'position':'fixed','bottom':'0','right': '5%'});
-            }
-            if($(window).scrollTop() + $(window).height() > $(document).height() - $(".footer").height()) {
-                $('.about-storyNews__top-btn').css({'position':'absolute','bottom':'60px','right':'5%'});
-            }
-        });
-
-         // top button click
-         $(".about-storyNews__top-btn").click(function(){
-            $('html, body').animate({
-                scrollTop : 0
-            }, 400);
-        });
-    }
-
     const news_close = () => {
         var header = document.getElementById('header');
 
@@ -78,7 +51,6 @@ const about = () => {
 
     const about_init = () => {
         locationSwiper();
-        storyTopButton();
         news_close();
     };
 

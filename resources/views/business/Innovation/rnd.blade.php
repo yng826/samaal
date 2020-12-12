@@ -45,6 +45,7 @@
         </div>
         <div class="innovation-rnd__img"></div>
     </div>
+    <div class="top-btn">TOP</div>
 </main>
 @endsection
 

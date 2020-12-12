@@ -444,6 +444,11 @@
     z-index: 100;
 }
 
+/* tob button */
+.top-btn {
+    display: none;
+    font-size: 0;
+}
 
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
@@ -728,6 +733,26 @@
             right: vw(-30px);
             height: vw(60px);
         }
+    }
+
+    /* top button */
+    .top-btn {
+        display: inline-block;
+        position: fixed;
+        bottom: 1%;
+        right: 5%;
+        width: vw(140px);
+        height: vw(140px);
+        border: 1px solid #bebebe;
+        color: #000;
+        font: {
+            size: vw(35px);
+            weight: vw(bold);
+        }
+        text-align: center;
+        line-height: vw(200px);
+        cursor: pointer;
+        background:#fff url("/images/about/m/icon_top.jpg") no-repeat center vw(30px);
     }
 }
 
@@ -1056,5 +1081,26 @@
             right: 0;
             height: vw(38px);
         }
+    }
+
+    /* top button */
+    .top-btn {
+        display: inline-block;
+        position: fixed;
+        bottom: 1%;
+        right: 5%;
+        padding: vw(48px) 0 vw(12px);
+        width: vw(77px);
+        border: 1px solid #bebebe;
+        color: #000;
+        font: {
+            size: vw(20px);
+            weight: vw(bold);
+        }
+        text-align: center;
+        cursor: pointer;
+        background: #fff url("/images/about/m/icon_top.jpg") no-repeat center vw(15px);
+        background-size: vw(37px) vw(21px);
+        line-height: 1;
     }
 }

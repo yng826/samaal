@@ -16,7 +16,6 @@
         @yield('contents')
 
         @include('shared.footer')
-
     </div>
     @section('script')
     <!-- Scripts -->

@@ -26,6 +26,7 @@
             <certificate-component job_id={{$id}}></certificate-component>
             <overseas-component job_id={{$id}}></overseas-component>
         </div>
+        <div class="top-btn">TOP</div>
     </main>
 @endsection
 

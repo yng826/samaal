@@ -11,6 +11,7 @@
             <applicant-list-component></applicant-list-component>
             <login-component action="/api/login"></login-component>
         </div>
+        <div class="top-btn">TOP</div>
     </main>
 @endsection
 
