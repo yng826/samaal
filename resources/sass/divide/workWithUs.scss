@@ -443,7 +443,6 @@
             .text-team {
                 display: block;
                 margin-bottom: 30px;
-                color: 20px;
                 font-size: 20px;
                 font-weight: bold;
                 line-height: 1;
@@ -1414,7 +1413,6 @@
 
                 .text-team {
                     margin-bottom: vw(30px);
-                    color: vw(20px);
                     font-size: vw(20px);
                     letter-spacing: vw(-0.63px);
                 }
@@ -1835,6 +1833,138 @@
                 width: vw(534px);
             }
         }
+    }
+
+     /* 직무소개 */
+     .introduction-introjob {
+        &__title {
+            margin: vw(90px auto 100px);
+
+            h2 {
+                margin-bottom: vw(30px);
+                font-size: vw(50px);
+            }
+
+            p {
+                margin-bottom: vw(40px);
+                font-size: vw(30px);
+                line-height: vw(35px);
+            }
+
+            strong {
+                font-size: vw(30px);
+            }
+        }
+
+        &__contents {
+            max-width: vw(3020px);
+        }
+
+        &__list {
+            margin-left: vw(20px);
+
+            &--item {
+                width: calc(33.33% - #{vw(20px)});
+                margin-right: vw(20px);
+                margin-bottom: vw(49px);
+
+                h3 {
+                    height: vw(87px);
+                    padding-left: vw(28px);
+                    font-size: vw(40px);
+                    line-height: vw(85px);
+                    background-size: vw(95px 87px);
+                }
+
+                &:nth-child(odd) .btn-link{
+                    border: vw(3px) solid $titleColor;
+                }
+
+                &:nth-child(even) .btn-link{
+                    border: vw(3px) solid #3767c7;
+                }
+
+                .content-box {
+                    margin-top: vw(30px);
+                }
+
+                ul {
+                    height: vw(500px);
+                }
+
+                li {
+                    padding-left: vw(29px);
+                    margin-bottom: vw(19px);
+                    font-size: vw(30px);
+                    line-height: vw(35px);
+                    letter-spacing: vw(-0.63px);
+
+                    &::before {
+                        left: vw(5px);
+                        top: vw(11px);
+                        width: vw(8px);
+                        height: vw(8px);
+                    }
+                }
+
+                .mb-7 {
+                    li {
+                        margin-bottom: vw(7px);
+                    }
+                }
+
+                .text-team {
+                    margin-bottom: vw(30px);
+                    font-size: vw(25px);
+                    letter-spacing: vw(-0.63px);
+                }
+
+                .btn-link {
+                    width: vw(340px);
+                    height: vw(70px);
+                    margin: vw(0 auto 30px);
+                    font-size: vw(30px);
+                    line-height: vw(75px);
+                }
+            }
+        }
+
+        .title-production {
+            background: url("/images/work/img_production.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-sales {
+            background: url("/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-warranty {
+            background: url("/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-businessSupport {
+            background: url("/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-productionSupport {
+            background: url("/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-rnd {
+            background: url("/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-equipment {
+            background: url("/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-safety {
+            background: url("/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-it {
+            background: url("/images/work/img_it.png") no-repeat right center / vw(85px 67px);
+        }
+
     }
 
      /* 채용공고 */
@@ -2303,5 +2433,143 @@
                 }
             }
         }
+    }
+
+    /* 직무소개 */
+    .introduction-introjob {
+        padding: 0 vw(70px);
+
+        &__title {
+            margin: vw(72px auto 74px);
+
+            h2 {
+                margin-bottom: vw(27px);
+                font-size: vw(48px);
+            }
+
+            p {
+                margin-bottom: vw(32px);
+                font-size: vw(21px);
+                line-height: vw(33px);
+            }
+
+            strong {
+                font-size: vw(28px);
+                font-weight: 400;
+            }
+        }
+
+        &__contents {
+            max-width: vw(750px);
+        }
+
+        &__list {
+            margin-left: 0;
+
+            &--item {
+                width: 100%;
+                margin-right: vw(20px);
+                margin-bottom: vw(49px);
+
+                h3 {
+                    height: vw(83px);
+                    padding-left: vw(40px);
+                    font-size: vw(45px);
+                    line-height: vw(83px);
+                    background-size: vw(83px 83px);
+                    font-weight: 400;
+                }
+
+                &:nth-child(odd) .btn-link{
+                    border: vw(3px) solid $titleColor;
+                }
+
+                &:nth-child(even) .btn-link{
+                    border: vw(3px) solid #3767c7;
+                }
+
+                .content-box {
+                    margin-top: vw(30px);
+                }
+
+                ul {
+                    height: auto;
+                }
+
+                li {
+                    padding-left: vw(29px);
+                    margin-bottom: vw(34px);
+                    font-size: vw(18px);
+                    line-height: vw(30px);
+                    letter-spacing: vw(-0.63px);
+
+                    &::before {
+                        left: vw(5px);
+                        top: vw(11px);
+                        width: vw(8px);
+                        height: vw(8px);
+                    }
+                }
+
+                .mb-7 {
+                    li {
+                        margin-bottom: vw(29px);
+                    }
+                }
+
+                .text-team {
+                    margin-bottom: vw(30px);
+                    font-size: vw(27px);
+                    letter-spacing: vw(-0.63px);
+                    line-height: vw(33px);
+                    word-break: keep-all;
+                }
+
+                .btn-link {
+                    width: vw(212px);
+                    height: vw(60px);
+                    margin: vw(0 auto 37px);
+                    font-size: vw(24px);
+                    line-height: vw(60px);
+                }
+            }
+        }
+
+        .title-production {
+            background: url("/images/work/img_production.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-sales {
+            background: url("/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-warranty {
+            background: url("/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-businessSupport {
+            background: url("/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-productionSupport {
+            background: url("/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-rnd {
+            background: url("/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-equipment {
+            background: url("/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-safety {
+            background: url("/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
+        }
+
+        .title-it {
+            background: url("/images/work/img_it.png") no-repeat right center / vw(85px 67px);
+        }
+
     }
 }
