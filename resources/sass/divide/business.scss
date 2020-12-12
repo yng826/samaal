@@ -1100,52 +1100,62 @@
     }
 
     &__table {
-        th {
-            padding: 18px 0;
-            font-size: 20px;
-            line-height: 1;
-            border: 2px solid #000;
+        padding-bottom: 78px;
+
+        h3 {
+            margin-bottom: 20px;
+            font-size: 25px;
+            text-align: center;
         }
 
-        td {
-            padding: 23px 0;
-            color: #444444;
-            font-size: 20px;
-            line-height: 1;
-            border: 2 px solid #b7b7b7;
-        }
-
-        .sort {
-            font-weight: bold;
-            font-size: 20px;
-            color: #000;
-        }
-
-        .file-box {
-            display: inline-block;
-            margin-left: 15px;
-            font-size: 0;
-            vertical-align: middle;
-
-            a {
-                display: inline-block;
-                margin: 0 4px;
-                vertical-align: middle;
-                font-size: 0;
-                background-size: contain;
+        table {
+            th {
+                padding: 18px 0;
+                font-size: 20px;
+                line-height: 1;
+                border: 2px solid #000;
             }
-        }
 
-        .btn-download {
-            width: 28px;
-            height: 30px;
-            background: url("/images/business/speciality/btn-download.png") no-repeat;
-        }
+            td {
+                padding: 23px 0;
+                color: #444444;
+                font-size: 20px;
+                line-height: 1;
+                border: 2px solid #b7b7b7;
+            }
 
-        .btn-preview {
-            width: 31px;
-            height: 31px;
-            background: url("/images/business/speciality/btn-preview.png") no-repeat;
+            .sort {
+                font-weight: bold;
+                font-size: 20px;
+                color: #000;
+            }
+
+            .file-box {
+                display: inline-block;
+                margin-left: 15px;
+                font-size: 0;
+                vertical-align: middle;
+
+                a {
+                    display: inline-block;
+                    margin: 0 4px;
+                    vertical-align: middle;
+                    font-size: 0;
+                    background-size: contain;
+                }
+            }
+
+            .btn-download {
+                width: 28px;
+                height: 30px;
+                background: url("/images/business/speciality/btn-download.png") no-repeat;
+            }
+
+            .btn-preview {
+                width: 31px;
+                height: 31px;
+                background: url("/images/business/speciality/btn-preview.png") no-repeat;
+            }
         }
     }
 }
@@ -1936,44 +1946,52 @@
         }
 
         &__section {
-            max-width: vw(1382px );
+            max-width: vw(1382px);
             padding: vw(70px 0);
         }
 
         &__table {
-            th {
-                padding: vw(18px 0);
-                font-size: vw(20px);
-                border: vw(2px) solid #000;
+            padding-bottom: vw(78px);
+
+            h3 {
+                margin-bottom: vw(20px);
+                font-size: 2vw(5px);
             }
 
-            td {
-                padding: vw(23px 0);
-                font-size: vw(20px);
-                border: vw(2) px solid #b7b7b7;
-            }
-
-            .sort {
-                font-size: vw(20px);
-            }
-
-            .file-box {
-                margin-left: vw(15px);
-
-                a {
-                    margin: vw(0 4px);
+            table {
+                th {
+                    padding: vw(18px 0);
+                    font-size: vw(20px);
+                    border: vw(2px) solid #000;
                 }
-            }
 
-            .btn-download {
-                width: vw(28px);
-                height: vw(30px);
-            }
+                td {
+                    padding: vw(23px 0);
+                    font-size: vw(20px);
+                    border: vw(2px) solid #b7b7b7;
+                }
 
-            .btn-preview {
-                width: vw(31px);
-                height: vw(31px);
+                .sort {
+                    font-size: vw(20px);
+                }
 
+                .file-box {
+                    margin-left: vw(15px);
+
+                    a {
+                        margin: 0 vw(4px);
+                    }
+                }
+
+                .btn-download {
+                    width: vw(28px);
+                    height: vw(30px);
+                }
+
+                .btn-preview {
+                    width: vw(31px);
+                    height: vw(31px);
+                }
             }
         }
     }
@@ -2588,6 +2606,68 @@
 
                 span {
                     padding-top: vw(94px);
+                }
+            }
+        }
+    }
+
+    /* 인증 현황 */
+    .speciality-iso {
+
+        &__title {
+            padding: vw(112px 0);
+
+            h2 {
+                font-size: vw(80px);
+            }
+        }
+
+        &__section {
+            max-width: 100%;
+            padding: vw(70px 30px);
+        }
+
+        &__table {
+            padding-bottom: vw(78px);
+
+            h3 {
+                margin-bottom: vw(40px);
+                font-size: vw(50px);
+            }
+
+            table {
+                th {
+                    padding: vw(36px 0);
+                    font-size: vw(40px);
+                    border: vw(4px) solid #000;
+                }
+
+                td {
+                    padding: vw(46px 0);
+                    font-size: vw(40px);
+                    border: vw(4px) solid #b7b7b7;
+                }
+
+                .sort {
+                    font-size: vw(40px);
+                }
+
+                .file-box {
+                    margin-left: vw(30px);
+
+                    a {
+                        margin: 0 vw(8px);
+                    }
+                }
+
+                .btn-download {
+                    width: vw(60px);
+                    height: vw(60px);
+                }
+
+                .btn-preview {
+                    width: vw(62px);
+                    height: vw(62px);
                 }
             }
         }
@@ -3273,6 +3353,67 @@
 
                 span {
                     padding-top: vw(44px);
+                }
+            }
+        }
+    }
+
+    /* 인증 현황 */
+    .speciality-iso {
+        &__title {
+            padding: vw(79px 0);
+
+            h2 {
+                font-size: vw(50px);
+            }
+        }
+
+        &__section {
+            max-width: 100%;
+            padding: vw(78px 87px);
+        }
+
+        &__table {
+            padding-bottom: vw(78px);
+
+            h3 {
+                margin-bottom: vw(34px);
+                font-size: vw(38px);
+            }
+
+            table {
+                th {
+                    padding: vw(20px 0);
+                    font-size: vw(27px);
+                    border: vw(3px) solid #000;
+                }
+
+                td {
+                    padding: vw(20px 0);
+                    font-size: vw(22px);
+                    border: vw(3px) solid #b7b7b7;
+                }
+
+                .sort {
+                    font-size: vw(40px);
+                }
+
+                .file-box {
+                    margin-left: 0;
+
+                    a {
+                        margin: 0 vw(8px);
+                    }
+                }
+
+                .btn-download {
+                    width: vw(33px);
+                    height: vw(35px);
+                }
+
+                .btn-preview {
+                    width: vw(33px);
+                    height: vw(35px);
                 }
             }
         }
