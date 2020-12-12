@@ -30,7 +30,7 @@
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">분리, 분단</span>
-                    <strong class="lang-english">Separating/Slitting</strong>
+                    <strong class="lang-english">Separating / Slitting</strong>
                     <a href="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
