@@ -2261,13 +2261,14 @@
 
                 &--bottom {
                     .procedure {
+                        padding: vw(0 70px);
 
                         li {
-                            width: vw(94px);
-                            height: vw(94px);
+                            width: vw(130px);
+                            height: vw(130px);
                             margin-right: vw(21px);
                             border: vw(4px) solid $titleColor;
-                            font-size: vw(19px);
+                            font-size: vw(25px);
 
                             em {
                                 font-size: vw(14px);
