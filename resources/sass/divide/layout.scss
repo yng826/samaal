@@ -538,6 +538,116 @@
     }
 }
 
+/* 통합 검색 */
+.search-wrap {
+
+    &__box {
+        padding: 50px 0;
+        input {
+            color: $titleColor;
+            font-weight: bold;
+        }
+    }
+
+    &__search-text {
+        font-size: 25px;
+        text-align: center;
+
+        span {
+            font-weight: bold;
+            color: $titleColor;
+        }
+    }
+
+    &__section {
+        background-color: #e8ecef;
+    }
+
+    &__content {
+        padding: 70px 0;
+        max-width: 1380px;
+        margin: 0 auto;
+
+        &--tab {
+            width: 100%;
+            font-size: 0;
+
+            li {
+                display: inline-block;
+                position: relative;
+                width: calc(12.5% - 1px);
+                height: 67px;
+                border-right: 1px solid #e8e8e8;
+                background-color: #fff;
+                text-align: center;
+                cursor: pointer;
+                color: #4a4a4a;
+                font-size: 20px;
+                line-height: 67px;
+
+                &.on {
+                    background-color: #d1e0ff;
+
+                    // &::after {
+                    //     content: "";
+                    //     position: absolute;
+                    //     bottom:0;
+                    //     left: 0;
+                    //     width: 100%;
+                    //     height: 5px;
+                    //     background-color: $titleColor;
+                    // }
+
+                    &:hover {
+                        background-color: #fff;
+                    }
+                }
+
+                &:hover {
+                    background-color: #cccfdc;
+                }
+            }
+        }
+    }
+
+    &__list-item {
+        margin-top: 50px;
+        padding: 70px;
+        background-color: #fff;
+        border-top: 4px solid $titleColor;
+
+        &--title {
+            padding-bottom: 23px;
+            font-weight: bold;
+            font-size: 25px;
+            color: #4a4a4a;
+            border-bottom: 1px solid $titleColor;
+        }
+
+        span {
+            color: $titleColor;
+            font-weight: bold;
+        }
+
+        &--text {
+            padding-top:23px;
+            color: #4a4a4a;
+            font-size: 20px;
+
+            p {
+                @include line(1);
+            }
+
+            .position {
+                display: block;
+                padding-top: 43px;
+                color: $titleColor;
+            }
+        }
+    }
+
+}
+
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
     @import "./lib/webvw";
@@ -767,6 +877,55 @@
             right: vw(-15px);
             height: vw(30px);
         }
+    }
+
+    /* 통합 검색 */
+    .search-wrap {
+
+        &__box {
+            padding: vw(50px 0);
+        }
+
+        &__search-text {
+            font-size: vw(25px);
+        }
+
+        &__content {
+            padding: vw(70px 0);
+            max-width: vw(1380px);
+
+            &--tab {
+
+                li {
+                    height: vw(67px);
+                    font-size: vw(20px);
+                    line-height: vw(67px);
+                }
+            }
+        }
+
+        &__list-item {
+            margin-top: vw(50px);
+            padding: vw(70px);
+            border-top: vw(4px) solid $titleColor;
+
+            &--title {
+                padding-bottom: vw(23px);
+                font-size: vw(25px);
+                color: #4a4a4a;
+            }
+
+            &--text {
+                padding-top:vw(23px);
+                font-size: vw(20px);
+
+
+                .position {
+                    padding-top: vw(43px);
+                }
+            }
+        }
+
     }
 }
 
@@ -1016,6 +1175,65 @@
                 font-size: vw(17px);
             }
         }
+    }
+
+     /* 통합 검색 */
+     .search-wrap {
+
+        &__box {
+            padding: vw(100px 0);
+        }
+
+        &__search-text {
+            font-size: vw(50px);
+        }
+
+        &__content {
+            padding: vw(140px 0);
+            max-width: vw(3760px);
+
+            &--tab {
+
+                li {
+                    position: relative;
+                    height: vw(134px);
+                    font-size: vw(30px);
+                    line-height: 1;
+
+                    span {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+
+        &__list-item {
+            margin-top: vw(100px);
+            padding: vw(140px);
+            border-top: vw(8px) solid $titleColor;
+
+            &--title {
+                padding-bottom: vw(46px);
+                font-size: vw(50px);
+                color: #4a4a4a;
+            }
+
+            &--text {
+                padding-top:vw(46px);
+                font-size: vw(40px);
+
+
+                .position {
+                    padding-top: vw(86px);
+                }
+            }
+        }
+
     }
 }
 
@@ -1459,6 +1677,71 @@
             width: vw(32px);
             height: vw(32px);
         }
+    }
+
+    /* 통합 검색 */
+    .search-wrap {
+
+        &__box {
+            padding: vw(0 44px 100px);
+        }
+
+        &__search-text {
+            font-size: vw(40px);
+            line-height: vw(60px);
+        }
+
+        &__content {
+            padding: vw(62px 34px);
+            max-width: vw(750px);
+
+            &--tab {
+
+                li {
+                    position: relative;
+                    height: vw(110px);
+                    font-size: vw(26px);
+                    line-height: 1;
+                    width: calc(25% - 1px);
+                    border-bottom: 1px solid #e8e8e8;
+
+                    span {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+
+        &__list-item {
+            margin-top: vw(43px);
+            padding: vw(20px);
+            border-top: vw(4px) solid $titleColor;
+
+            &--title {
+                padding-bottom: vw(20px);
+                font-size: vw(32px);
+                color: #4a4a4a;
+            }
+
+            &--text {
+                padding-top:vw(25px);
+                font-size: vw(23px);
+
+                p {
+                    @include line(2);
+                }
+
+                .position {
+                    padding-top: vw(20px);
+                }
+            }
+        }
+
     }
 
 }

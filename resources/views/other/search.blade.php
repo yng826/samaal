@@ -1,19 +1,73 @@
 @extends('layouts.default')
 
 @section('contents')
-    <main class="contents-wrap">
+    <main class="search-wrap">
         <div class="contents-wrap__title pd-20">
-        <h2 class="about-ir__title">
-            통합검색
+            <h2 class="about-ir__title">
+                통합검색
             </h2>
         </div>
-        <div class="contents-wrap__section">
-            <input type="text" name="keyword" value="{{ $keyword }}">
-            <button type="button" id="search-btn">검색</button>
+        <div class="work-recruit__contents search-wrap__box">
+            <div class="work-recruit__search">
+                <div class="work-recruit__search--wrap">
+                    <input type="text" name="keyword" value="{{ $keyword }}">
+                    <button type="button" id="search-btn" class="btn-search">검색</button>
+                    <p class="work-recruit__search--text search-wrap__search-text">
+                        <span>"{{ $keyword }}"</span>에 대해 <br/> 총 {{ count($categoryKeywords) }}건의 검색결과가 있습니다.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="contents-wrap__section">
-            "{{ $keyword }}"에 대해 <br/> 총 {{ count($categoryKeywords) }}건의 검색결과가 있습니다.
+        <div class="search-wrap__section">
+            <div class="search-wrap__content">
+                <div class="search-wrap__content--tab">
+                    <ul>
+                        <li class="tab-item on" data-tab="">
+                            <span>전체</span>
+                        </li>
+                        <li class="tab-item" data-tab="">
+                            <span>About Us</span>
+                        </li>
+                        <li class="tab-item" data-tab="">
+                            <span>알루미늄 Foil</span>
+                        </li>
+                        <li class="tab-item" data-tab="">
+                            <span>포장재</span>
+                        </li>
+                        <li class="tab-item" data-tab="">
+                            <span>산업 건축용</span>
+                        </li>
+                        <li class="tab-item" data-tab="">
+                            <span>Speciality</span>
+                        </li>
+                        <li class="tab-item" data-tab="">
+                            <span>Innovation</span>
+                        </li>
+                        <li class="tab-item" data-tab="">
+                            <span>Work With Us</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search-wrap__list-item">
+                    <div class="search-wrap__list-item--title">
+                        포장재<span>1</span>
+                    </div>
+                    <div class="search-wrap__list-item--text">
+                        <a href="#">
+                            <p>
+                                전자레인지에 사용하는 <span>레토르트</span> 제품으로 확대 적용하고 있으며 캔 포장 제품을 파우치 제품으로 대체 유도함으로써 이산화탄소
+                            </p>
+                            <p class="position">
+                                For Business Partners &gt; 포장재
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+
         <div class="contents-wrap__section">
             <button type="button" id="category-0">전체
                 @if (count($categoryKeywords) > 0)
