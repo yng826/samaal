@@ -52,6 +52,9 @@ export default {
     computed: {
         item () {
             return this.$store.state.military;
+        },
+        status() {
+            return this.$store.state.job.status
         }
     },
     data: function() {
@@ -66,6 +69,24 @@ export default {
     },
     methods: {
         saveItem: function() {
+            if ( this.status == 'submit' ) {
+                Swal.fire({
+                    title: '이미 제출되었습니다!',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'expired' ) {
+                Swal.fire({
+                    title: '제출기한이 지났습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
             if ( this.isSubmit ) {
                 return false;
             }

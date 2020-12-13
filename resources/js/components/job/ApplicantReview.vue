@@ -1,5 +1,5 @@
 <template>
-    <div class="job-container form-container" v-if="this.$store.state.step == 4 || this.$store.state.step == 2">
+    <div class="job-container form-container" v-if="this.$store.state.step == 4">
         <form>
             <div class="form-wrap">
                 <h3>지원서제출</h3>
@@ -14,14 +14,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>작성완료</td>
-                            <td>작성완료</td>
-                            <td>작성완료</td>
-                            <td>미작성</td>
+                            <td>작성여부</td>
+                            <td>{{isUserinfo}}</td>
+                            <td>{{isApplicant}}</td>
+                            <td>{{isSelfIntroduction}}</td>
                         </tr>
                     </tbody>
                 </table>
-                <p>
+                <p class="review">
                     <strong>현재까지 입력한 내용은 모두 임시저장 되어있으며, 최종 제출 시 수정할 수 없습니다.</strong>
                     지원서 상의 모든 기재 및 제출 사항은 사실과 다름이 없음을 증명합니다.<br/>
                     차후 제출 내용이 허위로 판명되어 합격 및 입사가 취소되어도 이의를 제기하지 않을 것을 맹세합니다.
@@ -51,6 +51,21 @@ export default {
     computed: {
         item () {
             return this.$store.state.job;
+        },
+        isUserinfo() {
+            return this.$store.state.user_info.id ? '작성완료': '미작성';
+        },
+        isApplicant() {
+            return this.$store.state.career.length ? '작성완료': '미작성';
+        },
+        isSelfIntroduction() {
+            let txt;
+            if (this.item.cover_letter) {
+                txt = this.item.cover_letter.length > 0 ? '작성완료': '미작성';
+            } else {
+                txt = '미작성';
+            }
+            return txt;
         }
     },
     data: function() {

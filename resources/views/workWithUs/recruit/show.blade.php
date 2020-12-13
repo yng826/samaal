@@ -24,24 +24,17 @@
         <div class="work-recruit__detail">
             <div class="work-recruit__detail-wrap">
                 <div class="comer-box">
-                    <span class="on">신입</span>
-                    <span>영업</span>
+                    <span class="{{$recruit->career =='new' ? 'on': ''}}">신입</span>
+                    <span class="{{$recruit->career =='career' ? 'on': ''}}">영업</span>
                 </div>
                 <h3>
-                    2021 신입사원 모집<br>
-                    (영업직군)
+                    {{$recruit->title}}
                 </h3>
                 <div class="keywords">
                     <ul>
-                        <li>#시장조사</li>
-                        <li>#고객발굴</li>
-                        <li>#거래</li>
-                        <li>#영업이익</li>
-                        <li>#매출</li>
-                        <li>#판매전략</li>
-                        <li>#생산</li>
-                        <li>#출하</li>
-                        <li>#신규시장</li>
+                        @foreach ($keywords as $item)
+                        <li>#{{$item->keyword}}</li>
+                        @endforeach
                     </ul>
                 </div>
                 <ul class="work-recruit__detail-list">
@@ -49,7 +42,7 @@
                         <h4 class="work-recruit__detail-list--title">지원방법</h4>
                         <dl>
                             <dt>접수기간</dt>
-                            <dd>2021.04.28~2021.05.06</dd>
+                            <dd>{{$recruit->start_date}}~{{$recruit->end_date}}</dd>
                         </dl>
                         <dl>
                             <dt>접수방법</dt>

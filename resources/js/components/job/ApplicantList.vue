@@ -14,7 +14,7 @@
                     <td>{{ item.recruit.title }}</td>
                     <td>{{ item.recruit.end_date }}</td>
                     <td>
-                        <a :href="'/work-with-us/job/'+ item.id" class="btn btn-primary">수정/삭제</a>
+                        <a :href="'/work-with-us/job/'+ item.id" class="btn btn-primary">{{buttonText}}</a>
                     </td>
                     <td>{{ item.status_ko }}</td>
                 </tr>
@@ -31,6 +31,14 @@ export default {
         return {
             isAuth: false,
             items: [],
+        }
+    },
+    computed: {
+        status() {
+            return this.$store.state.job.status
+        },
+        buttonText: function() {
+            return this.status == 'saved' ? '수정/삭제' : '확인';
         }
     },
     mounted: function() {

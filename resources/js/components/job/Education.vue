@@ -52,7 +52,13 @@ export default {
         Datepicker
     },
     computed: {
-        items () { return this.$store.state.education }
+        items () { return this.$store.state.education },
+        status() {
+            return this.$store.state.job.status
+        },
+        status() {
+            return this.$store.state.job.status
+        }
     },
     data: function() {
         return {
@@ -70,6 +76,24 @@ export default {
     },
     methods: {
         addItem: function() {
+            if ( this.status == 'submit' ) {
+                Swal.fire({
+                    title: '이미 제출되었습니다!',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'expired' ) {
+                Swal.fire({
+                    title: '제출기한이 지났습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
             this.items.push({
                 id: "",
                 school_name: "",
@@ -81,6 +105,24 @@ export default {
             });
         },
         removeItem: function(id, index) {
+            if ( this.status == 'submit' ) {
+                Swal.fire({
+                    title: '이미 제출되었습니다!',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'expired' ) {
+                Swal.fire({
+                    title: '제출기한이 지났습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
             if ( this.items.length == 1 ) {
                 Swal.fire({
                     title: '삭제할 수 없습니다',
@@ -147,6 +189,42 @@ export default {
 
         },
         saveItems: function() {
+            if ( this.status == 'submit' ) {
+                Swal.fire({
+                    title: '이미 제출되었습니다!',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'expired' ) {
+                Swal.fire({
+                    title: '제출기한이 지났습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'submit' ) {
+                Swal.fire({
+                    title: '이미 제출되었습니다!',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'expired' ) {
+                Swal.fire({
+                    title: '제출기한이 지났습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
             if ( this.isSubmit ) {
                 return false;
             }

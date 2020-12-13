@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Work\Job;
 use Illuminate\Http\Request;
 
 class RecruitController extends Controller
@@ -44,9 +45,14 @@ class RecruitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $job = Job::where([
+            'recruit_id' => $id,
+            'user_id' => $request->user()->id,
+        ])->first();
+
+        return $job;
     }
 
     /**

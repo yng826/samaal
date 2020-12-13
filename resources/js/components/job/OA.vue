@@ -32,7 +32,10 @@ export default {
     },
     computed: {
         items () {
-        return this.$store.state.oa
+            return this.$store.state.oa
+        },
+        status() {
+            return this.$store.state.job.status
         }
     },
     data: function() {
@@ -46,6 +49,24 @@ export default {
     },
     methods: {
         addItem: function() {
+            if ( this.status == 'submit' ) {
+                Swal.fire({
+                    title: '이미 제출되었습니다!',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'expired' ) {
+                Swal.fire({
+                    title: '제출기한이 지났습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
             this.items.push({
                 id: "",
                 oa_name: "",
@@ -53,6 +74,24 @@ export default {
             });
         },
         removeItem: function(id, index) {
+            if ( this.status == 'submit' ) {
+                Swal.fire({
+                    title: '이미 제출되었습니다!',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'expired' ) {
+                Swal.fire({
+                    title: '제출기한이 지났습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
             if ( this.items.length == 1 ) {
                 Swal.fire({
                     title: '삭제할 수 없습니다',

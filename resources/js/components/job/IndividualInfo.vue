@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
-                    <input type="text" name="email" :disabled="job.id" v-model="user.email" placeholder="입력해주세요.">
+                    <input type="text" name="email" :disabled="job.id || isAuth" v-model="user.email" placeholder="입력해주세요.">
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
@@ -107,6 +107,9 @@ export default {
                     'background-image': 'none',
                 };
             }
+        },
+        status() {
+            return this.$store.state.job.status
         }
     },
     data: function() {
@@ -288,6 +291,24 @@ export default {
             }
         },
         setInfo: function(item) {
+            if ( this.status == 'submit' ) {
+                Swal.fire({
+                    title: '이미 제출되었습니다!',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( this.status == 'expired' ) {
+                Swal.fire({
+                    title: '제출기한이 지났습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
             const validate = this.validation();
             if ( !validate.result ) {
                 Swal.fire({
@@ -311,13 +332,17 @@ export default {
 
             if ( typeof this.job_id == 'undefined' || typeof this.job.id == 'undefined' || this.job.id == '') {
                 formData._method = 'POST';
-                url = '/api/join/';
+                if ( !this.isAuth ) {
+                    url = '/api/join/';
+                } else {
+                    url = '/api/work-with-us/job'
+                }
             } else {
                 formData._method = 'PUT';
                 url = '/api/work-with-us/job/'+ this.job_id + '?_method=PUT';
             }
 
-            return axios({
+            axios({
                 method: 'POST',
                 url: url,
                 data: formData,
@@ -337,8 +362,12 @@ export default {
                         allowOutsideClick: false
                     }).then(result => {
                         console.log(res.data.type == 'join');
-                        if (result.isConfirmed && res.data.job_id) {
-                            window.location.href = '/work-with-us/job/' + res.data.job_id
+                        if (result.isConfirmed ) {
+                            if ( res.data.job_id ) {
+                                window.location.href = '/work-with-us/job/' + res.data.job_id
+                            } else if ( res.data.job.id) {
+                                window.location.href = '/work-with-us/job/' + res.data.job.id
+                            }
                         }
                     });
                 } else {
@@ -350,6 +379,9 @@ export default {
                         allowOutsideClick: false
                     }).then(result => {
                         if (result.isConfirmed) {
+                            if ( !isAuth ) {
+                                
+                            }
                             // this.$root.$emit('openPopup', 'login', this.recruit_id);
                             // window.location.href = '/work-with-us/job/' + res.data.job.id
                         }
