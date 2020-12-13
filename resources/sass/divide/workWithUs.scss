@@ -225,7 +225,7 @@
 
                 .input_date-group {
                     display: inline-block;
-                    width: 460px;
+                    width: 350px;
                     vertical-align: middle;
                     font-size: 0;
 
@@ -1922,7 +1922,7 @@
     /* 지원하기 */
     .work-apply {
         &__contents {
-            max-width: vw(662px);
+            max-width: 80vw;
             padding-top: vw(38px);
             margin: 0 auto;
         }
@@ -1930,6 +1930,29 @@
         &__progress {
             ul {
                 width: vw(534px);
+            }
+        }
+
+        .form-container {
+            padding: vw(30px 120px 30px);
+            .form-left {
+                width: 50%;
+                .form-group {
+                    label {
+                        width: vw(250px);
+                    }
+                    label, input {
+                        font-size: vw(30px);
+                    }
+                }
+            }
+            .form-img {
+                width: 40%;
+                .form-group {
+                    .picture {
+                        height: vw(500px);
+                    }
+                }
             }
         }
     }
