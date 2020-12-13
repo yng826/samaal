@@ -4,6 +4,7 @@
     max-width: 1900px;
     margin: 0 auto;
 
+
     &__title {
         position: fixed;
         float: right;
@@ -39,7 +40,7 @@
         position: relative;
         width: 61.84210526316%;
         box-sizing: border-box;
-
+        @extend %clear;
         $col_width:453/1175*100%;
         &__col {
             float: left;
@@ -60,6 +61,23 @@
                 &:last-child {
                     height: 248px;
                 }
+            }
+        }
+
+        &__half {
+            float: left;
+            width: 100%;
+            margin-right: 5px;
+
+            &--item {
+                float: left;
+                display: block;
+                position: relative;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                width: calc(50% - 5px);
+                height: 412px;
+
             }
         }
 
@@ -206,10 +224,74 @@
                 background: url("/images/business/foil/img_external_hover.jpg") no-repeat center / cover;
             }
         }
+
         .item-tab {
             background: url("/images/business/foil/img_tab.jpg") no-repeat center / cover;
             &:hover {
                 background: url("/images/business/foil/img_tab_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-cigarette {
+            background: url("/images/business/foil/img_cigarette.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_cigarette_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-refill {
+            background: url("/images/business/foil/img_refill.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_refill_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-retort {
+            background: url("/images/business/foil/img_retort.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_retort_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-alu {
+            background: url("/images/business/foil/img_alu.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_alu_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-watertight {
+            background: url("/images/business/foil/img_watertight.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_watertight_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-insulation {
+            background: url("/images/business/foil/img_insulation.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_insulation_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-sidemirror {
+            background: url("/images/business/foil/img_sidemirror.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_sidemirror_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-steel {
+            background: url("/images/business/foil/img_steel.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_steel_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-paste {
+            background: url("/images/business/foil/img_paste.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_paste_hover.jpg") no-repeat center / cover;
             }
         }
     }
@@ -2331,6 +2413,25 @@
                 }
             }
         }
+
+        .foil-box {
+            &__half {
+                float: left;
+                width: 100%;
+                margin-right: vw(5px);
+
+                &--item {
+                    float: left;
+                    display: block;
+                    position: relative;
+                    margin-right: vw(5px);
+                    margin-bottom: vw(5px);
+                    width: calc(50% - #{vw(5px)});
+                    height: vw(412px);
+
+                }
+            }
+        }
     }
 
    /* 알루미늄 호일, 포장재용, 산업/건축용 layout */
@@ -3060,6 +3161,25 @@
                 }
             }
 
+
+            &__half {
+                float: left;
+                width: 100%;
+                margin-right: vw(5px);
+
+                &--item {
+                    float: left;
+                    display: block;
+                    position: relative;
+                    margin-right: 0;
+                    margin-bottom: 0;
+                    width: 50%;
+                    height: vw(512px);
+
+                }
+            }
+
+
             .mr-5 {
                 margin-right:0;
             }
@@ -3092,10 +3212,10 @@
                     size: vw(35px);
                 }
             }
+        }
 
-            &:last-child {
-                padding-top: 0;
-            }
+        .pt-0 {
+            padding-top: 0;
         }
     }
 
