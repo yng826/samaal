@@ -35,7 +35,12 @@ $bodyClass = 'about';
                 <?php
                     $style='';
                 ?>
-                @if (isset($_GET['page']) && $_GET['page'] == $i)
+                @if(!isset($_GET['page']))
+                    <?php
+                        $_GET['page'] = 1;
+                    ?>
+                @endif
+                 @if ($_GET['page'] == $i)
                     <?php
                         $style='color: blue';
                     ?>

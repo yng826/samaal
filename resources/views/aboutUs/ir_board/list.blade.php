@@ -62,19 +62,24 @@
             </div>
             <br />
             <div class="pagination">
-                <a href="/about-us/ir/board/list?page=1" class="pagination__button-prev"></a>
+                <a href="/about-us/ir/board?page=1" class="pagination__button-prev"></a>
                 @for($i=1; $i<$cnt+1; $i++)
                 <?php
                     $style='';
-                ?>
-                    @if (isset($_GET['page']) && $_GET['page'] == $i)
+                    ?>
+                 @if(!isset($_GET['page']))
+                   <?php
+                        $_GET['page'] = 1;
+                   ?>
+                 @endif
+                    @if ($_GET['page'] == $i)
                     <?php
                         $style='color: blue';
                     ?>
                     @endif
-                    <a href="/about-us/ir/board/list?page={{ $i }}" class="pagination__number"style="{{ $style }}">{{ $i }}</a>
+                    <a href="/about-us/ir/board?page={{ $i }}" class="pagination__number"style="{{ $style }}">{{ $i }}</a>
                 @endfor
-                <a href="/about-us/ir/board/list?page={{ $cnt }}" class="pagination__button-next"></a>
+                <a href="/about-us/ir/board?page={{ $cnt }}" class="pagination__button-next"></a>
             </div>
             <div class="about-ir__link">
                 <button type="button" onclick="location.href='#' ">DART 바로가기</button>
