@@ -485,6 +485,59 @@
     font-size: 0;
 }
 
+/* 사이트맵 */
+.sitemap {
+    &__title {
+        padding: 57px 0;
+
+        h2 {
+            line-height: 1;
+        }
+    }
+
+    &__section {
+        max-width: 1616px;
+        margin: 0 auto;
+        padding: 90px 0;
+
+        .depth-01 {
+            width: 20%;
+            font-size: 20px;
+            color: #1d3669;
+            font-weight: bold;
+
+            a {
+                color: #1d3669;
+            }
+        }
+
+        .depth-02 {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #292929;
+
+        }
+
+        tr {
+            border-top: 1px solid $titleColor;
+        }
+
+        td {
+            padding: 46px 0;
+            border: none;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        li {
+            padding: 10px 0;
+            font-size: 17px;
+            color: #535353;
+        }
+    }
+}
+
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
     @import "./lib/webvw";
@@ -931,6 +984,38 @@
         line-height: vw(200px);
         cursor: pointer;
         background:#fff url("/images/about/m/icon_top.jpg") no-repeat center vw(30px);
+    }
+
+    /* 사이트맵 */
+    .sitemap {
+        &__title {
+            padding: vw(57px 0);
+        }
+
+        &__section {
+            max-width: 100%;
+            padding: vw(90px 0);
+
+            .depth-01 {
+                font-size: vw(20px);
+            }
+
+            .depth-02 {
+                display: inline-block;
+                margin-bottom: vw(10px);
+                font-size: vw(18px);
+
+            }
+
+            td {
+                padding: vw(46px 0);
+            }
+
+            li {
+                padding: vw(10px 0);
+                font-size: vw(17px);
+            }
+        }
     }
 }
 
