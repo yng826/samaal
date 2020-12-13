@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     // return view('welcome');
-    return view('intro', [
+    return view('main', [
         'bodyClass' => 'siteIntro',
     ]);
 });

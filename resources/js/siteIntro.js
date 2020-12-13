@@ -9,7 +9,7 @@ const siteIntro = () => {
     const setFullPage = function() {
         let ww = $(window).width();
         console.log(ww);
-        if ( ww > 1000 ) {
+        if ( ww > 767 ) {
             console.log('desktop');
             if ( $('#fullpage').hasClass('fullpage-wrapper') ) {
                 $.fn.fullpage.destroy('all');
@@ -18,11 +18,17 @@ const siteIntro = () => {
             console.log('mobile');
             if ( !$('#fullpage').hasClass('fullpage-wrapper') || $('#fullpage').hasClass('fp-destroyed')) {
                 $('#fullpage').fullpage({
-                    sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
                     navigation: true
                 });
             }
         }
+    }
+
+    const main_submenu = () => {
+        $(".sub-menu__button").on('click', function(){
+            $(this).toggleClass("on");
+			$(this).next().toggleClass("on");
+        });
     }
 
     const eventListener = function() {
@@ -32,6 +38,7 @@ const siteIntro = () => {
     const siteIntroInit = () => {
         eventListener();
         setFullPage();
+        main_submenu();
         // questionPop();
         // siteIntroSwiper();
         // processTab();
