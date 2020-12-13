@@ -114,6 +114,7 @@
                     </div>
                 </div>
                 <div class="section main-wrap__section--img section01-img"></div>
+                <div class="mobile-arrow"></div>
             </div>
 
             <div class="section main-wrap__section section02">
@@ -137,6 +138,7 @@
                         <li><a href="#">Location</a></li>
                     </ul>
                 </div>
+                <div class="mobile-arrow"></div>
             </div>
 
             <div class="section main-wrap__section section03">
@@ -150,6 +152,7 @@
                     </div>
                 </div>
                 <div class="section main-wrap__section--img section03-img"></div>
+                <div class="mobile-arrow"></div>
             </div>
 
             <div class="section main-wrap__section section04">

@@ -405,6 +405,72 @@
                     display: block;
                 }
             }
+
+            .mobile-arrow {
+                display: block;
+                position: absolute;
+                bottom: vw(50px);
+                left: 50%;
+                // transform: translateX(-50%);
+                width: vw(50px);
+                height: vw(45px);
+                background: url("/images/common/bottom_arrow.png")no-repeat;
+                background-size: contain;
+                -moz-animation: mainbounce 3s infinite;
+                -webkit-animation: mainbounce 3s infinite;
+                animation: mainbounce 3s infinite;
+                font-size: 0;
+                z-index: 1;
+
+            @-moz-keyframes mainbounce {
+                0%, 20%, 50%, 80%, 100% {
+                  -moz-transform: translateY(0);
+                  transform: translateY(0);
+                }
+                40% {
+                  -moz-transform: translateY(-3px);
+                  transform: translateY(-3px);
+                }
+                60% {
+                  -moz-transform: translateY(-1px);
+                  transform: translateY(-1px);
+                }
+            }
+              @-webkit-keyframes mainbounce {
+                0%, 20%, 50%, 80%, 100% {
+                  -webkit-transform: translateY(0);
+                  transform: translateY(0);
+                }
+                40% {
+                  -webkit-transform: translateY(-3px);
+                  transform: translateY(-3px);
+                }
+                60% {
+                  -webkit-transform: translateY(-3px);
+                  transform: translateY(-3px);
+                }
+            }
+              @keyframes mainbounce {
+                0%, 20%, 50%, 80%, 100% {
+                  -moz-transform: translateY(0);
+                  -ms-transform: translateY(0);
+                  -webkit-transform: translateY(0);
+                  transform: translateY(0);
+                }
+                40% {
+                  -moz-transform: translateY(-3px);
+                  -ms-transform: translateY(-3px);
+                  -webkit-transform: translateY(-3px);
+                  transform: translateY(-3px);
+                }
+                60% {
+                  -moz-transform: translateY(-1px);
+                  -ms-transform: translateY(-1px);
+                  -webkit-transform: translateY(-1px);
+                  transform: translateY(-1px);
+                }
+            }
+            }
         }
 
         .section01 {
