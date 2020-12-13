@@ -69,6 +69,7 @@ const financial = () => {
                     display: false
                 },
                 maintainAspectRatio: false, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                responsive:true,
                 scales: {
                     yAxes: [{
                         ticks: {

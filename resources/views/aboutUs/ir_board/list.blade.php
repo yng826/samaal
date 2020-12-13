@@ -50,7 +50,7 @@
                         @foreach ($ir_boards as $ir_board)
                         <tr>
                             <td class="text-center">{{ $ir_board->id }}</td>
-                            <td class="text-center"> {{ $ir_board->title }}</a></td>
+                            <td class="text-center .about-ir__fixed"><div class="ir-contents"> {{ $ir_board->title }}</div></td>
                             <td class="text-center .about-ir__fixed">
                                 <div class="ir-contents">{!! $ir_board->contents !!}</div>
                             </td>
