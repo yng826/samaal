@@ -66,12 +66,13 @@ const financial = () => {
                         barPercentage: 0.5
                     }]
                 },
-                events: false,
+                //events: false,
                 hover: {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 1,
+                    duration: 900000,
+                    easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
                             ctx = chartInstance.ctx;
@@ -149,7 +150,8 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 1,
+                    duration: 900000,
+                    easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
                             ctx = chartInstance.ctx;
@@ -227,7 +229,8 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 1,
+                    duration: 900000,
+                    easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
                             ctx = chartInstance.ctx;
@@ -305,7 +308,8 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 1,
+                    duration: 900000,
+                    easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
                             ctx = chartInstance.ctx;
@@ -383,7 +387,8 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 1,
+                    duration: 900000,
+                    easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
                             ctx = chartInstance.ctx;
@@ -463,7 +468,8 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 1,
+                    duration: 900000,
+                    easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
                             ctx = chartInstance.ctx;
