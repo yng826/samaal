@@ -75,14 +75,19 @@ class RecruitListController extends Controller
     public function show(Recruit $recruit, $id)
     {
         $recruit = DB::table('recruits')->where('id', $id)->first();
+        $keywords = DB::table('recruit_keywords')->where('recruit_id', $id)->get();
 
         if ( !$recruit ) {
             abort(404);
         }
 
+        debug($recruit);
+        debug($keywords);
+
         // return json_encode($recruit);
         return view('workWithUs.recruit.show', [
-            'recruit'=> $recruit
+            'recruit'=> $recruit,
+            'keywords' => $keywords,
         ]);
     }
 

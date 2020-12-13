@@ -53,6 +53,7 @@ Vue.component('overseas-component', require('../components/job/OverseasStudy.vue
 Vue.component('self-introduction-component', require('../components/job/SelfIntroduction.vue').default);
 Vue.component('applycant-review-component', require('../components/job/ApplicantReview.vue').default);
 Vue.component('job-button-groups-component', require('../components/job/JobButtonGroups.vue').default);
+Vue.component('progress-component', require('../components/job/Progress.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

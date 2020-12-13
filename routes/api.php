@@ -140,8 +140,9 @@ Route::prefix('work-with-us')->middleware('auth:api')->group(function () {
     Route::get('job/search/{recruit_id}', [JobController::class, 'search']);
     Route::post('job', [JobController::class, 'store']);
     Route::put('job/{id}', [JobController::class, 'update']);
+    Route::put('job/submit/{id}', [JobController::class, 'submit']);
 
-    // Route::get('recruit', [RecruitController::class, 'show']);
+    Route::get('recruit/{id}', [RecruitController::class, 'show']);
 });
 
 

@@ -252,4 +252,34 @@ class JobController extends Controller
 
         return $job;
     }
+
+    public function submit(Request $request, $job_id)
+    {
+        $job = Job::where([
+            'id'=> $job_id,
+            'user_id' => $request->user()->id,
+        ])->first();
+
+        $result = [];
+        if ( $job ) {
+            if ( $job->status == 'pending') {
+                $result['result'] = 'fail';
+                $result['msg'] = '제출된 입사지원서를 검토중입니다';
+            } else if ( $job->status == 'submit') {
+                $result['result'] = 'fail';
+                $result['msg'] = '이미 제출되었습니다';
+            } else if ( $job->status == 'expired') {
+                $result['result'] = 'fail';
+                $result['msg'] = '기한이 지났습니다';
+            } else {
+                $job->status = 'submit';
+                $job->save();
+                $result['result'] = 'success';
+            }
+        } else {
+            $result['result'] = 'fail';
+            $result['msg'] = '잘못된 접근입니다';
+        }
+        return $result;
+    }
 }
