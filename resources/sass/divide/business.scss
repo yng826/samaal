@@ -802,6 +802,7 @@
 
             &[type=text] {
                 height: 65px;
+                box-sizing: border-box;
             }
 
             &::placeholder {
@@ -827,6 +828,7 @@
             color: #000;
             border-radius: 5px;
             border: none;
+            box-sizing: border-box;
 
             &::placeholder {
                 font-size: 18px;
