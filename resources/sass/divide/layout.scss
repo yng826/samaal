@@ -337,6 +337,38 @@
     }
 }
 
+.sub-hader {
+    background-color: transparent;
+    border: 0;
+
+    .header__nav--item {
+        span {
+            color: #fff;
+        }
+    }
+
+    .header__search a {
+        color: #fff;
+    }
+
+    .header__search li:first-child::before {
+        border-top: 8px solid #fff;
+    }
+
+    .header__search li:first-child.on::before {
+        border-top: 0;
+        border-bottom: 8px solid #fff;
+    }
+
+    .header__search .btn-search {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background: url("/images/main/m_main_search.png") no-repeat;
+        background-size: contain;
+    }
+}
+
 /* 서브페이지 레이아웃*/
 .contents-wrap {
     /* 페이지별로 title padding 값이 다르기 때문에 padding 값은 페이지별로 넣어야합니다.*/
@@ -974,7 +1006,7 @@
                 background: #fff;
                 top: 0;
                 height: 100%;
-                z-index: 1;
+                z-index: 2;
 
                 &.on {
                     display: block;
@@ -1075,6 +1107,7 @@
             height: 100%;
             background-color: #000;
             opacity: 0.9;
+            z-index: 1;
         }
 
         &__search {
@@ -1308,4 +1341,39 @@
             }
         }
     }
+
+    .sub-hader {
+        background-color: transparent;
+        border: 0;
+
+        .header__m-nav {
+            span {
+                background: #fff;
+            }
+        }
+
+        .header__nav--item {
+            span {
+                color: #fff;
+            }
+        }
+
+        .header__search a {
+            color: #fff;
+        }
+
+        .header__search li:first-child::before {
+            border-top: vw(8px) solid #fff;
+        }
+
+        .header__search li:first-child.on::before {
+            border-bottom: vw(8px) solid #fff;
+        }
+
+        .header__search .btn-search {
+            width: vw(32px);
+            height: vw(32px);
+        }
+    }
+
 }
