@@ -91,6 +91,12 @@ Route::prefix('business')->group(function() {
     Route::get('foil', function () {
         return view('business.foil.main');
     });
+    Route::get('package', function () {
+        return view('business.package.main');
+    });
+    Route::get('industry', function () {
+        return view('business.industry.main');
+    });
     Route::get('foil/capacitor', function () {
         $data = [];
         $data['question_title'] = 'Capacitor용 Foil';

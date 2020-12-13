@@ -40,14 +40,13 @@
                 </div>
             </div>
         </div>
-        <div class="business-foil__contents foil-box">
+        <div class="business-foil__contents foil-box pt-0">
             <!-- psd 다시 받아야 함 psd에 이미지들 없음  그리고 hover 이미지도 없음-->
             <div class="foil-box__inline mr-5">
                 <a href="foil/restrictions" class="foil-box--item item-restrictions">
                     <p class="foil-box__text">제약용 Foil</p>
                 </a>
             </div>
-
             <div class="foil-box__col fl-r mr-0">
                 <div class="foil-box__col--item">
                     <a href="foil/electronic" class="foil-box--item item-car">
