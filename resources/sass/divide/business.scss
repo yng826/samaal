@@ -473,8 +473,16 @@
 
 /* business intro */
 .business-intro {
-    position: relative;
     width: 100%;
+    max-width: 1900px;
+    margin: 0 auto;
+
+
+    &__wrap {
+        position: relative;
+        padding: 70px  0 139px;
+        @extend %clear;
+    }
 
     .slide-info {
         h2 {
@@ -488,34 +496,140 @@
 
         &__link {
             display: block;
-            width: 225;
-            height: 59;
+            width: 225px;
+            height: 59px;
             margin-top: 42px;
             font-size: 27px;
             text-align: center;
             border: 2px solid #000;
-            border-radius: 20px;
-            line-height: 1;
+            border-radius: 35px;
+            line-height: 59px;
         }
 
     }
 
     &__slide-info {
         position: absolute !important;
-        left: 0;
-        width: 594px;
+        width: 29.26315789474%;
+        top: 50%;
+        left: 143px;
+        transform: translateY(-50%);
+        vertical-align: middle;
     }
 
     &__slide-img {
-        display: block;
-        width: 1164px;
+        float: right;
+        width: 61.26315789474%;
+        vertical-align: middle;
+        box-sizing: border-box;
 
-        .swiper-slide {
-            background-color: #000;
+        .swiper-wrapper {
+            padding-bottom: 21px;
         }
 
-        .swiper-slide-active {
-            background-color: red;
+        .swiper-slide {
+            height: 600px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                transition: all 0.5s;
+            }
+
+        }
+
+        .swiper-pagination-bullet {
+            width: calc(20% - 5px);
+            border-radius: 0;
+        }
+        .swiper-pagination {
+            bottom: 0 !important;
+            font-size: 0;
+        }
+
+        .swiper-slide-active::before {
+            display: none;
+        }
+
+        .swiper-pagination-bullet {
+            float: left;
+            margin: 0 5px 0 0!important;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $titleColor;
+        }
+
+        .swiper-button {
+            width: 79px;
+            height: 79px;
+            font-size: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+        .swiper-button-next {
+            background: url("/images/about/location_next.png")no-repeat;
+            background-size: contain;
+        }
+
+        .swiper-button-prev {
+            background: url("/images/about/location_prev.png")no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .innovation-btn {
+        &__box {
+            display: none;
+            margin-top: 37px;
+            float: left;
+            width: 307px;
+
+            li {
+                display: block;
+                position: relative;
+                padding: 30px 39px 12px 11px;
+                border-bottom: 1px solid #000;
+                text-align: left;
+
+                a {
+                    display: block;
+                    font-size: 20px;
+                }
+
+                &::after {
+                    content:"";
+                    display: block;
+                    width: 12px;
+                    height: 22px;
+                    position: absolute;
+                    right: 13px;
+                    bottom: 12px;
+                    background: url("/images/main/btn_main_arrow.png")no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            &.on {
+                display: block;
+            }
         }
     }
 }
@@ -1539,7 +1653,12 @@
 
     /* business intro */
     .business-intro {
-        margin-left: vw(142px);
+        max-width: vw(1900px);
+
+
+        &__wrap {
+            padding: vw(70px  0 139px);
+        }
 
         .slide-info {
             h2 {
@@ -1549,22 +1668,66 @@
             }
 
             &__link {
-                width: vw(225);
-                height: vw(59);
+                width: vw(225px);
+                height: vw(59px);
                 margin-top: vw(42px);
                 font-size: vw(27px);
                 border: vw(2px) solid #000;
-                border-radius: vw(20px);
+                border-radius: vw(35px);
+                line-height: vw(59px);
             }
 
         }
 
         &__slide-info {
-            width: vw(594px);
+            left: vw(143px);
         }
 
         &__slide-img {
-            width: vw(1164px);
+
+            .swiper-wrapper {
+                padding-bottom: vw(21px);
+            }
+
+            .swiper-slide {
+                height: vw(600px);
+
+            }
+
+            .swiper-pagination-bullet {
+                width: calc(20% - #{vw(5px)});
+            }
+
+            .swiper-pagination-bullet {
+                margin: 0 vw(5px) 0 0!important;
+            }
+
+            .swiper-button {
+                width: vw(79px);
+                height: vw(79px);
+            }
+        }
+
+        .innovation-btn {
+            &__box {
+                margin-top: vw(37px);
+                width: vw(307px);
+
+                li {
+                    padding: vw(30px 39px 12px 11px);
+
+                    a {
+                        font-size: vw(20px);
+                    }
+
+                    &::after {
+                        width: vw(12px);
+                        height: vw(22px);
+                        right: vw(13px);
+                        bottom: vw(12px);
+                    }
+                }
+            }
         }
     }
 

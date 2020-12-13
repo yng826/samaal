@@ -90,6 +90,14 @@ const business = () => {
         });
     };
 
+    // 알루미늄 인트로 innovation 더알아보기 click
+    const innovation_submenu = () => {
+        $(".innovation-btn").on('click', function(){
+            $(this).toggleClass("on");
+            $(this).next().toggleClass("on");
+        });
+    }
+
     // ISO 인증 라이트박스
     const isoCertificationLightbox = () => {
         var SimpleLightbox = require('simple-lightbox');
@@ -119,6 +127,7 @@ const business = () => {
         processLightbox();
         rndSwiper();
         isoCertificationLightbox();
+        innovation_submenu();
     };
 
     business_init();

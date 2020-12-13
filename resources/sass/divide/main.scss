@@ -476,22 +476,26 @@
         .section01 {
             height: auto;
             background: url("/images/main/m_img_main_01.jpg")no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: 50%
         }
 
         .section02 {
             background: url("/images/main/m_img_main_02.jpg")no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: 50%
         }
 
         .section03 {
             background: url("/images/main/m_img_main_03.jpg")no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: 50%
         }
 
         .section04 {
             background: url("/images/main/m_img_main_04.jpg")no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: 50%
         }
 
         .section01-img {

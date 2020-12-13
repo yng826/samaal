@@ -26,6 +26,7 @@ const siteIntro = () => {
         }
     }
 
+    // 메인 서브메뉴 클릭시
     const main_submenu = () => {
         $(".sub-menu__button").on('click', function(){
             $(this).toggleClass("on");
