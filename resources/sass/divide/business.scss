@@ -1,12 +1,16 @@
 /* 알루미늄 호일, 포장재용, 산업/건축용 content */
 .business-foil {
     position: relative;
+    max-width: 1900px;
+    margin: 0 auto;
 
     &__title {
         position: fixed;
-        top: 358px;
-        right: 120px;
-        // transform: translateY(-50%);
+        float: right;
+        width: calc(100% - 61.84210526316%);
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
         color: #3d3d3d;
         font: {
             size: 35px;
@@ -31,77 +35,10 @@
         }
     }
 
-    .arrow-effect {
-        span {
-            display: block;
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 45px;
-            background: url("/images/business/arrow.png") no-repeat;
-            background-size: contain;
-            -moz-animation: bounce 3s infinite;
-            -webkit-animation: bounce 3s infinite;
-            animation: bounce 3s infinite;
-            font-size: 0;
-            z-index: 1;
-
-            @-moz-keyframes bounce {
-                0%, 20%, 50%, 80%, 100% {
-                  -moz-transform: translateY(0);
-                  transform: translateY(0);
-                }
-                40% {
-                  -moz-transform: translateY(-30px);
-                  transform: translateY(-30px);
-                }
-                60% {
-                  -moz-transform: translateY(-15px);
-                  transform: translateY(-15px);
-                }
-            }
-              @-webkit-keyframes bounce {
-                0%, 20%, 50%, 80%, 100% {
-                  -webkit-transform: translateY(0);
-                  transform: translateY(0);
-                }
-                40% {
-                  -webkit-transform: translateY(-30px);
-                  transform: translateY(-30px);
-                }
-                60% {
-                  -webkit-transform: translateY(-15px);
-                  transform: translateY(-15px);
-                }
-            }
-              @keyframes bounce {
-                0%, 20%, 50%, 80%, 100% {
-                  -moz-transform: translateY(0);
-                  -ms-transform: translateY(0);
-                  -webkit-transform: translateY(0);
-                  transform: translateY(0);
-                }
-                40% {
-                  -moz-transform: translateY(-30px);
-                  -ms-transform: translateY(-30px);
-                  -webkit-transform: translateY(-30px);
-                  transform: translateY(-30px);
-                }
-                60% {
-                  -moz-transform: translateY(-15px);
-                  -ms-transform: translateY(-15px);
-                  -webkit-transform: translateY(-15px);
-                  transform: translateY(-15px);
-                }
-            }
-        }
-    }
-
     .foil-box {
         position: relative;
-        width: 1175px;
+        width: 61.84210526316%;
+        box-sizing: border-box;
 
         $col_width:453/1175*100%;
         &__col {
@@ -158,8 +95,24 @@
 
         &--item {
             display: inline-block;
+            position: relative;
             height: 100%;
             width: 100%;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #edf1f4;
+                opacity: 0.5;
+            }
+
+            &:hover::after {
+                display: none;
+            }
         }
 
         &__text {
@@ -172,40 +125,91 @@
                 size: 34px;
                 weight: bold;
             }
+            z-index: 1;
+        }
+
+        .fl-l {
+            float: left;
+        }
+
+        .fl-r {
+            float: right;
+        }
+
+        .mr-5 {
+            margin-right: 5px;
+        }
+
+        .mr-0 {
+            margin-right: 0;
         }
 
         .item-foil {
-            background: url("/images/business/foil/img_foil.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_foil.jpg") no-repeat center / cover;
             &:hover {
-                background: #8b8e92;
+                background: url("/images/business/foil/img_foil_hover.jpg") no-repeat center / cover;
             }
         }
 
         .item-fin {
-            background: url("/images/business/foil/img_fin.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_fin.jpg") no-repeat center / cover;
             &:hover {
-                background: #8b8e92;
+                background: url("/images/business/foil/img_fin_hover.jpg") no-repeat center / cover;
             }
         }
 
         .item-capacitor {
-            background: url("/images/business/foil/img_capacitor.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_capacitor.jpg") no-repeat center / cover;
             &:hover {
-                background: #8b8e92;
+                background: url("/images/business/foil/img_capacitor_hover.jpg") no-repeat center / cover;
             }
         }
 
         .item-decoration {
-            background: url("/images/business/foil/img_decoration.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_decoration.jpg") no-repeat center / cover;
             &:hover {
-                background: #8b8e92;
+                background: url("/images/business/foil/img_decoration_hover.jpg") no-repeat center / cover;
             }
         }
 
         .item-line {
-            background: url("/images/business/foil/img_line.jpg") no-repeat center / contain;
+            background: url("/images/business/foil/img_line.jpg") no-repeat center / cover;
             &:hover {
-                background: #8b8e92;
+                background: url("/images/business/foil/img_line_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-restrictions {
+            background: url("/images/business/foil/img_restrictions.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_restrictions_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-electronic {
+            background: url("/images/business/foil/img_electronic.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_electronic_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-car {
+            background: url("/images/business/foil/img_car.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_car_hover.jpg") no-repeat center / cover;
+            }
+        }
+
+        .item-external {
+            background: url("/images/business/foil/img_external.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_external_hover.jpg") no-repeat center / cover;
+            }
+        }
+        .item-tab {
+            background: url("/images/business/foil/img_tab.jpg") no-repeat center / cover;
+            &:hover {
+                background: url("/images/business/foil/img_tab_hover.jpg") no-repeat center / cover;
             }
         }
     }
@@ -1403,6 +1407,85 @@
     }
 }
 
+/* 웹 1900 사이즈 */
+@media all and (max-width: 1900px) {
+    @import "./lib/webvw";
+    /* 알루미늄 호일, 포장재용, 산업/건축용 content */
+    .business-foil {
+        max-width: vw(1900px);
+
+        &__title {
+            font: {
+                size: vw(35px);
+            }
+            line-height: vw(70px);
+            span {
+                font: {
+                    size: vw(37px);
+                }
+            }
+        }
+
+        .foil-box {
+            width: vw(1175px);
+
+            $col_width:453/1175*100%;
+            &__col {
+                margin-right: vw(5px);
+
+                &--item {
+                    margin-right: vw(5px);
+                    margin-bottom: vw(5px);
+
+                    &:first-child {
+                        height: vw(245px);
+                    }
+
+                    &:last-child {
+                        height: vw(248px);
+                    }
+                }
+            }
+
+            $line_width: 717/1175*100%;
+            &__inline {
+                width: $line_width;
+                height: vw(498px);
+                margin-bottom: vw(5px);
+            }
+
+            &__block {
+                &--item {
+                    margin-bottom: vw(5px);
+                    height: vw(327px);
+
+                    $block_first_width: 698/1175*100%;
+                    &:nth-child(1) {
+                        width: $block_first_width;
+                        margin-right: vw(5px);
+                    }
+
+                    $block_first_width: 472/1175*100%;
+                    &:nth-child(2) {
+                        width: $block_first_width;
+                    }
+                }
+            }
+
+            .mr-5 {
+                margin-right: vw(5px);
+            }
+
+            &__text {
+                right: vw(36px);
+                top: vw(40px);
+                font: {
+                    size: vw(34px);
+                }
+            }
+        }
+    }
+}
 
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
@@ -1412,7 +1495,7 @@
 
         &__title {
             top: vw(358px);
-            right: vw(120px);
+            right: 0;
 
             font: {
                 size: vw(35px);
@@ -1424,14 +1507,6 @@
                 font: {
                     size: vw(37px);
                 }
-            }
-        }
-
-        .arrow-effect {
-            span {
-                bottom: vw(40px);
-                width: vw(50px);
-                height: vw(45px);
             }
         }
 
@@ -2236,6 +2311,28 @@
 /*태블릿 세로 사이즈*/
 @media all and (min-width:768px) and (max-width:1023px) {
     @import "./lib/webvw";
+    /* 알루미늄 호일, 포장재용, 산업/건축용 content */
+    .business-foil {
+
+        &__title {
+            position: absolute !important;
+            top: vw(358px) !important;
+            right: 0;
+
+            font: {
+                size: vw(35px);
+            }
+
+            line-height: vw(70px);
+
+            span {
+                font: {
+                    size: vw(37px);
+                }
+            }
+        }
+    }
+
    /* 알루미늄 호일, 포장재용, 산업/건축용 layout */
    .business-detail {
         &__title {
@@ -2916,6 +3013,91 @@
 /* 모바일 사이즈 */
 @media all and (max-width: 767px) {
     @import "./lib/vw";
+
+     /* 알루미늄 호일, 포장재용, 산업/건축용 content */
+     .business-foil {
+
+        &__title {
+            position: relative !important;
+            top: vw(171px) !important;
+            right: 0;
+            width: 100%;
+            text-align: center;
+
+            font: {
+                size: vw(35px);
+            }
+
+            line-height: vw(70px);
+
+            span {
+                font: {
+                    size: vw(37px);
+                }
+            }
+        }
+
+        .foil-box {
+            width: vw(750px);
+            padding-top: vw(380px);
+            font-size: 0;
+
+
+            &__col {
+                margin-right: 0;
+                width: vw(363px);
+                &--item {
+                    margin-right: 0;
+                    margin-bottom: 0;
+
+                    &:first-child {
+                        height: vw(258px);
+                    }
+
+                    &:last-child {
+                        height: vw(258px);
+                    }
+                }
+            }
+
+            .mr-5 {
+                margin-right:0;
+            }
+
+            &__inline {
+                width: vw(387px);
+                height: vw(516px);
+                margin-bottom: 0;
+            }
+
+            &__block {
+                &--item {
+                    margin-bottom: 0;
+                    height: vw(338px);
+
+                    &:nth-child(1) {
+                        width: vw(450px);
+                        margin-right: 0;
+                    }
+                    &:nth-child(2) {
+                        width: vw(300px);
+                    }
+                }
+            }
+
+            &__text {
+                left: vw(36px);
+                top: vw(40px);
+                font: {
+                    size: vw(35px);
+                }
+            }
+
+            &:last-child {
+                padding-top: 0;
+            }
+        }
+    }
 
      /* 알루미늄 호일, 포장재용, 산업/건축용 layout */
      .business-detail {
