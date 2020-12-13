@@ -88,8 +88,8 @@
                 </div>
             </div>
             <div class="work-recruit__detail--button">
-                <a href="#" class="but-apply">지원하기</a>
-                <a href="#" class="but-revise">지원내역 확인 및 수정</a>
+                <apply-button></apply-button>
+                <check-apply-button recruit_id="{{$recruit->id}}"></check-apply-button>
             </div>
         </div>
     </div>
@@ -97,7 +97,12 @@
 </main>
 @endsection
 
+@section('popup-container')
+    <login-component recruit_id="{{$recruit->id}}"></login-component>
+    <join-component recruit_id="{{$recruit->id}}"></join-component>
+    <find-password-component></find-password-component>
+@endsection
 @section('script')
     @parent
-    <script src="{{ asset('js/recruit.js') }}" defer></script>
+    <script src="{{ mix('js/recruit.js') }}"></script>
 @endsection

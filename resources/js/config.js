@@ -25,3 +25,8 @@ export const getUser = () => {
         return false;
     }
 }
+
+export const getJob = () => {
+    const job = window.localStorage.getItem('job');
+    return job;
+}

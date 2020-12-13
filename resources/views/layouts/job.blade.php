@@ -16,10 +16,9 @@
         @yield('contents')
 
         @include('shared.footer')
-        @yield('popup-container')
     </div>
 
-
+    @yield('popup-container')
     @section('script')
     <!-- Scripts -->
     <script src="{{ mix('js/manifest.js') }}"></script>

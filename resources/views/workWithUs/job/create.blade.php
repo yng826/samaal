@@ -16,7 +16,9 @@
                     <li>제출하기</li>
                 </ul>
             </div>
-            <join-component recruit_id="{{$recruit_id}}"></join-component>
+            <individual-info-component recruit_id="{{$recruit_id}}"></individual-info-component>
+            <login-component recruit_id="{{$recruit_id}}"></login-component>
+            {{-- <join-component recruit_id="{{$recruit_id}}"></join-component> --}}
         </div>
         <div class="top-btn">TOP</div>
     </main>

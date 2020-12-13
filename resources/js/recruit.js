@@ -30,29 +30,36 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('passport-clients', require('./components/passport/Clients.vue').default);
-Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue').default);
-Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue').default);
+// Vue.component('passport-clients', require('./components/passport/Clients.vue').default);
+// Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue').default);
+// Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-window.$ = window.jQuery = require('jquery');
+// window.$ = window.jQuery = require('jquery');
+Vue.component('login-component', require('./components/job/Login.vue').default);
+Vue.component('join-component', require('./components/job/Join.vue').default);
+Vue.component('find-password-component', require('./components/job/FindPassword.vue').default);
+Vue.component('apply-button', require('./components/job/ApplyButton.vue').default);
+Vue.component('check-apply-button', require('./components/job/CheckApplyButton.vue').default);
+
+
+// import {JobStore} from './Job/Store'
+import ApplyButton from './components/job/ApplyButton';
 const app = new Vue({
     el: '#app',
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    // common();
-    // business();
-    // about();
-    axios.get('/oauth/clients')
-    .then(res => {
-        console.log(res)
-    })
-    .catch(err => {
-        console.error(err);
-    });
+    mounted: function() {
+        this.$root.$on('openPopup', (args1) => {
+            console.log('openPopup', args1);
+            $('html, body').animate({scrollTop: '0'}, 1000);
+            $('.popup-mask').addClass('show');
+        })
+        this.$root.$on('closePopup', (args1) => {
+            $('.popup-mask').removeClass('show');
+        })
+    }
+    // store: JobStore,
 });

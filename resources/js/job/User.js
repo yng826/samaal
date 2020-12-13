@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { indexOf } from 'lodash';
 import Swal from 'sweetalert2'
 
 
@@ -61,7 +62,15 @@ class User {
                     title: '확인되었습니다!',
                     text: '계속 이용하시기 바랍니다.',
                     icon: 'success',
-                    confirmButtonText: '확인'
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+
+                    return result;
+                    // this.$root.$emit('getJob');
+                    if (result.isConfirmed) {
+                        // this.$root.$emit('closePopup');
+                    }
                 });
             } else {
                 Swal.fire({
@@ -81,6 +90,40 @@ class User {
                 confirmButtonText: '확인'
             });
         })
+    }
+
+    find (data) {
+        return axios.post('/api/find', {
+            'name': data.name,
+            'email': data.email,
+        })
+        .then((res)=> {
+            if ( res.data ) {
+                Swal.fire({
+                    text: '입력하신메일로 임시비밀번호가 발송되었습니다',
+                    icon: 'success',
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+
+                    return result;
+                    // this.$root.$emit('getJob');
+                    if (result.isConfirmed) {
+                        // this.$root.$emit('closePopup');
+                    }
+                });
+            }
+            return res;
+        }).catch( err => {
+            console.error(err);
+            Swal.fire({
+                title: '문제가 생겼습니다!',
+                text: '잠시후에 다시 시도해주세요',
+                icon: 'error',
+                confirmButtonText: '확인'
+            });
+        })
+
     }
 }
 

@@ -1,37 +1,40 @@
 <template>
-    <div class="form-container">
-        <div class="form-wrap">
-            <form id="login-form" method="POST" @submit.prevent="sendPost">
-                <div class="form-group">
-                    <label for="name">성명</label>
-                    <input type="text" name="name" id="name" v-model="name" ref="name">
-                </div>
-                <div class="form-group">
-                    <label for="birth_day">생년월일</label>
-                    <div class="input_date-group full-width-date">
-                        <Datepicker class="inline-block" name="birth_day" v-model="birth_day" format="yyyy-MM-dd" :language="ko"></Datepicker>
+    <div class="popup-container" v-if="isOpen">
+        <div class="form-container">
+            <a href="#" @click="closePopup">X</a>
+            <div class="form-wrap">
+                <form id="login-form" method="POST" @submit.prevent="sendPost">
+                    <div class="form-group">
+                        <label for="name">성명</label>
+                        <input type="text" name="name" id="name" v-model="name" ref="name">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="email">이메일</label>
-                    <input type="text" name="email" id="email" v-model="email" ref="email">
-                </div>
-                <div class="form-group">
-                    <label for="phone">핸드폰번호</label>
-                    <input type="text" name="phone" id="phone" v-model="phone" ref="phone">
-                </div>
-                <div class="form-group">
-                    <label for="password">비밀번호</label>
-                    <input type="password" name="password" id="password" v-model="password" ref="password">
-                </div>
-                <div class="form-group">
-                    <label for="password_confirm">비밀번호재입력</label>
-                    <input type="password" name="password_confirm" id="password_confirm" v-model="password_confirm" ref="password_confirm">
-                </div>
-                <button type="submit">저장</button>
-            </form>
+                    <div class="form-group">
+                        <label for="birth_day">생년월일</label>
+                        <div class="input_date-group full-width-date">
+                            <Datepicker class="inline-block" name="birth_day" v-model="birth_day" format="yyyy-MM-dd" :language="ko"></Datepicker>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="text" name="email" id="email" v-model="email" ref="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">핸드폰번호</label>
+                        <input type="text" name="phone" id="phone" v-model="phone" ref="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">비밀번호</label>
+                        <input type="password" name="password" id="password" v-model="password" ref="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password_confirm">비밀번호재입력</label>
+                        <input type="password" name="password_confirm" id="password_confirm" v-model="password_confirm" ref="password_confirm">
+                    </div>
+                    <button type="submit">저장</button>
+                </form>
+            </div>
+            <VSpinner v-if="isSubmit"></VSpinner>
         </div>
-        <VSpinner v-if="isSubmit"></VSpinner>
     </div>
 </template>
 <script>
@@ -42,7 +45,7 @@ import {getHeader, getAuth, getUser} from '../../config'
 import Swal from 'sweetalert2'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['recruit_id'],
+    props: ['recruit_id', 'isCheckAuth'],
     components: {
         Datepicker,
         VSpinner
@@ -57,17 +60,33 @@ export default {
             password_confirm: '',
             isAuth: false,
             isSubmit: false,
+            isOpen: false,
             ko: ko,
         }
     },
     mounted: function() {
+        this.$root.$on('openPopup', (args1) => {
+            console.log('open Join', args1);
+            if (args1 == 'join') {
+                this.isOpen = true;
+            }
+        });
+        this.$root.$on('closePopup', (args1) => {
+            this.isOpen = false;
+        });
         this.isAuth = getAuth();
-        if ( this.isAuth ) {
-            this.gotoJob();
+        if ( this.isCheckAuth ) {
+            console.log('is check auth');
+            if ( this.isAuth ) {
+                // this.gotoJob();
+            }
         }
         // require('../../job/User')
     },
     methods: {
+        closePopup: function() {
+        this.$root.$emit('closePopup');
+        },
         gotoJob: function() {
             window.location.href = '/work-with-us/job/';
         },
@@ -180,7 +199,12 @@ export default {
                         title: '저장에 실패했습니다',
                         icon: 'error',
                         text: res.msg,
-                        confirmButtonText: '확인'
+                        confirmButtonText: '확인',
+                        allowOutsideClick: false
+                    }).then(result => {
+                        if (result.isConfirmed) {
+                            this.$root.$emit('closePopup');
+                        }
                     })
                 }
             }).catch( err => {

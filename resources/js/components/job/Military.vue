@@ -33,6 +33,7 @@
         <div class="button-group">
             <button class="btn-save" @click="saveItem">저장</button>
         </div>
+        <VSpinner v-if="isSubmit"></VSpinner>
     </div>
 </template>
 <script>
@@ -41,9 +42,11 @@ import Swal from 'sweetalert2'
 import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
+import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
     props: ['job_id'],
     components: {
+        VSpinner,
         Datepicker,
     },
     computed: {
@@ -55,7 +58,7 @@ export default {
         return {
             ko: ko,
             isAuth: false,
-            isSended: false,
+            isSubmit: false,
         }
     },
     mounted: function() {
@@ -63,10 +66,10 @@ export default {
     },
     methods: {
         saveItem: function() {
-            if ( this.isSended ) {
+            if ( this.isSubmit ) {
                 return false;
             }
-            this.isSended = true;
+            this.isSubmit = true;
             console.log(this.$store.state);
             this.$store.state.military.job_id = this.job_id;
 
@@ -82,7 +85,7 @@ export default {
             })
             .then(res => {
                 this.$store.state.military.id = res.data.id;
-                this.isSended = false;
+                this.isSubmit = false;
                 console.log(this.$store.state.military);
                 Swal.fire({
                     title: '저장되었습니다!',
@@ -91,7 +94,7 @@ export default {
                 });
             })
             .catch(err => {
-                this.isSended = false;
+                this.isSubmit = false;
                 Swal.fire({
                     title: '저장에 실패했습니다!',
                     icon: 'error',

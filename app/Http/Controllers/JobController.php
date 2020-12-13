@@ -74,7 +74,17 @@ class JobController extends Controller
         // if ($validator->fails()) {
         //         return response()->json(['error'=>$validator->errors()], 401);
         // } else {
-
+        $job = Job::where([
+            'user_id' => $formData['user_id'],
+            'recruit_id' => $formData['recruit_id'],
+        ])->first();
+        if ($job) {
+            $result = [];
+            $result['result'] = 'fail';
+            $result['msg'] = '이미 저장된 이력서가 있습니다';
+            $result['job'] = $job;
+            return $result;
+        } else {
             $user = User::find($formData['user_id']);
             $user_info = UserInfo::find($formData['user_id']);
 
@@ -85,7 +95,7 @@ class JobController extends Controller
             // save user_info
             $user_info->name_en = $formData['name_en'];
             $user_info->birth_day = $formData['birth_day'];
-            $user_info->phone_last = $formData['phone_last'];
+            $user_info->phone_last = substr($formData['phone_decrypt'],-4);
             $user_info->address_1 = $formData['address_1'];
             $user_info->address_2 = $formData['address_2'];
             $user_info->save();
@@ -97,12 +107,20 @@ class JobController extends Controller
             }
             $job = new Job;
             $job->recruit_id = $formData['recruit_id'];
+            $job->phone_last = substr($formData['phone_decrypt'],-4);
+            $job->phone_encrypt = Crypt::encryptString($formData['phone_decrypt']);
+            $job->address_1 = $formData['address_1'];
+            $job->address_2 = $formData['address_2'];
             $job->user_id = $user->id;
             $job->file_path = $filePath;
             $job->status = 'saved';
             $job->save();
 
-            return $job;
+            $result = [];
+            $result['result'] = 'success';
+            $result['job'] = $job;
+            return $result;
+        }
     }
 
     /**
@@ -190,7 +208,11 @@ class JobController extends Controller
         $job->file_path = $filePath;
         $job->status = 'saved';
         $job->save();
-        return $job;
+
+        $result = [];
+        $result['result'] = 'success';
+        $result['job'] = $job;
+        return $result;
     }
 
     /**
@@ -208,5 +230,15 @@ class JobController extends Controller
     {
         Session::put('email', $request->email);
         return redirect( route('work.job') )->with('hello', 'world');
+    }
+
+    public function search(Request $request, $recruit_id)
+    {
+        $job = Job::where([
+            'recruit_id'=> $recruit_id,
+            'user_id' => $request->user()->id,
+        ])->first();
+
+        return $job;
     }
 }
