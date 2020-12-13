@@ -16,6 +16,7 @@ export const JobStore = new Vuex.Store({
         military: {},
         oa: [{}],
         oversea: [{}],
+        step: 2,
     },
     mutations: {
         deleteEdu(state, payload) {

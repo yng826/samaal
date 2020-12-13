@@ -1,9 +1,22 @@
 <template>
-    <div class="form-container" title="기본정보">
+    <div class="form-container" title="기본정보" v-if="this.$store.state.step == 2">
         <form :action="'/api/job/'+job.id" method="post" id="individualInfoForm" @submit.prevent="setInfo(job)">
             <input type="hidden" name="user_id" v-model="user.id"/>
             <input type="hidden" name="recruit_id" v-model="job.recruit_id"/>
             <input type="hidden" name="job_id" v-model="job.id"/>
+            <div class="form-wrap form-img">
+                <h3>사진업로드<em>(최근 3개월내)</em></h3>
+                <div class="form-group">
+                    <input type="hidden" name="file_path" v-model="job.file_path">
+                    <div class="picture" v-bind:style="pic">
+                        <span class="picture-text" v-if="!job.file_path">사진을<br> 등록해주세요.</span>
+                    </div>
+                    <label for="pic" class="input-file-trigger">
+                        이미지 업로드
+                        <input type="file" name="pic" id="pic">
+                    </label>
+                </div>
+            </div>
             <div class="form-wrap form-left">
                 <h3>인적사항</h3>
                 <div class="form-group">
@@ -34,18 +47,6 @@
                         <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요.">
                         <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요.">
                     </div>
-                </div>
-            </div>
-            <div class="form-wrap form-img">
-                <h3>사진업로드<em>(최근 3개월내)</em></h3>
-                <div class="form-group">
-                    <div class="picture" v-bind:style="pic">
-                        <span class="picture-text" v-if="!job.file_path">사진을<br> 등록해주세요.</span>
-                    </div>
-                    <label for="pic" class="input-file-trigger">
-                        이미지 업로드
-                        <input type="file" name="pic" id="pic">
-                    </label>
                 </div>
             </div>
             <div class="button-group">
@@ -210,7 +211,8 @@ export default {
                         confirmButtonText: '확인',
                         allowOutsideClick: false
                     }).then(result => {
-                        if (result.isConfirmed) {
+                        console.log(this.job_id);
+                        if (result.isConfirmed && this.job_id) {
                             window.location.href = '/work-with-us/job/' + res.data.job.id
                         }
                     });
@@ -223,7 +225,7 @@ export default {
                         allowOutsideClick: false
                     }).then(result => {
                         if (result.isConfirmed) {
-                            window.location.href = '/work-with-us/job/' + res.data.job.id
+                            // window.location.href = '/work-with-us/job/' + res.data.job.id
                         }
                     });
                 }

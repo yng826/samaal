@@ -1,5 +1,5 @@
 <template>
-    <div class="certificate-container form-container">
+    <div class="certificate-container form-container" v-if="this.$store.state.step == 2">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>자격면허 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>

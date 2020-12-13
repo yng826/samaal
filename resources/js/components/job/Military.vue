@@ -1,5 +1,5 @@
 <template>
-    <div class="military-container form-container">
+    <div class="military-container form-container" v-if="this.$store.state.step == 2">
         <form>
             <div class="form-wrap">
                 <h3>병역사항</h3>
