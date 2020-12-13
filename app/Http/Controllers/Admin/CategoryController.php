@@ -95,7 +95,6 @@ class CategoryController extends Controller
 
         return view('admin.category.create', [
             'category'=> $category,
-            'order_id'=> $request->order_id,
             'action'=> $action,
         ]);
     }

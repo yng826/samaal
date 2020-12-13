@@ -50,6 +50,11 @@ class AppServiceProvider extends ServiceProvider
                 if (Auth::user()->role == 'admin' || Auth::user()->role == 'editor') {
                     $event->menu->add('회사정보');
                     $event->menu->add([
+                        'text' => '사용자 관리',
+                        'url'  => 'admin/user',
+                        'icon' => 'fas fa-fw fa-users',
+                    ],
+                    [
                         'text' => '재무정보 관리',
                         'url'  => 'admin/finance_info',
                         'icon' => 'fas fa-fw fa-dollar-sign',
