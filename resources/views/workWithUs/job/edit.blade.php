@@ -25,10 +25,8 @@
             <award-component job_id={{$id}}></award-component>
             <certificate-component job_id={{$id}}></certificate-component>
             <overseas-component job_id={{$id}}></overseas-component>
-        </div>
-        <div class="button-groups">
-            <button>자기소개서 작성</button>
-            <button>제출</button>
+            <self-introduction-component job_id={{$id}}></self-introduction-component>
+            <job-button-groups-component></job-button-groups-component>
         </div>
         <div class="top-btn">TOP</div>
     </main>

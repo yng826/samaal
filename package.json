@@ -27,7 +27,6 @@
         "webpack-livereload-plugin": "^1.2.0"
     },
     "dependencies": {
-        "chartjs-plugin-datalabels": "^0.7.0",
         "fullpage.js": "^2.9.7",
         "he-tree-vue": "^2.0.5",
         "jquery": "^3.5.1",

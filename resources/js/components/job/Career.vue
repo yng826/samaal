@@ -1,5 +1,5 @@
 <template>
-    <div class="career-container form-container">
+    <div class="career-container form-container" v-if="this.$store.state.step == 2">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>경력사항 <button @click.prevent="removeItem(item.id, id)" class="danger">삭제</button></h3>

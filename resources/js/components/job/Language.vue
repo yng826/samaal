@@ -1,5 +1,5 @@
 <template>
-    <div class="language-container form-container">
+    <div class="language-container form-container" v-if="this.$store.state.step == 2">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>외국어 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>

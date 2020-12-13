@@ -30,7 +30,7 @@
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
                     <li class="about-ir__li">
-                        <a href="/about-us/ir/board/list">전자공고</a></li>
+                        <a href="/about-us/ir/board">전자공고</a></li>
                     </li>
                 </ul>
             </nav>
@@ -141,7 +141,6 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
         <script src="{{ mix('/js/manifest.js') }}"></script>
         <script src="{{ mix('/js/vendor.js') }}"></script>
         <script src="{{ mix('/js/financial.js') }}"></script>

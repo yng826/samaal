@@ -191,7 +191,9 @@ export default {
                         confirmButtonText: '확인'
                     }).then(result => {
                         if (result.isConfirmed) {
-                            this.gotoJob();
+                            this.$root.$emit('closePopup');
+                            window.location.href = '/work-with-us/job/' + res.job_id;
+                            // this.gotoJob();
                         }}
                     );
                 } else {

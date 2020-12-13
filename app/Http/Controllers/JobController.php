@@ -178,36 +178,45 @@ class JobController extends Controller
     public function update(Request $request, $id)
     {
         $formData = $request->all();
-        $user = User::find($formData['user_id']);
         $job = Job::find($id);
-        $user_info = UserInfo::find($formData['user_id']);
+        return $job;
 
-        // save user
-        $user->name = $formData['name'];
-        $user->save();
 
-        // save user_info
-        $user_info->name_en = $formData['name_en'];
-        $user_info->birth_day = $formData['birth_day'];
-        $user_info->phone_last = substr($formData['phone_decrypt'], -4);
-        $user_info->address_1 = $formData['address_1'];
-        $user_info->address_2 = $formData['address_2'];
-        $user_info->save();
+        if ( isset($formData['cover_letter']) ) {
+            $job->cover_letter = $formData['cover_letter'];
+            $job->save();
+        } else {
+            $user = User::find($formData['user_id']);
+            $user_info = UserInfo::find($formData['user_id']);
+            // save user
+            $user->name = $formData['name'];
+            $user->save();
 
-        // 파일 저장
-        $filePath = '';
-        if ($files = $request->file('pic')) {
-            // $filePath = Storage::putFile('public/job', $files, 'public'); //파일 저장
-            $filePath = $request->file('pic')->store('job');
-            $filePath = $filePath;
+            // save user_info
+            $user_info->name_en = $formData['name_en'];
+            $user_info->birth_day = $formData['birth_day'];
+            $user_info->phone_last = substr($formData['phone_decrypt'], -4);
+            $user_info->address_1 = $formData['address_1'];
+            $user_info->address_2 = $formData['address_2'];
+            $user_info->save();
+
+            // 파일 저장
+            $filePath = '';
+            if ($files = $request->file('pic')) {
+                // $filePath = Storage::putFile('public/job', $files, 'public'); //파일 저장
+                $filePath = $request->file('pic')->store('job');
+                $filePath = $filePath;
+            } else {
+                $filePath = $formData['file_path'];
+            }
+            // save job
+            $job->phone_encrypt = Crypt::encryptString($formData['phone_decrypt']);
+            $job->address_1 = $formData['address_1'];
+            $job->address_2 = $formData['address_2'];
+            $job->file_path = $filePath;
+            $job->status = 'saved';
+            $job->save();
         }
-        // save job
-        $job->phone_encrypt = Crypt::encryptString($formData['phone_decrypt']);
-        $job->address_1 = $formData['address_1'];
-        $job->address_2 = $formData['address_2'];
-        $job->file_path = $filePath;
-        $job->status = 'saved';
-        $job->save();
 
         $result = [];
         $result['result'] = 'success';
