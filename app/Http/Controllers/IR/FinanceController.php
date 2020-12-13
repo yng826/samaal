@@ -14,47 +14,7 @@ class FinanceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $ir_boards = DB::table('ir_boards')->orderBy('id', 'desc')->paginate(10);
-        $cnt = DB::table('ir_boards')->orderBy('id', 'desc')->count();
-
-        $cnt = (int)ceil($cnt/10);
-
-        return view('aboutUs.ir_board.list', [
-            'ir_boards' => $ir_boards,
-            'cnt' => $cnt
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function index($id)
     {
         $ir = []; // 그래프, 표
         if ($id == 'consolidated') {  // 연결재무제표
@@ -115,16 +75,54 @@ class FinanceController extends Controller
 
             ]);
         } else { // 전자공고
-            $ir_board = DB::table('ir_boards')->where('id',$id)->first();
-            return view('aboutUs.ir_board.show', [
-                'ir_board'=> $ir_board
+
+            $ir_boards = DB::table('ir_boards')->orderBy('id', 'desc')->paginate(10);
+            $cnt = DB::table('ir_boards')->orderBy('id', 'desc')->count();
+
+            $cnt = (int)ceil($cnt/10);
+
+            return view('aboutUs.ir_board.list', [
+                'ir_boards' => $ir_boards,
+                'cnt' => $cnt
             ]);
 
         }
-
-
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $ir_board = DB::table('ir_boards')->where('id',$id)->first();
+            return view('aboutUs.ir_board.show', [
+                'ir_board'=> $ir_board
+            ]);
+    }
      /**
      * Display the specified resource.
      *

@@ -30,32 +30,31 @@
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
                     <li class="about-ir__li">
-                        <a href="/about-us/ir/board/list">전자공고</a></li>
+                        <a href="/about-us/ir/board">전자공고</a></li>
                     </li>
                 </ul>
             </nav>
             <div class="contents-wrap__section" id="about-ir__board">
                 <h3>전자공고</h3><br />
                 <table class="table">
+                    <colgroup>
+                        <col width="10%">
+                        <col width="auto">
+                        <col width="15%">
+                      </colgroup>
                     <thead>
                         <tr>
                             <th class="text-center .about-ir__no">번호</th>
                             <th class="text-center">제목</th>
-                            <th class="text-center">내용</th>
                             <th class="text-center">등록/수정일</th>
-                            <th class="text-center .about-ir__no">관리</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($ir_boards as $ir_board)
                         <tr>
                             <td class="text-center">{{ $ir_board->id }}</td>
-                            <td class="text-center .about-ir__fixed"><div class="ir-contents"> {{ $ir_board->title }}</div></td>
-                            <td class="text-center .about-ir__fixed">
-                                <div class="ir-contents">{!! $ir_board->contents !!}</div>
-                            </td>
+                            <td class="text-center .about-ir__fixed"><div class="ir-contents"> <a class="btn btn-outline-info btn-xs" href="/about-us/ir/board/{{$ir_board->id}}">{{ $ir_board->title }}</a></div></td>
                             <td class="text-center">{{ $ir_board->updated_at ?? $ir_board->created_at}}</td>
-                            <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/about-us/ir/{{$ir_board->id}}">상세보기</a></td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -30,7 +30,7 @@
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
                     <li class="about-ir__li">
-                        <a href="/about-us/ir/board/list">전자공고</a></li>
+                        <a href="/about-us/ir/board">전자공고</a></li>
                     </li>
                 </ul>
             </nav>

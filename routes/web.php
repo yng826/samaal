@@ -73,8 +73,8 @@ Route::prefix('about-us')->group(function() {
     Route::get('story-news', [StoryNewsController::class, 'index'])->name('story-news');
     Route::get('story-news/{id}', [StoryNewsController::class, 'show']);
 
-    Route::get('ir/{type}', [FinanceController::class, 'show']);
-    Route::get('ir/board/list', [FinanceController::class, 'index']);
+    Route::get('ir/{type}', [FinanceController::class, 'index']);
+    Route::get('ir/board/{id}', [FinanceController::class, 'show']);
     Route::get('ir/board/file-download', [FinanceController::class, 'fileDownload']);
 });
 
