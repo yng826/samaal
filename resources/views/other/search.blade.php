@@ -7,13 +7,24 @@
             통합검색
             </h2>
         </div>
-        <div class="contents-wrap__section">
+        
+        <form action="/other/search" method="get">
+            <div class="work-recruit__search">
+                <div class="work-recruit__search--wrap">
+                    <input type="text" name="keyword" value="{{ $keyword }}" placeholder="키워드 검색"/>
+                    <button type="submit" class="btn-search">검색</button>
+                </div>
+                <p class="work-recruit__search--text">"{{ $keyword }}"에 대해 <br/> 총 <em>{{ count($categoryKeywords) }}</em>건의 검색결과가 있습니다.</p>
+            </div>
+        </form>
+
+        {{-- <div class="contents-wrap__section">
             <input type="text" name="keyword" value="{{ $keyword }}">
             <button type="button" id="search-btn">검색</button>
         </div>
         <div class="contents-wrap__section">
             "{{ $keyword }}"에 대해 <br/> 총 {{ count($categoryKeywords) }}건의 검색결과가 있습니다.
-        </div>
+        </div> --}}
         <div class="contents-wrap__section">
             <button type="button" id="category-0">전체
                 @if (count($categoryKeywords) > 0)
@@ -42,7 +53,8 @@
 
                     <div>
                         <div>
-                            <b>{{ $keyword->name }} {{ array_count_values(array_column($keywords, 'id'))[$keyword->id] }}</b>
+                            {{-- <b>{{ $keyword->name }} {{ array_count_values(array_column($keywords, 'id'))[$keyword->id] }}</b> --}}
+                            <b>{{ $keyword->name }}</b>
                         </div>
                 @endif
 
