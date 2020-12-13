@@ -632,6 +632,10 @@
             }
         }
     }
+
+    &__mobiel-wrap {
+        display: none;
+    }
 }
 
 /* 문의하기 팝업 */
@@ -3112,6 +3116,259 @@
             }
         }
     }
+
+    /* business intro */
+    .business-intro {
+        &__wrap {
+            display: none;
+        }
+
+        &__mobiel-wrap {
+            display: block;
+
+            .section01 {
+                height: auto;
+                background: url("/images/business/intro/m_img_intro_01.jpg")no-repeat;
+                background-size: cover;
+                background-position: 50%
+            }
+
+            .section02 {
+                background: url("/images/business/intro/m_img_intro_02.jpg")no-repeat;
+                background-size: cover;
+                background-position: 50%
+            }
+
+            .section03 {
+                background: url("/images/business/intro/m_img_intro_03.jpg")no-repeat;
+                background-size: cover;
+                background-position: 50%
+            }
+
+            .section04 {
+                background: url("/images/business/intro/m_img_intro_04.jpg")no-repeat;
+                background-size: cover;
+                background-position: 50%
+            }
+
+            .section05 {
+                background: url("/images/business/intro/m_img_intro_05.jpg")no-repeat;
+                background-size: cover;
+                background-position: 50%
+            }
+        }
+
+        .mobiel-wrap {
+            &__section{
+                display: block;
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+
+                &--title {
+                    display: block;
+                    padding-bottom: vw(42px);
+                    font-size: vw(70px);
+                    color: #fff;
+                    line-height: 1;
+                }
+
+                &--button {
+                    display: inline-block;
+                    width: vw(225px);
+                    height: vw(59px);
+                    border: vw(2px) solid #fff;
+                    border-radius: vw(28px);
+
+                    a,button {
+                        display: block;
+                        width: 100%;
+                        line-height: vw(59px);
+                        text-align: center;
+                        font-size: vw(27px);
+                        color: #fff;
+                    }
+
+                    &.on {
+                        display: block;
+                        position: relative;
+                        left: vw(122px);
+                        padding: vw(174px) 0 0 0;
+                        border: 0;
+                        height: auto;
+                        line-height: 1;
+
+                        button {
+                            display: block;
+                            font-size: vw(37px);
+                            font-weight: bold;
+                            line-height: 1;
+                        }
+
+                        &::after {
+                            display: none;
+                        }
+
+                        &::before {
+                            content:"";
+                            display: block;
+                            position: absolute;
+                            right: vw(13px);
+                            top: 0;
+                            width: 1px;
+                            height: vw(85px);
+                            background-color: #fff;
+                        }
+                    }
+                }
+
+               .info-box {
+                    position: absolute;
+                    bottom: vw(120px);
+                    right: vw(70px);
+                    display: block;
+                    width: auto;
+                    padding:0;
+                    text-align: right;
+
+                    &.package {
+                        h2 {
+                            color: #323232;
+                        }
+
+                        .mobiel-wrap__section--button {
+                            border: vw(2px) solid #323232;
+
+                            a {
+                                color: #323232;
+                            }
+                        }
+                    }
+               }
+
+                .innovation-btn__box {
+                    display: none;
+                    margin-top: 0;
+                    float: right;
+                    width: auto;
+
+                    li {
+                        display: block;
+                        width: vw(229px);
+                        position: relative;
+                        padding: vw(25px) 0;
+                        border-bottom: 0;
+                        text-align: left;
+
+                        a {
+                            display: block;
+                            font-size: vw(29px);
+                            color: #fff;
+                            line-height: 1;
+                        }
+
+                        &::after {
+                            content:"";
+                            display: block;
+                            width: vw(30px);
+                            height: vw(31px);
+                            position: absolute;
+                            right: vw(13px);
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: url("/images/main/m_btn_main_submenu.png")no-repeat;
+                            background-size: contain;
+                        }
+                    }
+
+                    &.on {
+                        display: block;
+                    }
+                }
+
+
+                .mobile-mask {
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #000;
+                    opacity: 0.3;
+
+                    &.on {
+                        display: block;
+                    }
+                }
+
+                .mobile-arrow {
+                    display: block;
+                    position: absolute;
+                    bottom: vw(50px);
+                    left: 50%;
+                    // transform: translateX(-50%);
+                    width: vw(50px);
+                    height: vw(45px);
+                    background: url("/images/business/intro/business_arrow.png")no-repeat;
+                    background-size: contain;
+                    -moz-animation: mainbounce 3s infinite;
+                    -webkit-animation: mainbounce 3s infinite;
+                    animation: mainbounce 3s infinite;
+                    font-size: 0;
+                    z-index: 1;
+
+                @-moz-keyframes mainbounce {
+                    0%, 20%, 50%, 80%, 100% {
+                      -moz-transform: translateY(0);
+                      transform: translateY(0);
+                    }
+                    40% {
+                      -moz-transform: translateY(-3px);
+                      transform: translateY(-3px);
+                    }
+                    60% {
+                      -moz-transform: translateY(-1px);
+                      transform: translateY(-1px);
+                    }
+                }
+                  @-webkit-keyframes mainbounce {
+                    0%, 20%, 50%, 80%, 100% {
+                      -webkit-transform: translateY(0);
+                      transform: translateY(0);
+                    }
+                    40% {
+                      -webkit-transform: translateY(-3px);
+                      transform: translateY(-3px);
+                    }
+                    60% {
+                      -webkit-transform: translateY(-3px);
+                      transform: translateY(-3px);
+                    }
+                }
+                  @keyframes mainbounce {
+                    0%, 20%, 50%, 80%, 100% {
+                      -moz-transform: translateY(0);
+                      -ms-transform: translateY(0);
+                      -webkit-transform: translateY(0);
+                      transform: translateY(0);
+                    }
+                    40% {
+                      -moz-transform: translateY(-3px);
+                      -ms-transform: translateY(-3px);
+                      -webkit-transform: translateY(-3px);
+                      transform: translateY(-3px);
+                    }
+                    60% {
+                      -moz-transform: translateY(-1px);
+                      -ms-transform: translateY(-1px);
+                      -webkit-transform: translateY(-1px);
+                      transform: translateY(-1px);
+                    }
+                }
+                }
+            }
+        }
+    }
+
     /* 문의하기 팝업 */
     .question-pop {
         width: vw(525px);
