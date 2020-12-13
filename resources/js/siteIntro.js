@@ -29,7 +29,8 @@ const siteIntro = () => {
     const main_submenu = () => {
         $(".sub-menu__button").on('click', function(){
             $(this).toggleClass("on");
-			$(this).next().toggleClass("on");
+            $(this).next().toggleClass("on");
+            $('.mobile-mask').toggleClass("on");
         });
     }
 
