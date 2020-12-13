@@ -38,7 +38,7 @@ export default {
                     }
                 });
             } else {
-                this.$root.$emit('openPopup', 'join');
+                window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/create';
             }
         }
     }

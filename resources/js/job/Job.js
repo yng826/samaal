@@ -51,6 +51,7 @@ Vue.component('award-component', require('../components/job/Award.vue').default)
 Vue.component('certificate-component', require('../components/job/Certificate.vue').default);
 Vue.component('overseas-component', require('../components/job/OverseasStudy.vue').default);
 Vue.component('self-introduction-component', require('../components/job/SelfIntroduction.vue').default);
+Vue.component('applycant-review-component', require('../components/job/ApplicantReview.vue').default);
 Vue.component('job-button-groups-component', require('../components/job/JobButtonGroups.vue').default);
 
 /**
@@ -67,7 +68,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if ( typeof vueApp == 'undefined' ) {
         const vueApp = new Vue({
             el: '#app',
-            store: JobStore
+            store: JobStore,
+            mounted: function() {
+                this.$root.$on('openPopup', (args1, args2) => {
+                    console.log('openPopup', args1, args2);
+                    $('html, body').animate({scrollTop: '0'}, 1000);
+                    $('.popup-mask').addClass('show');
+                })
+                this.$root.$on('closePopup', (args1) => {
+                    $('.popup-mask').removeClass('show');
+                })
+            }
         });
         console.log('init job');
     }

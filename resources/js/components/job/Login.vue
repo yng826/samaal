@@ -45,14 +45,18 @@ export default {
             isAuth: false,
             isSubmit: false,
             isOpen: false,
+            recruit_id: null,
             // isRedirect: false,
         }
     },
     mounted: function() {
-        this.$root.$on('openPopup', (args1) => {
+        this.$root.$on('openPopup', (args1, args2) => {
             if (args1 == 'login') {
                 console.log('open Login');
                 this.isOpen = true;
+            }
+            if (args2) {
+                this.recruit_id = args2;
             }
         });
         this.$root.$on('closePopup', (args1) => {
@@ -115,8 +119,16 @@ export default {
                 console.log( res );
                 this.isSubmit = false;
                 if ( res.data.logged == true) {
-                    console.log(this.request_id);
-                    window.location.href = window.location.href;
+                    console.log(res.data.job , this.recruit_id);
+                    if ( res.data.job && this.recruit_id ) {
+                        if ( res.data.job[this.recruit_id]) {
+                            window.location.href = '/work-with-us/job/' + res.data.job[this.recruit_id].id;
+                        } else {
+                            window.location.href = '/work-with-us/job/';
+                        }
+                    } else {
+                        window.location.href = window.location.href;
+                    }
                 }
             }).catch( err => {
                 console.error(err);

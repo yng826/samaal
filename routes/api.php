@@ -33,7 +33,7 @@ Route::post('login', function (Request $request) {
         $logged = true;
         // $user = DB::table('users')->where('email', $credentials['email'])->first();
         $user = User::where('email', $credentials['email'])->first();
-        $job = Job::where('user_id', $user->id)->get()->pluck('id');
+        $job = Job::where('user_id', $user->id)->get()->keyBy('recruit_id');
         $token = $user->createToken('api', []);
         session(['access_token' => $token->accessToken]);
 
@@ -53,8 +53,11 @@ Route::post('join', function (Request $request) {
     $email = $request->email;
     $password = $request->password;
     $name = $request->name;
+    $name_en = $request->name_en;
     $phone_decrypt = $request->phone;
     $birth_day = $request->birth_day;
+    $address_1 = $request->address_1;
+    $address_2 = $request->address_2;
 
     $result = [];
     $result['result'] = 'fail';
@@ -71,13 +74,16 @@ Route::post('join', function (Request $request) {
         $user->password = Hash::make($password);
 
         $user_info = new UserInfo;
+        $user_info->name_en = $name_en;
         $user_info->birth_day = substr($birth_day, 0, 10);
-        $user_info->phone_encrypt = Crypt::encrypt($phone_decrypt);
+        $user_info->phone_encrypt = Crypt::encryptString($phone_decrypt);
         $user_info->phone_last = substr($phone_decrypt, -4);
+        $user_info->address_1 = $address_1;
+        $user_info->address_2 = $address_2;
 
         $job = new Job;
         $job->recruit_id = $recruit_id;
-        $job->phone_encrypt = Crypt::encrypt($phone_decrypt);
+        $job->phone_encrypt = Crypt::encryptString($phone_decrypt);
         $job->phone_last = substr($phone_decrypt, -4);
         $job->status = 'saved';
 
@@ -99,6 +105,7 @@ Route::post('join', function (Request $request) {
             $result['user'] = $user;
             $result['token'] = $token;
             $result['job_id'] = $job->id;
+            $result['type'] = 'join';
             $result['msg'] = '인적사항 입력에 성공했습니다.';
         } catch (\Throwable $th) {
             $result['result'] = 'success';
