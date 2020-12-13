@@ -515,7 +515,7 @@
     }
 }
 /* 웹 1600 사이즈 */
-@media all and (max-width: 2000px) {
+@media all and (max-width: 1600px) {
     @import "./lib/webvw";
     .about-ir {
         //background-color: #AAA;
@@ -536,7 +536,7 @@
             // }
         }
         .contents-wrap__section{
-            text-align: center;
+            // text-align: center;
         }
         &__chart {
             width: vw(40%);
@@ -598,7 +598,7 @@
             }
         }
         #ir_board_info {
-            text-align: center;
+            // text-align: center;
             .info{
                 width: 40%;
                 display: inline-block;
@@ -652,7 +652,7 @@
             text-align: center;
 
             .about-ir__li{
-                width: vw(20%);
+                width: vw(30%);
                 display: inline-block;
                 margin-top: vw(20px);
                 height: vw(50px);
@@ -725,12 +725,17 @@
             }
         }
         #ir_board_info {
-            text-align: center;
+            // text-align: center;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0 1vw;
+            box-sizing: border-box;
             .info{
-                width: 40%;
+                width: 100%;
                 display: inline-block;
                 vertical-align: top;
-                margin: 10px;
+                margin: vw(10px) 0;
             }
             .info h1{
                 width:100%;
