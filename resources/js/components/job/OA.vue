@@ -64,17 +64,16 @@ export default {
             if ( this.isSubmit ) {
                 return false;
             }
-            this.isSubmit = true;
             Swal.fire({
                 title: '삭제하시겠습니까?',
                 showDenyButton: true,
-                allowOutsideClick: false,ideClick: false,
-                allowOutsideClick: false,ideClick: false,
+                allowOutsideClick: false,
                 confirmButtonText: `네`,
                 denyButtonText: `아니오`,
+                allowOutsideClick: false,
                 }).then((result) => {
                 if (result.isConfirmed) {
-
+                    this.isSubmit = true;
                     if ( id ) {
                         let headers = getHeader();
                         let url, method;

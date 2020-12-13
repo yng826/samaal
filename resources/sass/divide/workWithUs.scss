@@ -124,7 +124,7 @@
         margin-bottom: 18px;
         border: 1px solid #bcc0c3;
         background-color: #fff;
-        padding: 70px 240px 70px;
+        padding: 70px 140px 70px;
         box-sizing: border-box;
 
         form {
@@ -185,6 +185,7 @@
                     border: none;
                     vertical-align: top;
                     font-size: 18px;
+                    box-sizing: border-box;
 
                     &::-webkit-input-placeholder {
                         color: #9f9f9f;
@@ -216,7 +217,7 @@
 
                 .input_date-group {
                     display: inline-block;
-                    width: 500px;
+                    width: 460px;
                     vertical-align: middle;
                     font-size: 0;
 
@@ -234,7 +235,7 @@
 
                     .inline-block {
                         display: inline-block;
-                        width: 46%;
+                        width: 100%;
                         vertical-align: middle;
 
                         input {
@@ -339,22 +340,60 @@
     position: absolute;
     z-index: 999;
     background: white;
-    top: 50%;
+    top: 5%;
     left: 50%;
-    transform: translate(-50% ,-50%);
+    transform: translate(-50%,0%);
     .form-container {
         padding: 20px;
         margin-bottom: 0;
         .form-wrap {
+
             .form-group {
+                margin-bottom: 20px;
+
+                label {
+                    display: inline-block;
+                    width: 173px;
+                    color: #010101;
+                    font-size: 20px;
+                    vertical-align: top;
+                    &.full-width {
+                        width: 100%;
+                    }
+                }
+
                 input {
+                    display: inline-block;
+                    padding: 0 19px;
                     width: 50%;
+                    height: 54px;
+                    background-color: #e8ecef;
+                    border-radius: 5px;
+                    border: none;
+                    vertical-align: top;
+                    font-size: 18px;
+                    box-sizing: border-box;
+
+                    &::-webkit-input-placeholder {
+                        color: #9f9f9f;
+                    }
+
+                    &::-ms-input-placeholder {
+                        color: #9f9f9f;
+                    }
                 }
                 .input_date-group {
                     width: 50%;
                     .inline-block {
                         width: 100%;
                     }
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+            .form-group {
+                input {
                 }
             }
         }
@@ -1322,7 +1361,7 @@
                     }
 
                     .input_date-group {
-                        width: vw(500px);
+                        width: vw(351px);
 
                         .from-arrow {
                             font-size: vw(18px);

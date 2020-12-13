@@ -11,7 +11,13 @@
             <table>
             @foreach ($sitemaps as $sitemap)
                 <tr>
-                    <td>{{ $sitemap->name }}</td>
+                    <td>
+                        @if (strlen($sitemap->url) > 2)
+                            <a href="{{ $sitemap->url }}">{{ $sitemap->name }}</a>
+                        @else
+                            {{ $sitemap->name }}
+                        @endif
+                    </td>
                     @for ($i = 0; $i < $depth2Cnt; $i++)
                         <td>
                         @if (isset($sitemap->children[$i]))

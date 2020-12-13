@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="work-recruit__detail--button">
-                <apply-button></apply-button>
+                <apply-button recruit_id="{{$recruit->id}}"></apply-button>
                 <check-apply-button recruit_id="{{$recruit->id}}"></check-apply-button>
             </div>
         </div>

@@ -26,7 +26,9 @@
             <certificate-component job_id={{$id}}></certificate-component>
             <overseas-component job_id={{$id}}></overseas-component>
             <self-introduction-component job_id={{$id}}></self-introduction-component>
+            <applycant-review-component></applycant-review-component>
             <job-button-groups-component></job-button-groups-component>
+            <login-component></login-component>
         </div>
         <div class="top-btn">TOP</div>
     </main>

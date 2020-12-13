@@ -4,8 +4,10 @@ export const loginURL = apiDomain + 'oauth/token'
 export const getHeader = () => {
     const tokenData = JSON.parse(window.localStorage.getItem('authUser'));
     const headers = {
-        'Accept': 'application/json',
-        'Authorization': 'Bearer ' + tokenData.access_token
+        'Accept': 'application/json'
+    }
+    if ( tokenData ) {
+        headers.Authorization = 'Bearer ' + tokenData.access_token;
     }
 
     return headers;

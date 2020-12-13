@@ -131,7 +131,11 @@ class JobController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $where = ['id'=> $id];
+        $where = [
+            'id'=> $id,
+            'user_id' => $request->user()->id,
+        ];
+        // return $where;
         DB::enableQueryLog(); // Enable query log
         $item = Job::where($where)->with(
             ['user','userInfo','educations','careers','military','awards','certificates','languages','oas','overseasStudys','recruit'])->first();
@@ -179,8 +183,6 @@ class JobController extends Controller
     {
         $formData = $request->all();
         $job = Job::find($id);
-        return $job;
-
 
         if ( isset($formData['cover_letter']) ) {
             $job->cover_letter = $formData['cover_letter'];
