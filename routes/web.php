@@ -13,12 +13,12 @@ use App\Http\Controllers\Admin\RecruitJobController as RecruitJobController;
 use App\Http\Controllers\Recruit\RecruitListController as RecruitListController;
 use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardController;
 use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
+use App\Http\Controllers\Admin\CategoryController as CategoryController;
+use App\Http\Controllers\Admin\UserController as UserController;
 use App\Http\Controllers\Faq\FaqController as FaqController;
 use App\Http\Controllers\Other\SearchController as SearchController;
 use App\Http\Controllers\Other\SitemapController as SitemapController;
 use App\Http\Controllers\Iso\IsoCertificationController as IsoCertificationController;
-use App\Http\Controllers\category\CategoryController as CategoryController;
-
 use App\Http\Controllers\aboutUs\StoryNewsController as StoryNewsController;
 use App\Http\Controllers\IR\FinanceController;
 use Illuminate\Support\Facades\Mail;
@@ -40,6 +40,10 @@ Route::get('/', function () {
     return view('main', [
         'bodyClass' => 'siteIntro',
     ]);
+});
+
+Route::get('intro', function () {
+    return view('intro');
 });
 
 Route::get('sample', function () {
@@ -80,7 +84,9 @@ Route::prefix('about-us')->group(function() {
 
 Route::prefix('business')->group(function() {
     Route::get('intro', function () {
-        return view('business.intro');
+        return view('business.intro', [
+            'bodyClass' => 'business'
+        ]);
     });
     Route::get('foil', function () {
         return view('business.foil.main');
@@ -313,6 +319,7 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     });
 
     Route::resource('category', Admin\CategoryController::class);
+    Route::resource('user', Admin\UserController::class);
 });
 
 Route::prefix('admin')->middleware(['auth', 'roles:admin,editor'])->group(function () {

@@ -1,6 +1,11 @@
 import axios from 'axios'
 import Swal from 'sweetalert2';
 import Swiper from 'swiper';
+const { ready } = require('jquery');
+import _ from 'lodash';
+
+require('fullpage.js');
+
 const business = () => {
 
     // foil main 작업하는중
@@ -25,6 +30,28 @@ const business = () => {
 
 
     };
+
+    //알루미늄 모바일 메인
+    const setFullPage = function() {
+        let ww = $(window).width();
+        if ( ww > 767 ) {
+            console.log('desktop');
+            if ( $('#fullpage').hasClass('fullpage-wrapper') ) {
+                $.fn.fullpage.destroy('all');
+            }
+        } else {
+            console.log('mobile');
+            if ( !$('#fullpage').hasClass('fullpage-wrapper') || $('#fullpage').hasClass('fp-destroyed')) {
+                $('#fullpage').fullpage({
+                    navigation: true
+                });
+            }
+        }
+    }
+
+    const eventListener = function() {
+        $(window).on('resize', _.debounce(setFullPage, 400))
+    }
 
     // business 문의하기 팝업
     const questionPop = () => {
@@ -95,6 +122,7 @@ const business = () => {
         $(".innovation-btn").on('click', function(){
             $(this).toggleClass("on");
             $(this).next().toggleClass("on");
+            $('.mobile-mask').toggleClass("on");
         });
     }
 
@@ -107,9 +135,9 @@ const business = () => {
         new SimpleLightbox({elements: '.speciality-iso .file-box a.btn-preview'});
     };
 
-    const eventListener = () => {
-        const txt = $('.question-pop__submit-btn').html();
-    }
+    // const eventListener = () => {
+    //     const txt = $('.question-pop__submit-btn').html();
+    // }
 
     const validation = () => {
         if ( true ) {
@@ -119,7 +147,7 @@ const business = () => {
     }
 
     const business_init = () => {
-        eventListener();
+        // eventListener();
         foilWrap();
         questionPop();
         businessSwiper();
@@ -128,6 +156,8 @@ const business = () => {
         rndSwiper();
         isoCertificationLightbox();
         innovation_submenu();
+        setFullPage();
+        eventListener();
     };
 
     business_init();

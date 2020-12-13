@@ -13,13 +13,14 @@
         </h2>
     </div>
     <div class="work-recruit__contents">
-        <div class="work-recruit__search">
-            <div class="work-recruit__search--wrap">
-                <input type="text" placeholder="키워드 검색"/>
-                <button type="button" class="btn-search">검색</button>
+        <form action="/work-with-us/recruit" method="get">
+            <div class="work-recruit__search">
+                <div class="work-recruit__search--wrap">
+                    <input type="text" name="keyword" placeholder="키워드 검색"/>
+                    <button type="submit" class="btn-search">검색</button>
+                </div>
             </div>
-            <p class="work-recruit__search--text">총 <em>3</em>건의 채용공고가 진행 중입니다.</p>
-        </div>
+        </form>
         <div class="work-recruit__detail">
             <div class="work-recruit__detail-wrap">
                 <div class="comer-box">
