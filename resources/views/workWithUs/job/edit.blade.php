@@ -26,6 +26,10 @@
             <certificate-component job_id={{$id}}></certificate-component>
             <overseas-component job_id={{$id}}></overseas-component>
         </div>
+        <div class="button-groups">
+            <button>자기소개서 작성</button>
+            <button>제출</button>
+        </div>
         <div class="top-btn">TOP</div>
     </main>
 @endsection

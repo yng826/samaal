@@ -106,5 +106,5 @@
     </form>
 </div>
 <div class="popup-mask"></div>
-<script src="{{ mix('/js/question.js')}}"></script>
+{{-- <script src="{{ mix('/js/question.js')}}"></script> --}}
 

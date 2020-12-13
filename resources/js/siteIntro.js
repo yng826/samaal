@@ -1,10 +1,12 @@
 const { ready } = require('jquery');
 import _ from 'lodash';
+var SimpleLightbox = require('simple-lightbox');
+require('simple-lightbox/dist/simpleLightbox.min.css');
 
 require('fullpage.js');
 
 const siteIntro = () => {
-    console.log('main intro');
+    new SimpleLightbox({elements: '.gallery a'});
     let fp;
     const setFullPage = function() {
         let ww = $(window).width();

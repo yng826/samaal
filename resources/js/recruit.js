@@ -52,9 +52,6 @@ import ApplyButton from './components/job/ApplyButton';
 const app = new Vue({
     el: '#app',
     mounted: function() {
-        $('.popup-mask').on('click', function(e){
-            this.$root.$emit('closePopup');
-        });
         this.$root.$on('openPopup', (args1) => {
             console.log('openPopup', args1);
             $('html, body').animate({scrollTop: '0'}, 1000);

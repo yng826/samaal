@@ -29,6 +29,7 @@
             <button class="btn-add" @click="addItem">추가</button>
             <button class="btn-save" @click="saveItems">저장</button>
         </div>
+        <VSpinner v-if="isSubmit || !this.items"></VSpinner>
     </div>
 </template>
 <script>
@@ -37,9 +38,11 @@ import Swal from 'sweetalert2'
 import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
+import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
     props: ['job_id'],
     components: {
+        VSpinner,
         Datepicker,
     },
     computed: {
@@ -51,7 +54,7 @@ export default {
         return {
             ko: ko,
             isAuth: false,
-            isSended: false,
+            isSubmit: false,
         }
     },
     mounted: function() {
@@ -77,10 +80,10 @@ export default {
                 });
                 return false;
             }
-            if ( this.isSended ) {
+            if ( this.isSubmit ) {
                 return false;
             }
-            this.isSended = true;
+            this.isSubmit = true;
             Swal.fire({
                 title: '삭제하시겠습니까?',
                 showDenyButton: true,
@@ -102,7 +105,7 @@ export default {
                             data: {career: this.$store.state.career}
                         })
                         .then(res => {
-                            this.isSended = false;
+                            this.isSubmit = false;
                             Swal.fire({
                                 title: '삭제되었습니다!',
                                 icon: 'success',
@@ -110,7 +113,7 @@ export default {
                             });
                         })
                         .catch(err => {
-                            this.isSended = false;
+                            this.isSubmit = false;
                             Swal.fire({
                                 title: '삭제에 실패했습니다!',
                                 icon: 'error',
@@ -119,7 +122,7 @@ export default {
                             console.error(err);
                         })
                     } else {
-                        this.isSended = false;
+                        this.isSubmit = false;
                         Swal.fire({
                             title: '삭제되었습니다!',
                             icon: 'success',
@@ -129,16 +132,16 @@ export default {
                     }
                     this.items.splice(index, 1);
                 } else if (result.isDenied) {
-                    this.isSended = false;
+                    this.isSubmit = false;
                 }
             });
 
         },
         saveItems: function() {
-            if ( this.isSended ) {
+            if ( this.isSubmit ) {
                 return false;
             }
-            this.isSended = true;
+            this.isSubmit = true;
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
@@ -151,7 +154,7 @@ export default {
                 data: {career: this.$store.state.career}
             })
             .then(res => {
-                this.isSended = false;
+                this.isSubmit = false;
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',
@@ -159,7 +162,7 @@ export default {
                 });
             })
             .catch(err => {
-                this.isSended = false;
+                this.isSubmit = false;
                 Swal.fire({
                     title: '저장에 실패했습니다!',
                     icon: 'error',
