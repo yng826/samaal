@@ -29,6 +29,12 @@ class AppServiceProvider extends ServiceProvider
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
             if (!empty(Auth::user())) {
                 if (Auth::user()->role == 'admin') {
+                    $event->menu->add('사용자');
+                    $event->menu->add([
+                        'text' => '사용자 관리',
+                        'url'  => 'admin/user',
+                        'icon' => 'fas fa-fw fa-users',
+                    ]);
                     $event->menu->add('메뉴');
                     $event->menu->add([
                         'text' => '메뉴 관리',
@@ -50,11 +56,6 @@ class AppServiceProvider extends ServiceProvider
                 if (Auth::user()->role == 'admin' || Auth::user()->role == 'editor') {
                     $event->menu->add('회사정보');
                     $event->menu->add([
-                        'text' => '사용자 관리',
-                        'url'  => 'admin/user',
-                        'icon' => 'fas fa-fw fa-users',
-                    ],
-                    [
                         'text' => '재무정보 관리',
                         'url'  => 'admin/finance_info',
                         'icon' => 'fas fa-fw fa-dollar-sign',

@@ -10,24 +10,17 @@ const business = () => {
 
     // foil main 작업하는중
     const foilWrap = () => {
-        // $(window).scroll(function() {
-        //     const height = $(window).scrollTop();
-        //     const footerHeight = $(".footer").offset().top;
-        //     const infoHeight = height + $(window).height();
-        //     console.log(footerHeight);
-        //     console.log(height);
-        //     console.log(infoHeight);
+        let ww = $(window).width();
+        $(window).on('scroll',function(){
 
-        //     if (infoHeight >= footerHeight){
-        //         // $('.business-foil__title').css('position','fixed');
-        //         console.log('up');
-        //     }
-        //     else{
-        //         // $('.business-foil__title').css('position','static');
-        //         console.log('down');
-        //     }
-        // });
-
+            // top button position
+            if($(window).scrollTop() + $(window).height() < $(document).height() - $(".footer").height()) {
+                $('.business-foil__title').css({'position':'fixed','top':'50%','right': '0'});
+            }
+            if($(window).scrollTop() + $(window).height() > $(document).height() - $(".footer").height()) {
+                $('.business-foil__title').css({'position':'absolute','top':'75%','right':'0'});
+            }
+        });
 
     };
 

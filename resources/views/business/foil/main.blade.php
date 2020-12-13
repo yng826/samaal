@@ -12,65 +12,64 @@
         <div class="business-foil__contents foil-box">
             <div class="foil-box__col">
                 <div class="foil-box__col--item item-foil">
-                    <a href="" class="foil-box--item">
+                    <a href="foil/foil" class="foil-box--item">
                         <p class="foil-box__text">연포장용 Foil</p>
                     </a>
                 </div>
                 <div class="foil-box__col--item item-fin">
-                    <a href="" class="foil-box--item">
+                    <a href="foil/fin" class="foil-box--item">
                         <p class="foil-box__text">열교환기용 <br>Fin재</p>
                     </a>
                 </div>
             </div>
             <div class="foil-box__inline">
-                <a href="#" class="foil-box--item item-capacitor">
+                <a href="foil/capacitor" class="foil-box--item item-capacitor">
                     <p class="foil-box__text">Capacitor용 Foil</p>
                 </a>
             </div>
             <div class="foil-box__block">
                 <div class="foil-box__block--item">
-                    <a href="#" class="foil-box--item item-decoration">
+                    <a href="foil/decoration" class="foil-box--item item-decoration">
                         <p class="foil-box__text">Decoration용 Foil</p>
                     </a>
                 </div>
                 <div class="foil-box__block--item">
-                    <a href="#" class="foil-box--item item-line">
+                    <a href="foil/line" class="foil-box--item item-line">
                         <p class="foil-box__text">Hair Line Foil</p>
                     </a>
                 </div>
-            </div>
-            <div class="arrow-effect">
-                <span>arrow</span>
             </div>
         </div>
         <div class="business-foil__contents foil-box">
             <!-- psd 다시 받아야 함 psd에 이미지들 없음  그리고 hover 이미지도 없음-->
-            <div class="foil-box__col">
-                <div class="foil-box__col--item item-foil">
-                    <a href="" class="foil-box--item">
-                        <p class="foil-box__text">연포장용 Foil</p>
-                    </a>
-                </div>
-                <div class="foil-box__col--item item-fin">
-                    <a href="" class="foil-box--item">
-                        <p class="foil-box__text">열교환기용 <br>Fin재</p>
-                    </a>
-                </div>
-            </div>
-            <div class="foil-box__inline">
-                <a href="#" class="foil-box--item item-capacitor">
-                    <p class="foil-box__text">Capacitor용 Foil</p>
+            <div class="foil-box__inline mr-5">
+                <a href="foil/restrictions" class="foil-box--item item-restrictions">
+                    <p class="foil-box__text">제약용 Foil</p>
                 </a>
             </div>
+
+            <div class="foil-box__col fl-r mr-0">
+                <div class="foil-box__col--item">
+                    <a href="foil/electronic" class="foil-box--item item-car">
+                    <p class="foil-box__text">LIB 양극집전체용 Foil<br>- 자동차용</p>
+                </a>
+                </div>
+                <div class="foil-box__col--item">
+                    <a href="foil/car" class="foil-box--item item-electronic">
+                        <p class="foil-box__text">LIB 양극집전체용 Foil<br>- 전자기기용</p>
+                    </a>
+                </div>
+            </div>
+
             <div class="foil-box__block">
                 <div class="foil-box__block--item">
-                    <a href="#" class="foil-box--item item-decoration">
-                        <p class="foil-box__text">Decoration용 Foil</p>
+                    <a href="foil/external" class="foil-box--item item-external">
+                        <p class="foil-box__text">LIB 외장재</p>
                     </a>
                 </div>
                 <div class="foil-box__block--item">
-                    <a href="#" class="foil-box--item item-line">
-                        <p class="foil-box__text">Hair Line Foil</p>
+                    <a href="foil/tab" class="foil-box--item item-tab">
+                        <p class="foil-box__text">LIB Tab재</p>
                     </a>
                 </div>
             </div>

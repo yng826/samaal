@@ -50,7 +50,7 @@ $bodyClass = 'about';
             @endfor
             <a href="/about-us/story-news?page={{ $cnt }}" class="pagination__button-next"></a>
         </div>
-        <div class="about-storyNews__top-btn">TOP</div>
+        <div class="top-btn">TOP</div>
     </div>
 
     <!-- 상세보기 -->

@@ -8,15 +8,20 @@
         <ul>
             @foreach ($treeMenu as $menu)
             <li class="header__nav--item">
+                <span>
+                @if (strlen($menu->url) > 2)
+                    <a href="{{ $menu->url }}">{{ $menu->name }}</a>
+                @else
+                    {{ $menu->name }}
+                @endif
+                </span>
+
                 @if(isset($menu->children) && count($menu->children) > 0)
-                    <span>{{ $menu->name }}</span>
                     <ol class="header__nav--submenu">
                         @foreach($menu->children as $children)
                         <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
                         @endforeach
                     </ol>
-                @else
-                    <span><a href="{{ $menu->url }}">{{ $menu->name }}</a></span>
                 @endif
             </li>
             @endforeach

@@ -80,6 +80,7 @@ class LanguageController extends Controller
                                 'language_grade' => $language['language_grade'],
                                 'language_start' => date('Y-m-d', strtotime($language['language_start'])),
                                 'language_end' => date('Y-m-d', strtotime($language['language_end'])),
+                                'language_level' => $language['language_level'],
                             ]);
             } else {
                 $affected = DB::table('job_applications_language')
@@ -90,6 +91,7 @@ class LanguageController extends Controller
                                 'language_grade' => $language['language_grade'],
                                 'language_start' => date('Y-m-d', strtotime($language['language_start'])),
                                 'language_end' => date('Y-m-d', strtotime($language['language_end'])),
+                                'language_level' => $language['language_level'],
                             ]);
             }
         }

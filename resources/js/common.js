@@ -50,7 +50,7 @@ const common = () => {
     }
 
     const TopButton = () => {
-        $(window).scroll(function(){
+        $(window).on('scroll',function(){
             // top button 생김
             if ($(this).scrollTop()) {
                 $(".top-btn").fadeIn();
@@ -68,7 +68,7 @@ const common = () => {
         });
 
          // top button click
-         $(".top-btn").click(function(){
+         $(".top-btn").on('click',function(){
             $('html, body').animate({
                 scrollTop : 0
             }, 400);
@@ -76,7 +76,7 @@ const common = () => {
     }
 
     const footer_top = () => {
-        $(".footer__m-top").click(function(){
+        $(".footer__m-top").on('click',function(){
             $('html, body').animate({
                 scrollTop : 0
             }, 400);
