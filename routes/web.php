@@ -313,13 +313,15 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::get('library', function () {
         return view('admin.test.library');
     });
+
+    Route::resource('category', Admin\CategoryController::class);
 });
 
-Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'roles:admin,editor'])->group(function () {
     Route::resource('finance_info', Admin\FinanceInfoController::class);
 });
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware('auth', 'roles:admin,editor')->group(function () {
     //Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
     Route::resource('ir_board', Admin\IrBoardController::class);
 
@@ -329,17 +331,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('iso_certification/file-download', [AdminIsoCertificationController::class, 'fileDownload']);
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
 
-    Route::resource('recruit', Admin\RecruitController::class);
-    Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
-    Route::resource('recruit.job', Admin\RecruitJobController::class);
-
     Route::resource('faq', Admin\FaqController::class);
 
     Route::resource('question_admin', Admin\QuestionAdminController::class);
     Route::get('question_admin/{id}', [QuestionAdminController::class, 'show'])
-    ->where('id', '[0-9]+');
+            ->where('id', '[0-9]+');
+});
 
-    Route::resource('category', Admin\CategoryController::class);
+Route::prefix('admin')->middleware(['auth', 'roles:admin,recruit'])->group(function () {
+    Route::resource('recruit', Admin\RecruitController::class);
+    Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
+    Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 
 Auth::routes();
