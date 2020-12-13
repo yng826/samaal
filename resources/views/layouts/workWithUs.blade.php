@@ -10,14 +10,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @include('shared.header')
+    @include('shared.header')
 
+    <div id="app">
         @section('main')
         @show
 
         @include('shared.footer')
-
     </div>
     @section('script')
     <!-- Scripts -->

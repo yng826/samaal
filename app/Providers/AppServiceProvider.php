@@ -34,7 +34,6 @@ class AppServiceProvider extends ServiceProvider
                         'text' => '메뉴 관리',
                         'url'  => 'admin/menu',
                         'icon' => 'fas fa-fw fa-bars',
-                        'can'  => 'admin-only',
                     ],
                     [
                         'text' => '사이트맵 관리',
