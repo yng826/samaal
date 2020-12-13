@@ -153,6 +153,97 @@
     }
 }
 
+/* aboutUs - storyNews - News 상세보기*/
+.storyNews-detail {
+    &__contents {
+        max-width: 1097px;
+        margin: 0 auto;
+    }
+
+    &__section {
+        padding: 80px 0 100px;
+    }
+
+    &__title {
+        display: block;
+        position: relative;
+        padding-left: 15px;
+        font-size: 40px;
+        color: #2a2a2a;
+        line-height: 50px;
+
+        &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            background-color: #3767c7;
+            border-radius: 50%;
+        }
+    }
+
+    &__box {
+        padding: 0 15px;
+    }
+
+    &__date{
+        padding: 48px 0 60px;
+
+        time {
+            display: inline-block;
+            padding-right: 9px;
+            position: relative;
+            vertical-align: middle;
+            font-size: 14px;
+            color: #2a2a2a;
+            line-height: 1;
+
+            &::after{
+                content: "";
+                position: absolute;
+                display: inline-block;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 13px;
+                background-color: #2a2a2a;
+            }
+        }
+
+        span {
+            display: inline-block;
+            padding-left: 9px;
+            vertical-align: middle;
+            font-size: 14px;
+            line-height: 1;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 460px;
+        border: 1px solid #d2d2d2;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__text {
+        padding-top: 46px;
+
+        p {
+            font-size: 16px;
+            color: #2a2a2a;
+            line-height: 28px;
+        }
+    }
+}
+
+
 /* aboutUs - ceoMessage*/
 .about-ceo {
     &__contents {
@@ -1142,6 +1233,62 @@
         }
     }
 
+    /* aboutUs - storyNews - News 상세보기*/
+    .storyNews-detail {
+        &__contents {
+            max-width: vw(2194px);
+        }
+
+        &__section {
+            padding: vw(160px 30px 200px);
+        }
+
+        &__title {
+            padding-left: vw(30px);
+            font-size: vw(80px);
+            line-height: vw(100px);
+
+            &::before{
+                width: vw(30px);
+                height: vw(30px);
+            }
+        }
+
+        &__box {
+            padding: vw(0 30px);
+        }
+
+        &__date{
+            padding: vw(96px 0 120px);
+
+            time {
+                font-size: vw(28px);
+                padding-right: vw(9px);
+                &::after{
+                    height: vw(26px);
+                }
+            }
+
+            span {
+                font-size: vw(28px);
+                padding-left: vw(9px);
+            }
+        }
+
+        &__img {
+            height: vw(920px);
+        }
+
+        &__text {
+            padding-top: vw(92px);
+
+            p {
+                font-size: vw(32px);
+                line-height: vw(56px);
+            }
+        }
+    }
+
     /* aboutUs - ceoMessage*/
     .about-ceo {
         &__contents {
@@ -1417,6 +1564,68 @@
 
         .pagination {
             margin-top: vw(60px);
+        }
+    }
+
+     /* aboutUs - storyNews - News 상세보기*/
+     .storyNews-detail {
+        &__contents {
+            max-width: vw(750px);
+        }
+
+        &__section {
+            padding: vw(63px 68px 100px);
+        }
+
+        &__title {
+            padding-left: 0;
+            padding-top: vw(30px);
+            font-size: vw(52px);
+            line-height: vw(72px);
+
+            &::before{
+                width: vw(13px);
+                height: vw(13px);
+                background-color: #1d3669;
+            }
+        }
+
+        &__box {
+            padding: vw(0 30px);
+        }
+
+        &__date{
+            padding: vw(30px 0 40px);
+
+            time {
+                font-size: vw(27px);
+                padding-right: vw(9px);
+                color: #929292;
+
+                &::after{
+                    height: vw(26px);
+                    background-color: #929292;;
+                }
+            }
+
+            span {
+                font-size: vw(27px);
+                padding-left: vw(9px);
+                color: #929292;
+            }
+        }
+
+        &__img {
+            height: vw(345px);
+        }
+
+        &__text {
+            padding-top: vw(54px);
+
+            p {
+                font-size: vw(24px);
+                line-height: vw(37px);
+            }
         }
     }
 

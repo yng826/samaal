@@ -53,29 +53,6 @@ $bodyClass = 'about';
         <div class="top-btn">TOP</div>
     </div>
 
-    <!-- 상세보기 -->
-    <div class="storyNews-pop layer-popup">
-        <button class="storyNews-pop__close-btn layer-popup__close-btn" type="button">닫기</button>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        <figure>
-                            <img src="#" alt="" width="508" height="298" name="id">
-                        </figure>
-                    </div>
-                    <div class="form-group">
-                        <label for="">제목</label>
-                        <div class="form-control" name="title" style="width:350px; height: 20px; border: 1px solid #313131;"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="">내용</label><br>
-                        <div class="form-control" name="contents" style="overflow-x:auto; width:350px; height:200px; border: 1px solid #313131;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="popup-mask"></div>
     <div class="top-btn">TOP</div>
 </div>
