@@ -241,11 +241,12 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => '메뉴'],
+        /*['header' => '메뉴'],
         [
             'text' => '메뉴 관리',
             'url'  => 'admin/menu',
             'icon' => 'fas fa-fw fa-bars',
+            'can'  => 'admin-only',
         ],
         [
             'text' => '사이트맵 관리',
@@ -299,7 +300,7 @@ return [
             'text' => '지원내역',
             'url'  => 'admin/recruit/0/job',
             'icon' => 'fas fa-fw fa-file-signature',
-        ],
+        ],*/
         /*[
             'text'        => 'pages',
             'url'         => 'admin/pages',
