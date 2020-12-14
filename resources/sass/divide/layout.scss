@@ -557,8 +557,9 @@
 
             &--item {
                 display: inline-block;
-                width: 17%;
+                width: 180px;
                 vertical-align: top;
+                padding-right: 30px;
 
                 a {
                     font-size: 17px;
@@ -577,6 +578,16 @@
                     }
                 }
             }
+        }
+    }
+
+    &__block {
+        &--left {
+            display: inline-block;
+        }
+
+        &--right {
+            display: inline-block;
         }
     }
 }
@@ -970,6 +981,70 @@
         }
 
     }
+
+    /* 사이트맵 */
+    .sitemap {
+        &__title {
+            padding: vw(57px 0);
+        }
+
+        &__section {
+            max-width: vw(1616px);
+            padding: vw(90px 0);
+
+            .depth-01 {
+                padding: vw(46px 0);
+            }
+
+            .depth-02 {
+                margin-bottom: vw(10px);
+                font-size: vw(18px);
+            }
+
+            td {
+                padding: vw(46px 0);
+            }
+
+            li {
+                padding: vw(10px 0);
+                font-size: vw(17px);
+            }
+
+            .depth-name {
+                font-size: vw(26px);
+                letter-spacing: vw(-0.91px);
+            }
+
+            &--list {
+
+                &--item {
+                    width: vw(180px);
+                    padding-right: vw(30px);
+
+                    a {
+                        font-size: vw(17px);
+                    }
+
+                    li {
+                        padding-left: vw(12px);
+                        &::before {
+                            top: vw(10px);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__block {
+            &--left {
+                display: inline-block;
+            }
+
+            &--right {
+                display: inline-block;
+            }
+        }
+    }
 }
 
 /* 태블릿 세로, 가로 사이즈 */
@@ -1188,15 +1263,15 @@
         background:#fff url("/images/about/m/icon_top.jpg") no-repeat center vw(30px);
     }
 
-    /* 사이트맵 */
-    .sitemap {
+  /* 사이트맵 */
+  .sitemap {
         &__title {
             padding: vw(114px 0);
         }
 
         &__section {
-            max-width: vw(1800px);
-            padding: vw(80px 0);
+            // max-width: vw(3232px);
+            padding: vw(180px 0);
 
             .depth-01 {
                 padding: vw(92px 0);
@@ -1205,7 +1280,6 @@
             .depth-02 {
                 margin-bottom: vw(20px);
                 font-size: vw(36px);
-
             }
 
             td {
@@ -1219,12 +1293,15 @@
 
             .depth-name {
                 font-size: vw(52px);
-                letter-spacing: vw(-1.81px);
+                letter-spacing: vw(-1.82px);
             }
 
             &--list {
 
                 &--item {
+                    width: vw(360px);
+                    padding-right: vw(60px);
+
                     a {
                         font-size: vw(34px);
                     }
@@ -1236,6 +1313,16 @@
                         }
                     }
                 }
+            }
+        }
+
+        &__block {
+            &--left {
+                display: inline-block;
+            }
+
+            &--right {
+                display: inline-block;
             }
         }
     }
@@ -1846,8 +1933,8 @@
                 width: 100%;
 
                 &--item {
-                    display: inline-block;
-                    width: 49%;
+                    display: block;
+                    width: 100%;
                     padding-bottom: vw(24px);
 
                     a {
@@ -1861,6 +1948,18 @@
                         }
                     }
                 }
+            }
+        }
+
+        &__block {
+            &--left {
+                float: left;
+                width: 50%;
+            }
+
+            &--right {
+                float: right;
+                width: 50%;
             }
         }
     }
