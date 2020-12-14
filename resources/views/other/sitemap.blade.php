@@ -18,30 +18,55 @@
                     <div class="sitemap__section--list depth-name">{{ $sitemap->name }}</div>
                     @endif
                     <div class="container sitemap__section--list">
-                    @for ($i = 0; $i < $depth2Cnt; $i++)
-                        @if (isset($sitemap->children[$i]))
-                            @if (strlen($sitemap->children[$i]->url) > 2)
-                                <div class="sitemap__section--list--item">
-                                    <a href="{{ $sitemap->children[$i]->url }}"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
-                                    <ul>
-                                    @if (isset($sitemap->children[$i]->children))
-                                        @foreach ($sitemap->children[$i]->children as $depth3)
-                                            <li><a href="{{ $depth3->url }}">{!! str_replace(' > ', '<br/>', $depth3->name) !!}</a></li>
-                                        @endforeach
+                        <div class="sitemap__block--left">
+                            @for ($i = 0; $i < $depth2Cnt; $i++)
+                                @if (isset($sitemap->children[$i]))
+                                    @if (strlen($sitemap->children[$i]->url) > 2)
+                                        <div class="sitemap__section--list--item">
+                                            <a href="{{ $sitemap->children[$i]->url }}"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
+                                            <ul>
+                                            @if (isset($sitemap->children[$i]->children))
+                                                @foreach ($sitemap->children[$i]->children as $depth3)
+                                                    <li><a href="{{ $depth3->url }}">{!! str_replace(' > ', '<br/>', $depth3->name) !!}</a></li>
+                                                @endforeach
+                                            @endif
+                                            </ul>
+                                        </div>
+                                    @else
+                                        @if ($sitemap->children[$i]->name == '통합 문의')
+                                            <a class="question-btn" href="javascript:;"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
+                                        @else
+                                            <b class="depth-02">{{ $sitemap->children[$i]->name }}</b>
+                                        @endif
                                     @endif
-                                    </ul>
-                                </div>
-                            @else
-                                @if ($sitemap->children[$i]->name == '통합 문의')
-                                    <a class="question-btn" href="javascript:;"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
-                                @else
-                                    <b class="depth-02">{{ $sitemap->children[$i]->name }}</b>
                                 @endif
-                            @endif
+                            @endfor
+                        </div>
 
-
-                        @endif
-                    @endfor
+                        <div class="sitemap__block--right">
+                            @for ($i = 0; $i < $depth2Cnt; $i++)
+                                @if (isset($sitemap->children[$i]) && $sitemap->children[$i]->is_right == 1)
+                                    @if (strlen($sitemap->children[$i]->url) > 2)
+                                        <div class="sitemap__section--list--item">
+                                            <a href="{{ $sitemap->children[$i]->url }}"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
+                                            <ul>
+                                            @if (isset($sitemap->children[$i]->children))
+                                                @foreach ($sitemap->children[$i]->children as $depth3)
+                                                    <li><a href="{{ $depth3->url }}">{!! str_replace(' > ', '<br/>', $depth3->name) !!}</a></li>
+                                                @endforeach
+                                            @endif
+                                            </ul>
+                                        </div>
+                                    @else
+                                        @if ($sitemap->children[$i]->name == '통합 문의')
+                                            <a class="question-btn" href="javascript:;"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
+                                        @else
+                                            <b class="depth-02">{{ $sitemap->children[$i]->name }}</b>
+                                        @endif
+                                    @endif
+                                @endif
+                            @endfor
+                        </div>
                     </div>
                 </li>
             @endforeach
