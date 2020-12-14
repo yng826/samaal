@@ -71,7 +71,7 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 900000,
+                    duration: 2000,
                     easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
@@ -150,7 +150,7 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 900000,
+                    duration: 2000,
                     easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
@@ -229,7 +229,7 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 900000,
+                    duration: 2000,
                     easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
@@ -308,7 +308,7 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 900000,
+                    duration: 2000,
                     easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
@@ -387,7 +387,7 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 900000,
+                    duration: 2000,
                     easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
@@ -468,7 +468,7 @@ const financial = () => {
                     animationDuration: 0
                 },
                 animation: {
-                    duration: 900000,
+                    duration: 2000,
                     easing:'easeOutQuart',
                     onComplete: function () {
                         var chartInstance = this.chart,
