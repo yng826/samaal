@@ -11,65 +11,7 @@
 </head>
 <body class={{ $bodyClass ?? '' }}>
     <div id="app">
-        <header class="header main-header">
-            <a href="#" class="header__logo">
-                <img src="/images/common/logo.png" alt="SAMA">
-            </a>
-
-            @include('shared.header')
-
-            <div class="header__m-nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="header__m-nav--gnb">
-                <div class="header__m-nav--gnb__top">
-                    <h2>SAMA</h2>
-                    <button type="button" class="close-btn">닫기</button>
-                </div>
-                <ul class="header__m-nav--gnb__list">
-                    <li class="header__m-nav--gnb__item menu">
-                        <span class="menu__title">About US</span>
-                        <ul class="menu__sub">
-                            <li><a href="#">Heritage</a></li>
-                            <li><a href="#">CEO Message</a></li>
-                            <li><a href="#">Story & News</a></li>
-                            <li><a href="#">Location</a></li>
-                            <li><a href="#">Investor Relations</a></li>
-                        </ul>
-                    </li>
-                    <li class="header__m-nav--gnb__item menu">
-                        <span class="menu__title">For Business Partners</span>
-                        <ul class="menu__sub">
-                            <li><a href="#">알루미늄 호일</a></li>
-                            <li><a href="#">포장재</a></li>
-                            <li><a href="#">산업/건축용</a></li>
-                            <li><a href="#">Speciality</a></li>
-                            <li><a href="#">Innovation</a></li>
-                        </ul>
-                    </li>
-                    <li class="header__m-nav--gnb__item menu">
-                        <span class="menu__title">Work With Us</span>
-                        <ul class="menu__sub">
-                            <li><a href="#">채용공고</a></li>
-                            <li><a href="#">직무소개</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="gnb-mask"></div>
-
-            <div class="header__search">
-                <ul>
-                    <li class="language__kor"><a href="#">KOR</a></li>
-                    <li class="language__eng"><a href="#">ENG</a></li>
-                </ul>
-                <!-- <input type="text"> -->
-                <button type="submit" class="btn-search">검색</button>
-            </div>
-        </header>
+        @include('shared.header')
 
         <main class="business-intro">
             <div class="business-intro__wrap">
@@ -128,7 +70,7 @@
                             알루미늄 Foil
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="#">더 알아보기</a>
+                            <a href="/business/foil">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -152,7 +94,7 @@
                             산업건축용
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="#">더 알아보기</a>
+                            <a href="">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -164,7 +106,7 @@
                             Speciality
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="#">더 알아보기</a>
+                            <a href="">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
