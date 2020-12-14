@@ -59,7 +59,8 @@ class LoginController extends Controller
             $email = $request->email;
             $user = User::where('email', $email)->first();
             Session::put('access_token', $user->createToken('samaal')->accessToken);
-            return $this->sendLoginResponse($request);
+            return view('home');
+            //return $this->sendLoginResponse($request);
         }
 
         // If the login attempt was unsuccessful we will increment the number of attempts
