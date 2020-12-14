@@ -301,6 +301,7 @@ Route::prefix('faq')->group(function () {
 
 
 Route::prefix('admin')->group(function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
     Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
     Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
 
@@ -355,7 +356,11 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin,recruit'])->group(funct
     Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 
 Route::get('/confirm-password', function () {
     return view('auth.passwords.confirm');
