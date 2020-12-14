@@ -16,38 +16,7 @@
                 <img src="/images/common/logo.png" alt="SAMA">
             </a>
 
-            <nav class="header__nav">
-                <ul>
-                    <li class="header__nav--item">
-                        <span>About Us</span>
-                        <ol class="header__nav--submenu">
-                            <li><a href="/about-us/heritage/">Heritage</a></li>
-                            <li><a href="/about-us/ceo/">CEO Message</a></li>
-                            <li><a href="/about-us/story-news/">Story & News</a></li>
-                            <li><a href="/about-us/location/seoul/">Location</a></li>
-                            <li><a href="/about-us/ir/consolidated">Investor Relations</a></li>
-                        </ol>
-                    </li>
-                    <li class="header__nav--item">
-                        <span><a href="#">For Business Partners</a></span>
-                        <ol class="header__nav--submenu">
-                            <li><a href="/business/foil/capacitor/">알루미늄 호일</a></li>
-                            <li><a href="/business/package/watertight">포장재용</a></li>
-                            <li><a href="/business/industry/insulation">산업/건축용</a></li>
-                            <li><a href="#">Speciality</a></li>
-                            <li><a href="#">Innovation</a></li>
-                        </ol>
-                    </li>
-                    <li class="header__nav--item">
-                        <span>Work With Us</span>
-                        <ol class="header__nav--submenu">
-                            <li><a href="/work-with-us/recruit/">채용안내</a></li>
-                            <li><a href="#">인사제도</a></li>
-                            <li><a href="#">조직문화</a></li>
-                        </ol>
-                    </li>
-                </ul>
-            </nav>
+            @include('shared.header')
 
             <div class="header__m-nav">
                 <span></span>
