@@ -74,7 +74,7 @@
                          도전의 <em>꿈을 꾸다</em>
                      </h2>
                      <div class="main-wrap__section--button sub-menu__button">
-                        <button type="button">About Us</button>
+                        <button type="button">Work With Us</button>
                      </div>
                      <ul class="main-wrap__section--sub-menu">
                          <li><a href="/work-with-us/recruit/">채용공고</a></li>
