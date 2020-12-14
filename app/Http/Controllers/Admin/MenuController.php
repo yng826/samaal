@@ -56,7 +56,6 @@ class MenuController extends Controller
                     'depth'=> $request->depth,
                     'parent_id'=> $request->parent_id,
                     'is_front'=> $request->is_front,
-                    'is_right'=> $request->is_right,
                     'created_at' => now()
                 ]);
 
@@ -109,7 +108,6 @@ class MenuController extends Controller
                         'depth' => $request->depth,
                         'parent_id' => $request->parent_id,
                         'is_front' => $request->is_front,
-                        'is_right' => $request->is_right,
                         'updated_at' => now(),
                     ]);
 

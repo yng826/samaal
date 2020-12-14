@@ -15,7 +15,7 @@ class SitemapController extends Controller
      */
     public function index()
     {
-        $sitemaps = DB::table('sitemaps')->orderBy('order_id')->get();
+        $sitemaps = DB::table('sitemaps')->where('is_front', 1)->orderBy('order_id')->get();
 
         $treeSitemap = $this->buildTreeSitemap($sitemaps);
 

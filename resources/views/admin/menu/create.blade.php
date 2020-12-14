@@ -67,22 +67,6 @@
                               <label for="is_front2" class="form-check-label">아니오</label>
                             </div>
                         </div>
-
-                        @if((isset($depth) ? $depth+1 : $menu->depth) == 2)
-                        <div class="form-group">
-                            <label>우측메뉴 노출</label>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="is_right1" name="is_right" value="1" {{ isset($menu) && $menu->is_right == 1 ? 'checked' :''}}>
-                              <label for="is_right1" class="form-check-label">예</label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="is_right2" name="is_right" value="0" {{ isset($menu) && $menu->is_right == 0 ? 'checked' :''}}>
-                              <label for="is_right2" class="form-check-label">아니오</label>
-                            </div>
-                        </div>
-                        @else
-                        <input type="hidden" name="is_right" value="0">
-                        @endif
                     </div>
                 </div>
             </div>
@@ -143,10 +127,6 @@ const menu_create = () => {
 
         } else if ($('input[name=is_front]:checked').val() == '' || $('input[name=is_front]:checked').val() == null) {
             alert('사이트 노출을 선택해주세요.');
-            return false;
-
-        } else if ($('input[name=depth]').val() == '2' && ($('input[name=is_right]:checked').val() == '' || $('input[name=is_right]:checked').val() == null)) {
-            alert('우측메뉴 노출을 선택해주세요.');
             return false;
         }
         return true;

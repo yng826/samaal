@@ -15,7 +15,7 @@ class SitemapController extends Controller
      */
     public function index()
     {
-        $sitemaps = DB::table('sitemaps')->where('is_front', 1)->orderBy('order_id')->get();
+        $sitemaps = DB::table('sitemaps')->orderBy('order_id')->get();
 
         $treeSitemap = $this->buildTreeSitemap($sitemaps);
 
@@ -60,6 +60,7 @@ class SitemapController extends Controller
                     'depth'=> $request->depth,
                     'parent_id'=> $request->parent_id,
                     'is_front'=> $request->is_front,
+                    'is_right'=> $request->is_right,
                     'created_at' => now()
                 ]);
 
@@ -118,6 +119,7 @@ class SitemapController extends Controller
                         'depth' => $request->depth,
                         'parent_id' => $request->parent_id,
                         'is_front' => $request->is_front,
+                        'is_right'=> $request->is_right,
                         'updated_at' => now(),
                     ]);
 
