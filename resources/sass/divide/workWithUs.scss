@@ -175,9 +175,9 @@
 
                 label {
                     display: inline-block;
-                    width: 173px;
+                    width: 30%;
                     color: #010101;
-                    font-size: 20px;
+                    font-size: 16px;
                     vertical-align: top;
                     &.full-width {
                         width: 100%;
@@ -348,12 +348,12 @@
 .popup-container {
     position: absolute;
     z-index: 999;
-    background: white;
-    top: 5%;
+    background: #fff;
+    padding: 60px 100px 50px;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,0%);
+    transform: translate(-50%,-50%);
     .form-container {
-        padding: 20px;
         margin-bottom: 0;
         .form-wrap {
 
@@ -362,7 +362,7 @@
 
                 label {
                     display: inline-block;
-                    width: 40%;
+                    width: 30%;
                     color: #010101;
                     font-size: 20px;
                     vertical-align: top;
@@ -374,7 +374,7 @@
                 input {
                     display: inline-block;
                     padding: 0 19px;
-                    width: 55%;
+                    width: 68%;
                     height: 40px;
                     background-color: #e8ecef;
                     border-radius: 5px;
@@ -391,6 +391,7 @@
                         color: #9f9f9f;
                     }
                 }
+
                 .input_date-group {
                     width: 50%;
                     .inline-block {
@@ -401,11 +402,48 @@
                     }
                 }
             }
+
+            .password-group {
+                display: block;
+                text-align: center;
+
+                .password-link {
+                    display: inline-block;
+                    padding-bottom: 5px;
+                    font-size: 17px;
+                    color: #1c3669;
+                    text-align: center;
+                    border-bottom: 1px solid #1c3669;
+                }
+            }
+
             .form-group {
                 input {
                 }
             }
+
+            .submit-btn {
+                display: block;
+                padding: 12px 30px;
+                margin: 0 auto;
+                font-size: 20px;
+                color: #fff;
+                background-color: #1c3669;
+                text-align: center;
+                border-radius: 1px;
+            }
         }
+    }
+
+    .layer-popup__close-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 22px;
+        height: 22px;
+        background: url("/images/common/btn_close.png") no-repeat right / contain;
+        font-size: 0;
     }
 }
 
@@ -1920,6 +1958,51 @@
 /*태블릿 세로 사이즈*/
 @media all and (min-width:768px) and (max-width:1024px) {
     @import "./lib/webvw";
+
+    .popup-container {
+
+        padding: vw(60px 100px 50px);
+
+        .form-container {
+            .form-wrap {
+                .form-group {
+                    margin-bottom: vw(40px);
+
+                    label {
+                        font-size: vw(40px);
+                    }
+
+                    input {
+                        padding: vw(0 38px);
+                        height: vw(80px);
+                        border-radius: vw(10px);
+                        font-size: vw(36px);
+                    }
+                }
+
+                .password-group {
+                    .password-link {
+                        padding-bottom: vw(10px);
+                        font-size: vw(34px);
+                    }
+                }
+
+
+                .submit-btn {
+                    padding: vw(24px 60px);
+                    font-size: vw(40px);
+                }
+            }
+        }
+
+        .layer-popup__close-btn {
+            right: vw(40px);
+            top: vw(40px);
+            width: vw(44px);
+            height: vw(44px);
+        }
+    }
+
     /* 지원하기 */
     .work-apply {
         &__contents {
@@ -2453,9 +2536,58 @@
 @media all and (max-width: 767px) {
     @import "./lib/vw";
 
-    .work-apply,
     .popup-container {
+
+        padding: vw(30px 50px 25px);
+
+        .form-container {
+            .form-wrap {
+                .form-group {
+                    display: table;
+                    margin-bottom: vw(20px);
+                    width: 100%;
+
+                    label {
+                        display: table-cell;
+                        width: 30%;
+                        font-size: vw(20px);
+                    }
+
+                    input {
+                        display: table-cell;
+                        width: 100%;
+                        padding: vw(0 19px);
+                        height: vw(40px);
+                        border-radius: vw(5px);
+                        font-size: vw(18px);
+                    }
+                }
+
+                .password-group {
+                    display: block;
+
+                    .password-link {
+                        padding-bottom: vw(5px);
+                        font-size: vw(17px);
+                    }
+                }
+
+
+                .submit-btn {
+                    padding: vw(12px 30px);
+                    font-size: vw(20px);
+                }
+            }
+        }
+
+        .layer-popup__close-btn {
+            right: vw(20px);
+            top: vw(20px);
+            width: vw(20px);
+            height: vw(20px);
+        }
     }
+
     .vdp-datepicker__calendar {
         left: vw(-100px);
     }

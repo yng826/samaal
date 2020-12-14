@@ -1,5 +1,6 @@
 <template>
     <div class="popup-container" v-if="isOpen">
+        <button class="layer-popup__close-btn" type="button">닫기</button>
         <div class="form-container login-form">
             <div class="form-wrap">
                 <form id="login-form" :action="action" method="POST" @submit.prevent="sendPost">
@@ -15,10 +16,10 @@
                         <label for="password">비밀번호</label>
                         <input type="password" name="password" id="password" v-model="password" ref="password">
                     </div>
-                    <div class="form-group">
-                        <a href="" @click.prevent="openFindPassword">비밀번호를 잊으셨나요?</a>
+                    <div class="form-group password-group">
+                        <a href="" @click.prevent="openFindPassword" class="password-link">비밀번호를 잊으셨나요?</a>
                     </div>
-                    <button type="submit">확인하기</button>
+                    <button type="submit" class="submit-btn">확인하기</button>
                 </form>
             </div>
             <VSpinner v-if="isSubmit"></VSpinner>
