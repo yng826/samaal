@@ -20,7 +20,7 @@
                         <em>삼아</em>가 만드는<br> <em>지속 가능한 세상</em>
                     </h2>
                     <div class="main-wrap__section--button">
-                        <a href="#">더 알아보기</a>
+                        <a href="/intro">더 알아보기</a>
                     </div>
                 </div>
                 <div class="section main-wrap__section--img section01-img"></div>
@@ -40,12 +40,12 @@
                         <button type="button">About Us</button>
                     </div>
                     <ul class="main-wrap__section--sub-menu">
-                        <li><a href="#">Heritage</a></li>
-                        <li><a href="#">Message from CEO</a></li>
-                        <li><a href="#">CI</a></li>
-                        <li><a href="#">Story & News</a></li>
-                        <li><a href="#">재무정보</a></li>
-                        <li><a href="#">Location</a></li>
+                        <li><a href="/about-us/heritage">Heritage</a></li>
+                        <li><a href="/about-us/ceo">Message from CEO</a></li>
+                        <li><a href="/about-us/ci">CI</a></li>
+                        <li><a href="/about-us/story-news">Story & News</a></li>
+                        <li><a href="/about-us/ir/consolidated">재무정보</a></li>
+                        <li><a href="/about-us/location/seoul">Location</a></li>
                     </ul>
                 </div>
                 <div class="mobile-arrow"></div>
@@ -58,7 +58,7 @@
                         만들어낸 <em>제품</em>
                     </h2>
                     <div class="main-wrap__section--button">
-                        <a href="#">For Business Partners</a>
+                        <a href="/business/foil">For Business Partners</a>
                     </div>
                 </div>
                 <div class="section main-wrap__section--img section03-img"></div>
@@ -77,9 +77,9 @@
                         <button type="button">About Us</button>
                      </div>
                      <ul class="main-wrap__section--sub-menu">
-                         <li><a href="#">채용공고</a></li>
-                         <li><a href="#">직무소개</a></li>
-                         <li><a href="#">FAQ</a></li>
+                         <li><a href="/work-with-us/recruit/">채용공고</a></li>
+                         <li><a href="/work-with-us/introduction/introjob">직무소개</a></li>
+                         <li><a href="/faq/faq">FAQ</a></li>
                      </ul>
                 </div>
             </div>
