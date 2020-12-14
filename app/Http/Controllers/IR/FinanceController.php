@@ -42,8 +42,8 @@ class FinanceController extends Controller
                 'net_income'=> $net_income,
                 'assets'=> $assets,
                 'liability'=> $liability,
-                'capital'=>$capital
-
+                'capital'=>$capital,
+                'id'=>$id
             ]);
 
         } else if ($id == 'separate'){ // 별도재무제표
@@ -71,8 +71,8 @@ class FinanceController extends Controller
                 'net_income'=> $net_income,
                 'assets'=> $assets,
                 'liability'=> $liability,
-                'capital'=>$capital
-
+                'capital'=>$capital,
+                'id'=>$id
             ]);
         } else { // 전자공고
 
@@ -83,7 +83,8 @@ class FinanceController extends Controller
 
             return view('aboutUs.ir_board.list', [
                 'ir_boards' => $ir_boards,
-                'cnt' => $cnt
+                'cnt' => $cnt,
+                'id'=>$id
             ]);
 
         }
@@ -120,7 +121,8 @@ class FinanceController extends Controller
     {
         $ir_board = DB::table('ir_boards')->where('id',$id)->first();
             return view('aboutUs.ir_board.show', [
-                'ir_board'=> $ir_board
+                'ir_board'=> $ir_board,
+                'id'=>'board'
             ]);
     }
      /**

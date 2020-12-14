@@ -659,7 +659,134 @@
     }
 }
 
+/* 웹 1600 이상 사이즈 */
+@media all {
+    @import "./lib/webvw";
+    .about-ir {
+        //background-color: #AAA;
 
+        &__nav {
+            text-align: center;
+
+            .about-ir__li{
+                width: vw(20%);
+                display: inline-block;
+                margin-top: vw(20px);
+                height: vw(50px);
+            }
+            // height: 400px;
+
+            // h2 {
+            //     padding-top: 57px;
+            // }
+        }
+        .contents-wrap__section{
+            text-align: center;
+        }
+        &__chart {
+            width: vw(40%);
+            padding: vw(1%);
+            display: inline-block;
+
+            h3{
+                width:vw(100%);
+                text-align: center;
+            }
+            h6{
+                width:vw(100%);
+                text-align: center;
+                font-size: vw(70%);
+            }
+            div{
+                width:vw(100%);
+                height:vw(30%);
+            }
+        }
+        &__table {
+            width: vw(500px);
+            display: inline-block;
+
+            h3{
+                text-align: center;
+            }
+        }
+
+        #about-ir__board {
+
+            h3{
+                text-align: center;
+            }
+            .about-ir__no {
+                width: 8%;
+            }
+            .about-ir__fixed {
+                table-layout: fixed;
+            }
+            .ir-contents{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .ir-contents p{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+        &__link {
+            text-align: center;
+            button {
+                width: 20%;
+                display: inline-block;
+                margin-top: 20px;
+                height: 50px;
+            }
+        }
+        #ir_board_info {
+            // text-align: center;
+            .info{
+                width: 40%;
+                display: inline-block;
+                vertical-align: top;
+                margin: 10px;
+            }
+            .info h1{
+                width:100%;
+                text-align: left;
+                font-size: 200%;
+            }
+            .info .name{
+                width:100%;
+                text-align: left;
+                font-size: 70%;
+            }
+            .ir-board-file-box{
+                width: 100%;
+                display: inline-table;
+                text-align: left;
+            }
+            .btn-download{
+                text-align: left;
+                display: inline-block;
+            }
+
+            .btn-download span{
+                text-align: left;
+                font-size: 100%;
+                color: #1d3669;
+            }
+            .ir-board-contents{
+                width:100%;
+            }
+            .img{
+                display: inline-table;
+                vertical-align: top;
+                margin: 10px;
+                width: 40%;
+            }
+        }
+    }
+}
 
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
@@ -683,7 +810,7 @@
             // }
         }
         .contents-wrap__section{
-            // text-align: center;
+             text-align: center;
         }
         &__chart {
             width: vw(40%);
