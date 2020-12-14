@@ -10,7 +10,13 @@
                     <ul>
                     @if(isset($sitemap->children) && count($sitemap->children) > 0)
                         @foreach($sitemap->children as $children)
-                            <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
+
+                            @if ($children->name == '통합 문의')
+                                <li class="question-btn"><a href="javascript:;">{{ $children->name }}</a></li>
+                            @else
+                                <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
+                            @endif
+
                         @endforeach
                     @endif
                     </ul>

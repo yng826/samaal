@@ -89,9 +89,10 @@ const common = () => {
         $('.question-btn').on('click', function () {
             $(".all-q-pop").show();
             $(".popup-mask").show();
+            window.scrollTo(0,0);
         });
 
-        $(".all-popup-mask , .layer-popup__close-btn").on("click",function(){
+        $(".popup-mask , .layer-popup__close-btn").on("click",function(){
             $(".layer-popup").hide();
             $(".popup-mask").hide();
         });
