@@ -20,7 +20,7 @@
                     <div class="container sitemap__section--list">
                         <div class="sitemap__block--left">
                             @for ($i = 0; $i < $depth2Cnt; $i++)
-                                @if (isset($sitemap->children[$i]))
+                                @if (isset($sitemap->children[$i]) && $sitemap->children[$i]->is_right != 1)
                                     @if (strlen($sitemap->children[$i]->url) > 2)
                                         <div class="sitemap__section--list--item">
                                             <a href="{{ $sitemap->children[$i]->url }}"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
