@@ -28,8 +28,14 @@
                         @foreach ($recruits as $item)
                         <li class="work-recruit__list--item">
                             <div class="comer-box">
-                                <span class="on">신입</span>
-                                <span>영업</span>
+                                @if ($item->career == 'new')
+                                    <span class="on">신입</span>
+                                    <span>영업</span>
+                                @else
+                                    <span>신입</span>
+                                    <span class="on">영업</span>
+                                @endif
+
                             </div>
                             <h3>{{ $item->title }}</h3>
                             <div class="keywords">
