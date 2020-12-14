@@ -268,6 +268,8 @@ Route::prefix('work-with-us')->group(function(){
     Route::get('introduction/interview-it', function () {
         return view('workWithUs.introduction.interviewit');
     });
+
+    Route::get('faq', [FaqController::class, 'index']);
 });
 Route::prefix('work-with-us')->middleware(['auth','roles:user'])->group(function(){
     // Route::resource('recruit', RecruitController::class);
@@ -293,10 +295,6 @@ Route::prefix('work-with-us')->group(function () {
 Route::prefix('other')->group(function () {
     Route::get('search', [SearchController::class, 'index']);
     Route::get('sitemap', [SitemapController::class, 'index']);
-});
-
-Route::prefix('faq')->group(function () {
-    Route::get('faq', [FaqController::class, 'index']);
 });
 
 
