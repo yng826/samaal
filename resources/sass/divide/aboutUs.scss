@@ -788,6 +788,34 @@
             }
         }
     }
+
+    /* aboutUs - ceoMessage*/
+    .about-ceo {
+        &__contents {
+            padding: vw(0 0 72px 1173px);
+            margin-top: vw(103px);
+            background: url("/images/about/img_ceo.jpg") no-repeat left top/ vw(1079px 620px);
+        }
+
+        &__title {
+            padding-bottom: vw(35px);
+            font: {
+                size: vw(25px);
+            }
+            line-height: vw(34px);
+        }
+
+        &__text {
+            width: vw(584px);
+            padding-top: vw(35px);
+            font-size: vw(18px);
+            line-height: vw(32px);
+
+            p {
+                padding-bottom: vw(15px);
+            }
+        }
+    }
 }
 /* 모바일 사이즈 */
 @media all and (max-width: 767px) {
