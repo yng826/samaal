@@ -21,19 +21,20 @@
                    financial
                 </h2>
             </div>
-            <nav class="about-ir__nav">
-                <ul >
-                    <li class="about-ir__li">
-                        <a href="/about-us/ir/consolidated">연결재무제표</a></li>
+            <div class="ir-wrap--tab">
+                <ul>
+                    <li class="tab-item on">
+                        <a href="/about-us/ir/consolidated">연결재무제표</a>
                     </li>
-                    <li class="about-ir__li">
+                    <li class="tab-item">
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
-                    <li class="about-ir__li">
+                    <li class="tab-item">
                         <a href="/about-us/ir/board">전자공고</a></li>
                     </li>
                 </ul>
-            </nav>
+            </div>
+
             <div class="contents-wrap__section">
                 <div class="about-ir__chart">
                     <h3>매출액</h3>

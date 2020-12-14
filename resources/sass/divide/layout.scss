@@ -501,18 +501,14 @@
         padding: 90px 0;
 
         .depth-01 {
-            width: 20%;
-            font-size: 20px;
-            color: #1d3669;
-            font-weight: bold;
-
-            a {
-                color: #1d3669;
-            }
+            display: table;
+            width: 100%;
+            border-top: 1px solid $titleColor;
+            padding: 46px 0;
         }
 
         .depth-02 {
-            display: block;
+            display: inline-block;
             margin-bottom: 10px;
             font-size: 18px;
             color: #292929;
@@ -534,6 +530,53 @@
             padding: 10px 0;
             font-size: 17px;
             color: #535353;
+        }
+
+        .depth-name {
+            width: 20%;
+            font-size: 26px;
+            color: #1d3669;
+            font-weight: bold;
+            letter-spacing: -0.91px;
+
+            a {
+                color: #1d3669;
+                line-height: 1;
+            }
+        }
+
+        &--list {
+            display: table-cell;
+            width: 80%;
+            vertical-align: top;
+
+            a {
+                display: inline-block;
+                line-height: 1;
+            }
+
+            &--item {
+                display: inline-block;
+                width: 17%;
+                vertical-align: top;
+
+                a {
+                    font-size: 17px;
+                    color: #535353;
+                }
+
+                li {
+                    position: relative;
+                    padding-left: 12px;
+                    &::before {
+                        content: "·";
+                        display: inline-block;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                    }
+                }
+            }
         }
     }
 }
@@ -1148,31 +1191,51 @@
     /* 사이트맵 */
     .sitemap {
         &__title {
-            padding: vw(57px 0);
+            padding: vw(114px 0);
         }
 
         &__section {
-            max-width: 100%;
-            padding: vw(90px 0);
+            max-width: vw(1800px);
+            padding: vw(80px 0);
 
             .depth-01 {
-                font-size: vw(20px);
+                padding: vw(92px 0);
             }
 
             .depth-02 {
-                display: inline-block;
-                margin-bottom: vw(10px);
-                font-size: vw(18px);
+                margin-bottom: vw(20px);
+                font-size: vw(36px);
 
             }
 
             td {
-                padding: vw(46px 0);
+                padding: vw(92px 0);
             }
 
             li {
-                padding: vw(10px 0);
-                font-size: vw(17px);
+                padding: vw(20px 0);
+                font-size: vw(34px);
+            }
+
+            .depth-name {
+                font-size: vw(52px);
+                letter-spacing: vw(-1.81px);
+            }
+
+            &--list {
+
+                &--item {
+                    a {
+                        font-size: vw(34px);
+                    }
+
+                    li {
+                        padding-left: vw(24px);
+                        &::before {
+                            top: vw(20px);
+                        }
+                    }
+                }
             }
         }
     }
@@ -1742,6 +1805,64 @@
             }
         }
 
+    }
+
+    /* 사이트맵 */
+    .sitemap {
+        &__title {
+            padding: vw(69px 0);
+        }
+
+        &__section {
+            max-width: vw(750px);
+            padding: vw(0 70px);
+
+            .depth-01 {
+                padding: vw(92px 0);
+            }
+
+            .depth-02 {
+                margin-bottom: vw(20px);
+                font-size: vw(22px);
+
+            }
+
+            li {
+                padding: vw(13px 0);
+                font-size: vw(22px);
+            }
+
+            .depth-name {
+                display: block;
+                width: 100%;
+                font-size: vw(29px);
+                letter-spacing: 0;
+                margin-bottom: vw(29px);
+                color: #000;
+            }
+
+            &--list {
+                display: block;
+                width: 100%;
+
+                &--item {
+                    display: inline-block;
+                    width: 49%;
+                    padding-bottom: vw(24px);
+
+                    a {
+                        font-size: vw(22px);
+                    }
+
+                    li {
+                        padding-left: vw(14px);
+                        &::before {
+                            top: vw(14px);
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }

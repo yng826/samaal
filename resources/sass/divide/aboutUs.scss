@@ -605,6 +605,62 @@
         line-height: 32px;
     }
 }
+
+/* 재무제표 */
+.ir-wrap--tab {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    font-size: 0;
+
+    li {
+        display: inline-block;
+        position: relative;
+        width: calc(33.33% - 5px);
+        height: 67px;
+        margin-left: 5px;
+        background-color: #cdcdcd;
+        text-align: center;
+        cursor: pointer;
+        line-height: 67px;
+
+        a {
+            color: #fff;
+            font-size: 20px;
+        }
+
+        &.on {
+            background-color: #fff;
+            font-weight: bold;
+
+            a {
+                color: $titleColor;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom:0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background-color: $titleColor;
+            }
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+
+        &:hover {
+            background-color: #cccfdc;
+        }
+    }
+}
+
+
+
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
     @import "./lib/webvw";
@@ -1878,4 +1934,16 @@
             text-align: center;
         }
     }
+
+    /* 재무제표 */
+    .ir-wrap--tab {
+
+        li {
+            a {
+                font-size: vw(20px);
+            }
+
+        }
+    }
+
 }
