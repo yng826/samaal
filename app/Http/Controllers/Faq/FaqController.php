@@ -23,7 +23,7 @@ class FaqController extends Controller
                         })
                         ->orderBy('category_id')->get();
 
-        return view('faq.faq', [
+        return view('workWithUs.faq', [
             'category_id' => $request->category_id,
             'faqs' => $faqs,
         ]);
