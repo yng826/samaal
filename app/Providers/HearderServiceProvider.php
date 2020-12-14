@@ -25,7 +25,7 @@ class HearderServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('shared.header', function ($view) {
-            $menus = DB::table('menus')->orderBy('order_id')->where('is_front', 1)->get();
+            $menus = DB::table('menus')->where('is_front', 1)->orderBy('order_id')->get();
             $treeMenu = $this->buildTreeMenu($menus);
             $view->treeMenu = $treeMenu;
         });

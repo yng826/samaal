@@ -25,7 +25,7 @@ class FooterServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('shared.footer', function ($view) {
-            $sitemaps = DB::table('sitemaps')->orderBy('order_id')->where('is_front', 1)->get();
+            $sitemaps = DB::table('sitemaps')->where('is_front', 1)->orderBy('order_id')->get();
             $treeSitemap = $this->buildTreeSitemap($sitemaps);
             $view->treeSitemap = $treeSitemap;
         });
