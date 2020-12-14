@@ -243,7 +243,6 @@
     }
 }
 
-
 /* aboutUs - ceoMessage*/
 .about-ceo {
     &__contents {
@@ -626,6 +625,7 @@
         line-height: 67px;
 
         a {
+            display: block;
             color: #fff;
             font-size: 20px;
         }
@@ -659,420 +659,35 @@
     }
 }
 
-/* 웹 1600 이상 사이즈 */
-@media all {
-    @import "./lib/webvw";
-    .about-ir {
-        //background-color: #AAA;
-
-        &__nav {
-            text-align: center;
-
-            .about-ir__li{
-                width: vw(20%);
-                display: inline-block;
-                margin-top: vw(20px);
-                height: vw(50px);
-            }
-            // height: 400px;
-
-            // h2 {
-            //     padding-top: 57px;
-            // }
-        }
-        .contents-wrap__section{
-            text-align: center;
-        }
-        &__chart {
-            width: vw(40%);
-            padding: vw(1%);
-            display: inline-block;
-
-            h3{
-                width:vw(100%);
-                text-align: center;
-            }
-            h6{
-                width:vw(100%);
-                text-align: center;
-                font-size: vw(70%);
-            }
-            div{
-                width:vw(100%);
-                height:vw(30%);
-            }
-        }
-        &__table {
-            width: vw(500px);
-            display: inline-block;
-
-            h3{
-                text-align: center;
-            }
-        }
-
-        #about-ir__board {
-
-            h3{
-                text-align: center;
-            }
-            .about-ir__no {
-                width: 8%;
-            }
-            .about-ir__fixed {
-                table-layout: fixed;
-            }
-            .ir-contents{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            .ir-contents p{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-        }
-        &__link {
-            text-align: center;
-            button {
-                width: 20%;
-                display: inline-block;
-                margin-top: 20px;
-                height: 50px;
-            }
-        }
-        #ir_board_info {
-            // text-align: center;
-            .info{
-                width: 40%;
-                display: inline-block;
-                vertical-align: top;
-                margin: 10px;
-            }
-            .info h1{
-                width:100%;
-                text-align: left;
-                font-size: 200%;
-            }
-            .info .name{
-                width:100%;
-                text-align: left;
-                font-size: 70%;
-            }
-            .ir-board-file-box{
-                width: 100%;
-                display: inline-table;
-                text-align: left;
-            }
-            .btn-download{
-                text-align: left;
-                display: inline-block;
-            }
-
-            .btn-download span{
-                text-align: left;
-                font-size: 100%;
-                color: #1d3669;
-            }
-            .ir-board-contents{
-                width:100%;
-            }
-            .img{
-                display: inline-table;
-                vertical-align: top;
-                margin: 10px;
-                width: 40%;
-            }
-        }
-    }
-}
-
-/* 웹 1600 사이즈 */
-@media all and (max-width: 1600px) {
-    @import "./lib/webvw";
-    .about-ir {
-        //background-color: #AAA;
-
-        &__nav {
-            text-align: center;
-
-            .about-ir__li{
-                width: vw(20%);
-                display: inline-block;
-                margin-top: vw(20px);
-                height: vw(50px);
-            }
-            // height: 400px;
-
-            // h2 {
-            //     padding-top: 57px;
-            // }
-        }
-        .contents-wrap__section{
-             text-align: center;
-        }
-        &__chart {
-            width: vw(40%);
-            padding: vw(1%);
-            display: inline-block;
-
-            h3{
-                width:vw(100%);
-                text-align: center;
-            }
-            h6{
-                width:vw(100%);
-                text-align: center;
-                font-size: vw(70%);
-            }
-            div{
-                width:vw(100%);
-                height:vw(30%);
-            }
-        }
-        &__table {
-            width: vw(500px);
-            display: inline-block;
-
-            h3{
-                text-align: center;
-            }
-        }
-
-        #about-ir__board {
-
-            h3{
-                text-align: center;
-            }
-            .about-ir__no {
-                width: 8%;
-            }
-            .about-ir__fixed {
-                table-layout: fixed;
-            }
-            .ir-contents{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            .ir-contents p{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-        }
-        &__link {
-            text-align: center;
-            button {
-                width: 20%;
-                display: inline-block;
-                margin-top: 20px;
-                height: 50px;
-            }
-        }
-        #ir_board_info {
-            // text-align: center;
-            .info{
-                width: 40%;
-                display: inline-block;
-                vertical-align: top;
-                margin: 10px;
-            }
-            .info h1{
-                width:100%;
-                text-align: left;
-                font-size: 200%;
-            }
-            .info .name{
-                width:100%;
-                text-align: left;
-                font-size: 70%;
-            }
-            .ir-board-file-box{
-                width: 100%;
-                display: inline-table;
-                text-align: left;
-            }
-            .btn-download{
-                text-align: left;
-                display: inline-block;
-            }
-
-            .btn-download span{
-                text-align: left;
-                font-size: 100%;
-                color: #1d3669;
-            }
-            .ir-board-contents{
-                width:100%;
-            }
-            .img{
-                display: inline-table;
-                vertical-align: top;
-                margin: 10px;
-                width: 40%;
-            }
-        }
+/* 재무제표 table*/
+.about-ir-list {
+    &__section {
+        max-width: 1400px;
+        padding-bottom: 100px;
+        margin: 0 auto;
     }
 
-    /* aboutUs - ceoMessage*/
-    .about-ceo {
-        &__contents {
-            padding: vw(0 0 72px 1173px);
-            margin-top: vw(103px);
-            background: url("/images/about/img_ceo.jpg") no-repeat left top/ vw(1079px 620px);
-        }
+    &__table {
 
-        &__title {
-            padding-bottom: vw(35px);
-            font: {
-                size: vw(25px);
-            }
-            line-height: vw(34px);
-        }
-
-        &__text {
-            width: vw(584px);
-            padding-top: vw(35px);
-            font-size: vw(18px);
-            line-height: vw(32px);
-
-            p {
-                padding-bottom: vw(15px);
-            }
-        }
-    }
-}
-/* 모바일 사이즈 */
-@media all and (max-width: 767px) {
-    @import "./lib/vw";
-    .about-ir {
-        //background-color: #AAA;
-
-        &__nav {
-            text-align: center;
-
-            .about-ir__li{
-                width: vw(30%);
-                display: inline-block;
-                margin-top: vw(20px);
-                height: vw(50px);
-            }
-            // height: 400px;
-
-            // h2 {
-            //     padding-top: 57px;
-            // }
-        }
-        .contents-wrap__section{
+        h3 {
+            margin-bottom: 20px;
+            font-size: 25px;
             text-align: center;
         }
-        &__chart {
-            width: vw(100%);
-            display: inline-block;
 
-            h3{
-                width:vw(100%);
-                text-align: center;
-            }
-            h6{
-                width:vw(100%);
-                text-align: center;
-                font-size: 70%;
-            }
-            div{
-                width:vw(100%);
-                height:vw(25%);
-            }
-        }
-        &__table {
-            width: vw(500px);
-            display: inline-block;
-
-            h3{
-                text-align: center;
-            }
+        th {
+            padding: 18px 0;
+            font-size: 20px;
+            line-height: 1;
+            border: 2px solid #000;
         }
 
-        #about-ir__board {
-
-            h3{
-                text-align: center;
-            }
-            .about-ir__no {
-                width: 8%;
-            }
-            .about-ir__fixed {
-                table-layout: fixed;
-            }
-            .ir-contents{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            .ir-contents p{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-        }
-        &__link {
-            text-align: center;
-            button {
-                width: 20%;
-                display: inline-block;
-                margin-top: 20px;
-                height: 50px;
-            }
-        }
-        #ir_board_info {
-            // text-align: center;
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0 1vw;
-            box-sizing: border-box;
-            .info{
-                width: 100%;
-                display: inline-block;
-                vertical-align: top;
-                margin: vw(10px) 0;
-            }
-            .info h1{
-                width:100%;
-                text-align: left;
-                font-size: 200%;
-            }
-            .info .name{
-                width:100%;
-                text-align: left;
-                font-size: 70%;
-            }
-            .ir-board-file-box{
-                width: 100%;
-                display: inline-table;
-                text-align: left;
-            }
-            .btn-download{
-                text-align: left;
-                display: inline-block;
-            }
-
-            .btn-download span{
-                text-align: left;
-                font-size: 100%;
-                color: #1d3669;
-            }
-            .ir-board-contents{
-                width:100%;
-            }
-            .img{
-                display: inline-table;
-                vertical-align: top;
-                margin: 10px;
-                width: 40%;
-            }
+        td {
+            padding: 23px 0;
+            color: #444444;
+            font-size: 20px;
+            line-height: 1;
+            border: 2px solid #b7b7b7;
         }
     }
 }
@@ -2094,10 +1709,47 @@
     .ir-wrap--tab {
 
         li {
+            width: calc(33.33% - #{vw(5px)});
+            margin-left: vw(5px);
+            height: vw(67px);
+            line-height: vw(67px);
             a {
-                font-size: vw(20px);
+                font-size: vw(22px);
             }
 
+
+            &.on::after {
+                height: vw(5px);
+            }
+
+        }
+    }
+
+    /* 재무제표 table*/
+    .about-ir-list {
+        &__section {
+            max-width: 100%;
+        }
+
+        &__table {
+            padding: vw(0 20px 78px);
+            h3 {
+                margin-bottom: vw(34px);
+                font-size: vw(38px);
+            }
+
+            th {
+                padding: vw(20px 0);
+                font-size: vw(27px);
+                line-height: 1;
+                border: vw(2px) solid #000;
+            }
+
+            td {
+                padding: vw(20px 0);
+                font-size: vw(22px);
+                border: vw(2px) solid #b7b7b7;
+            }
         }
     }
 
