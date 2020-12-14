@@ -28,19 +28,19 @@
                    financial
                 </h2>
             </div>
-            <nav class="about-ir__nav">
-                <ul >
-                    <li class="about-ir__li">
-                        <a href="/about-us/ir/consolidated">연결재무제표</a></li>
+            <div class="ir-wrap--tab">
+                <ul>
+                    <li class="tab-item {{$id =='consolidated' ? 'on': ''}}">
+                        <a href="/about-us/ir/consolidated">연결재무제표</a>
                     </li>
-                    <li class="about-ir__li">
+                    <li class="tab-item {{$id =='separate' ? 'on': ''}}">
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
-                    <li class="about-ir__li">
+                    <li class="tab-item {{$id =='board' ? 'on': ''}}">
                         <a href="/about-us/ir/board">전자공고</a></li>
                     </li>
                 </ul>
-            </nav>
+            </div>
             <div class="contents-wrap__section" id="ir_board_info">
                 <div class="info">
                     <h1>{{ $ir_board->title }}</h1>

@@ -23,13 +23,13 @@
             </div>
             <div class="ir-wrap--tab">
                 <ul>
-                    <li class="tab-item on">
+                    <li class="tab-item {{$id =='consolidated' ? 'on': ''}}">
                         <a href="/about-us/ir/consolidated">연결재무제표</a>
                     </li>
-                    <li class="tab-item">
+                    <li class="tab-item {{$id =='separate' ? 'on': ''}}">
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
-                    <li class="tab-item">
+                    <li class="tab-item {{$id =='board' ? 'on': ''}}">
                         <a href="/about-us/ir/board">전자공고</a></li>
                     </li>
                 </ul>
