@@ -58,7 +58,7 @@
                         만들어낸 <em>제품</em>
                     </h2>
                     <div class="main-wrap__section--button">
-                        <a href="/business/foil">For Business Partners</a>
+                        <a href="/business/intro">For Business Partners</a>
                     </div>
                 </div>
                 <div class="section main-wrap__section--img section03-img"></div>
