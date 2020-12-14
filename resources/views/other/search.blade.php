@@ -22,94 +22,51 @@
             <div class="search-wrap__content">
                 <div class="search-wrap__content--tab">
                     <ul>
-                        <li class="tab-item on" data-tab="">
-                            <span>전체</span>
+                        <li class="tab-item {{ $categoryId==0 ? 'on' : ''}}" id="category-0">
+                            <span>
+                                전체
+                                @if (count($categoryKeywords) > 0)
+                                    {{ count($categoryKeywords) }}
+                                @endif
+                            </span>
                         </li>
-                        <li class="tab-item" data-tab="">
-                            <span>About Us</span>
-                        </li>
-                        <li class="tab-item" data-tab="">
-                            <span>알루미늄 Foil</span>
-                        </li>
-                        <li class="tab-item" data-tab="">
-                            <span>포장재</span>
-                        </li>
-                        <li class="tab-item" data-tab="">
-                            <span>산업 건축용</span>
-                        </li>
-                        <li class="tab-item" data-tab="">
-                            <span>Speciality</span>
-                        </li>
-                        <li class="tab-item" data-tab="">
-                            <span>Innovation</span>
-                        </li>
-                        <li class="tab-item" data-tab="">
-                            <span>Work With Us</span>
-                        </li>
+                        @foreach ($categorys as $category)
+                            @php
+                                $array =  "";
+                            @endphp
+                            @if (isset(array_count_values(array_column($categoryKeywords, 'category_id'))[$category->id]))
+                                @php
+                                    $array =  array_count_values(array_column($categoryKeywords, 'category_id'))[$category->id];
+                                @endphp
+                            @endif
+                            <li class="tab-item {{ $categoryId==$category->id ? 'on' : ''}}" id="category-{{ $category->id }}"><span>{{ $category->category }} {{ $array }}</span></li>
+                        @endforeach
                     </ul>
                 </div>
-                <div class="search-wrap__list-item">
-                    <div class="search-wrap__list-item--title">
-                        포장재<span>1</span>
-                    </div>
-                    <div class="search-wrap__list-item--text">
-                        <a href="#">
-                            <p>
-                                전자레인지에 사용하는 <span>레토르트</span> 제품으로 확대 적용하고 있으며 캔 포장 제품을 파우치 제품으로 대체 유도함으로써 이산화탄소
-                            </p>
-                            <p class="position">
-                                For Business Partners &gt; 포장재
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="contents-wrap__section">
-            <button type="button" id="category-0">전체
-                @if (count($categoryKeywords) > 0)
-                    {{ count($categoryKeywords) }}
-                @endif
-            </button>
-            @foreach ($categorys as $category)
-                @php
-                    $array =  "";
-                @endphp
-                @if (isset(array_count_values(array_column($categoryKeywords, 'category_id'))[$category->id]))
-                    @php
-                        $array =  array_count_values(array_column($categoryKeywords, 'category_id'))[$category->id];
-                    @endphp
-                @endif
-                <button type="button" id="category-{{ $category->id }}">{{ $category->category }} {{ $array }}</button>
-            @endforeach
-        </div>
-        <div class="contents-wrap__section">
-            @foreach ($keywords as $keyword)
-                @if ($loop->first || $keyword->id != $keywords[$loop->index - 1]->id)
-                    @if (!$loop->first)
-                        </div>
-                        <hr/>
+                @foreach ($keywords as $keyword)
+                    @if ($loop->first || $keyword->id != $keywords[$loop->index - 1]->id)
+                        <div class="search-wrap__list-item">
+                            <div class="search-wrap__list-item--title">
+                                {{ $keyword->name }} <span>{{ array_count_values(array_column($keywords, 'id'))[$keyword->id] }}</span>
+                            </div>
+                            <div class="search-wrap__list-item--text">
+                                <a href="{{ $keyword->url }}">
                     @endif
 
-                    <div>
-                        <div>
-                            <b>{{ $keyword->name }} {{ array_count_values(array_column($keywords, 'id'))[$keyword->id] }}</b>
+                                    <p>
+                                        <span>{{ $keyword->keyword }}</span>
+                                    </p>
+
+                    @if ($loop->last || $keyword->id != $keywords[$loop->index + 1]->id)
+                                    <p class="position">
+                                        {{ $keyword->names }}
+                                    </p>
+                                </a>
+                            </div>
                         </div>
-                @endif
-
-                <div>
-                    {{ $keyword->keyword }}
-                </div>
-
-                @if ($loop->last || $keyword->id != $keywords[$loop->index + 1]->id)
-                    <div>
-                        <a href="{{ $keyword->url }}">{{ $keyword->names }}</a>
-                    </div>
-                @endif
-            @endforeach
+                    @endif
+                @endforeach
+            </div>
         </div>
     </main>
 @endsection

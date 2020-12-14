@@ -50,6 +50,7 @@ class SearchController extends Controller
 
         return view('other.search', [
             'keyword' => $request->keyword,
+            'categoryId' => $request->category,
             'categoryKeywords' => $newCategoryKeywords,
             'categorys' => $categorys,
             'keywords' => $newKeywords,
