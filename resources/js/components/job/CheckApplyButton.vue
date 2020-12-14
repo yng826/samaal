@@ -25,7 +25,7 @@ export default {
                     'recruit_id': this.recruit_id,
                 }).then(res => {
                     console.log(res);
-                    if (res.id) {
+                    if (res.data.id) {
                         Swal.fire({
                             title: '저장된 내역이 있습니다',
                             icon: 'success',
@@ -35,8 +35,8 @@ export default {
                         }).then(result => {
                             if (result.isConfirmed) {
                                 this.$root.$emit('closePopup');
-                                // window.location.href = '/work-with-us/job/' + res.id
-                                console.log("// window.location.href = '/work-with-us/job/' + res.id");
+                                console.log("// window.location.href = '/work-with-us/job/'" + res.data.id);
+                                window.location.href = '/work-with-us/job/' + res.data.id
                             }
                         });
                     } else {

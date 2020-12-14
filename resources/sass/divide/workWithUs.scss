@@ -49,6 +49,7 @@
         margin-bottom: 18px;
         border: 1px solid #bcc0c3;
         background-color: #fff;
+        box-sizing: border-box;
 
         ul {
             width: 657px;
@@ -2477,6 +2478,9 @@
                 .form-group {
                     .picture {
                         height: vw(540px);
+                        .picture-text {
+                            font-size: vw(24px);
+                        }
                     }
                     .input-file-trigger {
                         height: auto;
@@ -2492,6 +2496,7 @@
                 h3 {
                     padding-top: vw(10px);
                     font-size: vw(30px);
+                    margin-bottom: vw(30px);
                     &:before {
                         width: 100%;
                         height: 4px;
@@ -2506,7 +2511,7 @@
                         font-size: vw(26px);
                     }
                     label {
-                        width: vw(150px);
+                        width: vw(200px);
                     }
                     input {
                         width: vw(300px);
@@ -2535,7 +2540,7 @@
                         font-size: vw(26px);
                     }
                     label {
-                        width: vw(150px);
+                        width: vw(200px);
                     }
                     input {
                         width: vw(300px);
@@ -2557,7 +2562,7 @@
             }
         }
         &__contents {
-            padding: vw(70px);
+            padding: vw(10px);
             padding-top: vw(50px);
             padding-bottom: vw(50px);
             max-width: 100%;

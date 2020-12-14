@@ -201,7 +201,11 @@ export default {
                     }).then(result => {
                         if (result.isConfirmed) {
                             this.$root.$emit('closePopup');
-                            // window.location.href = '/work-with-us/recruit/';
+                            if ( this.isAuth) {
+                                window.location.href = '/work-with-us/job/';
+                            } else {
+                                window.location.href = '/work-with-us/recruit/';
+                            }
                         }
                     });
                 }

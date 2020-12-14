@@ -22,9 +22,13 @@
             <applycant-review-component></applycant-review-component>
             <job-button-groups-component></job-button-groups-component>
             <login-component></login-component>
+            <find-password-component></find-password-component>
         </div>
         <div class="top-btn">TOP</div>
     </main>
+@endsection
+
+@section('popup-container')
 @endsection
 
 @section('script')

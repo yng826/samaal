@@ -133,8 +133,13 @@ class JobController extends Controller
     {
         $where = [
             'id'=> $id,
-            'user_id' => $request->user()->id,
         ];
+        if ( $request->wantsJson() ) {
+            if ( !$request->user() ) {
+                redirect('/work-with-us/recruit');
+            }
+            $where['user_id'] = $request->user()->id;
+        }
         // return $where;
         DB::enableQueryLog(); // Enable query log
         $item = Job::where($where)->with(
