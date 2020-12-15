@@ -2,12 +2,14 @@ const { ready } = require('jquery');
 import _ from 'lodash';
 var SimpleLightbox = require('simple-lightbox');
 require('simple-lightbox/dist/simpleLightbox.min.css');
+import Rellax from 'rellax';
 
 require('fullpage.js');
 
 const siteIntro = () => {
     new SimpleLightbox({elements: '.gallery a'});
     let fp;
+    var rellax;
     const setFullPage = function() {
         let ww = $(window).width();
         console.log(ww);
@@ -16,10 +18,19 @@ const siteIntro = () => {
             if ( $('#fullpage').hasClass('fullpage-wrapper') ) {
                 $.fn.fullpage.destroy('all');
             }
+            if ( rellax ) {
+                rellax.refresh();
+            } else {
+                rellax = new Rellax('.rellax',{
+                    center:true
+                });
+            }
+            // console.log(rellax);
         } else {
             console.log('mobile');
             if ( !$('#fullpage').hasClass('fullpage-wrapper') || $('#fullpage').hasClass('fp-destroyed')) {
                 $('#fullpage').fullpage({
+                    paddingTop: '-100vw',
                     navigation: true
                 });
             }

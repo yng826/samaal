@@ -24,8 +24,8 @@
                     </div>
                 </div>
                 <div class="section main-wrap__section--img">
-                    <div class="section-bg section-bg--left"></div>
-                    <div class="section01-img"></div>
+                    <div class="rellax section-bg section-bg--left" data-rellax-speed="2"></div>
+                    <div class="rellax section01-img" data-rellax-speed="1"></div>
                 </div>
                 <div class="mobile-arrow"></div>
             </div>
@@ -33,8 +33,8 @@
             <div class="section main-wrap__section section02">
                 <div class="mobile-mask"></div>
                 <div class="section main-wrap__section--img">
-                    <div class="section-bg section-bg--right"></div>
-                    <div class="section02-img"></div>
+                    <div class="rellax section-bg section-bg--right" data-rellax-speed="2"></div>
+                    <div class="rellax section02-img" data-rellax-speed="1"></div>
                 </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
@@ -68,8 +68,8 @@
                     </div>
                 </div>
                 <div class="section main-wrap__section--img">
-                    <div class="section-bg section-bg--left"></div>
-                    <div class="section03-img"></div>
+                    <div class="rellax section-bg section-bg--left" data-rellax-speed="2"></div>
+                    <div class="rellax section03-img" data-rellax-speed="1"></div>
                 </div>
                 <div class="mobile-arrow"></div>
             </div>
@@ -77,8 +77,8 @@
             <div class="section main-wrap__section section04">
                 <div class="mobile-mask"></div>
                 <div class="section main-wrap__section--img">
-                    <div class="section-bg section-bg--right"></div>
-                    <div class="section04-img"></div>
+                    <div class="rellax section-bg section-bg--right" data-rellax-speed="2"></div>
+                    <div class="rellax section04-img" data-rellax-speed="1"></div>
                 </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
