@@ -29,12 +29,8 @@
     <div class="about-location__contents">
         <div class="swiper-container about-location__swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
-                <div class="swiper-slide"><img src="https://via.placeholder.com/890X500" alt=""></div>
+                <div class="swiper-slide"><img src="/images/about/location/busan/img_location_01.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/images/about/location/busan/img_location_02.jpg" alt=""></div>
             </div>
             <div class="swiper-button-next swiper-button"></div>
             <div class="swiper-button-prev swiper-button"></div>
