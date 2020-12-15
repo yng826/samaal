@@ -26,22 +26,22 @@
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">압연</span>
                     <strong class="lang-english">Roughing</strong>
-                    <a href="http://www.youtube.com/embed/7pr4iP3_XlM?&autoplay=true" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/y-hvWlZ0Vdg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">분리, 분단</span>
                     <strong class="lang-english">Separating / Slitting</strong>
-                    <a href="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/VUle8_sEG7M?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">연화</span>
                     <strong class="lang-english">Annealing</strong>
-                    <a href="#" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/HNb5OE9o9cg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">포장</span>
                     <strong class="lang-english">Packaging</strong>
-                    <a href="#" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/sW3hHj2l47Q?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>
             <p class="process-layout__text">
@@ -63,22 +63,22 @@
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">인쇄기</span>
                     <stron class="lang-english">Printing</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/ew1lzr5qKUg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">라미네이터</span>
                     <stron class="lang-english">Laminator</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/uuJuNKddsXM?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">분단기</span>
                     <stron class="lang-english">Slitting</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/olcpsGoGu7c?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">제대기</span>
                     <stron class="lang-english">Bag Making</stron>
-                    <a href="#" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/FzKbPnwvySs?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>
             <p class="process-layout__text">

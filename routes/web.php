@@ -382,8 +382,13 @@ Route::get('send', function () {
 
     // dd(config('mail.mailers.smtp.encryption'));
 
+    Mail::send('welcome', [], function($message) {
+        $message->to('test001@sama-al.com')->subject('Testing mails'); 
+    });
+
+    /*
     $user = [
-        'email'=>'yng826@gmail.com',
+        'email'=>'test001@sama-al.com',
         'name'=>'이혁'
     ];
 
@@ -393,7 +398,8 @@ Route::get('send', function () {
     ];
 
     Mail::send('emails.mail', $data, function($message) use ($user) {
-        $message->from(config('mail.mailers.smtp.username'), 'SAMA');
+        $message->from('test001@sama-al.com', 'SAMA');
         $message->to($user['email'], $user['name'])->subject('Welcome!');
     });
+    */
 });

@@ -42,7 +42,7 @@
                 </dl>
             </div>
             <div class="about-location__info--video">
-                <!-- 영상 받으면 넣기-->
+                <iframe src="https://www.youtube.com/embed/dNGEmfJZRHM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
