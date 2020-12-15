@@ -243,6 +243,94 @@
     }
 }
 
+
+/* 웹 1600 이상 사이즈 */
+.about-ir {
+    //background-color: #AAA;
+
+    .contents-wrap__section{
+        text-align: center;
+    }
+    &__chart {
+        width: 40%;
+        padding: 1;
+        display: inline-block;
+
+        h3{
+            width:100%;
+            text-align: center;
+        }
+        h6{
+            width:100%;
+            text-align: center;
+            font-size: 70%;
+        }
+        div{
+            width:100%;
+            height:30%;
+        }
+    }
+
+}
+
+/* 웹 1600 사이즈 */
+@media all and (max-width: 1600px) {
+    @import "./lib/webvw";
+    .about-ir {
+        //background-color: #AAA;
+
+        .contents-wrap__section{
+             text-align: center;
+        }
+        &__chart {
+            width: vw(40%);
+            padding: vw(1%);
+            display: inline-block;
+
+            h3{
+                width:vw(100%);
+                text-align: center;
+            }
+            h6{
+                width:vw(100%);
+                text-align: center;
+                font-size: vw(70%);
+            }
+            div{
+                width:vw(100%);
+                height:vw(30%);
+            }
+        }
+    }
+}
+/* 모바일 사이즈 */
+@media all and (max-width: 767px) {
+    @import "./lib/vw";
+    .about-ir {
+        .contents-wrap__section{
+            text-align: center;
+        }
+        &__chart {
+            width: vw(100%);
+            display: inline-block;
+
+            h3{
+                width:vw(100%);
+                text-align: center;
+            }
+            h6{
+                width:vw(100%);
+                text-align: center;
+                font-size: 70%;
+            }
+            div{
+                width:vw(100%);
+                height:vw(25%);
+            }
+        }
+    }
+}
+
 /* aboutUs - ceoMessage*/
 .about-ceo {
     &__contents {
