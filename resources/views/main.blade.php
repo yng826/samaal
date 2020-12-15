@@ -23,13 +23,19 @@
                         <a href="/intro">더 알아보기</a>
                     </div>
                 </div>
-                <div class="section main-wrap__section--img section01-img"></div>
+                <div class="section main-wrap__section--img">
+                    <div class="section-bg section-bg--left"></div>
+                    <div class="section01-img"></div>
+                </div>
                 <div class="mobile-arrow"></div>
             </div>
 
             <div class="section main-wrap__section section02">
                 <div class="mobile-mask"></div>
-                <div class="section main-wrap__section--img section02-img"></div>
+                <div class="section main-wrap__section--img">
+                    <div class="section-bg section-bg--right"></div>
+                    <div class="section02-img"></div>
+                </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
                         더 나은<br>
@@ -61,13 +67,19 @@
                         <a href="/business/intro">For Business Partners</a>
                     </div>
                 </div>
-                <div class="section main-wrap__section--img section03-img"></div>
+                <div class="section main-wrap__section--img">
+                    <div class="section-bg section-bg--left"></div>
+                    <div class="section03-img"></div>
+                </div>
                 <div class="mobile-arrow"></div>
             </div>
 
             <div class="section main-wrap__section section04">
                 <div class="mobile-mask"></div>
-                <div class="section main-wrap__section--img section04-img"></div>
+                <div class="section main-wrap__section--img">
+                    <div class="section-bg section-bg--right"></div>
+                    <div class="section04-img"></div>
+                </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
                         <em>삼아</em>에서<br>

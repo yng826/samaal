@@ -102,9 +102,28 @@
 
         &--img {
             display: table-cell;
-            height: 66.31578947368%;
+            position: relative;
+            height: 100%;
             width: 1260px;
             vertical-align: middle;
+
+            .section-bg {
+                display: block;
+                position: absolute;
+                bottom: 92px;
+                width: 46.03174603175%;
+                height: 63.04347826087%;
+                background: url("/images/main/img_main_bg.png")no-repeat;
+                background-size: contain;
+                z-index: -1;
+
+                &--left {
+                    left: 0;
+                }
+                &--right {
+                    right: 0;
+                }
+            }
         }
 
         .section-left {
@@ -125,30 +144,55 @@
 
     .section01 {
         height: 830px;
+
+        .section-bg  {
+            height: 69.87951807229%;
+        }
+
     }
 
     .section01-img {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 95.2380952381%;
+        height: 81.32530120482%;
         background: url("/images/main/img_main_01.jpg")no-repeat;
-        background-position: left;
-        background-size: cover;
+        background-size: contain;
     }
 
     .section02-img {
+        display: block;
+        position: absolute;
+        top: 93px;
+        left: 0;
+        width: 95.2380952381%;
+        height: 73.36956521739%;
         background: url("/images/main/img_main_02.jpg")no-repeat;
-        background-position: right;
-        background-size: cover;
+        background-size: contain;
     }
 
     .section03-img {
+        display: block;
+        position: absolute;
+        top: 93px;
+        right: 0;
+        width: 95.2380952381%;
+        height: 73.36956521739%;
         background: url("/images/main/img_main_03.jpg")no-repeat;
-        background-position: left;
-        background-size: cover;
+        background-size: contain;
     }
 
     .section04-img {
+        display: block;
+        position: absolute;
+        top: 93px;
+        left: 0;
+        width: 95.2380952381%;
+        height: 73.36956521739%;
         background: url("/images/main/img_main_04.jpg")no-repeat;
-        background-position: right;
-        background-size: cover;
+        background-size: contain;
     }
 }
 
@@ -266,11 +310,21 @@
 
             &--img {
                 width: vw(1260px);
+
+                .section-bg {
+                    bottom: vw(92px);
+                }
             }
         }
 
         .section01 {
             height: vw(830px);
+        }
+
+        .section02-img,
+        .section03-img,
+        .section04-img {
+            top: vw(93px);
         }
     }
 
