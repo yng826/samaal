@@ -8,8 +8,18 @@
     <main class="contents-wrap speciality-iso">
         <div class="contents-wrap__title speciality-iso__title">
             <h2>
-                인증 현황
+                innovation
             </h2>
+        </div>
+        <div class="contents-wrap__tab speciality-iso__tab">
+            <ul>
+                <li class="tab-item">
+                    <a href="/business/innovation/rnd">R&D</a>
+                </li>
+                <li class="tab-item on">
+                    <a href="/business/innovation/iso_certification">인증현황</a>
+                </li>
+            </ul>
         </div>
         <div class="speciality-iso__section">
             @foreach ($types as $type)

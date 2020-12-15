@@ -1291,10 +1291,24 @@
 .speciality-iso {
 
     &__title {
-        padding: 56px 0;
+        height: 150px;
+        position: relative;
 
         h2 {
-            font-size: 40px;
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+
+    &__tab {
+        width: 678px;
+        margin: 0 auto;
+
+        li {
+            width: calc(50% - 5px);
         }
     }
 
@@ -1368,7 +1382,7 @@
 /* R&D */
 .innovation-rnd {
     &__title {
-        height: 200px;
+        height: 150px;
         position: relative;
 
         h2 {
@@ -1393,8 +1407,23 @@
 
     &__contents {
         max-width: 1482px;
-        padding: 60px 0 80px;
+        padding: 89px 0 80px;
         margin: 0 auto;
+
+        h3 {
+            display: block;
+            margin-bottom: 66px;
+            font-size: 40px;
+            color: $titleColor;
+            line-height: 1;
+            text-align: center;
+
+            p {
+                display: block;
+                font-size: 25px;
+                margin-top: 22px;
+            }
+        }
     }
 
     &__text {
@@ -2263,10 +2292,15 @@
     .speciality-iso {
 
         &__title {
-            padding: vw(56px 0);
+            height: vw(150px);
+        }
 
-            h2 {
-                font-size: vw(40px);
+        &__tab {
+            width: vw(678px);
+            margin: 0 auto;
+
+            li {
+                width: calc(50% - #{vw(5px)});
             }
         }
 
@@ -2324,7 +2358,7 @@
     /* R&D */
     .innovation-rnd {
         &__title {
-            height: vw(200px);
+            height: vw(150px);
 
             em {
                 margin-top: vw(14px);
@@ -2336,7 +2370,17 @@
 
         &__contents {
             max-width: vw(1482px);
-            padding: vw(60px 0 80px);
+            padding: vw(89px 0 80px);
+
+            h3 {
+                margin-bottom: vw(66px);
+                font-size: vw(40px);
+
+                p {
+                    font-size: vw(25px);
+                    margin-top: vw(22px);
+                }
+            }
         }
 
         &__text {
@@ -2981,10 +3025,15 @@
     .speciality-iso {
 
         &__title {
-            padding: vw(112px 0);
+            height: vw(300px);
+        }
 
-            h2 {
-                font-size: vw(80px);
+        &__tab {
+            width: vw(1356px);
+            margin: 0 auto;
+
+            li {
+                width: calc(50% - #{vw(10px)});
             }
         }
 
@@ -3042,7 +3091,7 @@
     /* R&D */
     .innovation-rnd {
         &__title {
-            height: vw(400px);
+            height: vw(300px);
 
             em {
                 margin-top: vw(28px);
@@ -3054,7 +3103,18 @@
 
         &__contents {
             max-width: vw(2964px);
-            padding: vw(120px 0 160px);
+            padding: vw(178px 0 160px);
+
+
+            h3 {
+                margin-bottom: vw(132px);
+                font-size: vw(80px);
+
+                p {
+                    font-size: vw(50px);
+                    margin-top: vw(44px);
+                }
+            }
         }
 
         &__text {
@@ -4083,12 +4143,17 @@
 
     /* 인증 현황 */
     .speciality-iso {
-        &__title {
-            padding: vw(79px 0);
 
-            h2 {
-                font-size: vw(50px);
+        &__tab {
+            width: 100%;
+
+            li {
+                width: calc(50% - #{vw(3px)});
             }
+        }
+
+        &__title {
+            height: vw(222px);
         }
 
         &__section {
@@ -4145,7 +4210,7 @@
     /* R&D */
     .innovation-rnd {
         &__title {
-            height: vw(280px);
+            height: vw(222px);
 
             h2 {
                 font-size: vw(45px);
@@ -4165,6 +4230,18 @@
         &__contents {
             max-width: vw(750px);
             padding: vw(52px) 0;
+
+            h3 {
+                width: auto;
+                padding: 0 vw(70px) vw(56px);
+                font-size: vw(28px);
+
+                p {
+                    font-size: vw(26px);
+                    margin-top: vw(22px);
+                    line-height: vw(44px);
+                }
+            }
         }
 
         &__text {
