@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-Capacitor용 Foil
+Capacitor용
 <p>
     고전압 축전기의 성능 향상을 위해<br>
     세계 시장에 진출한 삼아의 대표 제품
@@ -14,13 +14,13 @@ Capacitor용 Foil
 @endsection
 
 @section('info__title')
-Capacitor용 Foil의 용량을 더 늘릴 수 있도록<br>
+Capacitor용 호일의 용량을 더 늘릴 수 있도록<br>
 극박막 알루미늄 호일을 <span>더 얇게 만들 수 없을까요?</span>
 @endsection
 
 @section('info__text')
 고전압 축전기의 성능 향상을 필요로 하는 고객 니즈에 따라<br>
-박육화에 대한 연구개발로 두께 4.5㎛ 알루미늄 Foil을 생산하여 시장에 공급 중입니다.
+박육화에 대한 연구개발로 두께 4.5㎛ 알루미늄 호일을 생산하여 시장에 공급 중입니다.
 @endsection
 
 @section('info__value')
@@ -31,7 +31,7 @@ Capacitor용 Foil의 용량을 더 늘릴 수 있도록<br>
 @section('info__table')
 <table class="info__table">
     <tr class="info__table--title">
-        <th colspan="2" class="border-left-none">스펙</th>
+        <th colspan="2" class="border-left-none">제품 사양</th>
         <th rowspan="2" class="border-right-none">활용 영역</th>
     </tr>
     <tr class="info__table--title">
