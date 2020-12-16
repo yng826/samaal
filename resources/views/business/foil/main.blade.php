@@ -49,12 +49,12 @@
             </div>
             <div class="foil-box__col fl-r mr-0">
                 <div class="foil-box__col--item">
-                    <a href="foil/electronic" class="foil-box--item item-car">
+                    <a href="foil/car" class="foil-box--item item-car">
                     <p class="foil-box__text">LIB 양극집전체용<br>- 자동차용</p>
                 </a>
                 </div>
                 <div class="foil-box__col--item">
-                    <a href="foil/car" class="foil-box--item item-electronic">
+                    <a href="foil/electronic" class="foil-box--item item-electronic">
                         <p class="foil-box__text">LIB 양극집전체용<br>- 전자기기용</p>
                     </a>
                 </div>
