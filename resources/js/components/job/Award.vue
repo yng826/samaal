@@ -1,5 +1,5 @@
 <template>
-    <div class="award-container form-container" v-if="this.$store.state.step == 2">
+    <div class="award-container form-container" v-if="isShow">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>수상경력</h3>
@@ -41,6 +41,9 @@ export default {
         Datepicker,
     },
     computed: {
+        isShow() {
+            return this.$store.state.step == 2 && this.$$store.state.mode == 'edit'
+        },
         job_id() { return this.$store.state.job.id; },
         items () {
             return this.$store.state.award

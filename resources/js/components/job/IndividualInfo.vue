@@ -1,5 +1,5 @@
 <template>
-    <div class="form-container" title="기본정보" v-if="this.$store.state.step == 2">
+    <div class="form-container" title="기본정보" v-if="isShow">
         <form :action="'/api/job/'+job.id" method="post" id="individualInfoForm" @submit.prevent="setInfo(job)">
             <input type="hidden" name="user_id" v-model="user.id"/>
             <input type="hidden" name="recruit_id" v-model="this.recruit_id"/>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div class="button-group">
+            <div class="button-group" v-if="isPossibleSave">
                 <button>저장</button>
             </div>
         </form>
@@ -120,6 +120,24 @@ export default {
                 };
             }
         },
+        isShow() {
+            let step = this.$store.state.step;
+            if ( this.mode == 'create' && step == 1) {
+                return true;
+            } else if ( this.mode == 'edit' && step == 2 ) {
+                return true;
+            }
+            return false;
+        },
+        isPossibleSave() {
+            let step = this.$store.state.step;
+            let mode = this.mode;
+            if ( mode == 'edit' && this.isAuth ) {
+                return true;
+            } else if ( mode == 'create' && !this.isAuth ) {
+                return true;
+            }
+        },
         status() {
             return this.$store.state.job.status
         }
@@ -136,6 +154,10 @@ export default {
     mounted: function() {
         this.isAuth = getAuth();
         console.log(this.isAuth);
+        this.$store.state.mode = this.mode;
+        if ( this.mode == 'create' ) {
+            this.$store.state.step = 1;
+        }
         if (this.isAuth) {
             if (this.mode == 'create') {
                 window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit';
@@ -228,8 +250,12 @@ export default {
             })
         },
         validation: function() {
-            console.log(this.user);
-            console.log(this.user_info);
+            if ( this.mode == 'edit' && !this.job.id ) {
+                return {
+                    result: false,
+                    msg: '잘못된 접근입니다',
+                };
+            }
             if ( this.user.name == '' || typeof this.user.name == 'undefined' ) {
                 return {
                     result: false,

@@ -1,5 +1,5 @@
 <template>
-    <a href="/work-with-us/recruit/1/create" class="but-apply" @click.prevent="openJoin">지원하기</a>
+    <a href="#" class="but-apply" @click.prevent="openJoin">지원하기</a>
 </template>
 <script>
 import User from '../../job/User'

@@ -1,9 +1,9 @@
 <template>
     <div class="button-groups">
-        <button v-if="step==2 || step==4" @click="changeStep(3)">자기소개서 작성</button>
-        <button v-if="step==3" @click="changeStep(2)">이력서 작성</button>
-        <button v-if="step==3" @click="changeStep(4)">제출전 확인</button>
-        <button v-if="step==4" @click="sendApplicant">제출</button>
+        <button v-if="isEdit && (step==2 || step==4)" @click="changeStep(3)">자기소개서 작성</button>
+        <button v-if="isEdit && step==3" @click="changeStep(2)">이력서 작성</button>
+        <button v-if="isEdit && step==3" @click="changeStep(4)">제출전 확인</button>
+        <button v-if="isEdit && step==4" @click="sendApplicant">제출</button>
         <VSpinner v-if="isSubmit"></VSpinner>
     </div>
 </template>
@@ -17,6 +17,12 @@ export default {
         VSpinner,
     },
     computed: {
+        isCreate() {
+            return this.$$store.state.mode == 'create'
+        },
+        isEdit() {
+            return this.$$store.state.mode == 'edit'
+        },
         step() {
             return this.$store.state.step
         },

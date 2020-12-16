@@ -1,5 +1,5 @@
 <template>
-    <div class="education-container form-container" v-if="this.$store.state.step == 2">
+    <div class="education-container form-container" v-if="isShow">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>학력사항</h3>
@@ -52,6 +52,16 @@ export default {
         Datepicker
     },
     computed: {
+        isShow() {
+            let step2 = this.$store.state.step == 2;
+            let job_id = this.$store.state.job.id;
+            const editMode = this.$store.state.mode == 'edit';
+            if ( step2 && job_id && editMode ) {
+                return true;
+            } else {
+                return false;
+            }
+        },
         items () { return this.$store.state.education },
         status() {
             return this.$store.state.job.status

@@ -76,17 +76,17 @@ document.addEventListener('DOMContentLoaded', () => {
             mounted: function() {
                 this.$root.$on('openPopup', (args1, args2) => {
                     console.log('openPopup', args1, args2);
-                    $('html, body').animate({scrollTop: '0'}, 1000);
+                    // $('html, body').animate({scrollTop: '0'}, 1000);
                     $('.popup-mask').addClass('show');
                 })
                 this.$root.$on('closePopup', (args1) => {
                     $('.popup-mask').removeClass('show');
                 });
 
-                window.addEventListener('closePop', this.hello);
+                window.addEventListener('closePop', this.closePop);
             },
             methods: {
-                hello() {
+                closePop() {
                     this.$root.$emit('closePopup');
                     console.log('hello');
                 }

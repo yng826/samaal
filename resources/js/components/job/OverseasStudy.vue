@@ -1,5 +1,5 @@
 <template>
-    <div class="overseas_study-container form-container" v-if="this.$store.state.step == 2">
+    <div class="overseas_study-container form-container" v-if="isShow">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>해외연수</h3>
@@ -16,9 +16,9 @@
                 <div class="form-group">
                     <label for="overseas_study_start">기간</label>
                     <div class="input_date-group">
-                        <Datepicker class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
+                        <Datepicker class="inline-block" name="overseas_study_start" :language="ko" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
                         <span class="from-arrow">~</span>
-                        <Datepicker class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
+                        <Datepicker class="inline-block" name="overseas_study_end" :language="ko" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
                 <div class="form-group">
@@ -56,6 +56,9 @@ export default {
         Datepicker,
     },
     computed: {
+        isShow() {
+            return this.$store.state.step == 2 && this.$$store.state.mode == 'edit'
+        },
         job_id() { return this.$store.state.job.id; },
         items () {
             return this.$store.state.oversea
