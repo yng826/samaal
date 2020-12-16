@@ -81,7 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 this.$root.$on('closePopup', (args1) => {
                     $('.popup-mask').removeClass('show');
-                })
+                });
+
+                window.addEventListener('closePop', this.hello);
+            },
+            methods: {
+                hello() {
+                    this.$root.$emit('closePopup');
+                    console.log('hello');
+                }
             }
         });
         console.log('init job');

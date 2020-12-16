@@ -96,6 +96,9 @@ const common = () => {
         $("body").on("click", '.popup-mask,.layer-popup__close-btn', function(){
             $(".layer-popup").removeClass('show');
             $(".popup-mask").removeClass('show');
+
+            let e = new Event('closePop');
+            window.dispatchEvent(e);
         });
     }
 

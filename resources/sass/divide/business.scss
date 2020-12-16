@@ -732,6 +732,10 @@
 .question-pop {
     width: 610px;
     margin-top: 50px;
+    display: none;
+    &.show {
+        display: block;
+    }
 
     &__title {
         margin-top: 7px;
