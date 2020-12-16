@@ -345,6 +345,12 @@
     }
 }
 
+.siteIntro {
+    .question-btn {
+        display: none;
+    }
+}
+
 .intro-logo {
     &.hidden {
         display: none;
