@@ -32,7 +32,7 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none">스펙</th>
+            <th colspan="2" class="border-left-none">제품 사양</th>
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
@@ -46,8 +46,8 @@
                 A3003, BRW04
             </td>
             <td class="border-right-none">
-                라디에이터, 히터
-                콘덴서,증발기
+                라디에이터, 히터,<br>
+                콘덴서, 증발기
             </td>
         </tr>
     </table>

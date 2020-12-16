@@ -7,6 +7,15 @@ const question = () => {
 
     const event_listener = () => {
 
+        $('#email-txt, #email-all-txt').val('').hide();
+        $('#email-select, #email-all-select').on('change', function(e) {
+            if ($(this).val() == '직접 입력') {
+                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').show();
+            } else {
+                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').val('').hide();
+            }
+        });
+
         $('.save-btn').on('click', (e) => {
             e.preventDefault();
             if ( validation() ) {
@@ -55,8 +64,9 @@ const question = () => {
             message = "문의 분류를 선택해주세요.";
             chk = false;
 
-        } else if ($("#email").val() == "" || $("#email").val() == null) {
-            message = "작성자 메일 주소를 입력해주세요.";
+        } else if ($("#email-first").val() == "" || $("#email-first").val() == null
+                    || (($("#email-txt").val() == "" || $("#email-txt").val() == null) && ($("#email-select").val() == "" || $("#email-select").val() == null))) {
+            message = "작성자 메일 주소를 입력 및 선택해주세요.";
             chk = false;
 
         } else if ($("#question").val() == "" || $("#question").val() == null) {
@@ -69,12 +79,16 @@ const question = () => {
         }
 
         /* 이메일 체크 */
-        var regexEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-        var inputEmail = $("#email").val();
+        if(chk) {
+            var regexEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            var inputEmail = $("#email-first").val() + '@' + ($("#email-select").val()=='직접 입력' ? $("#email-txt").val() : $("#email-select").val());
 
-        if(!regexEmail.test(inputEmail)) {
-            message = "이메일 형식이 올바르지 않습니다";
-            chk = false;
+            if(!regexEmail.test(inputEmail)) {
+                message = "이메일 형식이 올바르지 않습니다";
+                chk = false;
+            } else {
+                $("#email").val(inputEmail);
+            }
         }
 
         if ( !chk ) {
@@ -96,15 +110,16 @@ const question = () => {
         var chk = true;
 
         if ($("#title-all").val() == "" || $("#title-all").val() == null) {
-            message = "제목을 선택해주세요.";
+            message = "제목을 입력해주세요.";
             chk = false;
 
         } else if ($("#category-all").val() == "" || $("#category-all").val() == null) {
             message = "문의 분류를 선택해주세요.";
             chk = false;
 
-        } else if ($("#email-all").val() == "" || $("#email-all").val() == null) {
-            message = "작성자 메일 주소를 입력해주세요.";
+        } else if ($("#email-all-first").val() == "" || $("#email-all-first").val() == null
+                    || (($("#email-all-txt").val() == "" || $("#email-all-txt").val() == null) && ($("#email-all-select").val() == "" || $("#email-all-select").val() == null))) {
+            message = "작성자 메일 주소를 입력 및 선택해주세요.";
             chk = false;
 
         } else if ($("#question-all").val() == "" || $("#question-all").val() == null) {
@@ -117,12 +132,16 @@ const question = () => {
         }
 
         /* 이메일 체크 */
-        var regexEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-        var inputEmail = $("#email-all").val();
+        if(chk) {
+            var regexEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            var inputEmail = $("#email-all-first").val() + '@' + ($("#email-all-select").val()=='직접 입력' ? $("#email-all-txt").val() : $("#email-all-select").val());
 
-        if(!regexEmail.test(inputEmail)) {
-            message = "이메일 형식이 올바르지 않습니다";
-            chk = false;
+            if(!regexEmail.test(inputEmail)) {
+                message = "이메일 형식이 올바르지 않습니다";
+                chk = false;
+            } else {
+                $("#email-all").val(inputEmail);
+            }
         }
 
         if ( !chk ) {

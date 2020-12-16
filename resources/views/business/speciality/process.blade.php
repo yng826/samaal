@@ -84,7 +84,7 @@
             <p class="process-layout__text">
                 인쇄기, 라미네이터, 제대기를 비롯한 최신의 첨단화된 가공설비를 도입<br>
                 <span>
-                    국내 최초로 레토르트 파우치 및 제약용 Alu-Alu Cold Forming Foil, 리필 파우치,<br>
+                    국내 최초로 레토르트 파우치 및 제약용 ALU-ALU Cold Forming Foil, 리필 파우치,<br>
                     통신 케이블 차폐용 LAP Tape/Steel Tape 등 수많은 제품을 개발
                 </span>
                 초발수 LID 제품, 난연성 및 강도를 보강한<br>
@@ -95,7 +95,7 @@
         <div class="content-03 speciality-process__tab-content process-layout">
             <p class="process-layout__text">
                 1974년 국내 최초로 알루미늄 페이스트 생산 시작.<br>
-                알루미늄박 생산과정에서 발생하는 SCRAP에 가치를 부가하여 수입대체는 물론<br>
+                알루미늄박 생산과정에서 발생하는 Scrap에 가치를 부가하여 수입대체는 물론<br>
                 선박, 건설, 자동차 등 산업전반의 발전에 기여하고 있습니다
             </p>
             <ul class="process-layout__list">
@@ -109,7 +109,7 @@
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">오일제거</span>
-                    <stron class="lang-english">fliter</stron>
+                    <stron class="lang-english">Filter</stron>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">혼합</span>
@@ -117,11 +117,11 @@
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">포장</span>
-                    <stron class="lang-english">Packagin</stron>
+                    <stron class="lang-english">Packaging</stron>
                 </li>
             </ul>
             <p class="content-03__text">
-                연간 24,000톤의 생산 능력을 갖추고 있으며, <br>
+                연간 2,400톤의 생산 능력을 갖추고 있으며, <br>
                 오랜 생산 경험과 기술로 국내 최고의 제품을 공급하고 있습니다.
                 <span>
                     전반적인 산업의 성장과 고급화에 발맞춰서<br>

@@ -75,7 +75,7 @@
                     <ul class="procedure">
                         <li><span>입사지원</span></li>
                         <li><span>서류전형</span></li>
-                        <li><span>면접전형<em>(AI면접포함)</em></span></li>
+                        <li><span>면접전형</span></li>
                         <li><span>채용검진</span></li>
                         <li><span>최종합격</span></li>
                     </ul>

@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    LIB 외장재
+    LIB 외장재용
     <p>
         원통형 전지에 비해 규격과 모양을 다양하게 조정하여<br>
         자동차 경량화에 기여하는 외장재
@@ -32,7 +32,7 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none">스펙</th>
+            <th colspan="2" class="border-left-none">제품 사양</th>
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">

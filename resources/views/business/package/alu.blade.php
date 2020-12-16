@@ -16,7 +16,7 @@
 
 @section('info__title')
     <span>어떤 환경에서나<br>
-    의약품을 장시간 보관</span>할 수는 없을까요?
+    의약품을 장기간 보관</span>할 수는 없을까요?
 @endsection
 
 @section('info__text')
@@ -36,7 +36,7 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-bottom">스펙</th>
+            <th class="border-left-none border-bottom">제품 사양</th>
             <th class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--bottom">

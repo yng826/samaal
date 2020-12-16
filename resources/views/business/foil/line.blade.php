@@ -34,7 +34,7 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none">스펙</th>
+            <th colspan="2" class="border-left-none">제품 사양</th>
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">

@@ -25,14 +25,15 @@
 
 @section('info__value')
     <em>미래가치</em>
-    <p>발수 외에도 발유 기능(유분이 용기에 들러붙지 않게하는 기능)을 이용한 제품을<br>
-        개발하고 있으며 이를 확대 적용하여 알루미늄, 필름 등 다양한 기재에 응용하고자 합니다 </p>
+    <p>발수 외에도 발유기능(유분이 용기에 들러붙지 않게 하는 기능)을 이용한 제품을<br>
+        개발하고 있으며 이를 확대 적용하여 알루미늄 호일, 기능성 필름 등<br>
+        다양한 기재에 응용하고자 합니다 </p>
 @endsection
 
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-bottom">스펙</th>
+            <th class="border-left-none border-bottom">제품 사양</th>
             <th class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--bottom">

@@ -34,7 +34,7 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-right-none border-bottom">스펙</th>
+            <th class="border-left-none border-right-none border-bottom">제품 사양</th>
             <td class="border-right-none border-bottom">ALUMINIUM/OIL</td>
         </tr>
     </table>
@@ -44,7 +44,7 @@
             <col width="auto">
         </colgroup>
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none border-right-none">활용영역</th>
+            <th colspan="2" class="border-left-none border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--bottom">
             <th class="border-left-none list-title">
@@ -53,20 +53,9 @@
             </th>
             <td class="list">
                 <ul>
-                    <li>- 해운 페인트</li>
-                    <li>- 지붕 페인트 </li>
-                    <li>- 혼합 페인트용</li>
-                    <li>- 타워, 다리, 탱크</li>
-                </ul>
-                <ul>
-                    <li>- 인쇄용</li>
-                    <li>- 장식용 페인트</li>
-                    <li>- 마스터뱃지용</li>
-                    <li>- 일반건축 내외장용</li>
-                </ul>
-                <ul>
-                    <li>- 고급 인쇄</li>
-                    <li>- 장난감, 가구,우산대, 악기, 기계</li>
+                    <li>- 철구조물(철탑, 교량, 저장용 탱크, 기계장치) 부식방지용 페인트</li>
+                    <li>- 인쇄 인크용 </li>
+                    <li>- 금속질감 플라스틱 마스터 뱃지용</li>
                 </ul>
             </td>
         </tr>
@@ -76,9 +65,8 @@
                 (Non-Leafing Type)
             </th>
             <td>
-                - 선박의 기본적인 바닥코팅 및 부식방지 페인트<br>
+                - 선박용 부식방지 페인트<br>
                 - 금속 색상의 페인트<br>
-                - 선박의 기본적인 바닥 코팅 및 부식방지페인트
             </td>
         </tr>
         {{-- <tr class="info__table--bottom">

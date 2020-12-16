@@ -27,15 +27,15 @@
 @section('info__value')
     <em>미래가치</em>
     <p>
-        단열성능 및 내구성 향상 선박의 저온 탱크, 의료용 콘테이너 등의<br>
-        적용 분야를 개발해나가고 있습니다
+        단열성능 및 내구성을 향상시켜 선박의 저온 탱크,<br>
+        의료용 컨테이너 등의 적용 분야를 개발해나가고 있습니다.
     </p>
 @endsection
 
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-bottom">스펙</th>
+            <th class="border-left-none border-bottom">제품 사양</th>
             <th class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--bottom">

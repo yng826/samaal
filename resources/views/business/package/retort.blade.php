@@ -34,11 +34,14 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-bottom">스펙</th>
+            <th class="border-left-none border-bottom">제품 사양</th>
             <th class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--bottom">
-            <td class="border-left-none">PET/AL/OPA/CPP</td>
+            <td class="border-left-none">
+                PET/AL/OPA/CPP<br>
+                PET/OPA/CPP
+                </td>
             <td class="border-right-none">
                 레토르트식품,<br>
                 콘택트렌즈 등(의학용)<br>

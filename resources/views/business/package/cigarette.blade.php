@@ -4,7 +4,7 @@
     담배포장지
     <p>
         우수한 보향 및 보습성으로<br>
-        60년대부터 현재까지 활용 중인 담배용 내포장재
+        1960년대부터 현재까지 활용 중인 담배용 내포장재
     </p>
 @endsection
 
@@ -15,7 +15,7 @@
 
 @section('info__title')
     담배의 향과 맛이<br>
-    장시간 유지되면 좋겠어요!
+    장기간 유지되면 좋겠어요!
 @endsection
 
 @section('info__text')
@@ -27,7 +27,7 @@
 @section('info__value')
     <em>미래가치</em>
     <p>
-        향후 전자담배용 필터 및<br>
+        전자 담배용 필터 및<br>
         내포장재로 확대하고 있습니다.
     </p>
 @endsection
@@ -35,7 +35,7 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-bottom">스펙</th>
+            <th class="border-left-none border-bottom">제품 사양</th>
             <th class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--bottom">

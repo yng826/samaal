@@ -18,7 +18,7 @@
                 <div class="swiper-container business-intro__slide-info slide-info">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <h2>알루미늄 Foil</h2>
+                            <h2>알루미늄 호일</h2>
                             <a href="/business/foil" class="slide-info__link">더 알아보기</a>
                         </div>
                         <div class="swiper-slide">
