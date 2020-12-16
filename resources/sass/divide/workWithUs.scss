@@ -128,8 +128,7 @@
         padding: 70px 140px 70px;
         box-sizing: border-box;
 
-        form {
-        }
+        @extend %clear;
 
         .form-wrap {
 
@@ -328,6 +327,58 @@
                         padding: 14px 0;
                         cursor: pointer;
                     }
+                }
+            }
+        }
+
+        .information-box {
+            float: right;
+            width: 40%;
+            margin-top: 66px;
+
+            .privacy-box {
+                padding: 28px 30px;
+                height: 296px;
+                overflow-y: auto;
+                color: #5b5b5b;
+                font-size: 13px;
+                background-color: #e8ecef;
+                border: 1px solid #d7d7d7;
+            }
+
+            &__label {
+                display: block;
+                cursor: pointer;
+
+                span {
+                    display: inline-block;
+                    color: #383838;
+                    font-size: 13px;
+                    vertical-align: middle;
+                }
+            }
+
+            &__check {
+                display: inline-block;
+                position: relative;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                padding: 0;
+                border-radius: 0;
+                vertical-align: middle;
+                background-color: #e8ecef;
+                color: #000;
+                border: none;
+
+                &:checked::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background: url("/images/common/icon_check.png") no-repeat center;
+                    background-size: cover;
                 }
             }
         }
@@ -1361,7 +1412,7 @@
 
         .form-container {
             margin-bottom: vw(18px);
-            padding: vw(70px 240px 70px);
+            padding: vw(70px 200px 70px);
 
             .form-wrap {
 
@@ -1464,6 +1515,34 @@
                             padding: 14px 0;
 
                         }
+                    }
+                }
+            }
+
+            .information-box {
+                margin-top: vw(66px);
+
+                .privacy-box {
+                    padding: vw(28px 30px);
+                    height: vw(296px);
+                    font-size: vw(13px);
+                }
+
+                &__label {
+                    span {
+                        font-size: vw(13px);
+
+                    }
+                }
+
+                &__check {
+                    width: vw(20px);
+                    height: vw(20px);
+                    margin-right: vw(10px);
+
+                    &:checked::after {
+                        width: vw(20px);
+                        height: vw(20px);
                     }
                 }
             }
@@ -2035,6 +2114,33 @@
                 .form-group {
                     .picture {
                         height: vw(500px);
+                    }
+                }
+            }
+
+            .information-box {
+                margin-top: vw(132px);
+                .privacy-box {
+                    padding: vw(36px 60px);
+                    height: vw(392px);
+                    font-size: vw(26px);
+                }
+
+                &__label {
+                    span {
+                        font-size: vw(13px);
+
+                    }
+                }
+
+                &__check {
+                    width: vw(40px);
+                    height: vw(40px);
+                    margin-right: vw(20px);
+
+                    &:checked::after {
+                        width: vw(40px);
+                        height: vw(40px);
                     }
                 }
             }
@@ -2692,6 +2798,34 @@
                     }
                 }
             }
+            .information-box {
+                float: initial;
+                width: 100%;
+                margin-top: vw(10px);
+
+                .privacy-box {
+                    padding: vw(28px 30px);
+                    height: vw(100px);
+                    font-size: vw(15px);
+                }
+
+                &__check {
+                    width: vw(20px);
+                    height: vw(20px);
+                    margin-right: vw(10px);
+
+                    &:checked::after {
+                        width: vw(20px);
+                        height: vw(20px);
+                    }
+                }
+
+                &__label {
+                    span {
+                        font-size: vw(16px);
+                    }
+                }
+            }
         }
         &__contents {
             padding: vw(10px);
@@ -2718,6 +2852,10 @@
                     }
                 }
             }
+        }
+
+        .button-group {
+            margin-top: vw(30px);
         }
     }
 

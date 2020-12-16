@@ -101,11 +101,11 @@
             <ul class="process-layout__list">
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">분쇄</span>
-                    <stron class="lang-english">smash</stron>
+                    <stron class="lang-english">Ball Mill</stron>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">분급</span>
-                    <stron class="lang-english">classification</stron>
+                    <stron class="lang-english">Screen Tank</stron>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">오일제거</span>

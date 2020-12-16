@@ -5,6 +5,7 @@ const about = () => {
     // location page 슬라이드
     const locationSwiper = () => {
         const swiper = new Swiper('.about-location .swiper-container', {
+            loop: true,
             navigation: {
                 nextEl: '.about-location .swiper-button-next',
                 prevEl: '.about-location .swiper-button-prev',
