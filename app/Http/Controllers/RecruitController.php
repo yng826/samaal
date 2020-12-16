@@ -47,10 +47,13 @@ class RecruitController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $job = Job::where([
+        $where = [
             'recruit_id' => $id,
             'user_id' => $request->user()->id,
-        ])->first();
+        ];
+        $job = Job::where($where)->with(
+            ['user','userInfo','educations','careers','military','awards','certificates','languages','oas','overseasStudys','recruit'])->first();
+        // $job = Job::where()->first();
 
         return $job;
     }

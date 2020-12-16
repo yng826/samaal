@@ -97,6 +97,9 @@
                prevEl: '.swiper-button-prev',
            }
        });
+       swiperYear.on('click', function(sw,b) {
+           sw.slideTo(sw.clickedIndex);
+       })
        swiperYear.controller.control = swiperImg;
        swiperImg.controller.control = swiperYear;
 

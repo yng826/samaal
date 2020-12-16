@@ -105,27 +105,19 @@
                         <button type="button" class="question-pop__submit-btn save-btn">보내기</button>
                     </form>
                 </div>
-
-                <!-- 담당자 팝업 -->
-                <div class="manager-pop layer-popup">
-                    <button class="question-pop__close-btn layer-popup__close-btn" type="button">닫기</button>
-                    <div class="manager-pop__title">
-                        <h3>담당자</h3>
-                    </div>
-                    <div class="manager-pop__list">
-                        <dl>
-                            <dt>담당자</dt>
-                            <dd>김승주 팀장</dd>
-                        </dl>
-                        <dl>
-                            <dt>Tel</dt>
-                            <dd>02-0458-0542</dd>
-                        </dl>
-                        <dl>
-                            <dt>E-mail</dt>
-                            <dd>kimsj@sama-al.com</dd>
-                        </dl>
-                    </div>
+                <div class="manager-pop__list">
+                    <dl>
+                        <dt>담당자</dt>
+                        <dd>김승주 팀장</dd>
+                    </dl>
+                    <dl>
+                        <dt>Tel</dt>
+                        <dd>02-3458-0542</dd>
+                    </dl>
+                    <dl>
+                        <dt>E-mail</dt>
+                        <dd>kimsj@sama-al.com</dd>
+                    </dl>
                 </div>
                 <div class="top-btn">TOP</div>
             </main>

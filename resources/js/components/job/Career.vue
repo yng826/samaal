@@ -2,7 +2,8 @@
     <div class="career-container form-container" v-if="this.$store.state.step == 2">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
-                <h3>경력사항 <button @click.prevent="removeItem(item.id, id)" class="danger">삭제</button></h3>
+                <h3>경력사항</h3>
+                <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)">삭제</button>
                 <div class="form-group">
                     <label for="career_start">근무기간</label>
                     <div class="input_date-group">
@@ -27,7 +28,7 @@
         </form>
         <div class="button-group">
             <button class="btn-add" @click="addItem">추가</button>
-            <button class="btn-save" @click="saveItems">저장</button>
+            <button class="btn btn-success btn-save" @click="saveItems">저장</button>
         </div>
         <VSpinner v-if="isSubmit || !this.items"></VSpinner>
     </div>
@@ -40,12 +41,13 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['job_id'],
+    props: [],
     components: {
         VSpinner,
         Datepicker,
     },
     computed: {
+        job_id() { return this.$store.state.job.id; },
         items () {
             return this.$store.state.career
         },
@@ -215,7 +217,10 @@ export default {
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',
-                    confirmButtonText: '확인'
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+                    this.$store.state.career = res.data;
                 });
             })
             .catch(err => {

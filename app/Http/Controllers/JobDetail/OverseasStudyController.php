@@ -98,7 +98,11 @@ class OverseasStudyController extends Controller
             }
         }
 
-        return 1;
+        $study = DB::table('job_applications_overseas_study')
+                ->where('job_id', $id)
+                ->get();
+
+        return $study;
     }
 
     /**

@@ -96,7 +96,11 @@ class LanguageController extends Controller
             }
         }
 
-        return 1;
+        $language = DB::table('job_applications_language')
+                ->where('job_id', $id)
+                ->get();
+
+        return $language;
     }
 
     /**

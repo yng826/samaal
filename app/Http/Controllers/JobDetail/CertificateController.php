@@ -90,7 +90,11 @@ class CertificateController extends Controller
             }
         }
 
-        return 1;
+        $certificate = DB::table('job_applications_certificate')
+                ->where('job_id', $id)
+                ->get();
+
+        return $certificate;
     }
 
     /**

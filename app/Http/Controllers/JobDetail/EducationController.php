@@ -96,7 +96,11 @@ class EducationController extends Controller
             }
         }
 
-        return 1;
+        $education = DB::table('job_applications_education')
+                ->where('job_id', $id)
+                ->get();
+
+        return $education;
     }
 
     /**

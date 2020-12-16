@@ -9,16 +9,16 @@
         </div>
         <div class="{{$pageClass}}__contents">
             <progress-component init_step="2"></progress-component>
-            <individual-info-component job_id={{$id}}></individual-info-component>
-            <education-component job_id={{$id}}></education-component>
-            <career-component job_id={{$id}}></career-component>
-            <military-component job_id={{$id}}></military-component>
-            <oa-component job_id={{$id}}></oa-component>
-            <language-component job_id={{$id}}></language-component>
-            <award-component job_id={{$id}}></award-component>
-            <certificate-component job_id={{$id}}></certificate-component>
-            <overseas-component job_id={{$id}}></overseas-component>
-            <self-introduction-component job_id={{$id}}></self-introduction-component>
+            <individual-info-component recruit_id="{{$recruit_id}}" mode="edit"></individual-info-component>
+            <education-component></education-component>
+            <career-component></career-component>
+            <military-component></military-component>
+            <oa-component></oa-component>
+            <language-component></language-component>
+            <award-component></award-component>
+            <certificate-component></certificate-component>
+            <overseas-component></overseas-component>
+            <self-introduction-component></self-introduction-component>
             <applycant-review-component></applycant-review-component>
             <job-button-groups-component></job-button-groups-component>
             <login-component></login-component>

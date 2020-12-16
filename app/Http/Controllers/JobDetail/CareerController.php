@@ -94,7 +94,11 @@ class CareerController extends Controller
             }
         }
 
-        return 1;
+        $career = DB::table('job_applications_career')
+                ->where('job_id', $id)
+                ->get();
+
+        return $career;
     }
 
     /**

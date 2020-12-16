@@ -9,7 +9,7 @@
         </div>
         <div class="{{$pageClass}}__contents">
             <progress-component></progress-component>
-            <individual-info-component recruit_id="{{$recruit_id}}"></individual-info-component>
+            <individual-info-component recruit_id="{{$recruit_id}}" mode="create"></individual-info-component>
             <login-component recruit_id="{{$recruit_id}}"></login-component>
             {{-- <join-component recruit_id="{{$recruit_id}}"></join-component> --}}
         </div>

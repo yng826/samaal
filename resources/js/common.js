@@ -85,14 +85,15 @@ const common = () => {
     }
 
     const question_pop = () => {
+        console.log('question pop');
 
-        $('.question-btn').on('click', function () {
+        $('body').on('click', '.question-btn' , function () {
             $(".all-q-pop").show();
             $(".popup-mask").show();
             window.scrollTo(0,0);
         });
 
-        $(".popup-mask , .layer-popup__close-btn").on("click",function(){
+        $("body").on("click", '.popup-mask,.layer-popup__close-btn', function(){
             $(".layer-popup").hide();
             $(".popup-mask").hide();
         });

@@ -14,7 +14,7 @@
                     <td>{{ item.recruit.title }}</td>
                     <td>{{ item.recruit.end_date }}</td>
                     <td>
-                        <a :href="'/work-with-us/job/'+ item.id" class="btn btn-primary">{{buttonText}}</a>
+                        <a :href="'/work-with-us/recruit/'+ item.recruit_id + '/edit'"  class="btn btn-primary">{{buttonText}}</a>
                     </td>
                     <td>{{ item.status_ko }}</td>
                 </tr>

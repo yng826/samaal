@@ -14,6 +14,7 @@ import User from './User';
 // import Vuex from 'vuex'
 
 require('../bootstrap');
+import common from '../common';
 
 // axios.defaults.headers = getHeader();
 
@@ -66,6 +67,7 @@ window.$ = window.jQuery = require('jquery');
 
 import {JobStore} from './Store'
 document.addEventListener('DOMContentLoaded', () => {
+    common();
 
     if ( typeof vueApp == 'undefined' ) {
         const vueApp = new Vue({

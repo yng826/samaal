@@ -46,7 +46,7 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['job_id'],
+    props: [],
     components: {
         VSpinner,
         Datepicker
@@ -232,7 +232,7 @@ export default {
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
-            url = '/api/job-detail/education/' + this.job_id;
+            url = '/api/job-detail/education/' + this.$store.state.job.id;
             method = 'put';
             axios({
                 method: method,
@@ -245,7 +245,10 @@ export default {
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',
-                    confirmButtonText: '확인'
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+                    this.$store.state.education = res.data;
                 });
             })
             .catch(err => {

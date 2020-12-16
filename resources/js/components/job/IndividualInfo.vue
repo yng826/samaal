@@ -81,12 +81,13 @@ import VSpinner from 'vue-spinner/src/BeatLoader'
 import Language from './Language.vue'
 export default {
   components: { Language },
-    props: ['job_id', 'recruit_id'],
+    props: ['mode', 'recruit_id'],
     components: {
         VSpinner,
         Datepicker,
     },
     computed: {
+        job_id() { return this.$store.state.job.id; },
         job () { return this.$store.state.job },
         user () { return this.$store.state.user },
         user_info () { return this.$store.state.user_info },
@@ -125,19 +126,20 @@ export default {
         this.isAuth = getAuth();
         console.log(this.isAuth);
         if (this.isAuth) {
-            let user = getUser();
-            this.$store.state.user = user;
-            console.log(this.isAuth);
-            if (this.job_id) {
-                this.getInfo();
+            if (this.mode == 'create') {
+                window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit';
             } else {
+                let user = getUser();
+                this.$store.state.user = user;
+                console.log(this.isAuth);
+                this.getInfo();
                 this.$store.state.job.recruit_id = this.recruit_id;
                 // this.$store.state.user.email = user.user.email;
             }
             this.isSubmit = false;
         } else {
             // this.$root.$emit('openPopup', 'login');
-            if ( this.recruit_id ) {
+            if ( !this.recruit_id ) {
 
             } else {
                 Swal.fire({
@@ -155,7 +157,7 @@ export default {
     },
     methods: {
         getInfo: function() {
-            axios.get('/api/work-with-us/job/'+ this.job_id,{
+            axios.get('/api/work-with-us/recruit/'+ this.recruit_id,{
                 'headers': getHeader()
             })
             .then(res => {
@@ -166,6 +168,7 @@ export default {
                         address_1: res.data.address_1,
                         address_2: res.data.address_2,
                         cover_letter: res.data.cover_letter,
+                        is_cover_letter: res.data.is_cover_letter,
                         file_path: res.data.file_path,
                         id: res.data.id,
                         phone_decrypt: res.data.phone_decrypt,
@@ -384,7 +387,7 @@ export default {
                     }).then(result => {
                         if (result.isConfirmed) {
                             if ( !isAuth ) {
-                                
+
                             }
                             // this.$root.$emit('openPopup', 'login', this.recruit_id);
                             // window.location.href = '/work-with-us/job/' + res.data.job.id
