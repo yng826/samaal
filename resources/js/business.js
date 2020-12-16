@@ -49,19 +49,19 @@ const business = () => {
     // business 문의하기 팝업
     const questionPop = () => {
         $(".btn-question").on("click",function(){
-            $(".q-pop").show();
-            $(".popup-mask").show();
+            $(".q-pop").addClass('show');
+            $(".popup-mask").addClass('show');
         });
 
         $(".btn-manager").on("click",function(){
-            $(".manager-pop").show();
-            $(".popup-mask").show();
+            $(".manager-pop").addClass('show');
+            $(".popup-mask").addClass('show');
         });
 
 
         $(".popup-mask , .layer-popup__close-btn").on("click",function(){
-            $(".layer-popup").hide();
-            $(".popup-mask").hide();
+            $(".layer-popup").removeClass('show');
+            $(".popup-mask").removeClass('show');
         });
     };
 

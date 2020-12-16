@@ -57,10 +57,10 @@
                             </li>
                             <li>
                                 <h4>작성자 메일 주소</h4>
-                                <input type="text" class="form-control" id="email-first" placeholder="입력해주세요.">
-                                @
-                                <input type="text" class="form-control" id="email-txt" placeholder="입력해주세요.">
-                                <select class="form-control w-auto mr-1" id="email-select">
+                                <input type="text" class="form-control input-gorup__item" id="email-first" placeholder="입력해주세요.">
+                                <em class="input-gorup__at">@</em>
+                                <input type="text" class="form-control input-gorup__item hidden" id="email-txt" placeholder="입력해주세요.">
+                                <select class="form-control w-auto mr-1 input-gorup__item" id="email-select">
                                     <option value="">::선택::</option>
                                     <option value="naver.com">naver.com</option>
                                     <option value="daum.net">daum.net</option>
@@ -119,11 +119,11 @@
                         </dl>
                         <dl>
                             <dt>Tel</dt>
-                            <dd>02-3458-0542</dd>
+                            <dd><a href="tel:02-3458-0542">02-3458-0542</a></dd>
                         </dl>
                         <dl>
                             <dt>E-mail</dt>
-                            <dd>kimsj@sama-al.com</dd>
+                            <dd><a href="mailto:kimsj@sama-al.com">kimsj@sama-al.com</a></dd>
                         </dl>
                     </div>
                 </div>
@@ -131,8 +131,8 @@
             </main>
 
             @include('shared.footer')
-
-            <div class="popup-mask"></div>
+{{--
+            <div class="popup-mask"></div> --}}
         </div>
 
         <script src="{{ mix('/js/manifest.js')}}"></script>

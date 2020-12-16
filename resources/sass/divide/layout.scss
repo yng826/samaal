@@ -524,6 +524,9 @@
     transform: translate(-50%,-50%);
     background-color: #fff;
     z-index: 101;
+    &.show {
+        display: block;
+    }
 
     &__close-btn {
         display: block;

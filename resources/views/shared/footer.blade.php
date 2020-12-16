@@ -76,7 +76,7 @@
                 <div class="input-gorup">
                     <input type="text" class="form-control input-gorup__item" id="email-all-first" placeholder="입력해주세요.">
                     <em class="input-gorup__at">@</em>
-                    <input type="text" class="form-control input-gorup__item" id="email-all-txt" placeholder="입력해주세요.">
+                    <input type="text" class="form-control input-gorup__item hidden" id="email-all-txt" placeholder="입력해주세요.">
                     <div class="input-gorup__select">
                         <select class="form-control w-auto mr-1 " id="email-all-select">
                             <option value="">::선택::</option>

@@ -7,13 +7,14 @@ const question = () => {
 
     const event_listener = () => {
 
-        $('#email-txt, #email-all-txt').val('').hide();
-        $('#email-select, #email-all-select').on('change', function(e) {
+        $('#email-txt, #email-all-txt').val('').removeClass('show');
+        $('.question-pop').on('change', '#email-select, #email-all-select', function(e) {
+            console.log('직접 입력');
             if ($(this).val() == '직접 입력') {
-                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').show();
-                $('.input-gorup__select').hide();
+                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').addClass('show');
+                $('.input-gorup__select').removeClass('show');
             } else {
-                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').val('').hide();
+                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').val('').removeClass('show');
             }
         });
 
@@ -21,7 +22,7 @@ const question = () => {
             e.preventDefault();
             if ( validation() ) {
                 console.log('form submit');
-                $(".question-form").submit();
+                $(".question-form").trigger('submit');
                 //axios.post();
 
                 Swal.fire({
@@ -29,8 +30,8 @@ const question = () => {
                     icon: 'success',
                     confirmButtonText: '확인'
                 });
-                $(".layer-popup").hide();
-                $(".popup-mask").hide();
+                $(".layer-popup").removeClass('show');
+                $(".popup-mask").removeClass('show');
             }
         });
 
@@ -46,8 +47,8 @@ const question = () => {
                     icon: 'success',
                     confirmButtonText: '확인'
                 });
-                $(".layer-popup").hide();
-                $(".popup-mask").hide();
+                $(".layer-popup").removeClass('show');
+                $(".popup-mask").removeClass('show');
             }
         });
     }

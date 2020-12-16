@@ -758,6 +758,13 @@
     &__info  {
         padding-top: 40px;
 
+        #email-txt {
+            display: none;
+            &.show {
+                display: inline-block;
+            }
+        }
+
         li {
             margin-bottom: 30px;
             font-size: 0;
@@ -914,6 +921,12 @@
                 display: inline-block;
                 width:46%;
                 vertical-align: middle;
+                &.hidden {
+                    display: none;
+                    &.show {
+                        display: inline-block;
+                    }
+                }
             }
 
             &__select {
@@ -3811,7 +3824,9 @@
     /* 문의하기 팝업 */
     .question-pop {
         width: vw(525px);
-
+        // top: 10vh;
+        max-height: 90vh;
+        overflow: scroll;
         &__title {
             margin-top: 0;
 
@@ -3825,19 +3840,19 @@
         }
 
         &__info  {
-            padding-top: vw(36px);
+            padding-top: vw(15px);
 
             li {
-                margin-bottom: vw(60px);
+                margin-bottom: vw(20px);
             }
 
             h4 {
-                padding-bottom: vw(34px);
+                padding-bottom: vw(14px);
                 font-size: vw(31px);
             }
 
             input {
-                padding: 0 vw(30px);
+                padding: 0 vw(10px);
                 border-radius: vw(10px);
 
                 &[type=text] {
@@ -3851,9 +3866,9 @@
             }
 
             select {
-                padding: 0 vw(30px);
+                padding: 0 vw(10px);
                 border-radius: vw(10px);
-                height: vw(130px);
+                height: vw(75px);
 
                 &::placeholder {
                     font-size: vw(24px);
@@ -3861,8 +3876,8 @@
             }
 
             textarea {
-                height: vw(280px);
-                padding: vw(30px);
+                height: vw(150px);
+                padding: vw(10px);
                 border-radius: vw(10px);
                 font-size: vw(36px);
 
