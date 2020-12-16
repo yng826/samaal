@@ -59,12 +59,12 @@ const common = () => {
             }
 
             // top button position
-            if($(window).scrollTop() + $(window).height() < $(document).height() - $(".footer").height()) {
-                $('.top-btn').css({'position':'fixed','bottom':'1%','right': '5%'});
-            }
-            if($(window).scrollTop() + $(window).height() > $(document).height() - $(".footer").height()) {
-                $('.top-btn').css({'position':'absolute','bottom':'1%','right':'5%'});
-            }
+            // if($(window).scrollTop() + $(window).height() < $(document).height() - $(".footer").height()) {
+            //     $('.top-btn').css({'position':'fixed','bottom':'10%','right': '5%'});
+            // }
+            // if($(window).scrollTop() + $(window).height() > $(document).height() - $(".footer").height()) {
+            //     $('.top-btn').css({'position':'absolute','bottom':'10%','right':'5%'});
+            // }
         });
 
          // top button click

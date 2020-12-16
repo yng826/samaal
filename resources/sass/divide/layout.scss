@@ -1,6 +1,12 @@
 
+#app {
+    padding-top: 90px;
+}
+
  .header {
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
     max-width: 1821px;
     height: 90px;
     padding: 0 40px;
@@ -262,9 +268,11 @@
         @extend %clear;
 
         .question-btn {
-            position: relative;
+            position: fixed;
             float: right;
-            right: 0;
+            z-index: 2;
+            right: 5%;
+            bottom: 1%;
             display: block;
             width: 173px;
             height: 60px;
@@ -535,6 +543,7 @@
 .top-btn {
     display: none;
     font-size: 0;
+    z-index: 2;
 }
 
 /* 사이트맵 */
@@ -757,6 +766,10 @@
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
     @import "./lib/webvw";
+    #app {
+        padding-top: vw(90px);
+    }
+
     .header {
         height: vw(90px);
         padding: 0 vw(40px);
@@ -1123,6 +1136,10 @@
 @media all and (min-width: 768px) and (max-width: 1024px)  {
     @import "./lib/webvw";
 
+    #app {
+        padding-top: vw(180px);
+    }
+
     .header {
         height: vw(180px);
         padding: 0 vw(80px);
@@ -1340,12 +1357,13 @@
     .top-btn {
         display: inline-block;
         position: fixed;
-        bottom: 1%;
-        right: 5%;
+        bottom: 8%;
+        right: 10%;
         width: vw(140px);
         height: vw(140px);
         border: 1px solid #bebebe;
         color: #000;
+        z-index: 2;
         font: {
             size: vw(35px);
             weight: vw(bold);
@@ -1749,8 +1767,6 @@
             }
 
             .question-btn {
-                position: absolute;
-                bottom: vw(110px);
                 width: 0;
 
                 a {
@@ -1758,6 +1774,8 @@
                 }
 
                 &::after {
+                    bottom: 1%;
+                    right: 5%;
                     width: vw(97px);
                     height: vw(97px);
                     background-size: vw(23px 37px);
@@ -1803,6 +1821,7 @@
     }
 
     /* 페이지네이션 */
+
     .pagination  {
         &__number {
             font-size: vw(20px);
@@ -1835,12 +1854,13 @@
     .top-btn {
         display: inline-block;
         position: fixed;
-        bottom: 1%;
+        bottom: 10%;
         right: 5%;
         padding: vw(48px) 0 vw(12px);
         width: vw(77px);
         border: 1px solid #bebebe;
         color: #000;
+        z-index: 2;
         font: {
             size: vw(20px);
             weight: vw(bold);

@@ -10,7 +10,7 @@
 
 @section('swiper-container')
     <div class="swiper-slide"><div class="slide-img" style="background-image:url(/images/business/foil/img_line.jpg);"></div></div>
-    <div class="swiper-slide"><div class="slide-img" style="background-image:url(/images/business/foil/img_line.jpg);"></div></div>
+    <div class="swiper-slide"><div class="slide-img" style="background-image:url(/images/business/foil/img_line_hover.jpg);"></div></div>
 @endsection
 
 @section('info__title')

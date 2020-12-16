@@ -11,6 +11,7 @@ const question = () => {
         $('#email-select, #email-all-select').on('change', function(e) {
             if ($(this).val() == '직접 입력') {
                 $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').show();
+                $('.input-gorup__select').hide();
             } else {
                 $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').val('').hide();
             }

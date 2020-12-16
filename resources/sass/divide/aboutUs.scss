@@ -549,8 +549,9 @@
     }
 
     &__info {
-        padding: 88px 831px 220px 0;
-        background: url("/images/about/heritage/img_right.jpg")no-repeat right top / contain;
+        padding: 88px 770px 220px 0;
+        background: url("/images/about/heritage/img_right.jpg")no-repeat right top;
+        background-size: 490px 560px;
 
         &--title {
             display: block;
@@ -1028,7 +1029,8 @@
         }
 
         &__info {
-            padding: vw(88px 831px 220px 0);
+            padding: vw(88px 770px 220px 0);
+            background-size: vw(490px 560px);
 
             &--title {
                 padding-bottom: vw(34px);
@@ -1348,7 +1350,8 @@
         }
 
         &__info {
-            padding: vw(88px 831px 220px 0);
+            padding: vw(88px 800px 220px 0);
+            background-size: vw(735px 840px);
 
             &--title {
                 padding-bottom: vw(68px);
@@ -1361,6 +1364,10 @@
                 font-size: vw(30px);
                 line-height: vw(64px);
                 word-break: keep-all;
+
+                br{
+                    display: none;
+                }
             }
         }
 

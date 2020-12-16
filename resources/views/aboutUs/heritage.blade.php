@@ -69,7 +69,7 @@
                 <div class="swiper-button-next"></div>
             </div>
         </div>
-        <p class="about-heritage__text">* 지속가능한 세상을 위해 UN 지속가능 발전 목표(SDGs) 색상을 활용했습니다.</p>
+        <p class="about-heritage__text">* UN 지속가능 발전 목표(SDGs) 색상을 활용했습니다.</p>
     </div>
     <div class="top-btn">TOP</div>
 </main>
