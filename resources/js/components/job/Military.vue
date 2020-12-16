@@ -31,7 +31,7 @@
             </div>
         </form>
         <div class="button-group">
-            <button class="btn btn-success btn-save" @click="saveItems">저장</button>
+            <button class="btn btn-success btn-save" @click="saveItem">저장</button>
         </div>
         <VSpinner v-if="isSubmit"></VSpinner>
     </div>
