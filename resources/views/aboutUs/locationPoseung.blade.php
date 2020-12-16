@@ -57,7 +57,7 @@
                     <dt>FAX</dt><dd>031-683-6125</dd>
                 </div>
                 <div class="about-location__info--map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.7399119343017!2d126.84801621552414!3d36.96826806592003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b1c0c766d192b%3A0xfc79eb900e59401e!2z6rK96riw64-EIO2Pie2DneyLnCDtj6zsirnsnY0g7Y-J7YOd7ZWt66GcIDky!5e0!3m2!1sko!2skr!4v1606013488247!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25501.794440568043!2d126.85151878551171!3d36.96864074894092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b1c74c82778e9%3A0xaf9602c296d9053f!2z7IK87JWE7JWM66-464qEIO2PrOyKueqzteyepQ!5e0!3m2!1sko!2skr!4v1608121888589!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
         </div>
