@@ -50,6 +50,7 @@ export default {
         Datepicker,
     },
     computed: {
+        isShow() { return this.$store.job },
         job_id() { return this.$store.state.job.id; },
         item () {
             return this.$store.state.military;

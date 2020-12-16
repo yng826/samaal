@@ -18,10 +18,10 @@ export default {
     },
     computed: {
         isCreate() {
-            return this.$$store.state.mode == 'create'
+            return this.$store.state.mode == 'create'
         },
         isEdit() {
-            return this.$$store.state.mode == 'edit'
+            return this.$store.state.mode == 'edit'
         },
         step() {
             return this.$store.state.step

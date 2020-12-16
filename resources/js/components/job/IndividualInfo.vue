@@ -13,7 +13,7 @@
                     </div>
                     <label for="pic" class="input-file-trigger">
                         이미지 업로드
-                        <input type="file" name="pic" id="pic">
+                        <input type="file" name="pic" id="pic" @change="picSelect">
                     </label>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-wrap information-box">
+            <div class="form-wrap information-box" v-if="mode=='create'">
                 <div class="privacy-box">
                     회원 가입 의사의 확인, 연령 확인 및 법정대리인 동의 진행, 이용자 및 법정대리인의 본인 확인, 이용자 식별, 회원탈퇴 의사의 확인 등 회원관리를 위하여 개인정보를 이용합니다.
                     콘텐츠 등 기존 서비스 제공(광고 포함)에 더하여, 인구통계학적 분석, 서비스 방문 및 이용기록의 분석, 개인정보 및 관심에 기반한 이용자간 관계의 형성, 지인 및 관심사 등에 기반한 맞춤형 서비스 제공 등 신규 서비스 요소의 발굴 및 기존 서비스 개선 등을 위하여 개인정보를 이용합니다.
@@ -113,6 +113,11 @@ export default {
         oversea () { return this.$store.state.oversea },
         pic() {
             if ( this.$store.state.job ) {
+                if ( this.preview ) {
+                    return {
+                        'background-image': 'Base64 ' + this.preview
+                    }
+                }
                 if ( this.$store.state.job.file_path ) {
                     return {
                         'background-image': 'url(/storage/'+ this.$store.state.job.file_path +')',
@@ -155,6 +160,7 @@ export default {
             isAuth: false,
             isSubmit: true,
             ko: ko,
+            preview: '',
             password: '',
             password_confirm: '',
         }
@@ -195,6 +201,18 @@ export default {
         }
     },
     methods: {
+        picSelect: function (e){
+            console.log(e);
+            const file = e.target.files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            //로드 한 후
+            let that = this;
+            reader.onload = function  () {
+                that.preview = reader.result ;
+            };
+        },
         getInfo: function() {
             axios.get('/api/work-with-us/recruit/'+ this.recruit_id,{
                 'headers': getHeader()
@@ -402,6 +420,7 @@ export default {
                 console.log(res);
                 this.isSubmit = false;
                 if (res.data.result == 'success') {
+                    this.preview = null;
                     this.job.file_path = res.data.file_path;
 
                     Swal.fire({
@@ -413,10 +432,8 @@ export default {
                     }).then(result => {
                         console.log(res.data.type == 'join');
                         if (result.isConfirmed ) {
-                            if ( res.data.job_id ) {
-                                window.location.href = '/work-with-us/job/' + res.data.job_id
-                            } else if ( res.data.job.id) {
-                                window.location.href = '/work-with-us/job/' + res.data.job.id
+                            if ( this.mode == 'create' ) {
+                                window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit'
                             }
                         }
                     });

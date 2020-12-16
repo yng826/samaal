@@ -42,7 +42,7 @@ export default {
     },
     computed: {
         isShow() {
-            return this.$store.state.step == 2 && this.$$store.state.mode == 'edit'
+            return this.$store.state.step == 2 && this.$store.state.mode == 'edit'
         },
         job_id() { return this.$store.state.job.id; },
         items () {
