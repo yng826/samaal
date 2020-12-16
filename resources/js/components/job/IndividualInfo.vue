@@ -4,7 +4,18 @@
             <input type="hidden" name="user_id" v-model="user.id"/>
             <input type="hidden" name="recruit_id" v-model="this.recruit_id"/>
             <input type="hidden" name="job_id" v-model="job.id"/>
-            <div class="form-wrap form-img">
+            <div class="form-wrap">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <label for="">
+                    <input type="checkbox" name="" id="">
+                    동의
+                </label>
+                <label for="">
+                    <input type="checkbox" name="" id="">
+                    동의
+                </label>
+            </div>
+            <div class="form-wrap form-img" v-if="this.job.id">
                 <h3>사진업로드<em>(최근 3개월내)</em></h3>
                 <div class="form-group">
                     <input type="hidden" name="file_path" v-model="job.file_path">
@@ -139,7 +150,7 @@ export default {
             this.isSubmit = false;
         } else {
             // this.$root.$emit('openPopup', 'login');
-            if ( !this.recruit_id ) {
+            if ( this.recruit_id ) {
 
             } else {
                 Swal.fire({
