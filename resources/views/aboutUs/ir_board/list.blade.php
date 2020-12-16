@@ -18,7 +18,7 @@
         <main class="contents-wrap">
             <div class="contents-wrap__title pd-20">
                <h2 class="about-ir__title">
-                   financial
+                   재무정보
                 </h2>
             </div>
             <div class="about-ir-list__section">
