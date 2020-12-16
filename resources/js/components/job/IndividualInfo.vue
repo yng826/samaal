@@ -158,9 +158,7 @@ export default {
             this.isSubmit = false;
         } else {
             // this.$root.$emit('openPopup', 'login');
-            if ( this.recruit_id ) {
-
-            } else {
+            if ( this.mode == 'edit' ) {
                 Swal.fire({
                     title: '로그인해주세요!',
                     icon: 'info',

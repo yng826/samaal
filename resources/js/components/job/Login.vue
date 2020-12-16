@@ -1,6 +1,6 @@
 <template>
     <div class="popup-container" v-if="isOpen">
-        <button class="layer-popup__close-btn" type="button">닫기</button>
+        <button class="layer-popup__close-btn" @click="closePopup" type="button">닫기</button>
         <div class="form-container login-form">
             <div class="form-wrap">
                 <form id="login-form" :action="action" method="POST" @submit.prevent="sendPost">
@@ -71,6 +71,9 @@ export default {
         // require('../../job/User')
     },
     methods: {
+        closePopup: function() {
+            this.$root.$emit('closePopup');
+        },
         validation: function() {
             if ( this.name == '' ) {
                 return {

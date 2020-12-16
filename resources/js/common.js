@@ -98,14 +98,17 @@ const common = () => {
         console.log('question pop');
 
         $('body').on('click', '.question-btn' , function () {
-            $(".all-q-pop").show();
-            $(".popup-mask").show();
+            $(".all-q-pop").addClass('show');
+            $(".popup-mask").addClass('show');
             window.scrollTo(0,0);
         });
 
         $("body").on("click", '.popup-mask,.layer-popup__close-btn', function(){
-            $(".layer-popup").hide();
-            $(".popup-mask").hide();
+            $(".layer-popup").removeClass('show');
+            $(".popup-mask").removeClass('show');
+
+            let e = new Event('closePop');
+            window.dispatchEvent(e);
         });
     }
 
