@@ -36,7 +36,7 @@ export default {
                             if (result.isConfirmed) {
                                 this.$root.$emit('closePopup');
                                 // console.log("// window.location.href = '/work-with-us/recruit/'" + res.data.id);
-                                window.location.href = '/work-with-us/recruit/' + this.recruit_id
+                                window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit'
                             }
                         });
                     } else {

@@ -192,7 +192,7 @@ class JobController extends Controller
 
         if ( isset($formData['cover_letter']) ) {
             $job->cover_letter = $formData['cover_letter'];
-            $job->is_cover_letter = Str::length($job->cover_letter) > 0;
+            $job->is_cover_letter = Str::length($job->cover_letter) > 0 ? 1 : 0;
             $job->save();
         } else {
             $user = User::find($formData['user_id']);

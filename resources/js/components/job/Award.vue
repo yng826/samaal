@@ -2,7 +2,8 @@
     <div class="award-container form-container" v-if="this.$store.state.step == 2">
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
-                <h3>수상경력 <button @click.prevent="removeItem(item.id, id)">삭제</button></h3>
+                <h3>수상경력</h3>
+                <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)">삭제</button>
                 <div class="form-group">
                     <label for="award_name">시상명</label>
                     <input type="text" name="award_name" v-model="item.award_name" placeholder="입력해주세요">
@@ -21,7 +22,7 @@
         </form>
         <div class="button-group">
             <button class="btn-add" @click="addItem">추가</button>
-            <button class="btn-save" @click="saveItems">저장</button>
+            <button class="btn btn-success btn-save" @click="saveItems">저장</button>
         </div>
         <VSpinner v-if="isSubmit || !this.items"></VSpinner>
     </div>
