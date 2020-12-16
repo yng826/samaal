@@ -346,7 +346,7 @@
 }
 
 .popup-container {
-    position: absolute;
+    position: fixed;
     z-index: 999;
     background: #fff;
     padding: 60px 100px 50px;

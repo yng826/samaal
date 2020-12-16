@@ -25,12 +25,16 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['job_id'],
+    props: [],
     components: {
         VSpinner,
         Datepicker,
     },
     computed: {
+        cover_letter() {
+            return this.$store.state.job.cover_letter;
+        },
+        job_id() { return this.$store.state.job.id; },
         item () {
             return this.$store.state.job;
         },
@@ -49,6 +53,18 @@ export default {
         // this.isAuth = getAuth();
     },
     methods: {
+        validation: function() {
+            if ( this.cover_letter == '' || typeof this.cover_letter == 'undefined' ) {
+                return {
+                    result: false,
+                    msg: '자기소개서를 작성해주세요',
+                };
+            }
+            return {
+                result: true,
+                msg: '',
+            }
+        },
         saveItem: function() {
             if ( this.status == 'submit' ) {
                 Swal.fire({
@@ -71,6 +87,16 @@ export default {
             if ( this.isSubmit ) {
                 return false;
             }
+            const validate = this.validation();
+            if ( !validate.result ) {
+                Swal.fire({
+                    text: validate.msg,
+                    icon: 'error',
+                    confirmButtonText: '확인'
+                });
+                this.isSubmit = false;
+                return false;
+            }
             this.isSubmit = true;
 
             let headers = getHeader();
@@ -82,16 +108,21 @@ export default {
                 url: url,
                 headers: headers,
                 data: {
-                    cover_letter: this.$store.state.job.cover_letter
+                    cover_letter: this.cover_letter
                 }
             })
             .then(res => {
                 this.isSubmit = false;
                 console.log(this.$store.state.job);
+                console.log(res);
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',
-                    confirmButtonText: '확인'
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+                    this.$store.state.job.is_cover_letter = res.data.job.is_cover_letter;
+                    console.log(this.$store.state.job.is_cover_letter, res.data.is_cover_letter);
                 });
             })
             .catch(err => {

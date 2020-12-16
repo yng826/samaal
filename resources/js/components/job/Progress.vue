@@ -16,12 +16,13 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['job_id', 'init_step'],
+    props: ['init_step'],
     components: {
         VSpinner,
         Datepicker,
     },
     computed: {
+        job_id() { return this.$store.state.job.id; },
         step () {
             return this.$store.state.step;
         }
@@ -43,43 +44,6 @@ export default {
         overStep: function(n) {
             return n > this.step ? '' : 'on';
         },
-        saveItem: function() {
-            if ( this.isSubmit ) {
-                return false;
-            }
-            this.isSubmit = true;
-
-            let headers = getHeader();
-            let url, method;
-            url = '/api/work-with-us/job/' + this.job_id;
-            method = 'put';
-            axios({
-                method: method,
-                url: url,
-                headers: headers,
-                data: {
-                    cover_letter: this.$store.state.job.cover_letter
-                }
-            })
-            .then(res => {
-                this.isSubmit = false;
-                console.log(this.$store.state.job);
-                Swal.fire({
-                    title: '저장되었습니다!',
-                    icon: 'success',
-                    confirmButtonText: '확인'
-                });
-            })
-            .catch(err => {
-                this.isSubmit = false;
-                Swal.fire({
-                    title: '저장에 실패했습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인'
-                });
-                console.error(err);
-            })
-        }
     }
 }
 </script>

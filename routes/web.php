@@ -213,6 +213,7 @@ Route::prefix('work-with-us')->group(function(){
     Route::get('recruit', [RecruitListController::class, 'index']);
     Route::get('recruit/{id}', [RecruitListController::class, 'show']);
     Route::get('recruit/{id}/create', [RecruitListController::class, 'join']);
+    Route::get('recruit/{id}/edit', [RecruitListController::class, 'edit']);
     Route::get('job', [JobController::class, 'index'])
     ->name('work.job');
     Route::get('job/create', [JobController::class, 'create'])
@@ -378,12 +379,41 @@ Route::get('session', function () {
     return Session::get('access_token');
 });
 
+Route::get('send2', function () {
+    $text = "Hello";
+    // Create the Transport
+    $transport = (new \Swift_SmtpTransport(env('MAIL_HOST'), 25))
+    ->setUsername(env('MAIL_USERNAME'))
+    ->setPassword(env('MAIL_PASSWORD'))
+    ;
+
+    // Create the Mailer using your created Transport RFCValidation
+    $mailer = new \Swift_Mailer($transport);
+
+    // Create a message
+    $message = (new \Swift_Message('Happy to Have You Onboard'))
+    ->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
+    ->setTo(['test001@sama-al.com'])
+    ->setBody($text , 'text/html')
+    ;
+    $message->setReadReceiptTo(env('MAIL_FROM_ADDRESS'));
+
+
+
+    // Send the message
+    $result = $mailer->send($message);
+
+    dd($result);
+});
+
 Route::get('send', function () {
 
     // dd(config('mail.mailers.smtp.encryption'));
 
-    Mail::send('welcome', [], function($message) {
-        $message->to('test001@sama-al.com')->subject('Testing mails'); 
+    return Mail::send('welcome', [], function($message) {
+        $message->from('test001@sama-al.com')
+            ->to('test001@sama-al.com')
+            ->subject('Testing mails');
     });
 
     /*

@@ -23,9 +23,9 @@
                 <div class="form-group">
                     <label for="military_duration_start">군복무기간</label>
                     <div class="input_date-group">
-                        <Datepicker class="inline-block" name="military_duration_start" :military="ko" v-model="item.military_duration_start" format="yyyy-MM-dd"></Datepicker>
+                        <Datepicker class="inline-block" name="military_duration_start" :language="ko" v-model="item.military_duration_start" format="yyyy-MM-dd"></Datepicker>
                         <span class="from-arrow">~</span>
-                        <Datepicker class="inline-block" name="military_duration_end" :military="ko" v-model="item.military_duration_end" format="yyyy-MM-dd"></Datepicker>
+                        <Datepicker class="inline-block" name="military_duration_end" :language="ko" v-model="item.military_duration_end" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
             </div>
@@ -44,12 +44,13 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['job_id'],
+    props: [],
     components: {
         VSpinner,
         Datepicker,
     },
     computed: {
+        job_id() { return this.$store.state.job.id; },
         item () {
             return this.$store.state.military;
         },
@@ -111,7 +112,10 @@ export default {
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',
-                    confirmButtonText: '확인'
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+                    this.$store.state.military = res.data;
                 });
             })
             .catch(err => {

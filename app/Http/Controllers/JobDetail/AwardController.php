@@ -90,7 +90,11 @@ class AwardController extends Controller
             }
         }
 
-        return 1;
+        $award = DB::table('job_applications_award')
+                ->where('job_id', $id)
+                ->get();
+
+        return $award;
     }
 
     /**

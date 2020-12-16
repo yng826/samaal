@@ -103,4 +103,17 @@ class RecruitListController extends Controller
             'pageClass' => 'work-apply',
         ]);
     }
+
+    public function edit($id)
+    {
+        $recruit = DB::table('recruits')->where('id', $id)->first();
+
+        if ( !$recruit ) {
+            abort(404);
+        }
+        return view('workWithUs.job.edit', [
+            'recruit_id' => $recruit->id,
+            'pageClass' => 'work-apply',
+        ]);
+    }
 }

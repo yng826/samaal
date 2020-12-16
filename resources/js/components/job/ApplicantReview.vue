@@ -43,12 +43,13 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['job_id'],
+    props: [],
     components: {
         VSpinner,
         Datepicker,
     },
     computed: {
+        job_id() { return this.$store.state.job.id; },
         item () {
             return this.$store.state.job;
         },
@@ -60,8 +61,8 @@ export default {
         },
         isSelfIntroduction() {
             let txt;
-            if (this.item.cover_letter) {
-                txt = this.item.cover_letter.length > 0 ? '작성완료': '미작성';
+            if (this.item.is_cover_letter) {
+                txt = this.item.is_cover_letter ? '작성완료': '미작성';
             } else {
                 txt = '미작성';
             }

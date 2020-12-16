@@ -44,12 +44,13 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 export default {
-    props: ['job_id'],
+    props: [],
     components: {
         VSpinner,
         Datepicker,
     },
     computed: {
+        job_id() { return this.$store.state.job.id; },
         items () {
             return this.$store.state.language
         },
@@ -220,7 +221,10 @@ export default {
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',
-                    confirmButtonText: '확인'
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+                    this.$store.state.career = res.data;
                 });
             })
             .catch(err => {

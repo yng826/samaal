@@ -88,7 +88,11 @@ class OaController extends Controller
             }
         }
 
-        return 1;
+        $oa = DB::table('job_applications_oa')
+                ->where('job_id', $id)
+                ->get();
+
+        return $oa;
     }
 
     /**

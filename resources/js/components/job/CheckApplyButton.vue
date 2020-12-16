@@ -20,7 +20,7 @@ export default {
         openJoin: function() {
             if (this.isAuth) {
                 this.isAuth = getAuth();
-                axios.get('/api/work-with-us/job/search/' + this.recruit_id,{
+                axios.get('/api/work-with-us/recruit/' + this.recruit_id,{
                     'headers': getHeader(),
                     'recruit_id': this.recruit_id,
                 }).then(res => {
@@ -35,8 +35,8 @@ export default {
                         }).then(result => {
                             if (result.isConfirmed) {
                                 this.$root.$emit('closePopup');
-                                console.log("// window.location.href = '/work-with-us/job/'" + res.data.id);
-                                window.location.href = '/work-with-us/job/' + res.data.id
+                                // console.log("// window.location.href = '/work-with-us/recruit/'" + res.data.id);
+                                window.location.href = '/work-with-us/recruit/' + this.recruit_id
                             }
                         });
                     } else {
