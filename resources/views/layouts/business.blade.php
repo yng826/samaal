@@ -118,7 +118,7 @@
                     </dl>
                     <dl>
                         <dt>Tel</dt>
-                        <dd>02-0458-0542</dd>
+                        <dd>02-3458-0542</dd>
                     </dl>
                     <dl>
                         <dt>E-mail</dt>
