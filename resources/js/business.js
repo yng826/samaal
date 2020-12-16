@@ -68,6 +68,7 @@ const business = () => {
     // business 상세 swiper
     const businessSwiper = () => {
         var detailSlide  = new Swiper('.business-detail-swiper', {
+            loop: true,
             navigation: {
                 nextEl: '.business-detail-swiper .swiper-button-next',
                 prevEl: '.business-detail-swiper .swiper-button-prev',
@@ -100,6 +101,7 @@ const business = () => {
     // R&D swiper
     const rndSwiper = () => {
         var detailSlide  = new Swiper('.innovation-rnd-swiper', {
+            loop: true,
             navigation: {
                 nextEl: '.innovation-rnd-swiper .swiper-button-next',
                 prevEl: '.innovation-rnd-swiper .swiper-button-prev',

@@ -7,9 +7,19 @@ const common = () => {
         $lang.on("click",function(){
             $lang_en.toggleClass('on');
             $lang.toggleClass('on');
-
         });
+    }
 
+    const introHeader = () => {
+        $(window).on("scroll", function(){
+            if($(window).scrollTop() > 50) {
+                $(".intro-section .header").removeClass("sub-hader");
+                $(".intro-section .intro-logo").addClass("hidden");
+            }else {
+                $(".intro-section .header").addClass("sub-hader");
+                $(".intro-section .intro-logo").removeClass("hidden");
+            }
+        });
     }
 
     const header_nav = () => {
@@ -108,6 +118,7 @@ const common = () => {
         TopButton();
         footer_top();
         question_pop();
+        introHeader();
     };
 
     common_init();

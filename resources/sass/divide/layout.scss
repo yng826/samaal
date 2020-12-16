@@ -7,7 +7,6 @@
     position: fixed;
     width: 100%;
     top: 0;
-    max-width: 1821px;
     height: 90px;
     padding: 0 40px;
     margin: 0 auto;
@@ -15,6 +14,7 @@
     border-bottom: 1px solid #ebebeb;
     background: #fff;
     font-size: 0;
+    box-sizing: border-box;
 
     &__logo {
         position: relative;
@@ -345,9 +345,21 @@
     }
 }
 
+.intro-logo {
+    &.hidden {
+        display: none;
+    }
+}
+
 .sub-hader {
     background-color: transparent;
     border: 0;
+
+    .hidden {
+        display: none;
+    }
+
+
 
     .header__nav--item {
         span {
@@ -1502,7 +1514,12 @@
 @media all and (max-width: 767px) {
      @import "./lib/vw";
 
+     #app {
+        padding-top: vw(90px);
+    }
+
      .header {
+            max-width: vw(750px);
             height: vw(90px);
 
         &__logo {
