@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    연포장용 Foil
+    연포장용
     <p>
         제품 가치 보존에 힘써온<br>
         삼아 대표 아이템
@@ -25,13 +25,13 @@
 
 @section('info__value')
     <em>미래가치</em>
-    <p>다국적 전력기업들의<br>판매 확대 가능성 높습니다</p>
+    <p>보존기간에 민감한 고부가가치<br>제품 포장지에 널리 적용될 수 있습니다.</p>
 @endsection
 
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none">스펙</th>
+            <th colspan="2" class="border-left-none">제품 사양</th>
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">

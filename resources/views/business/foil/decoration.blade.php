@@ -1,10 +1,10 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    Decoration용 Foil
+    Decoration용
     <p>
         고급제품의 포장에 적합한 고품질의<br>
-        고광택 알루미늄 Foil
+        고광택 알루미늄 호일
     </p>
 @endsection
 
@@ -26,13 +26,13 @@
 @section('info__value')
     <em>미래가치</em>
     <p>종이와 접합되는 제품의 용도로<br>
-        확대 적용이 가능하여 고급 제품에 적합한 프리미엄 AL-Foil</p>
+        확대 적용이 가능하여 고급 제품에 적합한 프리미엄 알루미늄 호일</p>
 @endsection
 
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none">스펙</th>
+            <th colspan="2" class="border-left-none">제품 영역</th>
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
@@ -46,7 +46,7 @@
             </td>
             <td class="border-right-none">
                 고급화장품 튜브,
-                고급 술, 인삼 포장상자
+                고급 주류, 고가의 제품 포장상자
             </td>
         </tr>
     </table>

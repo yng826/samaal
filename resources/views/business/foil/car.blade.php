@@ -2,7 +2,7 @@
 
 @section('detail__title')
     LIB 양극집전체용
-    <em>Foil -자동차용</em>
+    <em>자동차용</em>
     <p>
         얇은 두께에서도 고강도 유지가 가능하여<br>
         고용량, 고효율 배터리 개발을 가능하게 함
@@ -26,14 +26,14 @@
 
 @section('info__value')
     <em>미래가치</em>
-    <p>고자동차뿐만 아니라 ESS, 소형전지 등<br>
+    <p>자동차뿐만 아니라 ESS, 소형전지 등<br>
         전 분야에 걸쳐 적용 가능합니다</p>
 @endsection
 
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none">스펙</th>
+            <th colspan="2" class="border-left-none">제품 사양</th>
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">

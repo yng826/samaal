@@ -2,10 +2,10 @@
 
 @section('detail__title')
     LIB 양극집전체용
-    <em>Foil -전자기기용</em>
+    <em>전자기기용</em>
     <p>
-        고용량 전지의 개발로 배터리 성능을 향상하면서<br>
-        전자기기를 더 얇게 제작할 수 있도록 함
+        세계 최초로 10րm 전지용 알루미늄 호일을 개발하여<br>
+        배터리 에너지 밀도 향상과 Slim 화가 가능하게 함
     </p>
 @endsection
 
@@ -21,7 +21,8 @@
 
 @section('info__text')
     휴대폰 사용 시간을 늘리기 위한 니즈에 맞추기 위해 2012년 국내 최초로 개발하였습니다.
-    고용량 전지의 개발로 배터리 성능 향상했을 뿐만 아니라 휴대폰의 두께를 얇게 구현할 수 있도록 합니다.
+    고용량 전지의 개발로 배터리 성능 향상뿐 아니라<br>
+    휴대폰의 두께를 얇게 구현할 수 있도록 합니다.
 @endsection
 
 @section('info__value')
@@ -33,7 +34,7 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none">스펙</th>
+            <th colspan="2" class="border-left-none">제품 사양</th>
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
@@ -48,7 +49,7 @@
                 기타
             </td>
             <td class="border-right-none">
-                스마트폰, 노트북,무선청소기, 장난감, 전동공구 등
+                스마트폰, 노트북,무선청소기, 장난감, 전동공구, 드론 등
             </td>
         </tr>
     </table>
