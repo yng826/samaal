@@ -71,19 +71,23 @@
                     <option value="기타">기타</option>
                 </select>
             </li>
-            <li >
+            <li>
                 <h4>작성자 메일 주소</h4>
-                <input type="text" class="form-control" id="email-all-first" placeholder="입력해주세요.">
-                @
-                <input type="text" class="form-control" id="email-all-txt" placeholder="입력해주세요.">
-                <select class="form-control w-auto mr-1" id="email-all-select">
-                    <option value="">::선택::</option>
-                    <option value="naver.com">naver.com</option>
-                    <option value="daum.net">daum.net</option>
-                    <option value="gmail.com">gmail.com</option>
-                    <option value="직접 입력">집적 입력</option>
-                </select>
-                <input type="hidden" name="email" id="email-all">
+                <div class="input-gorup">
+                    <input type="text" class="form-control input-gorup__item" id="email-all-first" placeholder="입력해주세요.">
+                    <em class="input-gorup__at">@</em>
+                    <input type="text" class="form-control input-gorup__item" id="email-all-txt" placeholder="입력해주세요.">
+                    <div class="input-gorup__select">
+                        <select class="form-control w-auto mr-1 " id="email-all-select">
+                            <option value="">::선택::</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="daum.net">daum.net</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="직접 입력">직접 입력</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="email" id="email-all">
+                </div>
             </li>
             <li>
                 <h4>내용</h4>
