@@ -12,7 +12,6 @@
             <login-component is_check_auth="true"></login-component>
             <find-password-component></find-password-component>
         </div>
-        <div class="top-btn">TOP</div>
     </main>
 @endsection
 

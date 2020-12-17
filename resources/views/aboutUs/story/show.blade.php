@@ -30,7 +30,6 @@ $bodyClass = 'about';
                 </div>
             </div>
         </div>
-        <div class="top-btn">TOP</div>
     </div>
 </main>
 @endsection

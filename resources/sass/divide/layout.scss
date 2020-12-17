@@ -712,9 +712,10 @@
             li {
                 display: inline-block;
                 position: relative;
-                width: calc(12.5% - 1px);
+                width: calc(20% - 1px);
                 height: 67px;
                 border-right: 1px solid #e8e8e8;
+                border-bottom: 1px solid #e8e8e8;
                 background-color: #fff;
                 text-align: center;
                 cursor: pointer;
@@ -1270,7 +1271,6 @@
                 height: vw(120px);
                 border-radius: vw(120px);
                 cursor: pointer;
-                right: 10%;
 
                 &:hover {
                     width: vw(346px);
@@ -1389,7 +1389,7 @@
         display: inline-block;
         position: fixed;
         bottom: 8%;
-        right: 10%;
+        right: 2%;
         width: vw(140px);
         height: vw(140px);
         border: 1px solid #bebebe;
@@ -1540,7 +1540,7 @@
     .siteIntro {
         .question-btn {
             display: none;
-            // right: 10%;
+            // right: 2%;
         }
     }
 
@@ -1815,7 +1815,7 @@
                 height: vw(77px);
                 background-size: vw(40px 77px);
                 border-radius: 50%;
-                right: 5%;
+                right: 2%;
                 bottom: 2%;
 
                 &:hover {
@@ -1909,7 +1909,7 @@
         display: inline-block;
         position: fixed;
         bottom: 10%;
-        right: 5%;
+        right: 2%;
         padding: vw(48px) 0 vw(12px);
         width: vw(77px);
         border: 1px solid #bebebe;

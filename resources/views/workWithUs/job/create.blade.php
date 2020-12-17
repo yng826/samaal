@@ -13,7 +13,6 @@
             <login-component recruit_id="{{$recruit_id}}"></login-component>
             {{-- <join-component recruit_id="{{$recruit_id}}"></join-component> --}}
         </div>
-        <div class="top-btn">TOP</div>
     </main>
 @endsection
 

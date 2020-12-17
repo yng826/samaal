@@ -9,6 +9,15 @@
         h2 {
             padding: 80px 0;
             line-height: 1;
+
+            p {
+                display: block;
+                margin-top: 15px;
+                font-size: 20px;
+                line-height: 30px;
+                font-weight: 400;
+                color: #fff;
+            }
         }
     }
 
@@ -270,6 +279,19 @@
         }
     }
 
+    &__link {
+        margin-top: 30px;
+        text-align: center;
+        button {
+            width: auto;
+            padding: 14px 24px 12px;
+            text-align: center;
+            color: #fff;
+            font-size: 13px;
+            background-color: #1d3669;
+        }
+    }
+
 }
 
 /* 웹 1600 사이즈 */
@@ -300,6 +322,14 @@
                 height:vw(30%);
             }
         }
+
+        &__link {
+            margin-top: vw(30px);
+            button {
+                padding: vw(14px 24px 12px);
+                font-size: vw(13px);
+            }
+        }
     }
 }
 /* 모바일 사이즈 */
@@ -325,6 +355,15 @@
             div{
                 width:vw(100%);
                 height:vw(25%);
+            }
+        }
+
+        &__link {
+            margin-top: vw(30px);
+            button {
+                width: vw(123px);
+                padding: vw(14px 0 12px);
+                font-size: vw(13px);
             }
         }
     }
@@ -781,7 +820,7 @@
         margin: 0 auto;
 
         .about-ir__table {
-
+            margin-top: 100px;
             h3 {
                 margin-bottom: 20px;
                 font-size: 25px;
@@ -789,16 +828,16 @@
             }
 
             th {
-                padding: 18px;
-                font-size: 20px;
+                padding: 15px;
+                font-size: 15px;
                 line-height: 1;
                 border: 2px solid #000;
             }
 
             td {
-                padding: 23px;
+                padding: 15px;
                 color: #444444;
-                font-size: 20px;
+                font-size: 15px;
                 line-height: 1;
                 border: 2px solid #b7b7b7;
             }
@@ -819,6 +858,12 @@
         &__title {
             h2 {
                 padding: vw(80px) 0;
+
+                p {
+                    margin-top: vw(15px);
+                    font-size: vw(20px);
+                    line-height: vw(30px);
+                }
             }
         }
 
@@ -1106,9 +1151,45 @@
 /*태블릿 세로 사이즈*/
 @media all and (min-width:768px) and (max-width:1023px) {
     @import "./lib/webvw";
+    .about-ir {
+        &__link {
+            margin-top: vw(60px);
+            button {
+                padding: vw(28px 48px 24px);
+                font-size: vw(26px);
+            }
+        }
+
+        .about-ir__table {
+            margin-top: vw(200px);
+
+            th {
+                padding: vw(30px);
+                font-size: vw(30px);
+                border: vw(2px) solid #000;
+            }
+
+            td {
+                padding: vw(30px);
+                font-size: vw(30px);
+                border: vw(2px) solid #b7b7b7;
+            }
+
+        }
+    }
 
     /* aboutUs - storyNews - CI */
     .about-ci {
+        &__title {
+            h2 {
+                p {
+                    margin-top: vw(30px);
+                    font-size: vw(40px);
+                    line-height: vw(60px);
+                }
+            }
+        }
+
         &__identity {
             &--area {
                 h3 {
@@ -1359,6 +1440,10 @@
                 font-size: vw(50px);
                 line-height: vw(74px);
                 word-break: keep-all;
+
+                br {
+                    display: none;
+                }
             }
 
             &--text {
@@ -1429,6 +1514,15 @@
 
     /* aboutUs - storyNews - CI */
     .about-ci {
+        &__title {
+            h2 {
+                p {
+                    margin-top: vw(30px);
+                    font-size: vw(24px);
+                    line-height: vw(41px);
+                }
+            }
+        }
         &__contents {
             max-width: 100%;
             padding: vw(0 69px 88px);
@@ -1925,6 +2019,30 @@
                 font-size: vw(22px);
                 border: vw(2px) solid #b7b7b7;
             }
+        }
+
+        .about-ir__table {
+            margin-top: vw(50px);
+        }
+    }
+
+    .about-ir {
+        &__table {
+            max-width: 92%;
+        }
+
+        .about-ir__table {
+
+            th {
+                padding: vw(25px);
+                font-size: vw(25px);
+            }
+
+            td {
+                padding: vw(25px);
+                font-size: vw(25px);
+            }
+
         }
     }
 

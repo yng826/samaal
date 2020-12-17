@@ -44,6 +44,7 @@
             <div class="question-btn">
                 <a href="javascript:;">문의하기</a>
             </div>
+            <div class="top-btn">TOP</div>
         </div>
         <p class="copyright">ⓒ 2020 SAMA. ALL RIGHTS RESERVED. DESIGNED BY DOMOBRODEUR</p>
     </div>
