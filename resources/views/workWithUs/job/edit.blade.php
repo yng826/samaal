@@ -20,7 +20,7 @@
             <overseas-component></overseas-component>
             <self-introduction-component></self-introduction-component>
             <applycant-review-component></applycant-review-component>
-            <job-button-groups-component></job-button-groups-component>
+            <job-button-groups-component mode="edit"></job-button-groups-component>
             <login-component></login-component>
             <find-password-component></find-password-component>
         </div>

@@ -12,16 +12,16 @@ import {getHeader} from '../../config'
 import VSpinner from 'vue-spinner/src/BeatLoader'
 import Swal from 'sweetalert2'
 export default {
-    props: [],
+    props: ['mode'],
     components: {
         VSpinner,
     },
     computed: {
         isCreate() {
-            return this.$store.state.mode == 'create'
+            return this.mode == 'create'
         },
         isEdit() {
-            return this.$store.state.mode == 'edit'
+            return this.mode == 'edit'
         },
         step() {
             return this.$store.state.step
@@ -39,6 +39,7 @@ export default {
         }
     },
     mounted: function() {
+        console.log(this.mode);
         // this.isAuth = getAuth();
     },
     methods: {
