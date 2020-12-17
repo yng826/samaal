@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 여기 작성해주세요
     function eventListener() {
-        $('#search-btn, [id^="category-"]').on('click', function() {
+        $('#search-btn, .search-wrap__content [id^="category-"]').on('click', function() {
             search($(this).attr('id').toString());
         });
         $('input[name=keyword]').on('keypress', function(e) {
