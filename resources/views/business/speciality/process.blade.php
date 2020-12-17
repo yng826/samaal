@@ -62,22 +62,22 @@
             <ul class="process-layout__list">
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">인쇄기</span>
-                    <stron class="lang-english">Printing</stron>
+                    <strong class="lang-english">Printing</strong>
                     <a href="https://www.youtube.com/embed/ew1lzr5qKUg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">라미네이터</span>
-                    <stron class="lang-english">Laminator</stron>
+                    <strong class="lang-english">Laminator</strong>
                     <a href="https://www.youtube.com/embed/uuJuNKddsXM?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">분단기</span>
-                    <stron class="lang-english">Slitting</stron>
+                    <strong class="lang-english">Slitting</strong>
                     <a href="https://www.youtube.com/embed/olcpsGoGu7c?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">제대기</span>
-                    <stron class="lang-english">Bag Making</stron>
+                    <strong class="lang-english">Bag Making</strong>
                     <a href="https://www.youtube.com/embed/FzKbPnwvySs?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>
@@ -101,23 +101,23 @@
             <ul class="process-layout__list">
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">분쇄</span>
-                    <stron class="lang-english">Ball Mill</stron>
+                    <strong class="lang-english">Smash</strong>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">분급</span>
-                    <stron class="lang-english">Screen Tank</stron>
+                    <strong class="lang-english">Classification</strong>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">오일제거</span>
-                    <stron class="lang-english">Filter</stron>
+                    <strong class="lang-english">Filter</strong>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">혼합</span>
-                    <stron class="lang-english">Mixer</stron>
+                    <strong class="lang-english">Mixer</strong>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">포장</span>
-                    <stron class="lang-english">Packaging</stron>
+                    <strong class="lang-english">Packaging</strong>
                 </li>
             </ul>
             <p class="content-03__text">
