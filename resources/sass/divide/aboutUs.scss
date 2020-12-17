@@ -779,29 +779,29 @@
         max-width: 1400px;
         padding-bottom: 100px;
         margin: 0 auto;
-    }
 
-    &__table {
+        .about-ir__table {
 
-        h3 {
-            margin-bottom: 20px;
-            font-size: 25px;
-            text-align: center;
-        }
+            h3 {
+                margin-bottom: 20px;
+                font-size: 25px;
+                text-align: center;
+            }
 
-        th {
-            padding: 18px 0;
-            font-size: 20px;
-            line-height: 1;
-            border: 2px solid #000;
-        }
+            th {
+                padding: 18px;
+                font-size: 20px;
+                line-height: 1;
+                border: 2px solid #000;
+            }
 
-        td {
-            padding: 23px 0;
-            color: #444444;
-            font-size: 20px;
-            line-height: 1;
-            border: 2px solid #b7b7b7;
+            td {
+                padding: 23px;
+                color: #444444;
+                font-size: 20px;
+                line-height: 1;
+                border: 2px solid #b7b7b7;
+            }
         }
     }
 }

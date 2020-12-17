@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="contents-wrap__section .about-ir__table">
+                <div class="contents-wrap__section about-ir__table">
                     <h3>재무정보 3개년 요약</h3>
                     <table class="table">
                         <tr class="text-center">
