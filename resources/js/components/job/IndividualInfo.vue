@@ -52,7 +52,8 @@
                 <div class="form-group">
                     <label for="">현거주지</label>
                     <div class="input-gorup">
-                        <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요.">
+                        <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요." @click="showPost = true" readonly>
+                        <VueDaumPostcode @complete="onSearch" v-if="showPost"/>
                         <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요.">
                     </div>
                 </div>
@@ -97,13 +98,15 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser, apiDomain} from '../../config'
 import User from '../../job/User'
 import VSpinner from 'vue-spinner/src/BeatLoader'
-import Language from './Language.vue'
+import { VueDaumPostcode } from "vue-daum-postcode"
+// import Language from './Language.vue'
 export default {
-  components: { Language },
+    // components: { Language },
     props: ['mode', 'recruit_id'],
     components: {
         VSpinner,
         Datepicker,
+        VueDaumPostcode,
     },
     computed: {
         job_id() { return this.$store.state.job.id; },
@@ -153,7 +156,10 @@ export default {
         },
         status() {
             return this.$store.state.job.status
-        }
+        },
+        onPostSearch() {
+            this.showPost = true;
+        },
     },
     data: function() {
         return {
@@ -163,6 +169,7 @@ export default {
             preview: '',
             password: '',
             password_confirm: '',
+            showPost: false,
         }
     },
     mounted: function() {
@@ -201,6 +208,11 @@ export default {
         }
     },
     methods: {
+        onSearch: function(data) {
+            console.log(data);
+            this.showPost = false;
+            this.job.address_1 = data.address;
+        },
         picSelect: function (e){
             console.log(e);
             const file = e.target.files[0];
@@ -401,7 +413,7 @@ export default {
             if ( typeof this.job_id == 'undefined' || typeof this.job.id == 'undefined' || this.job.id == '') {
                 formData._method = 'POST';
                 if ( !this.isAuth ) {
-                    url = '/api/join';
+                    url = '/api/join/';
                 } else {
                     url = '/api/work-with-us/job'
                 }

@@ -20,6 +20,7 @@ import common from '../common';
 
 
 window.Vue = require('vue');
+
 // Vue.use(Vuex);
 
 // console.log(getHeader());
@@ -73,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const vueApp = new Vue({
             el: '#app',
             store: JobStore,
-            mounted: function() {
+            beforeMount: function() {
+                console.log( 'Job mounted');
                 this.$root.$on('openPopup', (args1, args2) => {
                     console.log('openPopup', args1, args2);
                     // $('html, body').animate({scrollTop: '0'}, 1000);

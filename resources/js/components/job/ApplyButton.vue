@@ -29,12 +29,12 @@ export default {
                     allowOutsideClick: false
                 }).then(result => {
                     if (result.isConfirmed) {
-                        this.$root.$emit('closePopup');
-                        let jobList = getJob();
-                        if (jobList.indexOf(this.recruit_id) > -1) {
-                            Swal.fire('기존 작성중 이력서');
-                        }
-                        // window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/create';
+                        // this.$root.$emit('closePopup');
+                        // let jobList = getJob();
+                        // if (jobList.indexOf(this.recruit_id) > -1) {
+                        //     Swal.fire('기존 작성중 이력서');
+                        // }
+                        window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/create';
                     }
                 });
             } else {

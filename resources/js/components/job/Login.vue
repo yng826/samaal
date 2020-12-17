@@ -64,11 +64,14 @@ export default {
             this.isOpen = false;
         });
         console.log(this.is_check_auth);
-        if (this.isAuthProp) {
-            // this.isAuth = getAuth();
+        this.isAuth = getAuth();
+        if ( this.is_check_auth ) {
+            if (this.isAuth) {
+
+            } else {
+                this.$root.$emit('openPopup', 'login');
+            }
         }
-        console.log(this.isAuth);
-        // require('../../job/User')
     },
     methods: {
         closePopup: function() {

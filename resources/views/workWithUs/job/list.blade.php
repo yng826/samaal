@@ -9,7 +9,8 @@
         </div>
         <div class="contents-wrap__section {{$pageClass}}__contents">
             <applicant-list-component></applicant-list-component>
-            <login-component action="/api/login"></login-component>
+            <login-component is_check_auth="true"></login-component>
+            <find-password-component></find-password-component>
         </div>
         <div class="top-btn">TOP</div>
     </main>

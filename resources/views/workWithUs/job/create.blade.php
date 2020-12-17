@@ -9,7 +9,6 @@
         </div>
         <div class="{{$pageClass}}__contents">
             <progress-component></progress-component>
-            <vue-daum-postcode />
             <individual-info-component recruit_id="{{$recruit_id}}" mode="create"></individual-info-component>
             <login-component recruit_id="{{$recruit_id}}"></login-component>
             {{-- <join-component recruit_id="{{$recruit_id}}"></join-component> --}}
