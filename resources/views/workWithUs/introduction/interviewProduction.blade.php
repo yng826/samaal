@@ -4,7 +4,7 @@
 @extends('workWithUs.introduction.interviewLayout')
 
 @section('title')
-    생산부문
+    직무인터뷰
     <p>선배들의 이야기를 통해 삼아에서 펼칠 미래를 미리 체험하세요.</p>
 @endsection
 

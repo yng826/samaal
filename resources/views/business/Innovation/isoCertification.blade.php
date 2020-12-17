@@ -8,7 +8,7 @@
     <main class="contents-wrap speciality-iso">
         <div class="contents-wrap__title speciality-iso__title">
             <h2>
-                innovation
+                Innovation
             </h2>
         </div>
         <div class="contents-wrap__tab speciality-iso__tab">

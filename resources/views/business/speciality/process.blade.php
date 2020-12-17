@@ -49,7 +49,7 @@
                 분리기, 분단기, 핀홀 검사기 등의 최신 생산설비<br>
                 <span>국내 최초로 4.5㎛ 중합 압연 성공</span>
                 국/내외에서 인정하는<br>
-                리튬이온배터리(Lithium-Ion Battery, LIB) 양극집전체용 AL-Foill
+                리튬이온배터리(Lithium-Ion Battery, LIB) 양극집전체용 알루미늄 호일
             </p>
             <div class="content-01__img"></div>
         </div>
