@@ -30,7 +30,7 @@
                 <div class="mobile-arrow"></div>
             </div>
 
-            <div class="section main-wrap__section section02">
+            <div class="section main-wrap__section section02" id="about-us">
                 <div class="mobile-mask"></div>
                 <div class="section main-wrap__section--img">
                     <div class="rellax section-bg section-bg--right" data-rellax-speed="2"></div>
@@ -74,7 +74,7 @@
                 <div class="mobile-arrow"></div>
             </div>
 
-            <div class="section main-wrap__section section04">
+            <div class="section main-wrap__section section04" id="work-with-us">
                 <div class="mobile-mask"></div>
                 <div class="section main-wrap__section--img">
                     <div class="rellax section-bg section-bg--right" data-rellax-speed="2"></div>
