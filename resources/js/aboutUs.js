@@ -30,8 +30,8 @@ const about = () => {
          });
 
         $(".popup-mask , .layer-popup__close-btn").on("click",function(){
-            $(".layer-popup").hide();
-            $(".popup-mask").hide();
+            $(".layer-popup").removeClass('show');
+            $(".popup-mask").removeClass('show');
         });
 
 
