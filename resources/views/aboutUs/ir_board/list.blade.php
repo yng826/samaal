@@ -83,7 +83,7 @@
                     <a href="/about-us/ir/board?page={{ $cnt }}" class="pagination__button-next"></a>
                 </div>
                 <div class="about-ir__link">
-                    <button type="button" onclick="location.href='#' ">DART 바로가기</button>
+                    <button type="button" onclick="location.href='http://dart.fss.or.kr/' ">DART 바로가기</button>
                 </div>
             </div>
         </main>

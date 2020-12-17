@@ -127,7 +127,6 @@
                         </dl>
                     </div>
                 </div>
-                <div class="top-btn">TOP</div>
             </main>
 
             @include('shared.footer')

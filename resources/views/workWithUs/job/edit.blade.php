@@ -24,7 +24,6 @@
             <login-component></login-component>
             <find-password-component></find-password-component>
         </div>
-        <div class="top-btn">TOP</div>
     </main>
 @endsection
 

@@ -50,11 +50,11 @@
 
                 <div class="swiper-container business-intro__slide-img">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide"><img src="/images/business/intro/img_foil_01.jpg" alt="알루미늄 Foil"></div>
-                      <div class="swiper-slide"><img src="/images/business/intro/img_foil_02.jpg" alt="포장재"></div>
-                      <div class="swiper-slide"><img src="/images/business/intro/img_foil_03.jpg" alt="산업건축용"></div>
-                      <div class="swiper-slide"><img src="/images/business/intro/img_foil_04.jpg" alt="Speciality"></div>
-                      <div class="swiper-slide"><img src="/images/business/intro/img_foil_05.jpg" alt="Innovation"></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_01.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_02.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_03.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_04.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_05.jpg')no-repeat center / cover"></div></div>
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>

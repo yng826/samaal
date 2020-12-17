@@ -72,7 +72,6 @@
             </div>
         </div>
     </div>
-    <div class="top-btn">TOP</div>
 </main>
 
 @endsection

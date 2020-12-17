@@ -7,7 +7,10 @@
 @section('contents')
 <main class="about-ci contents-wrap">
     <div class="contents-wrap__title about-ci__title">
-        <h2>CI</h2>
+        <h2>
+            CI
+            <p>Corporate Identity</p>
+        </h2>
     </div>
     <div class="contents-wrap__section about-ci__contents">
         <div class="about-ci__identity">
@@ -28,7 +31,6 @@
         </div>
         <div class="about-ci__img"></div>
     </div>
-    <div class="top-btn">TOP</div>
 </main>
 @endsection
 
