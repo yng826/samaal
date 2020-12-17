@@ -41,6 +41,7 @@
         "sweetalert2": "^10.12.4",
         "swiper": "^6.4.1",
         "vue": "^2.5.17",
+        "vue-daum-postcode": "^0.9.0",
         "vue-spinner": "^1.0.4",
         "vue-template-compiler": "^2.6.10",
         "vuedraggable": "^2.24.3",
