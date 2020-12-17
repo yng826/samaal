@@ -1,5 +1,6 @@
 import axios from 'axios'
-import Swal from 'sweetalert2';
+//import Swal from 'sweetalert2';
+const Swal = require('sweetalert2');
 const question = () => {
     const init = () => {
         event_listener();
