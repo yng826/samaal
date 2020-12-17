@@ -8,7 +8,8 @@
                 <h3>사진업로드<em>(최근 3개월내)</em></h3>
                 <div class="form-group">
                     <input type="hidden" name="file_path" v-model="job.file_path">
-                    <div class="picture" v-bind:style="pic">
+                    <img :src="this.preview" />
+                    <div class="picture" v-if="!this.preview" v-bind:style="pic">
                         <span class="picture-text" v-if="!job.file_path">사진을<br> 등록해주세요.</span>
                     </div>
                     <label for="pic" class="input-file-trigger">
@@ -118,21 +119,21 @@ export default {
             if ( this.$store.state.job ) {
                 if ( this.preview ) {
                     return {
-                        'background-image': 'Base64 ' + this.preview
+                        'backgroundImage': 'Base64 ' + this.preview
                     }
                 }
                 if ( this.$store.state.job.file_path ) {
                     return {
-                        'background-image': 'url(/storage/'+ this.$store.state.job.file_path +')',
+                        'backgroundImage': 'url(/storage/'+ this.$store.state.job.file_path +')',
                     };
                 } else {
                 return {
-                    'background-image': 'none',
+                    'backgroundImage': 'none',
                 };
             }
             } else {
                 return {
-                    'background-image': 'none',
+                    'backgroundImage': 'none',
                 };
             }
         },
@@ -220,9 +221,9 @@ export default {
             reader.readAsDataURL(file);
 
             //로드 한 후
-            let that = this;
-            reader.onload = function  () {
-                that.preview = reader.result ;
+            reader.onload = () => {
+                console.log(reader.result);
+                this.preview = reader.result ;
             };
         },
         getInfo: function() {
