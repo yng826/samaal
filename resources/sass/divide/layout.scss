@@ -271,7 +271,7 @@
             position: fixed;
             float: right;
             z-index: 2;
-            right: 5%;
+            right: 2%;
             bottom: 1%;
             display: block;
             width: 173px;
@@ -279,6 +279,13 @@
             background-color: #3767c7;
             border-radius: 50px;
             cursor: pointer;
+            transition: all .5s;
+            width: 60px;
+            overflow: hidden;
+
+            &:hover {
+                width: 173px;
+            }
 
             a {
                 position: absolute;
@@ -348,6 +355,7 @@
 .siteIntro {
     .question-btn {
         display: none;
+        right: 10%;
     }
 }
 
@@ -908,10 +916,14 @@
             padding-bottom: vw(30px);
 
             .question-btn {
-                width: vw(173px);
+                width: vw(60px);
                 height: vw(60px);
                 border-radius: vw(50px);
                 cursor: pointer;
+
+                &:hover {
+                    width: vw(173px);
+                }
 
                 a {
                     left: vw(33px);
@@ -1261,10 +1273,15 @@
             padding-top: vw(30px);
 
             .question-btn {
-                width: vw(346px);
+                width: vw(120px);
                 height: vw(120px);
-                border-radius: vw(100px);
+                border-radius: vw(120px);
                 cursor: pointer;
+                right: 10%;
+
+                &:hover {
+                    width: vw(346px);
+                }
 
                 a {
                     left: vw(66px);
@@ -1793,18 +1810,29 @@
             }
 
             .question-btn {
-                width: 0;
+                // width: 0;
+                width: vw(77px);
+                height: vw(77px);
+                background-size: vw(40px 77px);
+                border-radius: 50%;
+                right: 5%;
+                bottom: 2%;
+
+                &:hover {
+                    width: vw(77px);
+                    height: vw(77px);
+                }
 
                 a {
                     display: none;
                 }
 
                 &::after {
-                    bottom: 1%;
-                    right: 5%;
-                    width: vw(97px);
-                    height: vw(97px);
-                    background-size: vw(23px 37px);
+                    // bottom: 1%;
+                    // right: 5%;
+                    width: vw(77px);
+                    height: vw(77px);
+                    background-size: vw(40px 77px);
                 }
             }
         }
