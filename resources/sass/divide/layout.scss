@@ -352,13 +352,6 @@
     }
 }
 
-.siteIntro {
-    .question-btn {
-        display: none;
-        right: 10%;
-    }
-}
-
 .intro-logo {
     &.hidden {
         display: none;
@@ -1542,6 +1535,13 @@
 
      #app {
         padding-top: vw(90px);
+    }
+
+    .siteIntro {
+        .question-btn {
+            display: none;
+            // right: 10%;
+        }
     }
 
      .header {
