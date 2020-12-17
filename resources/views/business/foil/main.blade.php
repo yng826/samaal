@@ -35,7 +35,7 @@
                 </div>
                 <div class="foil-box__block--item">
                     <a href="foil/line" class="foil-box--item item-line">
-                        <p class="foil-box__text">Hair Line Foil</p>
+                        <p class="foil-box__text">Hair Line</p>
                     </a>
                 </div>
             </div>

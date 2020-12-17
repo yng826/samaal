@@ -21,15 +21,15 @@ const question = () => {
         $('.save-btn').on('click', (e) => {
             e.preventDefault();
             if ( validation() ) {
-                console.log('form submit');
-                $(".question-form").trigger('submit');
-                //axios.post();
-
                 Swal.fire({
                     title: '확인되었습니다!',
                     icon: 'success',
                     confirmButtonText: '확인'
                 });
+
+                console.log('form submit');
+                $(".question-form").trigger('submit');
+                //axios.post();
                 $(".layer-popup").removeClass('show');
                 $(".popup-mask").removeClass('show');
             }
@@ -38,15 +38,15 @@ const question = () => {
         $('.save-btn-all').on('click', (e) => {
             e.preventDefault();
             if ( validation_all() ) {
-                console.log('form submit');
-                $(".question-form-all").submit();
-                //axios.post();
-
                 Swal.fire({
                     title: '확인되었습니다!',
                     icon: 'success',
                     confirmButtonText: '확인'
                 });
+
+                console.log('form submit');
+                $(".question-form-all").submit();
+                //axios.post();
                 $(".layer-popup").removeClass('show');
                 $(".popup-mask").removeClass('show');
             }

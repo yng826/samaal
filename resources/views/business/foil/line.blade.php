@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    Hair Line Foil
+    Hair Line
     <p>
         가전제품 외부 디자인에 활용되는<br>
         삼아 고유의 헤어라인 패턴

@@ -8,7 +8,7 @@
 <main class="innovation-rnd contents-wrap">
     <div class="contents-wrap__title innovation-rnd__title">
         <h2>
-            innovation
+            Innovation
         </h2>
     </div>
     <div class="contents-wrap__tab speciality-iso__tab">
