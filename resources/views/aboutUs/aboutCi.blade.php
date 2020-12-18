@@ -9,7 +9,7 @@
     <div class="contents-wrap__title about-ci__title">
         <h2>
             CI
-            <p>Corporate Identity</p>
+            <p>(Corporate Identity)</p>
         </h2>
     </div>
     <div class="contents-wrap__section about-ci__contents">
