@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
 var LiveReloadPlugin = require('webpack-livereload-plugin');
 require('laravel-mix-merge-manifest');
+require('laravel-mix-polyfill');
 
 /*
  |--------------------------------------------------------------------------

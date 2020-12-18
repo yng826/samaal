@@ -3,6 +3,9 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+// import "core-js";
+import 'core-js/es/number';
+import 'core-js/es/string';
 import common from './common';
 import about from './aboutUs';
 import business from './business';
