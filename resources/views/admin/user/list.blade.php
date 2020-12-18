@@ -22,7 +22,7 @@
                         <tr>
                             <th class="text-center" style="width: 80px;">번호</th>
                             <th class="text-center">사용자명</th>
-                            <th class="text-center">형태</th>
+                            <th class="text-center">역할</th>
                             <th class="text-center">등록/수정일</th>
                             <th class="text-center" style="width: 80px;">관리</th>
                         </tr>
