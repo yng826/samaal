@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <!-- 문의하기 팝업 -->
-                <div class="question-pop layer-popup q-pop">
+                <div class="question-pop layer-popup q-pop business-pop">
                     <button class="question-pop__close-btn layer-popup__close-btn" type="button">닫기</button>
                     <div class="question-pop__title">
                         <h3>문의하기</h3>

@@ -204,7 +204,7 @@
 
     &__logo {
         display: inline-block;
-        width: 229px;
+        width: 233px;
         height: 52px;
         font-size: 0;
         background: url("/images/common/logo.png") no-repeat;
@@ -306,7 +306,7 @@
                 height: 60px;
                 position: absolute;
                 right: 0;
-                background: #1d3669 url("/images/common/icon-question.png")no-repeat center / 15px 21px;
+                background: #1d3669 url("/images/common/icon-question.png")no-repeat 18px center / 32px 32px;
                 border-radius: 50%;
 
             }
@@ -875,7 +875,7 @@
         }
 
         &__logo {
-            width: vw(229px);
+            width: vw(233px);
             height: vw(52px);
         }
 
@@ -929,7 +929,7 @@
                 &::after{
                     width: vw(60px);
                     height: vw(60px);
-                    background: #1d3669 url("/images/common/icon-question.png")no-repeat center / vw(15px) vw(21px);
+                    background: #1d3669 url("/images/common/icon-question.png")no-repeat vw(18px) center / vw(32px) vw(32px);
 
                 }
             }
@@ -1286,7 +1286,7 @@
                 &::after{
                     width: vw(120px);
                     height: vw(120px);
-                    background: #1d3669 url("/images/common/icon-question.png")no-repeat center / vw(30px) vw(42px);
+                    background: #1d3669 url("/images/common/icon-question.png")no-repeat vw(36px) center / vw(64px) vw(64px);
 
                 }
             }
@@ -1541,6 +1541,9 @@
         .question-btn {
             display: none;
             // right: 2%;
+        }
+        .top-btn {
+            display: none;
         }
     }
 
@@ -1811,16 +1814,16 @@
 
             .question-btn {
                 // width: 0;
-                width: vw(77px);
-                height: vw(77px);
+                width: vw(97px);
+                height: vw(97px);
                 background-size: vw(40px 77px);
                 border-radius: 50%;
                 right: 2%;
                 bottom: 2%;
 
                 &:hover {
-                    width: vw(77px);
-                    height: vw(77px);
+                    width: vw(97px);
+                    height: vw(97px);
                 }
 
                 a {
@@ -1830,9 +1833,10 @@
                 &::after {
                     // bottom: 1%;
                     // right: 5%;
-                    width: vw(77px);
-                    height: vw(77px);
-                    background-size: vw(25px 40px);
+                    width: vw(97px);
+                    height: vw(97px);
+                    background-size: vw(48px 48px);
+                    background-position: vw(30px) center;
                 }
             }
         }
@@ -1908,7 +1912,7 @@
     .top-btn {
         display: inline-block;
         position: fixed;
-        bottom: 10%;
+        bottom: 12%;
         right: 2%;
         padding: vw(48px) 0 vw(12px);
         width: vw(77px);
