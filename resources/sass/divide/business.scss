@@ -799,6 +799,9 @@
             border-radius: 5px;
             border: none;
             height: 65px;
+            -moz-appearance:none; /* Firefox */
+            -webkit-appearance:none; /* Safari and Chrome */
+            appearance:none;
 
             &::placeholder {
                 font-size: 18px;
@@ -812,6 +815,8 @@
             &:-ms-input-placeholder  {
                 color: #9f9f9f;
             }
+
+            &::-ms-expand {display:none}
         }
 
         input {
