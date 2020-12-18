@@ -462,11 +462,13 @@
 
         .swiper-pagination {
             bottom: 30px !important;
+            width: 100%;
         }
 
         .swiper-pagination-bullet {
             width: 17px;
             height: 17px;
+            margin: 0 2px;
             background-color: #4e4e4e;
             opacity: 1;
 
