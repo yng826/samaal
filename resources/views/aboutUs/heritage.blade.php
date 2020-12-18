@@ -82,22 +82,26 @@
            loopedSlides: 17,
            centeredSlides: true,
            navigation: {
-               nextEl: '.swiper-button-next',
-               prevEl: '.swiper-button-prev',
+               nextEl: '.about-heritage__slide--year .swiper-button-next',
+               prevEl: '.about-heritage__slide--year .swiper-button-prev',
            }
        });
+       swiperImg.on('slideChange', function(a,b){
+           console.log(a, b);
+       })
        var swiperYear = new Swiper('.about-heritage__slide--year', {
            loop: true,
            slidesPerView: 7,
            loopedSlides: 17,
            centeredSlides: true,
-           navigation: {
-               nextEl: '.swiper-button-next',
-               prevEl: '.swiper-button-prev',
-           }
+        //    navigation: {
+        //        nextEl: '.about-heritage__slide--img .swiper-button-next',
+        //        prevEl: '.about-heritage__slide--img .swiper-button-prev',
+        //    }
        });
        swiperYear.on('click', function(sw,b) {
-           sw.slideTo(sw.clickedIndex);
+           console.log(sw, b);
+        //    sw.slideTo(sw.clickedIndex);
        })
        swiperYear.controller.control = swiperImg;
        swiperImg.controller.control = swiperYear;

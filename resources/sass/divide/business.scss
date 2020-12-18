@@ -1,5 +1,6 @@
 /* 알루미늄 호일, 포장재용, 산업/건축용 content */
 .business-foil {
+    display: block;
     position: relative;
     max-width: 1900px;
     margin: 0 auto;
@@ -9,6 +10,7 @@
         position: fixed;
         float: right;
         width: calc(100% - 61.84210526316%);
+        height: auto;
         right: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -18,6 +20,7 @@
         }
         text-align: center;
         line-height: 70px;
+        white-space: nowrap;
 
         h2 {
             font-weight: 400;
@@ -139,6 +142,7 @@
             right: 36px;
             top: 40px;
             color: $titleColor;
+            text-align: right;
             font: {
                 size: 34px;
                 weight: bold;
@@ -382,9 +386,15 @@
             background-size: contain;
         }
 
+        .swiper-pagination {
+            bottom: 30px !important;
+            width: 100%;
+        }
+
         .swiper-pagination-bullet {
             width: 15px;
             height: 15px;
+            margin: 0 2px;
             background-color: #aeaeae;
             opacity: 1;
         }
@@ -799,6 +809,7 @@
             border-radius: 5px;
             border: none;
             height: 65px;
+            font-size: 18px;
             -moz-appearance:none; /* Firefox */
             -webkit-appearance:none; /* Safari and Chrome */
             appearance:none;
@@ -827,6 +838,7 @@
             color: #000;
             border-radius: 5px;
             border: none;
+            font-size: 18px;
 
             &[type=text] {
                 height: 65px;
@@ -2025,6 +2037,7 @@
             input {
                 padding: 0 vw(30px);
                 border-radius: vw(5px);
+                font-size: vw(18px);
 
                 &[type=text] {
                     height: vw(65px);
@@ -2039,6 +2052,7 @@
                 padding: 0 vw(30px);
                 border-radius: vw(5px);
                 height: vw(65px);
+                font-size: vw(18px);
 
                 &::placeholder {
                     font-size: vw(18px);
@@ -2762,6 +2776,7 @@
             input {
                 padding: 0 vw(60px);
                 border-radius: vw(10px);
+                font-size: vw(36px);
 
                 &[type=text] {
                     height: vw(130px);
@@ -2777,6 +2792,7 @@
                 padding: 0 vw(60px);
                 border-radius: vw(10px);
                 height: vw(130px);
+                font-size: vw(36px);
 
                 &::placeholder {
                     font-size: vw(36px);
@@ -3880,6 +3896,7 @@
             input {
                 padding: 0 vw(10px);
                 border-radius: vw(10px);
+                font-size: vw(24px);
 
                 &[type=text] {
                     height: vw(75px);
@@ -3895,6 +3912,7 @@
                 padding: 0 vw(10px);
                 border-radius: vw(10px);
                 height: vw(75px);
+                font-size: vw(24px);
 
                 &::placeholder {
                     font-size: vw(24px);
