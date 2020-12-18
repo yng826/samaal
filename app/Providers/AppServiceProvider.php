@@ -27,7 +27,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Dispatcher $events)
     {
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
-            if (!empty(Auth::user())) {
+            if (!empty(Auth::user()) && Auth::user()->role != 'user') {
+
+                $event->menu->add('마이페이지');
+                $event->menu->add([
+                    'text' => '개인정보 수정',
+                    'url'  => 'admin/mypage/'. Auth::user()->id. '/edit',
+                    'icon' => 'fas fa-fw fa-user',
+                ]);
+
                 if (Auth::user()->role == 'admin') {
                     $event->menu->add('사용자');
                     $event->menu->add([
