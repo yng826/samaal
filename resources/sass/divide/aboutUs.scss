@@ -717,12 +717,16 @@
             .swiper-button-prev {
                 width: 58px;
                 left: 0;
+                transform: translateY(-50%);
+                margin-top: 0 !important;
                 background-color: #fff;
             }
 
             .swiper-button-next {
                 width: 58px;
                 right: 0;
+                transform: translateY(-50%);
+                margin-top: 0 !important;
                 background-color: #fff;
             }
 

@@ -81,6 +81,10 @@
            slidesPerView: 2,
            loopedSlides: 17,
            centeredSlides: true,
+           navigation: {
+               nextEl: '.swiper-button-next',
+               prevEl: '.swiper-button-prev',
+           }
        });
        var swiperYear = new Swiper('.about-heritage__slide--year', {
            loop: true,
