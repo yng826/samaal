@@ -193,7 +193,7 @@
         .item-line {
             background: url("/images/business/foil/img_line.jpg") no-repeat center / cover;
             &:hover {
-                background: url("/images/business/foil/img_line.jpg") no-repeat center / cover;
+                background: url("/images/business/foil/img_line_hover.jpg") no-repeat center / cover;
             }
         }
 
@@ -729,12 +729,21 @@
 
 /* 문의하기 팝업 */
 .all-q-pop{
-    margin-top: 250px !important;
+    // margin-top: 250px !important;
 }
+
+.business-pop {
+    top: -90px !important;
+}
+
 
 .question-pop {
     width: 610px;
-    margin-top: 50px;
+    // margin-top: 50px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
     display: none;
     &.show {
         display: block;
@@ -2132,6 +2141,10 @@
         }
     }
 
+    .business-pop {
+        top: vw(-90px) !important;
+    }
+
     /* 담당자 팝업 */
     .manager-pop {
         width: vw(610px);
@@ -2863,6 +2876,10 @@
             background-position: vw(300px) center;
             font-size: vw(50px);
         }
+    }
+
+    .business-pop {
+        top: vw(-180px) !important;
     }
 
      /* 담당자 팝업 */
