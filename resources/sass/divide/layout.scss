@@ -48,11 +48,13 @@
 
         &--item {
             display: inline-block;
+            width: auto;
             position: relative;
             padding: 0 20px;
             height: 100%;
             cursor: pointer;
             vertical-align: middle;
+            white-space: nowrap;
 
             span {
                 font-size: 19px;
