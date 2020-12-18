@@ -11,6 +11,10 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.12.11",
         "@mdi/font": "^5.8.55",
         "axios": "^0.19.2",
         "bootstrap": "^4.0.0",
