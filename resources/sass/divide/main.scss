@@ -102,10 +102,15 @@
 
         &--img {
             display: table-cell;
-            position: relative;
             height: 100%;
             width: 1260px;
             vertical-align: middle;
+
+            &--wrap {
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
 
             .section-bg {
                 display: block;
