@@ -35,13 +35,13 @@
                         </li>
                     </ul>
                 </div>
-                <div class="about-ir-list__table" id="about-ir__board">
+                <div class="about-ir-list__table about-ir__table" id="about-ir__board">
                     <h3>전자공고</h3><br />
                     <table class="table">
                         <colgroup>
-                            <col width="10%">
-                            <col width="auto">
                             <col width="20%">
+                            <col width="auto">
+                            <col width="30%">
                           </colgroup>
                         <thead>
                             <tr>
@@ -83,7 +83,7 @@
                     <a href="/about-us/ir/board?page={{ $cnt }}" class="pagination__button-next"></a>
                 </div>
                 <div class="about-ir__link">
-                    <button type="button" onclick="location.href='http://dart.fss.or.kr/' ">DART 바로가기</button>
+                    <a class="link" href="http://dart.fss.or.kr/" target="_blank">DART 바로가기</a>
                 </div>
             </div>
         </main>
