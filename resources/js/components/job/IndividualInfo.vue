@@ -212,7 +212,15 @@ export default {
         }
         if (this.isAuth) {
             if (this.mode == 'create') {
-                window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit';
+                Swal.fire({
+                    title: '작성한 지원서가 있습니다.',
+                    icon: 'info',
+                    text: '작성하신 지원서를 불러옵니다.',
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+                    window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit';
+                });
             } else {
                 let user = getUser();
                 this.$store.state.user = user;
@@ -363,11 +371,15 @@ export default {
                     msg: '휴대폰번호를 입력해주세요',
                 };
             }
-            if ( this.email == '' || this.emailVendor == null ) {
+            if ( this.email == '' ) {
+                if ( this.mode == 'create' && this.emailVendor == null ) {
                 return {
                     result: false,
                     msg: '이메일을 입력해주세요',
                 };
+
+            }
+
             }
             if ( !User.validateEmail (this.email)) {
                 return {
@@ -493,9 +505,12 @@ export default {
                 this.isSubmit = false;
                 if (res.data.result == 'success') {
                     this.preview = null;
-                    this.job.file_path = res.data.file_path;
+                    if ( res.data.job ) {
+                        this.job.file_path = res.data.job.file_path;
+                    } else {
+                        User.setAuth(res.data);
+                    }
 
-                    User.setAuth(res.data);
                     Swal.fire({
                         title: '저장되었습니다!',
                         text: res.data.msg,
@@ -522,8 +537,6 @@ export default {
                             if ( !this.isAuth ) {
 
                             }
-                            // this.$root.$emit('openPopup', 'login', this.recruit_id);
-                            // window.location.href = '/work-with-us/job/' + res.data.job.id
                         }
                     });
                 }

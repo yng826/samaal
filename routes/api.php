@@ -57,7 +57,7 @@ Route::post('join', function (Request $request) {
     $password = $request->password;
     $name = $request->name;
     $name_en = $request->name_en;
-    $phone_decrypt = $request->phone;
+    $phone_decrypt = $request->phone_decrypt;
     $birth_day = $request->birth_day;
     $address_1 = $request->address_1;
     $address_2 = $request->address_2;
@@ -88,6 +88,8 @@ Route::post('join', function (Request $request) {
         $job->recruit_id = $recruit_id;
         $job->phone_encrypt = Crypt::encryptString($phone_decrypt);
         $job->phone_last = substr($phone_decrypt, -4);
+        $job->address_1 = $address_1;
+        $job->address_2 = $address_2;
         $job->status = 'saved';
 
 
