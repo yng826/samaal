@@ -485,7 +485,7 @@ export default {
             if ( typeof this.job_id == 'undefined' || typeof this.job.id == 'undefined' || this.job.id == '') {
                 formData._method = 'POST';
                 if ( !this.isAuth ) {
-                    url = '/api/join/';
+                    url = '/api/join';
                 } else {
                     url = '/api/work-with-us/job'
                 }
