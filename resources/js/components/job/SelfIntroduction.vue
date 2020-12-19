@@ -14,7 +14,7 @@
         <div class="button-group">
             <button class="btn-save" @click="saveItem">저장</button>
         </div>
-        <VSpinner v-if="isSubmit"></VSpinner>
+        <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
     </div>
 </template>
 <script>
@@ -23,7 +23,7 @@ import Swal from 'sweetalert2'
 import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
-import VSpinner from 'vue-spinner/src/BeatLoader'
+import VSpinner from 'vue-simple-spinner'
 export default {
     props: [],
     components: {

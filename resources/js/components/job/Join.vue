@@ -33,7 +33,7 @@
                     <button type="submit">저장</button>
                 </form>
             </div>
-            <VSpinner v-if="isSubmit"></VSpinner>
+            <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
         </div>
     </div>
 </template>
@@ -43,7 +43,7 @@ import {ko} from 'vuejs-datepicker/dist/locale'
 import User from '../../job/User'
 import {getHeader, getAuth, getUser} from '../../config'
 import Swal from 'sweetalert2'
-import VSpinner from 'vue-spinner/src/BeatLoader'
+import VSpinner from 'vue-simple-spinner'
 export default {
     props: ['recruit_id', 'isCheckAuth'],
     components: {

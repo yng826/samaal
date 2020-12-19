@@ -18,14 +18,14 @@
             <button class="btn-add" @click="addItem">추가</button>
             <button class="btn btn-success btn-save" @click="saveItems">저장</button>
         </div>
-        <VSpinner v-if="isSubmit || !this.items"></VSpinner>
+        <VSpinner v-if="isSubmit || !this.items" class="v-spinner"></VSpinner>inner"></VSpinner>
     </div>
 </template>
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import {getHeader, getAuth, getUser} from '../../config'
-import VSpinner from 'vue-spinner/src/BeatLoader'
+import VSpinner from 'vue-simple-spinner'
 export default {
     props: [],
     components: {

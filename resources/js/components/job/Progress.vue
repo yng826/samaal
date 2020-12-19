@@ -14,7 +14,7 @@ import Swal from 'sweetalert2'
 import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
-import VSpinner from 'vue-spinner/src/BeatLoader'
+import VSpinner from 'vue-simple-spinner'
 export default {
     props: ['init_step'],
     components: {

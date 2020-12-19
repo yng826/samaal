@@ -54,7 +54,7 @@
                     <label for="">현거주지</label>
                     <div class="input-gorup">
                         <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요." @click="showPost = true" readonly>
-                        <VueDaumPostcode @complete="onSearch" v-if="showPost"/>
+                        <DaumPost @complete="onSearch" v-if="showPost" />
                         <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요.">
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                 <button>저장</button>
             </div>
         </form>
-        <VSpinner v-if="isSubmit"></VSpinner>
+        <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
     </div>
 </template>
 <style>
@@ -92,14 +92,15 @@
 }
 </style>
 <script>
-import axios from 'axios'
-import Swal from 'sweetalert2'
-import Datepicker from 'vuejs-datepicker'
-import {ko} from 'vuejs-datepicker/dist/locale'
-import {getHeader, getAuth, getUser, apiDomain} from '../../config'
-import User from '../../job/User'
-import VSpinner from 'vue-spinner/src/BeatLoader'
-import { VueDaumPostcode } from "vue-daum-postcode"
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import Datepicker from 'vuejs-datepicker';
+import {ko} from 'vuejs-datepicker/dist/locale';
+import {getHeader, getAuth, getUser, apiDomain} from '../../config';
+import User from '../../job/User';
+import VSpinner from 'vue-simple-spinner';
+import DaumPost from './DaumPost'
+// import DaumPost from "vue-daum-postcode/src/vue-daum-postcode";
 // import Language from './Language.vue'
 export default {
     // components: { Language },
@@ -107,7 +108,7 @@ export default {
     components: {
         VSpinner,
         Datepicker,
-        VueDaumPostcode,
+        DaumPost,
     },
     computed: {
         job_id() { return this.$store.state.job.id; },
@@ -175,7 +176,7 @@ export default {
     },
     mounted: function() {
         this.isAuth = getAuth();
-        console.log(this.isAuth);
+        // console.log(this.isAuth);
         this.$store.state.mode = this.mode;
         if ( this.mode == 'create' ) {
             this.$store.state.step = 1;
@@ -227,11 +228,12 @@ export default {
             };
         },
         getInfo: function() {
+            this.isSubmit = true;
             axios.get('/api/work-with-us/recruit/'+ this.recruit_id,{
                 'headers': getHeader()
             })
             .then(res => {
-
+                this.isSubmit = false;
                 if ( res.data ) {
                     console.log(res.data);
                     this.$store.state.job = {
@@ -459,7 +461,7 @@ export default {
                         allowOutsideClick: false
                     }).then(result => {
                         if (result.isConfirmed) {
-                            if ( !isAuth ) {
+                            if ( !this.isAuth ) {
 
                             }
                             // this.$root.$emit('openPopup', 'login', this.recruit_id);

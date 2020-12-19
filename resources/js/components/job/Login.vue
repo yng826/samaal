@@ -22,7 +22,7 @@
                     <button type="submit" class="submit-btn">확인하기</button>
                 </form>
             </div>
-            <VSpinner v-if="isSubmit"></VSpinner>
+            <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
         </div>
     </div>
 </template>
@@ -32,7 +32,7 @@
 import User from '../../job/User'
 import {getHeader, getAuth, getUser} from '../../config'
 import Swal from 'sweetalert2'
-import VSpinner from 'vue-spinner/src/BeatLoader'
+import VSpinner from 'vue-simple-spinner'
 export default {
     props: ['action','is_check_auth','job_id', 'request_id'],
     components: {

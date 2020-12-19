@@ -4,12 +4,12 @@
         <button v-if="isEdit && step==3" @click="changeStep(2)">이력서 작성</button>
         <button v-if="isEdit && step==3" @click="changeStep(4)">제출전 확인</button>
         <button v-if="isEdit && step==4" @click="sendApplicant">제출</button>
-        <VSpinner v-if="isSubmit"></VSpinner>
+        <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
     </div>
 </template>
 <script>
 import {getHeader} from '../../config'
-import VSpinner from 'vue-spinner/src/BeatLoader'
+import VSpinner from 'vue-simple-spinner'
 import Swal from 'sweetalert2'
 export default {
     props: ['mode'],

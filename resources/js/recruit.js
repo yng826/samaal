@@ -6,9 +6,8 @@
 // import common from './common';
 // import business from './business';
 // import about from './aboutUs';
-
-import axios from 'axios';
-
+// import 'babel-polyfill'
+// import '@babel/polyfill'
 require('./bootstrap');
 // require('axios');
 // require('./common');
@@ -41,14 +40,11 @@ window.Vue = require('vue');
  */
 // window.$ = window.jQuery = require('jquery');
 Vue.component('login-component', require('./components/job/Login.vue').default);
-Vue.component('join-component', require('./components/job/Join.vue').default);
+// Vue.component('join-component', require('./components/job/Join.vue').default);
 Vue.component('find-password-component', require('./components/job/FindPassword.vue').default);
 Vue.component('apply-button', require('./components/job/ApplyButton.vue').default);
 Vue.component('check-apply-button', require('./components/job/CheckApplyButton.vue').default);
 
-
-// import {JobStore} from './Job/Store'
-import ApplyButton from './components/job/ApplyButton';
 const app = new Vue({
     el: '#app',
     mounted: function() {

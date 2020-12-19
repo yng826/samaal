@@ -193,6 +193,7 @@ input, select {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background: rgba(0,0,0,0.6);
     z-index: 99999;
 }

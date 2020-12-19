@@ -92,7 +92,7 @@
 
 @section('popup-container')
     <login-component recruit_id="{{$recruit->id}}"></login-component>
-    <join-component recruit_id="{{$recruit->id}}"></join-component>
+    {{-- <join-component recruit_id="{{$recruit->id}}"></join-component> --}}
     <find-password-component></find-password-component>
 @endsection
 @section('script')
