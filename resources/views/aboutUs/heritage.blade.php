@@ -101,7 +101,9 @@
        });
        swiperYear.on('click', function(sw,b) {
            console.log(sw, b);
-        //    sw.slideTo(sw.clickedIndex);
+           if ( b.target.className !== 'swiper-button-next' && b.target.className !== 'swiper-button-prev') {
+                sw.slideTo(sw.clickedIndex);
+           }
        })
        swiperYear.controller.control = swiperImg;
        swiperImg.controller.control = swiperYear;
