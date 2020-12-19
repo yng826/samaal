@@ -48,11 +48,13 @@
 
         &--item {
             display: inline-block;
+            width: auto;
             position: relative;
             padding: 0 20px;
             height: 100%;
             cursor: pointer;
             vertical-align: middle;
+            white-space: nowrap;
 
             span {
                 font-size: 19px;
@@ -358,7 +360,7 @@
     }
 }
 
-.sub-hader {
+.sub-header {
     background-color: transparent;
     border: 0;
 
@@ -1989,7 +1991,7 @@
         }
     }
 
-    .sub-hader {
+    .sub-header {
         background-color: transparent;
         border: 0;
 
