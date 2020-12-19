@@ -64,8 +64,8 @@
                 <div class="form-group">
                     <label for="">현거주지</label>
                     <div class="input-gorup">
-                        <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요." @click="showPost = true" readonly>
-                        <DaumPost style="" @complete="onSearch" v-if="showPost" />
+                        <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요." @click="onClickPost" readonly>
+                        <DaumPost style="" @complete="onSearch" v-show="showPost" />
                         <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요.">
                     </div>
                 </div>
@@ -266,10 +266,16 @@ export default {
             }
             this.user.email = this.createEmail + '@' + this.emailVendor;
         },
+        onClickPost: function(e) {
+            this.showPost = true;
+            $('body').css('overflow', 'hidden');
+            // $(window).scrollTop($(document).height());
+        },
         onSearch: function(data) {
             console.log(data);
             this.showPost = false;
             this.job.address_1 = data.address;
+            $('body').css('overflow', '');
         },
         picSelect: function (e){
             console.log(e);

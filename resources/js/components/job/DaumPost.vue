@@ -13,7 +13,7 @@
     background-color: rgba(0,0,0,0.5);
     left: 0;
     top: 0;
-    padding: 20vw 10vw;
+    padding: 20vw 5vw;
     box-sizing: border-box;
     z-index: 9;
         overflow: scroll;
@@ -125,8 +125,9 @@ export default {
     computed: {
         styles() {
             const styles = {}
-            styles.marginTop = '20%';
+            styles.marginTop = '15%';
             styles.position = 'relative';
+            styles.minHeight = '300px';
             styles.height = this.styleHeight
             return styles
         },
