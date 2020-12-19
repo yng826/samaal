@@ -39,6 +39,7 @@ class User {
             'recruit_id': data.recruit_id,
         }).then( (res) => {
             if (res.data.result == 'success') {
+                console.log("setAuth:::", res.data);
                 this.setAuth(res.data);
             } else {
                 console.error(res);

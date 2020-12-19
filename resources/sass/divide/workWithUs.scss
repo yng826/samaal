@@ -221,6 +221,15 @@
                         width: 100%;
                         margin-bottom: 10px;
                     }
+
+                    select {
+                        padding: 0 19px;
+                        width: 100%;
+                        height: 40px;
+                        box-sizing: border-box;
+                        font-size: 18px;
+                        display: block;
+                    }
                 }
 
                 .input_date-group {
@@ -1525,12 +1534,12 @@
                 .privacy-box {
                     padding: vw(28px 30px);
                     height: vw(296px);
-                    font-size: vw(13px);
+                    font-size: 12px;
                 }
 
                 &__label {
                     span {
-                        font-size: vw(13px);
+                        font-size: 12px;
 
                     }
                 }
@@ -2055,7 +2064,14 @@
                         padding: vw(0 38px);
                         height: vw(80px);
                         border-radius: vw(10px);
-                        font-size: vw(36px);
+                        font-size: 11px;
+                    }
+
+                    select {
+                        padding: vw(0 38px);
+                        height: vw(80px);
+                        width: 100%;
+                        font-size: 11px;
                     }
                 }
 
@@ -2123,13 +2139,12 @@
                 .privacy-box {
                     padding: vw(36px 60px);
                     height: vw(392px);
-                    font-size: vw(26px);
+                    font-size: 11px;
                 }
 
                 &__label {
                     span {
-                        font-size: vw(13px);
-
+                        font-size: 11px;
                     }
                 }
 
@@ -2645,6 +2660,8 @@
     .popup-container {
 
         padding: vw(30px 50px 25px);
+        width: vw(80);
+        box-sizing: border-box;
 
         .form-container {
             .form-wrap {
@@ -2657,6 +2674,7 @@
                         display: table-cell;
                         width: 30%;
                         font-size: vw(20px);
+                        display: block;
                     }
 
                     input {
@@ -2757,6 +2775,14 @@
                         box-sizing: border-box;
                         height: auto;
                     }
+
+                    .input-gorup {
+                        width: vw(300px);
+
+                        input {
+                            margin-bottom: vw(10px);
+                        }
+                    }
                     .input_date-group {
                         width: vw(300px);
                         .inline-block {
@@ -2806,7 +2832,7 @@
                 .privacy-box {
                     padding: vw(28px 30px);
                     height: vw(100px);
-                    font-size: vw(15px);
+                    font-size: 11px;
                 }
 
                 &__check {
@@ -2822,7 +2848,7 @@
 
                 &__label {
                     span {
-                        font-size: vw(16px);
+                        font-size: 11px;
                     }
                 }
             }

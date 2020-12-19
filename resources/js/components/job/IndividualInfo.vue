@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <div class="input_date-group">
+                    <div class="input-gorup input_date-group">
                         <Datepicker class="inline-block" name="birth_day" :language="ko" v-model="user_info.birth_day" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
@@ -40,7 +40,18 @@
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
-                    <input type="text" name="email" :disabled="job.id || isAuth" v-model="user.email" placeholder="입력해주세요.">
+                    <div class="input-gorup">
+                        <input type="text" name="email" :disabled="job.id || isAuth" :value="mode == 'edit' ? this.email : this.createEmail" @input="onInputEmail" placeholder="입력해주세요.">
+                        <span v-if="emailEditable">@</span>
+                        <input type="text" name="email_vendor_input" :value="this.emailVendor" @input="onInputVendor" :readonly="!selectEdit" v-if="emailEditable" placeholder="입력 또는 선택해주세요.">
+                        <select name="email_vendor_select" id="" @change="onSelectEmail" v-if="emailEditable">
+                            <option value="">이메일</option>
+                            <option value="naver.com">네이버</option>
+                            <option value="daum.net">다음</option>
+                            <option value="google.com">구글</option>
+                            <option value="manual">직접입력</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
@@ -54,7 +65,7 @@
                     <label for="">현거주지</label>
                     <div class="input-gorup">
                         <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요." @click="showPost = true" readonly>
-                        <DaumPost @complete="onSearch" v-if="showPost" />
+                        <DaumPost style="" @complete="onSearch" v-if="showPost" />
                         <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요.">
                     </div>
                 </div>
@@ -70,13 +81,13 @@
                     보안, 프라이버시, 안전 측면에서 이용자가 안심하고 이용할 수 있는 서비스 이용환경 구축을 위해 개인정보를 이용합니다.
                 </div>
                 <label for="check-1" class="information-box__label">
-                    <input type="checkbox" name="" id="check-1" class="information-box__check">
+                    <input type="checkbox" name="" id="check-1" class="information-box__check" v-model="agree">
                     <span>개인정보 이용 및 수집에 동의 합니다.</span>
                 </label>
-                <label for="check-2" class="information-box__label">
+                <!-- <label for="check-2" class="information-box__label">
                     <input type="checkbox" name="" id="check-2" class="information-box__check">
                     <span>개인정보 이용 및 수집에 동의 합니다.</span>
-                </label>
+                </label> -->
             </div>
             <div class="button-group" v-if="isPossibleSave">
                 <button>저장</button>
@@ -110,7 +121,36 @@ export default {
         Datepicker,
         DaumPost,
     },
+    data: function() {
+        return {
+            isAuth: false,
+            isSubmit: true,
+            ko: ko,
+            preview: '',
+            password: '',
+            password_confirm: '',
+            showPost: false,
+            createEmail: '',
+            emailVendor: null,
+            selectEdit: false,
+            agree: false,
+        }
+    },
     computed: {
+        email() {
+            if ( this.mode == 'create' ) {
+                return this.createEmail + '@' + this.emailVendor;
+            } else {
+                return this.$store.state.user.email;
+            }
+        },
+        emailEditable() {
+            if ( this.mode == 'create') {
+                return true;
+            } else {
+                return false;
+            }
+        },
         job_id() { return this.$store.state.job.id; },
         job () { return this.$store.state.job },
         user () { return this.$store.state.user },
@@ -163,17 +203,6 @@ export default {
             this.showPost = true;
         },
     },
-    data: function() {
-        return {
-            isAuth: false,
-            isSubmit: true,
-            ko: ko,
-            preview: '',
-            password: '',
-            password_confirm: '',
-            showPost: false,
-        }
-    },
     mounted: function() {
         this.isAuth = getAuth();
         // console.log(this.isAuth);
@@ -210,6 +239,25 @@ export default {
         }
     },
     methods: {
+        onInputEmail: function(e) {
+            this.createEmail = e.target.value;
+            this.user.email = this.createEmail + '@' + this.emailVendor;
+        },
+        onInputVendor: function(e) {
+            this.emailVendor = e.target.value;
+            this.user.email = this.createEmail + '@' + this.emailVendor;
+        },
+        onSelectEmail: function(e) {
+            console.log(e.target.value);
+            if ( e.target.value == 'manual') {
+                this.selectEdit = true;
+                this.emailVendor = null;
+            } else {
+                this.selectEdit = false;
+                this.emailVendor = e.target.value;
+            }
+            this.user.email = this.createEmail + '@' + this.emailVendor;
+        },
         onSearch: function(data) {
             console.log(data);
             this.showPost = false;
@@ -315,13 +363,13 @@ export default {
                     msg: '휴대폰번호를 입력해주세요',
                 };
             }
-            if ( this.user.email == '' ) {
+            if ( this.email == '' || this.emailVendor == null ) {
                 return {
                     result: false,
                     msg: '이메일을 입력해주세요',
                 };
             }
-            if ( !User.validateEmail (this.user.email)) {
+            if ( !User.validateEmail (this.email)) {
                 return {
                     result: false,
                     msg: '이메일형식이 맞지 않습니다',
@@ -350,6 +398,12 @@ export default {
                     return {
                         result: false,
                         msg: '비밀번호가 일치하지 않습니다',
+                    };
+                }
+                if ( !this.agree ) {
+                    return {
+                        result: false,
+                        msg: '개인정보 이용 및 수집에 동의해주세요',
                     };
                 }
             } else {
@@ -409,6 +463,9 @@ export default {
 
             var form = document.querySelector('#individualInfoForm');
             var formData = new FormData(form);
+            if ( this.mode == 'create' ) {
+                formData.set('email', this.user.email);
+            }
             console.log('JOBID::', this.job_id);
             console.log('RECRUIT ID::', this.recruit_id);
             console.log('RECRUIT ID::', this.$store.state.job.recruit_id);
@@ -438,6 +495,7 @@ export default {
                     this.preview = null;
                     this.job.file_path = res.data.file_path;
 
+                    User.setAuth(res.data);
                     Swal.fire({
                         title: '저장되었습니다!',
                         text: res.data.msg,

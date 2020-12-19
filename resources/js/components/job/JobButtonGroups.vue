@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-import {getHeader} from '../../config'
+import {getAuth, getHeader} from '../../config'
 import VSpinner from 'vue-simple-spinner'
 import Swal from 'sweetalert2'
 export default {
@@ -21,7 +21,7 @@ export default {
             return this.mode == 'create'
         },
         isEdit() {
-            return this.mode == 'edit'
+            return this.mode == 'edit' && getAuth()
         },
         step() {
             return this.$store.state.step

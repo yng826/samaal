@@ -1,8 +1,24 @@
 <template>
-    <div ref="daumPostBox" v-bind:style="styles">
-        
+    <div class="daum-post-box" @click="onClick">
+        <div ref="daumPostBox" v-bind:style="styles">
+
+        </div>
     </div>
 </template>
+<style>
+.daum-post-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+    padding: 20vw 10vw;
+    box-sizing: border-box;
+    z-index: 9;
+        overflow: scroll;
+}
+</style>
 <script>
 export default {
       animation: {
@@ -109,9 +125,16 @@ export default {
     computed: {
         styles() {
             const styles = {}
+            styles.marginTop = '20%';
+            styles.position = 'relative';
             styles.height = this.styleHeight
             return styles
         },
     },
+    methods: {
+        onClick() {
+            console.log('click');
+        }
+    }
 }
 </script>

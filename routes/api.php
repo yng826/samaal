@@ -38,14 +38,17 @@ Route::post('login', function (Request $request) {
         session(['access_token' => $token->accessToken]);
 
     } else {
-
+        $logged = false;
+        $user = null;
+        $job = null;
     }
-    return [
+    $result = [
         'logged' => $logged,
         'user' => $user,
         'job' => $job,
         'token' => $token,
     ];
+    return $result;
 });
 
 Route::post('join', function (Request $request) {

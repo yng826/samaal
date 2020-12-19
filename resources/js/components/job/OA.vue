@@ -18,7 +18,7 @@
             <button class="btn-add" @click="addItem">추가</button>
             <button class="btn btn-success btn-save" @click="saveItems">저장</button>
         </div>
-        <VSpinner v-if="isSubmit || !this.items" class="v-spinner"></VSpinner>inner"></VSpinner>
+        <VSpinner v-if="isSubmit || !this.items" class="v-spinner"></VSpinner>
     </div>
 </template>
 <script>
@@ -33,7 +33,14 @@ export default {
     },
     computed: {
         isShow() {
-            return this.$store.state.step == 2 && this.$store.state.mode == 'edit'
+            let step2 = this.$store.state.step == 2;
+            let job_id = this.$store.state.job.id;
+            const editMode = this.$store.state.mode == 'edit';
+            if ( step2 && job_id && editMode ) {
+                return true;
+            } else {
+                return false;
+            }
         },
         job_id() { return this.$store.state.job.id; },
         items () {
