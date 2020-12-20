@@ -15,18 +15,22 @@
                     <h3>채용 지원자 상세</h3>
                 </div>
                 <div class="col-3 col-xl-2">
-                    <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
-                        @method('PUT')
-                        @csrf
-                        <div class="form-group form-inline">
-                            <select class="form-control w-auto mr-1" name="status">
-                                <option value="">::처리상태::</option>
-                                <option value="pending" {{ $job->status == 'pending' ? 'selected' :''}}>처리중</option>
-                                <option value="expired" {{ $job->status == 'expired' ? 'selected' :''}}>종료</option>
-                            </select>
-                            <button type="button" class="btn btn-primary text-white edit-btn">변경</button>
-                        </div>
-                    </form>
+                    <div class="form-inline">
+                        <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
+                            @method('PUT')
+                            @csrf
+                            <div class="form-group form-inline">
+                                <select class="form-control w-auto mr-1" name="status">
+                                    <option value="">::처리상태::</option>
+                                    <option value="pending" {{ $job->status == 'pending' ? 'selected' :''}}>처리중</option>
+                                    <option value="expired" {{ $job->status == 'expired' ? 'selected' :''}}>종료</option>
+                                </select>
+                                <button type="button" class="btn btn-primary text-white edit-btn">변경</button>
+                            </div>
+                        </form>
+                        <span class="mr-1 ml-1">|</span>
+                        <a class="btn btn-info text-white" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/excel-download">EXCEL</a>
+                    </div>
                 </div>
             </div>
         </div>
