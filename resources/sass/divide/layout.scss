@@ -875,6 +875,46 @@
 
 }
 
+/* 개인정보 처리방침 */
+.privacy-wrap {
+
+    &__title {
+        padding: 57px 0;
+    }
+
+    &__contents {
+        max-width: 1382px;
+        margin: 0 auto;
+        padding: 64px 0;
+
+        p {
+            display: block;
+            margin-top: 30px;
+            font-size: 17px;
+            color: #2a2a2a;
+            word-break: keep-all;
+
+            em {
+                display: block;
+                font-weight: bold;
+            }
+
+            &.mt-0 {
+                margin-top: 0;
+            }
+        }
+
+        table {
+            width: 610px;
+
+            th {
+                background-color: #ebebeb;
+            }
+        }
+    }
+}
+
+
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
     @import "./lib/webvw";
@@ -1286,6 +1326,23 @@
 
             &--right {
                 display: inline-block;
+            }
+        }
+    }
+
+    /* 개인정보 처리방침 */
+    .privacy-wrap {
+        &__title {
+            padding: vw(57px 0);
+        }
+
+        &__contents {
+            max-width: vw(1382px);
+            padding: vw(64px 0);
+
+
+            table {
+                width: vw(610px);
             }
         }
     }
@@ -2373,6 +2430,24 @@
             &--right {
                 float: right;
                 width: 50%;
+            }
+        }
+    }
+
+
+    /* 개인정보 처리방침 */
+    .privacy-wrap {
+        &__title {
+            padding: vw(69px 0);
+        }
+
+        &__contents {
+            max-width: 100%;
+            padding: vw(0 50px);
+
+
+            table {
+                width: 100%;
             }
         }
     }

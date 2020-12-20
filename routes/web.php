@@ -296,6 +296,10 @@ Route::prefix('work-with-us')->group(function () {
 Route::prefix('other')->group(function () {
     Route::get('search', [SearchController::class, 'index']);
     Route::get('sitemap', [SitemapController::class, 'index']);
+
+    Route::get('privacy', function () {
+        return view('other.privacy');
+    });
 });
 
 
