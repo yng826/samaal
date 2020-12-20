@@ -7,12 +7,12 @@ use App\Models\Work\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class RecruitJobController extends Controller
 {
@@ -436,7 +436,7 @@ class RecruitJobController extends Controller
         header('Content-Disposition: attachment;filename="채용지원상세_'. $job->user->name. '.xlsx"');
         header('Cache-Control: max-age=0');
 
-        $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+        $writer = new Xlsx($spreadsheet);
 
         $writer->save('php://output'); //download file
     }
