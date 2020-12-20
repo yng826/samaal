@@ -12,9 +12,9 @@
             도전을 즐기는 전문가들과 함께<br>
             여러분의 CAREER PATH를 만들어보세요
         </p>
-        <strong>삼아와 함께 혁신의 역사를 이어갈 분을 환영합니다</strong>
     </div>
     <div class="introduction-introjob__contents">
+        <strong>삼아와 함께 혁신의 역사를 이어갈 분을 환영합니다</strong>
         <ul class="introduction-introjob__list">
             <li class="introduction-introjob__list--item">
                 <h3 class="title-production">생산</h3>
