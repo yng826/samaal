@@ -16,7 +16,7 @@
                         <label for="phone">핸드폰번호</label>
                         <input type="text" name="phone" id="phone" v-model="phone" ref="phone">
                     </div>
-                    <button type="submit">확인하기</button>
+                    <button type="submit" class="submit-btn">확인하기</button>
                 </form>
             </div>
             <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
@@ -103,13 +103,40 @@ export default {
             let finded = User.find({
                 name: this.name,
                 email: this.email,
+                phone: this.phone,
             });
 
             console.log(finded);
             finded.then( res => {
                 console.log( res );
                 this.isSubmit = false;
-                this.$root.$emit('closePopup');
+
+                if ( res.data.result == 'success' ) {
+                    Swal.fire({
+                        title: '확인되었습니다',
+                        icon: 'success',
+                        text: res.data.msg,
+                        allowOutsideClick: false,
+                        confirmButtonText: `확인`,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // this.isSubmit = true;
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: '확인되지 않았습니다',
+                        icon: 'error',
+                        text: res.data.msg,
+                        allowOutsideClick: false,
+                        confirmButtonText: `확인`,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // this.isSubmit = true;
+                        }
+                    });
+                }
+
             }).catch( err => {
                 console.error(err);
                 this.isSubmit = false;

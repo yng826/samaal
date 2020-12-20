@@ -97,6 +97,7 @@ class User {
         return axios.post('/api/find', {
             'name': data.name,
             'email': data.email,
+            'phone': data.phone,
         })
         .then((res)=> {
             if ( res.data ) {
