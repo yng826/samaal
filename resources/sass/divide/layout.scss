@@ -1931,6 +1931,50 @@
                 background-size: contain;
             }
         }
+
+        .header-search {
+            top: vw(90px);
+
+            &__box {
+                padding: vw(30px 0);
+                max-width: 100%;
+
+                &--input {
+                    width: vw(430px);
+                    padding: vw(0 90px 0 47px);
+                    font-size: vw(40px);
+
+                    input {
+                        font-size: vw(40px);
+
+                        &[type=text] {
+                            height: vw(75px);
+                        }
+
+                        &::placeholder {
+                            font-size: vw(40px);
+                        }
+                    }
+                }
+
+                &--button {
+                    right: vw(24px);
+                    width: vw(46px);
+                    height: vw(46px);
+                    background: url("/images/common/btn_search.png") no-repeat center  / vw(46px);
+                }
+
+                &--close {
+                    right: vw(30px);
+                    width: vw(40px);
+                    height: vw(40px);
+                }
+            }
+
+            &.on {
+                max-height: vw(360px);
+            }
+        }
     }
 
     .footer {
