@@ -192,6 +192,93 @@
             vertical-align: middle;
         }
     }
+
+    .header-search {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        max-height: 0;
+        left: 0;
+        top: 90px;
+        background-color: #e8ecef;
+        text-align: center;
+        transition: max-height .3s ease-in-out;
+
+        &__box {
+            position: relative;
+            padding: 55px 0;
+            margin: 0 auto;
+            max-width: 1382px;
+
+            &--input {
+                position: relative;
+                width: 800px;
+                margin: 0 auto;
+                padding: 0 55px 0 27px;
+                background-color: #fff;
+                font-size: 25px;
+
+                input {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
+                    font-size: 25px;
+                    color: #000;
+                    vertical-align: middle;
+                    border: none;
+                    outline: none;
+
+                    &[type=text] {
+                        height: 70px;
+                        box-sizing: border-box;
+                    }
+
+                    &::placeholder {
+                        font-size: 25px;
+                        color: #9f9f9f;
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: #9f9f9f;
+                    }
+
+                    &:-ms-input-placeholder  {
+                        color: #9f9f9f;
+                    }
+                }
+            }
+
+            &--button {
+                display: inline-block;
+                position: absolute;
+                right: 23px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 32px;
+                height: 32px;
+                background: url("/images/common/btn_search.png") no-repeat center  / 32px;
+                font-size: 0;
+                vertical-align: middle;
+            }
+
+            &--close {
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 30px;
+                height: 30px;
+                background: url("/images/common/btn_close.png") no-repeat right/contain;
+                font-size: 0;
+            }
+        }
+
+        &.on {
+            max-height: 180px;
+        }
+    }
 }
 
 .footer {
@@ -868,6 +955,49 @@
                 height: vw(32px);
             }
         }
+
+        .header-search {
+            top: vw(90px);
+
+            &__box {
+                padding: vw(55px 0);
+                max-width: vw(1382px);
+
+                &--input {
+                    width: vw(800px);
+                    padding: vw(0 55px 0 27px);
+                    font-size: vw(25px);
+
+                    input {
+                        font-size: vw(25px);
+
+                        &[type=text] {
+                            height: vw(70px);
+                        }
+
+                        &::placeholder {
+                            font-size: vw(25px);
+                        }
+                    }
+                }
+
+                &--button {
+                    right: vw(23px);
+                    width: vw(32px);
+                    height: vw(32px);
+                    background: url("/images/common/btn_search.png") no-repeat center  / vw(32px);
+                }
+
+                &--close {
+                    width: vw(30px);
+                    height: vw(30px);
+                }
+            }
+
+            &.on {
+                max-height: vw(180px);
+            }
+        }
     }
 
     .footer {
@@ -1240,6 +1370,49 @@
             .btn-search {
                 width: vw(64px);
                 height: vw(64px);
+            }
+        }
+
+        .header-search {
+            top: vw(180px);
+
+            &__box {
+                padding: vw(110px 0);
+                max-width: 100%;
+
+                &--input {
+                    padding: vw(0 110px 0 54px);
+                    font-size: vw(50px);
+
+                    input {
+                        font-size: vw(50px);
+
+                        &[type=text] {
+                            height: vw(140px);
+                        }
+
+                        &::placeholder {
+                            font-size: vw(50px);
+                        }
+                    }
+                }
+
+                &--button {
+                    right: vw(46px);
+                    width: vw(64px);
+                    height: vw(64px);
+                    background: url("/images/common/btn_search.png") no-repeat center  / vw(64px);
+                }
+
+                &--close {
+                    right: vw(100px);
+                    width: vw(60px);
+                    height: vw(60px);
+                }
+            }
+
+            &.on {
+                max-height: vw(360px);
             }
         }
     }

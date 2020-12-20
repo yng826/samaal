@@ -10,7 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class={{ $bodyClass ?? '' }}>
-    <div id="app">
+    <div id="main">
         @include('shared.header')
 
         <div id="fullpage" class="fp-destroyed main-wrap">
