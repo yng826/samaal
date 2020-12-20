@@ -45,3 +45,7 @@ Capacitor용 호일의 용량을 더 늘릴 수 있도록<br>
     </tr>
 </table>
 @endsection
+
+@section('manager-pop')
+    @include('layouts.managerPop01')
+@endsection

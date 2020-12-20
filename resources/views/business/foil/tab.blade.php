@@ -51,3 +51,7 @@
         </tr>
     </table>
 @endsection
+
+@section('manager-pop')
+    @include('layouts.managerPop01')
+@endsection
