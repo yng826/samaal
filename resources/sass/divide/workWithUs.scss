@@ -511,12 +511,13 @@
 .introduction-introjob {
     &__title {
         text-align: center;
-        margin: 90px auto 100px;
+        padding: 80px 0 ;
+        background-color: $titleColor;
 
         h2 {
             display: block;
             margin-bottom: 30px;
-            color: #000;
+            color: #fff;
             font-size: 40px;
             font-weight: bold;
             line-height: 1;
@@ -524,22 +525,23 @@
 
         p {
             display: block;
-            margin-bottom: 40px;
-            color: #000;
+            color: #fff;
             font-size: 20px;
             line-height: 30px;
-        }
-
-        strong {
-            display: block;
-            font-size: 25px;
-            color: $titleColor;
         }
     }
 
     &__contents {
         max-width: 1510px;
         margin: 0 auto;
+
+        strong {
+            display: block;
+            margin: 40px 0;
+            text-align: center;
+            font-size: 25px;
+            color: $titleColor;
+        }
     }
 
     &__list {
@@ -1562,7 +1564,7 @@
     /* 직무소개 */
     .introduction-introjob {
         &__title {
-            margin: vw(90px auto 100px);
+            padding: vw(80px 0);
 
             h2 {
                 margin-bottom: vw(30px);
@@ -1570,18 +1572,18 @@
             }
 
             p {
-                margin-bottom: vw(40px);
                 font-size: vw(20px);
                 line-height: vw(30px);
-            }
-
-            strong {
-                font-size: vw(25px);
             }
         }
 
         &__contents {
             max-width: vw(1510px);
+
+            strong {
+                font-size: vw(25px);
+                margin: vw(40px 0);
+            }
         }
 
         &__list {
@@ -2166,7 +2168,7 @@
      /* 직무소개 */
      .introduction-introjob {
         &__title {
-            margin: vw(90px auto 100px);
+            padding: vw(160px 0);
 
             h2 {
                 margin-bottom: vw(30px);
@@ -2174,18 +2176,18 @@
             }
 
             p {
-                margin-bottom: vw(40px);
                 font-size: vw(30px);
                 line-height: vw(35px);
-            }
-
-            strong {
-                font-size: vw(30px);
             }
         }
 
         &__contents {
             max-width: vw(3020px);
+
+            strong {
+                margin: vw(40px 0);
+                font-size: vw(30px);
+            }
         }
 
         &__list {
@@ -2888,10 +2890,9 @@
 
     /* 직무소개 */
     .introduction-introjob {
-        padding: 0 vw(70px);
 
         &__title {
-            margin: vw(72px auto 74px);
+            padding: vw(72px 0 74px);
 
             h2 {
                 margin-bottom: vw(27px);
@@ -2899,19 +2900,21 @@
             }
 
             p {
-                margin-bottom: vw(32px);
                 font-size: vw(21px);
                 line-height: vw(33px);
-            }
-
-            strong {
-                font-size: vw(28px);
-                font-weight: 400;
             }
         }
 
         &__contents {
             max-width: vw(750px);
+            padding: 0 vw(70px);
+
+
+            strong {
+                margin: vw(32px 0);
+                font-size: vw(28px);
+                font-weight: 400;
+            }
         }
 
         &__list {

@@ -22,6 +22,16 @@ const common = () => {
         });
     }
 
+    const header_search = () => {
+        $(".header .btn-search").on('click', function(){
+            $(".header .header-search").toggleClass("on");
+        });
+
+        $(".header-search__box--close").on('click', function(){
+            $(".header .header-search").removeClass("on");
+        });
+    }
+
     const header_nav = () => {
         // header menu mouseover 했을 경우
          $(".header__nav--item").on('mouseover', function(){
@@ -114,6 +124,7 @@ const common = () => {
 
     const common_init = () => {
         header_lang();
+        header_search();
         header_nav();
         TopButton();
         footer_top();

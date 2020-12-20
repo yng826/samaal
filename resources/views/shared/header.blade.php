@@ -3,7 +3,6 @@
         <img src="/images/common/logo.png" alt="SAMA">
     </a>
 
-
     <nav class="header__nav">
         <ul>
             @foreach ($treeMenu as $menu)
@@ -64,5 +63,15 @@
         </ul>
         <!-- <input type="text"> -->
         <button type="submit" class="btn-search">검색</button>
+    </div>
+
+    <div class="header-search">
+        <div class="header-search__box">
+            <div class="header-search__box--input">
+                <input type="text" placeholder="검색어를 입력해주세요">
+                <button type="submit" class="header-search__box--button">검색</button>
+            </div>
+            <button type="button" class="header-search__box--close">닫기</button>
+        </div>
     </div>
 </header>

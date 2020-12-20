@@ -296,6 +296,10 @@ Route::prefix('work-with-us')->group(function () {
 Route::prefix('other')->group(function () {
     Route::get('search', [SearchController::class, 'index']);
     Route::get('sitemap', [SitemapController::class, 'index']);
+
+    Route::get('privacy', function () {
+        return view('other.privacy');
+    });
 });
 
 
@@ -352,6 +356,7 @@ Route::prefix('admin')->middleware('auth', 'roles:admin,editor')->group(function
 Route::prefix('admin')->middleware(['auth', 'roles:admin,recruit'])->group(function () {
     Route::resource('recruit', Admin\RecruitController::class);
     Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
+    Route::get('recruit/{recruit_id}/job/{id}/excel-download', [RecruitJobController::class, 'excelDownload']);
     Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 
