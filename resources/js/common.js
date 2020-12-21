@@ -60,7 +60,12 @@ const common = () => {
             $(".gnb-mask").hide();
         });
 
-        $(".header__m-nav--gnb__item").on("click",function(){
+        $(".header__m-nav--gnb__item").on("click",function(e){
+            if ( $(e.target).prop('tagName') == 'A' ) {
+                setTimeout( function() {
+                    $(".header__m-nav--gnb .close-btn").trigger('click');
+                }, 200);
+            }
             $(this)
                 .toggleClass("on")
                 .siblings()
