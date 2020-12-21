@@ -1937,6 +1937,11 @@
                 .menu {
                     &__sub {
                         display: none;
+
+                        li {
+                            height: vw(70px);
+                            line-height: vw(70px);
+                        }
                     }
                 }
             }

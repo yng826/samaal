@@ -25,7 +25,7 @@
             <ul class="process-layout__list">
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">압연</span>
-                    <strong class="lang-english">Roughing</strong>
+                    <strong class="lang-english">Rolling</strong>
                     <a href="https://www.youtube.com/embed/y-hvWlZ0Vdg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">

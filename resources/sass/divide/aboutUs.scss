@@ -58,6 +58,7 @@
     &__img {
         display: table-cell;
         width: 50%;
+        height: 501px;
         background: url("/images/about/web_img_ci.png") no-repeat center / contain;
     }
 }
@@ -332,6 +333,7 @@
                 font-size: vw(13px);
             }
         }
+
     }
 }
 /* 모바일 사이즈 */
@@ -829,7 +831,9 @@
         margin: 0 auto;
 
         .about-ir__table {
+            max-width: 80%;
             margin-top: 100px;
+
             h3 {
                 margin-bottom: 20px;
                 font-size: 25px;
@@ -902,7 +906,7 @@
         }
 
         &__img {
-            width: 50%;
+            height: vw(501px);
         }
     }
 

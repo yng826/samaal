@@ -48,6 +48,7 @@
                 </div>
                 <dl class="text-bottom">
                     <dt>주소</dt><dd>부산광역시 중구 충장대로 9번길 43(보승빌딩)</dd><br>
+                    <dt>우편번호</dt><dd>48936</dd><br>
                     <dt>전화</dt><dd>051-463-7831</dd><br>
                     <dt>FAX</dt><dd>051-466-0245</dd>
                 </dl>

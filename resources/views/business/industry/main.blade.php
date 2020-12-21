@@ -7,7 +7,7 @@
 @section('contents')
     <main class="business-foil contents-wrap">
         <div class="business-foil__title">
-            <h2>최초를 넘어 최고의 기술력을 선보인<br> <span>삼아의 <em>산업 건축용 제품</em>을<br> 만나보세요</span></h2>
+            <h2>최초를 넘어 최고의 기술력을 선보인<br> <span>삼아의 <em>산업/건축용 제품</em>을<br> 만나보세요</span></h2>
         </div>
         <div class="business-foil__contents foil-box">
             <div class="foil-box__half">

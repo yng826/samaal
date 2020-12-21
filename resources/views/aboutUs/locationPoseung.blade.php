@@ -53,6 +53,7 @@
                 </div>
                 <dl class="text-bottom">
                     <dt>주소</dt><dd>경기도 평택시 포승읍 평택항로 92</dd><br>
+                    <dt>우편번호</dt><dd>17960</dd><br>
                     <dt>전화</dt><dd>031-467-6800</dd><br>
                     <dt>FAX</dt><dd>031-683-6125</dd>
                 </div>
