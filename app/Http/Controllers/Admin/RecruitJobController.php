@@ -77,7 +77,7 @@ class RecruitJobController extends Controller
     public function show($recruit_id, $id)
     {
         $job = Job::where('id', $id)
-                ->with(['user', 'userInfo', 'educations', 'careers', 'military', 'awards', 'certificates', 'languages', 'oas', 'overseasStudys'])
+                ->with(['recruit', 'user', 'userInfo', 'educations', 'careers', 'military', 'awards', 'certificates', 'languages', 'oas', 'overseasStudys', 'schoolActivities', 'hobbySpecialty'])
                 ->first();
 
         return view('admin.recruit.job.detail', [
@@ -153,7 +153,7 @@ class RecruitJobController extends Controller
     public function excelDownload($recruit_id, $id)
     {
         $job = Job::where('id', $id)
-                ->with(['user', 'userInfo', 'educations', 'careers', 'military', 'awards', 'certificates', 'languages', 'oas', 'overseasStudys'])
+                ->with(['recruit', 'user', 'userInfo', 'educations', 'careers', 'military', 'awards', 'certificates', 'languages', 'oas', 'overseasStudys', 'schoolActivities', 'hobbySpecialty'])
                 ->first();
 
 
