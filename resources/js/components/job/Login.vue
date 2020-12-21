@@ -34,7 +34,7 @@ import {getHeader, getAuth, getUser} from '../../config'
 import Swal from 'sweetalert2'
 import VSpinner from 'vue-simple-spinner'
 export default {
-    props: ['action','is_check_auth','job_id', 'request_id'],
+    props: ['action','is_check_auth','job_id'],
     components: {
         VSpinner
     },
@@ -123,15 +123,16 @@ export default {
 
             console.log(logged);
             logged.then( res => {
+                console.log(this.recruit_id);
                 console.log( res );
                 this.isSubmit = false;
                 if ( res.data.logged == true) {
                     console.log(res.data.job , this.recruit_id);
                     if ( res.data.job && this.recruit_id ) {
                         if ( res.data.job[this.recruit_id]) {
-                            window.location.href = '/work-with-us/job/' + res.data.job[this.recruit_id].id;
+                            window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit';
                         } else {
-                            window.location.href = '/work-with-us/job/';
+                            window.location.href = '/work-with-us/recruit/';
                         }
                     } else {
                         window.location.href = window.location.href;
@@ -140,7 +141,7 @@ export default {
             }).catch( err => {
                 console.error(err);
                 this.isSubmit = false;
-            })
+            });
         },
         openFindPassword: function() {
             this.$root.$emit('closePopup');

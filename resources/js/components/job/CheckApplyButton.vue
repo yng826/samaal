@@ -56,7 +56,7 @@ export default {
                 });
                 // this.$root.$emit('openPopup', 'login');
             } else {
-                this.$root.$emit('openPopup', 'login');
+                this.$root.$emit('openPopup', 'login', this.recruit_id);
             }
         }
     }
