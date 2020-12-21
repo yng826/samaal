@@ -113,7 +113,7 @@
                                     <td class="text-center">{{ $education->school_name }}</td>
                                     <td class="text-center">{{ $education->edu_major }}</td>
                                     <td class="text-center">{{ $education->edu_start. ' ~ '. $education->edu_end }}</td>
-                                    <td class="text-center">{{ $education->edu_grade }}</td>
+                                    <td class="text-center">{{ $education->edu_grade }} / {{ $education->edu_grade_full }}</td>
                                     <td class="text-center">{{ $education->graduation }}</td>
                                 </tr>
                                 @endforeach
