@@ -103,9 +103,6 @@
                      </ul>
                 </div>
             </div>
-            <div class="section main-wrap__section section04" id="">
-                @include('shared.footer')
-            </div>
         </div>
 
         @include('shared.footer')
