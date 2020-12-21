@@ -6,18 +6,6 @@
     </div>
 </template>
 <style>
-.daum-post-box {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    left: 0;
-    top: 0;
-    padding: 20vw 5vw;
-    box-sizing: border-box;
-    z-index: 9;
-        overflow: scroll;
-}
 </style>
 <script>
 export default {

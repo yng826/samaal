@@ -1358,6 +1358,18 @@
 }
 
 
+.daum-post-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+    padding: 5vw 5vw;
+    box-sizing: border-box;
+    z-index: 9;
+    overflow: scroll;
+}
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
     @import "./lib/webvw";
@@ -2043,6 +2055,9 @@
         }
     }
 
+    .daum-post-box {
+        padding: 8vw 5vw;
+    }
 }
 
 /*태블릿 세로 사이즈*/
@@ -2653,6 +2668,10 @@
                 }
             }
         }
+    }
+
+    .daum-post-box {
+        padding: 9vw 5vw;
     }
 }
 
