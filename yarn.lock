@@ -3436,6 +3436,11 @@
   "resolved" "https://registry.npmjs.org/for-in/-/for-in-1.0.2.tgz"
   "version" "1.0.2"
 
+"formdata-polyfill@^3.0.20":
+  "integrity" "sha512-TAaxIEwTBdoH1TWndtUH1T0/GisUHwmOKcV5hjkR/iTatHBJSOHb563FP86Lra5nXo3iNdhK7HPwMl5Ihg71pg=="
+  "resolved" "https://registry.npmjs.org/formdata-polyfill/-/formdata-polyfill-3.0.20.tgz"
+  "version" "3.0.20"
+
 "forwarded@~0.1.2":
   "integrity" "sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ="
   "resolved" "https://registry.npmjs.org/forwarded/-/forwarded-0.1.2.tgz"
@@ -7409,6 +7414,13 @@
   "resolved" "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
   "version" "2.3.4"
 
+"vue-input-mask@0.0.11":
+  "integrity" "sha512-QiY67mNW7DlUsCQXmeCOGUw2nz/hUF+Z7lEGlKrOeh6M46buzZlqsPis4ZOgJazX3gml/y8hKRq7uGJXRaBDJg=="
+  "resolved" "https://registry.npmjs.org/vue-input-mask/-/vue-input-mask-0.0.11.tgz"
+  "version" "0.0.11"
+  dependencies:
+    "vue" "^2.4.4"
+
 "vue-loader@^15.4.2":
   "integrity" "sha512-oeMOs2b5o5gRqkxfds10bCx6JeXYTwivRgbb8hzOrcThD2z1+GqEKE3EX9A2SGbsYDf4rXwRg6D5n1w0jO5SwA=="
   "resolved" "https://registry.npmjs.org/vue-loader/-/vue-loader-15.9.5.tgz"
@@ -7456,7 +7468,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.5.17":
+"vue@^2.4.4", "vue@^2.5.17":
   "integrity" "sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
   "version" "2.6.12"
