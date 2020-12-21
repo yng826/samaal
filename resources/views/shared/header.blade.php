@@ -67,10 +67,12 @@
 
     <div class="header-search">
         <div class="header-search__box">
-            <div class="header-search__box--input">
-                <input type="text" placeholder="검색어를 입력해주세요">
-                <button type="submit" class="header-search__box--button">검색</button>
-            </div>
+            <form action="/other/search" method="get">
+                <div class="header-search__box--input">
+                    <input type="text" name="keyword" placeholder="검색어를 입력해주세요">
+                    <button type="submit" class="header-search__box--button">검색</button>
+                </div>
+            </form>
             <button type="button" class="header-search__box--close">닫기</button>
         </div>
     </div>
