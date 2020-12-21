@@ -7,6 +7,8 @@
 // import business from './business';
 // import about from './aboutUs';
 
+import 'core-js/es/array';
+import 'core-js/es/set';
 import axios from 'axios';
 import {getHeader} from '../config';
 import User from './User';
@@ -14,6 +16,8 @@ import User from './User';
 // import Vuex from 'vuex'
 
 require('../bootstrap');
+require('formdata-polyfill');
+
 import common from '../common';
 
 // axios.defaults.headers = getHeader();
