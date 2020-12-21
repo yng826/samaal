@@ -41,7 +41,7 @@
             @foreach ($treeMenu as $menu)
             <li class="header__m-nav--gnb__item menu">
                 @if(isset($menu->children) && count($menu->children) > 0)
-                    <div class="menu__title"><a href="">{{ $menu->name }}</a></div>
+                    <div class="menu__title"><a href="{{ $menu->url }}">{{ $menu->name }}</a></div>
                     <ul class="menu__sub">
                         @foreach($menu->children as $children)
                         <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
