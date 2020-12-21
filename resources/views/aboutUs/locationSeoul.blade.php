@@ -52,6 +52,7 @@
                 </div>
                 <dl class="text-bottom">
                     <dt>주소</dt><dd>서울 서초구 남부순환로289길 5 삼영빌딩 2층</dd><br>
+                    <dt>우편번호</dt><dd>06699</dd><br>
                     <dt>전화</dt><dd>02-3458-0600</dd><br>
                     <dt>FAX</dt><dd>02-565-0999</dd>
                 </dl>

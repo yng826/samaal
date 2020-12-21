@@ -90,37 +90,37 @@
                             @endforeach
                         </tr>
                         <tr>
-                            <th>매출액</th>
+                            <td>매출액</td>
                             @foreach ($sales as $sales_text)
                                 <td class="text-center">{{ number_format($sales_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <th>영업이익</th>
+                            <td>영업이익</td>
                             @foreach ($operating_income as $operating_income_text)
                                 <td class="text-center">{{ number_format($operating_income_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <th>당기순이익</th>
+                            <td>당기순이익</td>
                             @foreach ($net_income as $net_income_text)
                                 <td class="text-center">{{ number_format($net_income_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <th>자산</th>
+                            <td>자산</td>
                             @foreach ($assets as $assets_text)
                                 <td class="text-center">{{ number_format($assets_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <th>부채</th>
+                            <td>부채</td>
                             @foreach ($liability as $liability_text)
                                 <td class="text-center">{{ number_format($liability_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <th>자본총계</th>
+                            <td>자본총계</td>
                             @foreach ($capital as $capital_text)
                                 <td class="text-center">{{ number_format($capital_text) }}</td>
                             @endforeach

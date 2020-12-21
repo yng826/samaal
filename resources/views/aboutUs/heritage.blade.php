@@ -11,7 +11,7 @@
             <div class="about-heritage__info">
                 <h3 class="about-heritage__info--title">
                     <span>국내 최고의 알루미늄 박과 포장재 생산기업인 삼아는</span><br>
-                    지속가능한 기업으로,세계 최고를 향해 나아갑니다.
+                    지속가능한 기업으로 세계 최고를 향해 나아갑니다.
                 </h3>
                 <p class="about-heritage__info--text">
                     1969년 창립한 삼아알미늄은 끊임없는 연구개발을 통해 최고의 기술력으로<br>

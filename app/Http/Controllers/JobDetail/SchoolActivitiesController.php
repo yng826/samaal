@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class EducationController extends Controller
+class SchoolActivitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -70,39 +70,35 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        foreach ($request->education as $education) {
-            if (empty($education['id'])) {
-                $affected = DB::table('job_applications_education')
+        foreach ($request->activities as $activities) {
+            if (empty($activities['id'])) {
+                $affected = DB::table('job_applications_school_activities')
                             ->insert([
                                 'job_id' => $id,
-                                'school_name' => $education['school_name'],
-                                'edu_major' => $education['edu_major'],
-                                'edu_grade' => $education['edu_grade'],
-                                'edu_grade_full' => $education['edu_grade_full'],
-                                'edu_start' => date('Y-m-d', strtotime($education['edu_start'])),
-                                'edu_end' => date('Y-m-d', strtotime($education['edu_end'])),
-                                'graduation' => $education['graduation'],
+                                'school_activities_start' => date('Y-m-d', strtotime($activities['school_activities_start'])),
+                                'school_activities_end' => date('Y-m-d', strtotime($activities['school_activities_end'])),
+                                'school_activities_affiliation' => $activities['school_activities_affiliation'],
+                                'school_activities_role' => $activities['school_activities_role'],
+                                'school_activities_contents' => $activities['school_activities_contents'],
                             ]);
             } else {
-                $affected = DB::table('job_applications_education')
-                            ->where('id', $education['id'])
+                $affected = DB::table('job_applications_school_activities')
+                            ->where('id', $activities['id'])
                             ->update([
-                                'school_name' => $education['school_name'],
-                                'edu_major' => $education['edu_major'],
-                                'edu_grade' => $education['edu_grade'],
-                                'edu_grade_full' => $education['edu_grade_full'],
-                                'edu_start' => date('Y-m-d', strtotime($education['edu_start'])),
-                                'edu_end' => date('Y-m-d', strtotime($education['edu_end'])),
-                                'graduation' => $education['graduation'],
+                                'school_activities_start' => date('Y-m-d', strtotime($activities['school_activities_start'])),
+                                'school_activities_end' => date('Y-m-d', strtotime($activities['school_activities_end'])),
+                                'school_activities_affiliation' => $activities['school_activities_affiliation'],
+                                'school_activities_role' => $activities['school_activities_role'],
+                                'school_activities_contents' => $activities['school_activities_contents'],
                             ]);
             }
         }
 
-        $education = DB::table('job_applications_education')
-                ->where('job_id', $id)
-                ->get();
+        $activities = DB::table('job_applications_school_activities')
+                        ->where('job_id', $id)
+                        ->get();
 
-        return $education;
+        return $activities;
     }
 
     /**
@@ -113,7 +109,7 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
-        $affected = DB::table('job_applications_education')->where('id', $id)->delete();
+        $affected = DB::table('job_applications_school_activities')->where('id', $id)->delete();
 
         return 1;
     }

@@ -3719,12 +3719,12 @@
 
                .info-box {
                     position: absolute;
-                    bottom: vw(120px);
-                    right: vw(70px);
+                    bottom: 15%;
+                    left: vw(70px);
                     display: block;
                     width: auto;
                     padding:0;
-                    text-align: right;
+                    text-align: left;
 
                     &.package {
                         h2 {
@@ -3797,7 +3797,7 @@
                 .mobile-arrow {
                     display: block;
                     position: absolute;
-                    bottom: vw(50px);
+                    bottom: 10%;
                     left: 50%;
                     // transform: translateX(-50%);
                     width: vw(50px);

@@ -35,7 +35,8 @@
                         </div>
                         <div class="swiper-slide">
                             <h2>Innovation</h2>
-                            <a href="#" class="slide-info__link innovation-btn">더 알아보기</a>
+                            <a href="/business/innovation/rnd" class="slide-info__link">더 알아보기</a>
+                            {{-- <a href="#" class="slide-info__link innovation-btn">더 알아보기</a>
                             <ul class="innovation-btn__box">
                                 <li>
                                     <a href="/business/innovation/rnd">R&D</a>
@@ -43,7 +44,7 @@
                                 <li>
                                     <a href="/business/innovation/iso_certification">인증현황</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -67,7 +68,7 @@
                 <div class="section mobiel-wrap__section section01">
                     <div class="info-box">
                         <h2 class="mobiel-wrap__section--title">
-                            알루미늄 Foil
+                            알루미늄 호일
                         </h2>
                         <div class="mobiel-wrap__section--button">
                             <a href="/business/foil">더 알아보기</a>
@@ -91,7 +92,7 @@
                 <div class="section mobiel-wrap__section section03">
                     <div class="info-box">
                         <h2 class="mobiel-wrap__section--title">
-                            산업건축용
+                            산업/건축용
                         </h2>
                         <div class="mobiel-wrap__section--button">
                             <a href="">더 알아보기</a>
@@ -118,7 +119,10 @@
                         <h2 class="mobiel-wrap__section--title">
                             Innovation
                          </h2>
-                         <div class="mobiel-wrap__section--button sub-menu__button innovation-btn">
+                         <div class="mobiel-wrap__section--button">
+                            <a href="/business/innovation/rnd">더 알아보기</a>
+                        </div>
+                         {{-- <div class="mobiel-wrap__section--button sub-menu__button innovation-btn">
                             <button type="button">더 알아보기</button>
                          </div>
                          <ul class="innovation-btn__box">
@@ -128,7 +132,7 @@
                             <li>
                                 <a href="/business/innovation/iso_certification">인증현황</a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>

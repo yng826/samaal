@@ -51,6 +51,7 @@ const business = () => {
         $(".btn-question").on("click",function(){
             $(".q-pop").addClass('show');
             $(".popup-mask").addClass('show');
+            window.scrollTo(0,0);
         });
 
         $(".btn-manager").on("click",function(){
