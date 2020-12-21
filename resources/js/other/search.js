@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function search(id) {
+    function search(id, keyword) {
         const category = id == 'search-btn' ? 0 : id.split('-')[1];
-        $(location).attr('href','/other/search?keyword=' + $('input[name=keyword]').val() + '&category=' + category);
+        $(location).attr('href','/other/search?keyword=' + $('.search_keyword').val() + '&category=' + category);
     }
 
     eventListener();

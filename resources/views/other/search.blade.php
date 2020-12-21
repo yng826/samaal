@@ -9,13 +9,18 @@
         </div>
         <div class="work-recruit__contents search-wrap__box">
             <div class="work-recruit__search">
-                <div class="work-recruit__search--wrap">
-                    <input type="text" name="keyword" value="{{ $keyword }}">
-                    <button type="button" id="search-btn" class="btn-search">검색</button>
-                    <p class="work-recruit__search--text search-wrap__search-text">
-                        <span>"{{ $keyword }}"</span>에 대해 <br/> 총 {{ count($categoryKeywords) }}건의 검색결과가 있습니다.
-                    </p>
-                </div>
+                <form action="/other/search" method="get">
+                    <div class="work-recruit__search--wrap">
+                        <input type="text" name="keyword" value="{{ $keyword }}" class="search_keyword">
+                        <button type="button" id="search-btn" class="btn-search">검색</button>
+                        <p class="work-recruit__search--text search-wrap__search-text">
+
+                            @if (count($categoryKeywords) > 0)
+                            <span>"{{ $keyword }}"</span>에 대해 <br/> 총 {{ count($categoryKeywords) }}건의 검색결과가 있습니다.
+                            @endif
+                        </p>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="search-wrap__section">
