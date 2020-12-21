@@ -122,7 +122,7 @@ export default {
     },
     methods: {
         onClick() {
-            console.log('click');
+            this.$root.$emit('closePopup');
         }
     }
 }
