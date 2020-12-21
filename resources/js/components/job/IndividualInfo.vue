@@ -22,7 +22,7 @@
                 <h3>인적사항</h3>
                 <div class="form-group">
                     <label for="">성명(한글)</label>
-                    <input type="text" name="name" v-model="user.name">
+                    <input type="text" name="name" v-model="user.name" placeholder="입력해주세요.">
                 </div>
                 <div class="form-group">
                     <label for="">성명(영문)</label>
@@ -30,13 +30,14 @@
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <div class="input-gorup input_date-group">
+                    <div class="input-gorup input_date-group" placeholder="선택해주세요.">
                         <Datepicker class="inline-block" name="birth_day" :language="ko" v-model="user_info.birth_day" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="">휴대폰번호</label>
-                    <input type="text" name="phone_decrypt" v-model="job.phone_decrypt" placeholder="입력해주세요.">
+                    <InputMask name="phone_decrypt" mask="999 9999 9999" v-model="job.phone_decrypt" placeholder="입력해주세요." />
+                    <!-- <input type="text" name="phone_decrypt" v-model="job.phone_decrypt" placeholder="입력해주세요."> -->
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
@@ -47,24 +48,27 @@
                         <select name="email_vendor_select" id="" @change="onSelectEmail" v-if="emailEditable">
                             <option value="">이메일</option>
                             <option value="naver.com">네이버</option>
+                            <option value="gmail.com">구글</option>
+                            <option value="hanmail.net">한메일</option>
                             <option value="daum.net">다음</option>
-                            <option value="google.com">구글</option>
+                            <option value="nate.com">네이트</option>
+                            <option value="hotmail.com">핫메일</option>
                             <option value="manual">직접입력</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
-                    <input type="password" name="password" id="password" v-model="password" ref="password">
+                    <input type="password" name="password" id="password" v-model="password" ref="password" placeholder="8자이상 영문/숫자/기호 조합">
                 </div>
                 <div class="form-group">
                     <label for="password_confirm">비밀번호재입력</label>
-                    <input type="password" name="password_confirm" id="password_confirm" v-model="password_confirm" ref="password_confirm">
+                    <input type="password" name="password_confirm" id="password_confirm" v-model="password_confirm" ref="password_confirm" placeholder="8자이상 영문/숫자/기호 조합">
                 </div>
                 <div class="form-group">
                     <label for="">현거주지</label>
                     <div class="input-gorup">
-                        <input type="text" name="address_1" v-model="job.address_1" placeholder="입력해주세요." @click="onClickPost" readonly>
+                        <input type="text" name="address_1" v-model="job.address_1" placeholder="검색해주세요." @click="onClickPost" readonly>
                         <DaumPost style="" @complete="onSearch" v-show="showPost" />
                         <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요.">
                     </div>
@@ -111,6 +115,7 @@ import {getHeader, getAuth, getUser, apiDomain} from '../../config';
 import User from '../../job/User';
 import VSpinner from 'vue-simple-spinner';
 import DaumPost from './DaumPost'
+import InputMask from 'vue-input-mask';
 // import DaumPost from "vue-daum-postcode/src/vue-daum-postcode";
 // import Language from './Language.vue'
 export default {
@@ -120,6 +125,7 @@ export default {
         VSpinner,
         Datepicker,
         DaumPost,
+        InputMask,
     },
     data: function() {
         return {
