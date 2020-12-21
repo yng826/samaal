@@ -148,16 +148,16 @@
                 $('input[name=title]').focus();
                 return false;
 
-            } else if (($('input[name=img_file_path]').val() == '' || $('input[name=img_file_path]').val() == null)
-                    && ($('input[name=img_file]').val() == '' || $('input[name=img_file]').val() == null)) {
-            alert('이미지파일을 선택해주세요.');
-            return false;
+            // } else if (($('input[name=img_file_path]').val() == '' || $('input[name=img_file_path]').val() == null)
+            //         && ($('input[name=img_file]').val() == '' || $('input[name=img_file]').val() == null)) {
+            //     alert('이미지파일을 선택해주세요.');
+            //     return false;
 
-        } else if (($('input[name=pdf_file_path]').val() == '' || $('input[name=pdf_file_path]').val() == null)
-                    && ($('input[name=pdf_file]').val() == '' || $('input[name=pdf_file]').val() == null)) {
-            alert('PDF파일을 선택해주세요.');
-            return false;
-        }
+            // } else if (($('input[name=pdf_file_path]').val() == '' || $('input[name=pdf_file_path]').val() == null)
+            //             && ($('input[name=pdf_file]').val() == '' || $('input[name=pdf_file]').val() == null)) {
+            //     alert('PDF파일을 선택해주세요.');
+            //     return false;
+            }
             return true;
         }
 

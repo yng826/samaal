@@ -43,17 +43,27 @@ class IrBoardController extends Controller
      */
     public function store(Request $request)
     {
-        $img_file_path = $request->file('img_file')->store('ir'); //이미지파일 저장
-        $pdf_file_path = $request->file('pdf_file')->store('ir'); //PDF파일 저장
+        $img_file_path = '';
+        $img_file_name = '';
+        if (!empty($request->file('img_file'))) {
+            $img_file_path = $request->file('img_file')->store('ir'); //이미지파일 저장
+            $img_file_name = $request->file('img_file')->getClientOriginalName();
+        }
+        $pdf_file_path = '';
+        $pdf_file_name = '';
+        if (!empty($request->file('pdf_file'))) {
+            $pdf_file_path = $request->file('pdf_file')->store('ir'); //PDF파일 저장
+            $pdf_file_name = $request->file('pdf_file')->getClientOriginalName();
+        }
         if($request->id > 0){
             $saved = DB::table('ir_boards')
                     ->where('id', $request->id)
                     ->update([
                         'title'=> $request->title,
                         'contents'=> $request->contents,
-                        'img_file_name'=> $request->file('img_file')->getClientOriginalName(),
+                        'img_file_name'=> $img_file_name,
                         'img_file_path'=> $img_file_path,
-                        'pdf_file_name'=> $request->file('pdf_file')->getClientOriginalName(),
+                        'pdf_file_name'=> $pdf_file_name,
                         'pdf_file_path'=> $pdf_file_path,
                         'updated_at' => now(),
                     ]);
@@ -62,9 +72,9 @@ class IrBoardController extends Controller
             ->insert([
                 'title'=> $request->title,
                 'contents'=> $request->contents,
-                'img_file_name'=> $request->file('img_file')->getClientOriginalName(),
+                'img_file_name'=> $img_file_name,
                 'img_file_path'=> $img_file_path,
-                'pdf_file_name'=> $request->file('pdf_file')->getClientOriginalName(),
+                'pdf_file_name'=> $pdf_file_name,
                 'pdf_file_path'=> $pdf_file_path,
                 'created_at' => now()
             ]);
