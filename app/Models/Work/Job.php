@@ -80,6 +80,16 @@ class Job extends Model
         return $this->hasMany('App\Models\Work\OverseasStudy');
     }
 
+    public function hobbySpecialty()
+    {
+        return $this->hasOne('App\Models\Work\HobbySpecialty');
+    }
+
+    public function schoolActivities()
+    {
+        return $this->hasMany('App\Models\Work\SchoolActivities');
+    }
+
     public function recruit()
     {
         return $this->belongsTo('App\Models\Work\Recruit');

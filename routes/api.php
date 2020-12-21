@@ -54,6 +54,8 @@ Route::prefix('job-detail')->middleware(['auth:api'])->group(function () {
     Route::resource('military', JobDetail\MilitaryController::class);
     Route::resource('oa', JobDetail\OaController::class);
     Route::resource('overseas_study', JobDetail\OverseasStudyController::class);
+    Route::resource('school_activities', JobDetail\SchoolActivitiesController::class);
+    Route::resource('hobby_specialty', JobDetail\HobbySpecialtyController::class);
 });
 
 Route::prefix('admin')->middleware('auth:api')->group(function () {
