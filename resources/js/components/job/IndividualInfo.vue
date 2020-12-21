@@ -251,6 +251,11 @@ export default {
             }
             this.isSubmit = false;
         }
+        this.$root.$on('closePopup', (args) => {
+            console.log(args);
+            this.showPost = false;
+            $('body').css('overflow', '');
+        })
     },
     methods: {
         onInputEmail: function(e) {
