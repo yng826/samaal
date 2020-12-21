@@ -65,7 +65,7 @@
                                     <option value="naver.com">naver.com</option>
                                     <option value="daum.net">daum.net</option>
                                     <option value="gmail.com">gmail.com</option>
-                                    <option value="직접 입력">집적 입력</option>
+                                    <option value="직접 입력">직접 입력</option>
                                 </select>
                                 <input type="hidden" name="email" id="email">
                             </li>

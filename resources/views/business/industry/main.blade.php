@@ -30,7 +30,7 @@
                 </div>
                 <div class="foil-box__half--item">
                     <a href="industry/paste" class="foil-box--item item-paste">
-                        <p class="foil-box__text">알루미늄<br>페이스트</p>
+                        <p class="foil-box__text">알루미늄 페이스트</p>
                     </a>
                 </div>
             </div>
