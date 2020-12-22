@@ -26,7 +26,7 @@
                             <a href="/business/package" class="slide-info__link">더 알아보기</a>
                         </div>
                         <div class="swiper-slide">
-                            <h2>산업건축용</h2>
+                            <h2>산업/건축용</h2>
                             <a href="/business/industry" class="slide-info__link">더 알아보기</a>
                         </div>
                         <div class="swiper-slide">
