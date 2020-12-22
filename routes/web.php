@@ -124,7 +124,7 @@ Route::prefix('business')->group(function() {
     });
     Route::get('foil/restrictions', function () {
         $data = [];
-        $data['question_title'] = '제약용 Foil';
+        $data['question_title'] = '제약포장재용';
         return view('business.foil.restrictions', $data);
     });
     Route::get('foil/electronic', function () {
@@ -139,7 +139,7 @@ Route::prefix('business')->group(function() {
     });
     Route::get('foil/external', function () {
         $data = [];
-        $data['question_title'] = 'LIB 외장재';
+        $data['question_title'] = 'LIB 외장재용';
         return view('business.foil.external', $data);
     });
     Route::get('foil/tab', function () {
