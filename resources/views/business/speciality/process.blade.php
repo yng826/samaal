@@ -68,7 +68,7 @@
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">라미네이터</span>
                     <strong class="lang-english">Laminator</strong>
-                    <a href="https://www.youtube.com/embed/uuJuNKddsXM?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/3t6QU4xq-kc?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">분단기</span>
