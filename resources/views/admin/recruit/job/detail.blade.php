@@ -138,16 +138,16 @@
                         <div class="box-body">
                             <table class="table">
                                 <tr>
-                                    <th class="text-center">회사명</th>
                                     <th class="text-center">근무기간</th>
+                                    <th class="text-center">회사명</th>
                                     <th class="text-center">직위</th>
                                     <th class="text-center">담당업무</th>
                                 </tr>
 
                                 @foreach ($job->careers as $career)
                                 <tr>
-                                    <td class="text-center">{{ $career->career_name }}</td>
                                     <td class="text-center">{{ $career->career_start. ' ~ '. $career->career_end }}</td>
+                                    <td class="text-center">{{ $career->career_name }}</td>
                                     <td class="text-center">{{ $career->career_position }}</td>
                                     <td class="text-center">{{ $career->career_role }}</td>
                                 </tr>
@@ -190,7 +190,7 @@
                             <table class="table">
                                 <tr>
                                     <th class="text-center">사용 가능 OA</th>
-                                    <th class="text-center">수준</th>
+                                    <th class="text-center">사용 수준</th>
                                 </tr>
 
                                 @foreach ($job->oas as $oa)
@@ -214,7 +214,7 @@
                                     <th class="text-center">구분</th>
                                     <th class="text-center">TEST명</th>
                                     <th class="text-center">점수/등급</th>
-                                    <th class="text-center">재학기간</th>
+                                    <th class="text-center">시행일</th>
                                     <th class="text-center">회화수준</th>
                                 </tr>
 
@@ -239,16 +239,16 @@
                         <div class="box-body">
                             <table class="table">
                                 <tr>
-                                    <th class="text-center">시상명</th>
-                                    <th class="text-center">단체명</th>
                                     <th class="text-center">수상일</th>
+                                    <th class="text-center">단체명</th>
+                                    <th class="text-center">시상명</th>
                                 </tr>
 
                                 @foreach ($job->awards as $award)
                                 <tr>
-                                    <td class="text-center">{{ $award->award_name }}</td>
-                                    <td class="text-center">{{ $award->award_group_name }}</td>
                                     <td class="text-center">{{ $award->award_date }}</td>
+                                    <td class="text-center">{{ $award->award_group_name }}</td>
+                                    <td class="text-center">{{ $award->award_name }}</td>
                                 </tr>
                                 @endforeach
                             </table>
@@ -290,9 +290,9 @@
                                     <th class="text-center">국가/도시</th>
                                     <th class="text-center">학교/단체</th>
                                     <th class="text-center">기간</th>
-                                    <th class="text-center">담당업무</th>
                                     <th class="text-center">연수명</th>
                                     <th class="text-center">연수목적</th>
+                                    <th class="text-center">연수내용</th>
                                 </tr>
 
                                 @foreach ($job->overseasStudys as $overseasStudy)
