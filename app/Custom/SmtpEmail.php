@@ -15,7 +15,7 @@ class SmtpEmail
         $mail = new PHPMailer(true);
 
         try {
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
             $mail->CharSet = 'utf-8';
             $mail->Host = $config['host']; //gmail has host > smtp.gmail.com
@@ -29,6 +29,7 @@ class SmtpEmail
             $mail->addAddress($request['email'], $request['name']);
             $mail->Subject = $request['subject'];
             $mail->MsgHTML($request['text']);
+            $mail->IsHTML(true);
             $mail->send();
         } catch (Exception $e) {
             dd($e);

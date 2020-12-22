@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Custom\SmtpEmail;
 use App\Http\Resources\Job as ResourcesJob;
 use App\Models\User;
 use App\Models\UserInfo;
@@ -265,7 +266,7 @@ class JobController extends Controller
         $job = Job::where([
             'id'=> $job_id,
             'user_id' => $request->user()->id,
-        ])->first();
+        ])->with(['user', 'userInfo', 'recruit'])->first();
 
         $result = [];
         if ( $job ) {
@@ -280,8 +281,26 @@ class JobController extends Controller
                 $result['msg'] = '기한이 지났습니다';
             } else {
                 $job->status = 'submit';
-                $job->save();
+                // $job->save();
                 $result['result'] = 'success';
+                // dd($job);
+
+                $text = "<div style='background-color: #2b4985; width:100%; height: 40px;'></div>
+<div style='width: 120px;padding: 20px 0;'><img src='http://139.150.76.105/images/common/logo.png' alt='삼아알미늄 로고'></div>
+<h4 style='font-size: 16px;color: black;'>안녕하세요, &apos;{$job->user->name}&apos;님</h4>
+<p style='font-size: 24px;letter-spacing: -2px;font-weight: bold;color: #2b4985;'>귀하의 {$job->recruit->title}부문 지원서 제출이 완료되었습니다.</p>
+<p style='font-size: 18px;color: black;'>지원 내역 확인은 채용공고 하단 &apos;지원내역 확인 및 수정&apos;에서 가능합니다.</p>
+<p style='font-size: 18px;color: black;'>면접전형 또는 불합격 통보는 별도로 안내드릴 예정입니다.</p>
+<p style='font-size: 18px;color: black;'>삼아에 지원해주셔서 다시 한 번 감사드립니다.</p>
+<h5 style='font-size:18px;color: black; text-align: right; color:#555;'>삼아채용담당자 드림</h5>";
+                // EMAIL
+                $mail['email'] = $job->user->email;
+                $mail['name'] = $job->user->name;
+                $mail['subject'] = '[삼아] 채용 입사지원서 최종제출안내 메일';
+                $mail['text'] = $text;
+                SmtpEmail::email($mail);
+                // return json_encode($mail);
+                // $job
             }
         } else {
             $result['result'] = 'fail';
