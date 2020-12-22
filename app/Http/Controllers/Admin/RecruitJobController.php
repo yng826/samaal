@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as ReaderXlsx;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
+use PhpOffice\PhpSpreadsheet\Style\Border;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -141,13 +145,117 @@ class RecruitJobController extends Controller
     }
 
     /**
-     * Excel file download.
+     * List excel file download.
+     *
+     * @param  int  $recruit_id
+     * @return \Illuminate\Http\Response
+     */
+    public function listExcelDownload($recruit_id)
+    {
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $thArray = [
+            'font' => [
+                'bold' => true,
+            ],
+            'alignment' => [
+                'horizontal' => Alignment::HORIZONTAL_CENTER,
+            ],
+            'borders' => [
+                'allBorders' => [
+                    'borderStyle' => Border::BORDER_THIN,
+                ],
+            ],
+            'fill' => [
+                'fillType' => Fill::FILL_GRADIENT_LINEAR,
+                'startColor' => [
+                    'argb' => 'FFEEEEEF',
+                ],
+                'endColor' => [
+                    'argb' => 'FFEEEEEF',
+                ],
+            ],
+        ];
+
+        $tdArray = [
+            'borders' => [
+                'allBorders' => [
+                    'borderStyle' => Border::BORDER_THIN,
+                ],
+            ],
+            'alignment' => [
+                'horizontal' => Alignment::HORIZONTAL_CENTER,
+            ],
+        ];
+
+        $rowNum = 2;
+
+        $sheet->setCellValue('B'. $rowNum, '입사지원 데이터');
+        $sheet->getStyle('B'. $rowNum)->getFont()->setSize(15)->setBold(true);
+
+        $rowNum += 2;
+
+        $sheet->setCellValue('B'. $rowNum, '성명');
+        $sheet->setCellValue('C'. $rowNum, '출생년도');
+        $sheet->setCellValue('D'. $rowNum, 'E-MAIL');
+        $sheet->setCellValue('E'. $rowNum, '핸드폰번호');
+        $sheet->setCellValue('F'. $rowNum, '학교명');
+        $sheet->setCellValue('G'. $rowNum, '전공');
+        $sheet->setCellValue('H'. $rowNum, '성적 (평균학점)');
+        $sheet->getStyle('B'. $rowNum. ':H'. $rowNum)->applyFromArray($thArray);
+
+
+        $jobs = Job::where('recruit_id', $recruit_id)
+                    ->where('status', '!=', 'saved')
+                    ->with(['user', 'userInfo', 'educations'])
+                    ->orderBy('id', 'desc')
+                    ->get();
+
+
+        foreach($jobs as $job) {
+            $rowNum++;
+            $sheet->setCellValue('B'. $rowNum, empty($job->user) ? '' : $job->user->name);
+            $sheet->setCellValue('C'. $rowNum, empty($job->userInfo) ? '' : substr($job->userInfo->birth_day, 0, 4));
+            $sheet->setCellValue('D'. $rowNum, empty($job->user) ? '' : $job->user->email);
+            $sheet->setCellValue('E'. $rowNum, $job->phone_decrypt ?? '');
+
+            if(!empty($job->educations)) {
+                $education = collect($job->educations)->sortByDesc('edu_end')->first();
+                $sheet->setCellValue('F'. $rowNum, $education->school_name ?? ''); //학교명
+                $sheet->setCellValue('G'. $rowNum, $education->edu_major ?? ''); //전공
+                $sheet->setCellValue('H'. $rowNum, ($education->edu_grade ?? ''). ' / '. ($education->edu_grade_full ?? '')); //성적
+            }
+
+            $sheet->getStyle('B'. $rowNum. ':H'. $rowNum)->applyFromArray($tdArray);
+        }
+
+        foreach(range('B', 'H') as $columnID) {
+            if($columnID == 'D') {
+                $sheet->getColumnDimension($columnID)->setWidth(30);
+            } else {
+                $sheet->getColumnDimension($columnID)->setWidth(20);
+            }
+        }
+
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="채용지원리스트.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $writer = new Xlsx($spreadsheet);
+
+        $writer->save('php://output'); //download file
+    }
+
+    /**
+     * Detail excel file download.
      *
      * @param  int  $recruit_id
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function excelDownload($recruit_id, $id)
+    public function detailExcelDownload($recruit_id, $id)
     {
         $job = Job::where('id', $id)
                 ->with(['recruit', 'user', 'userInfo', 'educations', 'careers', 'military', 'awards', 'certificates', 'languages', 'oas', 'overseasStudys', 'schoolActivities', 'hobbySpecialty'])
