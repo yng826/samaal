@@ -37,7 +37,7 @@
             <th class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--bottom">
-            <td class="border-left-none">PET/AL/PE/WAX</td>
+            <td class="border-left-none">PET/AL/PET/PE/WAX</td>
             <td class="border-right-none">
                 떠먹는 요구르트
             </td>
