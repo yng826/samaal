@@ -29,7 +29,7 @@
                             </div>
                         </form>
                         <span class="mr-1 ml-1">|</span>
-                        <a class="btn btn-info text-white" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/excel-download">EXCEL</a>
+                        <a class="btn btn-info text-white" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/detail-excel-download">EXCEL</a>
                     </div>
                 </div>
             </div>

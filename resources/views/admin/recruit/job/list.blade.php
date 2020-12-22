@@ -44,6 +44,10 @@
                         <div class="form-group ml-1">
                             <button type="button" class="btn btn-info text-white search-btn">검색</button>
                         </div>
+                        <span class="mr-1 ml-1">|</span>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-info text-white excel-btn">EXCEL</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,6 +111,10 @@ const job_list = () => {
         //검색버튼 클릭시
         $('.search-btn').on('click', function() {
             $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+$('select[name=status]').val());
+        });
+        //EXCEL버튼 클릭시
+        $('.excel-btn').on('click', function() {
+            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/list-excel-download');
         });
     }
 
