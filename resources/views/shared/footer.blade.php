@@ -67,8 +67,6 @@
                     <option value="">::선택::</option>
                     <option value="제품">제품</option>
                     <option value="채용">채용</option>
-                    <option value="기업">기업</option>
-                    <option value="재무정보">재무정보</option>
                     <option value="기타">기타</option>
                 </select>
             </li>
