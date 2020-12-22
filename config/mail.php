@@ -38,12 +38,13 @@ return [
             'transport' => 'smtp',
             'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
             'port' => env('MAIL_PORT', 587),
-            // 'encryption' => null,
+            // 'encryption' => env('MAIL_ENCRYPTION', null),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'auth_mode' => null,
             'pretend' => false,
+            'encryption' => null,
             'stream' => [
                 'ssl' => [
                     'allow_self_signed' => true,
