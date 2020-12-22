@@ -1,8 +1,9 @@
 <template>
     <div class="button-groups">
-        <button v-if="isEdit && (step==2 || step==4)" @click="changeStep(3)">자기소개서 작성</button>
-        <button v-if="isEdit && step==3" @click="changeStep(2)">이력서 작성</button>
-        <button v-if="isEdit && step==3" @click="changeStep(4)">제출전 확인</button>
+        <button v-if="isEdit && step==2" @click="changeStep(3)">자기소개서 작성 &gt;&gt;</button>
+        <button v-if="isEdit && step==3" @click="changeStep(2)">&lt;&lt; 이력서 수정</button>
+        <button v-if="isEdit && step==3" @click="changeStep(4)">제출전 확인 &gt;&gt;</button>
+        <button v-if="isEdit && step==4" @click="changeStep(3)">&lt;&lt; 자기소개서 수정</button>
         <button v-if="isEdit && step==4" @click="sendApplicant">제출</button>
         <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
     </div>
