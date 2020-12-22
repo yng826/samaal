@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group">
                     <label for="award_date">수상일</label>
-                    <div class="input_date-group">
+                    <div class="input_date-group input-group">
                         <Datepicker class="inline-block" name="award_date" :language="ko" v-model="item.award_date" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="daum-post-box" @click="onClick">
-        <a href="#" class="btn-close" @click.prevent="false">닫기</a>
+        <a href="#" class="btn-close" @click.prevent="">닫기</a>
         <div ref="daumPostBox" v-bind:style="styles">
 
         </div>

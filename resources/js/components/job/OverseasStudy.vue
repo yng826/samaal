@@ -15,7 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_start">기간</label>
-                    <div class="input_date-group">
+                    <div class="input_date-group input-group">
                         <Datepicker class="inline-block" name="overseas_study_start" :language="ko" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
                         <span class="from-arrow">~</span>
                         <Datepicker class="inline-block" name="overseas_study_end" :language="ko" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>

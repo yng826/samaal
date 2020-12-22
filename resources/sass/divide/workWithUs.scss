@@ -204,6 +204,14 @@
                     }
                 }
 
+                .input-group {
+                    display: inline-block;
+                    width: 500px;
+                    input {
+                        margin-bottom: 2px;
+                    }
+                }
+
                 textarea {
                     width: 100%;
                     box-sizing: border-box;
@@ -212,7 +220,7 @@
                     border-radius: 10px;
                 }
 
-                .input-gorup {
+                .input-group {
                     display: inline-block;
                     width: 351px;
 
@@ -1479,9 +1487,8 @@
                         font-size: vw(18px);
                     }
 
-                    .input-gorup {
-                        width: vw(351px);
-
+                    .input-group {
+                        width: vw(500px);
                         input {
                             margin-bottom: vw(10px);
                         }
@@ -1499,54 +1506,58 @@
                         }
                     }
                 }
-            }
+                // 인적사항 form
+                &.form-left {
 
-            // 인적사항 form
-            .form-left {
+                    .form-group {
 
-                .form-group {
-
-                    label {
-                        width: vw(132px);
-                    }
-
-                    input {
-                        width: vw(351px);
-                    }
-
-                }
-            }
-
-            // 사진업로드
-            .form-img {
-                width: vw(209px);
-
-                .form-group {
-                    .picture {
-                        width: 100%;
-                        height: vw(300px);
-
-                        .picture-text {
-                            font-size: vw(18px);
+                        label {
+                            width: vw(132px);
                         }
-                    }
-
-                    .input-file-trigger {
-                        height: vw(55px);
-                        margin-top: vw(20px);
-
-                        font: {
-                            size: vw(18px);
-                        }
-                        line-height: vw(55px);
 
                         input {
-                            padding: 14px 0;
+                            width: vw(351px);
+                        }
 
+                        .input-group {
+                            width: vw(351px);
+                        }
+
+                    }
+                }
+
+                // 사진업로드
+                &.form-img {
+                    width: vw(209px);
+
+                    .form-group {
+                        .picture {
+                            width: 100%;
+                            height: vw(300px);
+
+                            .picture-text {
+                                font-size: vw(18px);
+                            }
+                        }
+
+                        .input-file-trigger {
+                            height: vw(55px);
+                            margin-top: vw(20px);
+
+                            font: {
+                                size: vw(18px);
+                            }
+                            line-height: vw(55px);
+
+                            input {
+                                padding: 14px 0;
+
+                            }
                         }
                     }
                 }
             }
+
 
             .information-box {
                 margin-top: vw(66px);
@@ -2138,22 +2149,31 @@
 
         .form-container {
             padding: vw(30px 120px 30px);
-            .form-left {
-                width: 50%;
-                .form-group {
-                    label {
-                        width: vw(250px);
-                    }
-                    label, input {
-                        font-size: vw(30px);
+            .form-wrap {
+
+                &.form-left {
+                    width: 50%;
+                    .form-group {
+                        label {
+                            width: vw(250px);
+                        }
+                        label, input {
+                            font-size: vw(30px);
+                        }
                     }
                 }
-            }
-            .form-img {
-                width: 40%;
+                &.form-img {
+                    width: 40%;
+                    .form-group {
+                        .picture {
+                            height: vw(500px);
+                        }
+                    }
+                }
+
                 .form-group {
-                    .picture {
-                        height: vw(500px);
+                    .input-group {
+                        width: vw(250px);
                     }
                 }
             }
@@ -2755,27 +2775,7 @@
         // font-size: vw(21px);
         .form-container {
             padding: vw(10px);
-            .form-img {
-                width: vw(320px);
-                // height: vw(640px);
-                float: none;
-                .form-group {
-                    .picture {
-                        height: vw(540px);
-                        .picture-text {
-                            font-size: vw(24px);
-                        }
-                    }
-                    .input-file-trigger {
-                        height: auto;
-                        margin-top: vw(20px);
-                        padding-top: vw(10px);
-                        padding-bottom: vw(10px);
-                        line-height: 120%;
-                        font-size: vw(35px);
-                    }
-                }
-            }
+
             .form-wrap {
                 h3 {
                     padding-top: vw(10px);
@@ -2804,51 +2804,65 @@
                         height: auto;
                     }
 
-                    .input-gorup {
+                    .input-group {
                         width: vw(300px);
 
                         input {
                             margin-bottom: vw(10px);
                         }
                     }
-                    .input_date-group {
-                        width: vw(300px);
-                        .inline-block {
-                            width: 100%;
-                            input {
-                                height: auto;
+                }
+
+                &.form-left {
+                    width: 100%;
+                    margin-top: vw(50px);
+                    .form-group {
+                        label,
+                        input {
+                            font-size: vw(26px);
+                        }
+                        label {
+                            width: vw(200px);
+                        }
+                        input {
+                            width: vw(300px);
+                            padding: vw(15px);
+                            box-sizing: border-box;
+                            height: auto;
+                        }
+                        .input_date-group {
+                            width: vw(300px);
+                            .inline-block {
+                                width: 100%;
+                                input {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }span {
+                                font-size: vw(30px);
                             }
                         }
                     }
-
                 }
-            }
-            .form-left {
-                width: 100%;
-                margin-top: vw(50px);
-                .form-group {
-                    label,
-                    input {
-                        font-size: vw(26px);
-                    }
-                    label {
-                        width: vw(200px);
-                    }
-                    input {
-                        width: vw(300px);
-                        padding: vw(15px);
-                        box-sizing: border-box;
-                        height: auto;
-                    }
-                }
-            }
-            .form-wrap {
-                .form-group {
-                    .input-gorup input {
-                        width: vw(300px);
-                    }
-                    .input_date-group span {
-                        font-size: vw(30px);
+                &.form-img {
+                    width: vw(320px);
+                    // height: vw(640px);
+                    float: none;
+                    .form-group {
+                        .picture {
+                            height: vw(540px);
+                            .picture-text {
+                                font-size: vw(24px);
+                            }
+                        }
+                        .input-file-trigger {
+                            height: auto;
+                            margin-top: vw(20px);
+                            padding-top: vw(10px);
+                            padding-bottom: vw(10px);
+                            line-height: 120%;
+                            font-size: vw(35px);
+                        }
                     }
                 }
             }

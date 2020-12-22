@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="military_duration_start">군복무기간</label>
-                    <div class="input_date-group">
+                    <div class="input_date-group input-group">
                         <Datepicker class="inline-block" name="military_duration_start" :language="ko" v-model="item.military_duration_start" format="yyyy-MM-dd"></Datepicker>
                         <span class="from-arrow">~</span>
                         <Datepicker class="inline-block" name="military_duration_end" :language="ko" v-model="item.military_duration_end" format="yyyy-MM-dd"></Datepicker>

@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <div class="input-gorup input_date-group" placeholder="선택해주세요.">
+                    <div class="input_date-group input-group" placeholder="선택해주세요.">
                         <Datepicker class="inline-block" name="birth_day" :language="ko" v-model="user_info.birth_day" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
-                    <div class="input-gorup">
+                    <div class="input-group">
                         <input type="text" name="email" :disabled="job.id || isAuth" :value="mode == 'edit' ? this.email : this.createEmail" @input="onInputEmail" placeholder="입력해주세요.">
                         <span v-if="emailEditable">@</span>
                         <input type="text" name="email_vendor_input" :value="this.emailVendor" @input="onInputVendor" :readonly="!selectEdit" v-if="emailEditable" placeholder="입력 또는 선택해주세요.">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">현거주지</label>
-                    <div class="input-gorup">
+                    <div class="input-group">
                         <input type="text" name="address_1" v-model="job.address_1" placeholder="검색해주세요." @click="onClickPost" readonly>
                         <DaumPost style="" @complete="onSearch" v-show="showPost" />
                         <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요.">

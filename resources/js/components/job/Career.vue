@@ -6,7 +6,7 @@
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)">삭제</button>
                 <div class="form-group">
                     <label for="career_start">근무기간</label>
-                    <div class="input_date-group">
+                    <div class="input_date-group input-group">
                         <Datepicker class="inline-block" name="career_start" :language="ko" v-model="item.career_start" format="yyyy-MM-dd"></Datepicker>
                         <span class="from-arrow">~</span>
                         <Datepicker class="inline-block" name="career_end" :language="ko" v-model="item.career_end" format="yyyy-MM-dd"></Datepicker>

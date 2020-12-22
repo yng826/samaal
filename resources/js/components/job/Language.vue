@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="language_start">재학기간</label>
-                    <div class="input_date-group">
+                    <div class="input_date-group input-group">
                         <Datepicker class="inline-block" name="language_start" :language="ko" v-model="item.language_start" format="yyyy-MM-dd"></Datepicker>
                         <span class="from-arrow">~</span>
                         <Datepicker class="inline-block" name="language_end" :language="ko" v-model="item.language_end" format="yyyy-MM-dd"></Datepicker>

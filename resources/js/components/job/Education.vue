@@ -14,7 +14,10 @@
                 </div>
                 <div class="form-group">
                     <label for="edu_grade">성적</label>
-                    <input type="text" name="edu_grade" v-model="item.edu_grade" placeholder="입력해주세요">
+                    <div class="input-group">
+                        <input type="text" name="edu_grade" v-model="item.edu_grade" placeholder="입력해주세요">
+                        <input type="text" name="edu_grade_full" v-model="item.edu_grade_full" placeholder="입력해주세요">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="graduation">졸업구분</label>
@@ -22,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label for="edu_start">재학기간</label>
-                    <div class="input_date-group">
+                    <div class="input_date-group input-group">
                         <Datepicker class="inline-block" name="edu_start" :language="ko" v-model="item.edu_start" format="yyyy-MM-dd"></Datepicker>
                         <span class="from-arrow">~</span>
                         <Datepicker class="inline-block" name="edu_end" :language="ko" v-model="item.edu_end" format="yyyy-MM-dd"></Datepicker>

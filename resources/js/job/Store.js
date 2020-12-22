@@ -70,6 +70,7 @@ export const JobStore = new Vuex.Store({
                 school_name: "",
                 edu_major: "",
                 edu_grade: "",
+                edu_grade_full: "",
                 edu_start: "",
                 edu_end: "",
                 graduation: "",

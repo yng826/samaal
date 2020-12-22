@@ -6,7 +6,7 @@
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)">삭제</button>
                 <div class="form-group">
                     <label for="certificate_date">취득일</label>
-                    <div class="input_date-group">
+                    <div class="input_date-group input-group">
                         <Datepicker class="inline-block" name="certificate_date" :language="ko" v-model="item.certificate_date" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
