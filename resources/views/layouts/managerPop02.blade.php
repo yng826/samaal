@@ -10,7 +10,7 @@
     </dl>
     <dl>
         <dt>Tel</dt>
-        <dd><a href="tel:02-3458-0542">02-0458-0542</a></dd>
+        <dd><a href="tel:02-3458-0542">02-3458-0542</a></dd>
     </dl>
     <dl>
         <dt>E-mail</dt>
