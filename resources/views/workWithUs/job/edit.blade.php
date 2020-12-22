@@ -18,6 +18,8 @@
             <award-component></award-component>
             <certificate-component></certificate-component>
             <overseas-component></overseas-component>
+            <hobby-specialty-component></hobby-specialty-component>
+            <school-activity-component></school-activity-component>
             <self-introduction-component></self-introduction-component>
             <applycant-review-component></applycant-review-component>
             <job-button-groups-component mode="edit"></job-button-groups-component>

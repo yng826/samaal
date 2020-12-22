@@ -57,6 +57,8 @@ Vue.component('language-component', require('../components/job/Language.vue').de
 Vue.component('award-component', require('../components/job/Award.vue').default);
 Vue.component('certificate-component', require('../components/job/Certificate.vue').default);
 Vue.component('overseas-component', require('../components/job/OverseasStudy.vue').default);
+Vue.component('hobby-specialty-component', require('../components/job/HobbySpecialty.vue').default);
+Vue.component('school-activity-component', require('../components/job/SchoolActivity.vue').default);
 Vue.component('self-introduction-component', require('../components/job/SelfIntroduction.vue').default);
 Vue.component('applycant-review-component', require('../components/job/ApplicantReview.vue').default);
 Vue.component('job-button-groups-component', require('../components/job/JobButtonGroups.vue').default);

@@ -16,6 +16,8 @@ export const JobStore = new Vuex.Store({
         military: {},
         oa: [{}],
         oversea: [{}],
+        school_activities:[{}],
+        hobby_specialty: {},
         step: 2,
     },
     mutations: {
@@ -115,6 +117,24 @@ export const JobStore = new Vuex.Store({
                 overseas_study_name: "",
                 overseas_study_position: "",
                 overseas_study_role: "",
-            }]},
+            }]
+        },
+        getDefaultSchoolActivities() {
+            return [{
+                id: "",
+                school_activities_start: "",
+                school_activities_end: "",
+                school_activities_affiliation: "",
+                school_activities_role: "",
+                school_activities_contents: "",
+            }]
+        },
+        getDefaultHobbySpecialty() {
+            return {
+                id: "",
+                hobby: "",
+                specialty: "",
+            }
+        },
     }
 })

@@ -214,10 +214,15 @@
 
                 textarea {
                     width: 100%;
+                    padding: 19px;
+                    font-size: 18px;
                     box-sizing: border-box;
                     background: #EEE;
                     border: none;
                     border-radius: 10px;
+                    &.form-control {
+                        width: 500px;
+                    }
                 }
 
                 .input-group {
@@ -406,7 +411,7 @@
         text-align: center;
         button {
             color: white;
-            background-color: #1d3669;
+            background-color: #2b4985;
             padding: 10px;
         }
     }
@@ -1492,6 +1497,12 @@
                         input {
                             margin-bottom: vw(10px);
                         }
+                    }
+
+                    textarea.form-control {
+                        width: vw(500px);
+                        padding: 0 vw(19px);
+                        font-size: vw(18px);
                     }
 
                     .input_date-group {
@@ -2790,6 +2801,7 @@
                     }
                 }
                 .form-group {
+                    textarea.form-control,
                     label,
                     input {
                         font-size: vw(26px);
@@ -2802,6 +2814,11 @@
                         padding: vw(15px);
                         box-sizing: border-box;
                         height: auto;
+                    }
+
+                    textarea.form-control {
+                        width: vw(300px);
+                        padding: vw(15px);
                     }
 
                     .input-group {

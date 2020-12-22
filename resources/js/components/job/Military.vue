@@ -50,7 +50,16 @@ export default {
         Datepicker,
     },
     computed: {
-        isShow() { return this.$store.job },
+        isShow() {
+            let step2 = this.$store.state.step == 2;
+            let job_id = this.$store.state.job.id;
+            const editMode = this.$store.state.mode == 'edit';
+            if ( step2 && job_id && editMode ) {
+                return true;
+            } else {
+                return false;
+            }
+        },
         job_id() { return this.$store.state.job.id; },
         item () {
             return this.$store.state.military;

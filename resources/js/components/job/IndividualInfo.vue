@@ -338,6 +338,8 @@ export default {
                     this.$store.state.military = res.data.military ? res.data.military : this.$store.getters.getDefaultMilitary;
                     this.$store.state.oa = res.data.oas.length ? res.data.oas : this.$store.getters.getDefaultOas;
                     this.$store.state.oversea = res.data.overseas_studys.length ? res.data.overseas_studys : this.$store.getters.getDefaultOverseasStudys;
+                    this.$store.state.school_activities = res.data.school_activities.length ? res.data.school_activities : this.$store.getters.getDefaultSchoolActivities;
+                    this.$store.state.hobby_specialty = res.data.hobby_specialty ? res.data.hobby_specialty : this.$store.getters.getDefaultHobbySpecialty;
                     this.isSubmit = false;
                 } else {
 
