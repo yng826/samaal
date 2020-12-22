@@ -1365,10 +1365,16 @@
     background-color: rgba(0,0,0,0.5);
     left: 0;
     top: 0;
-    padding: 5vw 5vw;
+    padding: 6vw 5vw;
     box-sizing: border-box;
     z-index: 9;
     overflow: scroll;
+    .btn-close {
+        color: white;
+        border: 1px white solid;
+        margin-bottom: 3px;
+        display: inline-block;
+    }
 }
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
@@ -2671,7 +2677,7 @@
     }
 
     .daum-post-box {
-        padding: 9vw 5vw;
+        padding: 10vw 5vw;
     }
 }
 
@@ -3433,5 +3439,9 @@
                 }
             }
         }
+    }
+
+    .daum-post-box {
+        padding: 15vw 5vw;
     }
 }

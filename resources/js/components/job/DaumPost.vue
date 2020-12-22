@@ -1,5 +1,6 @@
 <template>
     <div class="daum-post-box" @click="onClick">
+        <a href="#" class="btn-close" @click.prevent="false">닫기</a>
         <div ref="daumPostBox" v-bind:style="styles">
 
         </div>
@@ -9,58 +10,6 @@
 </style>
 <script>
 export default {
-      animation: {
-        type: Boolean,
-        default: false,
-      },
-      noAutoMapping: {
-        type: Boolean,
-        default: false,
-      },
-      noShorthand: {
-        type: Boolean,
-        default: false,
-      },
-      noSubmitMode: {
-        type: Boolean,
-        default: false,
-      },
-      pleaseReadGuide: {
-        type: Number,
-        default: 0,
-      },
-      pleaseReadGuideTimer: {
-        type: Number,
-        default: 1.5,
-      },
-      maxSuggestItems: {
-        type: Number,
-        default: 10,
-      },
-      showMoreHName: {
-        type: Boolean,
-        default: false,
-      },
-      hideMapBtn: {
-        type: Boolean,
-        default: false,
-      },
-      hideEngBtn: {
-        type: Boolean,
-        default: false,
-      },
-      alwaysShowEngAddr: {
-        type: Boolean,
-        default: false,
-      },
-      zonecodeOnly: {
-        type: Boolean,
-        default: false,
-      },
-      theme: {
-        type: Object,
-        default: () => ({}),
-      },
     data: function() {
         return {
             q: {
@@ -113,7 +62,7 @@ export default {
     computed: {
         styles() {
             const styles = {}
-            styles.marginTop = '15%';
+            // styles.marginTop = '15%';
             styles.position = 'relative';
             styles.minHeight = '300px';
             styles.height = this.styleHeight
@@ -124,6 +73,58 @@ export default {
         onClick() {
             this.$root.$emit('closePopup');
         }
-    }
+    },
+    animation: {
+    type: Boolean,
+    default: false,
+    },
+    noAutoMapping: {
+    type: Boolean,
+    default: false,
+    },
+    noShorthand: {
+    type: Boolean,
+    default: false,
+    },
+    noSubmitMode: {
+    type: Boolean,
+    default: false,
+    },
+    pleaseReadGuide: {
+    type: Number,
+    default: 0,
+    },
+    pleaseReadGuideTimer: {
+    type: Number,
+    default: 1.5,
+    },
+    maxSuggestItems: {
+    type: Number,
+    default: 10,
+    },
+    showMoreHName: {
+    type: Boolean,
+    default: false,
+    },
+    hideMapBtn: {
+    type: Boolean,
+    default: false,
+    },
+    hideEngBtn: {
+    type: Boolean,
+    default: false,
+    },
+    alwaysShowEngAddr: {
+    type: Boolean,
+    default: false,
+    },
+    zonecodeOnly: {
+    type: Boolean,
+    default: false,
+    },
+    theme: {
+    type: Object,
+    default: () => ({}),
+    },
 }
 </script>
