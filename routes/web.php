@@ -99,12 +99,12 @@ Route::prefix('business')->group(function() {
     });
     Route::get('foil/capacitor', function () {
         $data = [];
-        $data['question_title'] = 'Capacitor용 Foil';
+        $data['question_title'] = 'Capacitor용';
         return view('business.foil.capacitor', $data);
     });
     Route::get('foil/foil', function () {
         $data = [];
-        $data['question_title'] = '연포장용 Foil';
+        $data['question_title'] = '연포장용';
         return view('business.foil.foil', $data);
     });
     Route::get('foil/fin', function () {
