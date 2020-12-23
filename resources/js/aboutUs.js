@@ -52,7 +52,7 @@ const about = () => {
 
     const about_init = () => {
         locationSwiper();
-        news_close();
+        // news_close();
     };
 
     about_init();
