@@ -114,12 +114,12 @@ Route::prefix('business')->group(function() {
     });
     Route::get('foil/decoration', function () {
         $data = [];
-        $data['question_title'] = 'Decoration용 Foil';
+        $data['question_title'] = 'Decoration용';
         return view('business.foil.decoration', $data);
     });
     Route::get('foil/line', function () {
         $data = [];
-        $data['question_title'] = 'Hair Line Foil';
+        $data['question_title'] = 'Hair Line';
         return view('business.foil.line', $data);
     });
     Route::get('foil/restrictions', function () {
@@ -129,12 +129,12 @@ Route::prefix('business')->group(function() {
     });
     Route::get('foil/electronic', function () {
         $data = [];
-        $data['question_title'] = 'LIB 양극집전체용 > Foil -전자기기용';
+        $data['question_title'] = 'LIB 양극집전체용 - 전자기기용';
         return view('business.foil.electronic', $data);
     });
     Route::get('foil/car', function () {
         $data = [];
-        $data['question_title'] = 'LIB 양극집전체용 > Foil -자동차용';
+        $data['question_title'] = 'LIB 양극집전체용 - 자동차용';
         return view('business.foil.car', $data);
     });
     Route::get('foil/external', function () {
