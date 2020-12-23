@@ -9,6 +9,7 @@
 
 import 'core-js/es/array';
 import 'core-js/es/set';
+import 'core-js/es/promise';
 import axios from 'axios';
 import {getHeader} from '../config';
 import User from './User';
