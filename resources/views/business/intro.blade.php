@@ -156,12 +156,13 @@
             loop: true,
             loopedSlides: 4,
         });
+
         var galleryTop = new Swiper('.business-intro__slide-img', {
+        loop: true,
         slidesPerView: 4,
+        loopedSlides: 4,
         spaceBetween: 10,
         centeredSlides: false,
-        loop: true,
-        loopedSlides: 4,
         pagination: {
             el: '.business-intro__slide-img .swiper-pagination',
           },
@@ -170,6 +171,19 @@
             prevEl: '.business-intro__slide-img .swiper-button-prev',
           },
       });
+
+    //   galleryTop.on('slideChange', function(a,b){
+    //        console.log(a, b);
+    //    })
+
+      galleryTop.on('click', function(sw,b) {
+           console.log(sw, b);
+           if ( b.target.className.indexOf('swiper-button-next') < 0 && b.target.className.indexOf('swiper-button-prev') < 0 ) {
+                console.log(sw.clickedIndex);
+                sw.slideTo(sw.clickedIndex);
+           }
+       })
+
       galleryTop.controller.control = galleryThumbs;
       galleryThumbs.controller.control = galleryTop;
     </script>

@@ -74,6 +74,7 @@ window.$ = window.jQuery = require('jquery');
 
 
 import {JobStore} from './Store'
+
 document.addEventListener('DOMContentLoaded', () => {
     common();
 
@@ -103,4 +104,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         console.log('init job');
     }
+});
+
+const appMethods = {
+    common
+};
+
+const appInit = () => {
+    const appName = $('body').attr('class');
+    if(appName) {
+        console.log(appName);
+        [common, appMethods[appName]].forEach(method  => {
+            if(method) method();
+        })
+    } else {
+        common();
+    };
+
+};
+
+document.addEventListener('DOMContentLoaded', async () => {
+    appInit();
 });

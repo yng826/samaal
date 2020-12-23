@@ -21,7 +21,8 @@ $bodyClass = 'about';
                     <span>삼아</span>
                 </div>
                 <!--밑에 backgorund 이미지는 예시 입니다.-->
-                <div class="storyNews-detail__img" style="background-image:url(/storage/{{ $news->img_file_path }});">
+                <div class="storyNews-detail__img">
+                    <img src="/storage/{{ $news->img_file_path }}" alt="{{ $news->title }}">
                 </div>
                 <div class="storyNews-detail__text">
                     <p>
