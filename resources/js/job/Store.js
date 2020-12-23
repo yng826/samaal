@@ -19,6 +19,7 @@ export const JobStore = new Vuex.Store({
         school_activities:[{}],
         hobby_specialty: {},
         step: 2,
+        agree: false,
     },
     mutations: {
         deleteEdu(state, payload) {

@@ -42,6 +42,9 @@ export default {
             } else {
                 return true;
             }
+        },
+        isAgree() {
+            return this.$store.state.agree;
         }
     },
     data: function() {
@@ -79,6 +82,15 @@ export default {
             if ( !this.isSubmitReady ) {
                 Swal.fire({
                     title: '작성을 마저 해주십시오',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            if ( !this.isAgree ) {
+                Swal.fire({
+                    title: '정보이용에 동의 해주십시오',
                     icon: 'error',
                     confirmButtonText: '확인',
                     // allowOutsideClick: false,

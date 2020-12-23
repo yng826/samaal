@@ -31,7 +31,7 @@
                     차후 제출 내용이 허위로 판명되어 합격 및 입사가 취소되어도<br/>이의를 제기하지 않을 것을 맹세합니다.
                 </p>
                 <div class="agree">
-                    <input type="checkbox" name="agree" id="apply_agree" class="information-box__check">
+                    <input type="checkbox" name="agree" id="apply_agree" class="information-box__check" v-model="checked" @change="changeAgree">
                     <label for="">위 내용에 동의하고 지원서를 제출합니다.</label>
                 </div>
             </div>
@@ -71,55 +71,22 @@ export default {
                 txt = '<span class="danger">미작성</span>';
             }
             return txt;
-        }
+        },
     },
     data: function() {
         return {
             ko: ko,
             isAuth: false,
             isSubmit: false,
+            checked: this.$store.state.agree
         }
     },
     mounted: function() {
         // this.isAuth = getAuth();
     },
     methods: {
-        saveItem: function() {
-            if ( this.isSubmit ) {
-                return false;
-            }
-            this.isSubmit = true;
-
-            let headers = getHeader();
-            let url, method;
-            url = '/api/work-with-us/job/' + this.job_id;
-            method = 'put';
-            axios({
-                method: method,
-                url: url,
-                headers: headers,
-                data: {
-                    cover_letter: this.$store.state.job.cover_letter
-                }
-            })
-            .then(res => {
-                this.isSubmit = false;
-                console.log(this.$store.state.job);
-                Swal.fire({
-                    title: '저장되었습니다!',
-                    icon: 'success',
-                    confirmButtonText: '확인'
-                });
-            })
-            .catch(err => {
-                this.isSubmit = false;
-                Swal.fire({
-                    title: '저장에 실패했습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인'
-                });
-                console.error(err);
-            })
+        changeAgree: function() {
+            this.$store.state.agree = !this.$store.state.agree;
         }
     }
 }
