@@ -281,7 +281,7 @@ class JobController extends Controller
                 $result['msg'] = '기한이 지났습니다';
             } else {
                 $job->status = 'submit';
-                // $job->save();
+                $job->save();
                 $result['result'] = 'success';
                 // dd($job);
 
