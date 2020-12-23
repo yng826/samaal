@@ -15,19 +15,23 @@
                     <tbody>
                         <tr>
                             <td>작성여부</td>
-                            <td>{{isUserinfo}}</td>
-                            <td>{{isApplicant}}</td>
-                            <td>{{isSelfIntroduction}}</td>
+                            <td v-html="isUserinfo"></td>
+                            <td v-html="isApplicant"></td>
+                            <td v-html="isSelfIntroduction"></td>
                         </tr>
                     </tbody>
                 </table>
                 <p class="review">
-                    <strong>현재까지 입력한 내용은 모두 임시저장 되어있으며, 최종 제출 시 수정할 수 없습니다.</strong>
-                    지원서 상의 모든 기재 및 제출 사항은 사실과 다름이 없음을 증명합니다.<br/>
-                    차후 제출 내용이 허위로 판명되어 합격 및 입사가 취소되어도 이의를 제기하지 않을 것을 맹세합니다.
+                    <strong>현재까지 입력한 내용은 모두 임시저장 되어있으며,<br/>최종 제출 시 수정할 수 없습니다.</strong>
                 </p>
-                <div>
-                    <input type="checkbox" name="agree" id="apply_agree">
+                <p class="review">
+                    지원서 상의 모든 기재 및 제출 사항은<br/>사실과 다름이 없음을 증명합니다.
+                </p>
+                <p class="review">
+                    차후 제출 내용이 허위로 판명되어 합격 및 입사가 취소되어도<br/>이의를 제기하지 않을 것을 맹세합니다.
+                </p>
+                <div class="agree">
+                    <input type="checkbox" name="agree" id="apply_agree" class="information-box__check">
                     <label for="">위 내용에 동의하고 지원서를 제출합니다.</label>
                 </div>
             </div>
@@ -54,17 +58,17 @@ export default {
             return this.$store.state.job;
         },
         isUserinfo() {
-            return this.$store.state.user_info.id ? '작성완료': '미작성';
+            return this.$store.state.user_info.id ? '작성완료': '<span class="danger">미작성</span>';
         },
         isApplicant() {
-            return this.$store.state.career.length ? '작성완료': '미작성';
+            return this.$store.state.career.length ? '작성완료': '<span class="danger">미작성</span>';
         },
         isSelfIntroduction() {
             let txt;
             if (this.item.is_cover_letter) {
-                txt = this.item.is_cover_letter ? '작성완료': '미작성';
+                txt = this.item.is_cover_letter ? '작성완료': '<span class="danger">미작성</span>';
             } else {
-                txt = '미작성';
+                txt = '<span class="danger">미작성</span>';
             }
             return txt;
         }

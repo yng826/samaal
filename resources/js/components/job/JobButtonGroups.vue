@@ -4,7 +4,7 @@
         <button v-if="isEdit && step==3" @click="changeStep(2)">&lt;&lt; 이력서 수정</button>
         <button v-if="isEdit && step==3" @click="changeStep(4)">제출전 확인 &gt;&gt;</button>
         <button v-if="isEdit && step==4" @click="changeStep(3)">&lt;&lt; 자기소개서 수정</button>
-        <button v-if="isEdit && step==4" @click="sendApplicant">제출</button>
+        <button v-if="isEdit && step==4" @click="checkApplicant">제출</button>
         <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
     </div>
 </template>
@@ -32,6 +32,16 @@ export default {
         },
         status() {
             return this.$store.state.job.status
+        },
+        isSubmitReady() {
+            let userInfo = this.$store.state.user_info.id;
+            let career = this.$store.state.career.length;
+            let coverLetter = this.$store.state.job.is_cover_letter;
+            if ( !userInfo || !career || !coverLetter ) {
+                return false;
+            } else {
+                return true;
+            }
         }
     },
     data: function() {
@@ -47,7 +57,7 @@ export default {
         changeStep: function(step) {
             this.$store.state.step = step;
         },
-        sendApplicant: function() {
+        checkApplicant: function() {
             if ( this.status == 'submit' ) {
                 Swal.fire({
                     title: '이미 제출되었습니다!',
@@ -66,8 +76,32 @@ export default {
                 });
                 return false;
             }
-            this.isSubmit = true;
-            console.log(this.id);
+            if ( !this.isSubmitReady ) {
+                Swal.fire({
+                    title: '작성을 마저 해주십시오',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    // allowOutsideClick: false,
+                });
+                return false;
+            }
+            Swal.fire({
+                title: '제출하시겠습니까?',
+                icon: 'success',
+                showDenyButton: true,
+                confirmButtonText: '확인',
+                denyButtonText: `아니오`,
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.isSubmit = true;
+                    this.sendApplicant();
+                } else if (result.isDenied) {
+                    this.isSubmit = false;
+                }
+            });
+        },
+        sendApplicant: function() {
             let headers = getHeader();
             let url, method;
             url = '/api/work-with-us/job/submit/' + this.id + '?_method=PUT';

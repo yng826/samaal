@@ -132,14 +132,6 @@
 
         .form-wrap {
 
-            .review {
-                text-align: center;
-                word-break: break-all;
-                strong {
-                    display: block;
-                }
-            }
-
             h3 {
                 display: inline-block;
                 position: relative;
@@ -379,30 +371,48 @@
                     vertical-align: middle;
                 }
             }
+        }
 
-            &__check {
-                display: inline-block;
-                position: relative;
-                width: 20px;
-                height: 20px;
-                margin-right: 10px;
-                padding: 0;
-                border-radius: 0;
-                vertical-align: middle;
-                background-color: #e8ecef;
-                color: #000;
-                border: none;
-
-                &:checked::after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    width: 20px;
-                    height: 20px;
-                    background: url("/images/common/icon_check.png") no-repeat center;
-                    background-size: cover;
-                }
+        .review {
+            margin: auto;
+            text-align: center;
+            word-break: keep-all;
+            max-width: 70%;
+            strong {
+                display: block;
             }
+        }
+
+        .agree {
+            text-align: center;
+        }
+
+        .danger {
+            color: rgb(212, 31, 31);
+        }
+    }
+
+    input[type=checkbox] {
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        padding: 0;
+        border-radius: 0;
+        vertical-align: middle;
+        background-color: #e8ecef;
+        color: #000;
+        border: none;
+
+        &:checked::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url("/images/common/icon_check.png") no-repeat center;
+            background-size: cover;
         }
     }
 
@@ -412,6 +422,12 @@
         button {
             color: white;
             background-color: #2b4985;
+            padding: 10px;
+        }
+    }
+
+    .table {
+        td {
             padding: 10px;
         }
     }
@@ -1585,17 +1601,17 @@
 
                     }
                 }
+            }
+        }
 
-                &__check {
-                    width: vw(20px);
-                    height: vw(20px);
-                    margin-right: vw(10px);
+        input[type=checkbox] {
+            width: vw(20px);
+            height: vw(20px);
+            margin-right: vw(10px);
 
-                    &:checked::after {
-                        width: vw(20px);
-                        height: vw(20px);
-                    }
-                }
+            &:checked::after {
+                width: vw(20px);
+                height: vw(20px);
             }
         }
 
@@ -2202,17 +2218,17 @@
                         font-size: 11px;
                     }
                 }
+            }
+        }
 
-                &__check {
-                    width: vw(40px);
-                    height: vw(40px);
-                    margin-right: vw(20px);
+        input[type=checkbox] {
+            width: vw(40px);
+            height: vw(40px);
+            margin-right: vw(20px);
 
-                    &:checked::after {
-                        width: vw(40px);
-                        height: vw(40px);
-                    }
-                }
+            &:checked::after {
+                width: vw(40px);
+                height: vw(40px);
             }
         }
     }
@@ -2894,17 +2910,6 @@
                     font-size: 11px;
                 }
 
-                &__check {
-                    width: vw(20px);
-                    height: vw(20px);
-                    margin-right: vw(10px);
-
-                    &:checked::after {
-                        width: vw(20px);
-                        height: vw(20px);
-                    }
-                }
-
                 &__label {
                     span {
                         font-size: 11px;
@@ -2941,6 +2946,17 @@
 
         .button-group {
             margin-top: vw(30px);
+        }
+
+        input[type=checkbox] {
+            width: vw(20px);
+            height: vw(20px);
+            margin-right: vw(10px);
+
+            &:checked::after {
+                width: vw(20px);
+                height: vw(20px);
+            }
         }
     }
 
