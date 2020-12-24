@@ -17,6 +17,10 @@
 
                             @if (count($categoryKeywords) > 0)
                             <span>"{{ $keyword }}"</span>에 대해 <br/> 총 {{ count($categoryKeywords) }}건의 검색결과가 있습니다.
+                            @else
+                                @if ( !empty($keyword))
+                                    검색결과가 없습니다.
+                                @endif
                             @endif
                         </p>
                     </div>
