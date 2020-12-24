@@ -67,7 +67,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">별도_부채 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="separate_liability" value="{{$info->separate_liability ?? ''}}" numberOnly>
+                            <input type="text" class="form-control" id="separate_liability" name="separate_liability" value="{{$info->separate_liability ?? ''}}" numberOnly>
                         </div>
                     </div>
                 </div>
