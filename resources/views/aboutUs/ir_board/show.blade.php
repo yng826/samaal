@@ -45,13 +45,10 @@
                 <div class="info">
                     <h1>{{ $ir_board->title }}</h1>
                     <p class="name">{{ $ir_board->updated_at ?? $ir_board->created_at}} &nbsp; 삼아</p>
-                    <br />
                     <div class="ir-board-file-box">
                         <a href="/about-us/ir/board/file-download?id={{ $ir_board->id }}" class="btn-download"></a>
                         <a href="/about-us/ir/board/file-download?id={{ $ir_board->id }}"><span>&nbsp; {{ $ir_board->pdf_file_name}}</span></a>
                     </div>
-                    <br />
-                    <br />
                     <div class="ir-board-contents">
                         {!! $ir_board->contents !!}
                     </div>
