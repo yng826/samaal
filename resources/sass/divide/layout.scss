@@ -756,10 +756,12 @@
     &__block {
         &--left {
             display: inline-block;
+            vertical-align: top;
         }
 
         &--right {
             display: inline-block;
+            vertical-align: top;
         }
     }
 }
