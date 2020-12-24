@@ -183,6 +183,13 @@ input, select {
         clear: both;
     }
 }
+.clear {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
 .inline-block {
     display: inline-block;
 }

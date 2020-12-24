@@ -1373,6 +1373,25 @@
 }
 
 /* 인증 현황 */
+.about-ir,
+.speciality-iso,
+.innovation-rnd {
+
+    .btn-download {
+        display: inline-block;
+        width: 28px;
+        height: 30px;
+        background: url("/images/business/speciality/btn-download.png") no-repeat;
+    }
+
+    .btn-preview {
+        display: inline-block;
+        width: 31px;
+        height: 31px;
+        background: url("/images/business/speciality/btn-preview.png") no-repeat;
+    }
+}
+
 .speciality-iso {
 
     &__title {
@@ -1447,18 +1466,6 @@
                     font-size: 0;
                     background-size: contain;
                 }
-            }
-
-            .btn-download {
-                width: 28px;
-                height: 30px;
-                background: url("/images/business/speciality/btn-download.png") no-repeat;
-            }
-
-            .btn-preview {
-                width: 31px;
-                height: 31px;
-                background: url("/images/business/speciality/btn-preview.png") no-repeat;
             }
         }
     }
@@ -2397,6 +2404,20 @@
         }
     }
 
+    .about-ir,
+    .speciality-iso,
+    .innovation-rnd {
+
+        .btn-download {
+            width: vw(28px);
+            height: vw(30px);
+        }
+
+        .btn-preview {
+            width: vw(31px);
+            height: vw(31px);
+        }
+    }
     /* 인증 현황 */
     .speciality-iso {
 
@@ -2449,16 +2470,6 @@
                     a {
                         margin: 0 vw(4px);
                     }
-                }
-
-                .btn-download {
-                    width: vw(28px);
-                    height: vw(30px);
-                }
-
-                .btn-preview {
-                    width: vw(31px);
-                    height: vw(31px);
                 }
             }
         }
@@ -3152,6 +3163,22 @@
         }
     }
 
+    .about-ir,
+    .speciality-iso,
+    .innovation-rnd {
+
+        .btn-download {
+            width: vw(60px);
+            height: vw(60px);
+        }
+
+        .btn-preview {
+            width: vw(62px);
+            height: vw(62px);
+        }
+
+    }
+
     /* 인증 현황 */
     .speciality-iso {
 
@@ -3204,16 +3231,6 @@
                     a {
                         margin: 0 vw(8px);
                     }
-                }
-
-                .btn-download {
-                    width: vw(60px);
-                    height: vw(60px);
-                }
-
-                .btn-preview {
-                    width: vw(62px);
-                    height: vw(62px);
                 }
             }
         }
@@ -4293,6 +4310,22 @@
         }
     }
 
+    .about-ir,
+    .speciality-iso,
+    .innovation-rnd {
+
+        .btn-download {
+            width: vw(33px);
+            height: vw(35px);
+        }
+
+        .btn-preview {
+            width: vw(33px);
+            height: vw(35px);
+        }
+
+    }
+
     /* 인증 현황 */
     .speciality-iso {
 
@@ -4344,16 +4377,6 @@
                     a {
                         margin: 0 vw(8px);
                     }
-                }
-
-                .btn-download {
-                    width: vw(33px);
-                    height: vw(35px);
-                }
-
-                .btn-preview {
-                    width: vw(33px);
-                    height: vw(35px);
                 }
             }
         }

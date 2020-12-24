@@ -262,9 +262,16 @@
     //background-color: #AAA;
 
     .contents-wrap__section{
-        text-align: center;
+        // text-align: center;
+        padding-bottom: 30px;
+
+        .info {
+            float: left;
+            width: 45%;
+        }
         .img {
-            background: #000;
+            float: right;
+            width: 50%;
             img {
                 width: auto;
             }
@@ -353,6 +360,11 @@
     .about-ir {
         .contents-wrap__section{
             text-align: center;
+            .info,
+            .img {
+                float: none;
+                width: auto;
+            }
         }
         &__chart {
             width: vw(100%);
@@ -1186,7 +1198,7 @@
         }
 
         .about-ir__table {
-            margin-top: vw(200px);
+            // margin-top: vw(200px);
 
             th {
                 padding: vw(30px);
@@ -2002,6 +2014,7 @@
 
     /* 재무제표 */
     .ir-wrap--tab {
+        padding-bottom: 20px;
 
         li {
             width: calc(33.33% - #{vw(5px)});
@@ -2048,7 +2061,7 @@
         }
 
         .about-ir__table {
-            margin-top: vw(50px);
+            // margin-top: vw(50px);
         }
     }
 

@@ -41,7 +41,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="contents-wrap__section" id="ir_board_info">
+            <div class="contents-wrap__section clear" id="ir_board_info">
                 <div class="info">
                     <h1>{{ $ir_board->title }}</h1>
                     <p class="name">{{ $ir_board->updated_at ?? $ir_board->created_at}} &nbsp; 삼아</p>
