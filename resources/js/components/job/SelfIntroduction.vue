@@ -6,7 +6,7 @@
                 <input type="hidden" name="id" v-model="this.job_id">
                 <div class="form-group">
                     <label for="cover_letter" class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다.</label>
-                    <textarea class="" name="cover_letter" id="cover_letter" rows="15" v-model="item.cover_letter"></textarea>
+                    <textarea class="" name="cover_letter" id="cover_letter" rows="15" v-model="item.cover_letter" @change="setChanged"></textarea>
                 </div>
 
             </div>
@@ -23,9 +23,15 @@ import Swal from 'sweetalert2'
 import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
+import { FormField } from '../../mixins/FormFields'
+import { SendValidation } from '../../mixins/SendValidation'
 import VSpinner from 'vue-simple-spinner'
 export default {
     props: [],
+    mixins: [
+        FormField,
+        SendValidation
+    ],
     components: {
         VSpinner,
         Datepicker,
@@ -40,7 +46,10 @@ export default {
         },
         status() {
             return this.$store.state.job.status
-        }
+        },
+        isChanged() {
+            return this.$store.state.isChanged
+        },
     },
     data: function() {
         return {
@@ -53,6 +62,9 @@ export default {
         // this.isAuth = getAuth();
     },
     methods: {
+        setChanged: function() {
+            this.$store.state.isChanged = true;
+        },
         validation: function() {
             if ( this.cover_letter == '' || typeof this.cover_letter == 'undefined' ) {
                 return {
@@ -66,22 +78,7 @@ export default {
             }
         },
         saveItem: function() {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
-                return false;
-            }
-            if ( this.status == 'expired' ) {
-                Swal.fire({
-                    title: '제출기한이 지났습니다.',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
             if ( this.isSubmit ) {
@@ -113,6 +110,7 @@ export default {
             })
             .then(res => {
                 this.isSubmit = false;
+                this.$store.state.isChanged = false;
                 console.log(this.$store.state.job);
                 console.log(res);
                 Swal.fire({

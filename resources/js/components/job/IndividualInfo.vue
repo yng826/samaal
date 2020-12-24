@@ -45,8 +45,8 @@
                         <input type="text" name="email" :disabled="job.id || isAuth" :value="mode == 'edit' ? this.email : this.createEmail" @input="onInputEmail" placeholder="입력해주세요.">
                         <span v-if="emailEditable">@</span>
                         <input type="text" name="email_vendor_input" :value="this.emailVendor" @input="onInputVendor" :readonly="!selectEdit" v-if="emailEditable" placeholder="입력 또는 선택해주세요.">
-                        <div class="select-container">
-                            <select name="email_vendor_select" id="" @change="onSelectEmail" v-if="emailEditable">
+                        <div class="select-container" v-if="emailEditable">
+                            <select name="email_vendor_select" id="" @change="onSelectEmail">
                                 <option value="">이메일</option>
                                 <option value="naver.com">네이버</option>
                                 <option value="gmail.com">구글</option>
@@ -114,6 +114,8 @@ import Swal from 'sweetalert2';
 import Datepicker from 'vuejs-datepicker';
 import {ko} from 'vuejs-datepicker/dist/locale';
 import {getHeader, getAuth, getUser, apiDomain} from '../../config';
+import { FormField } from '../../mixins/FormFields'
+import { SendValidation } from '../../mixins/SendValidation'
 import User from '../../job/User';
 import VSpinner from 'vue-simple-spinner';
 import DaumPost from './DaumPost'
@@ -123,6 +125,10 @@ import InputMask from 'vue-input-mask';
 export default {
     // components: { Language },
     props: ['mode', 'recruit_id'],
+    mixins: [
+        FormField,
+        SendValidation
+    ],
     components: {
         VSpinner,
         Datepicker,
@@ -461,22 +467,7 @@ export default {
             }
         },
         setInfo: function(item) {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
-                return false;
-            }
-            if ( this.status == 'expired' ) {
-                Swal.fire({
-                    title: '제출기한이 지났습니다.',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
             const validate = this.validation();

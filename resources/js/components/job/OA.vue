@@ -25,9 +25,15 @@
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import {getHeader, getAuth, getUser} from '../../config'
+import { FormField } from '../../mixins/FormFields'
+import { SendValidation } from '../../mixins/SendValidation'
 import VSpinner from 'vue-simple-spinner'
 export default {
     props: [],
+    mixins: [
+        FormField,
+        SendValidation
+    ],
     components: {
         VSpinner,
     },
@@ -61,21 +67,14 @@ export default {
     },
     methods: {
         addItem: function() {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
-            if ( this.status == 'expired' ) {
+            if ( this.items.length >= 7 ) {
                 Swal.fire({
-                    title: '제출기한이 지났습니다.',
+                    title: '추가할 수 없습니다.',
                     icon: 'error',
                     confirmButtonText: '확인',
-                    // allowOutsideClick: false,
                 });
                 return false;
             }
@@ -86,22 +85,7 @@ export default {
             });
         },
         removeItem: function(id, index) {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
-                return false;
-            }
-            if ( this.status == 'expired' ) {
-                Swal.fire({
-                    title: '제출기한이 지났습니다.',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
             if ( this.items.length == 1 ) {
@@ -170,6 +154,9 @@ export default {
 
         },
         saveItems: function() {
+            if ( !this.isSubmitable ) {
+                return false;
+            }
             if ( this.isSubmit ) {
                 return false;
             }

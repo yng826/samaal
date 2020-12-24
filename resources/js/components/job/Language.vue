@@ -21,11 +21,9 @@
                     <input type="text" name="language_level" v-model="item.language_level" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
-                    <label for="language_start">재학기간</label>
+                    <label for="language_start">인증기간</label>
                     <div class="input_date-group input-group">
                         <Datepicker class="inline-block" name="language_start" :language="ko" v-model="item.language_start" format="yyyy-MM-dd"></Datepicker>
-                        <span class="from-arrow">~</span>
-                        <Datepicker class="inline-block" name="language_end" :language="ko" v-model="item.language_end" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
             </div>
@@ -43,9 +41,15 @@ import Swal from 'sweetalert2'
 import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
+import { FormField } from '../../mixins/FormFields'
+import { SendValidation } from '../../mixins/SendValidation'
 import VSpinner from 'vue-simple-spinner'
 export default {
     props: [],
+    mixins: [
+        FormField,
+        SendValidation
+    ],
     components: {
         VSpinner,
         Datepicker,
@@ -81,21 +85,14 @@ export default {
     },
     methods: {
         addItem: function() {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
-            if ( this.status == 'expired' ) {
+            if ( this.items.length >= 7 ) {
                 Swal.fire({
-                    title: '제출기한이 지났습니다.',
+                    title: '추가할 수 없습니다.',
                     icon: 'error',
                     confirmButtonText: '확인',
-                    // allowOutsideClick: false,
                 });
                 return false;
             }
@@ -110,22 +107,7 @@ export default {
             });
         },
         removeItem: function(id, index) {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
-                return false;
-            }
-            if ( this.status == 'expired' ) {
-                Swal.fire({
-                    title: '제출기한이 지났습니다.',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
             if ( this.items.length == 1 ) {
@@ -194,22 +176,7 @@ export default {
 
         },
         saveItems: function() {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
-                return false;
-            }
-            if ( this.status == 'expired' ) {
-                Swal.fire({
-                    title: '제출기한이 지났습니다.',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
             if ( this.isSubmit ) {

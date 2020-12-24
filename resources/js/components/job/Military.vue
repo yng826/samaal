@@ -5,12 +5,12 @@
                 <h3>병역사항</h3>
                 <input type="hidden" name="id" v-model="item.id">
                 <div class="form-group">
-                    <label for="military_type">구분/구별</label>
-                    <input type="text" name="military_type" v-model="item.military_type" placeholder="입력해주세요">
+                    <label for="military_discharge">제대구분</label>
+                    <input type="text" name="military_discharge" v-model="item.military_discharge" placeholder="(예) 군필/미필/면제 등">
                 </div>
                 <div class="form-group">
-                    <label for="military_discharge">제대구분</label>
-                    <input type="text" name="military_discharge" v-model="item.military_discharge" placeholder="입력해주세요">
+                    <label for="military_type">구분/구별</label>
+                    <input type="text" name="military_type" v-model="item.military_type" placeholder="(예) 육군/해군/공군/해병대 등">
                 </div>
                 <div class="form-group">
                     <label for="military_rank">계급</label>
@@ -42,9 +42,15 @@ import Swal from 'sweetalert2'
 import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
+import { FormField } from '../../mixins/FormFields'
+import { SendValidation } from '../../mixins/SendValidation'
 import VSpinner from 'vue-simple-spinner'
 export default {
     props: [],
+    mixins: [
+        FormField,
+        SendValidation
+    ],
     components: {
         VSpinner,
         Datepicker,

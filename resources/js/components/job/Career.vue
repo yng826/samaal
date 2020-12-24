@@ -14,15 +14,15 @@
                 </div>
                 <div class="form-group">
                     <label for="career_name">직장명</label>
-                    <input type="text" name="career_name" v-model="item.career_name" placeholder="입력해주세요">
+                    <input type="text" name="career_name" :class="maxLength(item.career_name, 30)" v-model="item.career_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="career_position">직위/근무부서</label>
-                    <input type="text" name="career_position" v-model="item.career_position" placeholder="입력해주세요">
+                    <input type="text" name="career_position" :class="maxLength(item.career_position, 15)" v-model="item.career_position" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="career_role">담당업무</label>
-                    <input type="text" name="career_role" v-model="item.career_role" placeholder="입력해주세요">
+                    <input type="text" name="career_role" :class="maxLength(item.career_role, 15)" v-model="item.career_role" placeholder="입력해주세요">
                 </div>
             </div>
         </form>
@@ -39,9 +39,15 @@ import Swal from 'sweetalert2'
 import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
+import { FormField } from '../../mixins/FormFields'
+import { SendValidation } from '../../mixins/SendValidation'
 import VSpinner from 'vue-simple-spinner'
 export default {
     props: [],
+    mixins: [
+        FormField,
+        SendValidation
+    ],
     components: {
         VSpinner,
         Datepicker,
@@ -77,21 +83,14 @@ export default {
     },
     methods: {
         addItem: function() {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
-            if ( this.status == 'expired' ) {
+            if ( this.items.length >= 10 ) {
                 Swal.fire({
-                    title: '제출기한이 지났습니다.',
+                    title: '추가할 수 없습니다.',
                     icon: 'error',
                     confirmButtonText: '확인',
-                    // allowOutsideClick: false,
                 });
                 return false;
             }
@@ -105,22 +104,7 @@ export default {
             });
         },
         removeItem: function(id, index) {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
-                return false;
-            }
-            if ( this.status == 'expired' ) {
-                Swal.fire({
-                    title: '제출기한이 지났습니다.',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
             if ( this.items.length == 1 ) {
@@ -189,22 +173,7 @@ export default {
 
         },
         saveItems: function() {
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
-                return false;
-            }
-            if ( this.status == 'expired' ) {
-                Swal.fire({
-                    title: '제출기한이 지났습니다.',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
+            if ( !this.isSubmitable ) {
                 return false;
             }
             if ( this.isSubmit ) {

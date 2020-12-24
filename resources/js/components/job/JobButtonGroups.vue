@@ -58,7 +58,29 @@ export default {
     },
     methods: {
         changeStep: function(step) {
-            this.$store.state.step = step;
+            if ( step == 4 ) {
+                if ( this.$store.state.isChanged ) {
+                    Swal.fire({
+                        // title: '저장하지 않았습니다.',
+                        title: '저장하지 않았습니다',
+                        text: '저장하지 않고 진행하시겠습니까?',
+                        icon: 'error',
+                        showDenyButton: true,
+                        confirmButtonText: '확인',
+                        denyButtonText: `아니오`,
+                    }).then(result => {
+                        if (result.isConfirmed) {
+                            this.$store.state.step = step;
+                        }
+                        if (result.isDenied) {
+                            this.isSubmit = false;
+                            return false;
+                        }
+                    });
+                }
+            } else {
+                this.$store.state.step = step;
+            }
         },
         checkApplicant: function() {
             if ( this.status == 'submit' ) {
