@@ -359,6 +359,7 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin,recruit'])->group(funct
     Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
     Route::get('recruit/{recruit_id}/job/list-excel-download', [RecruitJobController::class, 'listExcelDownload']);
     Route::get('recruit/{recruit_id}/job/{id}/detail-excel-download', [RecruitJobController::class, 'detailExcelDownload']);
+    Route::get('recruit/{recruit_id}/sms', [RecruitJobController::class, 'smsShow']);
     Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 
@@ -443,4 +444,132 @@ Route::get('send', function () {
         $message->to($user['email'], $user['name'])->subject('Welcome!');
     });
     */
+});
+
+Route::get('sms', function () {
+    // sms 보내기 추가
+    $sID = env('NAVER_SERVICE_ID'); // 서비스 ID
+    $smsURL = "https://sens.apigw.ntruss.com/sms/v2/services/".$sID."/messages";
+    $smsUri = "/sms/v2/services/".$sID."/messages";
+    $sKey = env('NAVER_SERVICE_SECRET');
+
+    $accKeyId = env("NAVER_ACCESS");
+    $accSecKey = env("NAVER_SECRET");
+
+    $sTime = floor(microtime(true) * 1000);
+
+    // The data to send to the API
+    $postData = array(
+        'type' => 'SMS',
+        'countryCode' => '82',
+        'from' => '0234580600', // 발신번호 (등록되어있어야함)
+        'contentType' => 'COMM',
+        'content' => "메세지 내용",
+        'messages' => array(array('content' => "메세지 내용", 'to' => '01028016532'))
+    );
+
+    $postFields = json_encode($postData) ;
+
+    $hashString = "POST {$smsUri}\n{$sTime}\n{$accKeyId}";
+    $dHash = base64_encode( hash_hmac('sha256', $hashString, $accSecKey, true) );
+
+
+    $header = array(
+        'Content-Type: application/json; charset=utf-8',
+        'x-ncp-apigw-timestamp: '.$sTime,
+        "x-ncp-iam-access-key: ".$accKeyId,
+        "x-ncp-apigw-signature-v2: ".$dHash
+    );
+    // return $smsURL;
+
+    // Setup cURL
+    try {
+        $ch = curl_init($smsURL);
+        curl_setopt_array($ch, array(
+            CURLOPT_POST => TRUE,
+            CURLOPT_RETURNTRANSFER => TRUE,
+            CURLOPT_HTTPHEADER => $header,
+            CURLOPT_POSTFIELDS => $postFields,
+
+        ));
+
+        $content = curl_exec($ch);
+        curl_close($ch);
+
+        if ($content === false) {
+            throw new Exception(curl_error($ch), curl_errno($ch));
+        }
+    } catch(Exception $e) {
+
+        trigger_error(sprintf(
+            'Curl failed with error #%d: %s',
+            $e->getCode(), $e->getMessage()),
+            E_USER_ERROR);
+
+    }
+});
+
+
+Route::get('sms2', function () {
+    $sID = env('NAVER_SERVICE_ID'); // 서비스 ID
+    $smsURL = "https://sens.apigw.ntruss.com/sms/v2/services/".$sID."/messages";
+    $uri = "/sms/v2/services/".$sID."/messages";
+    $accKeyId = env("NAVER_ACCESS");
+    $accSecKey = env("NAVER_SECRET");
+    list($microtime, $timestamp) = explode(' ',microtime());
+    $time = $timestamp . substr($microtime, 2, 3);
+
+    $message = "POST";
+    $message .= " ";
+    $message .= $uri;
+    $message .= "\n";
+    $message .= $time;
+    $message .= "\n";
+    $message .= $accKeyId;
+
+    $signature = base64_encode(hash_hmac('sha256', $message, $accSecKey, true));
+
+    $headers = array(
+        "Content-Type: application/json;"
+        , "x-ncp-iam-access-key: " . $accKeyId . ""
+        , "x-ncp-apigw-timestamp: " . $time . ""
+        , "x-ncp-apigw-signature-v2: " . $signature . ""
+    );
+
+    $postData = array(
+        'type' => 'SMS',
+        'countryCode' => '82',
+        'from' => '0234580600', // 발신번호 (등록되어있어야함)
+        'contentType' => 'COMM',
+        'content' => "메세지 내용",
+        'messages' => array(array('content' => "메세지 내용", 'to' => '01028016532'))
+    );
+
+    try {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $smsURL);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $content = curl_exec($ch);
+        curl_close($ch);
+
+        var_dump($content);
+        if ($content === false) {
+            echo 'error';
+            throw new Exception(curl_error($ch), curl_errno($ch));
+        }
+    } catch(Exception $e) {
+
+        trigger_error(sprintf(
+            'Curl failed with error #%d: %s',
+            $e->getCode(), $e->getMessage()),
+            E_USER_ERROR);
+
+    }
 });

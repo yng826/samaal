@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Work\Job;
+use App\Models\Work\Recruit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -389,5 +391,25 @@ class RecruitJobController extends Controller
         $writer = new Xlsx($spreadsheet);
 
         $writer->save('php://output'); //download file
+    }
+
+    public function smsShow(Request $request, $id)
+    {
+        $recruit_users = DB::table("users", 'a')
+                    ->select('a.name, j.phone_decrypt')
+                    ->leftJoin('user_infos AS i', 'a.id', '=', 'i.id')
+                    ->leftJoin('job_applications AS j', 'a.id', '=', 'j.user_id')
+                    ->leftJoin('recruits AS r', 'r.id', '=', 'j.recruit_id')
+                    ->where('r.id', '=', $id)
+                    ->orderBy('j.id', 'desc')
+                    ->get();
+
+        // $recruit_users = Recruit::find(1)->with('users')->first();
+
+        $data = [];
+        $data['recruit_users'] = $recruit_users;
+
+        debug($data);
+        return view('admin.recruit.job.sms', $data);
     }
 }
