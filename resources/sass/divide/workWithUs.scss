@@ -25,6 +25,19 @@
             float: right;
         }
     }
+
+    .select-container {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 4%;
+            top: 45%;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid black;
+        }
+    }
 }
 .work-apply {
     &__title {

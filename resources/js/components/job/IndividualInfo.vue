@@ -45,16 +45,18 @@
                         <input type="text" name="email" :disabled="job.id || isAuth" :value="mode == 'edit' ? this.email : this.createEmail" @input="onInputEmail" placeholder="입력해주세요.">
                         <span v-if="emailEditable">@</span>
                         <input type="text" name="email_vendor_input" :value="this.emailVendor" @input="onInputVendor" :readonly="!selectEdit" v-if="emailEditable" placeholder="입력 또는 선택해주세요.">
-                        <select name="email_vendor_select" id="" @change="onSelectEmail" v-if="emailEditable">
-                            <option value="">이메일</option>
-                            <option value="naver.com">네이버</option>
-                            <option value="gmail.com">구글</option>
-                            <option value="hanmail.net">한메일</option>
-                            <option value="daum.net">다음</option>
-                            <option value="nate.com">네이트</option>
-                            <option value="hotmail.com">핫메일</option>
-                            <option value="manual">직접입력</option>
-                        </select>
+                        <div class="select-container">
+                            <select name="email_vendor_select" id="" @change="onSelectEmail" v-if="emailEditable">
+                                <option value="">이메일</option>
+                                <option value="naver.com">네이버</option>
+                                <option value="gmail.com">구글</option>
+                                <option value="hanmail.net">한메일</option>
+                                <option value="daum.net">다음</option>
+                                <option value="nate.com">네이트</option>
+                                <option value="hotmail.com">핫메일</option>
+                                <option value="manual">직접입력</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
