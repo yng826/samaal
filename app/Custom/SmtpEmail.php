@@ -26,7 +26,7 @@ class SmtpEmail
             $mail->SMTPAutoTLS = false;
             $mail->Port = $config['port']; //gmail has port > 587 . without double quotes
             $mail->setFrom($config['username']);
-            $mail->addAddress($request['email'], $request['name']);
+            $mail->addAddress($request['email'], empty($request['name']) ? '' : $request['name']);
             $mail->Subject = $request['subject'];
             $mail->MsgHTML($request['text']);
             $mail->IsHTML(true);
@@ -36,5 +36,70 @@ class SmtpEmail
         }
 
         return $mail ? "success" : "failed";
+    }
+
+    public function sms(Array $messages)
+    {
+        $sID = env('NAVER_SERVICE_ID'); // 서비스 ID
+        $smsURL = "https://sens.apigw.ntruss.com/sms/v2/services/".$sID."/messages";
+        $uri = "/sms/v2/services/".$sID."/messages";
+        $accKeyId = env("NAVER_ACCESS");
+        $accSecKey = env("NAVER_SECRET");
+        list($microtime, $timestamp) = explode(' ',microtime());
+        $time = $timestamp . substr($microtime, 2, 3);
+
+        $message = "POST";
+        $message .= " ";
+        $message .= $uri;
+        $message .= "\n";
+        $message .= $time;
+        $message .= "\n";
+        $message .= $accKeyId;
+
+        $signature = base64_encode(hash_hmac('sha256', $message, $accSecKey, true));
+
+        $headers = array(
+            "Content-Type: application/json;"
+            , "x-ncp-iam-access-key: " . $accKeyId . ""
+            , "x-ncp-apigw-timestamp: " . $time . ""
+            , "x-ncp-apigw-signature-v2: " . $signature . ""
+        );
+
+        $postData = array(
+            'type' => 'SMS',
+            'countryCode' => '82',
+            'from' => '0234580600', // 발신번호 (등록되어있어야함)
+            'contentType' => 'COMM',
+            'content' => $messages['msg'],
+            'messages' => array(array('content' => "메세지 내용", 'to' => $messages['phone']))
+        );
+
+        try {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $smsURL);
+            curl_setopt($ch, CURLOPT_HEADER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            $content = curl_exec($ch);
+            curl_close($ch);
+
+            var_dump($content);
+            if ($content === false) {
+                echo 'error';
+                throw new Exception(curl_error($ch), curl_errno($ch));
+            }
+        } catch(Exception $e) {
+
+            trigger_error(sprintf(
+                'Curl failed with error #%d: %s',
+                $e->getCode(), $e->getMessage()),
+                E_USER_ERROR);
+
+        }
     }
 }

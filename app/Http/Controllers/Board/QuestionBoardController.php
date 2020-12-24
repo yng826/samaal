@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Board;
 
+use App\Custom\SmtpEmail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -50,7 +51,14 @@ class QuestionBoardController extends Controller
                        // 'state_yn'=> $request->state_yn,
                         'created_at' => now()
                     ]);
-
+        $content = [];
+        $content['email'] = 'test001@sama-al.com';
+        $content['subject'] = "문의메일 - {$request->title}";
+        $content['subject'] .= $request->category != $request->title ? " ($request->category)" : "";
+        $content['text'] = "<p>$request->question</p>";
+        $content['text'] .= "<p>$request->email</p>";
+        // dd($content);
+        SmtpEmail::email($content);
         return redirect()->back();
     }
 
