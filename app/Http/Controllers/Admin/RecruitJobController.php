@@ -394,7 +394,7 @@ class RecruitJobController extends Controller
 
 
             header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            header('Content-Disposition: attachment;filename="채용지원상세_'. $job->user->name. '.xlsx"');
+            header('Content-Disposition: attachment;filename="채용지원상세_'. $job->user->name. '_No'. $id. '.xlsx"');
             header('Cache-Control: max-age=0');
 
             $writer = new Xlsx($spreadsheet);
@@ -402,7 +402,7 @@ class RecruitJobController extends Controller
             if(strpos($ids, ',')) {
                 $excel_file_tmp = tempnam("storage/recruitJobTemplate", 'tmp');
                 $writer->save($excel_file_tmp);
-                $zip->addFile($excel_file_tmp, '채용지원상세_'. $job->user->name. '.xlsx');
+                $zip->addFile($excel_file_tmp, '채용지원상세_'. $job->user->name. '_No'. $id. '.xlsx');
                 array_push($excel_file_tmp_arr, $excel_file_tmp);
             } else {
                 //download xlsx file
