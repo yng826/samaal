@@ -127,7 +127,7 @@
             $('#connect_liability').val($('#connect_liability').val().replaceAll(',', ''));
             $('#separate_sales').val($('#separate_sales').val().replaceAll(',', ''));
             $('#separate_operating_income').val($('#separate_operating_income').val().replaceAll(',', ''));
-            $('#separate_net_income').val($('#separate_net_income').val().replreplaceAllace(',', ''));
+            $('#separate_net_income').val($('#separate_net_income').val().replaceAll(',', ''));
             $('#separate_assets').val($('#separate_assets').val().replaceAll(',', ''));
             $('#separate_liability').val($('#separate_liability').val().replaceAll(',', ''));
         }
