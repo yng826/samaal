@@ -881,6 +881,56 @@
     }
 }
 
+/* aboutUs - 전자공고 상세보기 */
+.ir-board-detail {
+    &__title {
+        font-size: 30px;
+        color: #2a2a2a;
+        line-height: 42px;
+        word-break: keep-all;
+    }
+
+    &__date {
+        display: block;
+        margin-top: 13px;
+        font-size: 14px;
+        color: #2a2a2a;
+        line-height: 1;
+
+        span {
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            margin: 1px 6px 0 7px;
+            background-color: #2a2a2a;
+            vertical-align: top;
+        }
+    }
+
+    .ir-board-file-box {
+        margin-top: 64px;
+        padding: 4px 0 0 46px;
+        background: url("/images/common/icon_filedown.png")no-repeat left top / 30px 31px;
+    }
+
+    &__download {
+        display: inline-block;
+        padding-bottom: 6px;
+        color: #002d55;
+        font-size: 19px;
+        line-height: 1;
+        border-bottom: 2px solid #a3abb6;
+    }
+
+    &__contents {
+        margin-top: 30px;
+        font-size: 18px;
+        color: #2a2a2a;
+        line-height: 32px;
+        word-break: keep-all;
+    }
+}
+
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
     @import "./lib/webvw";
@@ -1182,6 +1232,7 @@
             line-height: vw(32px);
         }
     }
+
 }
 
 /*태블릿 세로 사이즈*/
@@ -2082,6 +2133,49 @@
                 font-size: vw(25px);
             }
 
+        }
+    }
+
+    /* aboutUs - 전자공고 상세보기 */
+    .ir-board-detail {
+        max-width: 100%;
+        padding: vw(0 69px 88px);
+
+        &__title {
+            font-size: vw(30px);
+            line-height: vw(42px);
+        }
+
+        &__date {
+            margin-top: vw(13px);
+            font-size: vw(20px);
+
+            span {
+                height: vw(20px);
+                margin: vw(1px 6px 0 7px);
+            }
+        }
+
+        .ir-board-file-box {
+            margin-top: vw(50px);
+            padding: vw(4px 0 0 46px);
+            background: url("/images/common/icon_filedown.png")no-repeat left top / vw(30px) vw(31px);
+        }
+
+        &__download {
+            padding-bottom: vw(6px);
+            font-size: vw(25px);
+            border-bottom: vw(2px) solid #a3abb6;
+        }
+
+        &__contents {
+            margin-top: vw(30px);
+            font-size: vw(25px);
+            line-height: vw(32px);
+        }
+
+        &__img {
+            padding-top: vw(30px);
         }
     }
 

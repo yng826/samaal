@@ -41,19 +41,19 @@
                     </li>
                 </ul>
             </div>
-            <div class="contents-wrap__section clear" id="ir_board_info">
+            <div class="contents-wrap__section clear ir-board-detail" id="ir_board_info">
                 <div class="info">
-                    <h1>{{ $ir_board->title }}</h1>
-                    <p class="name">{{ $ir_board->updated_at ?? $ir_board->created_at}} &nbsp; 삼아</p>
+                    <h1 class="ir-board-detail__title">{{ $ir_board->title }}</h1>
+                    <p class="name ir-board-detail__date">{{ $ir_board->updated_at ?? $ir_board->created_at}}<span></span>삼아</p>
                     <div class="ir-board-file-box">
-                        <a href="/about-us/ir/board/file-download?id={{ $ir_board->id }}" class="btn-download"></a>
-                        <a href="/about-us/ir/board/file-download?id={{ $ir_board->id }}"><span>&nbsp; {{ $ir_board->pdf_file_name}}</span></a>
+                        {{-- <a href="/about-us/ir/board/file-download?id={{ $ir_board->id }}" class="btn-download"></a> --}}
+                        <a href="/about-us/ir/board/file-download?id={{ $ir_board->id }}" class="ir-board-detail__download"><span>{{ $ir_board->pdf_file_name}}</span></a>
                     </div>
-                    <div class="ir-board-contents">
+                    <div class="ir-board-contents ir-board-detail__contents">
                         {!! $ir_board->contents !!}
                     </div>
                 </div>
-                <div class="img">
+                <div class="img ir-board-detail__img">
                     <a href="/storage/{{ $ir_board->img_file_path }}" title="{{ $ir_board->img_file_name }}" class="ir-img"><img src="/storage/{{ $ir_board->img_file_path }}" width="100%" alt="{{ $ir_board->img_file_name }}"/></a>
                 </div>
             </div>
