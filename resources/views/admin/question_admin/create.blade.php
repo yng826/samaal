@@ -27,20 +27,20 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">제목</label>
-                            <input type="text" class="form-control" name="title" value="{{$board->title ?? ''}}" disabled>
+                            <input type="text" class="form-control" name="title" value="{{$board->title ?? ''}}" readonly>
                             <input type="hidden" class="form-control" name="id" value="{{$board->id ?? 0}}">
                         </div>
                         <div class="form-group">
                             <label for="">문의 분류/제품명</label>
-                            <input type="text" class="form-control" name="category" value="{{$board->category ?? ''}}" disabled>
+                            <input type="text" class="form-control" name="category" value="{{$board->category ?? ''}}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="">작성자 메일 주소</label>
-                            <input type="text" class="form-control" name="email" value="{{$board->email ?? ''}}" disabled>
+                            <input type="text" class="form-control" name="email" value="{{$board->email ?? ''}}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="">내용</label><br>
-                            <textarea rows="5" class="form-control" name="question" disabled>{{$board->question ?? ''}}</textarea>
+                            <textarea rows="5" class="form-control" name="question" readonly>{{$board->question ?? ''}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="">답글</label><br>
