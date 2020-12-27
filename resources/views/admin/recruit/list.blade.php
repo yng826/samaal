@@ -25,7 +25,9 @@
                             <th class="text-center">경력</th>
                             <th class="text-center">직군</th>
                             <th class="text-center">제목</th>
-                            <th class="text-center">등록일</th>
+                            <th class="text-center">시작일</th>
+                            <th class="text-center">종료일</th>
+                            <th class="text-center">종료까지</th>
                             <th class="text-center">관리</th>
                         </tr>
                         @foreach ($recruits as $recruit)
@@ -34,7 +36,9 @@
                             <td class="text-center">{{ $recruit->career == 'new' ? '신입' : '경력' }}</td>
                             <td class="text-center">{{ $recruit->job_type }}</td>
                             <td class="text-center">{{ $recruit->title }}</td>
-                            <td class="text-center">{{ $recruit->updated_at ?? $recruit->created_at}}</td>
+                            <td class="text-center">{{ $recruit->start_date }}</td>
+                            <td class="text-center">{{ $recruit->end_date }}</td>
+                            <td class="text-center">{{ $dt <= $recruit->end_date ? $dt->diffForHumans($recruit->end_date) : '종료' }}</td>
                             <td class="text-center">
                                 <a class="btn btn-outline-warning btn-xs" href="/admin/recruit/{{ $recruit->id }}/edit">수정</a>
                             </td>

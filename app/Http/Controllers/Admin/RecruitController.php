@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,10 +16,12 @@ class RecruitController extends Controller
      */
     public function index()
     {
-        $recruits = DB::table('recruits')->orderBy('id', 'desc')->paginate(10);
+        $recruits = DB::table('recruits')->orderBy('id', 'desc')->paginate(30);
+        $dt     = Carbon::now();
 
         return view('admin.recruit.list', [
-            'recruits' => $recruits,
+            'recruits'  => $recruits,
+            'dt'        => $dt,
         ]);
     }
 

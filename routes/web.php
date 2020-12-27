@@ -358,8 +358,9 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin,recruit'])->group(funct
     Route::resource('recruit', Admin\RecruitController::class);
     Route::get('recruit/{recruit_id}/job/{id}/file-download', [RecruitJobController::class, 'fileDownload']);
     Route::get('recruit/{recruit_id}/job/list-excel-download', [RecruitJobController::class, 'listExcelDownload']);
-    Route::get('recruit/{recruit_id}/sms', [RecruitJobController::class, 'smsShow']);
     Route::get('recruit/{recruit_id}/job/{ids}/detail-excel-download', [RecruitJobController::class, 'detailExcelDownload']);
+    Route::get('recruit/{recruit_id}/job/{ids}/detail-sms', [RecruitJobController::class, 'smsShow']);
+    Route::post('recruit/{recruit_id}/job/{ids}/detail-sms', [RecruitJobController::class, 'smsSend']);
     Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 

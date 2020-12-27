@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Custom\SmtpEmail;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Work\Job;
@@ -40,7 +41,7 @@ class RecruitJobController extends Controller
             $where = ['recruit_id' => $recruit_id, 'status' => $request->status];
         }
 
-        $jobs = Job::where($where)->with(['user'])->orderBy('id', 'desc')->paginate(10);
+        $jobs = Job::where($where)->with(['user'])->orderBy('id', 'desc')->paginate(30);
 
         return view('admin.recruit.job.list', [
             'recruit_id' => $recruit_id,
@@ -427,23 +428,36 @@ class RecruitJobController extends Controller
         }
     }
 
-    public function smsShow(Request $request, $id)
+    public function smsShow(Request $request, $recruit_id, $job_ids)
     {
-        $recruit_users = DB::table("users", 'a')
-                    ->select('a.name, j.phone_decrypt')
-                    ->leftJoin('user_infos AS i', 'a.id', '=', 'i.id')
-                    ->leftJoin('job_applications AS j', 'a.id', '=', 'j.user_id')
-                    ->leftJoin('recruits AS r', 'r.id', '=', 'j.recruit_id')
-                    ->where('r.id', '=', $id)
-                    ->orderBy('j.id', 'desc')
-                    ->get();
+        // $recruit_users = DB::table("users", 'a')
+        //             ->select('a.name, j.phone_decrypt')
+        //             ->leftJoin('user_infos AS i', 'a.id', '=', 'i.id')
+        //             ->leftJoin('job_applications AS j', 'a.id', '=', 'j.user_id')
+        //             ->leftJoin('recruits AS r', 'r.id', '=', 'j.recruit_id')
+        //             ->where('r.id', '=', $id)
+        //             ->orderBy('j.id', 'desc')
+        //             ->get();
 
-        // $recruit_users = Recruit::find(1)->with('users')->first();
+        $jobs = Job::whereIn('id', explode(',', $job_ids))->with(['user'])->get();
 
         $data = [];
-        $data['recruit_users'] = $recruit_users;
+        $data['jobs'] = $jobs;
 
         debug($data);
         return view('admin.recruit.job.sms', $data);
+    }
+
+    public function smsSend(Request $request, $recruit_id, $job_ids)
+    {
+        $jobs = Job::whereIn('id', explode(',', $job_ids))->with(['user'])->get();
+
+        $data = [];
+        $data['phones'] = $jobs->pluck('phone_decrypt');
+        $data['msg'] = $request->sms_text;
+
+        SmtpEmail::sms($data);
+
+        return redirect("/admin/recruit/{$recruit_id}/job/{$job_ids}/detail-sms")->with('success','문자전송에 성공했습니다.');
     }
 }

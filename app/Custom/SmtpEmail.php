@@ -38,7 +38,7 @@ class SmtpEmail
         return $mail ? "success" : "failed";
     }
 
-    public function sms(Array $messages)
+    public static function sms(Array $messages)
     {
         $sID = env('NAVER_SERVICE_ID'); // 서비스 ID
         $smsURL = "https://sens.apigw.ntruss.com/sms/v2/services/".$sID."/messages";
@@ -65,13 +65,20 @@ class SmtpEmail
             , "x-ncp-apigw-signature-v2: " . $signature . ""
         );
 
+        $receiver = [];
+        foreach ($messages['phones'] as $key => $phone) {
+            $temp = [];
+            $temp['to'] = $phone;
+            $receiver[] = $temp;
+        }
+
         $postData = array(
-            'type' => 'SMS',
+            'type' => 'LMS',
             'countryCode' => '82',
             'from' => '0234580600', // 발신번호 (등록되어있어야함)
             'contentType' => 'COMM',
             'content' => $messages['msg'],
-            'messages' => array(array('content' => "메세지 내용", 'to' => $messages['phone']))
+            'messages' => $receiver,
         );
 
         try {
@@ -88,7 +95,7 @@ class SmtpEmail
             $content = curl_exec($ch);
             curl_close($ch);
 
-            var_dump($content);
+            // var_dump($content);
             if ($content === false) {
                 echo 'error';
                 throw new Exception(curl_error($ch), curl_errno($ch));
