@@ -18,6 +18,19 @@ export default {
     },
     methods: {
         openJoin: function() {
+            Swal.fire({
+                title: '알림',
+                icon: 'info',
+                text: '지원이력 내역으로 이동합니다.',
+                confirmButtonText: '확인',
+                allowOutsideClick: false
+            }).then(result => {
+                if (result.isConfirmed) {
+                    this.$root.$emit('closePopup');
+                    window.location.href = '/work-with-us/job';
+                }
+            });
+            return false;
             if (this.isAuth) {
                 this.isAuth = getAuth();
                 axios.get('/api/work-with-us/recruit/' + this.recruit_id,{
@@ -29,7 +42,7 @@ export default {
                         Swal.fire({
                             title: '저장된 내역이 있습니다',
                             icon: 'success',
-                            text: '저장된 이력서로 이동합니다.',
+                            text: '지원이력 내역으로 이동합니다.',
                             confirmButtonText: '확인',
                             allowOutsideClick: false
                         }).then(result => {
