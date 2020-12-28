@@ -100,7 +100,8 @@
                 width: 100%;
                 height: 298px;
                 border-bottom: 1px solid #ccc;
-                background-size: cover;
+                background-repeat: no-repeat;
+                background-size: 100%;
                 background-position: center;
 
                 img {
@@ -584,6 +585,7 @@
                     display: inline-block;
                     font-size: 18px;
                     color: #535353;
+                    letter-spacing: -0.7px;
                 }
             }
         }
@@ -1796,7 +1798,7 @@
             margin-top: 0;
             font-size: 0;
             background: url("/images/about/m/img_ceo.jpg") no-repeat left top;
-            background-size: 100% vw(439px);
+            background-size: 100%;
         }
 
         &__title {
@@ -1873,7 +1875,7 @@
                 }
 
                 .text-bottom {
-                    padding: vw(31px 133px 53px);
+                    padding: vw(31px 120px 53px);
                     background-color: #fff;
                 }
 

@@ -65,8 +65,6 @@
                                     <option value="naver.com">naver.com</option>
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="daum.net">daum.net</option>
-                                    <option value="hanmail.net">hanmail.net</option>
-                                    <option value="nate.com">nate.com</option>
                                     <option value="직접 입력">직접 입력</option>
                                 </select>
                                 <input type="hidden" name="email" id="email">
