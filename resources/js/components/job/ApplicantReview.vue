@@ -58,7 +58,11 @@ export default {
             return this.$store.state.job;
         },
         isUserinfo() {
-            return this.$store.state.user_info.id ? '작성완료': '<span class="danger">미작성</span>';
+            if ( this.$store.state.user_info.id && this.item.file_path) {
+                return  '작성완료';
+            } else {
+                return '<span class="danger">미작성</span>';
+            }
         },
         isApplicant() {
             return this.$store.state.career.length ? '작성완료': '<span class="danger">미작성</span>';

@@ -30,6 +30,12 @@ export default {
         id() {
             return this.$store.state.job.id
         },
+        photo() {
+            return this.$store.state.job.file_path
+        },
+        education() {
+            return this.$store.state.education[0]
+        },
         status() {
             return this.$store.state.job.status
         },
@@ -58,7 +64,24 @@ export default {
     },
     methods: {
         changeStep: function(step) {
-            if ( step == 4 ) {
+            if ( step == 3 && this.step == 2) {
+                if ( !this.photo ) {
+                    Swal.fire({
+                        title: '사진을 등록해주세요!',
+                        icon: 'error',
+                        confirmButtonText: '확인',
+                    });
+                } else if ( !this.education.id ) {
+                    Swal.fire({
+                        title: '학력사항을 입력해주세요!',
+                        icon: 'error',
+                        confirmButtonText: '확인',
+                    });
+                } else {
+                    this.$store.state.step = step;
+                }
+                // console.log( 'check photo', this.photo );
+            } else if ( step == 4 ) {
                 if ( this.$store.state.isChanged ) {
                     Swal.fire({
                         // title: '저장하지 않았습니다.',
