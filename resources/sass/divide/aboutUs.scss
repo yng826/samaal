@@ -262,7 +262,7 @@
     //background-color: #AAA;
 
     .contents-wrap__section{
-        // text-align: center;
+        text-align: center;
         padding-bottom: 30px;
 
         .info {
@@ -2129,7 +2129,7 @@
             }
 
             td {
-                padding: vw(25px);
+                padding: vw(25px 0);
                 font-size: vw(25px);
             }
 
