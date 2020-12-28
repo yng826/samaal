@@ -429,6 +429,10 @@
                     border-width: 0 2px 2px 0;
                     transform: rotate(-135deg);
                 }
+
+                &:first-child {
+                    margin-right: 20px;
+                }
             }
         }
     }
@@ -1134,6 +1138,10 @@
                         right: vw(24px);
                         top: vw(26px);
                         border-width: vw(0 2px 2px 0);
+                    }
+
+                    &:first-child {
+                        margin-right: vw(20px);
                     }
                 }
             }

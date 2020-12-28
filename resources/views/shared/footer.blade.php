@@ -35,6 +35,7 @@
             </div> --}}
             <div class="droplist-box">
                 <button class="droplist-box__button" onClick="location.href='/other/privacy'">개인정보처리방침</button>
+                <button class="droplist-box__button" onClick="location.href='/other/email_security'">이메일무단수집거부</button>
                 <!-- <ul class="droplist">
                     <li id="" class="droplist__item"><a href="#">개인정보</a></li>
                     <li id="" class="droplist__item"><a href="#">패밀리2</a></li>
