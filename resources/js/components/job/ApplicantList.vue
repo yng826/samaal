@@ -45,6 +45,7 @@ export default {
         this.isAuth = getAuth();
         if ( this.isAuth ) {
             const user = getUser();
+            console.log( Promise);
             axios.get('/api/work-with-us/job/', {
                 'headers': getHeader()
             })
