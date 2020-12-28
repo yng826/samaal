@@ -96,12 +96,12 @@
                     <tr>
                         <td></td>
                         <td>전화</td>
-                        <td>02-3458-0592</td>
+                        <td><a href="tel:02-3458-0592">02-3458-0592</a></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>이메일</td>
-                        <td>hmpark@sama-al.com</td>
+                        <td><a href="mailto:hmpark@sama-al.com">hmpark@sama-al.com</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -110,11 +110,11 @@
             <p>
                 <em>제8조(권익침해 구제방법)</em>
                 이용자는 아래의 기관에 대해 개인정보 침해에 대한 피해구제, 상담 등을 문의하실 수 있습니다.
-                아래의 기관은 회사와는 별개의 기관으로서, 회사의 자체적인 개인정보 불만처리, 피해구제 결과에 만족하지 못하시거나 보다 자세한 도움이 필요하시면 문의하여 주시기 바랍니다>
-                1.개인정보침해신고센터(http://privacy.kisa.or.kr / 국번없이 118)
-                2.개인정보분쟁조정위원회(http://www.kopico.go.kr / 국번없이 1833-6972)
-                3.대검찰청 사이버수사과(http://www.spo.go.kr / 국번없이 1301)
-                4.경찰청 사이버안전국(http://cyberbureau.police.go.kr / 국번없이 182)
+                아래의 기관은 회사와는 별개의 기관으로서, 회사의 자체적인 개인정보 불만처리, 피해구제 결과에 만족하지 못하시거나 보다 자세한 도움이 필요하시면 문의하여 주시기 바랍니다. <br>
+                1.개인정보침해신고센터(<a href="http://privacy.kisa.or.kr" target="_blank">http://privacy.kisa.or.kr</a> / 국번없이 118) <br>
+                2.개인정보분쟁조정위원회(<a href="http://www.kopico.go.kr" target="_blank">http://www.kopico.go.kr</a> / 국번없이 1833-6972) <br>
+                3.대검찰청 사이버수사과(<a href="http://www.spo.go.kr" target="_blank">http://www.spo.go.kr</a> / 국번없이 1301) <br>
+                4.경찰청 사이버안전국(<a href="http://cyberbureau.police.go.kr" target="_blank">http://cyberbureau.police.go.kr</a> / 국번없이 182)
             </p>
 
             <p>
