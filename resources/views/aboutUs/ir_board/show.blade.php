@@ -1,7 +1,8 @@
 <html>
     <head>
-        <title>{{ config('app.name', '삼아알미늄') }} - @yield('title')</title>
+        <title>{{ config('app.name', '삼아알미늄') }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="/css/app.css">
         <script src="/js/app.js"></script>
         <style>
@@ -69,6 +70,7 @@
         <script src="{{ asset('/js/manifest.js') }}"></script>
         <script src="{{ asset('/js/vendor.js') }}"></script>
         <script src="{{ asset('/js/irBoard.js') }}"></script>
+        <script src="{{ asset('/js/question.js') }}"></script>
 
     </body>
 </html>

@@ -18,37 +18,59 @@ const question = () => {
             }
         });
 
-        $('.save-btn').on('click', (e) => {
+        // $('.save-btn').on('click', (e) => {
+        //     let _form = $(this).closest('form');
+        //     console.log(_form);
+        //     e.preventDefault();
+        //     if ( validation() ) {
+        //         Swal.fire({
+        //             title: '확인되었습니다!',
+        //             icon: 'success',
+        //             confirmButtonText: '확인'
+        //         });
+
+        //         console.log('form submit');
+        //         //axios.post();
+        //         // $(".layer-popup").removeClass('show');
+        //         // $(".popup-mask").removeClass('show');
+        //         $(".question-form").trigger('submit');
+        //     }
+        // });
+
+        $('.save-btn, .save-btn-all').on('click', (e) => {
             e.preventDefault();
-            if ( validation() ) {
-                Swal.fire({
-                    title: '확인되었습니다!',
-                    icon: 'success',
-                    confirmButtonText: '확인'
-                });
+            let valid = $(e.target).hasClass('save-btn') ? validation() : validation_all();
+            if ( valid ) {
+                let _form = $(e.target).closest('form');
+                let _data = {};
+                _data.title = _form.find('[name=title]').val();
+                _data.category = _form.find('[name=category]').val();
+                _data.email = _form.find('[name=email]').val();
+                _data.question = _form.find('[name=question]').val();
+                console.log(_data);
+                $('.layer-popup__close-btn').trigger('click');
+                axios.post('/api/board',_data, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    // 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }})
+                .then(res => {
+                    console.log(res);
+                    Swal.fire({
+                        title: '전송되었습니다!',
+                        icon: 'success',
+                        confirmButtonText: '확인'
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                })
 
                 console.log('form submit');
-                $(".question-form").trigger('submit');
                 //axios.post();
-                $(".layer-popup").removeClass('show');
-                $(".popup-mask").removeClass('show');
-            }
-        });
-
-        $('.save-btn-all').on('click', (e) => {
-            e.preventDefault();
-            if ( validation_all() ) {
-                Swal.fire({
-                    title: '확인되었습니다!',
-                    icon: 'success',
-                    confirmButtonText: '확인'
-                });
-
-                console.log('form submit');
-                $(".question-form-all").submit();
-                //axios.post();
-                $(".layer-popup").removeClass('show');
-                $(".popup-mask").removeClass('show');
+                // $(".layer-popup").removeClass('show');
+                // $(".popup-mask").removeClass('show');
+                // $(".question-form-all").trigger('submit');
             }
         });
     }

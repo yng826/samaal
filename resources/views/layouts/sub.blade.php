@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>{{ config('app.name', '삼아알미늄') }} - @yield('title')</title>
+        <title>{{ config('app.name', '삼아알미늄') }}</title>
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>

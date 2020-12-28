@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Board\QuestionBoardController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\Recruit\MemberController;
 use App\Http\Controllers\RecruitController;
@@ -61,3 +62,5 @@ Route::prefix('job-detail')->middleware(['auth:api'])->group(function () {
 Route::prefix('admin')->middleware('auth:api')->group(function () {
     Route::get('user', [RecruitController::class, 'api_index' ]);
 });
+
+Route::post('board', [QuestionBoardController::class, 'store'])->middleware(['csrf']);

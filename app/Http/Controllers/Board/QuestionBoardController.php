@@ -57,9 +57,17 @@ class QuestionBoardController extends Controller
         $content['subject'] .= $request->category != $request->title ? " ($request->category)" : "";
         $content['text'] = "<p>$request->question</p>";
         $content['text'] .= "<p>$request->email</p>";
-        // dd($content);
-        SmtpEmail::email($content);
-        return redirect()->back();
+        if ( env('APP_ENV', 'local') == 'production') {
+            # code...
+            SmtpEmail::email($content);
+        }
+        if ($request->expectsJson()) {
+            $data = [];
+            $data['result'] = $saved ? 'success' : 'fail';
+            return response()->json($data);
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
