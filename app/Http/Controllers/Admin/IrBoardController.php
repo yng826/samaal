@@ -141,6 +141,14 @@ class IrBoardController extends Controller
             $pdf_file_name = $request->file('pdf_file')->getClientOriginalName();
             $pdf_file_path = $request->file('pdf_file')->store('ir'); //PDF파일 저장
         }
+        if ($request->del_img) {
+            $img_file_name = '';
+            $img_file_path = '';
+        }
+        if ($request->del_pdf) {
+            $pdf_file_name = '';
+            $pdf_file_path = '';
+        }
 
 
         $affected = DB::table('ir_boards')
@@ -154,7 +162,7 @@ class IrBoardController extends Controller
             'pdf_file_path'=>  $pdf_file_path,
             'updated_at' => now(),
           ]);
-        return redirect('/admin/ir_board');
+        return redirect("/admin/ir_board/{$id}/edit")->with('success', '저장했습니다');
 
     }
 

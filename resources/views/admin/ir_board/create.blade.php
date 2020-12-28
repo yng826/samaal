@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ $action }}" class="form col-12 col-lg-6 board-form" method="POST" enctype="multipart/form-data">
+        <form action="{{ $action }}" class="form col-12 col-lg-12 board-form" method="POST" enctype="multipart/form-data">
             @isset ($board)
                 @method('PUT')
             @endisset
@@ -25,6 +25,13 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
+
+                            @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                            </div>
+                            @endif
                         <div class="form-group">
                             <label for="">제목</label>
                             <input type="text" class="form-control" name="title" value="{{$board->title ?? ''}}">
@@ -34,17 +41,33 @@
                             <label for="">내용</label><br>
                             <textarea rows="5" class="form-control tinymce-editor" name="contents">{{$board->contents ?? ''}}</textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="">이미지파일</label>
-                            <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file">
-                            <input type="hidden" name="img_file_name" value="{{$board->img_file_name ?? ''}}">
-                            <input type="hidden" name="img_file_path" value="{{$board->img_file_path ?? ''}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="">PDF파일</label>
-                            <input type="file" accept=".pdf" class="d-block" name="pdf_file">
-                            <input type="hidden" name="pdf_file_name" value="{{$board->pdf_file_name ?? ''}}">
-                            <input type="hidden" name="pdf_file_path" value="{{$board->pdf_file_path ?? ''}}">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">이미지파일</label>
+                                    <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file">
+                                    <input type="hidden" name="img_file_path" value="{{$board->img_file_path ?? ''}}">
+                                    <input type="text" name="img_file_name" readonly class="form-control" value="{{$board->img_file_name ?? ''}}">
+                                </div>
+                                @if ( $board->img_file_name )
+                                <div class="form-group">
+                                    <input type="checkbox" name="del_img" id="del_img" class="">
+                                    <label for="del_img">이미지 삭제</label>
+                                </div>
+                                @endif
+                                <div class="form-group">
+                                    <label for="">PDF파일</label>
+                                    <input type="file" accept=".pdf" class="d-block" name="pdf_file">
+                                    <input type="text" name="pdf_file_name" readonly class="form-control" value="{{$board->pdf_file_name ?? ''}}">
+                                    <input type="hidden" name="pdf_file_path" value="{{$board->pdf_file_path ?? ''}}">
+                                </div>
+                                @if ( $board->pdf_file_name )
+                                <div class="form-group">
+                                    <input type="checkbox" name="del_img" id="del_img" class="">
+                                    <label for="del_img">PDF 삭제</label>
+                                </div>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>

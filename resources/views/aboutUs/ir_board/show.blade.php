@@ -45,16 +45,22 @@
                 <div class="info">
                     <h1 class="ir-board-detail__title">{{ $ir_board->title }}</h1>
                     <p class="name ir-board-detail__date">{{ $ir_board->updated_at ?? $ir_board->created_at}}<span></span>삼아</p>
+                    @if ( $ir_board->pdf_file_name )
                     <div class="ir-board-file-box">
                         {{-- <a href="/about-us/ir/board/file-download?id={{ $ir_board->id }}" class="btn-download"></a> --}}
                         <a href="/about-us/ir/board/file-download?id={{ $ir_board->id }}" class="ir-board-detail__download"><span>{{ $ir_board->pdf_file_name}}</span></a>
                     </div>
+                    @endif
                     <div class="ir-board-contents ir-board-detail__contents">
                         {!! $ir_board->contents !!}
                     </div>
                 </div>
                 <div class="img ir-board-detail__img">
-                    <a href="/storage/{{ $ir_board->img_file_path }}" title="{{ $ir_board->img_file_name }}" class="ir-img"><img src="/storage/{{ $ir_board->img_file_path }}" width="100%" alt="{{ $ir_board->img_file_name }}"/></a>
+                    @if ( $ir_board->img_file_name )
+                        <a href="/storage/{{ $ir_board->img_file_path }}" title="{{ $ir_board->img_file_name }}" class="ir-img">
+                            <img src="/storage/{{ $ir_board->img_file_path }}" width="100%" alt="{{ $ir_board->img_file_name }}"/>
+                        </a>
+                    @endif
                 </div>
             </div>
         </main>
