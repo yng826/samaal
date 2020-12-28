@@ -301,6 +301,9 @@ Route::prefix('other')->group(function () {
     Route::get('privacy', function () {
         return view('other.privacy');
     });
+    Route::get('email_security', function () {
+        return view('other.email_security');
+    });
 });
 
 
