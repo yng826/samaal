@@ -77,6 +77,8 @@ export default {
                             return false;
                         }
                     });
+                } else {
+                    this.$store.state.step = step;
                 }
             } else {
                 this.$store.state.step = step;
