@@ -79,5 +79,5 @@ window.onload = function(){
 @section('js')
     <script src="{{ asset('/js/admin/manifest.js') }}"></script>
     <script src="{{ asset('/js/admin/vendor.js') }}"></script>
-    <script src="{{ asset('/js/admin/sitemap.es5.js') }}"></script>
+    <script src="{{ asset('/js/admin/sitemap.js') }}"></script>
 @stop

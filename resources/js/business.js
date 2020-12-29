@@ -46,6 +46,25 @@ const business = () => {
         $(window).on('resize', _.debounce(setFullPage, 400))
     }
 
+    const processEventListener = () => {
+        $(window).on('hashchange', function(e) {
+            let hash = location.hash.substr(1);
+            $('.speciality-process__tab--item, .speciality-process__tab-content').removeClass('on');
+            $('.item-' + hash).addClass('on');
+            $('.tab-' + hash).addClass('on')
+        })
+        $('.speciality-process__tab--item').on('click', function(e) {
+            const _hash = $(this).data('hash');
+            window.location.hash = '#' + _hash;
+        });
+
+        let hash = location.hash.substr(1);
+        if ( !hash ) {
+            hash = 'roll'
+        }
+        $('.item-' + hash).trigger('click');
+    }
+
     // business 문의하기 팝업
     const questionPop = () => {
         $(".btn-question").on("click",function(){
@@ -154,6 +173,9 @@ const business = () => {
         innovation_submenu();
         setFullPage();
         eventListener();
+        if ( $('main').hasClass('speciality-process') ) {
+            processEventListener();
+        }
     };
 
     business_init();

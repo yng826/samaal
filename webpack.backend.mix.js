@@ -22,7 +22,7 @@ mix
         jquery: ['$', 'jQuery', 'jquery'],
     })
     .babel(['public/js/admin/menu.js'], 'public/js/admin/menu.es5.js')
-    .babel(['public/js/admin/sitemap.js'], 'public/js/admin/sitemap.es5.js')
+    // .babel(['public/js/admin/sitemap.js'], 'public/js/admin/sitemap.es5.js')
     .babel(['public/js/admin/isoCertification.js'], 'public/js/admin/isoCertification.es5.js')
     .babel(['public/js/admin/recruit.js'], 'public/js/admin/recruit.es5.js')
     .mergeManifest ()

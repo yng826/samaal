@@ -12,12 +12,12 @@
     <div class="contents-wrap__section speciality-process__contents">
         <div class="speciality-process__tab">
             <ul>
-                <li data-id="content-01" class="speciality-process__tab--item {{ $type=='roll' ? 'on' : '' }}"><span>압연</span></li>
-                <li data-id="content-02" class="speciality-process__tab--item {{ $type=='manufacture' ? 'on' : '' }}"><span>가공</span></li>
-                <li data-id="content-03" class="speciality-process__tab--item {{ $type=='paste' ? 'on' : '' }}"><span>알루미늄페이스트</span></li>
+                <li data-hash="roll" data-id="content-01" class="speciality-process__tab--item item-roll"><span>압연</span></li>
+                <li data-hash="manufacture" data-id="content-02" class="speciality-process__tab--item item-manufacture"><span>가공</span></li>
+                <li data-hash="paste" data-id="content-03" class="speciality-process__tab--item item-paste"><span>알루미늄페이스트</span></li>
             </ul>
         </div>
-        <div class="content-01 speciality-process__tab-content {{ $type=='roll' ? 'on' : '' }} process-layout">
+        <div class="content-01 speciality-process__tab-content tab-roll process-layout">
             <p class="process-layout__text">
                 삼아알미늄은 최고의 압연 기술력을 바탕으로<br>
                 앞으로도 꾸준히 고객과 함께 업계의 리더로서 책임을 다하겠습니다.
@@ -54,7 +54,7 @@
             <div class="content-01__img"></div>
         </div>
 
-        <div class="content-02 speciality-process__tab-content {{ $type=='manufacture' ? 'on' : '' }} process-layout">
+        <div class="content-02 speciality-process__tab-content tab-manufacture process-layout">
             <p class="process-layout__text">
                 1969년 담배포장용 알루미늄박지 생산을 시작한 이래 일반 식품포장재에서<br>
                 제약, 건축, 산업용 포장재에 이르는 다양한 포장분야에서 뛰어난 품질과 개발능력으로 업계를 선도하고 있습니다.
@@ -92,7 +92,7 @@
             </p>
             <div class="content-02__img"></div>
         </div>
-        <div class="content-03 speciality-process__tab-content {{ $type=='paste' ? 'on' : '' }} process-layout">
+        <div class="content-03 speciality-process__tab-content tab-paste process-layout">
             <p class="process-layout__text">
                 1974년 국내 최초로 알루미늄 페이스트 생산 시작.<br>
                 알루미늄박 생산과정에서 발생하는 Scrap에 가치를 부가하여 수입대체는 물론<br>
@@ -135,5 +135,4 @@
 
 @section('script')
     @parent
-    {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
 @endsection
