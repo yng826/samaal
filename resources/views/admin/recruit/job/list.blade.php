@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<div class="container">
+<div class="container container-job-list">
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -47,8 +47,8 @@
                         <span class="mr-1 ml-1">|</span>
                         <div class="form-group">
                             <button type="button" class="btn btn-info text-white list-excel-btn">전체요약</button>
-                            <button type="button" class="btn btn-success text-white ml-1 detail-excel-btn" disabled>선택상세</button>
-                            <button type="button" class="btn btn-warning ml-1 detail-sms-btn" disabled>문자전송</button>
+                            <button type="button" class="btn btn-success text-white ml-1 detail-excel-btn" disabled>선택 Excel</button>
+                            <button type="button" class="btn btn-warning ml-1 detail-sms-btn" disabled>선택 문자전송</button>
                             <a href="" class="detail-excel-href"></a>
                         </div>
                     </div>
@@ -112,66 +112,6 @@
 </div>
 
 <script>
-const job_list = () => {
-
-    const init = () => {
-        event_listener();
-    };
-
-    const event_listener = () => {
-        //체크박스 설정
-        set_checkbox();
-
-        //검색버튼 클릭시
-        $('.search-btn').on('click', function() {
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+$('select[name=status]').val());
-        });
-        //전체요약 클릭시
-        $('.list-excel-btn').on('click', function() {
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/list-excel-download');
-        });
-        //선택상세 클릭시
-        $('.detail-excel-btn').on('click', function() {
-            let ids = '';
-            $('input[name=id-check]:checked').each(function(index, item) {
-                ids += (index>0 ? ',' : '') + $(this).val();
-            });
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/'+ids+'/detail-excel-download');
-        });
-        //선택상세 클릭시
-        $('.detail-sms-btn').on('click', function() {
-            let ids = '';
-            $('input[name=id-check]:checked').each(function(index, item) {
-                ids += (index>0 ? ',' : '') + $(this).val();
-            });
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/'+ids+'/detail-sms');
-        });
-    }
-
-    /* 체크박스 설정 */
-    const set_checkbox = () => {
-        $('input[name=id-check], #all-check').on('click', function() {
-            if ($(this).attr('id') == 'all-check') { //체크박스 전체 선택시
-                $('input[name=id-check]').prop('checked', this.checked);
-            }
-
-            $('input[name=id-check]:not(:checked)').parents('tr').children('td').removeAttr('style'); //체크박스 미선택시 지정한 css 속성삭제
-
-            if ($('input[name=id-check]:checked').length == 0) { //체크박스 미선택시
-                $('.detail-excel-btn, .detail-sms-btn').attr('disabled', true); //선택상세 버튼 비활성화
-            } else {
-                $('.detail-excel-btn, .detail-sms-btn').attr('disabled', false); //선택상세 버튼 활성화
-                $('input[name=id-check]:checked').parents('tr').children('td').attr('style', 'background: #f3f4f6!important'); //체크박스 선택시 배경색상 추가
-            }
-        });
-   }
-
-    init();
-}
-
-window.onload = function(){
-    job_list();
-}
 </script>
 @endsection
 
@@ -182,4 +122,5 @@ window.onload = function(){
 @section('js')
     <script src="{{ mix('/js/admin/manifest.js') }}"></script>
     <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="{{ mix('/js/admin/recruit.js') }}"></script>
 @stop

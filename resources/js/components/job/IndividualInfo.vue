@@ -151,7 +151,7 @@ export default {
         }
     },
     computed: {
-        isOpen() { this.$store.state.recruit_status == 'open' },
+        isOpen() { return this.$store.state.recruit_status == 'open' },
         email() {
             if ( this.mode == 'create' ) {
                 return this.createEmail + '@' + this.emailVendor;
@@ -317,8 +317,9 @@ export default {
             .then(res => {
                 this.isSubmit = false;
                 if ( res.data ) {
+                    console.log(res.data.recruit.recruit_status);
                     console.log(res.data);
-                    this.$store.state.recruit_status = res.data.recruit_status;
+                    this.$store.state.recruit_status = res.data.recruit.recruit_status;
                     this.$store.state.job = {
                         address_1: res.data.address_1,
                         address_2: res.data.address_2,

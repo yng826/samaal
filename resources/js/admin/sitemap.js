@@ -6,6 +6,7 @@
 
 // require('../bootstrap');
 // require('../common');
+import 'core-js/stable';
 import 'jquery-ui/ui/widgets/datepicker';
 // import {datepicker} from 'jquery-ui';
 window.Vue = require('vue');

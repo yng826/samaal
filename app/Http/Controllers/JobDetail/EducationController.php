@@ -79,8 +79,8 @@ class EducationController extends Controller
                                 'edu_major' => $education['edu_major'],
                                 'edu_grade' => $education['edu_grade'],
                                 'edu_grade_full' => $education['edu_grade_full'],
-                                'edu_start' => date('Y-m-d', strtotime($education['edu_start'])),
-                                'edu_end' => date('Y-m-d', strtotime($education['edu_end'])),
+                                'edu_start' => $education['edu_start'] ? date('Y-m-d', strtotime($education['edu_start'])) : null,
+                                'edu_end' => $education['edu_end'] ? date('Y-m-d', strtotime($education['edu_end'])) : null,
                                 'graduation' => $education['graduation'],
                             ]);
             } else {
@@ -91,8 +91,8 @@ class EducationController extends Controller
                                 'edu_major' => $education['edu_major'],
                                 'edu_grade' => $education['edu_grade'],
                                 'edu_grade_full' => $education['edu_grade_full'],
-                                'edu_start' => date('Y-m-d', strtotime($education['edu_start'])),
-                                'edu_end' => date('Y-m-d', strtotime($education['edu_end'])),
+                                'edu_start' => $education['edu_start'] ? date('Y-m-d', strtotime($education['edu_start'])) : null,
+                                'edu_end' => $education['edu_end'] ? date('Y-m-d', strtotime($education['edu_end'])) : null,
                                 'graduation' => $education['graduation'],
                             ]);
             }

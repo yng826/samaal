@@ -86,59 +86,6 @@
     </div>
 </div>
 
-<script>
-const menu_create = () => {
-
-    const init = () => {
-        event_listener();
-    };
-
-    const event_listener = () => {
-        //저장 버튼 클릭시
-        $('.add-btn').on('click', function() {
-            if (validation()) {
-                $('#menu-form').submit();
-            }
-        });
-
-        //삭제 버튼 클릭시
-        $('.del-btn').on('click', function() {
-            if (confirm('해당 메뉴를 삭제하시겠습니까?')) {
-                $('input[name=_method]').val('DELETE');
-                $('#menu-form').submit();
-            }
-        });
-    }
-
-    const validation = () => {
-        if ($('input[name=name]').val() == '' || $('input[name=name]').val() == null) {
-            alert('메뉴명을 입력해주세요.');
-            $('input[name=name]').focus();
-            return false;
-
-        } else if ($('input[name=url]').val() == '' || $('input[name=url]').val() == null) {
-            alert('URL을 입력해주세요.');
-            $('input[name=url]').focus();
-            return false;
-
-        } else if ($('input[name=menu_type]:checked').val() == '' || $('input[name=menu_type]:checked').val() == null) {
-            alert('메뉴 종류를 선택해주세요.');
-            return false;
-
-        } else if ($('input[name=is_front]:checked').val() == '' || $('input[name=is_front]:checked').val() == null) {
-            alert('사이트 노출을 선택해주세요.');
-            return false;
-        }
-        return true;
-    }
-
-    init();
-}
-
-window.onload = function(){
-    menu_create();
-}
-</script>
 @endsection
 
 @section('css')
@@ -146,6 +93,7 @@ window.onload = function(){
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="{{ asset('/js/admin/manifest.js') }}"></script>
+    <script src="{{ asset('/js/admin/vendor.js') }}"></script>
+    <script src="{{ asset('/js/admin/menu.js')}}"></script>
 @stop

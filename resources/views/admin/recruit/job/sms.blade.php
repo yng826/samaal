@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<div class="container">
+<div class="container container-job-sms">
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -83,37 +83,6 @@
     </div>
 </div>
 
-<script>
-const job_list = () => {
-
-    const init = () => {
-        event_listener();
-    };
-
-    const event_listener = () => {
-        //변경 버튼 클릭시
-        $('.edit-btn').on('click', function() {
-            if (validation()) {
-                $('#job-form').submit();
-            }
-        });
-    }
-
-    const validation = () => {
-        if ($('select[name=status]').val() == '' || $('select[name=status]').val() == null) {
-            alert('처리상태를 선택해주세요.');
-            return false;
-        }
-        return true;
-    }
-
-    init();
-}
-
-window.onload = function(){
-    job_list();
-}
-</script>
 @endsection
 
 @section('css')
@@ -123,4 +92,5 @@ window.onload = function(){
 @section('js')
     <script src="{{ mix('/js/admin/manifest.js') }}"></script>
     <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="{{ mix('/js/admin/recruit.js') }}"></script>
 @stop

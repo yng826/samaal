@@ -39,7 +39,7 @@ class Kernel extends ConsoleKernel
             ->where('recruit_status', '=', 'standby')
             ->update(['recruit_status'=> 'open']);
 
-            /*
+            /** */
             // 종료
             $end_recruits = DB::table('recruits')
                 ->where([
@@ -67,7 +67,7 @@ class Kernel extends ConsoleKernel
             }
             // $query = DB::getQueryLog();
             // Log::debug($end_recruits->pluck('id'));
-            */
+            /***/
         })->everyMinute();
     }
 

@@ -37,7 +37,7 @@ export default {
         VSpinner,
     },
     computed: {
-        isOpen() { this.$store.state.recruit_status == 'open' },
+        isOpen() { return this.$store.state.recruit_status == 'open' },
         isShow() {
             let step2 = this.$store.state.step == 2;
             let job_id = this.$store.state.job.id;

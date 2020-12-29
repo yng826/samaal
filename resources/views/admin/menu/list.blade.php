@@ -40,35 +40,6 @@
 </div>
 
 <script>
-const menu_list = () => {
-
-    const init = () => {
-        event_listener();
-    };
-
-    const event_listener = () => {
-        //순서저장 버튼 클릭시
-        $('.menu-order-btn').on('click', function() {
-            let order_arr = new Array();
-            const id =  $('#treeMenu input[name=id]').val().slice(0, -1).split(','); //자신 아이디(마지막 공백 쉼표 제거)
-            const depth =  $('#treeMenu input[name=depth]').val().split(','); //자신 위치
-            const parent_id =  $('#treeMenu input[name=parent_id]').val().split(','); //부모 아이디
-
-            $.each(id, function(index, item){
-                order_arr.push({'id': item, 'order_id': index+1, 'depth': depth[index], 'parent_id': parent_id[index]});
-            });
-            $('input[name=orders]').val(JSON.stringify(order_arr));
-
-            $('#order-form').submit();
-        });
-    }
-
-    init();
-}
-
-window.onload = function(){
-    menu_list();
-}
 </script>
 @endsection
 
@@ -79,5 +50,5 @@ window.onload = function(){
 @section('js')
     <script src="{{ asset('/js/admin/manifest.js') }}"></script>
     <script src="{{ asset('/js/admin/vendor.js') }}"></script>
-    <script src="{{ asset('/js/admin/menu.es5.js') }}"></script>
+    <script src="{{ asset('/js/admin/menu.js') }}"></script>
 @stop

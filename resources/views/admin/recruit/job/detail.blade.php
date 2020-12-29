@@ -7,27 +7,31 @@
 @stop
 
 @section('content')
-<div class="container">
+<div class="container container-job-edit">
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-9 col-xl-10">
+                <div class="col-8 col-xl-9">
                     <h3>채용 지원자 상세</h3>
                 </div>
-                <div class="col-3 col-xl-2">
+                <div class="col-4 col-xl-3">
                     <div class="form-inline">
-                        <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
-                            @method('PUT')
-                            @csrf
-                            <div class="form-group form-inline">
-                                <select class="form-control w-auto mr-1" name="status">
-                                    <option value="">::처리상태::</option>
-                                    <option value="pending" {{ $job->status == 'pending' ? 'selected' :''}}>처리중</option>
-                                    <option value="expired" {{ $job->status == 'expired' ? 'selected' :''}}>종료</option>
-                                </select>
-                                <button type="button" class="btn btn-primary text-white edit-btn">변경</button>
-                            </div>
-                        </form>
+                        @if ( $job->status == 'pending' || $job->status == 'submit' )
+                            <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
+                                @method('PUT')
+                                @csrf
+                                <div class="form-group form-inline">
+                                    <select class="form-control w-auto mr-1" name="is_pass">
+                                        <option value="">::합격상태::</option>
+                                        <option value="0" {{ $job->is_pass == '0' ? 'selected' :''}}>불합격</option>
+                                        <option value="1" {{ $job->is_pass == '1' ? 'selected' :''}}>합격</option>
+                                    </select>
+                                    <button type="button" class="btn btn-primary text-white edit-btn">변경</button>
+                                </div>
+                            </form>
+                        @else
+                            <input type="text" name="" id="" class="form-control" disabled value="미제출">
+                        @endif
                         <span class="mr-1 ml-1">|</span>
                         <a class="btn btn-info text-white" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/detail-excel-download">EXCEL</a>
                     </div>
@@ -328,37 +332,6 @@
     </div>
 </div>
 
-<script>
-const job_list = () => {
-
-    const init = () => {
-        event_listener();
-    };
-
-    const event_listener = () => {
-        //변경 버튼 클릭시
-        $('.edit-btn').on('click', function() {
-            if (validation()) {
-                $('#job-form').submit();
-            }
-        });
-    }
-
-    const validation = () => {
-        if ($('select[name=status]').val() == '' || $('select[name=status]').val() == null) {
-            alert('처리상태를 선택해주세요.');
-            return false;
-        }
-        return true;
-    }
-
-    init();
-}
-
-window.onload = function(){
-    job_list();
-}
-</script>
 @endsection
 
 @section('css')
@@ -368,4 +341,5 @@ window.onload = function(){
 @section('js')
     <script src="{{ mix('/js/admin/manifest.js') }}"></script>
     <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="{{ mix('/js/admin/recruit.js') }}"></script>
 @stop

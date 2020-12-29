@@ -37,7 +37,7 @@ export default {
         Datepicker,
     },
     computed: {
-        isOpen() { this.$store.state.recruit_status == 'open' },
+        isOpen() { return this.$store.state.recruit_status == 'open' },
         cover_letter() {
             return this.$store.state.job.cover_letter;
         },

@@ -220,7 +220,7 @@ class JobController extends Controller
                 $filePath = $formData['file_path'];
             }
             // save job
-            $job->phone_encrypt = Crypt::encryptString($formData['phone_decrypt']);
+            $job->phone_encrypt = Crypt::encryptString(str_replace(' ', '', $formData['phone_decrypt']));
             $job->address_1 = $formData['address_1'];
             $job->address_2 = $formData['address_2'];
             $job->file_path = $filePath;
