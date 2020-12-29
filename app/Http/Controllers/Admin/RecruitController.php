@@ -54,6 +54,7 @@ class RecruitController extends Controller
                         'job_type'=> $request->job_type,
                         'start_date'=> date('Y.m.d', strtotime($request->start_date)),
                         'end_date'=> date('Y.m.d', strtotime($request->end_date)),
+                        'recruit_status'=> 'standby',
                         'description'=> $request->description,
                         'created_at' => now()
                     ]);
