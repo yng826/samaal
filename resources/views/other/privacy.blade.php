@@ -4,7 +4,7 @@
     <main class="privacy-wrap">
         <div class="contents-wrap__title privacy-wrap__title">
             <h2>
-                개인정보 처리방침
+                개인정보처리방침
             </h2>
         </div>
         <div class="privacy-wrap__contents ">
