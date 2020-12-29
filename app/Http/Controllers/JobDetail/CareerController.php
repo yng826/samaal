@@ -75,8 +75,8 @@ class CareerController extends Controller
                 $affected = DB::table('job_applications_career')
                             ->insert([
                                 'job_id' => $id,
-                                'career_start' => date('Y-m-d', strtotime($career['career_start'])),
-                                'career_end' => date('Y-m-d', strtotime($career['career_end'])),
+                                'career_start' => $career['career_start'] ? date('Y-m-d', strtotime($career['career_start'])) : null,
+                                'career_end' => $career['career_end'] ? date('Y-m-d', strtotime($career['career_end'])) : null,
                                 'career_name' => $career['career_name'],
                                 'career_position' => $career['career_position'],
                                 'career_role' => $career['career_role'],
@@ -85,8 +85,8 @@ class CareerController extends Controller
                 $affected = DB::table('job_applications_career')
                             ->where('id', $career['id'])
                             ->update([
-                                'career_start' => date('Y-m-d', strtotime($career['career_start'])),
-                                'career_end' => date('Y-m-d', strtotime($career['career_end'])),
+                                'career_start' => $career['career_start'] ? date('Y-m-d', strtotime($career['career_start'])) : null,
+                                'career_end' => $career['career_end'] ? date('Y-m-d', strtotime($career['career_end'])) : null,
                                 'career_name' => $career['career_name'],
                                 'career_position' => $career['career_position'],
                                 'career_role' => $career['career_role'],
