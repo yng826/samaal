@@ -6,7 +6,7 @@ import User from '../../job/User'
 import {getHeader, getAuth, getJob} from '../../config'
 import Swal from 'sweetalert2'
 export default {
-    props : ['recruit_id'],
+    props : ['recruit_id', 'recruit_status'],
     components : {},
     data: function() {
         return {
@@ -18,6 +18,27 @@ export default {
     },
     methods: {
         openJoin: function() {
+            if ( this.recruit_status != 'open') {
+                let text = '';
+                switch (this.recruit_status) {
+                    case 'standby':
+                        text = '아직 채용이 시작되지 않았습니다';
+                        break;
+                    case 'closed':
+                        text = '채용이 마감되었습니다';
+                        break;
+
+                    default:
+                        text = '아직 채용이 시작되지 않았습니다';
+                        break;
+                }
+                Swal.fire({
+                    title: '알림',
+                    icon: 'error',
+                    text: text
+                });
+                return false;
+            }
             this.isAuth = getAuth();
             if (this.isAuth) {
                 // this.$root.$emit('openPopup', 'login');

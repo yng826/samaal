@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="work-recruit__detail--button">
-                <apply-button recruit_id="{{$recruit->id}}"></apply-button>
+                <apply-button recruit_id="{{$recruit->id}}" recruit_status="{{$recruit->recruit_status}}"></apply-button>
                 <check-apply-button recruit_id="{{$recruit->id}}"></check-apply-button>
             </div>
         </div>

@@ -11,7 +11,7 @@
 
             </div>
         </form>
-        <div class="button-group">
+        <div class="button-group" v-if="isOpen">
             <button class="btn-save" @click="saveItem">저장</button>
         </div>
         <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
@@ -37,6 +37,7 @@ export default {
         Datepicker,
     },
     computed: {
+        isOpen() { this.$store.state.recruit_status == 'open' },
         cover_letter() {
             return this.$store.state.job.cover_letter;
         },

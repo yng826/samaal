@@ -3,7 +3,7 @@
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>해외연수</h3>
-                <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)">삭제</button>
+                <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <input type="hidden" name="id" v-model="item.id">
                 <div class="form-group">
                     <label for="country_name">국가/도시</label>
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </form>
-        <div class="button-group">
+        <div class="button-group" v-if="isOpen">
             <button class="btn-add" @click="addItem">추가</button>
             <button class="btn btn-success btn-save" @click="saveItems">저장</button>
         </div>
@@ -62,6 +62,7 @@ export default {
         Datepicker,
     },
     computed: {
+        isOpen() { this.$store.state.recruit_status == 'open' },
         isShow() {
             let step2 = this.$store.state.step == 2;
             let job_id = this.$store.state.job.id;

@@ -14,7 +14,7 @@
                 </div>
             </div>
         </form>
-        <div class="button-group">
+        <div class="button-group" v-if="isOpen">
             <button class="btn btn-success btn-save" @click="saveItem">저장</button>
         </div>
         <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
@@ -37,6 +37,7 @@ export default {
         VSpinner,
     },
     computed: {
+        isOpen() { this.$store.state.recruit_status == 'open' },
         isShow() {
             let step2 = this.$store.state.step == 2;
             let job_id = this.$store.state.job.id;

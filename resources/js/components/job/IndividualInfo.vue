@@ -12,7 +12,7 @@
                     <div class="picture" v-if="!this.preview" v-bind:style="pic">
                         <span class="picture-text" v-if="!job.file_path">사진을<br> 등록해주세요.</span>
                     </div>
-                    <label for="pic" class="input-file-trigger">
+                    <label for="pic" class="input-file-trigger" v-if="isOpen">
                         이미지 업로드
                         <input type="file" name="pic" id="pic" @change="picSelect">
                     </label>
@@ -95,8 +95,8 @@
                     <span>개인정보 이용 및 수집에 동의 합니다.</span>
                 </label> -->
             </div>
-            <div class="button-group" v-if="isPossibleSave">
-                <button>저장</button>
+            <div class="button-group" v-if="isOpen">
+                <button v-if="isPossibleSave">저장</button>
             </div>
         </form>
         <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
@@ -151,6 +151,7 @@ export default {
         }
     },
     computed: {
+        isOpen() { this.$store.state.recruit_status == 'open' },
         email() {
             if ( this.mode == 'create' ) {
                 return this.createEmail + '@' + this.emailVendor;
@@ -317,6 +318,7 @@ export default {
                 this.isSubmit = false;
                 if ( res.data ) {
                     console.log(res.data);
+                    this.$store.state.recruit_status = res.data.recruit_status;
                     this.$store.state.job = {
                         address_1: res.data.address_1,
                         address_2: res.data.address_2,

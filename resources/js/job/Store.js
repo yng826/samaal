@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export const JobStore = new Vuex.Store({
     state: {
+        recruit_status: 'standby',
         job: {},
         user: {},
         user_info: {},
