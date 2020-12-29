@@ -35,9 +35,9 @@
                     <div class="swiper-slide"><img src="/images/about/heritage/slide_2005.jpg" alt=""></div>
                     <div class="swiper-slide"><img src="/images/about/heritage/slide_2006.jpg" alt=""></div>
                     <div class="swiper-slide"><img src="/images/about/heritage/slide_2007.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2012.jpg" alt=""></div>
                     <div class="swiper-slide"><img src="/images/about/heritage/slide_2012_01.jpg" alt=""></div>
                     <div class="swiper-slide"><img src="/images/about/heritage/slide_2012_02.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2012.jpg" alt=""></div>
                     <div class="swiper-slide"><img src="/images/about/heritage/slide_2016.jpg" alt=""></div>
                     <div class="swiper-slide"><img src="/images/about/heritage/slide_2017.jpg" alt=""></div>
                     </div>
