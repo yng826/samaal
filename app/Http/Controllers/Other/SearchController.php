@@ -25,35 +25,48 @@ class SearchController extends Controller
 
             $keywords = DB::table('sitemap_keywords')
                             ->join('sitemaps', 'sitemap_keywords.sitemap_id', '=', 'sitemaps.id')
-                            ->where('sitemap_keywords.keyword', 'LIKE', '%'. $request->keyword. '%')
+                            ->where('sitemap_keywords.keyword', '=', $request->keyword)
                             ->whereRaw('LENGTH(sitemaps.url) > 2')
-                            ->select('sitemaps.*', 'sitemap_keywords.keyword')
+                            // ->select('sitemaps.*', 'sitemap_keywords.keyword')
+                            ->select(DB::raw('DISTINCT(sitemap_keywords.sitemap_id), sitemaps.*, sitemap_keywords.keyword'))
                             ->orderBy('order_id')->get();
 
+            $newKeywords = collect();
+            $newCategoryKeywords = collect();
             foreach ($keywords as $keyword) {
                 $names = $this->names($sitemaps, $keyword->parent_id). $keyword->name;
                 $keyword->names = $names;
 
-                $newCategoryKeywords[] = $keyword;
+                $newCategoryKeywords->push( $keyword );
 
                 if($request->category > 0){
                     if($keyword->category_id == $request->category){
-                        $newKeywords[] = $keyword;
+                        $newKeywords->push($keyword);
+                        // $newKeywords[] = $keyword;
                     }
                 }else{
-                    $newKeywords[] = $keyword;
+                    // $newKeywords[] = $keyword;
+                    $newKeywords->push($keyword);
                 }
             }
+            debug($keywords);
             debug($newKeywords);
             debug($newCategoryKeywords);
+
         }
+        $categoryKeywords = $keywords;
+        $filtedKeywords = $request->category ? $keywords->where('category_id', $request->category) : $keywords;
+        debug($categorys);
+        // dd($keywords->where('category_id', 5));
 
         return view('other.search', [
             'keyword' => $request->keyword,
             'categoryId' => $request->category,
-            'categoryKeywords' => $newCategoryKeywords,
+            'categoryKeywords' => $categoryKeywords,
             'categorys' => $categorys,
-            'keywords' => $newKeywords,
+            'keywords' => $keywords,
+            'newKeywords' => $newKeywords,
+            'filtedKeywords' => $filtedKeywords,
         ]);
     }
 

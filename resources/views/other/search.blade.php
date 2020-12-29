@@ -16,7 +16,7 @@
                         <p class="work-recruit__search--text search-wrap__search-text">
 
                             @if (count($categoryKeywords) > 0)
-                            <span>"{{ $keyword }}"</span>에 대해 <br/> 총 {{ count($categoryKeywords) }}건의 검색결과가 있습니다.
+                            <span>"{{ $keyword }}"</span>에 대해 <br/> <strong>총 {{ count($categoryKeywords) }}건</strong>의 검색결과가 있습니다.
                             @else
                                 @if ( !empty($keyword))
                                     검색결과가 없습니다.
@@ -35,45 +35,63 @@
                             <span>
                                 전체
                                 @if (count($categoryKeywords) > 0)
-                                    {{ count($categoryKeywords) }}
+                                    <strong>({{ count($categoryKeywords) }})</strong>
                                 @endif
                             </span>
                         </li>
                         @foreach ($categorys as $category)
                             @php
                                 $array =  "";
+                                $countBy = $categoryKeywords->pluck('category_id')->countBy();
+                                // dd($category);
+                                // dd($countBy);
                             @endphp
-                            @if (isset(array_count_values(array_column($categoryKeywords, 'category_id'))[$category->id]))
+                            @if (isset($countBy[$category->id]))
                                 @php
-                                    $array =  array_count_values(array_column($categoryKeywords, 'category_id'))[$category->id];
+                                    $array =  "<strong>(".$countBy[$category->id] .")</strong>";
+                                    // dd($category)
                                 @endphp
                             @endif
-                            <li class="tab-item {{ $categoryId==$category->id ? 'on' : ''}}" id="category-{{ $category->id }}"><span>{{ $category->category }} {{ $array }}</span></li>
+                            <li class="tab-item {{ $categoryId==$category->id ? 'on' : ''}}" id="category-{{ $category->id }}"><span>{{ $category->category }} {!! $array !!}</span></li>
                         @endforeach
                     </ul>
                 </div>
-                @foreach ($keywords as $keyword)
-                    @if ($loop->first || $keyword->id != $keywords[$loop->index - 1]->id)
+                @foreach ($filtedKeywords as $keyword)
+                    @php
+                        // dd($categoryId)
+                        // dd($countBy[$keyword->id])
+                    @endphp
+                    {{-- @if ($loop->first || $keyword->id != $keywords[$loop->index - 1]->id) --}}
+                {{--
+                    @endif
+                    --}}
+                    @if ($categoryId)
+
+                    @endif
                         <div class="search-wrap__list-item">
                             <div class="search-wrap__list-item--title">
-                                {{ $keyword->name }} <span>{{ array_count_values(array_column($keywords, 'id'))[$keyword->id] }}</span>
+                                {{-- @if ( isset($countBy[$keyword->id]) )
+                                {{ $keyword->name }} <span>{!! "<strong>(".$countBy[$keyword->id] .")</strong>" !!}</span>
+                                @else
+                                @endif --}}
+                                {{ $keyword->name }}
                             </div>
                             <div class="search-wrap__list-item--text">
                                 <a href="{{ $keyword->url }}">
-                    @endif
 
-                                    <p>
+                                    {{-- <p>
                                         <span>{{ $keyword->keyword }}</span>
-                                    </p>
+                                    </p> --}}
 
-                    @if ($loop->last || $keyword->id != $keywords[$loop->index + 1]->id)
+                    {{-- @if ($loop->last || $keyword->id != $keywords[$loop->index + 1]->id) --}}
                                     <p class="position">
                                         {{ $keyword->names }}
                                     </p>
                                 </a>
                             </div>
                         </div>
-                    @endif
+                    {{-- --}}
+                    {{-- @endif --}}
                 @endforeach
             </div>
         </div>
