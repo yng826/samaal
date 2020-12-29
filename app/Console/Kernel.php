@@ -32,12 +32,11 @@ class Kernel extends ConsoleKernel
         //       ->everyMinute()
         //       ->appendOutputTo('C:\web\samaal\test.txt');
         $schedule->call(function() {
+            // DB::connection()->enableQueryLog();
             // 오픈
             $affected = DB::table('recruits')
-            ->where([
-                ['start_date', '>=', date('Y-m-d')],
-                ['recruit_status', '=', 'standby'],
-            ])
+            ->where('start_date', '<=', date('Y-m-d'))
+            ->where('recruit_status', '=', 'standby')
             ->update(['recruit_status'=> 'open']);
 
             /*
