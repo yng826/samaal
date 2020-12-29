@@ -4,7 +4,7 @@
     <main class="privacy-wrap">
         <div class="contents-wrap__title privacy-wrap__title">
             <h2>
-                이메일 무단수집 거부
+                이메일무단수집거부
             </h2>
         </div>
         <div class="privacy-wrap__contents ">
