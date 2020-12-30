@@ -14,7 +14,7 @@
                <section class="intro-wrap__section">
                     <div class="intro-wrap__section--left">
                         <p>
-                            미래는 불확실합니다.<br>
+                            미래는 불확실합니다.dd<br>
                             불확실성은 무한한 상상력과 도전을 요구합니다.
                         </p>
                         <p>
