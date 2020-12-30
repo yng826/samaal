@@ -9,7 +9,7 @@
 
         &--title {
             display: block;
-            font-size: 65px;
+            font-size: 40px;
             line-height: 78px;
             color: #000;
             font-weight: 400;
@@ -254,6 +254,18 @@
     }
 }
 
+/* 웹 1600 사이즈 */
+@media all and (max-width: 1900px) {
+    @import "./lib/webvw";
+    /* main */
+    .main-wrap {
+        &__section{
+            &--title {
+                font-size: vw(40px);
+            }
+        }
+    }
+}
 
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
@@ -265,7 +277,7 @@
             max-width: vw(1900px);
 
             &--title {
-                font-size: vw(65px);
+                font-size: vw(40px);
                 line-height: vw(78px);
             }
 
@@ -363,7 +375,7 @@
 
             &--title {
                 display: block;
-                font-size: vw(65px);
+                font-size: vw(40px);
                 line-height: vw(78px);
                 color: #fff;
                 font-weight: 400;

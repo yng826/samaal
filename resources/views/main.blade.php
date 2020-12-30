@@ -17,10 +17,11 @@
             <div class="section main-wrap__section section01" id="intro">
                 <div class="section-left">
                     <h2 class="main-wrap__section--title">
-                        <em>삼아</em>가 만드는<br> <em>지속 가능한 세상</em>
+                        A <em>sustainable</em> world<br>
+                        created by <em>Sam-A</em>
                     </h2>
                     <div class="main-wrap__section--button">
-                        <a href="/intro">더 알아보기</a>
+                        <a href="/intro">More</a>
                     </div>
                 </div>
                 <div class="section main-wrap__section--img">
@@ -42,9 +43,9 @@
                 </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
-                        더 나은<br>
-                        <em>삶의 가치</em>를 위한<br>
-                        <em>삼아의 도전</em>
+                        <em>Pursuit</em> of a sustainable<br>
+                        future that paves the way<br>
+                        for <em>a better life</em>
                     </h2>
                     <div class="main-wrap__section--button sub-menu__button">
                         <button type="button">About Us</button>
@@ -54,7 +55,7 @@
                         <li><a href="/about-us/ceo">Message from CEO</a></li>
                         <li><a href="/about-us/ci">CI</a></li>
                         <li><a href="/about-us/story-news">Story & News</a></li>
-                        <li><a href="/about-us/ir/consolidated">재무정보</a></li>
+                        <li><a href="/about-us/ir/consolidated">Financial Performance</a></li>
                         <li><a href="/about-us/location/seoul">Location</a></li>
                     </ul>
                 </div>
@@ -64,8 +65,8 @@
             <div class="section main-wrap__section section03" id="for-business-partners">
                 <div class="section-left">
                     <h2 class="main-wrap__section--title">
-                        <em>삼아의 도전</em>이<br>
-                        만들어낸 <em>제품</em>
+                        <em>Produced</em> with Sam-A's<br>
+                        <em>passion</em> and <em>spirit</em>
                     </h2>
                     <div class="main-wrap__section--button">
                         <a href="/business/intro">For Business Partners</a>
@@ -78,30 +79,6 @@
                     </div>
                 </div>
                 <div class="mobile-arrow"></div>
-            </div>
-
-            <div class="section main-wrap__section section04" id="work-with-us">
-                <div class="mobile-mask"></div>
-                <div class="section main-wrap__section--img">
-                    <div class="main-wrap__section--img--wrap">
-                        <div class="rellax section-bg section-bg--right" data-rellax-speed="2"></div>
-                        <div class="rellax section04-img" data-rellax-speed="1"></div>
-                    </div>
-                </div>
-                <div class="section-right">
-                    <h2 class="main-wrap__section--title">
-                        <em>삼아</em>에서<br>
-                         도전의 <em>꿈을 꾸다</em>
-                     </h2>
-                     <div class="main-wrap__section--button sub-menu__button">
-                        <button type="button">Work With Us</button>
-                     </div>
-                     <ul class="main-wrap__section--sub-menu">
-                         <li><a href="/work-with-us/recruit/">채용공고</a></li>
-                         <li><a href="/work-with-us/introduction/introjob">직무소개</a></li>
-                         <li><a href="/work-with-us/faq">FAQ</a></li>
-                     </ul>
-                </div>
             </div>
         </div>
 
