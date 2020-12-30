@@ -14,45 +14,45 @@
                <section class="intro-wrap__section">
                     <div class="intro-wrap__section--left">
                         <p>
-                            미래는 불확실합니다.dd<br>
-                            불확실성은 무한한 상상력과 도전을 요구합니다.
+                            The future presents us with many uncertainties,<br>
+                            but it also gifts us with opportunities to exercise our limitless imagination and tackle new challenges.
                         </p>
                         <p>
-                            "고객이 원하는 것을 안전하게 보존하며 이동을 쉽게 해준다."<br>
-                            우리는 미션을 통해 새로운 도전을 약속했습니다.
+                            "Safely preserving our customers' needs with mobile ease"<br>
+                            is what we promise to achieve through our mission.
                         </p>
                         <p>
-                            세상을 유익하게 만들면서 수익을 창출하는 것,<br>
-                            편리한 삶의 가치를 위한 기술 혁신에 이어
+                            With technological innovations that help generate life’s values and conveniences,
                         </p>
                         <p class="important-text">
-                            사회적·환경적 가치를 지키며<br>
-                            지속 가능한 세상을 만들기 위해<br>
-                            <span>삼아는 새로운 도약을 시작합니다.</span>
+                            <span>am-A takes a new leap forward,</span><br>
+                            preserving social and environmental standards that contributes to a better world,<br>
+                            all the while sustaining profitability as a business.
                         </p>
                     </div>
                     <div class="intro-wrap__section--right">
                         <p>
-                            세계 최고의 기술력으로<br>
-                            양질의 일자리를 늘려 국가 경제에 기여하고 있습니다.
+                            We are contributing to the national economy <br>
+                            by increasing quality jobs using the world's top-class technology.
                         </p>
                         <p>
-                            고품질의 알루미늄 호일 및 포장재 생산 기술을 통해<br>
-                            식품의 유통기한을 늘림으로써 음식물 쓰레기를 줄여<br>
-                            환경보호에 기여하고 있습니다.
+                            By reducing food waste by extending the shelf life of<br>
+                            food through high-quality aluminium foil and packaging material production technology, <br>
+                            we are helping to protect the environment.
                         </p>
                         <p>
-                            식품 이동을 쉽게 만들어 더 많은 사람들에게<br>
-                            편리하고 안전하게 식량을 공급하고 있습니다.
+                            Making food move through the value chain more<br>
+                            efficiently helps provide better, safer nutrition for people.
                         </p>
                         <p>
-                            이차전지 양극집전체 기술은 유한한 자원을 효율적으로 사용하게 하여<br>
-                            친환경에너지 보급에 큰 기여를 하고 있습니다.
+                            Advanced technology for secondary battery cathode<br>
+                            foil makes a significant contribution to the supply of <br>
+                            eco-friendly energy by efficiently using limited resources.
                         </p>
                         <p class="important-text">
-                            최고의 제품을 넘어<br>
-                            사회적 변화를 이끌기 위한 노력,<br>
-                            <span>삼아가 지속 가능한 세상에 존재하는 이유입니다.</span>
+                            <span>This is why Sam-A exists in a sustainable world,</span><br>
+                            encouraging societal change beyond just creating the<br>
+                            best products.
                         </p>
                     </div>
                </section>
