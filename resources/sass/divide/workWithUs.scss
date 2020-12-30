@@ -375,6 +375,9 @@
                 font-size: 13px;
                 background-color: #e8ecef;
                 border: 1px solid #d7d7d7;
+                h4 {
+                    margin-top: 10px;
+                }
             }
 
             &__label {
@@ -1426,6 +1429,13 @@
         border: 1px white solid;
         margin-bottom: 3px;
         display: inline-block;
+    }
+}
+
+ /* IE10+ */
+ @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .work-apply .select-container::after, .popup-container .select-container::after {
+        border: none;
     }
 }
 /* 웹 1600 사이즈 */
