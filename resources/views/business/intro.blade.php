@@ -83,7 +83,7 @@
                             포장재
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="#">더 알아보기</a>
+                            <a href="/business/package">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -95,7 +95,7 @@
                             산업/건축용
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="">더 알아보기</a>
+                            <a href="/business/industry">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -107,7 +107,7 @@
                             Speciality
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="">더 알아보기</a>
+                            <a href="/business/speciality/process">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
