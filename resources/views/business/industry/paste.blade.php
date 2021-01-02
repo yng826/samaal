@@ -1,9 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    알루미늄 페이스트
+    Aluminium Paste
     <p>
-        높은 방청력을 요구하는 도장 단계에서 널리 활용
+        Widely used in priming processes that require high rustproof properties
     </p>
 @endsection
 
@@ -13,21 +13,18 @@
 @endsection
 
 @section('info__title')
-    알루미늄 박 생산과정에서 발생하는<br>
-    부산물들을 활용해보면 어떨까요?
+    How about using scraps collected during the aluminium rolling process?
 @endsection
 
 @section('info__text')
-    높은 방청력을 요구하는 철탑, 철교, 건축 도장, 선박의 초벌 도장 등에<br>
-    널리 활용되며 미려한 광택과 차광성 및 내구성으로<br>
-    업계 내 대표 혁신 제품으로 손꼽히고 있습니다
+    It is widely used for priming for steel structures, bridges, buildings and vessels that require rustproofing.
+    An innovative product for its premium luster, high light-shielding  and durability.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
     <p>
-        메탈릭 컬러용 Non Leafing 알루미늄<br>
-        페이스트를 개발하고 있습니다
+        We are developing special aluminium paste (non-leafing type) for metallic color.
     </p>
 @endsection
 

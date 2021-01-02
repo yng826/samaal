@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    연포장용
+    Aluminum Foil for Flexible Packaging
     <p>
-        제품 가치 보존에 힘써온<br>
-        삼아 대표 아이템
+        Sama's signature packaging material that improves the preservation of products
     </p>
 @endsection
 
@@ -14,18 +13,16 @@
 @endsection
 
 @section('info__title')
-    <span>제품의 맛과 향을 그대로 간직</span>하는<br>
-    포장재는 없을까요?
+    Is there any packaging material that <span>retains the taste and aroma</span> of the product?
 @endsection
 
 @section('info__text')
-    제품의 포장재에 활용되어<br>
-    내용물 보존기간을 증가시키기 위해 개발했습니다.
+    We have product packaging solutions that increase the shelf life and preserve the properties of contents for a longer period.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>보존기간에 민감한 고부가가치<br>제품 포장지에 널리 적용될 수 있습니다.</p>
+    <p>It can be widely applied in packaging of high- value products which require a longer shelf life.</p>
 @endsection
 
 @section('info__table')
@@ -35,14 +32,14 @@
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
-            <th class="border-left-none">두께</th>
-            <th>재질</th>
+            <th class="border-left-none">Thickness</th>
+            <th>Material</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none"> 5.5㎛ ~ 40㎛</td>
             <td>A1235, A8079<br>
                 폭 최대 2090mm</td>
-            <td class="border-right-none">식품포장재, 단열재 등</td>
+            <td class="border-right-none">Food packaging, coffee, confectionary and dairy packaging, insulation, etc.</td>
         </tr>
     </table>
 @endsection

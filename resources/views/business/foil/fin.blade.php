@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    열교환기용 Fin재
+    Finstock for Heat Exchanger
     <p>
-        자동차에 사용되는 소형·고성능 열교환기용 FIN재<br>
-        50㎛를 국내 최초로 개발
+        First in Korea to develop highly efficient and compact, 50㎛ Fin material for automotive and heat exchange application
     </p>
 @endsection
 
@@ -14,19 +13,16 @@
 @endsection
 
 @section('info__title')
-    점점 가벼워지는 자동차에 알맞게
-    <span>열교환기의 효율도 높여야 합니다</span>
+    The efficiency of the heat exchanger must also be increased to match with the trend of <span>automotive lightening</span>
 @endsection
 
 @section('info__text')
-    자동차 경량화에 따른 제품 박육화를 위해
-    국내 Strip Maker와 협업, 국내 최초로 국산화에 성공한 제품입니다.
+    It is the first product that succeeded with localization in cooperation with a domestic strip maker in order to reduce the thickness of the finstock  according to the latest trend of automotive lightening.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>전기자동차 배터리의 일정한 내부 온도 유지용 온열기 및<br>
-        냉방기에도 접목할 수 있습니다</p>
+    <p>It can also be applied to heaters and air conditioners for maintaining a constant internal temperature of electric vehicle batteries.</p>
 @endsection
 
 @section('info__table')
@@ -36,8 +32,8 @@
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
-            <th class="border-left-none">두께</th>
-            <th>재질</th>
+            <th class="border-left-none">Thickness</th>
+            <th>Material</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">50㎛ ~ 300㎛</td>
@@ -46,8 +42,7 @@
                 A3003, BRW04
             </td>
             <td class="border-right-none">
-                라디에이터, 히터,<br>
-                콘덴서, 증발기
+                Radiator, heater, condenser, evaporator
             </td>
         </tr>
     </table>

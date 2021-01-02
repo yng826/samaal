@@ -18,24 +18,24 @@
                 <div class="swiper-container business-intro__slide-info slide-info">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <h2>알루미늄 호일</h2>
-                            <a href="/business/foil" class="slide-info__link">더 알아보기</a>
+                            <h2>Aluminium Foil</h2>
+                            <a href="/business/foil" class="slide-info__link">Find out more</a>
                         </div>
                         <div class="swiper-slide">
-                            <h2>포장재</h2>
-                            <a href="/business/package" class="slide-info__link">더 알아보기</a>
+                            <h2>Flexible Packaging</h2>
+                            <a href="/business/package" class="slide-info__link">Find out more</a>
                         </div>
                         <div class="swiper-slide">
-                            <h2>산업/건축용</h2>
-                            <a href="/business/industry" class="slide-info__link">더 알아보기</a>
+                            <h2>Industrial & Construction</h2>
+                            <a href="/business/industry" class="slide-info__link">Find out more</a>
                         </div>
                         <div class="swiper-slide">
                             <h2>Speciality</h2>
-                            <a href="/business/speciality/process" class="slide-info__link">더 알아보기</a>
+                            <a href="/business/speciality/process" class="slide-info__link">Find out more</a>
                         </div>
                         <div class="swiper-slide">
                             <h2>Innovation</h2>
-                            <a href="/business/innovation/rnd" class="slide-info__link">더 알아보기</a>
+                            <a href="/business/innovation/rnd" class="slide-info__link">Find out more</a>
                             {{-- <a href="#" class="slide-info__link innovation-btn">더 알아보기</a>
                             <ul class="innovation-btn__box">
                                 <li>
@@ -68,10 +68,10 @@
                 <div class="section mobiel-wrap__section section01">
                     <div class="info-box">
                         <h2 class="mobiel-wrap__section--title">
-                            알루미늄 호일
+                            Aluminium Foil
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="/business/foil">더 알아보기</a>
+                            <a href="/business/foil">Find out more</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -80,10 +80,10 @@
                 <div class="section mobiel-wrap__section section02">
                     <div class="info-box package">
                         <h2 class="mobiel-wrap__section--title">
-                            포장재
+                            Flexible Packaging
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="#">더 알아보기</a>
+                            <a href="/business/package">Find out more</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -92,10 +92,10 @@
                 <div class="section mobiel-wrap__section section03">
                     <div class="info-box">
                         <h2 class="mobiel-wrap__section--title">
-                            산업/건축용
+                            Industrial & Construction
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="">더 알아보기</a>
+                            <a href="/business/industry">Find out more</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -107,7 +107,7 @@
                             Speciality
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="">더 알아보기</a>
+                            <a href="/business/speciality/process">Find out more</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -120,7 +120,7 @@
                             Innovation
                          </h2>
                          <div class="mobiel-wrap__section--button">
-                            <a href="/business/innovation/rnd">더 알아보기</a>
+                            <a href="/business/innovation/rnd">Find out more</a>
                         </div>
                          {{-- <div class="mobiel-wrap__section--button sub-menu__button innovation-btn">
                             <button type="button">더 알아보기</button>

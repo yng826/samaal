@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    초발수 리드
+    Water-repellent Lid Film
     <p>
-        보다 더 위생적인 식품 포장재를 위해<br>
-    일본 TOYO ALUMINIUM의 원천 기술을 국내 최초로 적용
+        Application of Japan's Toyo Aluminium's technology for more hygienic food packaging materials, the first in Korea
     </p>
 @endsection
 
@@ -14,20 +13,16 @@
 @endsection
 
 @section('info__title')
-    물에 젖지 않는 연꽃잎처럼,<br>
-    <span>요구르트의 뚜껑도 깔끔</span>하게 바꿀 수 있을까요?
+    Like a lotus leaf that doesn't get wet, is it possible to invent a <span>yogurt lid to have the same characteristics</span>?
 @endsection
 
 @section('info__text')
-    표면 접촉각을 극대화시켜 접촉 면적을 최소화하여 초발수 기능을 구현함으로써<br>
-    내용물이 뚜껑에 달라붙지 않아 편리하며 위생적으로 폐기할 수 있어 친환경적입니다
+    The super water-repellent function is implemented, so that the contents do not stick to the lid and can be disposed of conveniently and hygienically, making it eco-friendly.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>발수 외에도 발유기능(유분이 용기에 들러붙지 않게 하는 기능)을 이용한 제품을<br>
-        개발하고 있으며 이를 확대 적용하여 알루미늄 호일, 기능성 복합 필름 등<br>
-        다양한 기재에 응용하고자 합니다 </p>
+    <p>In addition to water repellency, we are trying to develop products that use oil repellency (the function that prevents oil from sticking to the container), and we intend to apply this to various substrates such as aluminium and film, etc.</p>
 @endsection
 
 @section('info__table')
@@ -39,7 +34,7 @@
         <tr class="info__table--bottom">
             <td class="border-left-none">PET/AL/PET/PE/WAX</td>
             <td class="border-right-none">
-                떠먹는 요구르트
+                Yogurt
             </td>
         </tr>
     </table>

@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    자동차용 사이드 미러 열선용 소재
+    Laminated Film for Rear View Mirror Heater
     <p>
-        자동차 사이드미러와 핸들, 온열 시트 열선용 회로 소재로<br>
-        탁월한 에칭성 및 균일한 저항 편차가 특징
+        Material for heated rear-view mirrors, steering wheels and seats with superior etching and uniform resistance deviation
     </p>
 @endsection
 
@@ -14,21 +13,17 @@
 @endsection
 
 @section('info__title')
-    추운 겨울, 사이드미러에 끼는 성에 때문에 운전하기 불편한데,
-    성에를 줄일 방법이 없을까요?
+    In the cold winter, it is uncomfortable to drive because of the frost on the rear-view mirror. Is there any way to defrost?
 @endsection
 
 @section('info__text')
-    탁월한 에칭성 및 균일한 저항 편차가 특징인 열선용 회로 소재로<br>
-    자동차 사이드미러 열선용뿐만 아니라 핸들, 온열 시트에도 활용되어<br>
-    운전자에게 편안한 운전 경험을 안겨줍니다
+    Our material for heated rear-view mirror heaters have unique characteristics by being well-etched and maintaining electric resistance stability. It is used not only for rear-view mirror heaters, but also for steering wheels and heated seats, giving the driver a comfortable driving experience.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
     <p>
-        평판 소재 이외에 적용 가능한 플렉시블 제품 개발로<br>
-        적용 분야를 확대하고 있습니다
+        We are expanding the field of application by developing flexible products.
     </p>
 @endsection
 
@@ -41,8 +36,7 @@
         <tr class="info__table--bottom">
             <td class="border-left-none">PET/AL</td>
             <td class="border-right-none">
-                자동차 사이드미러,<br>
-                스티어링휠, 온열시트
+                Heated rear-view mirror, steering wheel and seat
             </td>
         </tr>
     </table>

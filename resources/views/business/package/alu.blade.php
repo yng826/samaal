@@ -4,8 +4,7 @@
     ALU-ALU<br>
     Cold Forming Foil
     <p>
-        보관 환경에 민감한 약을 언제 어디서나<br>
-        장기간 안전하게 보관할 수 있도록 도운 국내 최초의 제약 포장재
+        Korea's first pharmaceutical packaging material for storing medical supplies for longer periods
     </p>
 @endsection
 
@@ -15,21 +14,17 @@
 @endsection
 
 @section('info__title')
-    <span>어떤 환경에서나<br>
-    의약품을 장기간 보관</span>할 수는 없을까요?
+    Could there be a way to safely store medicine for a <span>long period of time in any environment</span>?
 @endsection
 
 @section('info__text')
-    다양한 형태와 깊이로 성형할 수 있어 다양한 종류의 약을 보관할 수 있게 하며,<br>
-    우수한 수분 및 가스 차단성 덕분에 고온다습한 환경에 민감한 의약품을<br>
-    언제 어디서나 장기간 안전하게 보관할 수 있습니다
+    Since it can be blistered into various shapes and depths, ALU-ALU cold forming foil allows storage of various types of medicines, and with its excellent moisture and gas barrier characteristics, medicines sensitive to high temperature and high humidity environments can be safely stored anytime, anywhere for a long duration.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
     <p>
-        고 성형성 제품과 복제품 방지용 포장재<br>
-        개발에도 활용될 예정입니다
+        It will be used in the development of deep drawing blister cavities and special packaging for preventing counterfeit products.
     </p>
 @endsection
 
@@ -42,7 +37,7 @@
         <tr class="info__table--bottom">
             <td class="border-left-none">OPA/AL/PVC</td>
             <td class="border-right-none">
-                제약포장재
+                Pharmaceutical packaging materials
             </td>
         </tr>
     </table>

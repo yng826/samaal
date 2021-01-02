@@ -7,24 +7,24 @@
 @section('contents')
     <main class="business-foil contents-wrap">
         <div class="business-foil__title">
-            <h2>최초를 넘어 최고의 기술력을 선보인<br> <span>삼아의 <em>포장재 제품</em>을<br> 만나보세요</span></h2>
+            <h2>Meet <span>Sama's globally renowned <br><em>packaging materials</em></span> made<br> with the world’s leading technology</h2>
         </div>
         <div class="business-foil__contents foil-box">
             <div class="foil-box__col">
                 <div class="foil-box__col--item item-cigarette">
                     <a href="package/cigarette" class="foil-box--item">
-                        <p class="foil-box__text">담배포장지</p>
+                        <p class="foil-box__text">Aluminum-backed Paper for Cigarette Packaging</p>
                     </a>
                 </div>
                 <div class="foil-box__col--item item-refill">
                     <a href="package/refill" class="foil-box--item">
-                        <p class="foil-box__text">리필파우치</p>
+                        <p class="foil-box__text">Refill Pouch</p>
                     </a>
                 </div>
             </div>
             <div class="foil-box__inline">
                 <a href="package/retort" class="foil-box--item item-retort">
-                    <p class="foil-box__text">레토르트 포장재</p>
+                    <p class="foil-box__text">Retortable Packaging</p>
                 </a>
             </div>
             <div class="foil-box__block">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="foil-box__block--item">
                     <a href="package/watertight" class="foil-box--item item-watertight">
-                        <p class="foil-box__text">초발수 리드</p>
+                        <p class="foil-box__text">Water-repellent Lid Film</p>
                     </a>
                 </div>
             </div>

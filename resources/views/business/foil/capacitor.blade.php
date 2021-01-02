@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-Capacitor용
+Aluminum Foil for Electrical Capacitor
 <p>
-    고전압 축전기의 성능 향상을 위해<br>
-    세계 시장에 진출한 삼아의 대표 제품
+    Sama's signature product designed to improve high-voltage capacitor's performance
 </p>
 @endsection
 
@@ -14,18 +13,16 @@ Capacitor용
 @endsection
 
 @section('info__title')
-Capacitor용 호일의 용량을 더 늘릴 수 있도록<br>
-극박막 알루미늄 호일을 <span>더 얇게 만들 수 없을까요?</span>
+Could the ultra-thin aluminium foil be made thinner to further increase the capacity of the <span>high-voltage capacitor?</span>
 @endsection
 
 @section('info__text')
-고전압 축전기의 성능 향상을 필요로 하는 고객 니즈에 따라<br>
-박육화에 대한 연구개발로 두께 4.5㎛ 알루미늄 호일을 생산하여 시장에 공급 중입니다.
+In accordance with customer needs for improving the performance of high- voltage capacitors, we have developed and are currently supplying 4.5㎛ ultra-thin aluminium foil.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>다국적 전력기업들의<br>판매 확대 가능성 높습니다</p>
+    <p>We can expand sales opportunities to multinational power companies</p>
 @endsection
 
 @section('info__table')
@@ -35,13 +32,13 @@ Capacitor용 호일의 용량을 더 늘릴 수 있도록<br>
         <th rowspan="2" class="border-right-none">활용 영역</th>
     </tr>
     <tr class="info__table--title">
-        <th class="border-left-none">두께</th>
-        <th>재질</th>
+        <th class="border-left-none">Thickness</th>
+        <th>Material</th>
     </tr>
     <tr class="info__table--bottom">
         <td class="border-left-none">4.5㎛ ~ 6㎛</td>
         <td>A1235</td>
-        <td class="border-right-none">축전기</td>
+        <td class="border-right-none">Capacitor</td>
     </tr>
 </table>
 @endsection

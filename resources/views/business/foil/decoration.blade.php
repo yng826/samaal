@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    Decoration용
+    High-gloss Aluminum Foil for Decoration
     <p>
-        고급제품의 포장에 적합한 고품질의<br>
-        고광택 알루미늄 호일
+        High-quality, high-gloss aluminium foil for high-end packaging
     </p>
 @endsection
 
@@ -14,19 +13,16 @@
 @endsection
 
 @section('info__title')
-    고급 화장품의 가치를 <span>더 돋보이게 만들 수 있는</span><br>
-    포장재는 무엇일까요?
+    What packaging materials <span>can make the luxury</span> cosmetics stand out from others?
 @endsection
 
 @section('info__text')
-    고급 화장품 튜브를 제조하는 고객의 인쇄 품질 니즈에 부합하기 위해
-    개발한 제품으로 유려한 표면의 고광택이 특징입니다.
+    Our decoration foil is developed to meet the needs of customers who manufacture high-end cosmetic tubes, and features a high-gloss property with a refined surface.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>종이와 접합되는 제품의 용도로<br>
-        확대 적용이 가능하여 고급 제품에 적합한 프리미엄 알루미늄 호일</p>
+    <p>Premium AL-Foil suitable for high-end products as it can be expanded and applied to paper laminated packaging.</p>
 @endsection
 
 @section('info__table')
@@ -36,8 +32,8 @@
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
-            <th class="border-left-none">두께</th>
-            <th>재질</th>
+            <th class="border-left-none">Thickness</th>
+            <th>Material</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">7㎛ ~ 12㎛</td>
@@ -45,9 +41,7 @@
                 A8079, A1235
             </td>
             <td class="border-right-none">
-                고급화장품 튜브,<br/>
-                고급 주류,<br/>
-                고가의 제품 포장상자
+                Luxury cosmetic tubes, high-quality liquor, ginseng packaging boxes
             </td>
         </tr>
     </table>

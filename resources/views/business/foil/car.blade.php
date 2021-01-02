@@ -1,11 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    LIB 양극집전체용
-    <em>자동차용</em>
+    LIB Cathode Foil for Automotive
     <p>
-        얇은 두께에서도 고강도 유지가 가능하여<br>
-        고용량, 고효율 배터리 개발을 가능하게 함
+        Even with thinner gauge aluminum foil, it maintains high-strength enabling the development of high-capacity, high-efficiency battery
     </p>
 @endsection
 
@@ -15,19 +13,16 @@
 @endsection
 
 @section('info__title')
-    <span>한번 충전하면 서울에서 부산까지</span> 갈 수 있는<br>
-    전기 자동차가 나왔으면 좋겠어요!
+    I hope there will be an electric vehicle that <span>can go from Seoul to Busan</span> with a single charge.
 @endsection
 
 @section('info__text')
-고용량, 고효율 전기자동차 개발을 목표로<br>
-고강도를 유지하는 양극집전체를 2009년 국내최초로 개발했습니다.
+In 2009, we developedLIB cathode foil with LG Chem that maintains high strength for the first time in Korea with the goal of developing a high-capacity, high-efficiency electric vehicle.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>자동차뿐만 아니라 ESS, 소형전지 등<br>
-        전 분야에 걸쳐 적용 가능합니다</p>
+    <p>It can be applied not only to automobiles, but also to ESS and small sized batteries.</p>
 @endsection
 
 @section('info__table')
@@ -37,17 +32,17 @@
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
-            <th class="border-left-none">두께</th>
-            <th>재질</th>
+            <th class="border-left-none">Thickness</th>
+            <th>Material</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">12㎛ ~ 20㎛</td>
             <td>
                 A1050, A1100,
-                A1235, 기타
+                A1235, etc
             </td>
             <td class="border-right-none">
-                전기자동차,ESS용 배터리
+                Electric vehicle, battery for ESS
             </td>
         </tr>
     </table>

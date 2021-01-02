@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    Hair Line
+    Hair Line Aluminum Foil
     <p>
-        가전제품 외부 디자인에 활용되는<br>
-        삼아 고유의 헤어라인 패턴
+        Sama's unique hair line pattern, utilized on home appliances
     </p>
 @endsection
 
@@ -14,21 +13,17 @@
 @endsection
 
 @section('info__title')
-    평범한 가전제품에 <span>고급스러운 디자인을
-    추가</span>할 수 있는 방법을 찾아주세요
+    I need to find a way to <span>add luxurious design</span> to a standard home appliance
 @endsection
 
 @section('info__text')
-    소비자의 다양한 요구와 가전제품의 고급화 추세에 맞춰,
-    국내외 가전업체와의 협업으로 2017년에 삼아 고유의 헤어라인 패턴을 개발했습니다.
-    냉장고를  비롯한 생활 가전제품의 외부 디자인을 다양한 형태로 구현하여
-    고급스러운 디자인을 가능케 합니다.
+    In line with the diverse needs of consumers and the trends in high-end home appliances, we developed a unique hairline pattern in 2017 in collaboration with domestic and overseas home appliance companies.
+    The exterior design of household appliances, including refrigerators, is implemented in various forms to enable a luxurious design.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>자동차 실내 장식용으로도<br>
-        확장 적용이 가능합니다</p>
+    <p>Expandable application is also possible for automobile interior decoration.</p>
 @endsection
 
 @section('info__table')
@@ -38,8 +33,8 @@
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
-            <th class="border-left-none">두께</th>
-            <th>재질</th>
+            <th class="border-left-none">Thickness</th>
+            <th>Material</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">15㎛</td>
@@ -47,8 +42,7 @@
                 A8079
             </td>
             <td class="border-right-none">
-                냉장고, 세탁기 등의
-                가전제품 외관장식용
+                For exterior decoration of home appliances such as refrigerators and washing machines
             </td>
         </tr>
     </table>

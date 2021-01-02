@@ -17,7 +17,7 @@
                     <a href="/business/innovation/rnd">R&D</a>
                 </li>
                 <li class="tab-item on">
-                    <a href="/business/innovation/iso_certification">인증현황</a>
+                    <a href="/business/innovation/iso_certification">Certifications</a>
                 </li>
             </ul>
         </div>
@@ -32,9 +32,9 @@
                         <col width="auto">
                     </colgroup>
                     <tr>
-                        <th>인증규격</th>
-                        <th>인증번호</th>
-                        <th>최초인증일</th>
+                        <th>ertification standard</th>
+                        <th>Certification numbe</th>
+                        <th>Initial certification date</th>
                     </tr>
                     @foreach ($certifications as $certification)
                     @if ($type->type == $certification->type)

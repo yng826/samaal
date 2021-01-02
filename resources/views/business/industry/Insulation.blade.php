@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    진공단열재용 필름
+    High barrier film for vacuum insulation panel
     <p>
-        가전제품의 두께를 얇게 하면서도 단열 성능을 효율적으로 높일 수 있도록<br>
-        국내 최초로 삼아가 개발하여 냉장고에 적용한 제품
+        Korea's first product applied on refrigerators that reduces panel thickness of electronics and even improves insulation performance
     </p>
 @endsection
 
@@ -14,21 +13,17 @@
 @endsection
 
 @section('info__title')
-    <span>냉장고의 벽 두께를 얇게 하면서도<br>
-    단열 성능</span>을 높일 수 없을까요?
+    Can we improve the <span>insulation performance while reducing the thickness of the refrigerator panel</span>?
 @endsection
 
 @section('info__text')
-    진공 단열재용 외피재의 개발 요구에 따라 삼아가 국내 최초로 개발하여<br>
-    냉장고에 적용하고 있을 뿐만 아니라 고효율 주택 건설을 위해 복합 강화 외피재도 개발하여
-    더욱 안전한 주택 건설에 기여하고 있습니다
+    Sama developed a high barrier film for vacuum insulation panel for the first time in Korea and applied it to refrigerators. we further developed compound ultra-high-barrier film which conserves energy while applying it on eco-friendly passive houses.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
     <p>
-        단열성능 및 내구성을 향상시켜 선박의 저온 탱크,<br>
-        의료용 컨테이너 등의 적용 분야를 개발해나가고 있습니다.
+        We are developing applications such as the improvement of heat insulation properties and durability, low-temperature tanks for vessels and medical containers.
     </p>
 @endsection
 
@@ -41,8 +36,7 @@
         <tr class="info__table--bottom">
             <td class="border-left-none">VM-PET LAMINATE FILM</td>
             <td class="border-right-none">
-                냉장고 등 가정용전자제품,<br>
-                건축용 및 선박용 단열재
+                Household electronics such as refrigerators, construction and vessel insulation
             </td>
         </tr>
     </table>

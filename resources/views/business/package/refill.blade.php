@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    리필파우치
+    Refill Pouch
     <p>
-        폐기물 배출량 감소에 기여하는<br>
-        섬유 유연제 및 세제용 리필 파우치
+        Refill pouch for fabric softener and detergent contributing to waste reduction
     </p>
 @endsection
 
@@ -14,21 +13,18 @@
 @endsection
 
 @section('info__title')
-    버려지는 포장재료를<br>
-    줄일 수 없을까요?
+    Can we reduce the waste packaging material?
 @endsection
 
 @section('info__text')
-    낭비되는 플라스틱 용기를 감소시켜 자원을 절약하기 위해<br>
-    국내 최초로 개발하여 섬유유연제 제품에 적용했습니다. <br>
-    포장재료를 재활용하여 폐기물 배출량을 감소시키고 있는 친환경적인 제품입니다
+    In order to save resources by reducing wasted plastic containers, this was developed for the first time in Korea and applied to fabric softener products.
+    It is an eco-friendly product that reduces waste emissions by recycling packaging materials.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
     <p>
-        재활용이 가능하면서도 강도와 기능이 우수한 소재를<br>
-        추가로 개발하고 있습니다
+        We are developing recyclable materials with excellent strength and function.
     </p>
 @endsection
 
@@ -41,8 +37,7 @@
         <tr class="info__table--bottom">
             <td class="border-left-none">OPA/WHITE PE FILM</td>
             <td class="border-right-none">
-                각종 세제, 섬유유연제,화장품류,<br>
-                식품 등의 리필용 포장
+                Refill packaging for various detergents, fabric softeners, cosmetics, food, etc.
             </td>
         </tr>
     </table>

@@ -1204,7 +1204,7 @@
                     display: block;
                     color: #000;
                     font: {
-                        size: 20px;
+                        size: 15px;
                         weight: bold;
                     }
                     text-align: center;
@@ -2272,7 +2272,7 @@
 
                     .lang-korea {
                         font: {
-                            size: vw(20px);
+                            size: vw(15px);
                         }
                     }
 
@@ -3027,7 +3027,7 @@
 
                     .lang-korea {
                         font: {
-                            size: vw(40px);
+                            size: vw(30px);
                         }
                     }
 
@@ -3416,10 +3416,11 @@
             }
 
             &__text {
+                padding-right: vw(10px);
                 left: vw(36px);
                 top: vw(40px);
                 font: {
-                    size: vw(35px);
+                    size: vw(20px);
                 }
             }
         }
@@ -4155,8 +4156,9 @@
                     padding-top: vw(157px);
 
                     .lang-korea {
+                        height: vw(50px);
                         font: {
-                            size: vw(21px);
+                            size: vw(20px);
                         }
                     }
 

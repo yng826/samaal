@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    LIB Tab재
+    LIB Tab
     <p>
-        다양한 디바이스에 적용 가능한<br>
-        리튬 이온 배터리 양극 단자
+        Lead tab material for lithium-ion battery terminal that can be used on various electronics devices
     </p>
 @endsection
 
@@ -14,19 +13,16 @@
 @endsection
 
 @section('info__title')
-    <span>다양한 기기에서 활용</span>할 수 있는<br>
-    리튬 이온 배터리 양극 단자를 제작해 주세요!
+    Please develop an LIB lead tab that can be <span>used in various devices</span>!
 @endsection
 
 @section('info__text')
-    국내 전지 업체의 본격적인 양산 시점에서 개발한<br>
-    이차전지의 핵심부품입니다
+    Sama's LIB lead tab material is a core part of secondary battery developed at the time of full-scale mass production by domestic LIB manufacturers.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>블루투스, 웨어러블 디바이스와 같이<br>
-        소형, 경량화 제품으로 확장 추세를 보이고 있습니다</p>
+    <p>Usage is expanding towards compact and lightweight products such as Bluetooth and wearable devices.</p>
 @endsection
 
 @section('info__table')
@@ -36,8 +32,8 @@
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
-            <th class="border-left-none">두께</th>
-            <th>재질</th>
+            <th class="border-left-none">Thickness</th>
+            <th>Material</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">80㎛ ~150㎛</td>
@@ -45,8 +41,7 @@
                 A1235
             </td>
             <td class="border-right-none">
-                리튬 이온 배터리의
-                리드탭
+                LIB lead tab
             </td>
         </tr>
     </table>

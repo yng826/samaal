@@ -1,10 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    제약포장재용
+    Aluminum Foil for Pharmaceutical Packaging
     <p>
-        의약품을 장기간 안전하게 보존 할 수 있는<br>
-        제약포장재용 알루미늄 호일
+        Special packaging foil that can store pharmaceutical products safely for a long period of time
     </p>
 @endsection
 
@@ -14,19 +13,16 @@
 @endsection
 
 @section('info__title')
-    의약품을 <span>장기간 보존하여 안전</span>하게
-    복용할 수 있도록 하는 포장재는 없을까요?
+    Are there any packaging materials that allow me to store medicines for a <span>long time and take them safely</span>?
 @endsection
 
 @section('info__text')
-    의약품의 소포장 요구에 대응하고자 기존 플라스틱 필름보다
-    수분 및 가스 차단성이 월등한 제약 포장재용 알루미늄 호일을 개발하였습니다.
+    In order to respond to the demand for packaging of pharmaceuticals, we developed aluminum foil for pharmaceutical packaging that has superior moisture and gas barrier properties than conventional plastic films.
 @endsection
 
 @section('info__value')
     <em>미래가치</em>
-    <p>알루미늄 소재 개발로 얇은 두께에서도<br>
-        차단성 및 성형성이 양호합니다.</p>
+    <p>With the development of aluminium foil, the barrier property and formability are superior even under a thin thickness.</p>
 @endsection
 
 @section('info__table')
@@ -36,8 +32,8 @@
             <th rowspan="2" class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--title">
-            <th class="border-left-none">두께</th>
-            <th>재질</th>
+            <th class="border-left-none">Thickness</th>
+            <th>Material</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">20㎛, 28㎛, 30㎛,<br> 45㎛, 50㎛, 60㎛</td>
@@ -45,7 +41,7 @@
                 A1235, A8021,A8079
             </td>
             <td class="border-right-none">
-                PTP,<br> Strip Packaging,<br>ALU-ALU Cold Forming Foil,<br>파스포장재
+                PTP, Strip Packaging,Alu-Alu cold forming foil,Pain-relieving patch packaging material
             </td>
         </tr>
     </table>

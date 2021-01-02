@@ -7,18 +7,18 @@
 @section('contents')
     <main class="business-foil contents-wrap">
         <div class="business-foil__title">
-            <h2>최초를 넘어 최고의 기술력을 선보인<br> <span>삼아의 <em>산업/건축용 제품</em>을<br> 만나보세요</span></h2>
+            <h2>Meet <span>Sama's globally renowned<br> <em>industrial and construction materials</em></span><br> made with the world’s leading technology</h2>
         </div>
         <div class="business-foil__contents foil-box">
             <div class="foil-box__half">
                 <div class="foil-box__half--item">
                     <a href="industry/insulation" class="foil-box--item item-insulation">
-                        <p class="foil-box__text">진공단열재용<br>필름</p>
+                        <p class="foil-box__text">High barrier film for vacuum insulation panel</p>
                     </a>
                 </div>
                 <div class="foil-box__half--item">
                     <a href="industry/sidemirror" class="foil-box--item item-sidemirror">
-                        <p class="foil-box__text">자동차용 사이드 미러<br>열선용 소재</p>
+                        <p class="foil-box__text">Laminated Film for Rear View Mirror Heater</p>
                     </a>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="foil-box__half--item">
                     <a href="industry/paste" class="foil-box--item item-paste">
-                        <p class="foil-box__text">알루미늄 페이스트</p>
+                        <p class="foil-box__text">minium Paste</p>
                     </a>
                 </div>
             </div>
