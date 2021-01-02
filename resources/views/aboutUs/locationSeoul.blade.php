@@ -22,7 +22,7 @@
                 <a href="/about-us/location/heritage">Heritage Zone</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/busan">부산사무소</a>
+                <a href="/about-us/location/busan">Busan Office</a>
             </li>
         </ul>
     </div>
