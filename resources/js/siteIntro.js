@@ -30,7 +30,9 @@ const siteIntro = () => {
             console.log('mobile');
             if ( !$('#fullpage').hasClass('fullpage-wrapper') || $('#fullpage').hasClass('fp-destroyed')) {
                 $('#fullpage').fullpage({
-                    // anchors: ['intro-section', 'about-us-section', 'for-business-partners-section', 'work-with-us-section'],
+                    anchors: ['intro', '','about-us', '', 'for-business-partners', '', 'work-with-us'],
+                    // navigationTooltips: ['fullPage', 'Open', 'Easy', 'Touch'],
+                    navigation: true,
                     paddingTop: '-100vw',
                     navigation: true
                 });
