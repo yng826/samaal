@@ -39,7 +39,7 @@
                     </div>
                     <div class="business-detail__button">
                         <button type="button" class="btn-question">제품문의</button>
-                        <button type="button" class="btn-manager">담당자 정보</button>
+                        <button type="button" class="btn-manager">Contact Information</button>
                     </div>
                 </div>
                 <!-- 문의하기 팝업 -->
