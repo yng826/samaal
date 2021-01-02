@@ -4,7 +4,7 @@
     <main class="contents-wrap sitemap">
         <div class="contents-wrap__title sitemap__title">
             <h2>
-                사이트맵
+                Sitemap
             </h2>
         </div>
         <div class="sitemap__section">
