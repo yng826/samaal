@@ -6,9 +6,9 @@
             <h2>
                 채용공고
                 <p>
-                    끊임없는 혁신으로 글로벌 시장에 <em>도전하는 삼아人</em><br>
-                    최고의 전문성으로 <em>신뢰받는 삼아人</em><br>
-                    <em>즐겁게 일하는 삼아人</em>
+                    Responding to the challenge to become the best of the best<br>
+                    Trusted as the partner of world-class expertise<br>
+                    Committed with Enthusiasm and Excitement
                 </p>
             </h2>
         </div>
