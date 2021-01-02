@@ -38,7 +38,7 @@
         <tr class="info__table--bottom">
             <td class="border-left-none"> 5.5㎛ ~ 40㎛</td>
             <td>A1235, A8079<br>
-                폭 최대 2090mm</td>
+                Maximum Width 2090mm</td>
             <td class="border-right-none">Food packaging, coffee, confectionary and dairy packaging, insulation, etc.</td>
         </tr>
     </table>
