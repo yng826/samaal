@@ -19,7 +19,7 @@
         <main class="contents-wrap">
             <div class="contents-wrap__title pd-20">
                <h2 class="about-ir__title">
-                   재무정보
+                Financial Performance
                 </h2>
             </div>
             <div  class="about-ir-list__section">
@@ -32,49 +32,49 @@
                             <a href="/about-us/ir/separate">별도재무제표</a></li>
                         </li>
                         <li class="tab-item {{$id =='board' ? 'on': ''}}">
-                            <a href="/about-us/ir/board">전자공고</a></li>
+                            <a href="/about-us/ir/board">Electronic Disclosure</a></li>
                         </li>
                     </ul>
                 </div>
 
                 <div class="contents-wrap__section">
                     <div class="about-ir__chart">
-                        <h3>매출액</h3>
+                        <h3>Revenue</h3>
                         <h6>(단위: 백만원)</h6>
                         <div>
                             <canvas id="sales"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
-                        <h3>영업이익</h3>
+                        <h3>Operating profit</h3>
                         <h6>(단위: 백만원)</h6>
                         <div>
                             <canvas id="operating_income"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
-                        <h3>당기순이익</h3>
+                        <h3>Profit for the year</h3>
                         <h6>(단위: 백만원)</h6>
                         <div>
                             <canvas id="net_income"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
-                        <h3>자산</h3>
+                        <h3>Assets</h3>
                         <h6>(단위: 백만원)</h6>
                         <div>
                             <canvas id="assets"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
-                        <h3>부채</h3>
+                        <h3>Liabilities</h3>
                         <h6>(단위: 백만원)</h6>
                         <div>
                             <canvas id="liability"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
-                        <h3>자본</h3>
+                        <h3>Equity</h3>
                         <h6>(단위: 백만원)</h6>
                         <div>
                             <canvas id="capital"></canvas>
@@ -91,37 +91,37 @@
                             @endforeach
                         </tr>
                         <tr>
-                            <td>매출액</td>
+                            <td>Revenue</td>
                             @foreach ($sales as $sales_text)
                                 <td class="text-center">{{ number_format($sales_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <td>영업이익</td>
+                            <td>Operating profit</td>
                             @foreach ($operating_income as $operating_income_text)
                                 <td class="text-center">{{ number_format($operating_income_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <td>당기순이익</td>
+                            <td>Profit for the year</td>
                             @foreach ($net_income as $net_income_text)
                                 <td class="text-center">{{ number_format($net_income_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <td>자산</td>
+                            <td>Assets</td>
                             @foreach ($assets as $assets_text)
                                 <td class="text-center">{{ number_format($assets_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <td>부채</td>
+                            <td>Liabilities</td>
                             @foreach ($liability as $liability_text)
                                 <td class="text-center">{{ number_format($liability_text) }}</td>
                             @endforeach
                         </tr>
                         <tr>
-                            <td>자본총계</td>
+                            <td>Equity</td>
                             @foreach ($capital as $capital_text)
                                 <td class="text-center">{{ number_format($capital_text) }}</td>
                             @endforeach

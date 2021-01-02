@@ -10,14 +10,11 @@
         <div class="about-heritage__contents">
             <div class="about-heritage__info">
                 <h3 class="about-heritage__info--title">
-                    <span>국내 최고의 알루미늄 박과 포장재 생산기업인 삼아는</span><br>
-                    지속가능한 기업으로 세계 최고를 향해 나아갑니다.
+                    As Korea's top aluminum foil and packaging materials manufacturer,
+                    Sam-A is committed to become the world’s leading company with sustainability as its core value.
                 </h3>
                 <p class="about-heritage__info--text">
-                    1969년 창립한 삼아알미늄은 끊임없는 연구개발을 통해 최고의 기술력으로<br>
-                    국내의 알루미늄 박과 가공 포장 업계를 선도하고 있습니다.<br>
-                    이와 더불어 공장관리시스템/ERP/통합 정보 시스템을 기반으로 한 IT 구축으로<br>
-                    스마트 팩토리와 지식경영을 통해 글로벌 기업을 향해 나아가고 있습니다.
+                    Founded in 1969, Sam-A is leading the aluminum foil and packaging materials industry through continuous investment in premier technology and R&D. The company is steadily pacing towards becoming a global player through the application of state-of-the-art IT infrastructure including smart manufacturing systems, ERP, and integrated information systems.
                 </p>
             </div>
             <div class="about-heritage__slide">

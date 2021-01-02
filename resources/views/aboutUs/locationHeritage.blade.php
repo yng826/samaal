@@ -13,13 +13,13 @@
     <div class="contents-wrap__tab about-location__tab">
         <ul>
             <li class="tab-item">
-                <a href="/about-us/location/seoul">서울사무소</a>
+                <a href="/about-us/location/seoul">Seoul Office</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/poseung">포승공장</a>
+                <a href="/about-us/location/poseung">Poseung Factory</a>
             </li>
             <li class="tab-item on">
-                <a href="/about-us/location/heritage">헤리티지존</a>
+                <a href="/about-us/location/heritage">Heritage Zone</a>
             </li>
             <li class="tab-item">
                 <a href="/about-us/location/busan">부산사무소</a>
@@ -46,17 +46,15 @@
             <div class="about-location__info ">
                 <div class="about-location__info--address">
                     <div class="text-top">
-                        <h3>헤리티지 존</h3>
+                        <h3>Heritage Zone</h3>
                         <p>
-                            1969년 창립 이래 50여 년,<br>
-                            지금까지 걸어온 <em>삼아의 이야기와
-                            앞으로 걸어갈 이야기를
-                            헤리티지 존에서 만나보세요.</em>
+                            The 50th Anniversary Heritage Zone captures
+                             <em>the history of Sam-A</em>.
                         </p>
                     </div>
                     <dl class="text-bottom">
-                        <dt>주소</dt><dd>경기도 평택시 포승읍 평택항로 92</dd><br>
-                        <dt>전화</dt><dd>031-467-6800</dd><br>
+                        <dt>Address</dt><dd>92 Pyeongtaekhang-ro, Poseung-eup, Pyeongtaek-si, Gyeonggi-do, Republic of Korea </dd><br>
+                        <dt>Tel</dt><dd>031-467-6800</dd><br>
                         <dt>FAX</dt><dd>031-683-6125</dd>
                     </dl>
                 </div>

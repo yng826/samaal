@@ -26,7 +26,7 @@
         <main class="contents-wrap">
             <div class="contents-wrap__title pd-20">
                <h2 class="about-ir__title">
-                   재무정보
+                Financial Performance
                 </h2>
             </div>
             <div class="ir-wrap--tab">
@@ -38,7 +38,7 @@
                         <a href="/about-us/ir/separate">별도재무제표</a></li>
                     </li>
                     <li class="tab-item {{$id =='board' ? 'on': ''}}">
-                        <a href="/about-us/ir/board">전자공고</a></li>
+                        <a href="/about-us/ir/board">Electronic Disclosure</a></li>
                     </li>
                 </ul>
             </div>

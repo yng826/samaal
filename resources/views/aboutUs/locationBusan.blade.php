@@ -13,16 +13,16 @@
     <div class="contents-wrap__tab about-location__tab">
         <ul>
             <li class="tab-item">
-                <a href="/about-us/location/seoul">서울사무소</a>
+                <a href="/about-us/location/seoul">Seoul Office</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/poseung">포승공장</a>
+                <a href="/about-us/location/poseung">Poseung Factory</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/heritage">헤리티지존</a>
+                <a href="/about-us/location/heritage">Heritage Zone</a>
             </li>
             <li class="tab-item on">
-                <a href="/about-us/location/busan">부산사무소</a>
+                <a href="/about-us/location/busan">Busan Office</a>
             </li>
         </ul>
     </div>
@@ -39,17 +39,15 @@
         <div class="about-location__info">
             <div class="about-location__info--address">
                 <div class="text-top">
-                    <h3>부산사무소</h3>
+                    <h3>Busan Office</h3>
                     <p>
-                        세계 최고를 향해 나아가는 기업,
-                        <em>삼아의 부산사무소 문은 언제나
-                        열려있습니다.</em>
+                        Contact or visit our Busan Office.
                     </p>
                 </div>
                 <dl class="text-bottom">
-                    <dt>주소</dt><dd>부산광역시 중구 충장대로 9번길 43 보승빌딩 4층</dd><br>
-                    <dt>우편번호</dt><dd>48936</dd><br>
-                    <dt>전화</dt><dd>051-463-7831</dd><br>
+                    <dt>Address</dt><dd>92 Pyeongtaekhang-ro, Poseung-eup, Pyeongtaek-si, Gyeonggi-do, Republic of Korea </dd><br>
+                    <dt>Postal code</dt><dd>48936</dd><br>
+                    <dt>Tel</dt><dd>051-463-7831</dd><br>
                     <dt>FAX</dt><dd>051-466-0245</dd>
                 </dl>
             </div>

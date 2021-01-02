@@ -13,13 +13,13 @@
     <div class="contents-wrap__tab about-location__tab">
         <ul>
             <li class="tab-item">
-                <a href="/about-us/location/seoul">서울사무소</a>
+                <a href="/about-us/location/seoul">Seoul Office</a>
             </li>
             <li class="tab-item on">
-                <a href="/about-us/location/poseung">포승공장</a>
+                <a href="/about-us/location/poseung">Poseung Factory</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/heritage">헤리티지존</a>
+                <a href="/about-us/location/heritage">Heritage Zone</a>
             </li>
             <li class="tab-item">
                 <a href="/about-us/location/busan">부산사무소</a>
@@ -43,19 +43,18 @@
         <div class="about-location__info">
             <div class="about-location__info--address">
                 <div class="text-top">
-                    <h3>포승공장</h3>
+                    <h3>Poseung Factory</h3>
                     <p>
-                        ‘업무자동화 프로세스와 지식경영’의
-                        시스템을 갖춘, <em>국내 최고 수준의
-                        알루미늄 박 / 포장재 생산 공장을
-                        소개합니다</em>
+                        Sam-A Poseung Factory is <em>Korea's top-tier aluminium foil</em> and
+                        packaging materials production facility equipped with automatic processing and
+                        automized processing system.
                     </p>
                 </div>
                 <dl class="text-bottom">
-                    <dt>주소</dt><dd>경기도 평택시 포승읍 평택항로 92</dd><br>
-                    <dt>우편번호</dt><dd>17960</dd><br>
-                    <dt>전화</dt><dd>031-467-6800</dd><br>
-                    <dt>FAX</dt><dd>031-683-6125</dd>
+                    <dt>Address</dt><dd>92 Pyeongtaekhang-ro, Poseung-eup, Pyeongtaek-si, Gyeonggi-do, Republic of Korea </dd><br>
+                    <dt>Postal code</dt><dd>17960</dd><br>
+                    <dt>Tel</dt><dd>+82-31-467-6800</dd><br>
+                    <dt>FAX</dt><dd>+82-31-683-6125</dd>
                 </div>
                 <div class="about-location__info--map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3187.767473648141!2d126.8478655!3d36.9676099!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b1c0c6f19adb9%3A0x9baa96ab1111469c!2z7IK87JWE7JWM66-464qEKOyjvCkg7Y-s7Iq56rO17J6l!5e0!3m2!1sko!2skr!4v1608298946546!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>

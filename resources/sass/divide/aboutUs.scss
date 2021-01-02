@@ -568,6 +568,7 @@
                         weight: bold;
                     }
                     line-height: 32px;
+                    vertical-align: top;
 
                     &::after {
                         content: "";
@@ -583,6 +584,7 @@
 
                 dd {
                     display: inline-block;
+                    width: 280px;
                     font-size: 18px;
                     color: #535353;
                     letter-spacing: -0.7px;
@@ -1143,6 +1145,7 @@
                     }
 
                     dd {
+                        width: vw(280px);
                         font-size: vw(18px);
                     }
                 }
@@ -1504,6 +1507,7 @@
                     }
 
                     dd {
+                        width: vw(560px);
                         font-size: vw(36px);
                     }
                 }
@@ -1914,6 +1918,7 @@
                     }
 
                     dd {
+                        width: vw(347px);
                         font-size: vw(21px);
                     }
                 }
