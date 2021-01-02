@@ -98,6 +98,17 @@
             &.on {
                 display: block;
             }
+
+            &.WorWithUs-menu {
+                width: 85%;
+
+                li {
+                    padding-right: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
         }
 
         &--img {
@@ -376,7 +387,7 @@
             &--title {
                 display: block;
                 font-size: vw(40px);
-                line-height: vw(78px);
+                line-height: vw(50px);
                 color: #fff;
                 font-weight: 400;
                 word-break: keep-all;
@@ -474,7 +485,7 @@
 
                 li {
                     display: block;
-                    width: vw(320px);
+                    width: vw(380px);
                     position: relative;
                     padding: vw(25px) 0;
                     border-bottom: 0;
@@ -504,12 +515,30 @@
                 &.on {
                     display: block;
                 }
+
+                &.WorWithUs-menu {
+                    width: 100%;
+
+                    li {
+                        display: block;
+                        width: 95%;
+                        font-size: vw(29px);
+                        color: #fff;
+                        line-height: vw(35px);
+                        padding-right: 0;
+                        font-weight: 100;
+                        border-bottom: 1px solid #fff;
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
             }
 
             .section-left,
             .section-right {
                 position: absolute;
-                bottom: vw(260px);
+                bottom: vw(130px);
                 left: vw(70px);
                 display: block;
                 width: auto;
@@ -532,7 +561,7 @@
             .mobile-arrow {
                 display: block;
                 position: absolute;
-                bottom: vw(170px);
+                bottom: vw(50px);
                 left: 50%;
                 // transform: translateX(-50%);
                 width: vw(50px);

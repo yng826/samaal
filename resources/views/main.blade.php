@@ -80,6 +80,30 @@
                 </div>
                 <div class="mobile-arrow"></div>
             </div>
+
+            <div class="section main-wrap__section section04" id="work-with-us">
+                <div class="mobile-mask"></div>
+                <div class="section main-wrap__section--img">
+                    <div class="main-wrap__section--img--wrap">
+                        <div class="rellax section-bg section-bg--right" data-rellax-speed="2"></div>
+                        <div class="rellax section04-img" data-rellax-speed="1"></div>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <h2 class="main-wrap__section--title">
+                        <em>Spread</em>your wings with<br>
+                        <em>ambition</em> at <em>Sama</em>
+                     </h2>
+                     <div class="main-wrap__section--button sub-menu__button on">
+                        <button type="button">Work With Us</button>
+                     </div>
+                     <ul class="main-wrap__section--sub-menu WorWithUs-menu on">
+                         <li>Challenging the global merket with continuous innovation to become the best of the best</li>
+                         <li>Trusted partner with world-class expertise</li>
+                         <li>Committed with Enthusiasm and Excitement</li>
+                     </ul>
+                </div>
+            </div>
         </div>
 
         @include('shared.footer')
