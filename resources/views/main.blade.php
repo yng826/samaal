@@ -14,7 +14,7 @@
         @include('shared.header')
 
         <div id="fullpage" class="fp-destroyed main-wrap">
-            <div class="section main-wrap__section section01">
+            <div class="section main-wrap__section section01 intro">
                 <div class="section-left">
                     <h2 class="main-wrap__section--title">
                         A <em>sustainable</em> world<br>
@@ -33,7 +33,7 @@
                 <div class="mobile-arrow"></div>
             </div>
 
-            <div class="section main-wrap__section section02">
+            <div class="section main-wrap__section section02 about-us">
                 <div class="mobile-mask"></div>
                 <div class="section main-wrap__section--img">
                     <div class="main-wrap__section--img--wrap">
@@ -62,7 +62,7 @@
                 <div class="mobile-arrow"></div>
             </div>
 
-            <div class="section main-wrap__section section03">
+            <div class="section main-wrap__section section03 for-business-partners">
                 <div class="section-left">
                     <h2 class="main-wrap__section--title">
                         <em>Produced</em> with Sam-A's<br>
@@ -81,7 +81,7 @@
                 <div class="mobile-arrow"></div>
             </div>
 
-            <div class="section main-wrap__section section04">
+            <div class="section main-wrap__section section04 work-with-us">
                 <div class="mobile-mask"></div>
                 <div class="section main-wrap__section--img">
                     <div class="main-wrap__section--img--wrap">
