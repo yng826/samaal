@@ -21,8 +21,10 @@ class SitemapController extends Controller
 
         $depth2Cnt = 0;
         foreach ($treeSitemap as $sitemap) {
-            if($depth2Cnt < count($sitemap->children)) {
-                $depth2Cnt = count($sitemap->children);
+            if( isset($sitemap->children) ) {
+                if($depth2Cnt < count($sitemap->children)) {
+                    $depth2Cnt = count($sitemap->children);
+                }
             }
         }
 
