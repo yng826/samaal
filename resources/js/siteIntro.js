@@ -10,11 +10,14 @@ const siteIntro = () => {
     new SimpleLightbox({elements: '.gallery a'});
     let fp;
     var rellax;
+    let init = false;
+    let vieMode = 'mobile';
     const setFullPage = function() {
         let ww = $(window).width();
         console.log(ww);
         if ( ww > 767 ) {
             console.log('desktop');
+            vieMode = 'desktop';
             if ( $('#fullpage').hasClass('fullpage-wrapper') ) {
                 $.fn.fullpage.destroy('all');
             }
@@ -25,9 +28,14 @@ const siteIntro = () => {
                     center:true
                 });
             }
+            if ( !init ) {
+                init = true;
+                moveHash();
+            }
             // console.log(rellax);
         } else {
             console.log('mobile');
+            vieMode = 'mobile';
             if ( !$('#fullpage').hasClass('fullpage-wrapper') || $('#fullpage').hasClass('fp-destroyed')) {
                 $('#fullpage').fullpage({
                     anchors: ['intro', '','about-us', '', 'for-business-partners', '', 'work-with-us'],
@@ -49,7 +57,19 @@ const siteIntro = () => {
     }
 
     const eventListener = function() {
-        $(window).on('resize', _.debounce(setFullPage, 400))
+        $(window).on('resize', _.debounce(setFullPage, 400));
+
+
+        $(window).on('hashchange', function(e) {
+            if( vieMode == 'desktop' ) moveHash();
+        });
+    }
+
+    const moveHash = function() {
+        if ( location.hash ) {
+            let hash = location.hash.substr(1);
+            $('html,body').animate({scrollTop:$('#fullpage .' + hash).offset().top}, 500);
+        }
     }
 
     const siteIntroInit = () => {
