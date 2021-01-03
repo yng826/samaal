@@ -19,7 +19,7 @@
                     In 1969, our company was founded with the ambition to contribute towards Korea’s economy by becoming more self-sufficient in the aluminium foil industry through localization.
                 </p>
                 <p>
-                    Throughout the past 50 years, we have been able to achieve ground-breaking technologies that led to the introduction of various innovative aluminium applications such as Korea’s first retortable pouch, 4.5㎛ ultra-thin gauge aluminium foil, and the world’s first 10㎛ ultra high-strength LIB cathode foil.
+                    Throughout the past 50 years, we have been able to achieve ground-breaking technologies that led to the introduction of various innovative aluminium applications such as Korea’s first retortable pouch, <span class="nowrap">4.5㎛</span> ultra-thin gauge aluminium foil, and the world’s first <span class="nowrap">10㎛</span> ultra high-strength LIB cathode foil.
                 </p>
                 <p>
                    In addition to Sam-A’s current portfolio of aluminium foil, packaging, and industrial materials, we are now preparing for yet another leap by building the world`s best, state-of-the-art production base and expanding into the specialty films and electronic components business.

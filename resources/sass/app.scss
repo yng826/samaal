@@ -175,6 +175,9 @@ input, select {
     vertical-align: middle;
     -webkit-appearance: none;
 }
+.nowrap {
+    white-space: nowrap;
+}
 
 %clear {
     &:after {
