@@ -432,7 +432,7 @@
     }
 
     &__text {
-        width: 584px;
+        padding-right: 50px;
         padding-top: 35px;
         color: #2a2a2a;
         font-size: 18px;
@@ -1060,6 +1060,7 @@
 
         &__text {
             width: vw(584px);
+            padding-right: 0;
             padding-top: vw(35px);
             font-size: vw(18px);
             line-height: vw(32px);
@@ -1439,6 +1440,7 @@
 
         &__text {
             width: 100%;
+            padding-right: 0;
             padding-top: vw(70px);
             font-size: vw(36px);
             line-height: vw(64px);
@@ -1813,6 +1815,7 @@
 
         &__text {
             width: 100%;
+            padding-right: 0;
             padding-top: vw(50px);
             font-size: vw(22px);
             line-height: vw(37px);
