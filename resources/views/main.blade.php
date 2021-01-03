@@ -91,12 +91,12 @@
                 </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
-                        <em>Defying</em> the Conventional with <em>Sam-A</em>
+                        <em>Defying</em> the Conventional <br/>with <em>Sam-A</em>
                      </h2>
-                     <div class="main-wrap__section--button sub-menu__button on">
+                     <div class="main-wrap__section--button sub-menu__button">
                         <button type="button">Work With Us</button>
                      </div>
-                     <ul class="main-wrap__section--sub-menu WorWithUs-menu on">
+                     <ul class="main-wrap__section--sub-menu WorWithUs-menu">
                          <li>Challenging the global merket with continuous innovation to become the best of the best</li>
                          <li>Trusted partner with world-class expertise</li>
                          <li>Committed with Enthusiasm and Excitement</li>
