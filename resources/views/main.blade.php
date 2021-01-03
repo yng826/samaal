@@ -91,8 +91,7 @@
                 </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
-                        <em>Spread</em>your wings with<br>
-                        <em>ambition</em> at <em>Sama</em>
+                        <em>Defying</em> the Conventional with <em>Sam-A</em>
                      </h2>
                      <div class="main-wrap__section--button sub-menu__button on">
                         <button type="button">Work With Us</button>
