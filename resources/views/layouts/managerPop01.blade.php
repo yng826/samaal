@@ -14,6 +14,6 @@
     </dl>
     <dl>
         <dt>E-mail</dt>
-        <dd><a href="mailto:hsyu@sama-al.com">hsyu@sama-al.com</a></dd>
+        <dd><a href="mailto:test001@sama-al.com">hsyu@sama-al.com</a></dd>
     </dl>
 </div>

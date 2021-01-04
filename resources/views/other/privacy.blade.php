@@ -103,7 +103,7 @@
                     <tr>
                         <td></td>
                         <td>이메일</td>
-                        <td><a href="mailto:hmpark@sama-al.com">hmpark@sama-al.com</a></td>
+                        <td><a href="mailto:test001@sama-al.com">hmpark@sama-al.com</a></td>
                     </tr>
                 </tbody>
             </table>
