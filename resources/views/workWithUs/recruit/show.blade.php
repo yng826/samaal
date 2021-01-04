@@ -82,7 +82,9 @@
                 </div>
             </div>
             <div class="work-recruit__detail--button">
+                @if ( $recruit->recruit_status == 'open' )
                 <apply-button recruit_id="{{$recruit->id}}" recruit_status="{{$recruit->recruit_status}}"></apply-button>
+                @endif
                 <check-apply-button recruit_id="{{$recruit->id}}"></check-apply-button>
             </div>
         </div>
@@ -91,7 +93,9 @@
 @endsection
 
 @section('popup-container')
+    @if ( $recruit->recruit_status == 'open' )
     <login-component recruit_id="{{$recruit->id}}"></login-component>
+    @endif
     {{-- <join-component recruit_id="{{$recruit->id}}"></join-component> --}}
     <find-password-component></find-password-component>
 @endsection

@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserInfo;
 use App\Models\Work\Job;
+use App\Models\Work\Recruit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class MemberController extends Controller
 {
@@ -29,6 +31,19 @@ class MemberController extends Controller
         $result = [];
         $result['result'] = 'fail';
         $result['msg'] = '';
+
+        // check open
+        // Log::debug('check open find:'. $recruit_id );
+        $recruit = Recruit::find($recruit_id);
+
+        // Log::debug('check open:'. json_encode($recruit) );
+        if ( $recruit->recruit_status != 'open' ) {
+            $result['result'] = 'fail';
+            $result['type'] = 'join';
+            $result['msg'] = '채용이 마감되었습니다.';
+            return $result;
+        }
+
         $user = User::where('email', $email)->first();
         if ( $user ) {
             $result['msg'] = '이력이 존재합니다. 지원내역을 확인해주세요';
@@ -77,7 +92,7 @@ class MemberController extends Controller
                 $result['type'] = 'join';
                 $result['msg'] = '인적사항 입력에 성공했습니다.';
             } catch (\Throwable $th) {
-                $result['result'] = 'success';
+                $result['result'] = 'fail';
                 $result['user'] = $user;
                 $result['token'] = $token;
                 $result['msg'] = '입력에 실패했습니다. 다시 시도해주세요.';

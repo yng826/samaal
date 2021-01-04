@@ -78,7 +78,7 @@ class HobbySpecialtyController extends Controller
             $specialty->specialty = $request->specialty['specialty'];
             $specialty->save();
         } else {
-            $specialty = HobbySpecialty::find($request->specialty['id'])->first();
+            $specialty = HobbySpecialty::find($request->specialty['id']);
             $specialty->hobby = $request->specialty['hobby'];
             $specialty->specialty = $request->specialty['specialty'];
             $specialty->save();

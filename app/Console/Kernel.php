@@ -36,24 +36,22 @@ class Kernel extends ConsoleKernel
             // 오픈
             $affected = DB::table('recruits')
             ->where('start_date', '<=', date('Y-m-d'))
-            ->where('recruit_status', '=', 'standby')
+            ->where('end_date', '>', date('Y-m-d'))
+            ->where('recruit_status', '<>', 'open')
             ->update(['recruit_status'=> 'open']);
 
-            /** */
+            /***/
             // 종료
             $end_recruits = DB::table('recruits')
-                ->where([
-                    ['end_date', '<=', date('Y-m-d')],
-                    ['recruit_status', '<>', 'closed'],
-                ])
+                ->where('end_date', '<=', date('Y-m-d'))
+                ->where('recruit_status', '<>', 'closed')
                 ->get();
-            Log::debug(json_encode($end_recruits->pluck('id')));
+            $query = DB::getQueryLog();
+            // Log::debug('end recruit:'. json_encode($end_recruits));
+            // Log::debug('query :'. json_encode($query));
             $recruit_ids = $end_recruits->pluck('id');
             if (count($recruit_ids)) {
-                // $end_recruits = DB::update(DB::raw("UPDATE job_applications
-                //     SET status = (CASE WHEN status = 'submit' then 'pending'
-                //         WHEN status = 'saved' then 'expired' END)
-                //     WHERE recruit_id IN ()"));
+                // Log::debug('count:'. count($recruit_ids));
                 DB::table('job_applications')
                     ->whereIn('recruit_id', $recruit_ids->all())
                     ->update(['status' => DB::raw("(CASE WHEN status = 'submit' then 'pending'

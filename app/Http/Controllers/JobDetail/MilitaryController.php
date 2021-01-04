@@ -92,7 +92,7 @@ class MilitaryController extends Controller
             //                 'military_duration_end' => date('Y-m-d', strtotime($request->military['military_duration_end'])),
             //             ]);
         } else {
-            $military = Military::find($request->military['id'])->first();
+            $military = Military::find($request->military['id']);
             $military->military_type = $request->military['military_type'];
             $military->military_discharge = $request->military['military_discharge'];
             $military->military_rank = $request->military['military_rank'];
