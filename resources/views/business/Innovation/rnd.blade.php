@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="innovation-rnd__intro-text">
-            <h3>연구개발본부 소개</h3>
+            <h3>Sama R&D Center</h3>
             <p>
                 Sama's R&D is constantly conducting research to achieve improved efficiency and performance of existing products based on technology and experience accumulated over 50 years to respond to rapidly changing global market trends and customer needs.
             </p>
