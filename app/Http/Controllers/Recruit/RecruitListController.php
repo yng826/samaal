@@ -24,6 +24,7 @@ class RecruitListController extends Controller
         $recruits = Recruit::whereHas('keywords', function($query) use ($keyword) {
             $query->where('keyword', 'like', '%'.$keyword.'%');
             })
+            ->orderBy('end_date', 'desc')
             ->get();
         /*
         $recruits = DB::table('recruits')
