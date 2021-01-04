@@ -22,7 +22,7 @@
 @endsection
 
 @section('info__value')
-    <em>미래가치</em>
+    <em>Future Value</em>
     <p>
         We are developing special aluminium paste (non-leafing type) for metallic color.
     </p>
@@ -31,7 +31,7 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-right-none border-bottom">제품 사양</th>
+            <th class="border-left-none border-right-none border-bottom">Spec</th>
             <td class="border-right-none border-bottom">ALUMINIUM/OIL</td>
         </tr>
     </table>
@@ -41,29 +41,27 @@
             <col width="auto">
         </colgroup>
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none border-right-none">활용 영역</th>
+            <th colspan="2" class="border-left-none border-right-none">Typical Uses</th>
         </tr>
         <tr class="info__table--bottom">
             <th class="border-left-none list-title">
-                리핑 타입<br>
-                (Leafing Type)
+                Leafing Type
             </th>
             <td class="list">
                 <ul>
-                    <li>- 철구조물(철탑, 교량, 저장용 탱크, 기계장치) 부식방지용 페인트</li>
-                    <li>- 인쇄 인크용 </li>
-                    <li>- 금속질감 플라스틱 마스터 뱃지용</li>
+                    <li>- Anti-corrosion paint on steel structures (steel towers, bridges, storage tanks, machinery)</li>
+                    <li>- For printing</li>
+                    <li>- For the Metallic compound</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <th  class="border-left-none list-title">
-                넌리핑 타입<br>
-                (Non-Leafing Type)
+                Non-Leafing Type
             </th>
             <td>
-                - 선박용 부식방지 페인트<br>
-                - 금속 색상의 페인트<br>
+                - Basic floor coating and anti-corrosion paint for vessels<br>
+                - Metallic paint<br>
             </td>
         </tr>
         {{-- <tr class="info__table--bottom">

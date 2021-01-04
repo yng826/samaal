@@ -21,7 +21,7 @@
 @endsection
 
 @section('info__value')
-    <em>미래가치</em>
+    <em>Future Value</em>
     <p>
         We are developing applications such as the improvement of heat insulation properties and durability, low-temperature tanks for vessels and medical containers.
     </p>
@@ -30,8 +30,8 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-bottom">제품 사양</th>
-            <th class="border-right-none">활용 영역</th>
+            <th class="border-left-none border-bottom">Spec</th>
+            <th class="border-right-none">Typical Uses</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">VM-PET LAMINATE FILM</td>

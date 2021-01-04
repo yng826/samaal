@@ -351,6 +351,7 @@
 
     &__inner {
         position: relative;
+        padding-top: 40px;
         padding-bottom: 30px;
         border-bottom: 1px solid #444;
         font-size: 0;
@@ -408,9 +409,9 @@
             &__button {
                 position: relative;
                 display: inline-block;
-                padding: 0 24px;
+                padding: 0 48px 0 24px;
                 height: 56px;
-                width: 255px;
+                width: auto;
                 color: #444;
                 font : {
                     size: 16px;
@@ -1093,6 +1094,7 @@
         }
 
         &__inner {
+            padding-top: vw(40px);
             padding-bottom: vw(30px);
 
             .question-btn {
@@ -1124,9 +1126,8 @@
                 margin-right: vw(20px);
 
                 &__button {
-                    padding: vw(0 24px);
+                    padding: vw(0 48px 0 24px);
                     height: vw(56px);
-                    width: vw(255px);
 
                     font : {
                         size: vw(16px);
@@ -1546,9 +1547,8 @@
                 margin-right: vw(40px);
 
                 &__button {
-                    padding: vw(0 48px);
+                    padding: vw(0 96px 0 48px);
                     height: vw(90px);
-                    width: vw(410px);
 
                     font : {
                         size: vw(32px);

@@ -17,8 +17,8 @@
             <div class="section main-wrap__section section01 intro">
                 <div class="section-left">
                     <h2 class="main-wrap__section--title">
-                        A <em>sustainable</em> world<br>
-                        created by <em>Sam-A</em>
+                        <em>A sustainable world</em><br>
+                        created by <em>Sama</em>
                     </h2>
                     <div class="main-wrap__section--button">
                         <a href="/intro">More</a>
@@ -65,7 +65,7 @@
             <div class="section main-wrap__section section03 for-business-partners">
                 <div class="section-left">
                     <h2 class="main-wrap__section--title">
-                        <em>Produced</em> with Sam-A's<br>
+                        <em>Produced</em> with <em>Sama</em><br>
                         <em>passion</em> and <em>spirit</em>
                     </h2>
                     <div class="main-wrap__section--button">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
-                        <em>Defying</em> the Conventional <br/>with <em>Sam-A</em>
+                        <em>Defying</em> the Conventional <br/>with <em>Sama</em>
                      </h2>
                      <div class="main-wrap__section--button sub-menu__button">
                         <button type="button">Work With Us</button>

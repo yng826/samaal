@@ -18,7 +18,7 @@ const business = () => {
                 $('.business-foil__title').css({'position':'fixed','top':'50%','right': '0'});
             }
             if($(window).scrollTop() + $(window).height() > $(document).height() - $(".footer").height()) {
-                $('.business-foil__title').css({'position':'absolute','top':'75%','right':'0'});
+                $('.business-foil__title').css({'position':'absolute','top':'70%','right':'0'});
             }
         });
 

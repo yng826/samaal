@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    ALU-ALU<br>
+    ALU-ALU
     Cold Forming Foil
     <p>
         Korea's first pharmaceutical packaging material for storing medical supplies for longer periods
@@ -22,7 +22,7 @@
 @endsection
 
 @section('info__value')
-    <em>미래가치</em>
+    <em>Future Value</em>
     <p>
         It will be used in the development of deep drawing blister cavities and special packaging for preventing counterfeit products.
     </p>
@@ -31,8 +31,8 @@
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-bottom">제품 사양</th>
-            <th class="border-right-none">활용 영역</th>
+            <th class="border-left-none border-bottom">Spec</th>
+            <th class="border-right-none">Typical Uses</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">OPA/AL/PVC</td>

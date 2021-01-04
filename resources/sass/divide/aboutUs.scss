@@ -1243,6 +1243,15 @@
         }
     }
 
+    /* 재무제표 */
+    .ir-wrap--tab {
+        li {
+            a {
+                font-size: vw(30px);
+            }
+        }
+    }
+
 }
 
 /*태블릿 세로 사이즈*/
@@ -1604,6 +1613,15 @@
             padding-top: vw(36px);
             font-size: vw(30px);
             line-height: vw(64px);
+        }
+    }
+
+     /* 재무제표 */
+     .ir-wrap--tab {
+        li {
+            a {
+                font-size: vw(30px);
+            }
         }
     }
 }
@@ -2082,12 +2100,20 @@
         padding-bottom: 20px;
 
         li {
+            position: relative;
             width: calc(33.33% - #{vw(5px)});
             margin-left: vw(5px);
             height: vw(67px);
-            line-height: vw(67px);
+            line-height: normal;
+            vertical-align: top;
+
             a {
-                font-size: vw(22px);
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: vw(13px);
             }
 
 

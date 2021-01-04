@@ -23,15 +23,15 @@
 @endsection
 
 @section('info__value')
-    <em>미래가치</em>
+    <em>Future Value</em>
     <p>It is being widely applied to various types of retort food used in microwave ovens, and is attracting attention as an eco-friendly material that can dramatically reduce carbon dioxide emissions by replacing canned products with pouch products.</p>
 @endsection
 
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th class="border-left-none border-bottom">제품 사양</th>
-            <th class="border-right-none">활용 영역</th>
+            <th class="border-left-none border-bottom">Spec</th>
+            <th class="border-right-none">Typical Uses</th>
         </tr>
         <tr class="info__table--bottom">
             <td class="border-left-none">

@@ -26,10 +26,10 @@
                 <div class="ir-wrap--tab">
                     <ul>
                         <li class="tab-item {{$id =='consolidated' ? 'on': ''}}">
-                            <a href="/about-us/ir/consolidated">연결재무제표</a>
+                            <a href="/about-us/ir/consolidated">Consolidated Financial Statements</a>
                         </li>
                         <li class="tab-item {{$id =='separate' ? 'on': ''}}">
-                            <a href="/about-us/ir/separate">별도재무제표</a></li>
+                            <a href="/about-us/ir/separate">Separate Financial Statements</a></li>
                         </li>
                         <li class="tab-item {{$id =='board' ? 'on': ''}}">
                             <a href="/about-us/ir/board">Electronic Disclosure</a></li>
@@ -40,42 +40,42 @@
                 <div class="contents-wrap__section">
                     <div class="about-ir__chart">
                         <h3>Revenue</h3>
-                        <h6>(단위: 백만원)</h6>
+                        <h6>(Unit: 1 Million KRW)</h6>
                         <div>
                             <canvas id="sales"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
                         <h3>Operating profit</h3>
-                        <h6>(단위: 백만원)</h6>
+                        <h6>(Unit: 1 Million KRW)</h6>
                         <div>
                             <canvas id="operating_income"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
                         <h3>Profit for the year</h3>
-                        <h6>(단위: 백만원)</h6>
+                        <h6>(Unit: 1 Million KRW)</h6>
                         <div>
                             <canvas id="net_income"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
                         <h3>Assets</h3>
-                        <h6>(단위: 백만원)</h6>
+                        <h6>(Unit: 1 Million KRW)</h6>
                         <div>
                             <canvas id="assets"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
                         <h3>Liabilities</h3>
-                        <h6>(단위: 백만원)</h6>
+                        <h6>(Unit: 1 Million KRW)</h6>
                         <div>
                             <canvas id="liability"></canvas>
                         </div>
                     </div>
                     <div class="about-ir__chart">
                         <h3>Equity</h3>
-                        <h6>(단위: 백만원)</h6>
+                        <h6>(Unit: 1 Million KRW)</h6>
                         <div>
                             <canvas id="capital"></canvas>
                         </div>

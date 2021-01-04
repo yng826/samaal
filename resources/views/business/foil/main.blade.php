@@ -50,12 +50,12 @@
             <div class="foil-box__col fl-r mr-0">
                 <div class="foil-box__col--item">
                     <a href="foil/car" class="foil-box--item item-car">
-                    <p class="foil-box__text">LIB Cathode Foil for Electronics</p>
+                    <p class="foil-box__text">LIB Cathode Foil for Automotive</p>
                 </a>
                 </div>
                 <div class="foil-box__col--item">
                     <a href="foil/electronic" class="foil-box--item item-electronic">
-                        <p class="foil-box__text">LIB Cathode Foil for Automotive</p>
+                        <p class="foil-box__text">LIB Cathode Foil for Electronics</p>
                     </a>
                 </div>
             </div>

@@ -32,9 +32,9 @@
                         <col width="auto">
                     </colgroup>
                     <tr>
-                        <th>ertification standard</th>
-                        <th>Certification numbe</th>
-                        <th>Initial certification date</th>
+                        <th>Certification Standard</th>
+                        <th>Certification Number</th>
+                        <th>Initial Certification Date</th>
                     </tr>
                     @foreach ($certifications as $certification)
                     @if ($type->type == $certification->type)

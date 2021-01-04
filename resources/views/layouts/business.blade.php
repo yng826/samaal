@@ -38,7 +38,7 @@
                         @yield('info__table')
                     </div>
                     <div class="business-detail__button">
-                        <button type="button" class="btn-question">제품문의</button>
+                        <button type="button" class="btn-question">Inquiry</button>
                         <button type="button" class="btn-manager">Contact Information</button>
                     </div>
                 </div>

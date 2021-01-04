@@ -30,7 +30,7 @@
                 </div>
                 <div class="foil-box__half--item">
                     <a href="industry/paste" class="foil-box--item item-paste">
-                        <p class="foil-box__text">minium Paste</p>
+                        <p class="foil-box__text">Aluminium Paste</p>
                     </a>
                 </div>
             </div>

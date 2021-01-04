@@ -21,15 +21,15 @@
 @endsection
 
 @section('info__value')
-    <em>미래가치</em>
+    <em>Future Value</em>
     <p>It can also be applied to heaters and air conditioners for maintaining a constant internal temperature of electric vehicle batteries.</p>
 @endsection
 
 @section('info__table')
     <table class="info__table">
         <tr class="info__table--title">
-            <th colspan="2" class="border-left-none">제품 사양</th>
-            <th rowspan="2" class="border-right-none">활용 영역</th>
+            <th colspan="2" class="border-left-none">Spec</th>
+            <th rowspan="2" class="border-right-none">Typical Uses</th>
         </tr>
         <tr class="info__table--title">
             <th class="border-left-none">Thickness</th>
