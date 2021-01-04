@@ -1605,8 +1605,8 @@
 
     &__img {
         display: block;
-        width: 607px;
-        height: 576px;
+        width: 865px;
+        height: 577px;
         margin: 69px auto 0;
         background: url("/images/business/innovation/img_rnd.jpg") no-repeat;
         background-size: contain;
@@ -2549,8 +2549,8 @@
         }
 
         &__img {
-            width: vw(607px);
-            height: vw(576px);
+            width: vw(865px);
+            height: vw(577px);
             margin: vw(69px auto 0);
         }
     }
@@ -3315,8 +3315,8 @@
         }
 
         &__img {
-            width: vw(1214px);
-            height: vw(1152px);
+            width: vw(1730px);
+            height: vw(1154px);
             margin: vw(138px auto 0);
         }
     }
@@ -4478,9 +4478,11 @@
         }
 
         &__img {
-            width: vw(608px);
-            height: vw(628px);
+            width: vw(615px);
+            height: vw(694px);
             margin: 0 auto;
+            background: url("/images/business/innovation/m_img_rnd.jpg") no-repeat;
+            background-size: contain;
         }
     }
 }
