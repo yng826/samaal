@@ -4346,7 +4346,7 @@
 
         &__section {
             max-width: 100%;
-            padding: vw(78px 87px);
+            padding: vw(78px 40px);
         }
 
         &__table {
@@ -4360,8 +4360,10 @@
             table {
                 th {
                     padding: vw(20px 0);
-                    font-size: vw(27px);
+                    font-size: vw(24px);
                     border: vw(3px) solid #000;
+                    word-break: keep-all;
+                    vertical-align: middle;
                 }
 
                 td {
