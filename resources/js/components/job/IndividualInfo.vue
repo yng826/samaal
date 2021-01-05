@@ -351,9 +351,9 @@ export default {
                 this.isSubmit = false;
                 console.log('getInfo:', res.data);
                 if ( res.data ) {
-                    console.log(res.data.recruit.recruit_status);
-                    console.log(res.data);
-                    this.$store.state.recruit_status = res.data.recruit.recruit_status;
+                    // console.log(res.data.recruit.recruit_status);
+                    // console.log(res.data);
+                    this.$store.state.recruit_status = res.data.status == 'submit' ? 'closed' : res.data.recruit.recruit_status;
                     this.$store.state.job = {
                         address_1: res.data.address_1,
                         address_2: res.data.address_2,

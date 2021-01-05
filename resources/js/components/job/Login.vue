@@ -127,16 +127,8 @@ export default {
                 console.log( res );
                 this.isSubmit = false;
                 if ( res.data.logged == true) {
-                    console.log(res.data.job , this.recruit_id);
-                    if ( res.data.job && this.recruit_id ) {
-                        if ( res.data.job[this.recruit_id]) {
-                            window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit';
-                        } else {
-                            window.location.href = '/work-with-us/recruit/';
-                        }
-                    } else {
-                        window.location.href = window.location.href;
-                    }
+                    // console.log(res.data.job , this.recruit_id);
+                        window.location.reload();
                 }
             }).catch( err => {
                 console.error(err);
