@@ -8,8 +8,7 @@
 
     &__title-wrap {
         width: calc(100% - 61.84210526316%);
-
-    float: right;
+        float: right;
     }
 
     &__title {
@@ -20,7 +19,7 @@
         // right: 0;
         // top: 50%;
         // transform: translateY(-50%);
-        // color: #3d3d3d;
+        color: #3d3d3d;
         position: fixed;
         top:  50%;
         width: auto;
@@ -2789,14 +2788,15 @@
 }
 
 /*태블릿 세로 사이즈*/
-@media all and (min-width:768px) and (max-width:1023px) {
+@media all and (min-width:768px) and (max-width:1024px) {
     @import "./lib/webvw";
     /* 알루미늄 호일, 포장재용, 산업/건축용 content */
     .business-foil {
 
         &__title {
-            // position: absolute !important;
-            // top: vw(358px) !important;
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%);
             // right: 0;
 
             font: {
