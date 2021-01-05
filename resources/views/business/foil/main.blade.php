@@ -6,9 +6,14 @@
 
 @section('contents')
     <main class="business-foil contents-wrap">
-        <div class="business-foil__title">
-            <h2>최초를 넘어 최고의 기술력을 선보인<br> <span>삼아의 <em>알루미늄 호일 제품</em>을<br> 만나보세요</span></h2>
+        <div class="business-foil__title-wrap">
+            <div class="business-foil__title">
+                <div class="business-foil__title-box">
+                    <h2>최초를 넘어 최고의 기술력을 선보인<br> <span>삼아의 <em>알루미늄 호일 제품</em>을<br> 만나보세요</span></h2>
+                </div>
+            </div>
         </div>
+
         <div class="business-foil__contents foil-box">
             <div class="foil-box__col">
                 <div class="foil-box__col--item item-foil">

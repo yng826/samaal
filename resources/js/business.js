@@ -10,15 +10,21 @@ const business = () => {
 
     // foil main 작업하는중
     const foilWrap = () => {
-        let ww = $(window).width();
         $(window).on('scroll',function(){
 
             // top button position
-            if($(window).scrollTop() + $(window).height() < $(document).height() - $(".footer").height()) {
-                $('.business-foil__title').css({'position':'fixed','top':'50%','right': '0'});
+            // if($(window).scrollTop() + $(window).height() < $(document).height() - $(".footer").height()) {
+            //     $('.business-foil__title').css({'position':'fixed','top':'50%','right': '0'});
+            // }
+            // if($(window).scrollTop() + $(window).height() > $(document).height() - $(".footer").height()) {
+            //     $('.business-foil__title').css({'position':'absolute','top':'75%','right':'0'});
+            // }
+            const height  = $(document).scrollTop();
+            if(height < $(".footer").height()) {
+                $('.business-foil__title').css({'position':'fixed','top':'50%'});
             }
-            if($(window).scrollTop() + $(window).height() > $(document).height() - $(".footer").height()) {
-                $('.business-foil__title').css({'position':'absolute','top':'75%','right':'0'});
+            if(height > $(".footer").height()) {
+                $('.business-foil__title').css({'position':'absolute','top':'70%'});
             }
         });
 

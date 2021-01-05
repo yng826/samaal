@@ -6,15 +6,26 @@
     margin: 0 auto;
 
 
-    &__title {
-        position: fixed;
-        float: right;
+    &__title-wrap {
         width: calc(100% - 61.84210526316%);
+
+    float: right;
+    }
+
+    &__title {
+        // position: fixed;
+        // float: right;
+        // width: calc(100% - 61.84210526316%);
+        // height: auto;
+        // right: 0;
+        // top: 50%;
+        // transform: translateY(-50%);
+        // color: #3d3d3d;
+        position: fixed;
+        top:  50%;
+        width: auto;
         height: auto;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #3d3d3d;
+        // overflow: auto;
         font: {
             size: 35px;
         }
@@ -37,6 +48,16 @@
                 color: $titleColor;
             }
         }
+
+        &.package-title,
+        &.industry-title {
+            position: absolute !important;
+            transform: translateY(-50%) !important;
+        }
+    }
+
+    &__title-box {
+        width: 725px;
     }
 
     .foil-box {
@@ -1756,6 +1777,10 @@
             }
         }
 
+        &__title-box {
+            width: vw(725px);
+        }
+
         .foil-box {
             width: vw(1175px);
 
@@ -1824,8 +1849,6 @@
     .business-foil {
 
         &__title {
-            top: vw(358px);
-            right: 0;
 
             font: {
                 size: vw(35px);
@@ -2772,9 +2795,9 @@
     .business-foil {
 
         &__title {
-            position: absolute !important;
-            top: vw(358px) !important;
-            right: 0;
+            // position: absolute !important;
+            // top: vw(358px) !important;
+            // right: 0;
 
             font: {
                 size: vw(35px);
@@ -3628,8 +3651,8 @@
      .business-foil {
 
         &__title {
-            position: relative !important;
-            top: vw(171px) !important;
+            position: absolute !important;
+            top: vw(80px) !important;
             right: 0;
             width: 100%;
             text-align: center;
@@ -3644,6 +3667,11 @@
                 font: {
                     size: vw(37px);
                 }
+            }
+
+            &.package-title,
+            &.industry-title {
+                transform: initial !important;
             }
         }
 
@@ -3725,6 +3753,16 @@
 
         .pt-0 {
             padding-top: 0;
+        }
+
+        &__title-wrap {
+            width: 100%;
+            height: 0;
+            float: initial;
+        }
+
+        &__title-box {
+            width: 100%;
         }
     }
 
