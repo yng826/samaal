@@ -58,8 +58,8 @@
 
     <div class="header__search">
         <ul>
-            <li class="language__kor"><a href="#">KOR</a></li>
             <li class="language__eng"><a href="#">ENG</a></li>
+            <li class="language__kor"><a href="{{env('KO_URL', '/')}}">KOR</a></li>
         </ul>
         <!-- <input type="text"> -->
         <button type="submit" class="btn-search">검색</button>
