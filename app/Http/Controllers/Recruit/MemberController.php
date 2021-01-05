@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Recruit;
 
+use App\Custom\SmtpEmail;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserInfo;
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
 
 class MemberController extends Controller
 {
@@ -23,10 +26,12 @@ class MemberController extends Controller
         $password = $request->password;
         $name = $request->name;
         $name_en = $request->name_en;
-        $phone_decrypt = $request->phone_decrypt;
+        $phone_decrypt = str_replace(" ", "", $request->phone_decrypt);
         $birth_day = $request->birth_day;
         $address_1 = $request->address_1;
         $address_2 = $request->address_2;
+
+        Log::debug('$phone_decrypt', $phone_decrypt);
 
         $result = [];
         $result['result'] = 'fail';
@@ -146,7 +151,27 @@ class MemberController extends Controller
         $phone_check = $user->user_info->phone_decrypt == $request->phone;
         if ( $user ) {
             if ( $phone_check ) {
+                // 임시비밀번호
+                $password = Str::random(10);
+                $logo = env('APP_URL', 'http://sama-al.com')."/images/common/logo.png";
+                // 이메일 전송
+                $mail = [];
+                $mail['email'] = $user->email;
+                $mail['name'] = $user->name;
+                $mail['subject'] = '[삼아] 임시 비밀번호 발급';
+                $mail['text'] = "<div style='background-color: #2b4985; width:100%; height: 40px;'></div>
+<div style='width: 120px;padding: 20px 0;'><img src='{$logo}' alt='삼아알미늄 로고'></div>
+<h4 style='font-size: 16px;color: black;'>안녕하세요, &apos;{$user->name}&apos;님</h4>님, <br/>
+<p>임시비밀 번호는 <b>{$password}</b> 입니다. <br/>
+감사합니다.</p>";
+                $res = SmtpEmail::email($mail);
+                if ( $res == 'success' ) {
+                    $user->password = Hash::make($password);
+                    $user->save();
+                }
+
                 # code...
+                $result['msg'] = '이메일을 확인해주세요';
                 $result['user'] = $user;
                 $result['name'] = $request->name;
                 $result['email'] = $request->email;

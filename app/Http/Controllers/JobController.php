@@ -10,8 +10,11 @@ use App\Models\work\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -95,9 +98,12 @@ class JobController extends Controller
             $user->save();
 
             // save user_info
+
+            $phone_decrypt = str_replace(" ", "", $formData['phone_decrypt']);
+
             $user_info->name_en = $formData['name_en'];
             $user_info->birth_day = $formData['birth_day'];
-            $user_info->phone_last = substr($formData['phone_decrypt'],-4);
+            $user_info->phone_last = substr($phone_decrypt,-4);
             $user_info->address_1 = $formData['address_1'];
             $user_info->address_2 = $formData['address_2'];
             $user_info->save();
@@ -109,8 +115,8 @@ class JobController extends Controller
             }
             $job = new Job;
             $job->recruit_id = $formData['recruit_id'];
-            $job->phone_last = substr($formData['phone_decrypt'],-4);
-            $job->phone_encrypt = Crypt::encryptString($formData['phone_decrypt']);
+            $job->phone_last = substr($phone_decrypt,-4);
+            $job->phone_encrypt = Crypt::encryptString($phone_decrypt);
             $job->address_1 = $formData['address_1'];
             $job->address_2 = $formData['address_2'];
             $job->user_id = $user->id;
@@ -196,16 +202,24 @@ class JobController extends Controller
             $job->is_cover_letter = Str::length($job->cover_letter) > 0 ? 1 : 0;
             $job->save();
         } else {
+
+            $phone_decrypt = str_replace(" ", "", $formData['phone_decrypt']);
+            Log::debug('phone_decrypt::'. $phone_decrypt);
+
             $user = User::find($formData['user_id']);
             $user_info = UserInfo::find($formData['user_id']);
             // save user
             $user->name = $formData['name'];
+            if ( isset($formData['password'] ) ) {
+                $user->password = Hash::make($formData['password']);
+            }
             $user->save();
 
             // save user_info
             $user_info->name_en = $formData['name_en'];
             $user_info->birth_day = $formData['birth_day'];
-            $user_info->phone_last = substr($formData['phone_decrypt'], -4);
+            $user_info->phone_encrypt = Crypt::encryptString($phone_decrypt);
+            $user_info->phone_last = substr($phone_decrypt, -4);
             $user_info->address_1 = $formData['address_1'];
             $user_info->address_2 = $formData['address_2'];
             $user_info->save();
@@ -220,7 +234,7 @@ class JobController extends Controller
                 $filePath = $formData['file_path'];
             }
             // save job
-            $job->phone_encrypt = Crypt::encryptString(str_replace(' ', '', $formData['phone_decrypt']));
+            $job->phone_encrypt = Crypt::encryptString($phone_decrypt);
             $job->address_1 = $formData['address_1'];
             $job->address_2 = $formData['address_2'];
             $job->file_path = $filePath;
@@ -286,7 +300,7 @@ class JobController extends Controller
                 // dd($job);
 
                 $text = "<div style='background-color: #2b4985; width:100%; height: 40px;'></div>
-<div style='width: 120px;padding: 20px 0;'><img src='http://139.150.76.105/images/common/logo.png' alt='삼아알미늄 로고'></div>
+<div style='width: 120px;padding: 20px 0;'><img src='".URL::current()."/images/common/logo.png' alt='삼아알미늄 로고'></div>
 <h4 style='font-size: 16px;color: black;'>안녕하세요, &apos;{$job->user->name}&apos;님</h4>
 <p style='font-size: 24px;letter-spacing: -2px;font-weight: bold;color: #2b4985;'>귀하의 {$job->recruit->title}부문 지원서 제출이 완료되었습니다.</p>
 <p style='font-size: 18px;color: black;'>지원 내역 확인은 채용공고 하단 &apos;지원내역 확인 및 수정&apos;에서 가능합니다.</p>
@@ -294,6 +308,7 @@ class JobController extends Controller
 <p style='font-size: 18px;color: black;'>삼아에 지원해주셔서 다시 한 번 감사드립니다.</p>
 <h5 style='font-size:18px;color: black; text-align: right; color:#555;'>삼아채용담당자 드림</h5>";
                 // EMAIL
+                $mail = [];
                 $mail['email'] = $job->user->email;
                 $mail['name'] = $job->user->name;
                 $mail['subject'] = '[삼아] 채용 입사지원서 최종제출안내 메일';

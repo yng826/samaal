@@ -37,7 +37,11 @@ class Job extends Model
 
     public function getStatusKOAttribute()
     {
-        return $this->ko_status[$this->status];
+        if ( $this->status ) {
+            return $this->ko_status[$this->status];
+        } else {
+            return '';
+        }
     }
 
     public function educations()

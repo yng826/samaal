@@ -120,7 +120,7 @@ export default {
                         confirmButtonText: `확인`,
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            // this.isSubmit = true;
+                            window.location.href = window.location.href
                         }
                     });
                 } else {

@@ -174,6 +174,13 @@ export default {
             emailVendor: null,
             selectEdit: false,
             agree: false,
+            passwordRules: [
+				{ message:'하나이상의 소문자가 있어야 합니다.', regex:/[a-z]+/ },
+				// { message:"One uppercase letter required.",  regex:/[A-Z]+/ },
+                { message: '특수문자가 포함되어야 합니다.', regex: /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/ },
+				{ message:"최소 8자이상입니다.", regex:/.{8,}/ },
+				{ message:"하나 이상의 숫자가 있어야 합니다.", regex:/[0-9]+/ }
+			],
         }
     },
     computed: {
@@ -342,6 +349,7 @@ export default {
             })
             .then(res => {
                 this.isSubmit = false;
+                console.log('getInfo:', res.data);
                 if ( res.data ) {
                     console.log(res.data.recruit.recruit_status);
                     console.log(res.data);
@@ -389,9 +397,9 @@ export default {
                         if (result.isConfirmed) {
                             this.$root.$emit('closePopup');
                             if ( this.isAuth) {
-                                window.location.href = '/work-with-us/job/';
+                                // window.location.href = '/work-with-us/job/';
                             } else {
-                                window.location.href = '/work-with-us/recruit/';
+                                // window.location.href = '/work-with-us/recruit/';
                             }
                         }
                     });
@@ -456,10 +464,16 @@ export default {
                         msg: '비밀번호를 입력해주세요',
                     };
                 }
-                if ( this.password.length < 8 ) {
+                let errors = []
+                for (let condition of this.passwordRules) {
+                    if (!condition.regex.test(this.password)) {
+                        errors.push(condition.message)
+                    }
+                }
+                if ( errors.length ) {
                     return {
                         result: false,
-                        msg: '비밀번호는 8자 이상으로 해주세요',
+                        msg: errors[0],
                     };
                 }
                 if ( this.password !== this.password_confirm || typeof this.password_confirm == 'undefined' ) {
@@ -476,10 +490,16 @@ export default {
                 }
             } else {
                 if ( this.password != '' ) {
-                    if ( this.password.length < 8 ) {
+                    let errors = []
+                    for (let condition of this.passwordRules) {
+                        if (!condition.regex.test(this.password)) {
+                            errors.push(condition.message)
+                        }
+                    }
+                    if ( errors.length ) {
                         return {
                             result: false,
-                            msg: '비밀번호는 8자 이상으로 해주세요',
+                            msg: errors[0],
                         };
                     }
                     if ( this.password !== this.password_confirm || typeof this.password_confirm == 'undefined' ) {
