@@ -31,8 +31,6 @@ class MemberController extends Controller
         $address_1 = $request->address_1;
         $address_2 = $request->address_2;
 
-        Log::debug('$phone_decrypt', $phone_decrypt);
-
         $result = [];
         $result['result'] = 'fail';
         $result['msg'] = '';
