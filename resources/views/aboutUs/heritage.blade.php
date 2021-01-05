@@ -63,7 +63,7 @@
                     <div class="swiper-button-next"></div>
                 </div>
             </div>
-            <p class="about-heritage__text">* UN 지속가능 발전 목표(SDGs) 색상을 활용했습니다.</p>
+            <p class="about-heritage__text">The colors of UN Sustainable Development Goals (SDGs) have been utilized on this page.</p>
         </div>
     </main>
 @endsection
