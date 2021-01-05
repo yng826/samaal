@@ -14,10 +14,10 @@ const business = () => {
         $(window).on('scroll',function(){
             const height  = $(document).scrollTop();
             if(height < $(".footer").height()) {
-                $('.business-foil__title').css({'position':'fixed','top':'50%','right': '0'});
+                $('.business-foil__title').css({'position':'fixed','top':'50%'});
             }
             if(height > $(".footer").height()) {
-                $('.business-foil__title').css({'position':'absolute','top':'70%','right':'0'});
+                $('.business-foil__title').css({'position':'absolute','top':'70%'});
             }
         });
 

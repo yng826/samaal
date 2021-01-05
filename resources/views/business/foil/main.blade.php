@@ -6,9 +6,14 @@
 
 @section('contents')
     <main class="business-foil contents-wrap">
-        <div class="business-foil__title">
-            <h2>Meet <span>Sama's globally renowned<br> <em>aluminium foil products</em></span> made<br> with the world’s leading technology</h2>
+        <div class="business-foil__title-wrap">
+            <div class="business-foil__title">
+                <div class="business-foil__title-box">
+                    <h2>Meet <span>Sama's globally renowned<br> <em>aluminium foil products</em></span> made<br> with the world’s leading technology</h2>
+                </div>
+            </div>
         </div>
+
         <div class="business-foil__contents foil-box">
             <div class="foil-box__col">
                 <div class="foil-box__col--item item-foil">

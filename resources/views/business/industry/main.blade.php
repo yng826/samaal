@@ -6,8 +6,12 @@
 
 @section('contents')
     <main class="business-foil contents-wrap">
-        <div class="business-foil__title">
-            <h2>Meet <span>Sama's globally renowned<br> <em>industrial and construction materials</em></span><br> made with the world’s leading technology</h2>
+        <div class="business-foil__title-wrap">
+            <div class="business-foil__title industry-title">
+                <div class="business-foil__title-box">
+                    <h2>Meet <span>Sama's globally renowned<br> <em>industrial and construction materials</em></span><br> made with the world’s leading technology</h2>
+                </div>
+            </div>
         </div>
         <div class="business-foil__contents foil-box">
             <div class="foil-box__half">
