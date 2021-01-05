@@ -51,7 +51,38 @@
 
                 Certified worldwide supplier of aluminium foil for LIB cathode current collector
             </p>
-            <div class="content-01__img"></div>
+            <div class="content-01__process">
+                <ul>
+                    <li class="content-01__process--item item-01">
+                        <div class="text-box">
+                            <div>
+                                <em>Rolling</em>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-01__process--item item-02">
+                        <div class="text-box">
+                            <div>
+                                <em>Separating<br>/Slitting</em>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-01__process--item item-03">
+                        <div class="text-box">
+                            <div>
+                                <em>Annealing</em>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-01__process--item item-04">
+                        <div class="text-box">
+                            <div>
+                                <em>Packaging</em>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="content-02 speciality-process__tab-content tab-manufacture process-layout">
@@ -89,7 +120,38 @@
                 </span>
                 The first in Korea to develop a super water-repellent LID product, a high-barrier film for composite vacuum insulation panel with reinforced flame retardancy and resistance.
             </p>
-            <div class="content-02__img"></div>
+            <div class="content-02__process">
+                <ul>
+                    <li class="content-02__process--item item-01">
+                        <div class="text-box">
+                            <div>
+                                <em>Printing</em>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-02__process--item item-02">
+                        <div class="text-box">
+                            <div>
+                                <em>Laminator</em>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-02__process--item item-03">
+                        <div class="text-box">
+                            <div>
+                                <em>Slitting</em>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-02__process--item item-04">
+                        <div class="text-box">
+                            <div>
+                                <em>Bag Making</em>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="content-03 speciality-process__tab-content tab-paste process-layout">
             <p class="process-layout__text">
