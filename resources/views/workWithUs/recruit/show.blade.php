@@ -24,8 +24,8 @@
         <div class="work-recruit__detail">
             <div class="work-recruit__detail-wrap">
                 <div class="comer-box">
-                    <span class="{{$recruit->career =='new' ? 'on': ''}}">신입</span>
-                    <span class="{{$recruit->career =='career' ? 'on': ''}}">영업</span>
+                    <span class="">{{$recruit->career =='new' ? '신입': '경력'}}</span>
+                    <span class="">{{$recruit->job_type}}</span>
                 </div>
                 <h3>
                     {{$recruit->title}}
