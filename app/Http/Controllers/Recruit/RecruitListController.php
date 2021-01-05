@@ -21,11 +21,23 @@ class RecruitListController extends Controller
         // $keyword = request()->input('keyword');
         $keyword = request()->input('keyword');
 
-        $recruits = Recruit::whereHas('keywords', function($query) use ($keyword) {
-            $query->where('keyword', 'like', '%'.$keyword.'%');
+        $recruit_ids = DB::table('recruits')
+            ->leftJoin('recruit_keywords', 'recruits.id', '=', 'recruit_keywords.recruit_id')
+            ->select('recruits.*', DB::raw('GROUP_CONCAT(CONCAT("#",recruit_keywords.keyword) SEPARATOR  " ") AS keyword'))
+            // ->where('end_date','>=', DB::raw('now()'))
+            ->when($keyword, function($query) use ($keyword) {
+                $query->where('recruit_keywords.keyword', 'like', '%'.$keyword.'%');
             })
+            ->groupBy('recruits.id', 'title', 'career',  'job_type', 'start_date', 'end_date',  'description',  'created_at', 'updated_at')
+            ->orderBy('id', 'desc')
+            ->get();
+        /** */
+        $recruits = Recruit::with('keywords')
+            ->whereIn('id', $recruit_ids->pluck('id'))
             ->orderBy('end_date', 'desc')
             ->get();
+        // dd($recruits);
+        /**/
         /*
         $recruits = DB::table('recruits')
             ->leftJoin('recruit_keywords', 'recruits.id', '=', 'recruit_keywords.recruit_id')
@@ -34,7 +46,7 @@ class RecruitListController extends Controller
             ->groupBy('recruits.id', 'title', 'career',  'job_type', 'start_date', 'end_date',  'description',  'created_at', 'updated_at')
             ->orderBy('id', 'desc')
             ->get();
-        */
+        /***/
 
         return view('workWithUs.recruit.list', [
             'keyword' => $keyword,
