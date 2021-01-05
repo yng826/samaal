@@ -4,7 +4,7 @@ const common = () => {
         const $lang = $('.header .language__kor');
         const $lang_en = $('.header .language__eng');
 
-        $lang.on("click",function(){
+        $lang_en.on("click",function(){
             $lang_en.toggleClass('on');
             $lang.toggleClass('on');
         });

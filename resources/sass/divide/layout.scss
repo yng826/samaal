@@ -167,14 +167,16 @@
         }
 
         .language {
-            &__eng {
+            &__kor {
                 display: none;
-
                 &.on {
                     display: block;
                     position: absolute;
                     bottom: 0;
                 }
+            }
+            &__eng {
+                display: block;
             }
         }
 
