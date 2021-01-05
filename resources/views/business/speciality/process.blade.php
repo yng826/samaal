@@ -51,7 +51,42 @@
                 국내외에서 인정하는<br>
                 리튬이온배터리(Lithium-Ion Battery, LIB) 양극집전체용 알루미늄 호일
             </p>
-            <div class="content-01__img"></div>
+            <div class="content-01__process">
+                <ul>
+                    <li class="content-01__process--item item-01">
+                        <div class="text-box">
+                            <div>
+                                <em>압연</em>
+                                <span>Rolling</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-01__process--item item-02">
+                        <div class="text-box">
+                            <div>
+                                <em>분리,분단</em>
+                                <span>Separating<br>/Slitting</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-01__process--item item-03">
+                        <div class="text-box">
+                            <div>
+                                <em>연화</em>
+                                <span>Annealing</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-01__process--item item-04">
+                        <div class="text-box">
+                            <div>
+                                <em>포장</em>
+                                <span>Packaging</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="content-02 speciality-process__tab-content tab-manufacture process-layout">
@@ -90,7 +125,42 @@
                 초발수 LID 제품, 난연성 및 강도를 보강한<br>
                 복합강화 진공 단열재용 외피재를 국내 최초로 개발
             </p>
-            <div class="content-02__img"></div>
+            <div class="content-02__process">
+                <ul>
+                    <li class="content-02__process--item item-01">
+                        <div class="text-box">
+                            <div>
+                                <em>인쇄기</em>
+                                <span>Printing</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-02__process--item item-02">
+                        <div class="text-box">
+                            <div>
+                                <em>라미네이터</em>
+                                <span>Laminator</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-02__process--item item-03">
+                        <div class="text-box">
+                            <div>
+                                <em>분단기</em>
+                                <span>Slitting</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="content-02__process--item item-04">
+                        <div class="text-box">
+                            <div>
+                                <em>제대기</em>
+                                <span>Bag Making</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="content-03 speciality-process__tab-content tab-paste process-layout">
             <p class="process-layout__text">
