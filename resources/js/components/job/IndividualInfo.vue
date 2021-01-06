@@ -408,6 +408,17 @@ export default {
             .catch(err => {
                 console.error(err);
                 this.isSubmit = false;
+                Swal.fire({
+                    title: '권한이 없습니다',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                    allowOutsideClick: false
+                }).then(result => {
+                    if (result.isConfirmed) {
+                        this.$root.$emit('closePopup');
+                        this.$root.$emit('openPopup', 'login');
+                    }
+                });
             })
         },
         validation: function() {
