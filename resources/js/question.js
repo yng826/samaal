@@ -118,7 +118,7 @@ const question = () => {
         if ( !chk ) {
 
             Swal.fire({
-                title: '에러입니다!',
+                title: '필수 항목을 확인해주세요!',
                 text: message,
                 icon: 'error',
                 confirmButtonText: '확인'
@@ -171,7 +171,7 @@ const question = () => {
         if ( !chk ) {
 
             Swal.fire({
-                title: '에러입니다!',
+                title: '필수 항목을 확인해주세요!',
                 text: message,
                 icon: 'error',
                 confirmButtonText: '확인'
