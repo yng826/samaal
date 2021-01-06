@@ -798,7 +798,7 @@
     }
 
     &__info  {
-        padding-top: 40px;
+        padding-top: 20px;
 
         #email-txt {
             display: none;
@@ -808,7 +808,7 @@
         }
 
         li {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 0;
         }
 
@@ -828,7 +828,7 @@
             color: #000;
             border-radius: 5px;
             border: none;
-            height: 65px;
+            height: 50px;
             font-size: 18px;
             -moz-appearance:none; /* Firefox */
             -webkit-appearance:none; /* Safari and Chrome */
@@ -861,7 +861,7 @@
             font-size: 18px;
 
             &[type=text] {
-                height: 65px;
+                height: 50px;
                 box-sizing: border-box;
             }
 
@@ -882,8 +882,8 @@
         textarea {
             display: block;
             width: 100%;
-            height: 140px;
-            padding: 30px;
+            height: 120px;
+            padding: 20px;
             background-color: #e8ecef;
             color: #000;
             border-radius: 5px;
@@ -983,7 +983,7 @@
             &__select {
                 position: relative;
                 display: inline-block;
-                width: 270px;
+                width: 46%;
                 vertical-align: middle;
 
                 &::after {
@@ -2178,10 +2178,10 @@
         }
 
         &__info  {
-            padding-top: vw(40px);
+            padding-top: vw(20px);
 
             li {
-                margin-bottom: vw(30px);
+                margin-bottom: vw(20px);
             }
 
             h4 {
@@ -2195,7 +2195,7 @@
                 font-size: vw(18px);
 
                 &[type=text] {
-                    height: vw(65px);
+                    height: vw(50px);
                 }
 
                 &::placeholder {
@@ -2206,7 +2206,7 @@
             select {
                 padding: 0 vw(30px);
                 border-radius: vw(5px);
-                height: vw(65px);
+                height: vw(50px);
                 font-size: vw(18px);
 
                 &::placeholder {
@@ -2215,8 +2215,8 @@
             }
 
             textarea {
-                height: vw(140px);
-                padding: vw(30px);
+                height: vw(120px);
+                padding: vw(20px);
                 border-radius: vw(5px);
 
                 &::placeholder {
@@ -2273,10 +2273,6 @@
 
                 &__item {
                     width:46%;
-                }
-
-                &__select {
-                    width: vw(270px);
                 }
 
                 &__at {
@@ -3009,7 +3005,7 @@
             padding-top: vw(80px);
 
             li {
-                margin-bottom: vw(60px);
+                margin-bottom: vw(40px);
             }
 
             h4 {
@@ -3023,7 +3019,7 @@
                 font-size: vw(36px);
 
                 &[type=text] {
-                    height: vw(130px);
+                    height: vw(100px);
                     font-size: vw(36px);
                 }
 
@@ -3035,7 +3031,7 @@
             select {
                 padding: 0 vw(60px);
                 border-radius: vw(10px);
-                height: vw(130px);
+                height: vw(100px);
                 font-size: vw(36px);
 
                 &::placeholder {
@@ -3044,8 +3040,8 @@
             }
 
             textarea {
-                height: vw(280px);
-                padding: vw(60px);
+                height: vw(240px);
+                padding: vw(40px);
                 border-radius: vw(10px);
                 font-size: vw(36px);
 
@@ -3102,10 +3098,6 @@
 
                 &__item {
                     width:46%;
-                }
-
-                &__select {
-                    width: 46%;
                 }
 
                 &__at {
@@ -4336,7 +4328,6 @@
                 }
 
                 &__select {
-                    width: 46%;
                     height: 10vw;
                 }
 
