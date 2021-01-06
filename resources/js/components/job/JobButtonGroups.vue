@@ -36,6 +36,9 @@ export default {
         photo() {
             return this.$store.state.job.file_path
         },
+        highschool() {
+            return this.$store.state.highschool
+        },
         education() {
             return this.$store.state.education[0]
         },
@@ -74,7 +77,7 @@ export default {
                         icon: 'error',
                         confirmButtonText: '확인',
                     });
-                } else if ( !this.education.id ) {
+                } else if ( !this.highschool.id ) {
                     Swal.fire({
                         title: '학력사항을 입력해주세요!',
                         icon: 'error',

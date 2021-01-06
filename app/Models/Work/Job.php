@@ -44,6 +44,11 @@ class Job extends Model
         }
     }
 
+    public function highSchool()
+    {
+        return $this->hasOne('App\Models\Work\HighSchool');
+    }
+
     public function educations()
     {
         return $this->hasMany('App\Models\Work\Education');

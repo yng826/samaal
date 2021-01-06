@@ -30,9 +30,10 @@
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <div class="input_date-group input-group" placeholder="선택해주세요.">
+                    <InputMask type="text" name="birth_day" mask="9999-99-99" v-model="user_info.birth_day" placeholder="입력해주세요."/>
+                    <!-- <div class="input_date-group input-group" placeholder="선택해주세요.">
                         <Datepicker class="inline-block" name="birth_day" :language="ko" v-model="user_info.birth_day" format="yyyy-MM-dd"></Datepicker>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="form-group">
                     <label for="">휴대폰번호</label>
@@ -378,6 +379,7 @@ export default {
                     this.$store.state.award = res.data.awards.length ? res.data.awards : this.$store.getters.getDefaultAwards;
                     this.$store.state.career = res.data.careers.length ? res.data.careers : this.$store.getters.getDefaultCareers;
                     this.$store.state.certificate = res.data.certificates.length ? res.data.certificates : this.$store.getters.getDefaultCertificates;
+                    this.$store.state.highschool = res.data.highschool ? res.data.highschool : this.$store.getters.getDefaultHighschool;
                     this.$store.state.education = res.data.educations.length ? res.data.educations : this.$store.getters.getDefaultEducations;
                     this.$store.state.language = res.data.languages.length ? res.data.languages : this.$store.getters.getDefaultLanguages;
                     this.$store.state.military = res.data.military ? res.data.military : this.$store.getters.getDefaultMilitary;
@@ -438,6 +440,13 @@ export default {
                 return {
                     result: false,
                     msg: '생일을 입력해주세요',
+                };
+            }
+            let IsValidDate = Date.parse( this.user_info.birth_day );
+            if ( isNaN(IsValidDate) ) {
+                return {
+                    result: false,
+                    msg: '생일을 정확히 입력해주세요',
                 };
             }
             if ( this.job.phone_decrypt == '' || typeof this.job.phone_decrypt == 'undefined' ) {

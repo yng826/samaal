@@ -4,10 +4,34 @@
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>학력사항</h3>
+                <div class="form-group">
+                    <label for="edu_type">학교구분</label>
+                    <div class="input-group">
+                        <div class="select-container" >
+                            <select type="text" name="edu_type" v-model="item.edu_type">
+                                <option v-for="type in types" :value="type.value" :key="type.value">{{type.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <div class="form-group">
                     <label for="school_name">학교명</label>
                     <input type="text" name="school_name" v-model="item.school_name" placeholder="입력해주세요">
+                </div>
+                <div class="form-group">
+                    <label for="edu_address">소재지</label>
+                    <input type="text" name="edu_address" v-model="item.edu_address" placeholder="입력해주세요">
+                </div>
+                <div class="form-group">
+                    <label for="edu_location">캠퍼스</label>
+                    <div class="input-group">
+                        <div class="select-container" >
+                            <select type="text" name="edu_location" v-model="item.edu_location">
+                                <option v-for="location in locations" :value="location.value" :key="location.value">{{location.name}}</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="edu_major">전공</label>
@@ -21,15 +45,41 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="edu_entrance">입학구분</label>
+                    <div class="input-group">
+                        <div class="select-container" >
+                            <select type="text" name="edu_entrance" v-model="item.edu_entrance">
+                                <option v-for="entrance in entrances" :value="entrance.value" :key="entrance.value">{{entrance.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="graduation">졸업구분</label>
-                    <input type="text" name="graduation" v-model="item.graduation" placeholder="입력해주세요">
+                    <div class="input-group">
+                        <div class="select-container" >
+                            <select type="text" name="graduation" v-model="item.edu_graduation">
+                                <option v-for="graduation in graduations" :value="graduation.value" :key="graduation.value">{{graduation.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="time">주야구분</label>
+                    <div class="input-group">
+                        <div class="select-container" >
+                            <select type="text" name="time" v-model="item.edu_time">
+                                <option v-for="time in times" :value="time.value" :key="time.value">{{time.name}}</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="edu_start">재학기간</label>
                     <div class="input_date-group input-group">
-                        <Datepicker class="inline-block" name="edu_start" :language="ko" v-model="item.edu_start" format="yyyy-MM-dd"></Datepicker>
+                        <InputMask class="inline-block" name="edu_start" mask="9999-99" v-model="item.edu_start" format="yyyy-MM-dd" />
                         <span class="from-arrow">~</span>
-                        <Datepicker class="inline-block" name="edu_end" :language="ko" v-model="item.edu_end" format="yyyy-MM-dd"></Datepicker>
+                        <InputMask class="inline-block" name="edu_end" mask="9999-99" v-model="item.edu_end" format="yyyy-MM-dd" />
                     </div>
                 </div>
                 <div>{{ item.status_ko }}</div>
@@ -51,6 +101,7 @@ import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-simple-spinner'
 import { FormField } from '../../mixins/FormFields'
 import { SendValidation } from '../../mixins/SendValidation'
+import InputMask from 'vue-input-mask';
 export default {
     props: [],
     mixins: [
@@ -59,7 +110,8 @@ export default {
     ],
     components: {
         VSpinner,
-        Datepicker
+        Datepicker,
+        InputMask,
     },
     computed: {
         isOpen() { return this.$store.state.recruit_status == 'open' },
@@ -86,6 +138,31 @@ export default {
             ko: ko,
             isAuth: false,
             isSubmit: false,
+            locations: [
+                {value: 'major', name:'본교'},
+                {value: 'minor', name:'분교'},
+            ],
+            entrances: [
+                {value: 'entrance', name:'입학'},
+                {value: 'transfer', name:'편입'},
+            ],
+            graduations: [
+                {value: 'graduation', name: '졸업'},
+                {value: 'prospective', name: '졸업예정'},
+                {value: 'complete', name: '수료'},
+                {value: 'in_school', name: '재학중'},
+                {value: 'dropout', name: '중퇴'},
+                {value: 'degree', name: '학위취득'},
+            ],
+            times: [
+                {value: 'day', name: '주간'},
+                {value: 'night', name: '야간'},
+            ],
+            types: [
+                {value: 'college', name: '전문대학'},
+                {value: 'university', name: '대학교'},
+                {value: 'graduate', name: '대학원'},
+            ],
         }
     },
     mounted: function() {
@@ -189,24 +266,6 @@ export default {
         },
         saveItems: function() {
             if ( !this.isSubmitable ) {
-                return false;
-            }
-            if ( this.status == 'submit' ) {
-                Swal.fire({
-                    title: '이미 제출되었습니다!',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
-                return false;
-            }
-            if ( this.status == 'expired' ) {
-                Swal.fire({
-                    title: '제출기한이 지났습니다.',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    // allowOutsideClick: false,
-                });
                 return false;
             }
             if ( this.isSubmit ) {

@@ -50,6 +50,7 @@ Route::prefix('job-detail')->middleware(['auth:api'])->group(function () {
     Route::resource('award', JobDetail\AwardController::class);
     Route::resource('career', JobDetail\CareerController::class);
     Route::resource('certificate', JobDetail\CertificateController::class);
+    Route::resource('highschool', JobDetail\HighSchoolController::class);
     Route::resource('education', JobDetail\EducationController::class);
     Route::resource('language', JobDetail\LanguageController::class);
     Route::resource('military', JobDetail\MilitaryController::class);

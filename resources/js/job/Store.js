@@ -12,6 +12,7 @@ export const JobStore = new Vuex.Store({
         award: [{}],
         career: [{}],
         certificate: [{}],
+        highschool: {},
         education: [{}],
         language: [{}],
         military: {},
@@ -69,11 +70,28 @@ export const JobStore = new Vuex.Store({
                 certificate_date: "",
             }]
         },
+        getDefaultHighschool() {
+            return {
+                id: "",
+                school_name: "",
+                school_major: "",
+                school_time: "",
+                school_address: "",
+                school_start: "",
+                school_end: "",
+                school_graduation: "",
+            }
+        },
         getDefaultEducations() {
             return [{
                 id: "",
                 school_name: "",
                 edu_major: "",
+                edu_type: "",
+                edu_time: "",
+                edu_entrance: "",
+                edu_graduation: "",
+                edu_location: "",
                 edu_grade: "",
                 edu_grade_full: "",
                 edu_start: "",

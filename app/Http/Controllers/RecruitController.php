@@ -52,7 +52,7 @@ class RecruitController extends Controller
             'user_id' => $request->user()->id,
         ];
         $job = Job::where($where)->with(
-            ['user','userInfo','educations','careers','military','awards','certificates','languages','oas','overseasStudys','recruit','hobbySpecialty', 'schoolActivities'])->first();
+            ['user','userInfo','highschool','educations','careers','military','awards','certificates','languages','oas','overseasStudys','recruit','hobbySpecialty', 'schoolActivities'])->first();
         // $job = Job::where()->first();
 
         return $job;

@@ -10,6 +10,7 @@
         <div class="{{$pageClass}}__contents">
             <progress-component init_step="2"></progress-component>
             <individual-info-component recruit_id="{{$recruit_id}}" mode="edit"></individual-info-component>
+            <highschool-component></highschool-component>
             <education-component></education-component>
             <career-component></career-component>
             <military-component></military-component>

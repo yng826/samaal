@@ -50,6 +50,7 @@ Vue.component('join-component', require('../components/job/Join.vue').default);
 Vue.component('find-password-component', require('../components/job/FindPassword.vue').default);
 Vue.component('applicant-list-component', require('../components/job/ApplicantList.vue').default);
 Vue.component('individual-info-component', require('../components/job/IndividualInfo.vue').default);
+Vue.component('highschool-component', require('../components/job/Highschool.vue').default);
 Vue.component('education-component', require('../components/job/Education.vue').default);
 Vue.component('career-component', require('../components/job/Career.vue').default);
 Vue.component('military-component', require('../components/job/Military.vue').default);
