@@ -3,7 +3,7 @@
 </template>
 <script>
 import User from '../../job/User'
-import {getHeader, getAuth, getJob} from '../../config'
+import {getHeader, getAuth, getJob, clearAuth} from '../../config'
 import Swal from 'sweetalert2'
 export default {
     props : ['recruit_id', 'recruit_status'],
@@ -39,7 +39,7 @@ export default {
                 });
                 return false;
             }
-            this.isAuth = getAuth();
+            clearAuth();
             if (this.isAuth) {
                 // this.$root.$emit('openPopup', 'login');
                 Swal.fire({

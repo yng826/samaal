@@ -13,6 +13,10 @@ export const getHeader = () => {
     return headers;
 }
 
+export const clearAuth = () => {
+    window.localStorage.removeItem('authUser');
+}
+
 export const getAuth = () => {
     const auth = window.localStorage.getItem('authUser');
     return auth;
