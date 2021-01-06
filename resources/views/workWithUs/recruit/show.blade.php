@@ -61,9 +61,7 @@
                     </li>
                     <li class="work-recruit__detail-list--item">
                         <h4 class="work-recruit__detail-list--title">지원 자격</h4>
-                        <p>- 기졸업 및 2022년 2월 졸업 예정자 </p>
-                        <p>- 병역면제 혹은 병역을 마친 자,<br>해외 출장에 결격 사유가 없는 자</p>
-                        <p>- 국가등록장애인 및 국가보훈대상자는<br> 관계법령에 의해 우대 </p>
+                        <p>{!! nl2br($recruit->description) !!}</p>
                     </li>
                     <li class="work-recruit__detail-list--item">
                         <h4 class="work-recruit__detail-list--title">채용 문의</h4>
