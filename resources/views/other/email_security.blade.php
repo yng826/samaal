@@ -4,21 +4,20 @@
     <main class="privacy-wrap">
         <div class="contents-wrap__title privacy-wrap__title">
             <h2>
-                이메일무단수집거부
+                Prohibition of Unauthorized Collection of Email Addresses
             </h2>
         </div>
         <div class="privacy-wrap__contents ">
             <p>
-                <em>사이트 회원의 이메일주소 무단수집 거부</em>
-                본 웹사이트에 게시된 전자우편주소가 전자우편수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부하며, 이를 위반 시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.
-                이메일을 기술적 장치를 사용하여 무단으로 수집·판매·유통하거나 이를 이용한 자는「정보통신망이용촉진및정보보호등에관한법률」제50조의2, 제74조의 규정에 의하여 1년 이하의 징역 또는 1천만원 이하의 벌금형에 처해집니다.
+                <em>Prohibition of Unauthorized Collection of Email Addresses from Site Members</em>
+                E-mail addresses published on this Website must not be collected by anyone through electronic mail collecting programs or other technical measures without proper and prior approval, and that any violation of this rule will be subject to criminal punishment under the Information Communication Network Law. Anyone who collects, sells, distributes, or uses e-mails without permission using technical measures shall be punished by imprisonment with labor for not more than one year or by a fine not exceeding ten million won in accordance with Article 50-2 and 74 of the 「Act on Promotion of Information and Communication Network Utilization and Information Protection」.
             </p>
             <p>
-                <em>※ [정보통신망 이용촉진 및 정보보호 등에 관한 법률]</em>
-                <small>제50조의2(전자우편주소의 무단 수집행위 등 금지)</small>
-                &bull; 누구든지 인터넷 홈페이지 운영자 또는 관리자의 사전 동의 없이 인터넷 홈페이지에서 자동으로 전자우편주소를 수집하는 프로그램이나 그 밖의 기술적 장치를 이용하여 전자우편주소를 수집하여서는 아니 된다.<br>
-                &bull; 누구든지 제1항을 위반하여 수집된 전자우편주소를 판매·유통하여서는 아니 된다.<br>
-                &bull; 누구든지 제1항과 제2항에 따라 수집·판매 및 유통이 금지된 전자우편주소임을 알면서 이를 정보 전송에 이용하여서는 아니 된다.
+                <em>※ [Act on Promotion of Information and Communication Network Utilization and Information Protection]</em>
+                <small>Article 50-2(Prohibition of Unauthorized Collection of Email Addresses)</small>
+                &bull; No one is allowed to collect e-mail addresses by using an e-mail auto-collecting program or other technical measures on websites that prohibit unauthorized collection of email addresses.<br>
+                &bull; No one is allowed to sell or distribute e-mail addresses collected in violation of Clause 1.<br>
+                &bull; No one is allowed to use such e-mail addresses to send information with knowledge that they must not be collected, sold and distributed based on Clauses 1 and 2.
             </p>
         </div>
     </main>

@@ -4,131 +4,127 @@
     <main class="privacy-wrap">
         <div class="contents-wrap__title privacy-wrap__title">
             <h2>
-                개인정보처리방침
+                Personal Information Management Policy
             </h2>
         </div>
         <div class="privacy-wrap__contents ">
             <p>
-                삼아알미늄㈜(이하 ‘회사’라 한다)는 이용자의 개인정보를 보호하며, “정보통신망 이용촉진 및 정보보호”에 관한 법률을 준수하고 있습니다. 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                Sam-A Aluminum Co., Ltd., protects the personal information of users in accordance with the Personal Information Protection Act and the Act on Promotion of Information and Communications Network Utilization and Information Protection. The following personal information management policy is established and disclosed so that we can properly handle users' complaints related to personal information.
             </p>
             <p>
-                <em>제1조(개인정보의 처리목적)</em>
-                회사는 다음의 목적을 위하여 개인정보를 처리합니다.<br>
-                처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.<br>
-                1. 문의하기 서비스<br>
-                제품 및 홈페이지 전반의 소중한 의견을 구하는 데 이용됩니다.<br>
-                2. 채용정보 서비스<br>
-                채용 지원이나 문의를 해결하기 위한 목적으로 이용됩니다.
+                <em>1. Personal information items for collection and purposes of processing</em>
+                The company collects and uses the following personal information solely for the specified purposes. <br>
+                The collected personal information will not be used for any purposes other than the below. If the purpose of use changes, necessary actions will be taken such as collecting a separate agreement from employees according to related laws. <br>
+                1. Inquiry <br>
+                The information is used to receive and process customer’s inquiries about product, recruitment, and etc. <br>
+                2. Recruitment <br>
+                The information is used for the purpose of guiding the progress of recruitment and progress and related information.
+
             </p>
             <p>
-                <em>제2조(처리하는 개인정보 항목)</em>
-                회사는 고객에게 다음의 서비스에 대한 최소한의 개인정보 항목을 처리하고 있습니다.<br>
-                개인정보 수집항목<br>
-                -문의하기 작성 시<br>
-                필수항목 : 이메일<br>
-                -채용정보 문의 시<br>
-                필수항목 : 이메일
+                <em>2. Personal information items to be processed</em>
+                The company processes the minimum personal information items for the following services. <br>
+                1. Inquiry <br>
+                Required information: E-mail <br>
+                2. Recruitment <br>
+                Required information: Name, Name in English, Date of birth, Mobile phone number, E-mail address, Address, Photo
+                Optional information: Educational backgrounds, Work experiences, Military service status, Computer skills, Language skills, Awards and honors, Certificates and licenses, Hobbies and specialties, School activities, Resume
+
             </p>
 
             <p>
-                <em>제3조(개인정보의 제3자 제공)</em>
-                ① 회사는 이용자의 동의 없이 이용자의 개인정보를 외부 혹은 제3자에게 제공하지 않습니다.<br>
-                ② 다만, 다음의 경우에는 이용자의 사전 동의 없이 제3자에게 제공할 수 있습니다.<br>
-                1. 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우<br>
-                2. 정보주체 또는 그 법정대리인이 의사표시를 할 수 없는 상태에 있거나 주소불명 등으로 사전 동의를 받을 수 없는 경우로서 명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요하다고 인정되는 경우<br>
-                3. 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
+                <em>3. Personal information process and retention period</em>
+                The company shall delete the relevant personal information without delay by the following procedures and methods if the period of personal information is elapsed and the purpose of processing is achieved. <br>
+                [Voice of customer] The information will be deleted after the inquiries are proceeded <br>
+                [Recruitment information] The information will be deleted after the recruitment is completed <br>
+                The retention period (6 months) of information on interested customers (consultation and proposal) is deleted after the purpose is achieved
+
             </p>
 
             <p>
-                <em>제4조(개인정보의 처리 및 보유기간)</em>
-                회사는 원칙적으로 개인정보 수집 및 이용 목적이 달성된 후에는 아래와 같이 해당정보를 파기합니다.<br>
-                [고객의 소리] 문의사항 처리 완료 후<br>
-                [채용정보] 해당 인재채용 완료 후<br>
-                단, 관심고객(상담 및 제안)에 대한 정보의 보존기간(6개월)은 목적달성 후 파기
+                <em>4. Deletion of personal information</em>
+                ① The company deletes the personal information within 5 days when personal information becomes unnecessary, such as the retention period of personal information retention is expired or the purpose of process is achieved. <br>
+                ② If the personal information retention period agreed by the user has elapsed or the purpose of processing has been achieved, in the event that personal information must be kept in accordance with other laws and regulations, the personal information may be moved to a separate database (DB) or the storage location may be changed. <br>
+                ③ The procedure and method of personal information deletion are as follows. <br>
+                1. Deletion procedure <br>
+                Measures for destruction or deletion after being stored for a certain period in accordance with internal policies and other related statutes <br>
+                2. Deletion method <br>
+                Personal information recorded in a paper document is scraped or incinerated by a grinder, and personal information stored in the form of an electronic file is deleted by a method such as Low Level Format that cannot be recorded or restored.
+
             </p>
 
             <P>
-                <em>제5조(개인정보의 파기)</em>
-                ① 회사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 5일 이내 해당 개인정보를 파기합니다.<br>
-                ② 이용자로부터 동의받은 개인정보 보유기간이 경과하거나 처리목적이 달성되었음에도 불구하고 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는, 해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.<br>
-                ③ 개인정보 파기의 절차 및 방법은 다음과 같습니다.<br>
-                1. 파기절차<br>
-                회사는 파기 사유가 발생한 개인정보를 선정하고, 회사의 개인정보 보호책임자의 승인을 받아 개인정보를 파기합니다.<br>
-                2. 파기방법<br>
-                회사는 전자적 파일 형태로 기록·저장된 개인정보는 기록을 재생할 수 없도록 로우 레벨 포멧(Low Level Format) 등의 방법을 이용하여 파기하며, 종이 문서에 기록·저장된 개인정보는 분쇄기로 분쇄하거나 소각하여 파기합니다.
+                <em>5. Rights, obligations and exerting methods of users and legal representatives</em>
+                ① Users who provide personal information may exercise the following rights to the company at any time <br>
+                1. Need to view personal information <br>
+                2. If there is an error, correction request <br>
+                3. Deletion request <br>
+                4. Processing stop request <br>
+                ② The exercise of rights under paragraph ① can be done in writing, telephone, e-mail, Fax, etc. to the company, and the company will take action without delay. <br>
+                ③ If the user requests correction of errors in personal information or deletion of personal information, the company does not use or provide that personal information until the correction or deletion is completed. <br>
+                ④ In the case of children under the age of 14, the rights pursuant to paragraph ① can be exercised through the legal representative of the user or the person who has been delegated. In this case, the legal representative has all the rights of the user. <br>
+                ⑤ The user shall not infringe on the personal information and privacy of the user himself / herself or other person under the management of the company in order to comply with related statutes such as the Personal Information Protection Act.
+
             </P>
 
             <p>
-                <em>제6조(이용자 및 법정대리인의 권리·의무 및 행사방법)</em>
-                ① 이용자는 회사에 대해 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.<br>
-                1. 개인정보 열람요구<br>
-                2. 오류 등이 있을 경우 정정 요구<br>
-                3. 삭제요구<br>
-                4. 처리정지 요구<br>
-                ② 제1항에 따른 권리 행사는 회사에 대해 서면, 전화, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며 회사는 이에 대해 지체 없이 조치하겠습니다.<br>
-                ③ 이용자가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 회사는 정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하거나 제공하지 않습니다.<br>
-                ④ 만 14세 미만 아동의 경우, 제1항에 따른 권리 행사는 이용자의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우, 법정대리인은 이용자의 모든 권리를 가집니다.<br>
-                ⑤ 이용자는 정보통신망법, 개인정보보호법 등 관계법령을 위반하여 회사가 처리하고 있는 이용자 본인이나 타인의 개인정보 및 사생활을 침해하여서는 안됩니다.
+                <em>6. Matters concerning the installation, operation and rejection of an automatic personal information collection device</em>
+                The company operates a 'cookie' that stores and finds users' information from time to time in order to provide personalized and customized services to each user. <br>
+                1. Purpose of use such as cookies <br>
+                Target marketing and personalized service provision through analysis of customer access frequency and visit time, identification of user preferences and tracking traces, and identification of the degree of participation in various events and number of visits <br>
+                2. Rejecting method of cookie setting <br>
+                Users can refuse to install cookies. However, it may be difficult to use some services that require login when refused to install cookies <br>
+                (Setting method based on IE) Tools> Internet Options> Personal Information> Block Site
+
             </p>
 
             <p>
-                <em>제7조(개인정보 자동 수집 장치의 설치·운영 및 거부)</em>
-                회사는 이용자 개개인에게 개인화되고 맞춤화된 서비스를 제공하기 위해 이용자의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다.<br>
-                1. 쿠키의 사용 목적<br>
-                고객의 접속 빈도나 방문 시간 등의 분석, 이용자의 취향과 관심분야의 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공<br>
-                2. 쿠키 설정 거부 방법<br>
-                이용자는 쿠키 설치에 대해 거부할 수 있습니다. 단, 쿠키 설치를 거부하였을 경우 로그인이 필요한 일부 서비스의 이용이 어려울 수 있습니다.<br>
-                (설정방법, IE 기준)웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보 > 사이트 차단
-            </p>
-
-            <p>
-                <em>제8조(개인정보 보호책임자)</em>
-                ① 회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 이용자의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자 및 담당부서를 지정·운영하고 있습니다.
+                <em>7. Personal Information Protection Management Department</em>
+                ① The company is responsible for the management of personal information and operates a personal information protection management department as follows to deal with the grievances of users related to personal information.
             </p>
 
             <table>
                 <tbody>
                     <tr>
-                        <th>개인정보 보호책임자</th>
-                        <th colspan="2">개인정보 보호담당자</th>
+                        <th>Privacy Officer</th>
+                        <th colspan="2">Protection Officer</th>
                     </tr>
                     <tr>
-                        <td>매니저</td>
-                        <td>담당부서</td>
-                        <td>전산팀</td>
+                        <td>Manager</td>
+                        <td>Department</td>
+                        <td>Information and Computing Team</td>
                     </tr>
                     <tr>
-                        <td>박형만</td>
-                        <td>성명</td>
-                        <td>박형만</td>
+                        <td>Hyung-man, Park</td>
+                        <td>Name</td>
+                        <td>Hyung-man, Park</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>전화</td>
+                        <td>Phone Number</td>
                         <td><a href="tel:02-3458-0592">02-3458-0592</a></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>이메일</td>
+                        <td>E-mail</td>
                         <td><a href="mailto:hmpark@sama-al.com">hmpark@sama-al.com</a></td>
                     </tr>
                 </tbody>
             </table>
-            <p class="mt-0">② 이용자는 회사의 서비스를 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다. 회사는 이용자의 문의에 대해 답변 및 처리해드릴 것입니다.</p>
+            <p class="mt-0">② Users can inquire to the person in charge of personal information protection and the department in charge of all personal information protection related inquiries and complaints that occurred while using the company's services. The company will reply and process it without delay.</p>
 
             <p>
-                <em>제9조(권익침해 구제방법)</em>
-                이용자는 아래의 기관에 대해 개인정보 침해에 대한 피해구제, 상담 등을 문의하실 수 있습니다.
-                아래의 기관은 회사와는 별개의 기관으로서, 회사의 자체적인 개인정보 불만처리, 피해구제 결과에 만족하지 못하시거나 보다 자세한 도움이 필요하시면 문의하여 주시기 바랍니다. <br>
-                1.개인정보침해 신고센터((<a href="http://privacy.kisa.or.kr" target="_blank">http://privacy.kisa.or.kr</a> / 국번없이 118) <br>
-                2.개인정보분쟁조정위원회(<a href="http://www.kopico.go.kr" target="_blank">http://www.kopico.go.kr</a> / 국번없이 1833-6972) <br>
-                3.대검찰청 사이버수사과(<a href="http://www.spo.go.kr" target="_blank">http://www.spo.go.kr</a> / 국번없이 1301) <br>
-                4.경찰청 사이버안전국(<a href="http://cyberbureau.police.go.kr" target="_blank">http://cyberbureau.police.go.kr</a> / 국번없이 182)
+                <em>8. Method for compensating for performing preference of personal information</em>
+                You can contact the following agencies for reports, damage relief, and counseling on user's personal information infringement. The following agencies are separate from the company, and if you are not satisfied with the company's own personal information complaint handling and damage relief results, or if you need more help, please contact us. <br>
+                1.Korea Internet & Security Agency ((<a href="http://privacy.kisa.or.kr" target="_blank">http://privacy.kisa.or.kr</a> / Tel. 118) <br>
+                2.Personal Information Dispute Mediation Committee(<a href="http://www.kopico.go.kr" target="_blank">http://www.kopico.go.kr</a> / Tel. 1833-6972) <br>
+                3.Forensic Science Investigation Department of the Supreme Prosecutors’ Office (<a href="http://www.spo.go.kr" target="_blank">http://www.spo.go.kr</a> / Tel. 1301) <br>
+                4.Korean National Police Agency Cyber Bureau(<a href="http://cyberbureau.police.go.kr" target="_blank">http://cyberbureau.police.go.kr</a> / Tel. 182)
             </p>
 
             <p>
-                <em>제10조(개인정보 처리방침 변경)</em>
-                이 개인정보 처리방침은 본 방침은 2020년 1월 11일부터 시행됩니다.
+                <em>9. History of changes in personal information management policies</em>
+                This personal information management policy applies from January 11, 2021.
             </p>
         </div>
     </main>
