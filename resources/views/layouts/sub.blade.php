@@ -1,6 +1,10 @@
 <html>
     <head>
-        <meta property="og:image" content="{{env('APP_URL')}}/public/img_sns_sama.png" />
+        <meta property="og:title" content="삼아알미늄">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="삼아알미늄">
+        <meta property="og:id" content="sama">
+        <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
         <link rel="stylesheet" href="/css/app.css">
         <title>{{ config('app.name', '삼아알미늄') }}</title>
     </head>
