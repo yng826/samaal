@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Other;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -53,6 +54,8 @@ class SearchController extends Controller
             debug($newKeywords);
             debug($newCategoryKeywords);
 
+        } else {
+            $keywords = new Collection();
         }
         $categoryKeywords = $keywords;
         $filtedKeywords = $request->category ? $keywords->where('category_id', $request->category) : $keywords;
