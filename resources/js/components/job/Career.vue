@@ -7,9 +7,9 @@
                 <div class="form-group">
                     <label for="career_start">근무기간</label>
                     <div class="input_date-group input-group">
-                        <Datepicker class="inline-block" name="career_start" :language="ko" v-model="item.career_start" format="yyyy-MM-dd"></Datepicker>
+                        <InputMask class="inline-block" name="career_start" v-model="item.career_start" mask="9999-99"/>
                         <span class="from-arrow">~</span>
-                        <Datepicker class="inline-block" name="career_end" :language="ko" v-model="item.career_end" format="yyyy-MM-dd"></Datepicker>
+                        <InputMask class="inline-block" name="career_end" v-model="item.career_end" mask="9999-99"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -36,12 +36,12 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import { FormField } from '../../mixins/FormFields'
 import { SendValidation } from '../../mixins/SendValidation'
 import VSpinner from 'vue-simple-spinner'
+import InputMask from 'vue-input-mask';
 export default {
     props: [],
     mixins: [
@@ -50,7 +50,7 @@ export default {
     ],
     components: {
         VSpinner,
-        Datepicker,
+        InputMask,
     },
     computed: {
         isOpen() { return this.$store.state.recruit_status == 'open' },

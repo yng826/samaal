@@ -6,10 +6,16 @@
                 <input type="hidden" name="id" v-model="item.id">
                 <div class="form-group">
                     <label for="military_discharge">제대구분</label>
-                    <input type="text" name="military_discharge" v-model="item.military_discharge" placeholder="(예) 군필/미필/면제 등">
+                    <div class="input-group">
+                        <div class="select-container" >
+                            <select type="text" name="military_discharge" v-model="item.military_discharge">
+                                <option v-for="discharge in discharges" :value="discharge.value" :key="discharge.value">{{discharge.name}}</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="military_type">구분/구별</label>
+                    <label for="military_type">군별/병과</label>
                     <input type="text" name="military_type" v-model="item.military_type" placeholder="(예) 육군/해군/공군/해병대 등">
                 </div>
                 <div class="form-group">
@@ -21,11 +27,21 @@
                     <input type="text" name="military_exemption" v-model="item.military_exemption" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
+                    <label for="military_veterans_affair">보훈대상여부</label>
+                    <div class="input-group">
+                        <div class="select-container" >
+                            <select type="text" name="military_veterans_affair" v-model="item.military_veterans_affair">
+                                <option v-for="affair in affairs" :value="affair.value" :key="affair.value">{{affair.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="military_duration_start">군복무기간</label>
                     <div class="input_date-group input-group">
-                        <Datepicker class="inline-block" name="military_duration_start" :language="ko" v-model="item.military_duration_start" format="yyyy-MM-dd"></Datepicker>
+                        <InputMask class="inline-block" name="military_duration_start" v-model="item.military_duration_start" mask="9999-99" />
                         <span class="from-arrow">~</span>
-                        <Datepicker class="inline-block" name="military_duration_end" :language="ko" v-model="item.military_duration_end" format="yyyy-MM-dd"></Datepicker>
+                        <InputMask class="inline-block" name="military_duration_end" v-model="item.military_duration_end" mask="9999-99" />
                     </div>
                 </div>
             </div>
@@ -39,12 +55,12 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import { FormField } from '../../mixins/FormFields'
 import { SendValidation } from '../../mixins/SendValidation'
 import VSpinner from 'vue-simple-spinner'
+import InputMask from 'vue-input-mask';
 export default {
     props: [],
     mixins: [
@@ -53,7 +69,7 @@ export default {
     ],
     components: {
         VSpinner,
-        Datepicker,
+        InputMask,
     },
     computed: {
         isOpen() { return this.$store.state.recruit_status == 'open' },
@@ -80,6 +96,16 @@ export default {
             ko: ko,
             isAuth: false,
             isSubmit: false,
+            discharges: [
+                {value: 'discharge', name:'필'},
+                {value: 'unfinished', name:'미필'},
+                {value: 'exemption', name:'면제'},
+                {value: 'etc', name:'기타'},
+            ],
+            affairs: [
+                {value: 'target', name:'대상'},
+                {value: 'non_target', name:'비대상'},
+            ],
         }
     },
     mounted: function() {

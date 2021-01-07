@@ -179,6 +179,7 @@
                                     <td class="text-center">{{ $job->military->military_discharge ?? '' }}</td>
                                     <td class="text-center">{{ $job->military->military_rank ?? '' }}</td>
                                     <td class="text-center">{{ $job->military->military_exemption ?? '' }}</td>
+                                    <td class="text-center">{{ $job->military->military_veterans_affair ?? '' }}</td>
                                     <td class="text-center">{{ empty($job->military) ? '' : $job->military->military_duration_start. ' ~ '. $job->military->military_duration_end }}</td>
                                 </tr>
                             </table>

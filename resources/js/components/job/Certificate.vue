@@ -5,18 +5,18 @@
                 <h3>자격면허</h3>
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <div class="form-group">
-                    <label for="certificate_date">취득일</label>
-                    <div class="input_date-group input-group">
-                        <Datepicker class="inline-block" name="certificate_date" :language="ko" v-model="item.certificate_date" format="yyyy-MM-dd"></Datepicker>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="certificate_name">자격증명</label>
                     <input type="text" name="certificate_name" v-model="item.certificate_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="certificate_issuer">발행처</label>
                     <input type="text" name="certificate_issuer" v-model="item.certificate_issuer" placeholder="입력해주세요">
+                </div>
+                <div class="form-group">
+                    <label for="certificate_date">취득일</label>
+                    <div class="input_date-group input-group">
+                        <Datepicker class="inline-block" name="certificate_date" :language="ko" v-model="item.certificate_date" format="yyyy-MM-dd"></Datepicker>
+                    </div>
                 </div>
             </div>
         </form>

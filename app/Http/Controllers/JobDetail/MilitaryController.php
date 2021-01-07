@@ -78,6 +78,7 @@ class MilitaryController extends Controller
             $military->military_discharge = $request->military['military_discharge'];
             $military->military_rank = $request->military['military_rank'];
             $military->military_exemption = $request->military['military_exemption'];
+            $military->military_veterans_affair = $request->military['military_veterans_affair'];
             $military->military_duration_start = date('Y-m-d', strtotime($request->military['military_duration_start']));
             $military->military_duration_end = date('Y-m-d', strtotime($request->military['military_duration_end']));
             $military->save();
@@ -97,6 +98,7 @@ class MilitaryController extends Controller
             $military->military_discharge = $request->military['military_discharge'];
             $military->military_rank = $request->military['military_rank'];
             $military->military_exemption = $request->military['military_exemption'];
+            $military->military_veterans_affair = $request->military['military_veterans_affair'];
             $military->military_duration_start = date('Y-m-d', strtotime($request->military['military_duration_start']));
             $military->military_duration_end = date('Y-m-d', strtotime($request->military['military_duration_end']));
             $military->save();

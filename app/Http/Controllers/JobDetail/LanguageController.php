@@ -76,8 +76,10 @@ class LanguageController extends Controller
                             ->insert([
                                 'job_id' => $id,
                                 'language_type' => $language['language_type'],
+                                'language_type_option' => $language['language_type_option'],
                                 'language_name' => $language['language_name'],
                                 'language_grade' => $language['language_grade'],
+                                'language_grade_full' => $language['language_grade_full'],
                                 'language_start' => date('Y-m-d', strtotime($language['language_start'])),
                                 'language_end' => date('Y-m-d', strtotime($language['language_end'])),
                                 'language_level' => $language['language_level'],
@@ -87,8 +89,10 @@ class LanguageController extends Controller
                             ->where('id', $language['id'])
                             ->update([
                                 'language_type' => $language['language_type'],
+                                'language_type_option' => $language['language_type_option'],
                                 'language_name' => $language['language_name'],
                                 'language_grade' => $language['language_grade'],
+                                'language_grade_full' => $language['language_grade_full'],
                                 'language_start' => date('Y-m-d', strtotime($language['language_start'])),
                                 'language_end' => date('Y-m-d', strtotime($language['language_end'])),
                                 'language_level' => $language['language_level'],

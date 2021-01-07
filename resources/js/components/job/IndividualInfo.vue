@@ -30,15 +30,11 @@
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <InputMask type="text" name="birth_day" mask="9999-99-99" v-model="user_info.birth_day" placeholder="입력해주세요."/>
-                    <!-- <div class="input_date-group input-group" placeholder="선택해주세요.">
-                        <Datepicker class="inline-block" name="birth_day" :language="ko" v-model="user_info.birth_day" format="yyyy-MM-dd"></Datepicker>
-                    </div> -->
+                    <InputMask type="text" name="birth_day" mask="9999-99-99" v-model="user_info.birth_day" maskChar=" " placeholder="입력해주세요."/>
                 </div>
                 <div class="form-group">
                     <label for="">휴대폰번호</label>
-                    <InputMask name="phone_decrypt" mask="999 9999 9999" v-model="job.phone_decrypt" placeholder="입력해주세요." />
-                    <!-- <input type="text" name="phone_decrypt" v-model="job.phone_decrypt" placeholder="입력해주세요."> -->
+                    <InputMask name="phone_decrypt" mask="999 9999 9999" v-model="job.phone_decrypt" maskChar=" " placeholder="입력해주세요." />
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
@@ -138,7 +134,6 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import Datepicker from 'vuejs-datepicker';
 import {ko} from 'vuejs-datepicker/dist/locale';
 import {getHeader, getAuth, getUser, apiDomain} from '../../config';
 import { FormField } from '../../mixins/FormFields'
@@ -158,7 +153,6 @@ export default {
     ],
     components: {
         VSpinner,
-        Datepicker,
         DaumPost,
         InputMask,
     },

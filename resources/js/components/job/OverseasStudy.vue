@@ -16,9 +16,9 @@
                 <div class="form-group">
                     <label for="overseas_study_start">기간</label>
                     <div class="input_date-group input-group">
-                        <Datepicker class="inline-block" name="overseas_study_start" :language="ko" v-model="item.overseas_study_start" format="yyyy-MM-dd"></Datepicker>
+                        <InputMask class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" mask="9999-99"/>
                         <span class="from-arrow">~</span>
-                        <Datepicker class="inline-block" name="overseas_study_end" :language="ko" v-model="item.overseas_study_end" format="yyyy-MM-dd"></Datepicker>
+                        <InputMask class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" mask="9999-99"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -45,11 +45,11 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import { FormField } from '../../mixins/FormFields'
 import { SendValidation } from '../../mixins/SendValidation'
+import InputMask from 'vue-input-mask';
 import VSpinner from 'vue-simple-spinner'
 export default {
     props: [],
@@ -59,7 +59,7 @@ export default {
     ],
     components: {
         VSpinner,
-        Datepicker,
+        InputMask,
     },
     computed: {
         isOpen() { return this.$store.state.recruit_status == 'open' },

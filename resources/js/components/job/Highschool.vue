@@ -53,7 +53,6 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import Datepicker from 'vuejs-datepicker'
 import {ko} from 'vuejs-datepicker/dist/locale'
 import {getHeader, getAuth, getUser} from '../../config'
 import VSpinner from 'vue-simple-spinner'
@@ -68,7 +67,6 @@ export default {
     ],
     components: {
         VSpinner,
-        Datepicker,
         InputMask,
     },
     computed: {
@@ -144,6 +142,13 @@ export default {
                 return {
                     result: false,
                     msg: '재학기간을 입력해주세요',
+                };
+            }
+            let IsValidDate = Date.parse( this.item.school_start );
+            if ( isNaN(IsValidDate) ) {
+                return {
+                    result: false,
+                    msg: '재학기간을 정확히 입력해주세요',
                 };
             }
             return {

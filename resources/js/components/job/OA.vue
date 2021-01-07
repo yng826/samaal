@@ -10,7 +10,13 @@
                 </div>
                 <div class="form-group">
                     <label for="oa_level">OA수준</label>
-                    <input type="text" name="oa_level" v-model="item.oa_level" placeholder="입력해주세요">
+                    <div class="input-group">
+                        <div class="select-container" >
+                            <select type="text" name="oa_level" v-model="item.oa_level">
+                                <option v-for="level in levels" :value="level.value" :key="level.value">{{level.name}}</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
@@ -61,6 +67,11 @@ export default {
         return {
             isAuth: false,
             isSubmit: false,
+            levels: [
+                {value: 'high', name:'상'},
+                {value: 'normal', name:'중'},
+                {value: 'low', name:'하'},
+            ],
         }
     },
     mounted: function() {

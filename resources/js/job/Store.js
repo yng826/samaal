@@ -118,6 +118,7 @@ export const JobStore = new Vuex.Store({
                 military_discharge: '',
                 military_rank: '',
                 military_exemption: '',
+                military_veterans_affair: '',
                 military_duration_start: '',
                 military_duration_end: '',
             }},

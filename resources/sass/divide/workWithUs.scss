@@ -258,7 +258,7 @@
                     display: inline-block;
                     width: 350px;
                     vertical-align: middle;
-                    font-size: 0;
+                    // font-size: 0;
 
                     .from-arrow {
                         display: inline-block;
@@ -268,7 +268,7 @@
                         text-align: center;;
                     }
 
-                    span {
+                    span.cell.day {
                         font-size: 18px;
                     }
 
@@ -1561,7 +1561,7 @@
                             font-size: vw(18px);
                         }
 
-                        span {
+                        span.cell.day {
                             font-size: vw(18px);
                         }
                     }
@@ -2235,6 +2235,13 @@
                     .input-group {
                         width: vw(250px);
                     }
+                    .input_date-group {
+
+                        span.cell.day {
+                            font-size: vw(30px);
+                        }
+                    }
+
                 }
             }
 
@@ -2877,6 +2884,11 @@
                             margin-bottom: vw(10px);
                         }
                     }
+                    .input_date-group {
+                        span.cell.day {
+                            font-size: vw(30px);
+                        }
+                    }
                 }
 
                 &.form-left {
@@ -2896,6 +2908,9 @@
                             box-sizing: border-box;
                             height: auto;
                         }
+                        .input-group {
+                            width: vw(300px);
+                        }
                         .input_date-group {
                             width: vw(300px);
                             .inline-block {
@@ -2904,8 +2919,6 @@
                                     width: 100%;
                                     height: auto;
                                 }
-                            }span {
-                                font-size: vw(30px);
                             }
                         }
                     }
