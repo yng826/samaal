@@ -82,10 +82,11 @@ class EducationController extends Controller
                                 'edu_entrance' => $education['edu_entrance'],
                                 'edu_graduation' => $education['edu_graduation'],
                                 'edu_location' => $education['edu_location'],
+                                'edu_grade' => $education['edu_grade'],
                                 'edu_grade_full' => $education['edu_grade_full'],
                                 'edu_start' => $education['edu_start'] ? date('Y-m-d', strtotime($education['edu_start'])) : null,
                                 'edu_end' => $education['edu_end'] ? date('Y-m-d', strtotime($education['edu_end'])) : null,
-                                'graduation' => $education['graduation'],
+                                'edu_address' => $education['edu_address'],
                             ]);
             } else {
                 $affected = DB::table('job_applications_education')
@@ -102,7 +103,7 @@ class EducationController extends Controller
                                 'edu_grade_full' => $education['edu_grade_full'],
                                 'edu_start' => $education['edu_start'] ? date('Y-m-d', strtotime($education['edu_start'])) : null,
                                 'edu_end' => $education['edu_end'] ? date('Y-m-d', strtotime($education['edu_end'])) : null,
-                                'graduation' => $education['graduation'],
+                                'edu_address' => $education['edu_address'],
                             ]);
             }
         }
