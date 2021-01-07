@@ -4,7 +4,7 @@
     <main class="search-wrap">
         <div class="contents-wrap__title pd-20">
             <h2 class="about-ir__title">
-                통합검색
+                General Search
             </h2>
         </div>
         <div class="work-recruit__contents search-wrap__box">
@@ -16,10 +16,10 @@
                         <p class="work-recruit__search--text search-wrap__search-text">
 
                             @if (count($categoryKeywords) > 0)
-                            <span>"{{ $keyword }}"</span>에 대해 <br/> <strong>총 {{ count($categoryKeywords) }}건</strong>의 검색결과가 있습니다.
+                            A total of {{ count($categoryKeywords) }} searches has searched about <span>"{{ $keyword }}"</span>
                             @else
                                 @if ( !empty($keyword))
-                                    검색결과가 없습니다.
+                                No results found.
                                 @endif
                             @endif
                         </p>
@@ -33,7 +33,7 @@
                     <ul>
                         <li class="tab-item {{ $categoryId==0 ? 'on' : ''}}" id="category-0">
                             <span>
-                                전체
+                                All Categories
                                 @if (count($categoryKeywords) > 0)
                                     <strong>({{ count($categoryKeywords) }})</strong>
                                 @endif
