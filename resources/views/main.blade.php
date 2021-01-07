@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:image" content=" " />
-    <meta property="og:image" content="{{APP_URL }}/public/img_sns_sama.png" />
+    <meta property="og:image" content="{{env('APP_URL')}}/public/img_sns_sama.png" />
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>{{ config('app.name', '삼아알미늄') }}</title>
     <!-- Styles -->

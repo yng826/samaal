@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta property="og:image" content="{{APP_URL }}/public/img_sns_sama.png" />
+        <meta property="og:image" content="{{env('APP_URL')}}/public/img_sns_sama.png" />
         <link rel="stylesheet" href="/css/app.css">
         <title>{{ config('app.name', '삼아알미늄') }}</title>
     </head>
