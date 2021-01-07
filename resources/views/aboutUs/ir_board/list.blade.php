@@ -3,7 +3,7 @@
         <title>{{ config('app.name', '삼아알미늄') }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta property="og:image" content="{{APP_URL }}/public/img_sns_sama.png" />
+        <meta property="og:image" content="{{env('APP_URL')}}/public/img_sns_sama.png" />
         <link rel="stylesheet" href="/css/app.css">
         <script src="/js/app.js"></script>
     </head>
