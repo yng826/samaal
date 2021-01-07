@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
+    <meta property="og:title" content="삼아알미늄">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="삼아알미늄">
+    <meta property="og:id" content="sama">
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>Document</title>
 
