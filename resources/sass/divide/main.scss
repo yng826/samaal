@@ -218,7 +218,7 @@
     background: url("/images/main/img_intro.jpg")no-repeat;
     width: 100%;
     height: 1820px;
-    margin: -90px auto 0;
+    margin: 90px auto 0;
     background-size: cover;
     background-position: 50%;
 
@@ -265,7 +265,7 @@
     }
 }
 
-/* 웹 1600 사이즈 */
+/* 웹 1900 사이즈 */
 @media all and (max-width: 1900px) {
     @import "./lib/webvw";
     /* main */
@@ -357,6 +357,36 @@
         }
     }
 
+    /* intro */
+    .intro-wrap {
+        height: vw(1820px);
+        margin: vw(90px auto 0);
+
+        &__section {
+            max-width: vw(1382px);
+
+            p {
+                font-size: vw(25px);
+                line-height: vw(45px);
+                margin-bottom: vw(23px);
+            }
+
+            .important-text {
+                font-size: vw(30px);
+                line-height: vw(50px);
+            }
+
+            &--left {
+                padding-left: vw(100px);
+                top: vw(190px);
+            }
+
+            &--right {
+                padding-right: vw(100px);
+                bottom: vw(87px);
+            }
+        }
+    }
 }
 
 /*태블릿 세로 사이즈*/
@@ -370,6 +400,37 @@
             }
         }
      }
+
+      /* intro */
+    .intro-wrap {
+        height: vw(3640px);
+        margin: vw(180px auto 0);
+
+        &__section {
+            max-width: vw(2764px);
+
+            p {
+                font-size: vw(50px);
+                line-height: vw(90px);
+                margin-bottom: vw(46px);
+            }
+
+            .important-text {
+                font-size: vw(60px);
+                line-height: vw(100px);
+            }
+
+            &--left {
+                padding-left: vw(200px);
+                top: vw(380px);
+            }
+
+            &--right {
+                padding-right: vw(200px);
+                bottom: vw(174px);
+            }
+        }
+    }
 }
 
 /* 모바일 사이즈 */
@@ -669,12 +730,13 @@
 
     /* intro */
     .intro-wrap {
-        height: vw(1820px);
-        margin: vw(-90px) auto 0;
+        height: auto;
+        margin: vw(90px) auto 0;
         padding-bottom: vw(123px);
 
         &__section {
             max-width: 100%;
+            height: auto;
 
             p {
                 font-size: vw(26px);

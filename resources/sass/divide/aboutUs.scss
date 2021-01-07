@@ -1255,7 +1255,7 @@
 }
 
 /*태블릿 세로 사이즈*/
-@media all and (min-width:768px) and (max-width:1023px) {
+@media all and (min-width:768px) and (max-width:1024px) {
     @import "./lib/webvw";
     .about-ir {
         &__link {

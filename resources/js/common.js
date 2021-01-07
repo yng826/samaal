@@ -10,17 +10,17 @@ const common = () => {
         });
     }
 
-    const introHeader = () => {
-        $(window).on("scroll", function(){
-            if($(window).scrollTop() > 50) {
-                $(".intro-section .header").removeClass("sub-header");
-                $(".intro-section .intro-logo").addClass("hidden");
-            }else {
-                $(".intro-section .header").addClass("sub-header");
-                $(".intro-section .intro-logo").removeClass("hidden");
-            }
-        });
-    }
+    // const introHeader = () => {
+    //     $(window).on("scroll", function(){
+    //         if($(window).scrollTop() > 50) {
+    //             $(".intro-section .header").removeClass("sub-header");
+    //             $(".intro-section .intro-logo").addClass("hidden");
+    //         }else {
+    //             $(".intro-section .header").addClass("sub-header");
+    //             $(".intro-section .intro-logo").removeClass("hidden");
+    //         }
+    //     });
+    // }
 
     const header_search = () => {
         $(".header .btn-search").on('click', function(){
@@ -134,7 +134,7 @@ const common = () => {
         TopButton();
         footer_top();
         question_pop();
-        introHeader();
+        // introHeader();
     };
 
     common_init();

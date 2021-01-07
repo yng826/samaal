@@ -25,7 +25,7 @@
                             With technological innovations that help generate life’s values and conveniences,
                         </p>
                         <p class="important-text">
-                            <span>am-A takes a new leap forward,</span><br>
+                            <span>Sama takes a new leap forward,</span><br>
                             preserving social and environmental standards that contributes to a better world,<br>
                             all the while sustaining profitability as a business.
                         </p>
@@ -50,7 +50,7 @@
                             eco-friendly energy by efficiently using limited resources.
                         </p>
                         <p class="important-text">
-                            <span>This is why Sam-A exists in a sustainable world,</span><br>
+                            <span>This is why Sama exists in a sustainable world,</span><br>
                             encouraging societal change beyond just creating the<br>
                             best products.
                         </p>
