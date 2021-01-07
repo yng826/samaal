@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:image" content="{{APP_URL }}/public/img_sns_sama.png" />
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>삼아알미늄</title>
     <!-- Styles -->
