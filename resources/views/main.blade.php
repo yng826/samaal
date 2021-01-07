@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:title" content="SAMA">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="SAMA">
+    <meta property="og:id" content="sama">
     <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>{{ config('app.name', '삼아알미늄') }}</title>

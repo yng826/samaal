@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="SAMA">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="SAMA">
+    <meta property="og:id" content="sama">
     <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
