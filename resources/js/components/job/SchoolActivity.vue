@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="school_activities_contents">활동내용</label>
-                    <textarea class="form-control" name="school_activities_contents" rows="5" v-model="item.school_activities_contents" placeholder="입력해주세요"></textarea>
+                    <input type="text" name="school_activities_contents" v-model="item.school_activities_contents" placeholder="입력해주세요">
                 </div>
             </div>
         </form>
