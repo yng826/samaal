@@ -24,7 +24,7 @@
         <main class="contents-wrap">
             <div class="contents-wrap__title pd-20">
                <h2 class="about-ir__title">
-                Financial Performance
+                Business Performance
                 </h2>
             </div>
             <div  class="about-ir-list__section">
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="about-ir__chart">
-                        <h3>Profit for the year</h3>
+                        <h3>Profit for the period</h3>
                         <h6>(Unit: 1 Million KRW)</h6>
                         <div>
                             <canvas id="net_income"></canvas>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="contents-wrap__section about-ir__table">
-                    <h3>재무정보 3개년 요약</h3>
+                    <h3>3-Year Summary of Business Performance</h3>
                     <table class="table">
                         <tr class="text-center">
                             <th></th>

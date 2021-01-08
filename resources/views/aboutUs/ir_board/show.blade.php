@@ -31,16 +31,16 @@
         <main class="contents-wrap">
             <div class="contents-wrap__title pd-20">
                <h2 class="about-ir__title">
-                Financial Performance
+                Business Performance
                 </h2>
             </div>
             <div class="ir-wrap--tab">
                 <ul>
                     <li class="tab-item {{$id =='consolidated' ? 'on': ''}}">
-                        <a href="/about-us/ir/consolidated">연결재무제표</a>
+                        <a href="/about-us/ir/consolidated">consolidated Financial Statements</a>
                     </li>
                     <li class="tab-item {{$id =='separate' ? 'on': ''}}">
-                        <a href="/about-us/ir/separate">별도재무제표</a></li>
+                        <a href="/about-us/ir/separate">Separate Financial Statements</a></li>
                     </li>
                     <li class="tab-item {{$id =='board' ? 'on': ''}}">
                         <a href="/about-us/ir/board">Electronic Disclosure</a></li>

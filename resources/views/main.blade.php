@@ -23,8 +23,7 @@
             <div class="section main-wrap__section section01 intro">
                 <div class="section-left">
                     <h2 class="main-wrap__section--title">
-                        <em>A sustainable world</em><br>
-                        created by <em>Sama</em>
+                        Creating <em>a Sustainable World</em>
                     </h2>
                     <div class="main-wrap__section--button">
                         <a href="/intro">More</a>
@@ -61,7 +60,7 @@
                         <li><a href="/about-us/ceo">Message from CEO</a></li>
                         <li><a href="/about-us/ci">CI</a></li>
                         <li><a href="/about-us/story-news">Story & News</a></li>
-                        <li><a href="/about-us/ir/consolidated">Financial Performance</a></li>
+                        <li><a href="/about-us/ir/consolidated">Business Performance</a></li>
                         <li><a href="/about-us/location/seoul">Location</a></li>
                     </ul>
                 </div>
@@ -71,7 +70,7 @@
             <div class="section main-wrap__section section03 for-business-partners">
                 <div class="section-left">
                     <h2 class="main-wrap__section--title">
-                        <em>Produced</em> with <em>Sama</em><br>
+                        <em>Produced</em> with <em>Sama's</em><br>
                         <em>passion</em> and <em>spirit</em>
                     </h2>
                     <div class="main-wrap__section--button">
@@ -97,7 +96,7 @@
                 </div>
                 <div class="section-right">
                     <h2 class="main-wrap__section--title">
-                        <em>Defying</em> the Conventional <br/>with <em>Sama</em>
+                        <em>Spread your wings</em><br> with ambition at <em>Sama</em>
                      </h2>
                      <div class="main-wrap__section--button sub-menu__button">
                         <button type="button">Work With Us</button>

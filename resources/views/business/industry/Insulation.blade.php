@@ -13,7 +13,7 @@
 @endsection
 
 @section('info__title')
-    Can we improve the <span>insulation performance while reducing the thickness of the refrigerator panel</span>?
+    Can we improve <span>insulation performance while reducing the refrigerator panel thickness</span>?
 @endsection
 
 @section('info__text')

@@ -24,17 +24,17 @@
         <main class="contents-wrap">
             <div class="contents-wrap__title pd-20">
                <h2 class="about-ir__title">
-                    Financial Performance
+                    Business Performance
                 </h2>
             </div>
             <div class="about-ir-list__section">
                 <div class="ir-wrap--tab">
                     <ul>
                         <li class="tab-item {{$id =='consolidated' ? 'on': ''}}">
-                            <a href="/about-us/ir/consolidated">연결재무제표</a>
+                            <a href="/about-us/ir/consolidated">consolidated Financial Statements</a>
                         </li>
                         <li class="tab-item {{$id =='separate' ? 'on': ''}}">
-                            <a href="/about-us/ir/separate">별도재무제표</a></li>
+                            <a href="/about-us/ir/separate">Separate Financial Statements</a></li>
                         </li>
                         <li class="tab-item {{$id =='board' ? 'on': ''}}">
                             <a href="/about-us/ir/board">Electronic Disclosure</a></li>
@@ -51,9 +51,9 @@
                           </colgroup>
                         <thead>
                             <tr>
-                                <th class="text-center .about-ir__no">번호</th>
-                                <th class="text-center">제목</th>
-                                <th class="text-center">등록/수정일</th>
+                                <th class="text-center .about-ir__no">No.</th>
+                                <th class="text-center">Title</th>
+                                <th class="text-center">Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -89,7 +89,7 @@
                     <a href="/about-us/ir/board?page={{ $cnt }}" class="pagination__button-next"></a>
                 </div>
                 <div class="about-ir__link">
-                    <a class="link" href="http://dart.fss.or.kr/" target="_blank">DART 바로가기</a>
+                    <a class="link" href="http://dart.fss.or.kr/" target="_blank">DART</a>
                 </div>
             </div>
         </main>

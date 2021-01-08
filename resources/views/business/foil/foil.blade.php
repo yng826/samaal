@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    Aluminum Foil for Flexible Packaging
+    aluminium Foil for Flexible Packaging
     <p>
         Sama's signature packaging material that improves the preservation of products
     </p>

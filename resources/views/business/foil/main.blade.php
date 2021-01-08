@@ -18,7 +18,7 @@
             <div class="foil-box__col">
                 <div class="foil-box__col--item item-foil">
                     <a href="foil/foil" class="foil-box--item">
-                        <p class="foil-box__text">Aluminum Foil for Flexible Packaging</p>
+                        <p class="foil-box__text">aluminium Foil for Flexible Packaging</p>
                     </a>
                 </div>
                 <div class="foil-box__col--item item-fin">
@@ -29,18 +29,18 @@
             </div>
             <div class="foil-box__inline">
                 <a href="foil/capacitor" class="foil-box--item item-capacitor">
-                    <p class="foil-box__text">Aluminum Foil for Electrical Capacitor</p>
+                    <p class="foil-box__text">aluminium Foil for Electrical Capacitor</p>
                 </a>
             </div>
             <div class="foil-box__block">
                 <div class="foil-box__block--item">
                     <a href="foil/decoration" class="foil-box--item item-decoration">
-                        <p class="foil-box__text">High-gloss Aluminum Foil for Decoration</p>
+                        <p class="foil-box__text">High-gloss aluminium Foil for Decoration</p>
                     </a>
                 </div>
                 <div class="foil-box__block--item">
                     <a href="foil/line" class="foil-box--item item-line">
-                        <p class="foil-box__text">Hair Line Aluminum Foil</p>
+                        <p class="foil-box__text">Hair Line aluminium Foil</p>
                     </a>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <!-- psd 다시 받아야 함 psd에 이미지들 없음  그리고 hover 이미지도 없음-->
             <div class="foil-box__inline mr-5">
                 <a href="foil/restrictions" class="foil-box--item item-restrictions">
-                    <p class="foil-box__text">Aluminum Foil for Pharmaceutical Packaging</p>
+                    <p class="foil-box__text">aluminium Foil for Pharmaceutical Packaging</p>
                 </a>
             </div>
             <div class="foil-box__col fl-r mr-0">
@@ -68,7 +68,7 @@
             <div class="foil-box__block">
                 <div class="foil-box__block--item">
                     <a href="foil/external" class="foil-box--item item-external">
-                        <p class="foil-box__text">Aluminum Foil for LIB Pouch</p>
+                        <p class="foil-box__text">aluminium Foil for LIB Pouch</p>
                     </a>
                 </div>
                 <div class="foil-box__block--item">

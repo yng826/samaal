@@ -17,7 +17,7 @@
             <div class="foil-box__col">
                 <div class="foil-box__col--item item-cigarette">
                     <a href="package/cigarette" class="foil-box--item">
-                        <p class="foil-box__text">Aluminum-backed Paper for Cigarette Packaging</p>
+                        <p class="foil-box__text">aluminium-backed Paper for Cigarette Packaging</p>
                     </a>
                 </div>
                 <div class="foil-box__col--item item-refill">

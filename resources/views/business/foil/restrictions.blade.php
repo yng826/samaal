@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    Aluminum Foil for Pharmaceutical Packaging
+    aluminium Foil for Pharmaceutical Packaging
     <p>
         Special packaging foil that can store pharmaceutical products safely for a long period of time
     </p>
@@ -17,7 +17,7 @@
 @endsection
 
 @section('info__text')
-    In order to respond to the demand for packaging of pharmaceuticals, we developed aluminum foil for pharmaceutical packaging that has superior moisture and gas barrier properties than conventional plastic films.
+    In order to respond to the demand for packaging of pharmaceuticals, we developed aluminium foil for pharmaceutical packaging that has superior moisture and gas barrier properties than conventional plastic films.
 @endsection
 
 @section('info__value')

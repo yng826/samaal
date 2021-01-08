@@ -155,7 +155,7 @@
         </div>
         <div class="content-03 speciality-process__tab-content tab-paste process-layout">
             <p class="process-layout__text">
-                In 1974, Sama first started producing aluminium paste in Korea made with aluminum scrap.<br>
+                In 1974, Sama first started producing aluminium paste in Korea made with aluminium scrap.<br>
                 We have contributed for import substitution and industry development including vessel,<br>
                 construction and automotive sectors.
             </p>
@@ -182,7 +182,7 @@
                 </li>
             </ul>
             <p class="content-03__text">
-                With an annual production capacity of 24,000 tons, <br>
+                With an annual production capacity of 2,400 tons, <br>
                 we are supplying the best products in Korea through abundant production experience and cutting-edge technology.<br>
                 <span>
                     Keeping pace with the growth and advancement of the industry,

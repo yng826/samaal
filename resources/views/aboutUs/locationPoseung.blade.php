@@ -45,7 +45,7 @@
                 <div class="text-top">
                     <h3>Poseung Factory</h3>
                     <p>
-                        Sam-A Poseung Factory is <em>Korea's top-tier aluminium foil</em> and
+                        Sama Poseung Factory is <em>Korea's top-tier aluminium foil</em> and
                         packaging materials production facility equipped with automatic processing and
                         automized processing system.
                     </p>

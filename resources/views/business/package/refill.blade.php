@@ -13,7 +13,7 @@
 @endsection
 
 @section('info__title')
-    Can we reduce the waste packaging material?
+    Can we reduce waste packaging material?
 @endsection
 
 @section('info__text')

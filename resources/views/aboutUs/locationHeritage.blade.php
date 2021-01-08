@@ -49,7 +49,7 @@
                         <h3>Heritage Zone</h3>
                         <p>
                             The 50th Anniversary Heritage Zone captures
-                             <em>the history of Sam-A</em>.
+                             <em>the history of Sama</em>.
                         </p>
                     </div>
                     <dl class="text-bottom">

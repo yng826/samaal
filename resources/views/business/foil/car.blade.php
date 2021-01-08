@@ -3,7 +3,7 @@
 @section('detail__title')
     LIB Cathode Foil for Automotive
     <p>
-        Even with thinner gauge aluminum foil, it maintains high-strength enabling the development of high-capacity, high-efficiency battery
+        Even with thinner gauge aluminium foil, it maintains high-strength enabling the development of high-capacity, high-efficiency battery
     </p>
 @endsection
 

@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-Aluminum Foil for Electrical Capacitor
+aluminium Foil for Electrical Capacitor
 <p>
     Sama's signature product designed to improve high-voltage capacitor's performance
 </p>

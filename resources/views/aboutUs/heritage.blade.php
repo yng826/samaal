@@ -10,11 +10,11 @@
         <div class="about-heritage__contents">
             <div class="about-heritage__info">
                 <h3 class="about-heritage__info--title">
-                    As Korea's top aluminum foil and packaging materials manufacturer,
-                    Sam-A is committed to become the world’s leading company with sustainability as its core value.
+                    As Korea's top aluminium foil and packaging materials manufacturer,
+                    Sama is committed to become the world’s leading company with sustainability as its core value.
                 </h3>
                 <p class="about-heritage__info--text">
-                    Founded in 1969, Sam-A is leading the aluminum foil and packaging materials industry through continuous investment in premier technology and R&D. The company is steadily pacing towards becoming a global player through the application of state-of-the-art IT infrastructure including smart manufacturing systems, ERP, and integrated information systems.
+                    Founded in 1969, Sama is leading the aluminium foil and packaging materials industry through continuous investment in premier technology and R&D. The company is steadily pacing towards becoming a global player through the application of state-of-the-art IT infrastructure including smart manufacturing systems, ERP, and integrated information systems.
                 </p>
             </div>
             <div class="about-heritage__slide">
