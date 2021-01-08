@@ -300,7 +300,7 @@ class JobController extends Controller
                 // dd($job);
 
                 $text = "<div style='background-color: #2b4985; width:100%; height: 40px;'></div>
-<div style='width: 120px;padding: 20px 0;'><img src='".URL::current()."/images/common/logo.png' alt='삼아알미늄 로고'></div>
+<div style='width: 120px;padding: 20px 0;'><img src='".env('APP_URL')."/images/common/logo.png' alt='삼아알미늄 로고'></div>
 <h4 style='font-size: 16px;color: black;'>안녕하세요, '{$job->user->name}'님</h4>
 <p style='font-size: 24px;letter-spacing: -2px;font-weight: bold;color: #2b4985;'>귀하의 {$job->recruit->title}부문 지원서 제출이 완료되었습니다.</p>
 <p style='font-size: 18px;color: black;'>지원 내역 확인은 채용공고 하단 [지원내역 확인 및 수정]에서 가능합니다.</p>
