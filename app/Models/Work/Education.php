@@ -84,7 +84,7 @@ class Education extends Model
                 return '중퇴';
                 break;
             case 'degree':
-                return '학위';
+                return '학위취득';
                 break;
 
             default:
