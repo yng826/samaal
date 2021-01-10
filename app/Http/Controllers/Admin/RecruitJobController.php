@@ -304,118 +304,155 @@ class RecruitJobController extends Controller
 
             $sheet = $spreadsheet->getActiveSheet();
 
-            $rowNum = 2; //사진 row num
+            $rowNum = 1; //사진 row num
             if(Storage::exists($job->file_path)) { //사진
                 $drawing = new Drawing();
                 $drawing->setWorksheet($sheet);
                 $drawing->setPath('storage/'. $job->file_path); //put your path and image here
-                $drawing->setCoordinates('H'. $rowNum);
-                $drawing->setWidth(264);
+                $drawing->setCoordinates('B'. $rowNum);
+                $drawing->setWidth(130);
                 $drawing->setOffsetX(5);
                 $drawing->setOffsetY(5);
             }
 
-            $rowNum = 21; //인적사항 row num
-            $sheet->setCellValue('C'. $rowNum, empty($job->user) ? '' : $job->user->name); //이름
-            $sheet->setCellValue('E'. $rowNum, empty($job->userInfo) ? '' : $job->userInfo->name_en); //영문
-            $sheet->setCellValue('H'. $rowNum++, empty($job->recruit) ? '' : $job->recruit->title); //응시부문
-            $sheet->setCellValue('B'. $rowNum, $job->phone_decrypt); //연락처
-            $sheet->setCellValue('E'. $rowNum, empty($job->user) ? '' : $job->user->email); //이메일
-            $sheet->setCellValue('H'. $rowNum++, empty($job->userInfo) ? '' : $job->userInfo->birth_day); //생년월일
-            $sheet->setCellValue('B'. $rowNum, $job->address_1. ' '. $job->address_2); //주소
+            $rowNum = 8; //연령, 응시부문 row num
+            if(!empty($job->userInfo)) {
+                $birth_time = strtotime($job->userInfo->birth_day);
+                $now = date('Ymd');
+                $birthday = date('Ymd' , $birth_time);
+                $age = floor(($now - $birthday) / 10000);
 
-            $rowNum = 28; //학력사항 row num
-            $educations = collect($job->educations)->sortByDesc('edu_end')->take(5)->all();
+                $now_kor = date('Y');
+                $birthday_kor = date('Y' , $birth_time);
+                $age_kor = $now_kor - $birthday_kor + 1;
+
+                $sheet->setCellValue('G'. $rowNum, $age_kor. '세 (만 '. $age. '세)'); //연령
+            }
+            $sheet->setCellValue('K'. $rowNum++, empty($job->recruit) ? '' : $job->recruit->title); //응시부문
+
+            $rowNum = 11; //인적사항 row num
+            $sheet->setCellValue('D'. $rowNum, empty($job->user) ? '' : $job->user->name); //이름
+            $sheet->setCellValue('H'. $rowNum, empty($job->userInfo) ? '' : $job->userInfo->name_en); //영문
+            $sheet->setCellValue('M'. $rowNum, empty($job->userInfo) ? '' : $job->userInfo->birth_day); //생년월일
+            $rowNum += 2;
+            $sheet->setCellValue('C'. $rowNum, empty($job->user) ? '' : $job->user->email); //이메일
+            $sheet->setCellValue('L'. $rowNum, $job->phone_decrypt); //연락처
+            $rowNum += 2;
+            $sheet->setCellValue('C'. $rowNum, $job->address_1. ' '. $job->address_2); //주소
+
+            $rowNum = 19; //학력사항 row num
+            $sheet->setCellValue('B'. $rowNum, empty($job->highschool) ? '' : $job->highschool->school_start. ' ~ '. $job->highschool->school_end); //재학기간
+            $sheet->setCellValue('D'. $rowNum, empty($job->highschool) ? '' : $job->highschool->school_name); //학교명
+            $sheet->setCellValue('G'. $rowNum, empty($job->highschool) ? '' : $job->highschool->major_ko); //전공학과
+            $sheet->setCellValue('K'. $rowNum, empty($job->highschool) ? '' : $job->highschool->graduation_ko); //졸업구분
+            $sheet->setCellValue('N'. $rowNum, empty($job->highschool) ? '' : $job->highschool->school_address); //소재시
+
+            $educations = collect($job->educations)->sortByDesc('edu_end')->take(3)->all();
             foreach($educations as $education) {
-                $sheet->setCellValue('B'. $rowNum, $education->school_name); //학교명
-                $sheet->setCellValue('D'. $rowNum, $education->edu_major); //전공
-                $sheet->setCellValue('E'. $rowNum, $education->edu_start. ' ~ '. $education->edu_end); //재학기간
-                $sheet->setCellValue('F'. $rowNum, $education->edu_grade. ' / '. $education->edu_grade_full); //성적
-                $sheet->setCellValue('G'. $rowNum++, $education->graduation); //졸업구분
+                $rowNum += 2;
+                $sheet->setCellValue('B'. $rowNum, $education->edu_start. ' ~ '. $education->edu_end); //재학기간
+                $sheet->setCellValue('D'. $rowNum, $education->school_name); //학교명
+                $sheet->setCellValue('G'. $rowNum, $education->edu_major); //전공학과
+                $sheet->setCellValue('I'. $rowNum, $education->edu_grade); //성적
+                $sheet->setCellValue('J'. $rowNum, $education->edu_grade_full); //성적
+                $sheet->setCellValue('K'. $rowNum, $education->entrance_ko); //졸업구분
+                $sheet->setCellValue('L'. $rowNum, $education->graduation_ko); //졸업구분
+                $sheet->setCellValue('M'. $rowNum, $education->edu_time_ko); //졸업구분
+                $sheet->setCellValue('N'. $rowNum, $education->edu_address); //소재시
+                $sheet->setCellValue('O'. $rowNum, $education->location_ko); //소재시
             }
 
-            $rowNum = 35; //교내활동 row num
-            $schoolActivities = collect($job->schoolActivities)->sortByDesc('school_activities_end')->take(6)->all();
+            $rowNum = 29; //교내활동 row num
+            $schoolActivities = collect($job->schoolActivities)->sortByDesc('school_activities_end')->take(2)->all();
             foreach($schoolActivities as $schoolActivitie) {
                 $sheet->setCellValue('B'. $rowNum, $schoolActivitie->school_activities_start. ' ~ '. $schoolActivitie->school_activities_end); //활동기간
-                $sheet->setCellValue('C'. $rowNum, $schoolActivitie->school_activities_affiliation); //소속
-                $sheet->setCellValue('D'. $rowNum, $schoolActivitie->school_activities_role); //담당역할
-                $sheet->setCellValue('E'. $rowNum++, $schoolActivitie->school_activities_contents); //활동내역
+                $sheet->setCellValue('D'. $rowNum, $schoolActivitie->school_activities_affiliation); //소속
+                $sheet->setCellValue('F'. $rowNum, $schoolActivitie->school_activities_role); //담당역할
+                $sheet->setCellValue('H'. $rowNum, $schoolActivitie->school_activities_contents); //활동내역
+                $rowNum += 2;
             }
 
-            $rowNum = 35; //취미 row num
-            $sheet->setCellValue('H'. $rowNum, empty($job->hobbySpecialty) ? '' : $job->hobbySpecialty->hobby); //취미
+            $rowNum = 27; //취미 row num
+            $sheet->setCellValue('M'. $rowNum, empty($job->hobbySpecialty) ? '' : $job->hobbySpecialty->hobby); //취미
 
-            $rowNum = 38; //특기 row num
-            $sheet->setCellValue('H'. $rowNum, empty($job->hobbySpecialty) ? '' : $job->hobbySpecialty->specialty); //특기
+            $rowNum = 30; //특기 row num
+            $sheet->setCellValue('M'. $rowNum, empty($job->hobbySpecialty) ? '' : $job->hobbySpecialty->specialty); //특기
 
-            $rowNum = 43; //경력사항 row num
-            $careers = collect($job->careers)->sortByDesc('career_end')->take(10)->all();
+            $rowNum = 35; //경력사항 row num
+            $careers = collect($job->careers)->sortByDesc('career_end')->take(2)->all();
             foreach($careers as $career) {
                 $sheet->setCellValue('B'. $rowNum, $career->career_start. ' ~ '. $career->career_end); //근무기간
                 $sheet->setCellValue('D'. $rowNum, $career->career_name); //회사명
-                $sheet->setCellValue('E'. $rowNum, $career->career_position); //직위
-                $sheet->setCellValue('G'. $rowNum++, $career->career_role); //담당업무
+                $sheet->setCellValue('G'. $rowNum, $career->career_position); //직위
+                $sheet->setCellValue('I'. $rowNum, $career->career_department); //근무부서
+                $sheet->setCellValue('K'. $rowNum, $career->career_role); //담당업무
+                $rowNum += 2;
             }
 
-            $rowNum = 62; //병역사항 row num
-            $sheet->setCellValue('C'. $rowNum, empty($job->military) ? '' : $job->military->military_type); //구분/군별
-            $sheet->setCellValue('E'. $rowNum, empty($job->military) ? '' : $job->military->military_rank); //계급
-            $sheet->setCellValue('G'. $rowNum++, empty($job->military) ? '' : $job->military->military_duration_start. ' ~ '. $job->military->military_duration_end); //복무기간
-            $sheet->setCellValue('C'. $rowNum, empty($job->military) ? '' : $job->military->military_discharge); //제대구분
-            $sheet->setCellValue('E'. $rowNum, empty($job->military) ? '' : $job->military->military_exemption); //면제사유
+            $rowNum = 41; //병역사항 row num
+            $sheet->setCellValue('B'. $rowNum, empty($job->military) ? '' : $job->military->discharge_ko); //구분
+            $sheet->setCellValue('C'. $rowNum, empty($job->military) ? '' : $job->military->military_duration_start. ' ~ '. $job->military->military_duration_end); //복무기간
+            $sheet->setCellValue('E'. $rowNum, empty($job->military) ? '' : $job->military->military_type); //군별
+            $sheet->setCellValue('I'. $rowNum, empty($job->military) ? '' : $job->military->military_rank); //계급
+            $sheet->setCellValue('K'. $rowNum, empty($job->military) ? '' : $job->military->military_exemption); //면제사유
+            $sheet->setCellValue('M'. $rowNum, empty($job->military) ? '' : $job->military->affair_ko); //보훈대상여부
 
-            $rowNum = 66; //PC사용능력 row num
-            $oas = collect($job->oas)->take(7)->all();
-            foreach($oas as $oa) {
-                $sheet->setCellValue('B'. $rowNum, $oa->oa_name); //사용 가능 OA
-                $sheet->setCellValue('G'. $rowNum++, $oa->oa_level); //수준
-            }
-
-            $rowNum = 75; //외국어 row num
-            $languages = collect($job->languages)->sortByDesc('language_end')->take(7)->all();
+            $rowNum = 45; //외국어 row num
+            $languages = collect($job->languages)->sortByDesc('language_end')->take(3)->all();
             foreach($languages as $language) {
                 $sheet->setCellValue('B'. $rowNum, $language->language_type); //구분
-                $sheet->setCellValue('C'. $rowNum, $language->language_grade); //TEST명
-                $sheet->setCellValue('E'. $rowNum, $language->language_name); //점수/등급
-                $sheet->setCellValue('F'. $rowNum, $language->language_start. ' ~ '. $language->language_end); //재학기간
-                $sheet->setCellValue('H'. $rowNum++, $language->language_level); //회화수준
+                $sheet->setCellValue('D'. $rowNum, $language->language_name); //TEST명
+                $sheet->setCellValue('H'. $rowNum, $language->language_grade); //득점
+                $sheet->setCellValue('J'. $rowNum, $language->language_grade_full); //만점
+                $sheet->setCellValue('K'. $rowNum, $language->language_start); //시행일
+                $sheet->setCellValue('M'. $rowNum, $language->level_ko); //회화수준
+                $rowNum += 2;
             }
 
-            $rowNum = 84; //수상경력 row num
-            $awards = collect($job->awards)->sortByDesc('award_date')->take(7)->all();
+            $rowNum = 53; //수상경력 row num
+            $awards = collect($job->awards)->sortByDesc('award_date')->take(4)->all();
             foreach($awards as $award) {
                 $sheet->setCellValue('B'. $rowNum, $award->award_date); //수상일
-                $sheet->setCellValue('C'. $rowNum, $award->award_group_name); //단체명
-                $sheet->setCellValue('D'. $rowNum++, $award->award_name); //시상명
+                $sheet->setCellValue('D'. $rowNum, $award->award_group_name); //단체명
+                $sheet->setCellValue('F'. $rowNum, $award->award_name); //시상명
+                $rowNum += 2;
             }
 
-            $rowNum = 84; //자격면허 row num
-            $certificates = collect($job->certificates)->sortByDesc('certificate_date')->take(7)->all();
+            $rowNum = 53; //자격면허 row num
+            $certificates = collect($job->certificates)->sortByDesc('certificate_date')->take(4)->all();
             foreach($certificates as $certificate) {
-                $sheet->setCellValue('F'. $rowNum, $certificate->certificate_date); //취득일
-                $sheet->setCellValue('G'. $rowNum, $certificate->certificate_name); //자격증명
-                $sheet->setCellValue('H'. $rowNum++, $certificate->certificate_issuer); //발행처
+                $sheet->setCellValue('I'. $rowNum, $certificate->certificate_date); //취득일
+                $sheet->setCellValue('K'. $rowNum, $certificate->certificate_name); //자격증명
+                $sheet->setCellValue('M'. $rowNum, $certificate->certificate_issuer); //발행처
+                $rowNum += 2;
             }
 
-            $rowNum = 93; //해외연수 row num
-            $overseasStudys = collect($job->overseasStudys)->sortByDesc('overseas_study_end')->take(5)->all();
+            $rowNum = 63; //해외연수 row num
+            $overseasStudys = collect($job->overseasStudys)->sortByDesc('overseas_study_end')->take(2)->all();
             foreach($overseasStudys as $overseasStudy) {
                 $sheet->setCellValue('B'. $rowNum, $overseasStudy->country_name); //국가/도시
-                $sheet->setCellValue('C'. $rowNum, $overseasStudy->school_name); //학교/단체
-                $sheet->setCellValue('D'. $rowNum, $overseasStudy->overseas_study_start. ' ~ '. $overseasStudy->overseas_study_end); //기간
-                $sheet->setCellValue('E'. $rowNum, $overseasStudy->overseas_study_name); //연수명
-                $sheet->setCellValue('F'. $rowNum, $overseasStudy->overseas_study_purpose); //연수목적
-                $sheet->setCellValue('G'. $rowNum++, $overseasStudy->overseas_study_contents); //연수내용
+                $sheet->setCellValue('D'. $rowNum, $overseasStudy->school_name); //학교/단체
+                $sheet->setCellValue('F'. $rowNum, $overseasStudy->overseas_study_name); //연수명
+                $sheet->setCellValue('H'. $rowNum, $overseasStudy->overseas_study_start. ' ~ '. $overseasStudy->overseas_study_end); //기간
+                $sheet->setCellValue('J'. $rowNum, $overseasStudy->overseas_study_purpose); //연수목적
+                $sheet->setCellValue('L'. $rowNum, $overseasStudy->overseas_study_contents); //연수내용
+                $rowNum += 2;
             }
 
-            $rowNum = 107; //자기소개서1/2 row num
+            $rowNum = 68; //PC사용능력 row num
+            $oas = collect($job->oas)->take(3)->all();
+            foreach($oas as $oa) {
+                $sheet->setCellValue('C'. $rowNum, $oa->oa_name); //사용 가능 OA
+                $sheet->setCellValue('M'. $rowNum++, $oa->oa_level); //수준
+            }
+
+            $rowNum = 80; //자기소개서1 row num
             $sheet->setCellValue('A'. $rowNum, $job->cover_letter);
             $sheet->getStyle('A'. $rowNum)->getAlignment()->setWrapText(true);
 
-            // $cover_letter = $sheet->getCell('A'. $rowNum);
-            // $rowNum = 188; //자기소개서2/2 row num
-            // $sheet->setCellValue('A'. $rowNum, count(preg_split('/\r\n|\n|\r/', $cover_letter)));
+            $rowNum = 146; //자기소개서2 row num
+            $sheet->setCellValue('A'. $rowNum, $job->cover_letter_2);
+            $sheet->getStyle('A'. $rowNum)->getAlignment()->setWrapText(true);
 
 
             header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
