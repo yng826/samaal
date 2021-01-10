@@ -16,8 +16,15 @@ class IsoCertificationController extends Controller
      */
     public function index()
     {
-        $types = DB::table('iso_certifications')->select('type')->groupBy('type')->orderBy('type')->get();
-        $certifications = DB::table('iso_certifications')->orderBy('type')->orderBy('first_date')->get();
+        $types = DB::table('iso_certifications')->select('type')
+            ->groupBy('type')
+            ->orderBy('first_date')
+            // ->orderBy('type')
+            ->get();
+        $certifications = DB::table('iso_certifications')
+            ->orderBy('type')
+            ->orderBy('first_date')
+            ->get();
 
         return view('business.innovation.isoCertification', [
             'types' => $types,
