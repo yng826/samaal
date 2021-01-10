@@ -244,7 +244,7 @@ class RecruitJobController extends Controller
             $sheet->setCellValue('B'. $rowNum, empty($job->user) ? '' : $job->user->name);
             $sheet->setCellValue('C'. $rowNum, empty($job->userInfo) ? '' : substr($job->userInfo->birth_day, 0, 4));
             $sheet->setCellValue('D'. $rowNum, empty($job->user) ? '' : $job->user->email);
-            $sheet->setCellValue('E'. $rowNum, vsprintf('%s%s%s%-%s%s%s%s-%s%s%s%s', str_split($job->phone_decrypt))); //연락처
+            $sheet->setCellValue('E'. $rowNum, vsprintf('%s%s%s-%s%s%s%s-%s%s%s%s', str_split($job->phone_decrypt ?? '')); //연락처
 
             if(!empty($job->educations)) {
                 $education = collect($job->educations)->sortByDesc('edu_end')->first();
@@ -336,7 +336,7 @@ class RecruitJobController extends Controller
             $sheet->setCellValue('M'. $rowNum, empty($job->userInfo) ? '' : $job->userInfo->birth_day); //생년월일
             $rowNum += 2;
             $sheet->setCellValue('C'. $rowNum, empty($job->user) ? '' : $job->user->email); //이메일
-            $sheet->setCellValue('L'. $rowNum, vsprintf('%s%s%s%-%s%s%s%s-%s%s%s%s', str_split('01028016532'))); //연락처
+            $sheet->setCellValue('L'. $rowNum, vsprintf('%s%s%s-%s%s%s%s-%s%s%s%s', str_split($job->phone_decrypt ?? '')); //연락처
             $rowNum += 2;
             $sheet->setCellValue('C'. $rowNum, $job->address_1. ' '. $job->address_2); //주소
 
