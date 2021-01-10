@@ -43,7 +43,7 @@
                 </ul> -->
             </div>
             <div class="question-btn">
-                <a href="javascript:;">문의하기</a>
+                <a href="javascript:;">Contact us</a>
             </div>
             <div class="top-btn">TOP</div>
         </div>
@@ -59,27 +59,27 @@
     <form action="/board/question_board" class="question-pop__info question-form-all" method="POST">
         <ul>
             <li>
-                <h4>제목</h4>
+                <h4>Title</h4>
                 <input type="text" class="form-control" name="title" id ="title-all" placeholder="입력해주세요.">
             </li>
             <li>
-                <h4>문의 분류</h4>
+                <h4>Categories</h4>
                 <select class="form-control w-auto mr-1" name="category" id ="category-all">
-                    <option value="">::선택::</option>
-                    <option value="제품">제품</option>
-                    <option value="채용">채용</option>
-                    <option value="기타">기타</option>
+                    <option value="">::Select::</option>
+                    <option value="Product">Product</option>
+                    <option value="Recruitment">Recruitment</option>
+                    <option value="Others">Others</option>
                 </select>
             </li>
             <li>
-                <h4>작성자 메일 주소</h4>
+                <h4>E-mail address</h4>
                 <div class="input-gorup">
                     <input type="text" class="form-control input-gorup__item" id="email-all-first" placeholder="입력해주세요.">
                     <em class="input-gorup__at">@</em>
                     <input type="text" class="form-control input-gorup__item hidden" id="email-all-txt" placeholder="입력해주세요.">
                     <div class="input-gorup__select">
                         <select class="form-control w-auto mr-1 " id="email-all-select">
-                            <option value="">::선택::</option>
+                            <option value="">::Select::</option>
                             <option value="naver.com">naver.com</option>
                             <option value="daum.net">daum.net</option>
                             <option value="gmail.com">gmail.com</option>
@@ -90,39 +90,33 @@
                 </div>
             </li>
             <li>
-                <h4>내용</h4>
+                <h4>Contents</h4>
                 <textarea rows="5" class="form-control tinymce-editor" name="question" id ="question-all" placeholder="입력해주세요."></textarea>
             </li>
             <li>
                 <h4>개인정보 이용 및 수집 동의</h4>
                 <div class="privacy-box">
-                    1.개인정보 수집·이용목적
-                    개인정보는 고객의 의견 수집을 위한 목적으로 만 사용됩니다
+                    <h4>1. Personal information for collecting and using personal information is used only for the purpose of collecting opinions from customers. </h4>
 
-                    2.수집하는 개인정보 항목
-                    당사는 개인정보보호법 제 15조에 따라 개인정보의 수집·이용시 본인의 동의를 받은 경우 개인정보를 수집할 수 있으며 그 수집 목적의 범위에서 이용할 수 있습니다
-                    수집·이용 목적에 따라 수집하고 있는 항목은 아래와 같습니다
-                    - 필수항목: 작성자 이름, 작성자 이메일 주소
+                    <h4>2. The company may collect personal information if it has obtained its consent when collecting and using personal information pursuant to Article 15 of the Privacy Act and may use it within the scope of its purpose. The items you are collecting for your collection and use are listed below </h4>
+                    <p>- Required items: Author Name, Author Email Address </p>
 
-                    3.개인정보 보유, 이용기간 및 파기
-                    수집된 개인정보는 의견 수렴 후 6개월 보관 후 즉시 파기합니다
-                    개인정보 파기 방법은 아래와 같습니다
-                    - 종이 출력 정보: 분쇄기로 분쇄 혹은 소각
-                    - 전자적 파일형태 정보: 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제
+                    <h4>3. Personal information retention, period of use, and personal information collected shall be destroyed immediately after 6 months of storage after collecting opinions. Here's how to destroy your personal information. </h4>
+                    <p>- Paper output information: Grinding or incineration with a grinder </p>
+                    <p>- Electronic file type information: Delete using a technical method that does not allow the recording to be played back </p>
 
-                    4.이용 동의 거부에 따른 불이익 안내
-                    고객은 이용 동의를 거부할 수 있습니다.
-                    다만, 개인정보 제공에 동의하신 경우에만 의견을 작성하실 수 있습니다
+                    <h4>4. Customers who are notified of the disadvantage due to refusal of the use consent may reject the use consent.</h4>
+
                 </div>
                 <div class="question-pop__form-check">
                     <label class="question-pop__form-check--label">
                         <input class="form-check" type="checkbox" name="agree"  id ="agree-all">
-                        <span>개인정보 이용 및 수집에 동의 합니다.</span>
+                        <span>I consent.</span>
                     </label>
                 </div>
             </li>
         </ul>
-        <button type="button" class="question-pop__submit-btn save-btn-all">보내기</button>
+        <button type="button" class="question-pop__submit-btn save-btn-all">Submit</button>
     </form>
 </div>
 <div class="popup-mask"></div>
