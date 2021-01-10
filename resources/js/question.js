@@ -81,24 +81,24 @@ const question = () => {
         var chk = true;
 
         if ($("#title").val() == "" || $("#title").val() == null) {
-            message = "제목을 선택해주세요.";
+            message = "Please fill out the title field.";
             chk = false;
 
         } else if ($("#category").val() == "" || $("#category").val() == null) {
-            message = "문의 분류를 선택해주세요.";
+            message = "Please select the category.";
             chk = false;
 
         } else if ($("#email-first").val() == "" || $("#email-first").val() == null
                     || (($("#email-txt").val() == "" || $("#email-txt").val() == null) && ($("#email-select").val() == "" || $("#email-select").val() == null))) {
-            message = "작성자 메일 주소를 입력 및 선택해주세요.";
+            message = "Please fill out the email field.";
             chk = false;
 
         } else if ($("#question").val() == "" || $("#question").val() == null) {
-            message = "내용을 입력해주세요.";
+            message = "Please fill the contents field.";
             chk = false;
 
         } else if($("input[name=agree]:checked").length ==0) {
-            message = "개인정보 이용 및 수집을 동의해주세요.";
+            message = "Please check “I consent” to submit your inquiry.";
             chk = false;
         }
 
@@ -108,7 +108,7 @@ const question = () => {
             var inputEmail = $("#email-first").val() + '@' + ($("#email-select").val()=='direct' ? $("#email-txt").val() : $("#email-select").val());
 
             if(!regexEmail.test(inputEmail)) {
-                message = "이메일 형식이 올바르지 않습니다";
+                message = "Please enter a valid email address.";
                 chk = false;
             } else {
                 $("#email").val(inputEmail);
@@ -118,10 +118,10 @@ const question = () => {
         if ( !chk ) {
 
             Swal.fire({
-                title: '에러입니다!',
+                title: 'Error!',
                 text: message,
                 icon: 'error',
-                confirmButtonText: '확인'
+                confirmButtonText: 'OK'
             });
             return false;
         }
