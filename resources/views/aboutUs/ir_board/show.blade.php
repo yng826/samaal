@@ -37,7 +37,7 @@
             <div class="ir-wrap--tab">
                 <ul>
                     <li class="tab-item {{$id =='consolidated' ? 'on': ''}}">
-                        <a href="/about-us/ir/consolidated">consolidated Financial Statements</a>
+                        <a href="/about-us/ir/consolidated">Consolidated Financial Statements</a>
                     </li>
                     <li class="tab-item {{$id =='separate' ? 'on': ''}}">
                         <a href="/about-us/ir/separate">Separate Financial Statements</a></li>
