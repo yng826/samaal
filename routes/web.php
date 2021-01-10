@@ -100,62 +100,62 @@ Route::prefix('business')->group(function() {
     });
     Route::get('foil/capacitor', function () {
         $data = [];
-        $data['question_title'] = 'Capacitor용';
+        $data['question_title'] = 'Aluminum Foil for Electrical Capacitor';
         return view('business.foil.capacitor', $data);
     });
     Route::get('foil/foil', function () {
         $data = [];
-        $data['question_title'] = '연포장용';
+        $data['question_title'] = 'Aluminum Foil for Flexible Packaging';
         return view('business.foil.foil', $data);
     });
     Route::get('foil/fin', function () {
         $data = [];
-        $data['question_title'] = '열교환기용 Fin재';
+        $data['question_title'] = 'Finstock for Heat Exchanger';
         return view('business.foil.fin', $data);
     });
     Route::get('foil/decoration', function () {
         $data = [];
-        $data['question_title'] = 'Decoration용';
+        $data['question_title'] = 'High-gloss Aluminum Foil for Decoration';
         return view('business.foil.decoration', $data);
     });
     Route::get('foil/line', function () {
         $data = [];
-        $data['question_title'] = 'Hair Line';
+        $data['question_title'] = 'Hair Line Aluminum Foil';
         return view('business.foil.line', $data);
     });
     Route::get('foil/restrictions', function () {
         $data = [];
-        $data['question_title'] = '제약포장재용';
+        $data['question_title'] = 'Aluminum Foil for Pharmaceutical Packaging';
         return view('business.foil.restrictions', $data);
     });
     Route::get('foil/electronic', function () {
         $data = [];
-        $data['question_title'] = 'LIB 양극집전체용 - 전자기기용';
+        $data['question_title'] = 'LIB Cathode Foil for Electronics';
         return view('business.foil.electronic', $data);
     });
     Route::get('foil/car', function () {
         $data = [];
-        $data['question_title'] = 'LIB 양극집전체용 - 자동차용';
+        $data['question_title'] = 'LIB Cathode Foil for Automotive';
         return view('business.foil.car', $data);
     });
     Route::get('foil/external', function () {
         $data = [];
-        $data['question_title'] = 'LIB 외장재용';
+        $data['question_title'] = 'Aluminium Foil for LIB Pouch';
         return view('business.foil.external', $data);
     });
     Route::get('foil/tab', function () {
         $data = [];
-        $data['question_title'] = 'LIB Tab재';
+        $data['question_title'] = 'LIB Tab';
         return view('business.foil.tab', $data);
     });
     Route::get('package/retort', function () {
         $data = [];
-        $data['question_title'] = '레토르트 포장재';
+        $data['question_title'] = 'Retortable Packaging';
         return view('business.package.retort', $data);
     });
     Route::get('package/watertight', function () {
         $data = [];
-        $data['question_title'] = '초발수 리드';
+        $data['question_title'] = 'Water-repellent Lid Film';
         return view('business.package.watertight', $data);
     });
     Route::get('package/alu', function () {
@@ -165,22 +165,22 @@ Route::prefix('business')->group(function() {
     });
     Route::get('package/cigarette', function () {
         $data = [];
-        $data['question_title'] = '담배포장지';
+        $data['question_title'] = 'Aluminum-backed Paper for Cigarette Packaging';
         return view('business.package.cigarette', $data);
     });
     Route::get('package/refill', function () {
         $data = [];
-        $data['question_title'] = '리필파우치';
+        $data['question_title'] = 'Refill Pouch';
         return view('business.package.refill', $data);
     });
     Route::get('industry/insulation', function () {
         $data = [];
-        $data['question_title'] = '진공단열재용 필름';
+        $data['question_title'] = 'High barrier film for vacuum insulation panel';
         return view('business.industry.insulation', $data);
     });
     Route::get('industry/sidemirror', function () {
         $data = [];
-        $data['question_title'] = '자동차용 사이드 미러 열선용 소재';
+        $data['question_title'] = 'Laminated Film for Rear View Mirror Heater';
         return view('business.industry.sidemirror', $data);
     });
     Route::get('industry/steel', function () {
@@ -190,12 +190,12 @@ Route::prefix('business')->group(function() {
     });
     Route::get('industry/paste', function () {
         $data = [];
-        $data['question_title'] = '알루미늄 페이스트';
+        $data['question_title'] = 'Aluminium Paste';
         return view('business.industry.paste', $data);
     });
     Route::get('speciality/process/{type?}', function ($type = 'roll') {
         $data = [];
-        $data['question_title'] = '공정과정';
+        $data['question_title'] = 'Production Process';
         $data['type'] = $type;
         return view('business.speciality.process', $data);
     });
