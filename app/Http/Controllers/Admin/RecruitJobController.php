@@ -443,15 +443,11 @@ class RecruitJobController extends Controller
             $oas = collect($job->oas)->take(3)->all();
             foreach($oas as $oa) {
                 $sheet->setCellValue('C'. $rowNum, $oa->oa_name); //사용 가능 OA
-                $sheet->setCellValue('M'. $rowNum++, $oa->oa_level); //수준
+                $sheet->setCellValue('M'. $rowNum++, $oa->level_ko); //수준
             }
 
             $rowNum = 80; //자기소개서1 row num
             $sheet->setCellValue('A'. $rowNum, $job->cover_letter);
-            $sheet->getStyle('A'. $rowNum)->getAlignment()->setWrapText(true);
-
-            $rowNum = 146; //자기소개서2 row num
-            $sheet->setCellValue('A'. $rowNum, $job->cover_letter_2);
             $sheet->getStyle('A'. $rowNum)->getAlignment()->setWrapText(true);
 
 
