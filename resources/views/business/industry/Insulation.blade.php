@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    High barrier film for vacuum insulation panel
+    High Barrier Film for Vacuum Insulation Panel
     <p>
         Korea's first product applied on refrigerators that reduces panel thickness of electronics and even improves insulation performance
     </p>

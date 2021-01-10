@@ -39,9 +39,9 @@
                 PET/OPA/CPP
                 </td>
             <td class="border-right-none">
-                Retort food (ready-to-eat),
-                Contact lenses, etc. (for medical use)
-                Sterilized product after packaging
+                Retort food (ready-to-eat) <br>
+                ,Contact lenses, etc. (for medical use) <br>
+                ,Sterilized product after packaging
             </td>
         </tr>
     </table>

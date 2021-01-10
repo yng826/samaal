@@ -17,7 +17,7 @@
 @endsection
 
 @section('info__text')
-In 2009, we developedLIB cathode foil with LG Chem that maintains high strength for the first time in Korea with the goal of developing a high-capacity, high-efficiency electric vehicle.
+In 2009, we developed LIB cathode foil with LG Chem that maintains high strength for the first time in Korea with the goal of developing a high-capacity, high-efficiency electric vehicle.
 @endsection
 
 @section('info__value')
