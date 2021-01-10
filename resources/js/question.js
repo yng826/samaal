@@ -81,7 +81,7 @@ const question = () => {
         var chk = true;
 
         if ($("#title").val() == "" || $("#title").val() == null) {
-            message = "제목을 선택해주세요.";
+            message = "제목을 입력해주세요.";
             chk = false;
 
         } else if ($("#category").val() == "" || $("#category").val() == null) {
