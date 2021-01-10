@@ -3,7 +3,7 @@
 @section('detail__title')
     열교환기용 Fin재
     <p>
-        자동차에 사용되는 소형·고성능 열교환기용 FIN재<br>
+        자동차에 사용되는 소형·고성능 열교환기용 Fin재<br>
         50㎛를 국내 최초로 개발
     </p>
 @endsection
