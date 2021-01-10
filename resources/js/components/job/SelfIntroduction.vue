@@ -5,10 +5,9 @@
                 <h3>자기소개서</h3>
                 <input type="hidden" name="id" v-model="this.job_id">
                 <div class="form-group">
-                    <label for="cover_letter" class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다.</label>
+                    <label for="cover_letter" class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다.({{item.cover_letter.length}}/3000)</label>
                     <textarea class="" name="cover_letter" id="cover_letter" rows="15" v-model="item.cover_letter" @change="setChanged"></textarea>
                 </div>
-
             </div>
         </form>
         <div class="button-group" v-if="isOpen">
@@ -73,6 +72,12 @@ export default {
                     msg: '자기소개서를 작성해주세요',
                 };
             }
+            if ( this.item.cover_letter.length > 3000 ) {
+                return {
+                    result: false,
+                    msg: '3000자 이상 작성할 수 없습니다.'
+                }
+            }
             return {
                 result: true,
                 msg: '',
@@ -121,7 +126,6 @@ export default {
                     allowOutsideClick: false
                 }).then(result => {
                     this.$store.state.job.is_cover_letter = res.data.job.is_cover_letter;
-                    console.log(this.$store.state.job.is_cover_letter, res.data.is_cover_letter);
                 });
             })
             .catch(err => {
