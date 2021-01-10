@@ -38,10 +38,10 @@
         <tr class="info__table--bottom">
             <td class="border-left-none">20㎛, 28㎛, 30㎛,<br> 45㎛, 50㎛, 60㎛</td>
             <td>
-                A1235, A8021,A8079
+                A1235, A8021, A8079
             </td>
             <td class="border-right-none">
-                PTP, Strip Packaging,Alu-Alu cold forming foil,Pain-relieving patch packaging material
+                PTP, Strip Packaging, Alu-Alu cold forming foil, Pain-relieving patch packaging material
             </td>
         </tr>
     </table>
