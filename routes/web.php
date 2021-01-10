@@ -431,23 +431,6 @@ Route::get('send', function () {
             ->to('test001@sama-al.com')
             ->subject('Testing mails');
     });
-
-    /*
-    $user = [
-        'email'=>'test001@sama-al.com',
-        'name'=>'이혁'
-    ];
-
-    $data = [
-        'name' => '이혁',
-        'content' => '입사지원하셨습니다'
-    ];
-
-    Mail::send('emails.mail', $data, function($message) use ($user) {
-        $message->from('test001@sama-al.com', 'SAMA');
-        $message->to($user['email'], $user['name'])->subject('Welcome!');
-    });
-    */
 });
 
 Route::get('sms', function () {

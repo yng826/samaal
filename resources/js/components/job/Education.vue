@@ -17,11 +17,11 @@
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <div class="form-group">
                     <label for="school_name">학교명</label>
-                    <input type="text" name="school_name" v-model="item.school_name" placeholder="입력해주세요">
+                    <input type="text" name="school_name" :class="maxLength(item.school_name, 10)" v-model="item.school_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="edu_address">소재지</label>
-                    <input type="text" name="edu_address" v-model="item.edu_address" placeholder="입력해주세요">
+                    <input type="text" name="edu_address" :class="maxLength(item.edu_address, 10)" v-model="item.edu_address" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="edu_location">캠퍼스</label>
@@ -129,9 +129,6 @@ export default {
         status() {
             return this.$store.state.job.status
         },
-        status() {
-            return this.$store.state.job.status
-        }
     },
     data: function() {
         return {
@@ -177,7 +174,7 @@ export default {
             if ( !this.isSubmitable ) {
                 return false;
             }
-            if ( this.items.length >= 4 ) {
+            if ( this.items.length >=3 ) {
                 Swal.fire({
                     title: '추가할 수 없습니다.',
                     icon: 'error',
@@ -187,12 +184,19 @@ export default {
             }
             this.items.push({
                 id: "",
-                school_name: "",
-                edu_major: "",
-                edu_grade: "",
-                edu_start: "",
-                edu_end: "",
-                graduation: "",
+                edu_address: "",
+                edu_entrance: '',
+                edu_grade: '',
+                edu_grade_full: '',
+                edu_graduation: '',
+                edu_location: '',
+                edu_major: '',
+                edu_start: '',
+                edu_end: '',
+                edu_time: '',
+                edu_type: '',
+                graduation: '',
+                school_name: '',
             });
         },
         removeItem: function(id, index) {
@@ -264,6 +268,56 @@ export default {
             });
 
         },
+        validation: function() {
+            let temp = null;
+            let valid = this.items.some(element => {
+                if ( element.school_name == '' || element.school_name == undefined) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '학교명을 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.school_name.length > 10) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '학교명은 10자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.edu_address == '' || element.edu_address == undefined) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '소재지를 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.edu_address != undefined && element.edu_address.length > 10) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '소재지는 10자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else {
+                    if ( !temp ) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+
+            console.log(valid);
+        },
         saveItems: function() {
             if ( !this.isSubmitable ) {
                 return false;
@@ -271,6 +325,10 @@ export default {
             if ( this.isSubmit ) {
                 return false;
             }
+            // const validate = this.validation();
+            // if ( !validate ) {
+            //     return false;
+            // }
             this.isSubmit = true;
             console.log(this.$store.state);
             let headers = getHeader();

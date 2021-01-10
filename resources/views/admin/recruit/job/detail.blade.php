@@ -365,8 +365,8 @@
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">{{ $job->hobbySpecialty->hobby }}</td>
-                                    <td class="text-center">{{ $job->hobbySpecialty->specialty }}</td>
+                                    <td class="text-center">{{ $job->hobbySpecialty->hobby ?: '' }}</td>
+                                    <td class="text-center">{{ $job->hobbySpecialty->specialty ?: '' }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -381,6 +381,11 @@
                             <table class="table">
                                 <tr>
                                     <td>{!! nl2br(e($job->cover_letter)) !!}</td>
+                                </tr>
+                            </table>
+                            <table class="table">
+                                <tr>
+                                    <td>{!! nl2br(e($job->cover_letter_2)) !!}</td>
                                 </tr>
                             </table>
                         </div>

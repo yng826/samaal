@@ -7,11 +7,11 @@
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <div class="form-group">
                     <label for="school_name">학교명</label>
-                    <input type="text" name="school_name" v-model="item.school_name" placeholder="입력해주세요">
+                    <input type="text" name="school_name" :class="maxLength(item.school_name, 10)" v-model="item.school_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_address">소재지</label>
-                    <input type="text" name="school_address" v-model="item.school_address" placeholder="입력해주세요">
+                    <input type="text" name="school_address" :class="maxLength(item.school_address, 10)" v-model="item.school_address" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_major">계열</label>
@@ -120,10 +120,22 @@ export default {
                     msg: '학교명을 작성해주세요',
                 };
             }
+            if ( this.item.school_name.length > 10 ) {
+                return {
+                    result: false,
+                    msg: '학교명은 10자 이내로 작성해주세요.',
+                };
+            }
             if ( this.item.school_address == '' || this.item.school_address == null ) {
                 return {
                     result: false,
                     msg: '소재지를 작성해주세요',
+                };
+            }
+            if ( this.item.school_address.length > 10 ) {
+                return {
+                    result: false,
+                    msg: '소재지는 10자 이내로 작성해주세요.',
                 };
             }
             if ( this.item.school_major == '' || this.item.school_major == null ) {

@@ -96,7 +96,7 @@ export default {
             if ( !this.isSubmitable ) {
                 return false;
             }
-            if ( this.items.length >= 5 ) {
+            if ( this.items.length >= 2 ) {
                 Swal.fire({
                     title: '추가할 수 없습니다.',
                     icon: 'error',

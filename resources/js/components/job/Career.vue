@@ -1,5 +1,6 @@
 <template>
     <div class="career-container form-container" v-if="isShow">
+        <!-- <p>최대 2개</p> -->
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>경력사항</h3>
@@ -87,7 +88,7 @@ export default {
             if ( !this.isSubmitable ) {
                 return false;
             }
-            if ( this.items.length >= 10 ) {
+            if ( this.items.length >= 2 ) {
                 Swal.fire({
                     title: '추가할 수 없습니다.',
                     icon: 'error',
