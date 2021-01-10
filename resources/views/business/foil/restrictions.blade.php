@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    aluminium Foil for Pharmaceutical Packaging
+    Aluminium Foil for Pharmaceutical Packaging
     <p>
         Special packaging foil that can store pharmaceutical products safely for a long period of time
     </p>

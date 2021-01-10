@@ -1,9 +1,9 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    aluminium-backed Paper for Cigarette Packaging
+    Aluminium-backed Paper for Cigarette Packaging
     <p>
-        aluminium-backed paper for cigarette packaging material which has higher barrierity against moisture and preservation of scent that is still being used since the 1960s
+        Aluminium-backed paper for cigarette packaging material which has higher barrierity against moisture and preservation of scent that is still being used since the 1960s
     </p>
 @endsection
 
