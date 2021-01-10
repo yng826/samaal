@@ -134,24 +134,24 @@ const question = () => {
         var chk = true;
 
         if ($("#title-all").val() == "" || $("#title-all").val() == null) {
-            message = "제목을 입력해주세요.";
+            message = "Please fill out the title field.";
             chk = false;
 
         } else if ($("#category-all").val() == "" || $("#category-all").val() == null) {
-            message = "문의 분류를 선택해주세요.";
+            message = "Please select the category.";
             chk = false;
 
         } else if ($("#email-all-first").val() == "" || $("#email-all-first").val() == null
                     || (($("#email-all-txt").val() == "" || $("#email-all-txt").val() == null) && ($("#email-all-select").val() == "" || $("#email-all-select").val() == null))) {
-            message = "작성자 메일 주소를 입력 및 선택해주세요.";
+            message = "Please fill out the email field.";
             chk = false;
 
         } else if ($("#question-all").val() == "" || $("#question-all").val() == null) {
-            message = "내용을 입력해주세요.";
+            message = "Please fill out the contents field.";
             chk = false;
 
         } else if($("input[name=agree]:checked").length ==0) {
-            message = "개인정보 이용 및 수집을 동의해주세요.";
+            message = "Please check “I consent” to submit your inquiry.";
             chk = false;
         }
 
@@ -161,7 +161,7 @@ const question = () => {
             var inputEmail = $("#email-all-first").val() + '@' + ($("#email-all-select").val()=='direct' ? $("#email-all-txt").val() : $("#email-all-select").val());
 
             if(!regexEmail.test(inputEmail)) {
-                message = "이메일 형식이 올바르지 않습니다";
+                message = "Please enter a valid email address.";
                 chk = false;
             } else {
                 $("#email-all").val(inputEmail);
@@ -171,10 +171,10 @@ const question = () => {
         if ( !chk ) {
 
             Swal.fire({
-                title: '에러입니다!',
+                title: 'Error!',
                 text: message,
                 icon: 'error',
-                confirmButtonText: '확인'
+                confirmButtonText: 'OK'
             });
             return false;
         }
