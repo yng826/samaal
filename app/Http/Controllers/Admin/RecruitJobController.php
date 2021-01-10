@@ -29,19 +29,41 @@ class RecruitJobController extends Controller
      */
     public function index(Request $request, $recruit_id)
     {
-        $recruits = DB::table('recruits')->orderBy('id', 'desc')->get();
-
-        if (empty($recruit_id) || $recruit_id == 0) {
-            $recruit_id = $recruits[0]->id;
-        }
-
-        if (empty($request->status)) {
-            $where = ['recruit_id' => $recruit_id];
+        $recruits = Recruit::orderBy('id', 'desc')->get();
+        if ( $recruit_id ) {
+            $recruit = Recruit::find($recruit_id);
         } else {
-            $where = ['recruit_id' => $recruit_id, 'status' => $request->status];
+            $recruit = Recruit::orderBy('id', 'desc')->first();
+            $recruit_id = $recruit->id;
         }
 
-        $jobs = Job::where($where)->with(['user'])->orderBy('id', 'desc')->paginate(30);
+        $whereIn = [];
+        if (empty($request->status)) {
+            switch ($recruit->recruit_status) {
+                case 'open':
+                    $whereIn[] = 'submit';
+                    break;
+                case 'closed':
+                    $whereIn[] = 'submit';
+                    $whereIn[] = 'pending';
+                    $whereIn[] = 'complete';
+                    break;
+                default:
+                    $whereIn[] = 'submit';
+                    $whereIn[] = 'pending';
+                    $whereIn[] = 'complete';
+                    break;
+            }
+        } else {
+            $whereIn = [$request->status];
+        }
+        // dd($whereIn);
+
+        $jobs = Job::where('recruit_id', '=', $recruit_id)
+            ->whereIn('status', $whereIn)
+            ->with(['user'])
+            ->orderBy('id', 'desc')
+            ->paginate(30);
 
         return view('admin.recruit.job.list', [
             'recruit_id' => $recruit_id,
@@ -82,7 +104,7 @@ class RecruitJobController extends Controller
     public function show($recruit_id, $id)
     {
         $job = Job::where('id', $id)
-                ->with(['recruit', 'user', 'userInfo', 'educations', 'careers', 'military', 'awards', 'certificates', 'languages', 'oas', 'overseasStudys', 'schoolActivities', 'hobbySpecialty'])
+                ->with(['recruit', 'user', 'userInfo', 'highschool', 'educations', 'careers', 'military', 'awards', 'certificates', 'languages', 'oas', 'overseasStudys', 'schoolActivities', 'hobbySpecialty'])
                 ->first();
 
         return view('admin.recruit.job.detail', [

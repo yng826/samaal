@@ -125,6 +125,10 @@ const job_list = () => {
         //체크박스 설정
         set_checkbox();
 
+        // 셀렉트 변경시
+        $('#select_recruit_id').on('change', function(){
+            $('.search-btn').trigger('click');
+        });
         //검색버튼 클릭시
         $('.search-btn').on('click', function() {
             $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+$('select[name=status]').val());

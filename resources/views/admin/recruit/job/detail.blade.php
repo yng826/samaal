@@ -83,32 +83,69 @@
                 <div class="col-12">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">학력사항</h3>
+                            <h3 class="box-title">학력사항 (고등학교)</h3>
                         </div>
                         <div class="box-body">
                             <table class="table">
                                 <tr>
                                     <th class="text-center">학교명</th>
                                     <th class="text-center">전공</th>
+                                    <th class="text-center">소재지</th>
+                                    <th class="text-center">재학기간</th>
+                                    <th class="text-center">졸업구분</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">{{ $job->highschool->school_name }}</td>
+                                    <td class="text-center">{{ $job->highschool->major_ko }}</td>
+                                    <td class="text-center">{{ $job->highschool->school_address }}</td>
+                                    <td class="text-center">{{ $job->highschool->school_start. ' ~ '. $job->highschool->school_end }}</td>
+                                    <td class="text-center">{{ $job->highschool->graduation_ko }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">학력사항 (대학·대학원)</h3>
+                        </div>
+                        <div class="box-body">
+                            <table class="table">
+                                <tr>
+                                    <th class="text-center">구분</th>
+                                    <th class="text-center">학교명</th>
+                                    <th class="text-center">소재지</th>
+                                    <th class="text-center">캠퍼스</th>
+                                    <th class="text-center">주/야간</th>
+                                    <th class="text-center">전공</th>
+                                    <th class="text-center">입학</th>
+                                    <th class="text-center">졸업구분</th>
                                     <th class="text-center">재학기간</th>
                                     <th class="text-center">성적</th>
-                                    <th class="text-center">졸업구분</th>
+                                    <th class="text-center">소재지</th>
                                 </tr>
 
                                 @foreach ($job->educations as $education)
                                 <tr>
+                                    <td class="text-center">{{ $education->edu_type_ko }}</td>
                                     <td class="text-center">{{ $education->school_name }}</td>
+                                    <td class="text-center">{{ $education->edu_address }}</td>
+                                    <td class="text-center">{{ $education->location_ko }}</td>
+                                    <td class="text-center">{{ $education->edu_time_ko }}</td>
                                     <td class="text-center">{{ $education->edu_major }}</td>
+                                    <td class="text-center">{{ $education->entrance_ko }}</td>
+                                    <td class="text-center">{{ $education->graduation_ko }}</td>
                                     <td class="text-center">{{ $education->edu_start. ' ~ '. $education->edu_end }}</td>
                                     <td class="text-center">{{ $education->edu_grade }} / {{ $education->edu_grade_full }}</td>
-                                    <td class="text-center">{{ $education->graduation }}</td>
+                                    <td class="text-center">{{ $education->edu_address }}</td>
                                 </tr>
                                 @endforeach
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">교내활동</h3>
@@ -134,7 +171,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">경력사항</h3>
@@ -168,25 +205,26 @@
                         <div class="box-body">
                             <table class="table">
                                 <tr>
-                                    <th class="text-center">구분/군별</th>
+                                    <th class="text-center">군별/병과</th>
                                     <th class="text-center">제대구분</th>
                                     <th class="text-center">계급</th>
                                     <th class="text-center">면제사유</th>
+                                    <th class="text-center">보훈대상여부</th>
                                     <th class="text-center">복무기간</th>
                                 </tr>
                                 <tr>
                                     <td class="text-center">{{ $job->military->military_type ?? '' }}</td>
-                                    <td class="text-center">{{ $job->military->military_discharge ?? '' }}</td>
+                                    <td class="text-center">{{ $job->military->discharge_ko ?? '' }}</td>
                                     <td class="text-center">{{ $job->military->military_rank ?? '' }}</td>
                                     <td class="text-center">{{ $job->military->military_exemption ?? '' }}</td>
-                                    <td class="text-center">{{ $job->military->military_veterans_affair ?? '' }}</td>
+                                    <td class="text-center">{{ $job->military->affair_ko ?? '' }}</td>
                                     <td class="text-center">{{ empty($job->military) ? '' : $job->military->military_duration_start. ' ~ '. $job->military->military_duration_end }}</td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">PC사용능력</h3>
@@ -201,14 +239,14 @@
                                 @foreach ($job->oas as $oa)
                                 <tr>
                                     <td class="text-center">{{ $oa->oa_name }}</td>
-                                    <td class="text-center">{{ $oa->oa_level }}</td>
+                                    <td class="text-center">{{ $oa->level_ko }}</td>
                                 </tr>
                                 @endforeach
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">외국어</h3>
@@ -219,24 +257,24 @@
                                     <th class="text-center">구분</th>
                                     <th class="text-center">TEST명</th>
                                     <th class="text-center">점수/등급</th>
-                                    <th class="text-center">시행일</th>
+                                    <th class="text-center">인증일</th>
                                     <th class="text-center">회화수준</th>
                                 </tr>
 
                                 @foreach ($job->languages as $language)
                                 <tr>
                                     <td class="text-center">{{ $language->language_type }}</td>
-                                    <td class="text-center">{{ $language->language_grade }}</td>
                                     <td class="text-center">{{ $language->language_name }}</td>
-                                    <td class="text-center">{{ $language->language_start. ' ~ '. $language->language_end }}</td>
-                                    <td class="text-center">{{ $language->language_level }}</td>
+                                    <td class="text-center">{{ $language->language_grade . '/' . $language->language_grade_full }}</td>
+                                    <td class="text-center">{{ $language->language_start }}</td>
+                                    <td class="text-center">{{ $language->level_ko }}</td>
                                 </tr>
                                 @endforeach
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">수상경력</h3>
@@ -260,7 +298,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">자격면허</h3>
@@ -284,7 +322,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">해외연수</h3>
@@ -310,6 +348,26 @@
                                     <td class="text-center">{{ $overseasStudy->overseas_study_contents }}</td>
                                 </tr>
                                 @endforeach
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">취미/특기</h3>
+                        </div>
+                        <div class="box-body">
+                            <table class="table">
+                                <tr>
+                                    <th class="text-center">취미</th>
+                                    <th class="text-center">특기</th>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">{{ $job->hobbySpecialty->hobby }}</td>
+                                    <td class="text-center">{{ $job->hobbySpecialty->specialty }}</td>
+                                </tr>
                             </table>
                         </div>
                     </div>

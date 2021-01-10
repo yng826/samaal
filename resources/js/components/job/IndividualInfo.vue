@@ -172,7 +172,7 @@ export default {
             passwordRules: [
 				{ message:'하나이상의 소문자가 있어야 합니다.', regex:/[a-z]+/ },
 				// { message:"One uppercase letter required.",  regex:/[A-Z]+/ },
-                { message: '특수문자가 포함되어야 합니다.', regex: /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/ },
+                { message: '특수문자가 포함되어야 합니다.', regex: /[-~!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/ },
 				{ message:"최소 8자이상입니다.", regex:/.{8,}/ },
 				{ message:"하나 이상의 숫자가 있어야 합니다.", regex:/[0-9]+/ }
 			],

@@ -81,14 +81,14 @@
                         <div class="form-group">
                             <label>키워드</label>
                             <div class="form-inline">
-                                <input type="text" class="form-control w-50" id="keyword">
+                                <input type="text" class="form-control w-50 mb-1" id="keyword">
                                 <button type="button" class="btn btn-primary text-white keyword-add-btn">추가</button>
                             </div>
 
                             <div id="keyword-div">
                                 @foreach($recruit_keywords as $recruit_keyword)
                                 <div class="form-inline">
-                                    <input type="text" class="form-control w-50" name="keyword[]" value="{{ $recruit_keyword->keyword }}">
+                                    <input type="text" class="form-control w-50 mb-1" name="keyword[]" value="{{ $recruit_keyword->keyword }}">
                                     <button type="button" class="btn btn-danger text-white keyword-del-btn">삭제</button>
                                 </div>
                                 @endforeach

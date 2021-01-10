@@ -22,7 +22,7 @@
                     <div class="form-inline">
                         <div class="form-group">
                             <label class="mr-1">채용공고</label>
-                            <select class="form-control w-auto" name="recruit_id">
+                            <select class="form-control w-auto" name="recruit_id" id="select_recruit_id">
                                 @foreach ($recruits as $recruit)
                                 <option value="{{ $recruit->id }}" {{ $recruit->id == $recruit_id ? 'selected' :''}}>
                                     {{ '['. $recruit->job_type. '/'. ($recruit->career == 'new' ? '신입' : '경력'). '] '. $recruit->title }}
@@ -68,6 +68,9 @@
                             <th class="text-center">등록일</th>
                         </tr>
                         @foreach ($jobs as $job)
+                        @php
+                            debug($job);
+                        @endphp
                         <tr>
                             <td class="text-center">
                                 @if ($job->status != 'saved')
