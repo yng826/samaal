@@ -809,7 +809,7 @@
     }
 
     &__info  {
-        padding-top: 40px;
+        padding-top: 20px;
 
         #email-txt {
             display: none;
@@ -819,7 +819,7 @@
         }
 
         li {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 0;
         }
 
@@ -839,7 +839,7 @@
             color: #000;
             border-radius: 5px;
             border: none;
-            height: 65px;
+            height: 50px;
             font-size: 18px;
             -moz-appearance:none; /* Firefox */
             -webkit-appearance:none; /* Safari and Chrome */
@@ -872,7 +872,7 @@
             font-size: 18px;
 
             &[type=text] {
-                height: 65px;
+                height: 50px;
                 box-sizing: border-box;
             }
 
@@ -994,8 +994,9 @@
             &__select {
                 position: relative;
                 display: inline-block;
-                width: 270px;
                 vertical-align: middle;
+                margin-top: 5px;
+                width: 46%;
 
                 &::after {
                     content: "";
@@ -2290,7 +2291,8 @@
                 }
 
                 &__select {
-                    width: vw(270px);
+                    margin-top: 5px;
+                    width: 46%;
                 }
 
                 &__at {

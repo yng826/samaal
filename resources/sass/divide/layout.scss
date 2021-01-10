@@ -376,7 +376,7 @@
             overflow: hidden;
 
             &:hover {
-                width: 173px;
+                width: 193px;
             }
 
             a {
@@ -385,6 +385,7 @@
                 left: 33px;
                 transform: translateY(-50%);
                 color: #fff;
+                white-space: nowrap;
                 font : {
                     size: 16px;
                     weight: bold;
@@ -1106,7 +1107,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    width: vw(173px);
+                    width: vw(190px);
                 }
 
                 a {

@@ -9,8 +9,8 @@ const question = () => {
 
         $('#email-txt, #email-all-txt').val('').removeClass('show');
         $('.question-pop').on('change', '#email-select, #email-all-select', function(e) {
-            console.log('직접 입력');
-            if ($(this).val() == '직접 입력') {
+            console.log('direct');
+            if ($(this).val() == 'direct') {
                 $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').addClass('show');
                 $('.input-gorup__select').removeClass('show');
             } else {
@@ -57,9 +57,9 @@ const question = () => {
                 .then(res => {
                     console.log(res);
                     Swal.fire({
-                        title: '전송되었습니다!',
+                        title: 'Sended!',
                         icon: 'success',
-                        confirmButtonText: '확인'
+                        confirmButtonText: 'OK'
                     });
                 })
                 .catch(err => {
@@ -105,7 +105,7 @@ const question = () => {
         /* 이메일 체크 */
         if(chk) {
             var regexEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-            var inputEmail = $("#email-first").val() + '@' + ($("#email-select").val()=='직접 입력' ? $("#email-txt").val() : $("#email-select").val());
+            var inputEmail = $("#email-first").val() + '@' + ($("#email-select").val()=='direct' ? $("#email-txt").val() : $("#email-select").val());
 
             if(!regexEmail.test(inputEmail)) {
                 message = "이메일 형식이 올바르지 않습니다";
@@ -158,7 +158,7 @@ const question = () => {
         /* 이메일 체크 */
         if(chk) {
             var regexEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-            var inputEmail = $("#email-all-first").val() + '@' + ($("#email-all-select").val()=='직접 입력' ? $("#email-all-txt").val() : $("#email-all-select").val());
+            var inputEmail = $("#email-all-first").val() + '@' + ($("#email-all-select").val()=='direct' ? $("#email-all-txt").val() : $("#email-all-select").val());
 
             if(!regexEmail.test(inputEmail)) {
                 message = "이메일 형식이 올바르지 않습니다";
