@@ -17,7 +17,7 @@
             <div class="foil-box__half">
                 <div class="foil-box__half--item">
                     <a href="industry/insulation" class="foil-box--item item-insulation">
-                        <p class="foil-box__text">High barrier film for vacuum insulation panel</p>
+                        <p class="foil-box__text">High Barrier Film for Vacuum Insulation Panel</p>
                     </a>
                 </div>
                 <div class="foil-box__half--item">
