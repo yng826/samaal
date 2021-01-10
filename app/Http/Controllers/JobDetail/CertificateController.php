@@ -77,7 +77,7 @@ class CertificateController extends Controller
                                 'job_id' => $id,
                                 'certificate_name' => $certificate['certificate_name'],
                                 'certificate_issuer' => $certificate['certificate_issuer'],
-                                'certificate_date' => date('Y-m-d', strtotime($certificate['certificate_date'])),
+                                'certificate_date' => $certificate['certificate_date'] ? date('Y-m-d', strtotime($certificate['certificate_date'])) : null,
                             ]);
             } else {
                 $affected = DB::table('job_applications_certificate')
@@ -85,7 +85,7 @@ class CertificateController extends Controller
                             ->update([
                                 'certificate_name' => $certificate['certificate_name'],
                                 'certificate_issuer' => $certificate['certificate_issuer'],
-                                'certificate_date' => date('Y-m-d', strtotime($certificate['certificate_date'])),
+                                'certificate_date' => $certificate['certificate_date'] ? date('Y-m-d', strtotime($certificate['certificate_date'])) : null,
                             ]);
             }
         }

@@ -80,8 +80,8 @@ class LanguageController extends Controller
                                 'language_name' => $language['language_name'],
                                 'language_grade' => $language['language_grade'],
                                 'language_grade_full' => $language['language_grade_full'],
-                                'language_start' => date('Y-m-d', strtotime($language['language_start'])),
-                                'language_end' => date('Y-m-d', strtotime($language['language_end'])),
+                                'language_start' => $language['language_start'] ? date('Y-m-d', strtotime($language['language_start'])) : null,
+                                'language_end' => $language['language_end'] ? date('Y-m-d', strtotime($language['language_end'])) : null,
                                 'language_level' => $language['language_level'],
                             ]);
             } else {
@@ -93,8 +93,8 @@ class LanguageController extends Controller
                                 'language_name' => $language['language_name'],
                                 'language_grade' => $language['language_grade'],
                                 'language_grade_full' => $language['language_grade_full'],
-                                'language_start' => date('Y-m-d', strtotime($language['language_start'])),
-                                'language_end' => date('Y-m-d', strtotime($language['language_end'])),
+                                'language_start' => $language['language_start'] ? date('Y-m-d', strtotime($language['language_start'])) : null,
+                                'language_end' => $language['language_end'] ? date('Y-m-d', strtotime($language['language_end'])) : null,
                                 'language_level' => $language['language_level'],
                             ]);
             }

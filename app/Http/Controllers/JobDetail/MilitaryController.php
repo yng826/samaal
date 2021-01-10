@@ -79,8 +79,8 @@ class MilitaryController extends Controller
             $military->military_rank = $request->military['military_rank'];
             $military->military_exemption = $request->military['military_exemption'];
             $military->military_veterans_affair = $request->military['military_veterans_affair'];
-            $military->military_duration_start = date('Y-m-d', strtotime($request->military['military_duration_start']));
-            $military->military_duration_end = date('Y-m-d', strtotime($request->military['military_duration_end']));
+            $military->military_duration_start = $request->military['military_duration_start'] ? date('Y-m-d', strtotime($request->military['military_duration_start'])) : null;
+            $military->military_duration_end = $request->military['military_duration_end'] ? date('Y-m-d', strtotime($request->military['military_duration_end'])) : null;
             $military->save();
             // $affected = DB::table('job_applications_military')
             //             ->insert([
@@ -99,8 +99,8 @@ class MilitaryController extends Controller
             $military->military_rank = $request->military['military_rank'];
             $military->military_exemption = $request->military['military_exemption'];
             $military->military_veterans_affair = $request->military['military_veterans_affair'];
-            $military->military_duration_start = date('Y-m-d', strtotime($request->military['military_duration_start']));
-            $military->military_duration_end = date('Y-m-d', strtotime($request->military['military_duration_end']));
+            $military->military_duration_start = $request->military['military_duration_start'] ? date('Y-m-d', strtotime($request->military['military_duration_start'])) : null;
+            $military->military_duration_end = $request->military['military_duration_end'] ? date('Y-m-d', strtotime($request->military['military_duration_end'])) : null;
             $military->save();
             // $affected = DB::table('job_applications_military')
             //             ->where('id', $request->military['id'])

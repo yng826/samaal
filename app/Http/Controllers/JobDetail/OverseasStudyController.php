@@ -80,8 +80,8 @@ class OverseasStudyController extends Controller
                                 'overseas_study_name' => $oversea['overseas_study_name'],
                                 'overseas_study_purpose' => $oversea['overseas_study_purpose'],
                                 'overseas_study_contents' => $oversea['overseas_study_contents'],
-                                'overseas_study_start' => date('Y-m-d', strtotime($oversea['overseas_study_start'])),
-                                'overseas_study_end' => date('Y-m-d', strtotime($oversea['overseas_study_end'])),
+                                'overseas_study_start' => $oversea['overseas_study_start'] ? date('Y-m-d', strtotime($oversea['overseas_study_start'])) : null,
+                                'overseas_study_end' => $oversea['overseas_study_end'] ? date('Y-m-d', strtotime($oversea['overseas_study_end'])) : null,
                             ]);
             } else {
                 $affected = DB::table('job_applications_overseas_study')
@@ -92,8 +92,8 @@ class OverseasStudyController extends Controller
                                 'overseas_study_name' => $oversea['overseas_study_name'],
                                 'overseas_study_purpose' => $oversea['overseas_study_purpose'],
                                 'overseas_study_contents' => $oversea['overseas_study_contents'],
-                                'overseas_study_start' => date('Y-m-d', strtotime($oversea['overseas_study_start'])),
-                                'overseas_study_end' => date('Y-m-d', strtotime($oversea['overseas_study_end'])),
+                                'overseas_study_start' => $oversea['overseas_study_start'] ? date('Y-m-d', strtotime($oversea['overseas_study_start'])) : null,
+                                'overseas_study_end' => $oversea['overseas_study_end'] ? date('Y-m-d', strtotime($oversea['overseas_study_end'])) : null,
                             ]);
             }
         }

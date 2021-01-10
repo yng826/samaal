@@ -75,8 +75,8 @@ class SchoolActivitiesController extends Controller
                 $affected = DB::table('job_applications_school_activities')
                             ->insert([
                                 'job_id' => $id,
-                                'school_activities_start' => date('Y-m-d', strtotime($activities['school_activities_start'])),
-                                'school_activities_end' => date('Y-m-d', strtotime($activities['school_activities_end'])),
+                                'school_activities_start' => $activities['school_activities_start'] ? date('Y-m-d', strtotime($activities['school_activities_start'])) : null,
+                                'school_activities_end' => $activities['school_activities_end'] ? date('Y-m-d', strtotime($activities['school_activities_end'])) : null,
                                 'school_activities_affiliation' => $activities['school_activities_affiliation'],
                                 'school_activities_role' => $activities['school_activities_role'],
                                 'school_activities_contents' => $activities['school_activities_contents'],
@@ -85,8 +85,8 @@ class SchoolActivitiesController extends Controller
                 $affected = DB::table('job_applications_school_activities')
                             ->where('id', $activities['id'])
                             ->update([
-                                'school_activities_start' => date('Y-m-d', strtotime($activities['school_activities_start'])),
-                                'school_activities_end' => date('Y-m-d', strtotime($activities['school_activities_end'])),
+                                'school_activities_start' => $activities['school_activities_start'] ? date('Y-m-d', strtotime($activities['school_activities_start'])) : null,
+                                'school_activities_end' => $activities['school_activities_end'] ? date('Y-m-d', strtotime($activities['school_activities_end'])) : null,
                                 'school_activities_affiliation' => $activities['school_activities_affiliation'],
                                 'school_activities_role' => $activities['school_activities_role'],
                                 'school_activities_contents' => $activities['school_activities_contents'],
