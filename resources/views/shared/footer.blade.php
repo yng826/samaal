@@ -11,7 +11,7 @@
                     @if(isset($sitemap->children) && count($sitemap->children) > 0)
                         @foreach($sitemap->children as $children)
 
-                            @if ($children->name == '통합 문의')
+                            @if ($children->name == 'General Inquiry')
                                 <li class="question-btn"><a href="javascript:;">{{ $children->name }}</a></li>
                             @else
                                 <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
@@ -47,7 +47,7 @@
             </div>
             <div class="top-btn">TOP</div>
         </div>
-        <p class="copyright">ⓒ 2020 SAMA. ALL RIGHTS RESERVED. DESIGNED BY DOMOBRODEUR</p>
+        <p class="copyright">ⓒ 2021 SAMA. ALL RIGHTS RESERVED.</p>
     </div>
 </footer>
 <!-- 문의하기 팝업 -->
