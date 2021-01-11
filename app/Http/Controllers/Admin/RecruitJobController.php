@@ -393,6 +393,7 @@ class RecruitJobController extends Controller
             $sheet->setCellValue('B'. $rowNum, empty($job->military) ? '' : $job->military->discharge_ko); //구분
             $sheet->setCellValue('C'. $rowNum, empty($job->military) ? '' : $job->military->military_duration_start. ' ~ '. $job->military->military_duration_end); //복무기간
             $sheet->setCellValue('E'. $rowNum, empty($job->military) ? '' : $job->military->military_type); //군별
+            $sheet->setCellValue('G'. $rowNum, empty($job->military) ? '' : $job->military->military_class); //병과
             $sheet->setCellValue('I'. $rowNum, empty($job->military) ? '' : $job->military->military_rank); //계급
             $sheet->setCellValue('K'. $rowNum, empty($job->military) ? '' : $job->military->military_exemption); //면제사유
             $sheet->setCellValue('M'. $rowNum, empty($job->military) ? '' : $job->military->affair_ko); //보훈대상여부
