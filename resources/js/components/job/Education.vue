@@ -4,6 +4,7 @@
         <form v-for="(item, id) in items" :key="id" >
             <div class="form-wrap">
                 <h3>학력사항</h3>
+                <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <div class="form-group">
                     <label for="edu_type">학교구분</label>
                     <div class="input-group">
@@ -14,7 +15,6 @@
                         </div>
                     </div>
                 </div>
-                <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <div class="form-group">
                     <label for="school_name">학교명</label>
                     <input type="text" name="school_name" :class="maxLength(item.school_name, 10)" v-model="item.school_name" placeholder="입력해주세요">

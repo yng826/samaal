@@ -44,17 +44,8 @@ class HighSchool extends Model
             case 'graduation':
                 return '졸업';
                 break;
-            case 'complete':
-                return '수료';
-                break;
-            case 'in_school':
-                return '재학';
-                break;
-            case 'dropout':
-                return '중퇴';
-                break;
-            case 'degree':
-                return '학위취득';
+            case 'qualification':
+                return '검정고시';
                 break;
 
             default:

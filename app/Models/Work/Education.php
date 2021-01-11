@@ -80,12 +80,6 @@ class Education extends Model
             case 'in_school':
                 return '재학';
                 break;
-            case 'dropout':
-                return '중퇴';
-                break;
-            case 'degree':
-                return '학위취득';
-                break;
 
             default:
                 # code...

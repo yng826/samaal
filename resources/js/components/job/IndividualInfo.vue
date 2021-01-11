@@ -119,7 +119,7 @@
                 </label> -->
             </div>
             <div class="button-group" v-if="isOpen">
-                <button v-if="isPossibleSave">저장</button>
+                <button v-if="isPossibleSave" class="btn btn-success btn-save">저장</button>
             </div>
         </form>
         <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
