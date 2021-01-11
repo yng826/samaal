@@ -48,11 +48,17 @@ const common = () => {
             $(".gnb-mask").hide();
         });
 
+        $('.menu__title > a').on('click', function(e) {
+            e.preventDefault();
+        })
+
         $(".header__m-nav--gnb__item").on("click",function(e){
-            if ( $(e.target).prop('tagName') == 'A' ) {
-                setTimeout( function() {
-                    $(".header__m-nav--gnb .close-btn").trigger('click');
-                }, 200);
+            if ( $(this).hasClass('on')) {
+                if ( $(e.target).prop('tagName') == 'A' ) {
+                    setTimeout( function() {
+                        $(".header__m-nav--gnb .close-btn").trigger('click');
+                    }, 200);
+                }
             }
             $(this)
                 .toggleClass("on")
