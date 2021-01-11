@@ -6,7 +6,7 @@
                 <input type="hidden" name="id" v-model="this.job_id">
                 <div class="form-group">
                     <label class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다. </label>
-                    <span>({{ this.item.cover_letter ? this.item.cover_letter.length : 0 }}/5000)</span>
+                    <span>({{ this.item.cover_letter ? this.item.cover_letter.length : 0 }}/7000)</span>
                     <textarea class="" name="cover_letter" id="cover_letter" rows="15" v-model="item.cover_letter" @change="setChanged"></textarea>
                 </div>
             </div>
@@ -73,10 +73,10 @@ export default {
                     msg: '자기소개서를 작성해주세요',
                 };
             }
-            if ( this.item.cover_letter.length > 5000 ) {
+            if ( this.item.cover_letter.length > 7000 ) {
                 return {
                     result: false,
-                    msg: '5000자 이상 작성할 수 없습니다.'
+                    msg: '7000자 이상 작성할 수 없습니다.'
                 }
             }
             return {
