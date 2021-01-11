@@ -1,8 +1,8 @@
 <template>
-    <div class="job-container form-container" v-if="this.$store.state.step == 3">
+    <div class="job-container form-container">
         <form>
             <div class="form-wrap">
-                <h3>자기소개서</h3>
+                <h3>자기소개서 {{ this.$store.state.step }}</h3>
                 <input type="hidden" name="id" v-model="this.job_id">
                 <div class="form-group">
                     <label for="cover_letter" class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다.({{item.cover_letter.length}}/3000)</label>
