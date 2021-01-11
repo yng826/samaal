@@ -30,11 +30,11 @@
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <InputMask type="text" name="birth_day" mask="9999-99-99" v-model="user_info.birth_day" maskChar=" " placeholder="입력해주세요."/>
+                    <InputMask type="text" :disabled="inputMaskEnable" name="birth_day" mask="9999-99-99" v-model="user_info.birth_day" maskChar=" " placeholder="입력해주세요."/>
                 </div>
                 <div class="form-group">
                     <label for="">휴대폰번호</label>
-                    <InputMask name="phone_decrypt" mask="999 9999 9999" v-model="job.phone_decrypt" maskChar=" " placeholder="입력해주세요." />
+                    <InputMask name="phone_decrypt" :disabled="inputMaskEnable" mask="999 9999 9999" v-model="job.phone_decrypt" maskChar=" " placeholder="입력해주세요." />
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
@@ -180,6 +180,9 @@ export default {
     },
     computed: {
         isOpen() { return this.$store.state.recruit_status == 'open' || this.mode =='create' },
+        inputMaskEnable() {
+            return this.user.name == undefined ? 'disabled': false;
+        },
         email() {
             if ( this.mode == 'create' ) {
                 return this.createEmail + '@' + this.emailVendor;
@@ -283,6 +286,7 @@ export default {
                     allowOutsideClick: false
                 }).then(result => {
                     this.$root.$emit('openPopup', 'login');
+                    this.$store.state.step = 0;
                     // alert();
                 });
             }
