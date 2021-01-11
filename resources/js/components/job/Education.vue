@@ -146,10 +146,8 @@ export default {
             graduations: [
                 {value: 'graduation', name: '졸업'},
                 {value: 'prospective', name: '졸업예정'},
+                {value: 'in_school', name: '재학'},
                 {value: 'complete', name: '수료'},
-                {value: 'in_school', name: '재학중'},
-                {value: 'dropout', name: '중퇴'},
-                {value: 'degree', name: '학위취득'},
             ],
             times: [
                 {value: 'day', name: '주간'},

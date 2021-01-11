@@ -74,8 +74,9 @@ class MilitaryController extends Controller
         if (empty($request->military['id'])) {
             $military = new Military();
             $military->job_id = $id;
-            $military->military_type = $request->military['military_type'];
             $military->military_discharge = $request->military['military_discharge'];
+            $military->military_type = $request->military['military_type'];
+            $military->military_class = $request->military['military_class'];
             $military->military_rank = $request->military['military_rank'];
             $military->military_exemption = $request->military['military_exemption'];
             $military->military_veterans_affair = $request->military['military_veterans_affair'];
@@ -94,8 +95,9 @@ class MilitaryController extends Controller
             //             ]);
         } else {
             $military = Military::find($request->military['id']);
-            $military->military_type = $request->military['military_type'];
             $military->military_discharge = $request->military['military_discharge'];
+            $military->military_type = $request->military['military_type'];
+            $military->military_class = $request->military['military_class'];
             $military->military_rank = $request->military['military_rank'];
             $military->military_exemption = $request->military['military_exemption'];
             $military->military_veterans_affair = $request->military['military_veterans_affair'];

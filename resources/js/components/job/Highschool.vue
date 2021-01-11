@@ -99,13 +99,11 @@ export default {
                 {value: 'liberal', name:'문과'},
                 {value: 'special', name:'전문계'},
             ],
+            // 졸업, 졸업예정, 검정고시
             graduations: [
                 {value: 'graduation', name: '졸업'},
                 {value: 'prospective', name: '졸업예정'},
-                {value: 'complete', name: '수료'},
-                {value: 'in_school', name: '재학중'},
-                {value: 'dropout', name: '중퇴'},
-                {value: 'degree', name: '학위취득'},
+                {value: 'qualification', name: '검정고시'},
             ],
         }
     },

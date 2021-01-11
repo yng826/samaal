@@ -15,8 +15,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="military_type">군별/병과</label>
+                    <label for="military_type">군별</label>
                     <input type="text" name="military_type" v-model="item.military_type" placeholder="(예) 육군/해군/공군/해병대 등">
+                </div>
+                <div class="form-group">
+                    <label for="military_class">병과</label>
+                    <input type="text" name="military_class" v-model="item.military_class" placeholder="(예) 보병/포병 등">
                 </div>
                 <div class="form-group">
                     <label for="military_rank">계급</label>
