@@ -1,11 +1,12 @@
 <template>
     <div class="job-container form-container">
+        <h3>test</h3>
         <form>
             <div class="form-wrap">
                 <h3>자기소개서 {{ this.$store.state.step }}</h3>
                 <input type="hidden" name="id" v-model="this.job_id">
                 <div class="form-group">
-                    <label for="cover_letter" class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다.({{item.cover_letter.length}}/3000)</label>
+                    <label for="cover_letter" class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다.({{item.cover_letter.length}}/5000)</label>
                     <textarea class="" name="cover_letter" id="cover_letter" rows="15" v-model="item.cover_letter" @change="setChanged"></textarea>
                 </div>
             </div>
@@ -72,10 +73,10 @@ export default {
                     msg: '자기소개서를 작성해주세요',
                 };
             }
-            if ( this.item.cover_letter.length > 3000 ) {
+            if ( this.item.cover_letter.length > 5000 ) {
                 return {
                     result: false,
-                    msg: '3000자 이상 작성할 수 없습니다.'
+                    msg: '5000자 이상 작성할 수 없습니다.'
                 }
             }
             return {
