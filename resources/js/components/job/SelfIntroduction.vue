@@ -1,12 +1,13 @@
 <template>
-    <div class="job-container form-container">
+    <div class="job-container form-container" v-if="this.$store.state.step == 3">
         <h3>test</h3>
         <form>
             <div class="form-wrap">
-                <h3>자기소개서 {{ this.$store.state.step }}</h3>
+                <h3>자기소개서</h3>
                 <input type="hidden" name="id" v-model="this.job_id">
                 <div class="form-group">
-                    <label for="cover_letter" class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다.({{item.cover_letter.length}}/5000)</label>
+                    <label class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다. </label>
+                    <span>({{ this.item.cover_letter ? this.item.cover_letter.length : 0 }}/5000)</span>
                     <textarea class="" name="cover_letter" id="cover_letter" rows="15" v-model="item.cover_letter" @change="setChanged"></textarea>
                 </div>
             </div>

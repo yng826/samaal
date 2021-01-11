@@ -29,7 +29,7 @@
                     <input type="text" name="name_en" v-model="user_info.name_en" placeholder="입력해주세요." />
                 </div>
                 <div class="form-group">
-                    <label for="">생년월일{{ inputMaskEnable }}</label>
+                    <label for="">생년월일</label>
                     <InputMask type="text" :disabled="inputMaskEnable" name="birth_day" mask="9999-99-99" v-model="user_info.birth_day" maskChar=" " placeholder="입력해주세요."/>
                 </div>
                 <div class="form-group">
