@@ -1,6 +1,5 @@
 <template>
     <div class="job-container form-container" v-if="this.$store.state.step == 3">
-        <h3>test</h3>
         <form>
             <div class="form-wrap">
                 <h3>자기소개서</h3>
