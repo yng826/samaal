@@ -181,10 +181,14 @@ export default {
     computed: {
         isOpen() { return this.$store.state.recruit_status == 'open' || this.mode =='create' },
         inputMaskEnable() {
-            if (this.user.name == undefined || this.user.name == '') {
+            if (this.user.name == undefined) {
                 return true;
             } else {
-                return false;
+                if ( this.user.name == '') {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         },
         email() {
