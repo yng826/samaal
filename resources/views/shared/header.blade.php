@@ -69,7 +69,7 @@
         <div class="header-search__box">
             <form action="/other/search" method="get">
                 <div class="header-search__box--input">
-                    <input type="text" name="keyword" placeholder="검색어를 입력해주세요">
+                    <input type="text" name="keyword" placeholder="">
                     <button type="submit" class="header-search__box--button">검색</button>
                 </div>
             </form>
