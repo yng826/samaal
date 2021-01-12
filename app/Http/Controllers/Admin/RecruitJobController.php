@@ -37,30 +37,25 @@ class RecruitJobController extends Controller
             $recruit_id = $recruit->id;
         }
 
-        $whereIn = [];
+        $whereStatus = [];
         if (empty($request->status)) {
+            $whereStatus = 'submit';
             switch ($recruit->recruit_status) {
-                case 'open':
-                    $whereIn[] = 'submit';
-                    break;
-                case 'closed':
-                    $whereIn[] = 'submit';
-                    $whereIn[] = 'pending';
-                    $whereIn[] = 'complete';
-                    break;
                 default:
-                    $whereIn[] = 'submit';
-                    $whereIn[] = 'pending';
-                    $whereIn[] = 'complete';
                     break;
             }
         } else {
-            $whereIn = [$request->status];
+            $whereStatus = $request->status;
         }
-        // dd($whereIn);
+        // dd($where);
 
+        $pass = $request->pass;
         $jobs = Job::where('recruit_id', '=', $recruit_id)
-            ->whereIn('status', $whereIn)
+            ->where('status', '=', $whereStatus)
+            ->when($pass, function( $query, $pass) {
+                // dd($pass);
+                return $query->where('pass', $pass);
+            })
             ->with(['user'])
             ->orderBy('id', 'desc')
             ->paginate(30);
@@ -68,6 +63,7 @@ class RecruitJobController extends Controller
         return view('admin.recruit.job.list', [
             'recruit_id' => $recruit_id,
             'status' => $request->status,
+            'pass' => $request->pass,
             'recruits' => $recruits,
             'jobs' => $jobs,
         ]);
@@ -136,7 +132,7 @@ class RecruitJobController extends Controller
         $affected = DB::table('job_applications')
                     ->where('id', $id)
                     ->update([
-                        'is_pass'=> $request->is_pass
+                        'pass'=> $request->pass
                     ]);
 
         return redirect("/admin/recruit/{$recruit_id}/job/{$id}");

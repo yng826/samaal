@@ -15,13 +15,11 @@ class Job extends Model
     protected $table = 'job_applications';
 
     // 새 속성
-    protected $appends = ['phone_decrypt', 'status_ko'];
+    protected $appends = ['phone_decrypt', 'status_ko', 'pass_ko'];
     protected $hidden = ['email_encrypt','phone_encrypt'];
     protected $ko_status = [
         'saved' => '저장',
         'submit' => '제출',
-        'pending' => '처리중',
-        'expired' => '종료',
     ];
 
     public function getPhoneDecryptAttribute()
@@ -41,6 +39,17 @@ class Job extends Model
             return $this->ko_status[$this->status];
         } else {
             return '';
+        }
+    }
+
+    public function getPassKOAttribute()
+    {
+        if ( $this->pass == 'pass' ) {
+            return '합격';
+        } else if ( $this->pass == 'failure' ) {
+            return '불합격';
+        } else {
+            return '-';
         }
     }
 
