@@ -370,6 +370,7 @@
         padding: 0 55px 26px 0;
         vertical-align: middle;
         background: url("/images/business/bg_slide.png") no-repeat bottom right / 807px 447px;
+        overflow: hidden;
 
         .slide-img {
             width: 750px;
@@ -378,6 +379,7 @@
             background-repeat: no-repeat;
             background-color: #fff;
             background-position: center;
+            overflow: hidden;
         }
 
         .swiper-container {
