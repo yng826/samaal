@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    Hair Line aluminium Foil
+    Hair Line Aluminium Foil
     <p>
         Sama's unique hair line pattern, utilized on home appliances
     </p>

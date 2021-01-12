@@ -98,7 +98,7 @@
                     <a href="https://www.youtube.com/embed/ew1lzr5qKUg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
-                    <span class="lang-korea">Laminator</span>
+                    <span class="lang-korea">Laminating</span>
                     {{-- <strong class="lang-english">Laminator</strong> --}}
                     <a href="https://www.youtube.com/embed/3t6QU4xq-kc?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
@@ -132,7 +132,7 @@
                     <li class="content-02__process--item item-02">
                         <div class="text-box">
                             <div>
-                                <em>Laminator</em>
+                                <em>Laminating</em>
                             </div>
                         </div>
                     </li>

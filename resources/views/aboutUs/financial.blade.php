@@ -108,7 +108,7 @@
                             @endforeach
                         </tr>
                         <tr>
-                            <td>Profit for the year</td>
+                            <td>Profit for the period</td>
                             @foreach ($net_income as $net_income_text)
                                 <td class="text-center">{{ number_format($net_income_text) }}</td>
                             @endforeach

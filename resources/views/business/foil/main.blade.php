@@ -35,12 +35,12 @@
             <div class="foil-box__block">
                 <div class="foil-box__block--item">
                     <a href="foil/decoration" class="foil-box--item item-decoration">
-                        <p class="foil-box__text">High-gloss aluminium Foil for Decoration</p>
+                        <p class="foil-box__text">High-gloss Aluminium Foil for Decoration</p>
                     </a>
                 </div>
                 <div class="foil-box__block--item">
                     <a href="foil/line" class="foil-box--item item-line">
-                        <p class="foil-box__text">Hair Line aluminium Foil</p>
+                        <p class="foil-box__text">Hair Line Aluminium Foil</p>
                     </a>
                 </div>
             </div>

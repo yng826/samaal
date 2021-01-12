@@ -13,11 +13,11 @@
 @endsection
 
 @section('info__title')
-    Can we make a battery that is <span>lighter and can be applied to various types</span> of automobiles?
+Can we make a battery for automobiles <span>that is lighter and variable in shape</span>?
 @endsection
 
 @section('info__text')
-    In order to localize products that were previously 100% dependent on import from Japan, we developed special aluminum foil used for LIB pouch for the first time in Korea in 2012. Since then we have been contributing to the Korean automotive industry, helping the cars become lighter and more efficient.
+    In order to localize products that were previously 100% dependent on import from Japan, we developed special aluminium foil used for LIB pouch for the first time in Korea in 2012. Since then we have been contributing to the Korean automotive industry, helping the automobiles become lighter and more efficient.
 @endsection
 
 @section('info__value')
