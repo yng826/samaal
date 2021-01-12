@@ -1,5 +1,7 @@
 /* main */
 .main-wrap {
+    margin-top: 90px;
+
     &__section{
         height: 920px;
         display: table;
@@ -283,6 +285,8 @@
     @import "./lib/webvw";
     /* main */
     .main-wrap {
+        margin-top: vw(90px);
+
         &__section{
             height: vw(920px);
             max-width: vw(1900px);
@@ -394,6 +398,8 @@
     @import "./lib/webvw";
      /* main */
      .main-wrap {
+        margin-top: vw(180px);
+
         &__section {
             &--sub-menu {
                 width: vw(300px);
