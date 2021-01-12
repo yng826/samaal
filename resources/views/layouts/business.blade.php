@@ -63,9 +63,9 @@
                             </li>
                             <li>
                                 <h4>E-mail address</h4>
-                                <input type="text" class="form-control input-gorup__item" id="email-first" placeholder=".">
+                                <input type="text" class="form-control input-gorup__item" id="email-first" placeholder="">
                                 <em class="input-gorup__at">@</em>
-                                <input type="text" class="form-control input-gorup__item hidden" id="email-txt" placeholder=".">
+                                <input type="text" class="form-control input-gorup__item hidden" id="email-txt" placeholder="">
                                 <select class="form-control w-auto mr-1 input-gorup__item" id="email-select">
                                     <option value="">::Select::</option>
                                     <option value="naver.com">naver.com</option>
