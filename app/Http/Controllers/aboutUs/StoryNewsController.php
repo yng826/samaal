@@ -16,10 +16,11 @@ class StoryNewsController extends Controller
      */
     public function index()
     {
-        $infos = DB::table('news_infos')->where('use_yn', 'y')->orderBy('id', 'desc')->paginate(6);
+        $perPage = 3;
+        $infos = DB::table('news_infos')->where('use_yn', 'y')->orderBy('id', 'desc')->paginate($perPage);
         $cnt = DB::table('news_infos')->where('use_yn', 'y')->count();
 
-        $cnt = (int)ceil($cnt/6);
+        $cnt = (int)ceil($cnt/$perPage);
 
         return view('aboutUs.story.list', [
             'infos' => $infos,
