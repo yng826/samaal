@@ -13,7 +13,7 @@
             </h3>
             <div class="about-ceo__text">
                 <p>
-                    Thank you for visiting Sama.
+                    Thank you for visiting Sama, this is CEO Ha Sang-yong.
                 </p>
                 <p>
                     In 1969, our company was founded with the ambition to contribute towards Korea’s economy by becoming more self-sufficient in the aluminium foil industry through localization.

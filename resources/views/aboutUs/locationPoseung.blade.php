@@ -57,7 +57,8 @@
                     <dt>FAX</dt><dd>+82-31-683-6125</dd>
                 </div>
                 <div class="about-location__info--map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3187.767473648141!2d126.8478655!3d36.9676099!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b1c0c6f19adb9%3A0x9baa96ab1111469c!2z7IK87JWE7JWM66-464qEKOyjvCkg7Y-s7Iq56rO17J6l!5e0!3m2!1sko!2skr!4v1608298946546!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3187.767473648141!2d126.8478655!3d36.9676099!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b1c0c6f19adb9%3A0x9baa96ab1111469c!2z7IK87JWE7JWM66-464qEKOyjvCkg7Y-s7Iq56rO17J6l!5e0!3m2!1sko!2skr!4v1608298946546!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> --}}
+                    <iframe width="100%" height="100%" frameborder="0" style="border:0"src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJua0ZbwwcezURnEYREauWqps&key=<?php echo env('GOOGLE_MAP_API')?>&language=en&zoom=16" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

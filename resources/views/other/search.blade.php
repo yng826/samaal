@@ -4,7 +4,7 @@
     <main class="search-wrap">
         <div class="contents-wrap__title pd-20">
             <h2 class="about-ir__title">
-                General Search
+                Search
             </h2>
         </div>
         <div class="work-recruit__contents search-wrap__box">
