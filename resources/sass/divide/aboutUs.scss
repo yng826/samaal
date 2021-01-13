@@ -588,6 +588,8 @@
                     font-size: 18px;
                     color: #535353;
                     letter-spacing: -0.7px;
+                    vertical-align: top;
+                    line-height: 2;
                 }
             }
         }
@@ -1146,7 +1148,7 @@
                     }
 
                     dd {
-                        width: vw(280px);
+                        width: vw(270px);
                         font-size: vw(18px);
                     }
                 }
