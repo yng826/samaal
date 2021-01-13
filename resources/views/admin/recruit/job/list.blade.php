@@ -37,8 +37,15 @@
                                 <option value="">::전체::</option>
                                 <option value="saved" {{ $status == 'saved' ? 'selected' :''}}>미제출</option>
                                 <option value="submit" {{ $status == 'submit' ? 'selected' :''}}>제출</option>
-                                <option value="pending" {{ $status == 'pending' ? 'selected' :''}}>처리중</option>
-                                <option value="expired" {{ $status == 'expired' ? 'selected' :''}}>종료</option>
+                            </select>
+                        </div>
+                        <span class="ml-3 mr-3">|</span>
+                        <div class="form-group">
+                            <label class="mr-1">합격여부</label>
+                            <select class="form-control w-auto" name="pass">
+                                <option value="">::전체::</option>
+                                <option value="pass" {{ $pass == 'pass' ? 'selected' :''}}>합격</option>
+                                <option value="failure" {{ $pass == 'failure' ? 'selected' :''}}>불합격</option>
                             </select>
                         </div>
                         <div class="form-group ml-1">
@@ -66,11 +73,9 @@
                             <th class="text-center">상태</th>
                             <th class="text-center">상세</th>
                             <th class="text-center">등록일</th>
+                            <th class="text-center">합격</th>
                         </tr>
                         @foreach ($jobs as $job)
-                        @php
-                            debug($job);
-                        @endphp
                         <tr>
                             <td class="text-center">
                                 @if ($job->status != 'saved')
@@ -84,10 +89,6 @@
                                     미제출
                                 @elseif ($job->status == 'submit')
                                     제출
-                                @elseif ($job->status == 'pending')
-                                    처리중
-                                @elseif ($job->status == 'expired')
-                                    종료
                                 @endif
                             </td>
                             <td class="text-center">
@@ -98,6 +99,7 @@
                                 @endif
                             </td>
                             <td class="text-center">{{ $job->updated_at ?? $job->created_at}}</td>
+                            <td class="text-center">{{ $job->pass_ko }}</td>
                         </tr>
                         @endforeach
                     </table>

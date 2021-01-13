@@ -52,10 +52,10 @@ class Kernel extends ConsoleKernel
             $recruit_ids = $end_recruits->pluck('id');
             if (count($recruit_ids)) {
                 // Log::debug('count:'. count($recruit_ids));
-                DB::table('job_applications')
-                    ->whereIn('recruit_id', $recruit_ids->all())
-                    ->update(['status' => DB::raw("(CASE WHEN status = 'submit' then 'pending'
-                        WHEN status = 'saved' then 'expired' END)")]);
+                // DB::table('job_applications')
+                //     ->whereIn('recruit_id', $recruit_ids->all())
+                //     ->update(['status' => DB::raw("(CASE WHEN status = 'submit' then 'pending'
+                //         WHEN status = 'saved' then 'expired' END)")]);
                 $affected = DB::table('recruits')
                     ->where([
                         ['end_date', '<=', date('Y-m-d')],

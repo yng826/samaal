@@ -23,8 +23,6 @@ class JobController extends Controller
     protected $status = [
         'saved' => '저장',
         'submit' => '제출',
-        'pending' => '검토중',
-        'expired' => '만료',
     ];
     /**
      * Display a listing of the resource.
@@ -284,15 +282,9 @@ class JobController extends Controller
 
         $result = [];
         if ( $job ) {
-            if ( $job->status == 'pending') {
-                $result['result'] = 'fail';
-                $result['msg'] = '제출된 입사지원서를 검토중입니다';
-            } else if ( $job->status == 'submit') {
+            if ( $job->status == 'submit') {
                 $result['result'] = 'fail';
                 $result['msg'] = '이미 제출되었습니다';
-            } else if ( $job->status == 'expired') {
-                $result['result'] = 'fail';
-                $result['msg'] = '기한이 지났습니다';
             } else {
                 $job->status = 'submit';
                 $job->save();

@@ -16,15 +16,15 @@
                 </div>
                 <div class="col-4 col-xl-3">
                     <div class="form-inline">
-                        @if ( $job->status == 'pending' || $job->status == 'submit' )
+                        @if ( $job->status == 'submit' )
                             <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-group form-inline">
-                                    <select class="form-control w-auto mr-1" name="is_pass">
+                                    <select class="form-control w-auto mr-1" name="pass">
                                         <option value="">::합격상태::</option>
-                                        <option value="0" {{ $job->is_pass == '0' ? 'selected' :''}}>불합격</option>
-                                        <option value="1" {{ $job->is_pass == '1' ? 'selected' :''}}>합격</option>
+                                        <option value="pass" {{ $job->pass == 'pass' ? 'selected' :''}}>합격</option>
+                                        <option value="failure" {{ $job->pass == 'failure' ? 'selected' :''}}>불합격</option>
                                     </select>
                                     <button type="button" class="btn btn-primary text-white edit-btn">변경</button>
                                 </div>
@@ -34,6 +34,8 @@
                         @endif
                         <span class="mr-1 ml-1">|</span>
                         <a class="btn btn-info text-white" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/detail-excel-download">EXCEL</a>
+                        <span class="mr-1 ml-2">|</span>
+                        <a class="btn btn-success" href="/admin/recruit/{{ $job->recruit_id }}/job">목록</a>
                     </div>
                 </div>
             </div>
@@ -95,11 +97,11 @@
                                     <th class="text-center">졸업구분</th>
                                 </tr>
                                 <tr>
-                                    <td class="text-center">{{ $job->highschool->school_name }}</td>
-                                    <td class="text-center">{{ $job->highschool->major_ko }}</td>
-                                    <td class="text-center">{{ $job->highschool->school_address }}</td>
-                                    <td class="text-center">{{ $job->highschool->school_start. ' ~ '. $job->highschool->school_end }}</td>
-                                    <td class="text-center">{{ $job->highschool->graduation_ko }}</td>
+                                    <td class="text-center">{{ $job->highschool ? $job->highschool->school_name : '' }}</td>
+                                    <td class="text-center">{{ $job->highschool ? $job->highschool->major_ko : '' }}</td>
+                                    <td class="text-center">{{ $job->highschool ? $job->highschool->school_address : '' }}</td>
+                                    <td class="text-center">{{ $job->highschool ? $job->highschool->school_start. ' ~ '. $job->highschool->school_end : '' }}</td>
+                                    <td class="text-center">{{ $job->highschool ? $job->highschool->graduation_ko : '' }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -213,12 +215,12 @@
                                     <th class="text-center">복무기간</th>
                                 </tr>
                                 <tr>
-                                    <td class="text-center">{{ $job->military->military_type ?? '' }}</td>
-                                    <td class="text-center">{{ $job->military->discharge_ko ?? '' }}</td>
-                                    <td class="text-center">{{ $job->military->military_rank ?? '' }}</td>
-                                    <td class="text-center">{{ $job->military->military_exemption ?? '' }}</td>
-                                    <td class="text-center">{{ $job->military->affair_ko ?? '' }}</td>
-                                    <td class="text-center">{{ empty($job->military) ? '' : $job->military->military_duration_start. ' ~ '. $job->military->military_duration_end }}</td>
+                                    <td class="text-center">{{ $job->military ? $job->military->military_type : '' }}</td>
+                                    <td class="text-center">{{ $job->military ? $job->military->discharge_ko : '' }}</td>
+                                    <td class="text-center">{{ $job->military ? $job->military->military_rank : '' }}</td>
+                                    <td class="text-center">{{ $job->military ? $job->military->military_exemption : '' }}</td>
+                                    <td class="text-center">{{ $job->military ? $job->military->affair_ko : '' }}</td>
+                                    <td class="text-center">{{ $job->military ? $job->military->military_duration_start. ' ~ '. $job->military->military_duration_end : '' }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -365,8 +367,8 @@
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">{{ $job->hobbySpecialty->hobby ?: '' }}</td>
-                                    <td class="text-center">{{ $job->hobbySpecialty->specialty ?: '' }}</td>
+                                    <td class="text-center">{{ $job->hobbySpecialty ? $job->hobbySpecialty->hobby : '' }}</td>
+                                    <td class="text-center">{{ $job->hobbySpecialty ? $job->hobbySpecialty->specialty : '' }}</td>
                                 </tr>
                             </table>
                         </div>

@@ -131,7 +131,9 @@ const job_list = () => {
         });
         //검색버튼 클릭시
         $('.search-btn').on('click', function() {
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+$('select[name=status]').val());
+            let status = $('select[name=status]').val();
+            let pass = $('select[name=pass]').val();
+            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+ status + '&pass=' + pass);
         });
         //전체요약 클릭시
         $('.list-excel-btn').on('click', function() {
@@ -184,15 +186,15 @@ const job_edit = () => {
 
     const event_listener = () => {
         //변경 버튼 클릭시
-        $('.edit-btn').on('click', function() {
-            $('#job-form').submit();
+        $('.edit-btn').on('click', function(e) {
             if (validation()) {
+                $('#job-form').trigger('submit');
             }
         });
     }
 
     const validation = () => {
-        if ($('select[name=is_pass]').val() == '' || $('select[name=is_pass]').val() == null) {
+        if ($('select[name=pass]').val() == '' || $('select[name=pass]').val() == null) {
             alert('처리상태를 선택해주세요.');
             return false;
         }
@@ -212,7 +214,7 @@ const job_sms = () => {
         //변경 버튼 클릭시
         $('.edit-btn').on('click', function() {
             if (validation()) {
-                $('#job-form').submit();
+                $('#job-form').trigger('submit');
             }
         });
     }
