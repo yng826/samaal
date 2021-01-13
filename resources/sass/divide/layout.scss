@@ -599,6 +599,10 @@
         &.active {
             color: #000;
         }
+
+        &.current {
+            color: #040ac7;
+        }
     }
 
     &__button-prev {
