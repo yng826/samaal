@@ -31,43 +31,43 @@
                         </div>
                         <div class="form-group">
                             <label for="">연결_매출액 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="connect_sales" name="connect_sales" value="{{ number_format($info->connect_sales) ?? ''}}">
+                            <input type="text" class="form-control" id="connect_sales" name="connect_sales" value="{{ isset($info) ? number_format($info->connect_sales) : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">연결_영업이익 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="connect_operating_income" name="connect_operating_income" value="{{ number_format($info->connect_operating_income) ?? ''}}">
+                            <input type="text" class="form-control" id="connect_operating_income" name="connect_operating_income" value="{{ isset($info) ? number_format($info->connect_operating_income) : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">연결_당기순이익 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="connect_net_income" name="connect_net_income" value="{{ number_format($info->connect_net_income) ?? ''}}">
+                            <input type="text" class="form-control" id="connect_net_income" name="connect_net_income" value="{{ isset($info) ? number_format($info->connect_net_income) : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">연결_자산 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="connect_assets" name="connect_assets" value="{{ number_format($info->connect_assets) ?? ''}}">
+                            <input type="text" class="form-control" id="connect_assets" name="connect_assets" value="{{ isset($info) ? number_format($info->connect_assets) : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">연결_부채 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="connect_liability" name="connect_liability" value="{{ number_format($info->connect_liability) ?? ''}}">
+                            <input type="text" class="form-control" id="connect_liability" name="connect_liability" value="{{ isset($info) ? number_format($info->connect_liability) : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">별도_매출액 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="separate_sales" name="separate_sales" value="{{ number_format($info->separate_sales) ?? ''}}">
+                            <input type="text" class="form-control" id="separate_sales" name="separate_sales" value="{{ isset($info) ? number_format($info->separate_sales) : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">별도_영업이익 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="separate_operating_income" name="separate_operating_income" value="{{ number_format($info->separate_operating_income) ?? ''}}">
+                            <input type="text" class="form-control" id="separate_operating_income" name="separate_operating_income" value="{{ isset($info) ? number_format($info->separate_operating_income) : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">별도_당기순이익 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="separate_net_income" name="separate_net_income" value="{{ number_format($info->separate_net_income) ?? ''}}">
+                            <input type="text" class="form-control" id="separate_net_income" name="separate_net_income" value="{{ isset($info) ? number_format($info->separate_net_income) : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">별도_자산 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="separate_assets" name="separate_assets" value="{{ number_format($info->separate_assets) ?? ''}}" numberOnly>
+                            <input type="text" class="form-control" id="separate_assets" name="separate_assets" value="{{ isset($info) ? number_format($info->separate_assets) : ''}}" numberOnly>
                         </div>
                         <div class="form-group">
                             <label for="">별도_부채 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
-                            <input type="text" class="form-control" id="separate_liability" name="separate_liability" value="{{ number_format($info->separate_liability) ?? ''}}" numberOnly>
+                            <input type="text" class="form-control" id="separate_liability" name="separate_liability" value="{{ isset($info) ? number_format($info->separate_liability) : ''}}" numberOnly>
                         </div>
                     </div>
                 </div>
