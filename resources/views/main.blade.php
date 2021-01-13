@@ -31,8 +31,8 @@
                 </div>
                 <div class="section main-wrap__section--img">
                     <div class="main-wrap__section--img--wrap">
-                        <div class="rellax section-bg section-bg--left" data-rellax-speed="2"></div>
-                        <div class="rellax section01-img" data-rellax-speed="1"></div>
+                        <div class="rellax test section-bg section-bg--left" data-rellax-speed="2"></div>
+                        <div class="rellax test section01-img" data-rellax-speed="1"></div>
                     </div>
                 </div>
                 <div class="mobile-arrow"></div>
@@ -42,8 +42,8 @@
                 <div class="mobile-mask"></div>
                 <div class="section main-wrap__section--img">
                     <div class="main-wrap__section--img--wrap">
-                        <div class="rellax section-bg section-bg--right" data-rellax-speed="2"></div>
-                        <div class="rellax section02-img" data-rellax-speed="1"></div>
+                        <div class="rellax section-bg section-bg--right" data-rellax-speed="2" data-rellax-percentage="0.5"></div>
+                        <div class="rellax section02-img" data-rellax-speed="1" data-rellax-percentage="0.5"></div>
                     </div>
                 </div>
                 <div class="section-right">
@@ -79,8 +79,8 @@
                 </div>
                 <div class="section main-wrap__section--img">
                     <div class="main-wrap__section--img--wrap">
-                        <div class="rellax section-bg section-bg--left" data-rellax-speed="2"></div>
-                        <div class="rellax section03-img" data-rellax-speed="1"></div>
+                        <div class="rellax section-bg section-bg--left" data-rellax-speed="2" data-rellax-percentage="0.5"></div>
+                        <div class="rellax section03-img" data-rellax-speed="1" data-rellax-percentage="0.5"></div>
                     </div>
                 </div>
                 <div class="mobile-arrow"></div>
@@ -90,8 +90,8 @@
                 <div class="mobile-mask"></div>
                 <div class="section main-wrap__section--img">
                     <div class="main-wrap__section--img--wrap">
-                        <div class="rellax section-bg section-bg--right" data-rellax-speed="2"></div>
-                        <div class="rellax section04-img" data-rellax-speed="1"></div>
+                        <div class="rellax section-bg section-bg--right" data-rellax-speed="2" data-rellax-percentage="0.5"></div>
+                        <div class="rellax section04-img" data-rellax-speed="1" data-rellax-percentage="0.5"></div>
                     </div>
                 </div>
                 <div class="section-right">
