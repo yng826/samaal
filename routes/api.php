@@ -60,8 +60,4 @@ Route::prefix('job-detail')->middleware(['auth:api'])->group(function () {
     Route::resource('hobby_specialty', JobDetail\HobbySpecialtyController::class);
 });
 
-Route::prefix('admin')->middleware('auth:api')->group(function () {
-    Route::get('user', [RecruitController::class, 'api_index' ]);
-});
-
 Route::post('board', [QuestionBoardController::class, 'store'])->middleware(['csrf']);

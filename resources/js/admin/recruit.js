@@ -155,6 +155,28 @@ const job_list = () => {
             });
             $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/'+ids+'/detail-sms');
         });
+
+        $('.btn-delete').on('click', function(e){
+            let valid = confirm('지원내역을 전체 삭제합니다');
+            if ( !valid ) {
+                return false;
+            }
+            let recruit_id = $(this).data('recruit_id');
+            $.ajax({
+                type: "DELETE",
+                url: "/admin/recruit/" + recruit_id + '/job',
+                data: "data",
+                dataType: "json",
+                success: function (response) {
+                    if (response.result == 'success') {
+                        alert('삭제되었습니다');
+                        window.location.reload();
+                    } else {
+                        alert('문제가 발생했습니다.');
+                    }
+                }
+            });
+        });
     }
 
     /* 체크박스 설정 */

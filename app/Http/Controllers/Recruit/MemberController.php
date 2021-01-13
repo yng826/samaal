@@ -35,6 +35,14 @@ class MemberController extends Controller
         $result['result'] = 'fail';
         $result['msg'] = '';
 
+        if ( $email == '' |
+            $password == '' |
+            $name == '' |
+            $phone_decrypt == '' |
+            $birth_day == '' ) {
+                $result['msg'] = '항목이 비었습니다';
+            return $result;
+        }
         // check open
         // Log::debug('check open find:'. $recruit_id );
         $recruit = Recruit::find($recruit_id);

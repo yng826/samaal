@@ -565,9 +565,6 @@ export default {
             if ( this.mode == 'create' ) {
                 formData.set('email', this.user.email);
             }
-            console.log('JOBID::', this.job_id);
-            console.log('RECRUIT ID::', this.recruit_id);
-            console.log('RECRUIT ID::', this.$store.state.job.recruit_id);
 
             if ( typeof this.job_id == 'undefined' || typeof this.job.id == 'undefined' || this.job.id == '') {
                 formData._method = 'POST';
