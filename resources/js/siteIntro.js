@@ -25,7 +25,7 @@ const siteIntro = () => {
                 rellax.refresh();
             } else {
                 rellax = new Rellax('.rellax',{
-                    center:true
+                    center:false
                 });
             }
             if ( !init ) {
