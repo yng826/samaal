@@ -56,7 +56,7 @@
                 </dl>
             </div>
             <div class="about-location__info--map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25332.90705440244!2d126.9688196684631!3d37.46984933381987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca14c88b224c3%3A0x2032a4a0111a3b1b!2z7IK87JWE7JWM66-464qEKOyjvCkg7ISc7Jq47IKs66y07IaM!5e0!3m2!1sko!2skr!4v1608121786605!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJmeg1MFKgfDURx9UdZja_ySg&key=<?php echo env('GOOGLE_MAP_API')?>&language=en&zoom=13" allowfullscreen></iframe>
             </div>
         </div>
     </div>

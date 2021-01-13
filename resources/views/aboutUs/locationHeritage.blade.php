@@ -62,7 +62,8 @@
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dNGEmfJZRHM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="about-location__info--map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25501.794440568043!2d126.85151878551171!3d36.96864074894092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b1c74c82778e9%3A0xaf9602c296d9053f!2z7IK87JWE7JWM66-464qEIO2PrOyKueqzteyepQ!5e0!3m2!1sko!2skr!4v1608121888589!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25501.794440568043!2d126.85151878551171!3d36.96864074894092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b1c74c82778e9%3A0xaf9602c296d9053f!2z7IK87JWE7JWM66-464qEIO2PrOyKueqzteyepQ!5e0!3m2!1sko!2skr!4v1608121888589!5m2!1sko!2skr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> --}}
+                    <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJKxltdgwcezUROY0TAZa1jLw&key=<?php echo env('GOOGLE_MAP_API')?>&language=en&zoom=13" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="about-location__video">
