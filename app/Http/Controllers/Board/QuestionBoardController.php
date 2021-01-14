@@ -52,13 +52,29 @@ class QuestionBoardController extends Controller
                         'created_at' => now()
                     ]);
         $content = [];
-        $content['email'] = 'test001@sama-al.com';
+        if($request->manager) {
+            $content['email'] = $request->manager;
+        } else {
+            switch ($request->category) {
+                case '제품':
+                    $content['email'] = env('QNA_MANAGER_PRODUCT');
+                    break;
+                case '채용':
+                    $content['email'] = env('QNA_MANAGER_RECRUIT');
+                    break;
+                case '기타':
+                    $content['email'] = env('QNA_MANAGER_INFO');
+                    break;
+                default:
+                    $content['email'] = 'webmaster@sama-al.com';
+                    break;
+            }
+        }
         $content['subject'] = "문의메일 - {$request->title}";
         $content['subject'] .= $request->category != $request->title ? " ($request->category)" : "";
         $content['text'] = "<p>$request->question</p>";
         $content['text'] .= "<p>$request->email</p>";
         if ( env('APP_ENV', 'local') == 'production') {
-            # code...
             SmtpEmail::email($content);
         }
         if ($request->expectsJson()) {
