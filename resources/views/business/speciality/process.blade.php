@@ -96,22 +96,22 @@
             </p>
             <ul class="process-layout__list">
                 <li class="process-layout__list--item content-02__list--item">
-                    <span class="lang-korea">인쇄기</span>
+                    <span class="lang-korea">인쇄</span>
                     <strong class="lang-english">Printing</strong>
                     <a href="https://www.youtube.com/embed/ew1lzr5qKUg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
-                    <span class="lang-korea">라미네이터</span>
-                    <strong class="lang-english">Laminator</strong>
+                    <span class="lang-korea">접합</span>
+                    <strong class="lang-english">Laminating</strong>
                     <a href="https://www.youtube.com/embed/3t6QU4xq-kc?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
-                    <span class="lang-korea">분단기</span>
+                    <span class="lang-korea">분단</span>
                     <strong class="lang-english">Slitting</strong>
                     <a href="https://www.youtube.com/embed/olcpsGoGu7c?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
-                    <span class="lang-korea">제대기</span>
+                    <span class="lang-korea">제대</span>
                     <strong class="lang-english">Bag Making</strong>
                     <a href="https://www.youtube.com/embed/FzKbPnwvySs?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
@@ -120,7 +120,7 @@
                 인쇄기, 라미네이터, 제대기를 비롯한 최신의 첨단화된 가공설비를 도입<br>
                 <span>
                     국내 최초로 레토르트 파우치 및 제약용 ALU-ALU Cold Forming Foil, 리필 파우치,<br>
-                    통신 케이블 차폐용 LAP Tape/Steel Tape 등 수많은 제품을 개발
+                    통신 케이블 차폐용 Steel/Aluminium Laminated Tape 등 수많은 제품을 개발
                 </span>
                 초발수 LID 제품, 난연성 및 강도를 보강한<br>
                 복합강화 진공 단열재용 외피재를 국내 최초로 개발
@@ -130,7 +130,7 @@
                     <li class="content-02__process--item item-01">
                         <div class="text-box">
                             <div>
-                                <em>인쇄기</em>
+                                <em>인쇄</em>
                                 <span>Printing</span>
                             </div>
                         </div>
@@ -138,15 +138,15 @@
                     <li class="content-02__process--item item-02">
                         <div class="text-box">
                             <div>
-                                <em>라미네이터</em>
-                                <span>Laminator</span>
+                                <em>접합</em>
+                                <span>Laminating</span>
                             </div>
                         </div>
                     </li>
                     <li class="content-02__process--item item-03">
                         <div class="text-box">
                             <div>
-                                <em>분단기</em>
+                                <em>분단</em>
                                 <span>Slitting</span>
                             </div>
                         </div>
@@ -154,7 +154,7 @@
                     <li class="content-02__process--item item-04">
                         <div class="text-box">
                             <div>
-                                <em>제대기</em>
+                                <em>제대</em>
                                 <span>Bag Making</span>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
             <ul class="process-layout__list">
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">분쇄</span>
-                    <strong class="lang-english">Smash</strong>
+                    <strong class="lang-english">Smashing</strong>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">분급</span>
@@ -179,11 +179,11 @@
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">오일제거</span>
-                    <strong class="lang-english">Filter</strong>
+                    <strong class="lang-english">Filtering</strong>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">혼합</span>
-                    <strong class="lang-english">Mixer</strong>
+                    <strong class="lang-english">Mixing</strong>
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
                     <span class="lang-korea">포장</span>
