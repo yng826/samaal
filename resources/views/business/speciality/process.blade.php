@@ -161,7 +161,7 @@
             </p>
             <ul class="process-layout__list">
                 <li class="process-layout__list--item content-03__list--item">
-                    <span class="lang-korea">Smash</span>
+                    <span class="lang-korea">Smashing</span>
                     {{-- <strong class="lang-english">Smash</strong> --}}
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
@@ -169,11 +169,11 @@
                     {{-- <strong class="lang-english">Classification</strong> --}}
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
-                    <span class="lang-korea">Filter</span>
+                    <span class="lang-korea">Filtering</span>
                     {{-- <strong class="lang-english">Filter</strong> --}}
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
-                    <span class="lang-korea">Mixer</span>
+                    <span class="lang-korea">Mixing</span>
                     {{-- <strong class="lang-english">Mixer</strong> --}}
                 </li>
                 <li class="process-layout__list--item content-03__list--item">
