@@ -43,6 +43,7 @@ const question = () => {
             if ( valid ) {
                 let _form = $(e.target).closest('form');
                 let _data = {};
+                _data.manager = _form.find('[name=manager]').val();
                 _data.title = _form.find('[name=title]').val();
                 _data.category = _form.find('[name=category]').val();
                 _data.email = _form.find('[name=email]').val();

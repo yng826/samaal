@@ -57,6 +57,7 @@
                         <ul>
                             <li>
                                 <h4>Product</h4>
+                                <input type="hidden" class="form-control" name="manager" id="manager" value="{{ $business->email }}">
                                 <input type="hidden" class="form-control" name="title" id="title" value="{{ $question_title }}">
                                 <input type="hidden" class="form-control" name="category" id="category" value="{{ $question_title }}">
                                 <input type="text" class="form-control" id="category1" value="{{ $question_title }}" disabled>
