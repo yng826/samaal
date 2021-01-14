@@ -43,6 +43,11 @@ class AppServiceProvider extends ServiceProvider
                         'url'  => 'admin/user',
                         'icon' => 'fas fa-fw fa-users',
                     ]);
+                    $event->menu->add([
+                        'text' => '제품 관리',
+                        'url'  => 'admin/business',
+                        'icon' => 'fas fa-fw fa-industry',
+                    ]);
                     $event->menu->add('메뉴');
                     $event->menu->add([
                         'text' => '메뉴 관리',

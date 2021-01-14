@@ -15,11 +15,14 @@ use App\Http\Controllers\Board\QuestionBoardController as QuestionBoardControlle
 use App\Http\Controllers\Admin\QuestionAdminController as QuestionAdminController;
 use App\Http\Controllers\Admin\CategoryController as CategoryController;
 use App\Http\Controllers\Admin\UserController as UserController;
+use App\Http\Controllers\Admin\ManagerController as ManagerController;
 use App\Http\Controllers\Faq\FaqController as FaqController;
 use App\Http\Controllers\Other\SearchController as SearchController;
 use App\Http\Controllers\Other\SitemapController as SitemapController;
 use App\Http\Controllers\Iso\IsoCertificationController as IsoCertificationController;
 use App\Http\Controllers\aboutUs\StoryNewsController as StoryNewsController;
+use App\Http\Controllers\Business\FoilController;
+use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\IR\FinanceController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -98,6 +101,30 @@ Route::prefix('business')->group(function() {
     Route::get('industry', function () {
         return view('business.industry.main');
     });
+    // Route::get('{type}/{product}', [BusinessController::class, 'index']);
+    Route::get('foil/capacitor', [BusinessController::class, 'index']);
+    Route::get('foil/foil', [BusinessController::class, 'index']);
+    Route::get('foil/fin', [BusinessController::class, 'index']);
+    Route::get('foil/decoration', [BusinessController::class, 'index']);
+    Route::get('foil/line', [BusinessController::class, 'index']);
+    Route::get('foil/restrictions', [BusinessController::class, 'index']);
+    Route::get('foil/electronic', [BusinessController::class, 'index']);
+    Route::get('foil/car', [BusinessController::class, 'index']);
+    Route::get('foil/external', [BusinessController::class, 'index']);
+    Route::get('foil/tab', [BusinessController::class, 'index']);
+
+    Route::get('package/retort', [BusinessController::class, 'index']);
+    Route::get('package/watertight', [BusinessController::class, 'index']);
+    Route::get('package/alu', [BusinessController::class, 'index']);
+    Route::get('package/cigarette', [BusinessController::class, 'index']);
+    Route::get('package/refill', [BusinessController::class, 'index']);
+
+    Route::get('industry/insulation', [BusinessController::class, 'index']);
+    Route::get('industry/sidemirror', [BusinessController::class, 'index']);
+    Route::get('industry/steel', [BusinessController::class, 'index']);
+    Route::get('industry/paste', [BusinessController::class, 'index']);
+    // Route::get('foil/{type}', [FoilController::class, 'index']);
+/*
     Route::get('foil/capacitor', function () {
         $data = [];
         $data['question_title'] = 'Capacitor용';
@@ -148,6 +175,7 @@ Route::prefix('business')->group(function() {
         $data['question_title'] = 'LIB Tab재';
         return view('business.foil.tab', $data);
     });
+/**
     Route::get('package/retort', function () {
         $data = [];
         $data['question_title'] = '레토르트 포장재';
@@ -193,6 +221,7 @@ Route::prefix('business')->group(function() {
         $data['question_title'] = '알루미늄 페이스트';
         return view('business.industry.paste', $data);
     });
+*/
     Route::get('speciality/process/{type?}', function ($type = 'roll') {
         $data = [];
         $data['question_title'] = '공정과정';
@@ -334,6 +363,7 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
 
     Route::resource('category', Admin\CategoryController::class);
     Route::resource('user', Admin\UserController::class);
+    Route::resource('business', Admin\BusinessController::class);
 });
 
 Route::prefix('admin')->middleware(['auth', 'roles:admin,editor'])->group(function () {
@@ -396,6 +426,7 @@ Route::get('session', function () {
     return Session::get('access_token');
 });
 
+/*
 Route::get('send2', function () {
     $text = "Hello";
     // Create the Transport
@@ -561,3 +592,4 @@ Route::get('sms2', function () {
 
     }
 });
+*/
