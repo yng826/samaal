@@ -24,7 +24,6 @@
                             <th class="text-center">제목</th>
                             <th class="text-center">문의 분류/제품명</th>
                             <th class="text-center">작성자 메일 주소</th>
-                            <th class="text-center">내용</th>
                             <th class="text-center">답글 여부</th>
                             <th class="text-center">등록/수정일</th>
                             <th class="text-center" style="width: 100px;">관리</th>
@@ -36,7 +35,6 @@
                             <td class="text-center">{{ $board->title }}</td>
                             <td class="text-center">{{ $board->category }}</td>
                             <td class="text-center">{{ $board->email }}</td>
-                            <td class="text-center" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{!! $board->question !!}</td>
                             <td class="text-center">{{ $board->state_yn == 'y' ? '답변 완료' :'' }}</td>
                             <td class="text-center">{{ $board->updated_at ?? $board->created_at}}</td>
                             @if ($board->state_yn == 'y')

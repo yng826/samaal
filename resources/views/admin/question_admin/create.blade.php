@@ -23,6 +23,13 @@
             @endisset
             @csrf
             <div class="card-body">
+
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+                @endif
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
@@ -53,6 +60,7 @@
                 <div class="row">
                     <div class="col-12">
                         <button type="button" class="btn btn-primary text-white save-btn">저장</button>
+                        <button type="button" class="btn btn-danger text-white btn-del">삭제</button>
                     </div>
                 </div>
             </div>
@@ -73,6 +81,13 @@
             $('.save-btn').on('click', function() {
                 if (validation()) {
                      $('.news-form').submit();
+                }
+            });
+
+            $('.btn-del').on('click', function(e){
+                if (confirm('삭제하시겠습니까?')) {
+                    $('[name="_method"]').val('DELETE');
+                    $('.news-form').submit();
                 }
             });
         }
