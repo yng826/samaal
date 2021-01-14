@@ -521,6 +521,7 @@
 
     &__info {
         width: 100%;
+        position: relative;
         padding-top: 20px;
         padding-bottom: 20px;
         @extend %clear;
@@ -533,8 +534,10 @@
         }
 
         &--address {
-            float: right;
-            padding-top: 43px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
             padding-left: 45px;
             width: 400px;
             vertical-align: middle;
@@ -1114,7 +1117,7 @@
             }
 
             &--address {
-                padding-top: vw(40px);
+                // padding-top: vw(40px);
                 padding-left: vw(45px);
                 width: vw(400px);
 
@@ -1472,7 +1475,7 @@
             }
 
             &--address  {
-                padding-top: vw(40px);
+                // padding-top: vw(40px);
                 padding-left: vw(45px);
                 width: vw(800px);
 
@@ -1863,7 +1866,9 @@
             }
 
             &--address  {
-                float: initial;
+                position: static;
+                top: 0;
+                transform: translateY(0);
                 display: block;
                 padding: 0;
                 width: 100%;
