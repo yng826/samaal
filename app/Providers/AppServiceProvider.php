@@ -29,6 +29,12 @@ class AppServiceProvider extends ServiceProvider
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
             if (!empty(Auth::user()) && Auth::user()->role != 'user') {
 
+                $event->menu->add([
+                    'text' => '영문 Admin',
+                    'url'  => env('ENG_URL').'/admin',
+                    'icon' => 'fas fa-fw fa-user',
+                ]);
+
                 $event->menu->add('마이페이지');
                 $event->menu->add([
                     'text' => '개인정보 수정',
@@ -114,12 +120,6 @@ class AppServiceProvider extends ServiceProvider
                         'icon' => 'fas fa-fw fa-file-signature',
                     ]);
                 }
-
-                $event->menu->add([
-                    'text' => '영문 Admin',
-                    'url'  => env('ENG_URL').'/admin',
-                    'icon' => 'fas fa-fw fa-user',
-                ]);
             }
         });
     }
