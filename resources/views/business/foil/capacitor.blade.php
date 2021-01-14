@@ -44,5 +44,5 @@ In accordance with customer needs for improving the performance of high- voltage
 @endsection
 
 @section('manager-pop')
-    @include('layouts.managerPop01')
+    @include('layouts.managerPop')
 @endsection

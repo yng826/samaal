@@ -20,6 +20,7 @@ use App\Http\Controllers\Other\SearchController as SearchController;
 use App\Http\Controllers\Other\SitemapController as SitemapController;
 use App\Http\Controllers\Iso\IsoCertificationController as IsoCertificationController;
 use App\Http\Controllers\aboutUs\StoryNewsController as StoryNewsController;
+use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\IR\FinanceController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -98,101 +99,27 @@ Route::prefix('business')->group(function() {
     Route::get('industry', function () {
         return view('business.industry.main');
     });
-    Route::get('foil/capacitor', function () {
-        $data = [];
-        $data['question_title'] = 'Aluminum Foil for Electrical Capacitor';
-        return view('business.foil.capacitor', $data);
-    });
-    Route::get('foil/foil', function () {
-        $data = [];
-        $data['question_title'] = 'Aluminum Foil for Flexible Packaging';
-        return view('business.foil.foil', $data);
-    });
-    Route::get('foil/fin', function () {
-        $data = [];
-        $data['question_title'] = 'Finstock for Heat Exchanger';
-        return view('business.foil.fin', $data);
-    });
-    Route::get('foil/decoration', function () {
-        $data = [];
-        $data['question_title'] = 'High-gloss Aluminum Foil for Decoration';
-        return view('business.foil.decoration', $data);
-    });
-    Route::get('foil/line', function () {
-        $data = [];
-        $data['question_title'] = 'Hair Line Aluminum Foil';
-        return view('business.foil.line', $data);
-    });
-    Route::get('foil/restrictions', function () {
-        $data = [];
-        $data['question_title'] = 'Aluminum Foil for Pharmaceutical Packaging';
-        return view('business.foil.restrictions', $data);
-    });
-    Route::get('foil/electronic', function () {
-        $data = [];
-        $data['question_title'] = 'LIB Cathode Foil for Electronics';
-        return view('business.foil.electronic', $data);
-    });
-    Route::get('foil/car', function () {
-        $data = [];
-        $data['question_title'] = 'LIB Cathode Foil for Automotive';
-        return view('business.foil.car', $data);
-    });
-    Route::get('foil/external', function () {
-        $data = [];
-        $data['question_title'] = 'Aluminium Foil for LIB Pouch';
-        return view('business.foil.external', $data);
-    });
-    Route::get('foil/tab', function () {
-        $data = [];
-        $data['question_title'] = 'LIB Tab';
-        return view('business.foil.tab', $data);
-    });
-    Route::get('package/retort', function () {
-        $data = [];
-        $data['question_title'] = 'Retortable Packaging';
-        return view('business.package.retort', $data);
-    });
-    Route::get('package/watertight', function () {
-        $data = [];
-        $data['question_title'] = 'Water-repellent Lid Film';
-        return view('business.package.watertight', $data);
-    });
-    Route::get('package/alu', function () {
-        $data = [];
-        $data['question_title'] = 'ALU-ALU Cold Forming Foil';
-        return view('business.package.alu', $data);
-    });
-    Route::get('package/cigarette', function () {
-        $data = [];
-        $data['question_title'] = 'Aluminum-backed Paper for Cigarette Packaging';
-        return view('business.package.cigarette', $data);
-    });
-    Route::get('package/refill', function () {
-        $data = [];
-        $data['question_title'] = 'Refill Pouch';
-        return view('business.package.refill', $data);
-    });
-    Route::get('industry/insulation', function () {
-        $data = [];
-        $data['question_title'] = 'High barrier film for vacuum insulation panel';
-        return view('business.industry.insulation', $data);
-    });
-    Route::get('industry/sidemirror', function () {
-        $data = [];
-        $data['question_title'] = 'Laminated Film for Rear View Mirror Heater';
-        return view('business.industry.sidemirror', $data);
-    });
-    Route::get('industry/steel', function () {
-        $data = [];
-        $data['question_title'] = 'Steel/Aluminium Laminated Tape';
-        return view('business.industry.steel', $data);
-    });
-    Route::get('industry/paste', function () {
-        $data = [];
-        $data['question_title'] = 'Aluminium Paste';
-        return view('business.industry.paste', $data);
-    });
+    Route::get('foil/capacitor', [BusinessController::class, 'index']);
+    Route::get('foil/foil', [BusinessController::class, 'index']);
+    Route::get('foil/fin', [BusinessController::class, 'index']);
+    Route::get('foil/decoration', [BusinessController::class, 'index']);
+    Route::get('foil/line', [BusinessController::class, 'index']);
+    Route::get('foil/restrictions', [BusinessController::class, 'index']);
+    Route::get('foil/electronic', [BusinessController::class, 'index']);
+    Route::get('foil/car', [BusinessController::class, 'index']);
+    Route::get('foil/external', [BusinessController::class, 'index']);
+    Route::get('foil/tab', [BusinessController::class, 'index']);
+
+    Route::get('package/retort', [BusinessController::class, 'index']);
+    Route::get('package/watertight', [BusinessController::class, 'index']);
+    Route::get('package/alu', [BusinessController::class, 'index']);
+    Route::get('package/cigarette', [BusinessController::class, 'index']);
+    Route::get('package/refill', [BusinessController::class, 'index']);
+
+    Route::get('industry/insulation', [BusinessController::class, 'index']);
+    Route::get('industry/sidemirror', [BusinessController::class, 'index']);
+    Route::get('industry/steel', [BusinessController::class, 'index']);
+    Route::get('industry/paste', [BusinessController::class, 'index']);
     Route::get('speciality/process/{type?}', function ($type = 'roll') {
         $data = [];
         $data['question_title'] = 'Production Process';
@@ -320,20 +247,11 @@ Route::get('role', function () {
 Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::post('menu/order-update', [AdminMenuController::class, 'orderUpdate']);
     Route::resource('menu', Admin\MenuController::class);
-    Route::get('library', function () {
-        return view('admin.test.library');
-    });
-});
-
-Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::post('sitemap/order-update', [AdminSitemapController::class, 'orderUpdate']);
     Route::resource('sitemap', Admin\SitemapController::class);
-    Route::get('library', function () {
-        return view('admin.test.library');
-    });
-
     Route::resource('category', Admin\CategoryController::class);
     Route::resource('user', Admin\UserController::class);
+    Route::resource('business', Admin\BusinessController::class);
 });
 
 Route::prefix('admin')->middleware(['auth', 'roles:admin,editor'])->group(function () {

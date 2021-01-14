@@ -11,7 +11,7 @@
                     @if(isset($sitemap->children) && count($sitemap->children) > 0)
                         @foreach($sitemap->children as $children)
 
-                            @if ($children->name == 'General Inquiry')
+                            @if ($children->name == 'Inquiry')
                                 <li class="question-btn"><a href="javascript:;">{{ $children->name }}</a></li>
                             @else
                                 <li><a href="{{ $children->url }}">{{ $children->name }}</a></li>
