@@ -77,7 +77,7 @@
                             </li>
                             <li>
                                 <h4>Contents</h4>
-                                <textarea rows="5" class="form-control tinymce-editor" name="question" id="question" placeholder="."></textarea>
+                                <textarea rows="5" class="form-control tinymce-editor" name="question" id="question" placeholder=""></textarea>
                             </li>
                             <li>
                                 <h4>Privacy Policy</h4>
