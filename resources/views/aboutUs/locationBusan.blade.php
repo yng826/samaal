@@ -52,7 +52,7 @@
                 </dl>
             </div>
             <div class="about-location__info--map">
-                <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJrTbs4XrpaDURDkj8HMIGL8E&key=<?php echo env('GOOGLE_MAP_API')?>&language=en" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=삼아알미늄(주)+부산사무소&key=<?php echo env('GOOGLE_MAP_API')?>&language=en" allowfullscreen></iframe>
             </div>
         </div>
     </div>
