@@ -93,7 +93,11 @@
                         <tr class="text-center">
                             <th></th>
                             @foreach ($irs as $key => $item)
-                                <th class="text-center">{{ $item->info_year }} {{ $item->info_quarter ?? ""}}</th>
+                                @if ($item->info_quarter)
+                                <th class="text-center">{{ $item->info_year }}<div>{{$item->info_quarter}}</div></th>
+                                @else
+                                <th class="text-center">{{ $item->info_year }}</th>
+                                @endif
                             @endforeach
                         </tr>
                         <tr>
