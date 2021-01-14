@@ -40,7 +40,7 @@
                             @if ($board->state_yn == 'y')
                                 <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/admin/question_admin/{{$board->id}}">상세보기</a></td>
                             @else
-                                <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/question_admin/{{$board->id}}/edit">답글추가</a></td>
+                                <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/question_admin/{{$board->id}}/edit">관리</a></td>
                             @endif
 
                         </tr>
