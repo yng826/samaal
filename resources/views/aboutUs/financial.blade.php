@@ -92,8 +92,8 @@
                     <table class="table">
                         <tr class="text-center">
                             <th></th>
-                            @foreach ($info_year as $year)
-                                <th class="text-center">{{ $year }}</th>
+                            @foreach ($irs as $key => $item)
+                                <th class="text-center">{{ $item->info_year }} {{ $item->info_quarter ?? ""}}</th>
                             @endforeach
                         </tr>
                         <tr>

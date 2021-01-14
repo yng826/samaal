@@ -20,7 +20,7 @@ class FinanceController extends Controller
         if ($id == 'consolidated') {  // 연결재무제표
 
             $ir = DB::table('finance_infos')
-                   ->select('info_year', 'connect_sales','connect_operating_income', 'connect_net_income', 'connect_assets', 'connect_liability', DB::raw('(connect_sales)+(connect_operating_income)+(connect_net_income)+(connect_assets)+(connect_liability) AS capital'))
+                   ->select('info_year', 'info_quarter', 'connect_sales','connect_operating_income', 'connect_net_income', 'connect_assets', 'connect_liability', DB::raw('(connect_sales)+(connect_operating_income)+(connect_net_income)+(connect_assets)+(connect_liability) AS capital'))
                    ->orderBy('info_year', 'desc')->take(3)->get();
 
             $sortedIR = $ir->sortBy('info_year');
@@ -35,7 +35,7 @@ class FinanceController extends Controller
             $capital = $ir->sortBy('capital')->pluck('capital');
 
             return view('aboutUs.financial', [
-                'irs'=> $ir,
+                'irs'=> $ir->sortBy('info_year'),
                 'info_year'=> $info_year,
                 'sales'=> $sales,
                 'operating_income'=> $operating_income,
@@ -49,7 +49,7 @@ class FinanceController extends Controller
         } else if ($id == 'separate'){ // 별도재무제표
 
             $ir = DB::table('finance_infos')
-                   ->select('info_year', 'separate_sales','separate_operating_income', 'separate_net_income', 'separate_assets', 'separate_liability', DB::raw('(separate_sales)+(separate_operating_income)+(separate_net_income)+(separate_assets)+(separate_liability) AS capital'))
+                   ->select('info_year', 'info_quarter', 'separate_sales','separate_operating_income', 'separate_net_income', 'separate_assets', 'separate_liability', DB::raw('(separate_sales)+(separate_operating_income)+(separate_net_income)+(separate_assets)+(separate_liability) AS capital'))
                    ->orderBy('info_year', 'desc')->take(3)->get();
 
             $sortedIR = $ir->sortBy('info_year');
@@ -64,7 +64,7 @@ class FinanceController extends Controller
             $capital = $ir->sortBy('capital')->pluck('capital');
 
             return view('aboutUs.financial', [
-                'irs'=> $ir,
+                'irs'=> $ir->sortBy('info_year'),
                 'info_year'=> $info_year,
                 'sales'=> $sales,
                 'operating_income'=> $operating_income,

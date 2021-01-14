@@ -49,20 +49,23 @@ class FinanceInfoController extends Controller
     {
         $saved = DB::table('finance_infos')->updateOrInsert(
             ['info_year'=> $request->info_year],
-            ['info_year'=> $request->info_year,
-            'connect_sales'=> $request->connect_sales ?? 0,
-            'connect_operating_income'=> $request->connect_operating_income ?? 0,
-            'connect_net_income'=> $request->connect_net_income ?? 0,
-            'connect_assets'=> $request->connect_assets ?? 0,
-            'connect_liability'=> $request->connect_liability ?? 0,
-            'separate_sales'=> $request->separate_sales ?? 0,
-            'separate_operating_income'=> $request->separate_operating_income ?? 0,
-            'separate_net_income'=> $request->separate_net_income ?? 0,
-            'separate_assets'=> $request->separate_assets ?? 0,
-            'separate_liability'=> $request->separate_liability ?? 0,
-            'created_at' => now()]
+            [
+                'info_year'=> $request->info_year,
+                'info_quarter'=> $request->info_quarter,
+                'connect_sales'=> $request->connect_sales ?? 0,
+                'connect_operating_income'=> $request->connect_operating_income ?? 0,
+                'connect_net_income'=> $request->connect_net_income ?? 0,
+                'connect_assets'=> $request->connect_assets ?? 0,
+                'connect_liability'=> $request->connect_liability ?? 0,
+                'separate_sales'=> $request->separate_sales ?? 0,
+                'separate_operating_income'=> $request->separate_operating_income ?? 0,
+                'separate_net_income'=> $request->separate_net_income ?? 0,
+                'separate_assets'=> $request->separate_assets ?? 0,
+                'separate_liability'=> $request->separate_liability ?? 0,
+                'created_at' => now()
+            ]
         );
-        return redirect('/admin/finance_info');
+        return redirect('/admin/finance_info/'.$request->info_year.'/edit')->with('success','저장에 성공했습니다.');
     }
 
     /**
@@ -109,6 +112,7 @@ class FinanceInfoController extends Controller
         ->where('info_year', $info_year)
         ->update([
             'info_year'=> $request->info_year,
+            'info_quarter'=> $request->info_quarter,
             'connect_sales'=> $request->connect_sales ?? 0,
             'connect_operating_income'=> $request->connect_operating_income ?? 0,
             'connect_net_income'=> $request->connect_net_income ?? 0,
@@ -121,7 +125,7 @@ class FinanceInfoController extends Controller
             'separate_liability'=> $request->separate_liability ?? 0,
             'updated_at' => now()
           ]);
-        return redirect('/admin/finance_info');
+          return redirect('/admin/finance_info/'.$request->info_year.'/edit')->with('success','저장에 성공했습니다.');
     }
 
     /**
