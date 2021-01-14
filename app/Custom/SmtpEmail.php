@@ -2,6 +2,7 @@
 namespace App\Custom;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -26,11 +27,22 @@ class SmtpEmail
             $mail->SMTPAutoTLS = false;
             $mail->Port = $config['port']; //gmail has port > 587 . without double quotes
             $mail->setFrom($config['username']);
-            $mail->addAddress($request['email'], empty($request['name']) ? '' : $request['name']);
+            if ( str_contains($request['email'], ',') ) {
+                $emails = explode(',', $request['email']);
+                foreach ($emails as $key => $item) {
+                    $mail->addAddress($item);
+                }
+            } else {
+                $mail->addAddress($request['email'], empty($request['name']) ? '' : $request['name']);
+            }
             $mail->Subject = $request['subject'];
             $mail->MsgHTML($request['text']);
             $mail->IsHTML(true);
-            $mail->send();
+            if ( env('APP_ENV') == 'production') {
+                $mail->send();
+            } else {
+                Log::debug($request['email']);
+            }
         } catch (Exception $e) {
             dd($e);
         }
