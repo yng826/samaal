@@ -94,7 +94,7 @@
                             <th></th>
                             @foreach ($irs as $key => $item)
                                 @if ($item->info_quarter)
-                                <th class="text-center">{{ $item->info_year }}<div>{{$item->info_quarter}}</div></th>
+                                <th class="text-center">{{ $item->info_year }}<div class="mt-5">{{$item->info_quarter}}</div></th>
                                 @else
                                 <th class="text-center">{{ $item->info_year }}</th>
                                 @endif
