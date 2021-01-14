@@ -1,6 +1,6 @@
 <button class="question-pop__close-btn layer-popup__close-btn" type="button">닫기</button>
 <div class="manager-pop__title">
-    <h3>Representative</h3>
+    <h3>담당자</h3>
 </div>
 
 @php
@@ -8,7 +8,7 @@
 @endphp
 <div class="manager-pop__list">
     <dl>
-        <dt>Representative</dt>
+        <dt>담당자</dt>
         <dd>{{ $business->name }}</dd>
     </dl>
     <dl>

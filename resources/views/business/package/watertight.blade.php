@@ -46,5 +46,5 @@
 @endsection
 
 @section('manager-pop')
-    @include('layouts.managerPop02')
+    @include('layouts.managerPop')
 @endsection
