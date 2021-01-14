@@ -8,6 +8,7 @@
         <meta property="og:description" content="삼아알미늄">
         <meta property="og:id" content="sama">
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="/css/app.css">
         <script src="/js/app.js"></script>
     </head>
