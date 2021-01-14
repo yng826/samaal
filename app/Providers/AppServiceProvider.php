@@ -114,6 +114,12 @@ class AppServiceProvider extends ServiceProvider
                         'icon' => 'fas fa-fw fa-file-signature',
                     ]);
                 }
+
+                $event->menu->add([
+                    'text' => '영문 Admin',
+                    'url'  => env('ENG_URL').'/admin',
+                    'icon' => 'fas fa-fw fa-user',
+                ]);
             }
         });
     }
