@@ -22,12 +22,23 @@
             @endisset
             @csrf
             <div class="card-body">
+
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+                @endif
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">연도</label>
                             <input type="text" class="form-control" name="info_year1" value="{{$info->info_year ?? $new_info_year}}" disabled>
                             <input type="hidden" class="form-control" name="info_year" value="{{$info->info_year ?? $new_info_year}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="">분기</label>
+                            <input type="text" class="form-control" id="info_quarter" name="info_quarter" value="{{ isset($info->info_quarter) ? $info->info_quarter : ''}}">
                         </div>
                         <div class="form-group">
                             <label for="">연결_매출액 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
