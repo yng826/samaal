@@ -349,18 +349,8 @@ Route::get('role', function () {
 Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::post('menu/order-update', [AdminMenuController::class, 'orderUpdate']);
     Route::resource('menu', Admin\MenuController::class);
-    Route::get('library', function () {
-        return view('admin.test.library');
-    });
-});
-
-Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::post('sitemap/order-update', [AdminSitemapController::class, 'orderUpdate']);
     Route::resource('sitemap', Admin\SitemapController::class);
-    Route::get('library', function () {
-        return view('admin.test.library');
-    });
-
     Route::resource('category', Admin\CategoryController::class);
     Route::resource('user', Admin\UserController::class);
     Route::resource('business', Admin\BusinessController::class);
