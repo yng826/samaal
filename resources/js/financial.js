@@ -414,13 +414,13 @@ const financial = () => {
             liability.update();
 
         // 우선 컨텍스트를 가져옵니다.
-        var ctx = document.getElementById("capital").getContext('2d');
-        var capital = new Chart(ctx, {
+        var ctx = document.getElementById("total").getContext('2d');
+        var total = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: info_year,
                 datasets: [{
-                    data: window.capital,
+                    data: window.total,
                     backgroundColor: [
                         'rgba(55, 104, 199, 1)',
                         'rgba(55, 103, 199, 1)',
@@ -490,9 +490,9 @@ const financial = () => {
             }
         });
 
-        var maxValue = Math.max.apply(null, capital.data.datasets.map(function (dataset) { return Math.max.apply(null, dataset.data); }));
-        capital.options.scales.yAxes[0].ticks.suggestedMax = maxValue+50;
-        capital.update();
+        var maxValue = Math.max.apply(null, total.data.datasets.map(function (dataset) { return Math.max.apply(null, dataset.data); }));
+        total.options.scales.yAxes[0].ticks.suggestedMax = maxValue+50;
+        total.update();
     };
 
     init();

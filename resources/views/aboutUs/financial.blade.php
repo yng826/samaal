@@ -83,7 +83,7 @@
                         <h3>Equity</h3>
                         <h6>(Unit: 1 Million KRW)</h6>
                         <div>
-                            <canvas id="capital"></canvas>
+                            <canvas id="total"></canvas>
                         </div>
                     </div>
                 </div>
@@ -132,8 +132,8 @@
                         </tr>
                         <tr>
                             <td>Equity</td>
-                            @foreach ($capital as $capital_text)
-                                <td class="text-center">{{ number_format($capital_text) }}</td>
+                            @foreach ($total as $total_text)
+                                <td class="text-center">{{ number_format($total_text) }}</td>
                             @endforeach
                         </tr>
                     </table>
@@ -150,7 +150,7 @@
             var net_income = @json($net_income);
             var assets = @json($assets);
             var liability = @json($liability);
-            var capital = @json($capital);
+            var total = @json($total);
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>

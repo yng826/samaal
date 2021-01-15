@@ -61,6 +61,10 @@
                             <input type="text" class="form-control" id="connect_liability" name="connect_liability" value="{{ isset($info) ? number_format($info->connect_liability) : ''}}">
                         </div>
                         <div class="form-group">
+                            <label for="">연결_자본총계 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
+                            <input type="text" class="form-control" id="connect_total" name="connect_total" value="{{ isset($info) ? number_format($info->connect_total) : ''}}">
+                        </div>
+                        <div class="form-group">
                             <label for="">별도_매출액 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
                             <input type="text" class="form-control" id="separate_sales" name="separate_sales" value="{{ isset($info) ? number_format($info->separate_sales) : ''}}">
                         </div>
@@ -75,6 +79,10 @@
                         <div class="form-group">
                             <label for="">별도_자산 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
                             <input type="text" class="form-control" id="separate_assets" name="separate_assets" value="{{ isset($info) ? number_format($info->separate_assets) : ''}}" numberOnly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">별도_자본총계 <p style="display: inline-block;font-size: 70%;">(단위: 백만원)</p></label>
+                            <input type="text" class="form-control" id="separate_total" name="separate_total" value="{{ isset($info) ? number_format($info->separate_total) : ''}}">
                         </div>
                     </div>
                 </div>
@@ -113,13 +121,13 @@
         const numeric_chk = () => {
 
             // 숫자만
-            $('#connect_sales, #connect_operating_income, #connect_net_income, #connect_assets, #connect_liability').on('input', function(e){
+            $('#connect_sales, #connect_operating_income, #connect_net_income, #connect_assets, #connect_liability, #connect_total').on('input', function(e){
                 this.value = this.value.replace(/[^0-9]/g, '');
                 this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 this.value = this.value.slice(0, '13');
             });
 
-            $('#separate_sales, #separate_operating_income, #separate_net_income, #separate_assets, #separate_liability').on('input', function(e){
+            $('#separate_sales, #separate_operating_income, #separate_net_income, #separate_assets, #separate_liability, #separate_total').on('input', function(e){
                 this.value = this.value.replace(/[^0-9]/g, '');
                 this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 this.value = this.value.slice(0, '13');
@@ -127,16 +135,25 @@
 
         }
         const validation = () => {
-            $('#connect_sales').val($('#connect_sales').val().replaceAll(',', ''));
-            $('#connect_operating_income').val($('#connect_operating_income').val().replaceAll(',', ''));
-            $('#connect_net_income').val($('#connect_net_income').val().replaceAll(',', ''));
-            $('#connect_assets').val($('#connect_assets').val().replaceAll(',', ''));
-            $('#connect_liability').val($('#connect_liability').val().replaceAll(',', ''));
-            $('#separate_sales').val($('#separate_sales').val().replaceAll(',', ''));
-            $('#separate_operating_income').val($('#separate_operating_income').val().replaceAll(',', ''));
-            $('#separate_net_income').val($('#separate_net_income').val().replaceAll(',', ''));
-            $('#separate_assets').val($('#separate_assets').val().replaceAll(',', ''));
-            $('#separate_liability').val($('#separate_liability').val().replaceAll(',', ''));
+            removeComma('connect_sales');
+            removeComma('connect_operating_income');
+            removeComma('connect_net_income');
+            removeComma('connect_assets');
+            removeComma('connect_liability');
+            removeComma('connect_total');
+            removeComma('separate_sales');
+            removeComma('separate_operating_income');
+            removeComma('separate_net_income');
+            removeComma('separate_assets');
+            removeComma('separate_liability');
+            removeComma('separate_total');
+        }
+
+        const removeComma = function( _id ) {
+            if ( $('#' + _id).val() ) {
+
+                $('#'+ _id).val($('#'+ _id).val().replaceAll(',', ''));
+            }
         }
 
         init();

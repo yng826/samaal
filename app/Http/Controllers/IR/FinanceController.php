@@ -20,7 +20,7 @@ class FinanceController extends Controller
         if ($id == 'consolidated') {  // 연결재무제표
 
             $ir = DB::table('finance_infos')
-                   ->select('info_year', 'info_quarter', 'connect_sales','connect_operating_income', 'connect_net_income', 'connect_assets', 'connect_liability', DB::raw('(connect_sales)+(connect_operating_income)+(connect_net_income)+(connect_assets)+(connect_liability) AS capital'))
+                   ->select('info_year', 'info_quarter', 'connect_sales','connect_operating_income', 'connect_net_income', 'connect_assets', 'connect_liability', 'connect_total')
                    ->orderBy('info_year', 'desc')->take(3)->get();
 
             $sortedIR = $ir->sortBy('info_year');
@@ -29,10 +29,10 @@ class FinanceController extends Controller
             $net_income = $sortedIR->pluck('connect_net_income');
             $assets = $sortedIR->pluck('connect_assets');
             $liability = $sortedIR->pluck('connect_liability');
+            $total = $sortedIR->pluck('connect_total');
 
 
             $info_year = $ir->sortBy('info_year')->pluck('info_year');
-            $capital = $ir->sortBy('capital')->pluck('capital');
 
             return view('aboutUs.financial', [
                 'irs'=> $ir->sortBy('info_year'),
@@ -42,14 +42,14 @@ class FinanceController extends Controller
                 'net_income'=> $net_income,
                 'assets'=> $assets,
                 'liability'=> $liability,
-                'capital'=>$capital,
+                'total'=> $total,
                 'id'=>$id
             ]);
 
         } else if ($id == 'separate'){ // 별도재무제표
 
             $ir = DB::table('finance_infos')
-                   ->select('info_year', 'info_quarter', 'separate_sales','separate_operating_income', 'separate_net_income', 'separate_assets', 'separate_liability', DB::raw('(separate_sales)+(separate_operating_income)+(separate_net_income)+(separate_assets)+(separate_liability) AS capital'))
+                   ->select('info_year', 'info_quarter', 'separate_sales','separate_operating_income', 'separate_net_income', 'separate_assets', 'separate_liability', 'separate_total')
                    ->orderBy('info_year', 'desc')->take(3)->get();
 
             $sortedIR = $ir->sortBy('info_year');
@@ -58,10 +58,11 @@ class FinanceController extends Controller
             $net_income = $sortedIR->pluck('separate_net_income');
             $assets = $sortedIR->pluck('separate_assets');
             $liability = $sortedIR->pluck('separate_liability');
+            $total = $sortedIR->pluck('separate_total');
 
 
             $info_year = $ir->sortBy('info_year')->pluck('info_year');
-            $capital = $ir->sortBy('capital')->pluck('capital');
+            debug($total);
 
             return view('aboutUs.financial', [
                 'irs'=> $ir->sortBy('info_year'),
@@ -71,7 +72,7 @@ class FinanceController extends Controller
                 'net_income'=> $net_income,
                 'assets'=> $assets,
                 'liability'=> $liability,
-                'capital'=>$capital,
+                'total'=> $total,
                 'id'=>$id
             ]);
         } else { // 전자공고
