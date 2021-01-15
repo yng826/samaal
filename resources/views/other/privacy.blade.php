@@ -95,7 +95,7 @@
                         <td>IT Team</td>
                     </tr>
                     <tr>
-                        <td>Hyung-man, Park</td>
+                        <td>Park Hyung-man</td>
                         <td>Name</td>
                         <td>Park Hyung-man</td>
                     </tr>
