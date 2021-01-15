@@ -92,17 +92,17 @@
                     <tr>
                         <td>Manager</td>
                         <td>Department</td>
-                        <td>Information and Computing Team</td>
+                        <td>IT Team</td>
                     </tr>
                     <tr>
                         <td>Hyung-man, Park</td>
                         <td>Name</td>
-                        <td>Hyung-man, Park</td>
+                        <td>Park Hyung-man</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Phone Number</td>
-                        <td><a href="tel:02-3458-0592">02-3458-0592</a></td>
+                        <td><a href="tel:02-3458-0600">02-3458-0600</a></td>
                     </tr>
                     <tr>
                         <td></td>
