@@ -57,11 +57,13 @@ class FinanceInfoController extends Controller
                 'connect_net_income'=> $request->connect_net_income ?? 0,
                 'connect_assets'=> $request->connect_assets ?? 0,
                 'connect_liability'=> $request->connect_liability ?? 0,
+                'connect_total'=> $request->connect_total ?? 0,
                 'separate_sales'=> $request->separate_sales ?? 0,
                 'separate_operating_income'=> $request->separate_operating_income ?? 0,
                 'separate_net_income'=> $request->separate_net_income ?? 0,
                 'separate_assets'=> $request->separate_assets ?? 0,
                 'separate_liability'=> $request->separate_liability ?? 0,
+                'separate_total'=> $request->separate_total ?? 0,
                 'created_at' => now()
             ]
         );
@@ -118,11 +120,13 @@ class FinanceInfoController extends Controller
             'connect_net_income'=> $request->connect_net_income ?? 0,
             'connect_assets'=> $request->connect_assets ?? 0,
             'connect_liability'=> $request->connect_liability ?? 0,
+            'connect_total'=> $request->connect_total ?? 0,
             'separate_sales'=> $request->separate_sales ?? 0,
             'separate_operating_income'=> $request->separate_operating_income ?? 0,
             'separate_net_income'=> $request->separate_net_income ?? 0,
             'separate_assets'=> $request->separate_assets ?? 0,
             'separate_liability'=> $request->separate_liability ?? 0,
+            'separate_total'=> $request->separate_total ?? 0,
             'updated_at' => now()
           ]);
           return redirect('/admin/finance_info/'.$request->info_year.'/edit')->with('success','저장에 성공했습니다.');
