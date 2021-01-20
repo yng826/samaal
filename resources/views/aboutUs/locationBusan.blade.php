@@ -45,10 +45,10 @@
                     </p>
                 </div>
                 <dl class="text-bottom">
-                    <dt>Address</dt><dd>92 Pyeongtaekhang-ro, Poseung-eup, Pyeongtaek-si, Gyeonggi-do, Republic of Korea </dd><br>
+                    <dt>Address</dt><dd>43 Chungjang-daero 9beon-gil, Jung-gu, Busan, Republic of Korea</dd><br>
                     <dt>Postal code</dt><dd>48936</dd><br>
-                    <dt>Tel</dt><dd>051-463-7831</dd><br>
-                    <dt>FAX</dt><dd>051-466-0245</dd>
+                    <dt>Tel</dt><dd>+82-51-463-7831</dd><br>
+                    <dt>FAX</dt><dd>+82-51-466-0245</dd>
                 </dl>
             </div>
             <div class="about-location__info--map">

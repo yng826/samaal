@@ -51,8 +51,8 @@
                 <dl class="text-bottom">
                     <dt>Address</dt><dd>2F, 5 Nambusunhwan-ro 289-gil, Seocho-gu, Seoul, Republic of Korea</dd><br>
                     <dt>Postal code</dt><dd>06699</dd><br>
-                    <dt>Tel</dt><dd>02-3458-0600</dd><br>
-                    <dt>FAX</dt><dd>02-565-0999</dd>
+                    <dt>Tel</dt><dd>+82-2-3458-0600</dd><br>
+                    <dt>FAX</dt><dd>+82-2-565-0999</dd>
                 </dl>
             </div>
             <div class="about-location__info--map">
