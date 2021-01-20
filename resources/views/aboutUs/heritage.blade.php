@@ -73,7 +73,7 @@
 
 @section('script')
     @parent
-    {<script>
+    <script>
         // aboutUs - heritage
        // heritage swiper
        var swiperImg = new Swiper('.about-heritage__slide--img', {
