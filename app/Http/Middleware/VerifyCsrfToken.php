@@ -20,7 +20,10 @@ class VerifyCsrfToken extends Middleware
     public function handle($request, Closure $next)
     {
         $response = $next($request);
-        $response->header('P3P', 'CP="IDC DSP COR ADM DEVi TATi PSA PSD IVAi IVDi CONi HIS OUR IND CNT');
+        if (method_exists($response, 'header')) {
+            # code...
+            $response->header('P3P', 'CP="IDC DSP COR ADM DEVi TATi PSA PSD IVAi IVDi CONi HIS OUR IND CNT');
+        }
         return $response;
     }
 }
