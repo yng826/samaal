@@ -42,7 +42,7 @@
         <tr class="info__table--bottom">
             <td class="border-left-none">20㎛, 28㎛, 30㎛,<br> 45㎛, 50㎛, 60㎛</td>
             <td>
-                A1235, A8021,A8079
+                A1235, A8021, A8079
             </td>
             <td class="border-right-none">
                 PTP,<br> Strip Packaging,<br>ALU-ALU Cold Forming Foil,<br>파스포장재
