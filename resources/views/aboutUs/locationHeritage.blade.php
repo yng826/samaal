@@ -54,8 +54,8 @@
                     </div>
                     <dl class="text-bottom">
                         <dt>Address</dt><dd>92 Pyeongtaekhang-ro, Poseung-eup, Pyeongtaek-si, Gyeonggi-do, Republic of Korea </dd><br>
-                        <dt>Tel</dt><dd>031-467-6800</dd><br>
-                        <dt>FAX</dt><dd>031-683-6125</dd>
+                        <dt>Tel</dt><dd>+82-31-467-6800</dd><br>
+                        <dt>FAX</dt><dd>+82-31-683-6125</dd>
                     </dl>
                 </div>
                 <div class="about-location__video m-video">

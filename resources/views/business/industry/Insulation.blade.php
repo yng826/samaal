@@ -34,7 +34,7 @@
             <th class="border-right-none">Typical Uses</th>
         </tr>
         <tr class="info__table--bottom">
-            <td class="border-left-none">VM-PET LAMINATE FILM</td>
+            <td class="border-left-none">VM-PET LAMINATE FILM,<br>NY/VM-PET/EVOH FILM/PE FILM</td>
             <td class="border-right-none">
                 Household electronics such as refrigerators, construction and vessel insulation
             </td>
