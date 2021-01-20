@@ -457,8 +457,8 @@ const financial = () => {
                               return numberWithCommas(value);
                             },
                             beginAtZero:true,
-                            maxTicksLimit: 6
-                            // suggestedMax: 10
+                            maxTicksLimit: 6,
+                            max: 300000
                           }
                     }],
                     xAxes: [{
