@@ -177,8 +177,8 @@ class FinanceController extends Controller
     {
         $ir_boards = DB::table('ir_boards')->where('id', $request->id)->first();
 
-        $file =  Storage::get($ir_boards->pdf_file_path);
+        $file_path = 'storage/'.$ir_boards->pdf_file_path;
 
-        return response($file, 200, ['Content-Disposition' => "attachment; filename={$ir_boards->pdf_file_name}"]);
+        return response()->download($file_path, $ir_boards->pdf_file_name);
     }
 }
