@@ -25,7 +25,7 @@ Capacitor용 호일의 용량을 더 늘릴 수 있도록<br>
 
 @section('info__value')
     <em>미래가치</em>
-    <p>다국적 전력기업들의<br>판매 확대 가능성 높습니다</p>
+    <p>다국적 전력기업으로<br> 판매 확대가 가능할 것으로 기대됩니다.</p>
 @endsection
 
 @section('info__table')

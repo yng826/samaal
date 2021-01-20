@@ -39,7 +39,7 @@
             <th class="border-right-none">활용 영역</th>
         </tr>
         <tr class="info__table--bottom">
-            <td class="border-left-none">VM-PET LAMINATE FILM</td>
+            <td class="border-left-none">VM-PET LAMINATE FILM,<br>NY/VM-PET/EVOH FILM/PE FILM</td>
             <td class="border-right-none">
                 냉장고 등 가정용전자제품,<br>
                 건축용 및 선박용 단열재
