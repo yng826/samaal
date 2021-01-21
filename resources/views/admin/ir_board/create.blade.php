@@ -89,7 +89,7 @@
     </div>
 </div>
 
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/dooz8iy4tgsa8o5kr7a225fgpo6mjh0z4c7yfty1gsxw4ytp/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 <script>
     const ir_create = () => {
