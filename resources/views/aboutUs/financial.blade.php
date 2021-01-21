@@ -31,42 +31,42 @@
                 <h3>Revenue</h3>
                 <h6>(Unit: 1 Million KRW)</h6>
                 <div>
-                    <canvas id="sales"></canvas>
+                    <canvas id="sales" height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>Operating profit</h3>
                 <h6>(Unit: 1 Million KRW)</h6>
                 <div>
-                    <canvas id="operating_income"></canvas>
+                    <canvas id="operating_income" height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>Profit for the period</h3>
                 <h6>(Unit: 1 Million KRW)</h6>
                 <div>
-                    <canvas id="net_income"></canvas>
+                    <canvas id="net_income" height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>Assets</h3>
                 <h6>(Unit: 1 Million KRW)</h6>
                 <div>
-                    <canvas id="assets"></canvas>
+                    <canvas id="assets" height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>Liabilities</h3>
                 <h6>(Unit: 1 Million KRW)</h6>
                 <div>
-                    <canvas id="liability"></canvas>
+                    <canvas id="liability" height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>Equity</h3>
                 <h6>(Unit: 1 Million KRW)</h6>
                 <div>
-                    <canvas id="total"></canvas>
+                    <canvas id="total" height="264"></canvas>
                 </div>
             </div>
         </div>
