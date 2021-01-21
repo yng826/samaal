@@ -44,6 +44,11 @@
                         </div>
                         <div class="form-group">
                             <label for="">이미지 파일</label>
+                            @if ($info->img_file_name)
+                            <div>
+                                <img src="/storage/{{$info->img_file_path}}" alt="" style="max-height: 200px">
+                            </div>
+                            @endif
                             <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="file">
                             <input type="hidden" name="img_file_name" value="{{$info->img_file_name ?? ''}}">
                             <input type="hidden" name="img_file_path" value="{{$info->img_file_path ?? ''}}">
