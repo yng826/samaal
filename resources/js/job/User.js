@@ -30,7 +30,7 @@ class User {
     }
 
     join(data) {
-        return axios.post('/api/join', {
+        return axios.post('/kor/api/join', {
             'email': data.email,
             'password': data.password,
             'name': data.name,
@@ -52,7 +52,7 @@ class User {
     }
 
     login (data) {
-        return axios.post('/api/login', {
+        return axios.post('/kor/api/login', {
             'email': data.email,
             'password': data.password
         })
@@ -94,7 +94,7 @@ class User {
     }
 
     find (data) {
-        return axios.post('/api/find', {
+        return axios.post('/kor/api/find', {
             'name': data.name,
             'email': data.email,
             'phone': data.phone,

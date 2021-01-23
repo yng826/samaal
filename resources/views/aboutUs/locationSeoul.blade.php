@@ -13,28 +13,28 @@
     <div class="contents-wrap__tab about-location__tab">
         <ul>
             <li class="tab-item on">
-                <a href="/about-us/location/seoul">서울사무소</a>
+                <a href="/kor/about-us/location/seoul">서울사무소</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/poseung">포승공장</a>
+                <a href="/kor/about-us/location/poseung">포승공장</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/heritage">헤리티지존</a>
+                <a href="/kor/about-us/location/heritage">헤리티지존</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/busan">부산사무소</a>
+                <a href="/kor/about-us/location/busan">부산사무소</a>
             </li>
         </ul>
     </div>
     <div class="about-location__contents">
         <div class="swiper-container about-location__swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/about/location/seoul/img_location_01.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/seoul/img_location_02.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/seoul/img_location_03.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/seoul/img_location_04.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/seoul/img_location_05.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/seoul/img_location_06.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/kor/images/about/location/seoul/img_location_01.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/kor/images/about/location/seoul/img_location_02.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/kor/images/about/location/seoul/img_location_03.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/kor/images/about/location/seoul/img_location_04.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/kor/images/about/location/seoul/img_location_05.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/kor/images/about/location/seoul/img_location_06.jpg" alt=""></div>
             </div>
             <div class="swiper-button-next swiper-button"></div>
             <div class="swiper-button-prev swiper-button"></div>

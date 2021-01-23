@@ -40,7 +40,7 @@
                             <td class="text-center">{{ $recruit->end_date }}</td>
                             <td class="text-center">{{ $dt <= $recruit->end_date ? $dt->diffForHumans($recruit->end_date) : '종료' }}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-warning btn-xs" href="/admin/recruit/{{ $recruit->id }}/edit">수정</a>
+                                <a class="btn btn-outline-warning btn-xs" href="/kor/admin/recruit/{{ $recruit->id }}/edit">수정</a>
                             </td>
                         </tr>
                         @endforeach
@@ -58,7 +58,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-12 text-right">
-                    <a class="btn btn-primary text-white" href="/admin/recruit/create">채용 공고 추가</a>
+                    <a class="btn btn-primary text-white" href="/kor/admin/recruit/create">채용 공고 추가</a>
                 </div>
             </div>
         </div>
@@ -67,10 +67,10 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/kor/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/kor/js/admin/manifest.js"></script>
+    <script src="/kor/js/admin/vendor.js"></script>
 @stop

@@ -29,7 +29,7 @@ class NewsInfoController extends Controller
      */
     public function create()
     {
-        $action = '/admin/news_info';
+        $action = '/kor/admin/news_info';
         return view('admin.news_info.create', [
             'action' => $action,
         ]);
@@ -68,7 +68,7 @@ class NewsInfoController extends Controller
             ]);
         }
 
-        return redirect('/admin/news_info');
+        return redirect('/kor/admin/news_info');
 
     }
 
@@ -137,7 +137,7 @@ class NewsInfoController extends Controller
             'use_yn'=> $request->use_yn,
             'updated_at' => now(),
           ]);
-        return redirect('/admin/news_info');
+        return redirect('/kor/admin/news_info');
 
     }
 
@@ -167,6 +167,6 @@ class NewsInfoController extends Controller
         $affected = DB::table('news_infos')
         ->where('id', $id)
         ->delete();
-        return redirect('/admin/news_info');
+        return redirect('/kor/admin/news_info');
     }
 }

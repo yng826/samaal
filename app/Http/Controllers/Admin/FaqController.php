@@ -29,7 +29,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        $action = '/admin/faq';
+        $action = '/kor/admin/faq';
 
         return view('admin.faq.create', [
             'action' => $action,
@@ -52,7 +52,7 @@ class FaqController extends Controller
                         'created_at' => now()
                     ]);
 
-        return redirect('/admin/faq');
+        return redirect('/kor/admin/faq');
     }
 
     /**
@@ -101,7 +101,7 @@ class FaqController extends Controller
                         'updated_at' => now()
                     ]);
 
-        return redirect('/admin/faq');
+        return redirect('/kor/admin/faq');
     }
 
     /**
@@ -114,6 +114,6 @@ class FaqController extends Controller
     {
         $affected = DB::table('faqs')->where('id', $id)->delete();
 
-        return redirect('/admin/faq');
+        return redirect('/kor/admin/faq');
     }
 }

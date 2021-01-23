@@ -31,7 +31,7 @@ class MenuController extends Controller
      */
     public function create(Request $request)
     {
-        $action = '/admin/menu';
+        $action = '/kor/admin/menu';
         return view('admin.menu.create', [
             'parent_id' => $request->parent_id,
             'depth' => $request->depth,
@@ -59,7 +59,7 @@ class MenuController extends Controller
                     'created_at' => now()
                 ]);
 
-        return redirect('/admin/menu');
+        return redirect('/kor/admin/menu');
     }
 
     /**
@@ -111,7 +111,7 @@ class MenuController extends Controller
                         'updated_at' => now(),
                     ]);
 
-        return redirect('/admin/menu');
+        return redirect('/kor/admin/menu');
     }
 
     /**
@@ -134,7 +134,7 @@ class MenuController extends Controller
                             'updated_at' => now(),
                         ]);
         }
-        return redirect('/admin/menu');
+        return redirect('/kor/admin/menu');
     }
 
     /**
@@ -147,7 +147,7 @@ class MenuController extends Controller
     {
         $affected = DB::table('menus')->where('id', $id)->delete();
 
-        return redirect('/admin/menu');
+        return redirect('/kor/admin/menu');
     }
 
     /**

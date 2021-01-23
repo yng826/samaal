@@ -29,7 +29,7 @@ class IrBoardController extends Controller
      */
     public function create()
     {
-        $action = '/admin/ir_board';
+        $action = '/kor/admin/ir_board';
         return view('admin.ir_board.create', [
             'action' => $action,
         ]);
@@ -80,7 +80,7 @@ class IrBoardController extends Controller
             ]);
         }
 
-        return redirect('/admin/ir_board');
+        return redirect('/kor/admin/ir_board');
 
     }
 
@@ -162,7 +162,7 @@ class IrBoardController extends Controller
             'pdf_file_path'=>  $pdf_file_path,
             'updated_at' => now(),
           ]);
-        return redirect("/admin/ir_board/{$id}/edit")->with('success', '저장했습니다');
+        return redirect("/kor/admin/ir_board/{$id}/edit")->with('success', '저장했습니다');
 
     }
 
@@ -193,6 +193,6 @@ class IrBoardController extends Controller
         $affected = DB::table('ir_boards')
         ->where('id', $id)
         ->delete();
-        return redirect('/admin/ir_board');
+        return redirect('/kor/admin/ir_board');
     }
 }

@@ -124,7 +124,7 @@ export default {
                     if ( id ) {
                         let headers = getHeader();
                         let url, method;
-                        url = '/api/job-detail/certificate/' + id;
+                        url = '/kor/api/job-detail/certificate/' + id;
                         method = 'delete';
                         axios({
                             method: method,
@@ -176,7 +176,7 @@ export default {
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
-            url = '/api/job-detail/certificate/' + this.job_id;
+            url = '/kor/api/job-detail/certificate/' + this.job_id;
             method = 'put';
             axios({
                 method: method,

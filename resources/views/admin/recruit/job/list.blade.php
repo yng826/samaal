@@ -99,7 +99,7 @@
                                 @if ($job->status == 'saved')
                                     작성중
                                 @else
-                                    <a class="btn btn-outline-info btn-xs" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}">상세보기</a>
+                                    <a class="btn btn-outline-info btn-xs" href="/kor/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}">상세보기</a>
                                 @endif
                             </td>
                             <td class="text-center">{{ $job->updated_at ?? $job->created_at}}</td>
@@ -125,11 +125,11 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/kor/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
-    <script src="{{ mix('/js/admin/recruit.js') }}"></script>
+    <script src="/kor/js/admin/manifest.js"></script>
+    <script src="/kor/js/admin/vendor.js"></script>
+    <script src="/kor/js/admin/recruit.js"></script>
 @stop

@@ -55,11 +55,11 @@ export default {
                         // if (jobList.indexOf(this.recruit_id) > -1) {
                         //     Swal.fire('기존 작성중 이력서');
                         // }
-                        window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/create';
+                        window.location.href = '/kor/work-with-us/recruit/' + this.recruit_id + '/create';
                     }
                 });
             } else {
-                window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/create';
+                window.location.href = '/kor/work-with-us/recruit/' + this.recruit_id + '/create';
             }
         }
     }

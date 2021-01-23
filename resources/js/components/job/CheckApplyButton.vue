@@ -28,7 +28,7 @@ export default {
             }).then(result => {
                 if (result.isConfirmed) {
                     this.$root.$emit('closePopup');
-                    window.location.href = '/work-with-us/job';
+                    window.location.href = '/kor/work-with-us/job';
                 }
             });
             return false;

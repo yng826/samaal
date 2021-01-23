@@ -88,7 +88,7 @@ export default {
         this.$root.$emit('closePopup');
         },
         gotoJob: function() {
-            window.location.href = '/work-with-us/job/';
+            window.location.href = '/kor/work-with-us/job/';
         },
 
         validation: function() {
@@ -192,7 +192,7 @@ export default {
                     }).then(result => {
                         if (result.isConfirmed) {
                             this.$root.$emit('closePopup');
-                            window.location.href = '/work-with-us/job/' + res.job_id;
+                            window.location.href = '/kor/work-with-us/job/' + res.job_id;
                             // this.gotoJob();
                         }}
                     );

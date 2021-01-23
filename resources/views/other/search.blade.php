@@ -9,7 +9,7 @@
         </div>
         <div class="work-recruit__contents search-wrap__box">
             <div class="work-recruit__search">
-                <form action="/other/search" method="get">
+                <form action="/kor/other/search" method="get">
                     <div class="work-recruit__search--wrap">
                         <input type="text" name="keyword" value="{{ $keyword }}" class="search_keyword">
                         <button type="button" id="search-btn" class="btn-search">검색</button>
@@ -100,5 +100,5 @@
 
 @section('script')
     @parent
-    <script src="{{ asset('js/search.js') }}" defer></script>
+    <script src="/kor/js/search.js" defer></script>
 @endsection

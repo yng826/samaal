@@ -187,7 +187,7 @@ export default {
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
-            url = '/api/job-detail/highschool/' + this.$store.state.job.id;
+            url = '/kor/api/job-detail/highschool/' + this.$store.state.job.id;
             method = 'put';
             axios({
                 method: method,

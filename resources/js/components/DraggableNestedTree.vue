@@ -12,7 +12,7 @@
                 </b>
                 {{node.name}}
                 <a class="btn btn-outline-warning btn-xs" :href="pathname + '/' + node.id + '/edit'">수정</a>
-                <a v-if="(pathname=='/admin/menu'&&node.depth==1)||(pathname=='/admin/sitemap'&&node.depth<3)" class="btn btn-outline-info btn-xs" :href="pathname + '/create?parent_id=' + node.id + '&depth=' + node.depth">하위 추가</a>
+                <a v-if="(pathname=='/kor/admin/menu'&&node.depth==1)||(pathname=='/kor/admin/sitemap'&&node.depth<3)" class="btn btn-outline-info btn-xs" :href="pathname + '/create?parent_id=' + node.id + '&depth=' + node.depth">하위 추가</a>
             </span>
         </Tree>
 

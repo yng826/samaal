@@ -86,7 +86,7 @@ class BusinessController extends Controller
         $business->email = $request->email;
         $save = $business->save();
 
-        return redirect("/admin/business/{$id}/edit")->with('success','저장에 성공했습니다.');
+        return redirect("/kor/admin/business/{$id}/edit")->with('success','저장에 성공했습니다.');
     }
 
     /**

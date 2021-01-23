@@ -15,13 +15,13 @@
         <div class="ir-wrap--tab">
             <ul>
                 <li class="tab-item {{$id =='consolidated' ? 'on': ''}}">
-                    <a href="/about-us/ir/consolidated">연결재무제표</a>
+                    <a href="/kor/about-us/ir/consolidated">연결재무제표</a>
                 </li>
                 <li class="tab-item {{$id =='separate' ? 'on': ''}}">
-                    <a href="/about-us/ir/separate">별도재무제표</a></li>
+                    <a href="/kor/about-us/ir/separate">별도재무제표</a></li>
                 </li>
                 <li class="tab-item {{$id =='board' ? 'on': ''}}">
-                    <a href="/about-us/ir/board">전자공고</a></li>
+                    <a href="/kor/about-us/ir/board">전자공고</a></li>
                 </li>
             </ul>
         </div>
@@ -137,8 +137,8 @@
         var total = @json($total);
     </script>
     @parent
-    {{-- <script src="{{ asset('/js/question.js') }}"></script> --}}
+    {{-- <script src="/kor/js/question.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
-    <script src="{{ mix('/js/financial.js') }}"></script>
+    <script src="/kor/js/financial.js"></script>
 @endsection

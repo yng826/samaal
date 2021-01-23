@@ -46,7 +46,7 @@
                             <label for="">이미지 파일</label>
                             @if ($info->img_file_name)
                             <div>
-                                <img src="/storage/{{$info->img_file_path}}" alt="" style="max-height: 200px">
+                                <img src="/kor/storage/{{$info->img_file_path}}" alt="" style="max-height: 200px">
                             </div>
                             @endif
                             <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="file">
@@ -185,12 +185,12 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/kor/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/kor/js/admin/manifest.js"></script>
+    <script src="/kor/js/admin/vendor.js"></script>
 @stop
 
 

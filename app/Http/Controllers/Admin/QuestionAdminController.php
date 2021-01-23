@@ -111,7 +111,7 @@ class QuestionAdminController extends Controller
         $mail['text'] = $text;
         SmtpEmail::email($mail);
 
-        return redirect('/admin/question_admin');
+        return redirect('/kor/admin/question_admin');
     }
 
     /**
@@ -124,6 +124,6 @@ class QuestionAdminController extends Controller
     {
         DB::table('question_boards')->where('id', '=', $id)->delete();
 
-        return redirect('/admin/question_admin')->with('success','삭제에 성공했습니다.');
+        return redirect('/kor/admin/question_admin')->with('success','삭제에 성공했습니다.');
     }
 }

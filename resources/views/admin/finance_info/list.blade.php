@@ -54,7 +54,7 @@
                             <td class="text-center">{{ number_format($info->separate_assets) }}</td>
                             <td class="text-center">{{ number_format($info->separate_liability) }}</td>
                             <td class="text-center">{{ $info->updated_at ?? $info->created_at}}</td>
-                            <td class="text-center"><a class="btn btn-outline-warning btn-xs" href="/admin/finance_info/{{$info->info_year}}/edit">수정</a></td>
+                            <td class="text-center"><a class="btn btn-outline-warning btn-xs" href="/kor/admin/finance_info/{{$info->info_year}}/edit">수정</a></td>
                         </tr>
                         @endforeach
                     </table>
@@ -71,7 +71,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-12 text-right">
-                    <a class="btn btn-primary text-white" href="/admin/finance_info/create">최신년도 추가</a>
+                    <a class="btn btn-primary text-white" href="/kor/admin/finance_info/create">최신년도 추가</a>
                 </div>
             </div>
         </div>
@@ -80,10 +80,10 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/kor/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/kor/js/admin/manifest.js"></script>
+    <script src="/kor/js/admin/vendor.js"></script>
 @stop

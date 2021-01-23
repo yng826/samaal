@@ -1,6 +1,6 @@
 <template>
     <div class="form-container" title="기본정보" v-if="isShow">
-        <form :action="'/api/job/'+job.id" method="post" id="individualInfoForm" @submit.prevent="setInfo(job)">
+        <form :action="'/kor/api/job/'+job.id" method="post" id="individualInfoForm" @submit.prevent="setInfo(job)">
             <input type="hidden" name="user_id" v-model="user.id"/>
             <input type="hidden" name="recruit_id" v-model="this.recruit_id"/>
             <input type="hidden" name="job_id" v-model="job.id"/>
@@ -219,7 +219,7 @@ export default {
                 }
                 if ( this.$store.state.job.file_path ) {
                     return {
-                        'backgroundImage': 'url(/storage/'+ this.$store.state.job.file_path +')',
+                        'backgroundImage': 'url(/kor/storage/'+ this.$store.state.job.file_path +')',
                     };
                 } else {
                 return {
@@ -273,7 +273,7 @@ export default {
                     confirmButtonText: '확인',
                     allowOutsideClick: false
                 }).then(result => {
-                    window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit';
+                    window.location.href = '/kor/work-with-us/recruit/' + this.recruit_id + '/edit';
                 });
             } else {
                 let user = getUser();
@@ -351,7 +351,7 @@ export default {
         },
         getInfo: function() {
             this.isSubmit = true;
-            axios.get('/api/work-with-us/recruit/'+ this.recruit_id,{
+            axios.get('/kor/api/work-with-us/recruit/'+ this.recruit_id,{
                 'headers': getHeader()
             })
             .then(res => {
@@ -405,9 +405,9 @@ export default {
                         if (result.isConfirmed) {
                             this.$root.$emit('closePopup');
                             if ( this.isAuth) {
-                                // window.location.href = '/work-with-us/job/';
+                                // window.location.href = '/kor/work-with-us/job/';
                             } else {
-                                // window.location.href = '/work-with-us/recruit/';
+                                // window.location.href = '/kor/work-with-us/recruit/';
                             }
                         }
                     });
@@ -569,13 +569,13 @@ export default {
             if ( typeof this.job_id == 'undefined' || typeof this.job.id == 'undefined' || this.job.id == '') {
                 formData._method = 'POST';
                 if ( !this.isAuth ) {
-                    url = '/api/join';
+                    url = '/kor/api/join';
                 } else {
-                    url = '/api/work-with-us/job'
+                    url = '/kor/api/work-with-us/job'
                 }
             } else {
                 formData._method = 'PUT';
-                url = '/api/work-with-us/job/'+ this.job_id + '?_method=PUT';
+                url = '/kor/api/work-with-us/job/'+ this.job_id + '?_method=PUT';
             }
 
             axios({
@@ -605,7 +605,7 @@ export default {
                         console.log(res.data.type == 'join');
                         if (result.isConfirmed ) {
                             if ( this.mode == 'create' ) {
-                                window.location.href = '/work-with-us/recruit/' + this.recruit_id + '/edit'
+                                window.location.href = '/kor/work-with-us/recruit/' + this.recruit_id + '/edit'
                             }
                         }
                     });

@@ -13,7 +13,7 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>{{ config('app.name', '삼아알미늄') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/kor/css/app.css" rel="stylesheet">
 </head>
 <body class={{ $bodyClass ?? '' }}>
     <div id="app">
@@ -25,30 +25,30 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <h2>알루미늄 호일</h2>
-                            <a href="/business/foil" class="slide-info__link">더 알아보기</a>
+                            <a href="/kor/business/foil" class="slide-info__link">더 알아보기</a>
                         </div>
                         <div class="swiper-slide">
                             <h2>포장재</h2>
-                            <a href="/business/package" class="slide-info__link">더 알아보기</a>
+                            <a href="/kor/business/package" class="slide-info__link">더 알아보기</a>
                         </div>
                         <div class="swiper-slide">
                             <h2>산업/건축용</h2>
-                            <a href="/business/industry" class="slide-info__link">더 알아보기</a>
+                            <a href="/kor/business/industry" class="slide-info__link">더 알아보기</a>
                         </div>
                         <div class="swiper-slide">
                             <h2>Speciality</h2>
-                            <a href="/business/speciality/process" class="slide-info__link">더 알아보기</a>
+                            <a href="/kor/business/speciality/process" class="slide-info__link">더 알아보기</a>
                         </div>
                         <div class="swiper-slide">
                             <h2>Innovation</h2>
-                            <a href="/business/innovation/rnd" class="slide-info__link">더 알아보기</a>
+                            <a href="/kor/business/innovation/rnd" class="slide-info__link">더 알아보기</a>
                             {{-- <a href="#" class="slide-info__link innovation-btn">더 알아보기</a>
                             <ul class="innovation-btn__box">
                                 <li>
-                                    <a href="/business/innovation/rnd">R&D</a>
+                                    <a href="/kor/business/innovation/rnd">R&D</a>
                                 </li>
                                 <li>
-                                    <a href="/business/innovation/iso_certification">인증현황</a>
+                                    <a href="/kor/business/innovation/iso_certification">인증현황</a>
                                 </li>
                             </ul> --}}
                         </div>
@@ -57,11 +57,11 @@
 
                 <div class="swiper-container business-intro__slide-img">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_01.jpg')no-repeat center / cover"></div></div>
-                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_02.jpg')no-repeat center / cover"></div></div>
-                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_03.jpg')no-repeat center / cover"></div></div>
-                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_04.jpg')no-repeat center / cover"></div></div>
-                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/images/business/intro/img_foil_05.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/kor/images/business/intro/img_foil_01.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/kor/images/business/intro/img_foil_02.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/kor/images/business/intro/img_foil_03.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/kor/images/business/intro/img_foil_04.jpg')no-repeat center / cover"></div></div>
+                      <div class="swiper-slide"><div class="business-intro__slide-img--item" style="background:url('/kor/images/business/intro/img_foil_05.jpg')no-repeat center / cover"></div></div>
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
@@ -77,7 +77,7 @@
                             알루미늄 호일
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="/business/foil">더 알아보기</a>
+                            <a href="/kor/business/foil">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -89,7 +89,7 @@
                             포장재
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="/business/package">더 알아보기</a>
+                            <a href="/kor/business/package">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -101,7 +101,7 @@
                             산업/건축용
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="/business/industry">더 알아보기</a>
+                            <a href="/kor/business/industry">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -113,7 +113,7 @@
                             Speciality
                         </h2>
                         <div class="mobiel-wrap__section--button">
-                            <a href="/business/speciality/process">더 알아보기</a>
+                            <a href="/kor/business/speciality/process">더 알아보기</a>
                         </div>
                     </div>
                     <div class="mobile-arrow"></div>
@@ -126,17 +126,17 @@
                             Innovation
                          </h2>
                          <div class="mobiel-wrap__section--button">
-                            <a href="/business/innovation/rnd">더 알아보기</a>
+                            <a href="/kor/business/innovation/rnd">더 알아보기</a>
                         </div>
                          {{-- <div class="mobiel-wrap__section--button sub-menu__button innovation-btn">
                             <button type="button">더 알아보기</button>
                          </div>
                          <ul class="innovation-btn__box">
                             <li>
-                                <a href="/business/innovation/rnd">R&D</a>
+                                <a href="/kor/business/innovation/rnd">R&D</a>
                             </li>
                             <li>
-                                <a href="/business/innovation/iso_certification">인증현황</a>
+                                <a href="/kor/business/innovation/iso_certification">인증현황</a>
                             </li>
                         </ul> --}}
                     </div>
@@ -151,11 +151,11 @@
     </div>
     @section('script')
     <!-- Scripts -->
-    <script src="{{ mix('js/manifest.js') }}"></script>
-    <script src="{{ mix('js/vendor.js') }}"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ mix('js/question.js')}}"></script>
-    <script src="{{ asset('/js/siteIntro.js') }}"></script>
+    <script src="/kor/js/manifest.js"></script>
+    <script src="/kor/js/vendor.js"></script>
+    <script src="/kor/js/app.js"></script>
+    <script src="/kor/js/question.js"></script>
+    <script src="/kor/js/siteIntro.js"></script>
     <script>
         var galleryThumbs = new Swiper('.business-intro__slide-info', {
             slidesPerView: 1,

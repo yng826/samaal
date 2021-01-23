@@ -13,7 +13,7 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>{{ config('app.name', '삼아알미늄') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/kor/css/app.css" rel="stylesheet">
 </head>
 <body class={{ $bodyClass ?? '' }}>
     <div id="main">
@@ -56,12 +56,12 @@
                         <button type="button">About Us</button>
                     </div>
                     <ul class="main-wrap__section--sub-menu">
-                        <li><a href="/about-us/heritage">Heritage</a></li>
-                        <li><a href="/about-us/ceo">Message from CEO</a></li>
-                        <li><a href="/about-us/ci">CI</a></li>
-                        <li><a href="/about-us/story-news">Story & News</a></li>
-                        <li><a href="/about-us/ir/consolidated">재무정보</a></li>
-                        <li><a href="/about-us/location/seoul">Location</a></li>
+                        <li><a href="/kor/about-us/heritage">Heritage</a></li>
+                        <li><a href="/kor/about-us/ceo">Message from CEO</a></li>
+                        <li><a href="/kor/about-us/ci">CI</a></li>
+                        <li><a href="/kor/about-us/story-news">Story & News</a></li>
+                        <li><a href="/kor/about-us/ir/consolidated">재무정보</a></li>
+                        <li><a href="/kor/about-us/location/seoul">Location</a></li>
                     </ul>
                 </div>
                 <div class="mobile-arrow"></div>
@@ -74,7 +74,7 @@
                         만들어낸 <em>제품</em>
                     </h2>
                     <div class="main-wrap__section--button">
-                        <a href="/business/intro">For Business Partners</a>
+                        <a href="/kor/business/intro">For Business Partners</a>
                     </div>
                 </div>
                 <div class="section main-wrap__section--img">
@@ -103,9 +103,9 @@
                         <button type="button">Work With Us</button>
                      </div>
                      <ul class="main-wrap__section--sub-menu">
-                         <li><a href="/work-with-us/recruit/">채용공고</a></li>
-                         <li><a href="/work-with-us/introduction/introjob">직무소개</a></li>
-                         <li><a href="/work-with-us/faq">FAQ</a></li>
+                         <li><a href="/kor/work-with-us/recruit/">채용공고</a></li>
+                         <li><a href="/kor/work-with-us/introduction/introjob">직무소개</a></li>
+                         <li><a href="/kor/work-with-us/faq">FAQ</a></li>
                      </ul>
                 </div>
             </div>
@@ -118,11 +118,11 @@
 
     @section('script')
     <!-- Scripts -->
-    <script src="{{ mix('js/manifest.js') }}"></script>
-    <script src="{{ mix('js/vendor.js') }}"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ mix('js/question.js')}}"></script>
-    <script src="{{ asset('/js/siteIntro.js') }}"></script>
+    <script src="/kor/js/manifest.js"></script>
+    <script src="/kor/js/vendor.js"></script>
+    <script src="/kor/js/app.js"></script>
+    <script src="/kor/js/question.js"></script>
+    <script src="/kor/js/siteIntro.js"></script>
     <!-- Scripts -->
     @show
 </body>

@@ -32,7 +32,7 @@ class RecruitController extends Controller
      */
     public function create()
     {
-        $action = '/admin/recruit';
+        $action = '/kor/admin/recruit';
 
         return view('admin.recruit.create', [
             'action' => $action,
@@ -59,7 +59,7 @@ class RecruitController extends Controller
                         'created_at' => now()
                     ]);
 
-        return redirect('/admin/recruit');
+        return redirect('/kor/admin/recruit');
     }
 
     /**
@@ -127,7 +127,7 @@ class RecruitController extends Controller
             }
         }
 
-        return redirect('/admin/recruit');
+        return redirect('/kor/admin/recruit');
     }
 
     /**
@@ -140,6 +140,6 @@ class RecruitController extends Controller
     {
         $affected = DB::table('recruits')->where('id', $id)->delete();
 
-        return redirect('/admin/recruit');
+        return redirect('/kor/admin/recruit');
     }
 }

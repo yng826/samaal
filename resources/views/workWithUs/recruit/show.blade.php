@@ -13,7 +13,7 @@
         </h2>
     </div>
     <div class="work-recruit__contents">
-        <form action="/work-with-us/recruit" method="get">
+        <form action="/kor/work-with-us/recruit" method="get">
             <div class="work-recruit__search">
                 <div class="work-recruit__search--wrap">
                     <input type="text" name="keyword" placeholder="키워드 검색"/>
@@ -99,5 +99,5 @@
 @endsection
 @section('script')
     @parent
-    <script src="{{ mix('js/recruit.js') }}"></script>
+    <script src="/kor/js/recruit.js"></script>
 @endsection

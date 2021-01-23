@@ -79,7 +79,7 @@ export default {
 
             let headers = getHeader();
             let url, method;
-            url = '/api/job-detail/hobby_specialty/' + this.job_id;
+            url = '/kor/api/job-detail/hobby_specialty/' + this.job_id;
             method = 'put';
             axios({
                 method: method,

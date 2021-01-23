@@ -50,7 +50,7 @@ const question = () => {
                 _data.question = _form.find('[name=question]').val();
                 console.log(_data);
                 $('.layer-popup__close-btn').trigger('click');
-                axios.post('/api/board',_data, {
+                axios.post('/kor/api/board',_data, {
                     headers: {
                         'Content-Type': 'application/json',
                     // 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

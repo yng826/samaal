@@ -13,7 +13,7 @@
             </h2>
         </div>
         <div class="work-recruit__contents">
-            <form action="/work-with-us/recruit" method="get">
+            <form action="/kor/work-with-us/recruit" method="get">
                 <div class="work-recruit__search">
                     <div class="work-recruit__search--wrap">
                         <input type="text" name="keyword" value="{{ $keyword }}" placeholder="키워드 검색"/>
@@ -43,7 +43,7 @@
                                 {{ $item->start_date }} ~ {{ $item->end_date }}
                             </div>
                             <div class="btn-link">
-                                <a href="/work-with-us/recruit/{{ $item->id }}">자세히보기</a>
+                                <a href="/kor/work-with-us/recruit/{{ $item->id }}">자세히보기</a>
                             </div>
                         </li>
                         @endforeach

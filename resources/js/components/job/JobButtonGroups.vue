@@ -169,7 +169,7 @@ export default {
         sendApplicant: function() {
             let headers = getHeader();
             let url, method;
-            url = '/api/work-with-us/job/submit/' + this.id + '?_method=PUT';
+            url = '/kor/api/work-with-us/job/submit/' + this.id + '?_method=PUT';
             method = 'post';
             axios({
                 method: method,
@@ -185,7 +185,7 @@ export default {
                     allowOutsideClick: false,
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = '/work-with-us/job/';
+                        window.location.href = '/kor/work-with-us/job/';
                     }
                 })
             })

@@ -82,12 +82,12 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/kor/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/kor/js/admin/manifest.js"></script>
+    <script src="/kor/js/admin/vendor.js"></script>
 @stop
 
 

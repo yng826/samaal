@@ -1,6 +1,6 @@
 <header class="header">
     <a href="/" class="header__logo">
-        <img src="/images/common/logo.png" alt="SAMA">
+        <img src="/kor/images/common/logo.png" alt="SAMA">
     </a>
 
     <nav class="header__nav">
@@ -59,7 +59,7 @@
     <div class="header__search">
         <ul>
             <li class="language__kor"><a href="#">KOR</a></li>
-            <li class="language__eng"><a href="{{env('ENG_URL', '/')}}">ENG</a></li>
+            <li class="language__eng"><a href="{{env('ENG_URL', '/">ENG</a></li>
         </ul>
         <!-- <input type="text"> -->
         <button type="submit" class="btn-search">검색</button>
@@ -67,7 +67,7 @@
 
     <div class="header-search">
         <div class="header-search__box">
-            <form action="/other/search" method="get">
+            <form action="/kor/other/search" method="get">
                 <div class="header-search__box--input">
                     <input type="text" name="keyword" placeholder="검색어를 입력해주세요">
                     <button type="submit" class="header-search__box--button">검색</button>

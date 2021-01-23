@@ -22,7 +22,7 @@ $bodyClass = 'about';
                 </div>
                 <!--밑에 backgorund 이미지는 예시 입니다.-->
                 <div class="storyNews-detail__img">
-                    <img src="/storage/{{ $news->img_file_path }}" alt="{{ $news->title }}">
+                    <img src="/kor/storage/{{ $news->img_file_path }}" alt="{{ $news->title }}">
                 </div>
                 <div class="storyNews-detail__text">
                     <p>

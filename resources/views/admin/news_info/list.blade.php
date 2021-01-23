@@ -36,10 +36,10 @@
                             <td class="text-center">{{ $info->updated_at ?? $info->created_at}}</td>
                             <td class="text-center">
                                 @if ($info->img_file_path)
-                                <a class="btn btn-outline-info btn-xs mr-2" href="/admin/news_info/file-download?id={{ $info->id }}&type=img">이미지파일</a>
+                                <a class="btn btn-outline-info btn-xs mr-2" href="/kor/admin/news_info/file-download?id={{ $info->id }}&type=img">이미지파일</a>
                                 @endif
                             </td>
-                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/news_info/{{$info->id}}/edit">수정</a></td>
+                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/kor/admin/news_info/{{$info->id}}/edit">수정</a></td>
                         </tr>
                         @endforeach
                     </table>
@@ -57,7 +57,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-12 text-right">
-                    <a class="btn btn-primary text-white" href="/admin/news_info/create">뉴스 추가</a>
+                    <a class="btn btn-primary text-white" href="/kor/admin/news_info/create">뉴스 추가</a>
                 </div>
             </div>
         </div>
@@ -66,10 +66,10 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/kor/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/kor/js/admin/manifest.js"></script>
+    <script src="/kor/js/admin/vendor.js"></script>
 @stop

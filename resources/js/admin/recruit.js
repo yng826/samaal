@@ -133,11 +133,11 @@ const job_list = () => {
         $('.search-btn').on('click', function() {
             let status = $('select[name=status]').val();
             let pass = $('select[name=pass]').val();
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+ status + '&pass=' + pass);
+            $(location).attr('href','/kor/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+ status + '&pass=' + pass);
         });
         //전체요약 클릭시
         $('.list-excel-btn').on('click', function() {
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/list-excel-download');
+            $(location).attr('href','/kor/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/list-excel-download');
         });
         //선택상세 클릭시
         $('.detail-excel-btn').on('click', function() {
@@ -145,7 +145,7 @@ const job_list = () => {
             $('input[name=id-check]:checked').each(function(index, item) {
                 ids += (index>0 ? ',' : '') + $(this).val();
             });
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/'+ids+'/detail-excel-download');
+            $(location).attr('href','/kor/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/'+ids+'/detail-excel-download');
         });
         //선택상세 클릭시
         $('.detail-sms-btn').on('click', function() {
@@ -153,7 +153,7 @@ const job_list = () => {
             $('input[name=id-check]:checked').each(function(index, item) {
                 ids += (index>0 ? ',' : '') + $(this).val();
             });
-            $(location).attr('href','/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/'+ids+'/detail-sms');
+            $(location).attr('href','/kor/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/'+ids+'/detail-sms');
         });
 
         $('.btn-delete').on('click', function(e){

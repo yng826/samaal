@@ -225,7 +225,7 @@ export default {
                     if ( id ) {
                         let headers = getHeader();
                         let url, method;
-                        url = '/api/job-detail/education/' + id;
+                        url = '/kor/api/job-detail/education/' + id;
                         method = 'delete';
                         axios({
                             method: method,
@@ -331,7 +331,7 @@ export default {
             console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
-            url = '/api/job-detail/education/' + this.$store.state.job.id;
+            url = '/kor/api/job-detail/education/' + this.$store.state.job.id;
             method = 'put';
             axios({
                 method: method,

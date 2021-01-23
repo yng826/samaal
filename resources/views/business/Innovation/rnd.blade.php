@@ -14,10 +14,10 @@
     <div class="contents-wrap__tab speciality-iso__tab">
         <ul>
             <li class="tab-item on">
-                <a href="/business/innovation/rnd">R&D</a>
+                <a href="/kor/business/innovation/rnd">R&D</a>
             </li>
             <li class="tab-item">
-                <a href="/business/innovation/iso_certification">인증현황</a>
+                <a href="/kor/business/innovation/iso_certification">인증현황</a>
             </li>
         </ul>
     </div>
@@ -33,10 +33,10 @@
         <div class="innovation-rnd__slide">
             <div class="swiper-container innovation-rnd-swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="/images/business/innovation/slide_01.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/business/innovation/slide_02.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/business/innovation/slide_03.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/business/innovation/slide_04.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/kor/images/business/innovation/slide_01.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/kor/images/business/innovation/slide_02.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/kor/images/business/innovation/slide_03.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/kor/images/business/innovation/slide_04.jpg" alt=""></div>
                 </div>
                 <div class="swiper-button-next swiper-button"></div>
                 <div class="swiper-button-prev swiper-button"></div>
@@ -64,5 +64,5 @@
 
 @section('script')
     @parent
-    {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
+    {{-- <script src="/kor/js/app.js"></script> --}}
 @endsection

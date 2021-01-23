@@ -29,7 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $action = '/admin/category';
+        $action = '/kor/admin/category';
         return view('admin.category.create', [
             'action' => $action,
         ]);
@@ -60,7 +60,7 @@ class CategoryController extends Controller
             ]);
         }
 
-        return redirect('/admin/category');
+        return redirect('/kor/admin/category');
 
     }
 
@@ -115,7 +115,7 @@ class CategoryController extends Controller
             'category'=> $request->category,
             'updated_at' => now(),
           ]);
-        return redirect('/admin/category');
+        return redirect('/kor/admin/category');
 
     }
 
@@ -130,6 +130,6 @@ class CategoryController extends Controller
         $affected = DB::table('sitemap_categorys')
         ->where('id', $id)
         ->delete();
-        return redirect('/admin/category');
+        return redirect('/kor/admin/category');
     }
 }

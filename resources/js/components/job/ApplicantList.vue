@@ -14,7 +14,7 @@
                     <td>{{ item.recruit.title }}</td>
                     <td>{{ item.recruit.end_date }}</td>
                     <td>
-                        <a :href="'/work-with-us/recruit/'+ item.recruit_id + '/edit'"  class="btn btn-primary">{{buttonText}}</a>
+                        <a :href="'/kor/work-with-us/recruit/'+ item.recruit_id + '/edit'"  class="btn btn-primary">{{buttonText}}</a>
                     </td>
                     <td>{{ item.status_ko }}</td>
                 </tr>
@@ -24,6 +24,7 @@
 </template>
 <script>
 import axios from 'axios'
+import Swal from 'sweetalert2';
 import {getHeader, getAuth, getUser} from '../../config'
 export default {
     props: ['action'],
@@ -46,7 +47,7 @@ export default {
         if ( this.isAuth ) {
             const user = getUser();
             console.log( Promise);
-            axios.get('/api/work-with-us/job/', {
+            axios.get('/kor/api/work-with-us/job/', {
                 'headers': getHeader()
             })
             .then((res)=> {

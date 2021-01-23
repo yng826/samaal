@@ -27,11 +27,11 @@
             <div class="row">
                 <div class="col-12 text-right">
                     <button type="button" class="btn btn-primary text-white menu-order-btn">순서저장</button>
-                    <button type="button" class="btn btn-primary text-white" onClick="location.href='/admin/menu/create?parent_id=0&depth=0'">추가</button>
+                    <button type="button" class="btn btn-primary text-white" onClick="location.href='/kor/admin/menu/create?parent_id=0&depth=0'">추가</button>
                 </div>
             </div>
 
-            <form action="/admin/menu/order-update" id="order-form" class="hide" method="POST">
+            <form action="/kor/admin/menu/order-update" id="order-form" class="hide" method="POST">
                 @csrf
                 <input type="hidden" name="orders">
             </form>
@@ -44,11 +44,11 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/kor/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ asset('/js/admin/manifest.js') }}"></script>
-    <script src="{{ asset('/js/admin/vendor.js') }}"></script>
-    <script src="{{ asset('/js/admin/menu.js') }}"></script>
+    <script src="/kor/js/admin/manifest.js"></script>
+    <script src="/kor/js/admin/vendor.js"></script>
+    <script src="/kor/js/admin/menu.js"></script>
 @stop

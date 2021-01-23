@@ -13,7 +13,7 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>삼아알미늄</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/kor/css/app.css" rel="stylesheet">
 </head>
 <body>
     @include('shared.header')
@@ -26,10 +26,10 @@
     </div>
     @section('script')
     <!-- Scripts -->
-    <script src="{{ mix('js/manifest.js') }}" defer></script>
-    <script src="{{ mix('js/vendor.js') }}" defer></script>
-    <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="{{ mix('js/question.js')}}"></script>
+    <script src="/kor/js/manifest.js" defer></script>
+    <script src="/kor/js/vendor.js" defer></script>
+    <script src="/kor/js/app.js" defer></script>
+    <script src="/kor/js/question.js"></script>
     @show
 </body>
 </html>

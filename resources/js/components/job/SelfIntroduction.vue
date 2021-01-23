@@ -105,7 +105,7 @@ export default {
 
             let headers = getHeader();
             let url, method;
-            url = '/api/work-with-us/job/' + this.job_id;
+            url = '/kor/api/work-with-us/job/' + this.job_id;
             method = 'put';
             axios({
                 method: method,
