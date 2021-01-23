@@ -17,6 +17,7 @@ mix
     .js('resources/js/admin/sitemap.js', 'public/js/admin')
     .js('resources/js/admin/isoCertification.js', 'public/js/admin')
     .js('resources/js/admin/recruit.js', 'public/js/admin')
+    .js('resources/js/admin/question.js', 'public/js/admin')
     .extract(['vue','jquery-ui','jquery'], 'public/js/admin/vendor.js')
     .autoload({
         jquery: ['$', 'jQuery', 'jquery'],
