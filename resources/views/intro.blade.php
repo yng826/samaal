@@ -8,7 +8,7 @@
         <meta property="og:description" content="SAMA">
         <meta property="og:id" content="sama">
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/eng/css/app.css">
         <script src="js/app.js"></script>
     </head>
     <body>
@@ -64,9 +64,9 @@
             </main>
             @include('shared.footer')
         </div>
-        <script src="{{ mix('js/manifest.js') }}"></script>
-        <script src="{{ mix('js/vendor.js') }}"></script>
-        <script src="{{ mix('js/app.js') }}"></script>
-        <script src="{{ mix('js/question.js')}}"></script>
+        <script src="/eng/js/manifest.js"></script>
+        <script src="/eng/js/vendor.js"></script>
+        <script src="/eng/js/app.js"></script>
+        <script src="/eng/js/question.js"></script>
     </body>
 </html>

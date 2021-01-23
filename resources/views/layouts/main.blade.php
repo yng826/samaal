@@ -8,13 +8,13 @@
         <meta property="og:description" content="SAMA">
         <meta property="og:id" content="sama">
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/eng/css/app.css">
         <script src="js/app.js"></script>
     </head>
     <body>
         <header class="header">
             <a href="#" class="header__logo">
-                <img src="/images/common/logo.png" alt="SAMA">
+                <img src="/eng/images/common/logo.png" alt="SAMA">
             </a>
             <nav class="header__nav">
                 <ul>

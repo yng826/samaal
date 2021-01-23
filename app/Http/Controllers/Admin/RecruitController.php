@@ -32,7 +32,7 @@ class RecruitController extends Controller
      */
     public function create()
     {
-        $action = '/admin/recruit';
+        $action = '/eng/admin/recruit';
 
         return view('admin.recruit.create', [
             'action' => $action,
@@ -83,7 +83,7 @@ class RecruitController extends Controller
     {
         $recruit = DB::table('recruits')->where('id', $id)->first();
         $recruit_keywords = DB::table('recruit_keywords')->where('recruit_id', $id)->get();
-        $action = "/admin/recruit/{$id}";
+        $action = "/eng/admin/recruit/{$id}";
 
         return view('admin.recruit.create', [
             'recruit'=> $recruit,

@@ -17,5 +17,5 @@
 
 @section('script')
     @parent
-    <script src="{{ asset('/js/job.js') }}"></script>
+    <script src="/eng/js/job.js"></script>
 @endsection

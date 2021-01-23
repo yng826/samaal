@@ -33,7 +33,7 @@ class SitemapController extends Controller
     {
         $categorys = DB::table('sitemap_categorys')->get();
 
-        $action = '/admin/sitemap';
+        $action = '/eng/admin/sitemap';
         return view('admin.sitemap.create', [
             'categorys' => $categorys,
             'parent_id' => $request->parent_id,
@@ -90,7 +90,7 @@ class SitemapController extends Controller
 
         $sitemap = DB::table('sitemaps')->where('id', $id)->first();
         $sitemap_keywords = DB::table('sitemap_keywords')->where('sitemap_id', $id)->get();
-        $action = "/admin/sitemap/{$id}";
+        $action = "/eng/admin/sitemap/{$id}";
 
         return view('admin.sitemap.create', [
             'categorys'=> $categorys,

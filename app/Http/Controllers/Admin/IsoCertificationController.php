@@ -30,7 +30,7 @@ class IsoCertificationController extends Controller
      */
     public function create()
     {
-        $action = '/admin/iso_certification';
+        $action = '/eng/admin/iso_certification';
 
         return view('admin.iso_certification.create', [
             'action' => $action,
@@ -84,7 +84,7 @@ class IsoCertificationController extends Controller
     public function edit($id)
     {
         $certification = DB::table('iso_certifications')->where('id', $id)->first();
-        $action = "/admin/iso_certification/{$id}";
+        $action = "/eng/admin/iso_certification/{$id}";
 
         return view('admin.iso_certification.create', [
             'certification'=> $certification,

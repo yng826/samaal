@@ -34,8 +34,8 @@
                 </ul> -->
             </div> --}}
             <div class="droplist-box">
-                <button class="droplist-box__button" onClick="location.href='/other/privacy'">Personal Information Management Policy</button>
-                <button class="droplist-box__button" onClick="location.href='/other/email_security'">Prohibition of Unauthorized Email Collection</button>
+                <button class="droplist-box__button" onClick="location.href='/eng/other/privacy'">Personal Information Management Policy</button>
+                <button class="droplist-box__button" onClick="location.href='/eng/other/email_security'">Prohibition of Unauthorized Email Collection</button>
                 <!-- <ul class="droplist">
                     <li id="" class="droplist__item"><a href="#">개인정보</a></li>
                     <li id="" class="droplist__item"><a href="#">패밀리2</a></li>
@@ -119,5 +119,5 @@
     </form>
 </div>
 <div class="popup-mask"></div>
-{{-- <script src="{{ mix('/js/question.js')}}"></script> --}}
+{{-- <script src="/eng/js/question.js"></script> --}}
 

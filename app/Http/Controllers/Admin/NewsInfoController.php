@@ -29,7 +29,7 @@ class NewsInfoController extends Controller
      */
     public function create()
     {
-        $action = '/admin/news_info';
+        $action = '/eng/admin/news_info';
         return view('admin.news_info.create', [
             'action' => $action,
         ]);
@@ -81,7 +81,7 @@ class NewsInfoController extends Controller
   /*  public function show($id)
     {
         $infos = DB::table('news_infos')->where('id', $id)->first();
-        $action = "/admin/news_infos";
+        $action = "/eng/admin/news_infos";
 
         return view('admin.news_infos.'.$id, [
             'info'=> $infos,
@@ -98,7 +98,7 @@ class NewsInfoController extends Controller
     public function edit($id)
     {
         $info = DB::table('news_infos')->where('id', $id)->first();
-        $action = "/admin/news_info/{$id}";
+        $action = "/eng/admin/news_info/{$id}";
 
         return view('admin.news_info.create', [
             'info'=> $info,
@@ -137,7 +137,7 @@ class NewsInfoController extends Controller
             'use_yn'=> $request->use_yn,
             'updated_at' => now(),
           ]);
-        return redirect('/admin/news_info');
+        return redirect('/admin/news_info/');
 
     }
 

@@ -27,11 +27,11 @@
             <div class="row">
                 <div class="col-12 text-right">
                     <button type="button" class="btn btn-primary text-white sitemap-order-btn">순서저장</button>
-                    <button type="button" class="btn btn-primary text-white" onClick="location.href='/admin/sitemap/create?parent_id=0&depth=0'">추가</button>
+                    <button type="button" class="btn btn-primary text-white" onClick="location.href='/eng/admin/sitemap/create?parent_id=0&depth=0'">추가</button>
                 </div>
             </div>
 
-            <form action="/admin/sitemap/order-update" id="order-form" class="hide" method="POST">
+            <form action="/eng/admin/sitemap/order-update" id="order-form" class="hide" method="POST">
                 @csrf
                 <input type="hidden" name="orders">
             </form>
@@ -73,11 +73,11 @@ window.onload = function(){
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ asset('/js/admin/manifest.js') }}"></script>
-    <script src="{{ asset('/js/admin/vendor.js') }}"></script>
-    <script src="{{ asset('/js/admin/sitemap.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
+    <script src="/eng/js/admin/sitemap.js"></script>
 @stop

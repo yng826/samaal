@@ -38,12 +38,12 @@
                             <td class="text-center">{{ $certification->standard }}</td>
                             <td class="text-center">{{ $certification->number }}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-info btn-xs mr-2" href="/admin/iso_certification/file-download?id={{ $certification->id }}&type=img">이미지파일</a>
-                                <a class="btn btn-outline-info btn-xs" href="/admin/iso_certification/file-download?id={{ $certification->id }}&type=pdf">PDF파일</a>
+                                <a class="btn btn-outline-info btn-xs mr-2" href="/eng/admin/iso_certification/file-download?id={{ $certification->id }}&type=img">이미지파일</a>
+                                <a class="btn btn-outline-info btn-xs" href="/eng/admin/iso_certification/file-download?id={{ $certification->id }}&type=pdf">PDF파일</a>
                             </td>
                             <td class="text-center">{{ $certification->updated_at ?? $certification->created_at}}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-warning btn-xs" href="/admin/iso_certification/{{ $certification->id }}/edit">수정</a>
+                                <a class="btn btn-outline-warning btn-xs" href="/eng/admin/iso_certification/{{ $certification->id }}/edit">수정</a>
                             </td>
                         </tr>
                         @endforeach
@@ -61,7 +61,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-12 text-right">
-                    <a class="btn btn-primary text-white" href="/admin/iso_certification/create">ISO인증서 추가</a>
+                    <a class="btn btn-primary text-white" href="/eng/admin/iso_certification/create">ISO인증서 추가</a>
                 </div>
             </div>
         </div>
@@ -70,10 +70,10 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
 @stop

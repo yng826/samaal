@@ -18,5 +18,5 @@
 
 @section('script')
     @parent
-    <script src="{{ asset('js/job.js') }}" defer></script>
+    <script src="{{ asset('js/job.js" defer></script>
 @endsection

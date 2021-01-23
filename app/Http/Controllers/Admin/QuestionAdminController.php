@@ -53,7 +53,7 @@ class QuestionAdminController extends Controller
     public function show($id)
     {
         $board = DB::table('question_boards')->where('id', $id)->first();
-        $action = "/admin/question_admin";
+        $action = "/eng/admin/question_admin";
 
         return view('admin.question_admin.show', [
             'board'=> $board,
@@ -70,7 +70,7 @@ class QuestionAdminController extends Controller
     public function edit($id)
     {
         $board = DB::table('question_boards')->where('id', $id)->first();
-        $action = "/admin/question_admin/{$id}";
+        $action = "/eng/admin/question_admin/{$id}";
 
         return view('admin.question_admin.create', [
             'board'=> $board,

@@ -42,7 +42,7 @@
                             <td class="text-center">{{ $faq->question }}</td>
                             <td class="text-center">{{ $faq->updated_at ?? $faq->created_at}}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-warning btn-xs" href="/admin/faq/{{ $faq->id }}/edit">수정</a>
+                                <a class="btn btn-outline-warning btn-xs" href="/eng/admin/faq/{{ $faq->id }}/edit">수정</a>
                             </td>
                         </tr>
                         @endforeach
@@ -60,7 +60,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-12 text-right">
-                    <a class="btn btn-primary text-white" href="/admin/faq/create">FAQ 추가</a>
+                    <a class="btn btn-primary text-white" href="/eng/admin/faq/create">FAQ 추가</a>
                 </div>
             </div>
         </div>
@@ -69,10 +69,10 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
 @stop

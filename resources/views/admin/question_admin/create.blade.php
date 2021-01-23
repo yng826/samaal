@@ -112,12 +112,12 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
 @stop
 
 

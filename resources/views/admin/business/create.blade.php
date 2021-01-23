@@ -68,7 +68,7 @@
                     <div class="col-12">
 
                         <button type="submit" class="btn btn-primary text-white save-btn">저장</button>
-                        <a href="/admin/business" class="btn btn-info text-white">목록</a>
+                        <a href="/eng/admin/business" class="btn btn-info text-white">목록</a>
                     </div>
                 </div>
             </div>
@@ -78,10 +78,10 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
 @stop

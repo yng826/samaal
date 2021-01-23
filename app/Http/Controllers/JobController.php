@@ -138,7 +138,7 @@ class JobController extends Controller
         ];
         if ( $request->wantsJson() ) {
             if ( !$request->user() ) {
-                redirect('/work-with-us/recruit');
+                redirect('/eng/work-with-us/recruit');
             }
             $where['user_id'] = $request->user()->id;
         }

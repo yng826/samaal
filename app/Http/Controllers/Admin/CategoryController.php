@@ -29,7 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $action = '/admin/category';
+        $action = '/eng/admin/category';
         return view('admin.category.create', [
             'action' => $action,
         ]);
@@ -73,7 +73,7 @@ class CategoryController extends Controller
   /*  public function show($id)
     {
         $boards = DB::table('sitemap_categorys')->where('id', $id)->first();
-        $action = "/admin/sitemap_categorys";
+        $action = "/eng/admin/sitemap_categorys";
 
         return view('admin.sitemap_categorys.'.$id, [
             'board'=> $boards,
@@ -91,7 +91,7 @@ class CategoryController extends Controller
     {
         $category = DB::table('sitemap_categorys')->where('id', $id)->first();
 
-        $action = "/admin/category/{$id}";
+        $action = "/eng/admin/category/{$id}";
 
         return view('admin.category.create', [
             'category'=> $category,

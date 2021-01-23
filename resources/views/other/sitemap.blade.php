@@ -24,7 +24,7 @@
                                     <div class="sitemap__section--list--item">
                                         @if (strlen($sitemap->children[$i]->url) > 2)
                                             <a href="{{ $sitemap->children[$i]->url }}"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
-                                        @elseif ($sitemap->children[$i]->name == '통합 문의')
+                                        @elseif ($sitemap->children[$i]->name == 'Inquiry')
                                             <a class="question-btn" href="javascript:;"><b class="depth-02">{{ $sitemap->children[$i]->name }}</b></a>
                                         @else
                                             <b class="depth-02">{{ $sitemap->children[$i]->name }}</b>

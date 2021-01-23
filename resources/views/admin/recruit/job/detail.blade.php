@@ -33,7 +33,7 @@
                             <input type="text" name="" id="" class="form-control" disabled value="미제출">
                         @endif
                         <span class="mr-1 ml-1">|</span>
-                        <a class="btn btn-info text-white" href="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/detail-excel-download">EXCEL</a>
+                        <a class="btn btn-info text-white" href="/eng/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}/detail-excel-download">EXCEL</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                             <table class="table">
                                 <tr>
                                     <td class="text-center" rowspan="4">
-                                        <img src="/storage/{{ $job->file_path }}" height="150" />
+                                        <img src="/eng/storage/{{ $job->file_path }}" height="150" />
                                     </td>
                                     <th class="text-center">한글</th>
                                     <td>{{ $job->user->name ?? '' }}</td>
@@ -335,11 +335,11 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
-    <script src="{{ mix('/js/admin/recruit.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
+    <script src="/eng/js/admin/recruit.js"></script>
 @stop

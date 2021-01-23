@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function search(id, keyword) {
         const category = id == 'search-btn' ? 0 : id.split('-')[1];
         let keywordString = encodeURI($('.search_keyword').val());
-        $(location).attr('href','/other/search?keyword=' + keywordString + '&category=' + category);
+        $(location).attr('href','/eng/other/search?keyword=' + keywordString + '&category=' + category);
     }
 
     eventListener();

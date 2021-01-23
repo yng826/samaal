@@ -29,7 +29,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        $action = '/admin/faq';
+        $action = '/eng/admin/faq';
 
         return view('admin.faq.create', [
             'action' => $action,
@@ -75,7 +75,7 @@ class FaqController extends Controller
     public function edit($id)
     {
         $faq = DB::table('faqs')->where('id', $id)->first();
-        $action = "/admin/faq/{$id}";
+        $action = "/eng/admin/faq/{$id}";
 
         return view('admin.faq.create', [
             'faq'=> $faq,

@@ -38,9 +38,9 @@
                             <td class="text-center">{{ $board->state_yn == 'y' ? '답변 완료' :'' }}</td>
                             <td class="text-center">{{ $board->updated_at ?? $board->created_at}}</td>
                             @if ($board->state_yn == 'y')
-                                <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/admin/question_admin/{{$board->id}}">상세보기</a></td>
+                                <td class="text-center" ><a class="btn btn-outline-info btn-xs" href="/eng/admin/question_admin/{{$board->id}}">상세보기</a></td>
                             @else
-                                <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/question_admin/{{$board->id}}/edit">관리</a></td>
+                                <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/eng/admin/question_admin/{{$board->id}}/edit">관리</a></td>
                             @endif
 
                         </tr>
@@ -61,10 +61,10 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
 @stop

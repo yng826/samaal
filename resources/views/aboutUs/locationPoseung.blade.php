@@ -13,28 +13,28 @@
     <div class="contents-wrap__tab about-location__tab">
         <ul>
             <li class="tab-item">
-                <a href="/about-us/location/seoul">Seoul Office</a>
+                <a href="/eng/about-us/location/seoul">Seoul Office</a>
             </li>
             <li class="tab-item on">
-                <a href="/about-us/location/poseung">Poseung Factory</a>
+                <a href="/eng/about-us/location/poseung">Poseung Factory</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/heritage">Heritage Zone</a>
+                <a href="/eng/about-us/location/heritage">Heritage Zone</a>
             </li>
             <li class="tab-item">
-                <a href="/about-us/location/busan">Busan Office</a>
+                <a href="/eng/about-us/location/busan">Busan Office</a>
             </li>
         </ul>
     </div>
     <div class="about-location__contents">
         <div class="swiper-container about-location__swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/about/location/poseung/img_location_01.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/poseung/img_location_02.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/poseung/img_location_03.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/poseung/img_location_04.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/poseung/img_location_05.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/about/location/poseung/img_location_06.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/eng/images/about/location/poseung/img_location_01.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/eng/images/about/location/poseung/img_location_02.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/eng/images/about/location/poseung/img_location_03.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/eng/images/about/location/poseung/img_location_04.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/eng/images/about/location/poseung/img_location_05.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/eng/images/about/location/poseung/img_location_06.jpg" alt=""></div>
             </div>
             <div class="swiper-button-next swiper-button"></div>
             <div class="swiper-button-prev swiper-button"></div>

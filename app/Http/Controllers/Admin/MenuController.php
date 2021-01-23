@@ -31,7 +31,7 @@ class MenuController extends Controller
      */
     public function create(Request $request)
     {
-        $action = '/admin/menu';
+        $action = '/eng/admin/menu';
         return view('admin.menu.create', [
             'parent_id' => $request->parent_id,
             'depth' => $request->depth,
@@ -82,7 +82,7 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menu = DB::table('menus')->where('id', $id)->first();
-        $action = "/admin/menu/{$id}";
+        $action = "/eng/admin/menu/{$id}";
 
         return view('admin.menu.create', [
             'menu'=> $menu,

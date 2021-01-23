@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $action = '/admin/user';
+        $action = '/eng/admin/user';
         $error="";
         return view('admin.user.create', [
             'action' => $action,
@@ -53,7 +53,7 @@ class UserController extends Controller
         if($email != null || $email !=""){
 
             $error='이미 존재하는 이메일입니다.';
-            $action = '/admin/user';
+            $action = '/eng/admin/user';
             debug($error);
             return view('admin.user.create', [
                 'action' => $action,
@@ -115,7 +115,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = DB::table('users')->where('id', $id)->first();
-        $action = "/admin/user/{$id}";
+        $action = "/eng/admin/user/{$id}";
 
         return view('admin.user.create', [
             'user'=> $user,

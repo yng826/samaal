@@ -32,11 +32,11 @@
                             <td class="text-center">{{ $board->id }}</td>
                             <td class="text-center">{{ $board->title }}</td>
                             <td class="text-center">
-                                <a class="btn btn-outline-info btn-xs mr-2" href="/admin/ir_board/file-download?id={{ $board->id }}&type=img">이미지파일</a>
-                                <a class="btn btn-outline-info btn-xs" href="/admin/ir_board/file-download?id={{ $board->id }}&type=pdf">PDF파일</a>
+                                <a class="btn btn-outline-info btn-xs mr-2" href="/eng/admin/ir_board/file-download?id={{ $board->id }}&type=img">이미지파일</a>
+                                <a class="btn btn-outline-info btn-xs" href="/eng/admin/ir_board/file-download?id={{ $board->id }}&type=pdf">PDF파일</a>
                             </td>
                             <td class="text-center">{{ $board->updated_at ?? $board->created_at}}</td>
-                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/admin/ir_board/{{$board->id}}/edit">수정</a></td>
+                            <td class="text-center" ><a class="btn btn-outline-warning btn-xs" href="/eng/admin/ir_board/{{$board->id}}/edit">수정</a></td>
                         </tr>
                         @endforeach
                     </table>
@@ -54,7 +54,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-12 text-right">
-                    <a class="btn btn-primary text-white" href="/admin/ir_board/create">IR공고 추가</a>
+                    <a class="btn btn-primary text-white" href="/eng/admin/ir_board/create">IR공고 추가</a>
                 </div>
             </div>
         </div>
@@ -63,10 +63,10 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
 @stop

@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/css/vendor.css">
+    <link rel="stylesheet" href="/eng/css/vendor.css">
 </head>
 <body>
     <div id="app">
@@ -21,9 +21,9 @@
         <passport-personal-access-tokens></passport-personal-access-tokens>
     </div>
     <div id="apps"></div>
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/vendor.js') }}"></script>
-    <script src="{{ mix('/js/recruit.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/vendor.js"></script>
+    <script src="/eng/js/recruit.js"></script>
 </body>
 </html>
 

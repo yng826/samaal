@@ -15,10 +15,10 @@ $bodyClass = 'about';
             <ul>
                 @foreach ($infos as $info)
                 <li class="about-storyNews__list-item">
-                        <a href="/about-us/story-news/{{$info->id}}" class="news-btn" id="news-btn-{{ $info->id }}">
+                        <a href="/eng/about-us/story-news/{{$info->id}}" class="news-btn" id="news-btn-{{ $info->id }}">
                         <input type="hidden"  value="{{ $info->id }}">
                         <figure style="{{ 'background-image:url(/storage/'.$info->img_file_path.')' }}">
-                            {{-- <img src="/storage/{{ $info->img_file_path }}" alt=""> --}}
+                            {{-- <img src="/eng/storage/{{ $info->img_file_path }}" alt=""> --}}
                         </figure>
                         <div class="about-storyNews__list-item--text">
                             <h3>{{ $info->title }}</h3>
@@ -36,5 +36,5 @@ $bodyClass = 'about';
 </main>
 @endsection
 
-{{-- <script src="{{ mix('/js/manifest.js')}}"></script>
-<script src="{{ mix('/js/vendor.js')}}"></script> --}}
+{{-- <script src="/eng/js/manifest.js"></script>
+<script src="/eng/js/vendor.js"></script> --}}

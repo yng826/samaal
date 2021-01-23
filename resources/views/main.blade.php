@@ -13,7 +13,7 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>{{ config('app.name', '삼아알미늄') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/eng/css/app.css" rel="stylesheet">
 </head>
 <body class={{ $bodyClass ?? '' }}>
     <div id="main">
@@ -56,12 +56,12 @@
                         <button type="button">About Us</button>
                     </div>
                     <ul class="main-wrap__section--sub-menu">
-                        <li><a href="/about-us/heritage">Heritage</a></li>
-                        <li><a href="/about-us/ceo">Message from CEO</a></li>
-                        <li><a href="/about-us/ci">CI</a></li>
-                        <li><a href="/about-us/story-news">Story & News</a></li>
-                        <li><a href="/about-us/ir/consolidated">Business Performance</a></li>
-                        <li><a href="/about-us/location/seoul">Location</a></li>
+                        <li><a href="/eng/about-us/heritage">Heritage</a></li>
+                        <li><a href="/eng/about-us/ceo">Message from CEO</a></li>
+                        <li><a href="/eng/about-us/ci">CI</a></li>
+                        <li><a href="/eng/about-us/story-news">Story & News</a></li>
+                        <li><a href="/eng/about-us/ir/consolidated">Business Performance</a></li>
+                        <li><a href="/eng/about-us/location/seoul">Location</a></li>
                     </ul>
                 </div>
                 <div class="mobile-arrow"></div>
@@ -74,7 +74,7 @@
                         <em>passion</em> and <em>spirit</em>
                     </h2>
                     <div class="main-wrap__section--button">
-                        <a href="/business/intro">For Business Partners</a>
+                        <a href="/eng/business/intro">For Business Partners</a>
                     </div>
                 </div>
                 <div class="section main-wrap__section--img">
@@ -117,11 +117,11 @@
 
     @section('script')
     <!-- Scripts -->
-    <script src="{{ mix('js/manifest.js') }}"></script>
-    <script src="{{ mix('js/vendor.js') }}"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ mix('js/question.js')}}"></script>
-    <script src="{{ asset('/js/siteIntro.js') }}"></script>
+    <script src="/eng/js/manifest.js"></script>
+    <script src="/eng/js/vendor.js"></script>
+    <script src="/eng/js/app.js"></script>
+    <script src="/eng/js/question.js"></script>
+    <script src="/eng/js/siteIntro.js"></script>
     <!-- Scripts -->
     @show
 </body>

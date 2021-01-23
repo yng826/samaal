@@ -33,10 +33,10 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    {{-- <script src="{{ mix('/js/vendor.js') }}"></script> --}}
-    <script src="{{ mix('/js/admin/menu.js') }}"></script>
+    {{-- <script src="/eng/js/vendor.js"></script> --}}
+    <script src="/eng/js/admin/menu.js"></script>
 @stop

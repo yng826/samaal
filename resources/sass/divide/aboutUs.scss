@@ -59,7 +59,7 @@
         display: table-cell;
         width: 50%;
         height: 501px;
-        background: url("/images/about/web_img_ci.png") no-repeat center / contain;
+        background: url("/eng/images/about/web_img_ci.png") no-repeat center / contain;
     }
 }
 
@@ -408,7 +408,7 @@
         padding: 0 0 72px 1173px;
         margin-top: 103px;
         font-size: 0;
-        background: url("/images/about/img_ceo.jpg") no-repeat left top/ 1079px 620px;
+        background: url("/eng/images/about/img_ceo.jpg") no-repeat left top/ 1079px 620px;
     }
 
     &__title {
@@ -484,12 +484,12 @@
             }
         }
         .swiper-button-next {
-            background: url("/images/about/location_next.png")no-repeat;
+            background: url("/eng/images/about/location_next.png")no-repeat;
             background-size: contain;
         }
 
         .swiper-button-prev {
-            background: url("/images/about/location_prev.png")no-repeat;
+            background: url("/eng/images/about/location_prev.png")no-repeat;
             background-size: contain;
         }
 
@@ -625,7 +625,7 @@
         display: block;
         width: 100%;
         height: 270px;
-        background: url("/images/about/heritage/img_top.jpg")no-repeat;
+        background: url("/eng/images/about/heritage/img_top.jpg")no-repeat;
         background-size: cover;
     }
 
@@ -637,7 +637,7 @@
 
     &__info {
         padding: 88px 770px 220px 0;
-        background: url("/images/about/heritage/img_right.jpg")no-repeat right top;
+        background: url("/eng/images/about/heritage/img_right.jpg")no-repeat right top;
         background-size: 490px 560px;
 
         &--title {
@@ -782,7 +782,7 @@
                 display: inline-block;
                 width: 72px;
                 height: 32px;
-                background: url("/images/about/heritage/arrow_prev.jpg") no-repeat left;
+                background: url("/eng/images/about/heritage/arrow_prev.jpg") no-repeat left;
                 background-size: contain;
                 font-size: 0;
             }
@@ -791,7 +791,7 @@
                 display: inline-block;
                 width: 72px;
                 height: 32px;
-                background: url("/images/about/heritage/arrow_next.jpg") no-repeat right;
+                background: url("/eng/images/about/heritage/arrow_next.jpg") no-repeat right;
                 background-size: contain;
                 font-size: 0;
             }
@@ -928,7 +928,7 @@
     .ir-board-file-box {
         margin-top: 64px;
         padding: 4px 0 0 46px;
-        background: url("/images/common/icon_filedown.png")no-repeat left top / 30px 31px;
+        background: url("/eng/images/common/icon_filedown.png")no-repeat left top / 30px 31px;
     }
 
     &__download {
@@ -1056,7 +1056,7 @@
         &__contents {
             padding: 0 0 vw(72px) vw(1173px);
             margin-top: vw(103px);
-            background: url("/images/about/img_ceo.jpg") no-repeat left top/ vw(1079px) vw(620px);
+            background: url("/eng/images/about/img_ceo.jpg") no-repeat left top/ vw(1079px) vw(620px);
         }
 
         &__title {
@@ -1374,7 +1374,7 @@
             text-align: center;
             line-height: vw(200px);
             cursor: pointer;
-            background:#fff url("/images/about/m/icon_top.jpg") no-repeat center vw(30px);
+            background:#fff url("/eng/images/about/m/icon_top.jpg") no-repeat center vw(30px);
         }
 
         .pagination {
@@ -1444,7 +1444,7 @@
             padding: vw(1200px 60px 72px);
             margin-top: 0;
             font-size: 0;
-            background: url("/images/about/m/img_ceo.jpg") no-repeat left top/ 100%;
+            background: url("/eng/images/about/m/img_ceo.jpg") no-repeat left top/ 100%;
         }
 
         &__title {
@@ -1678,7 +1678,7 @@
             width: 100%;
             height: vw(959px);
             margin-top: vw(50px);
-            background: url("/images/about/m/m_img_ci.jpg") no-repeat center / contain;
+            background: url("/eng/images/about/m/m_img_ci.jpg") no-repeat center / contain;
         }
     }
 
@@ -1751,7 +1751,7 @@
             }
             text-align: center;
             cursor: pointer;
-            background: #fff url("/images/about/m/icon_top.jpg") no-repeat center vw(15px);
+            background: #fff url("/eng/images/about/m/icon_top.jpg") no-repeat center vw(15px);
             background-size: vw(37px) vw(21px);
             line-height: 1;
         }
@@ -1829,7 +1829,7 @@
             padding: vw(502px 65px 150px);
             margin-top: 0;
             font-size: 0;
-            background: url("/images/about/m/img_ceo.jpg") no-repeat left top;
+            background: url("/eng/images/about/m/img_ceo.jpg") no-repeat left top;
             background-size: 100%;
         }
 
@@ -1979,7 +1979,7 @@
 
         &__info {
             padding: vw(472px 0 0);
-            background: url("/images/about/heritage/m_img_right.jpg")no-repeat right top;
+            background: url("/eng/images/about/heritage/m_img_right.jpg")no-repeat right top;
             background-size: 100% vw(409px);
             text-align: center;
 
@@ -2208,7 +2208,7 @@
         .ir-board-file-box {
             margin-top: vw(50px);
             padding: vw(4px 0 0 46px);
-            background: url("/images/common/icon_filedown.png")no-repeat left top / vw(30px) vw(31px);
+            background: url("/eng/images/common/icon_filedown.png")no-repeat left top / vw(30px) vw(31px);
         }
 
         &__download {

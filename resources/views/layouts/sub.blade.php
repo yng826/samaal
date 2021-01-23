@@ -6,7 +6,7 @@
         <meta property="og:description" content="SAMA">
         <meta property="og:id" content="sama">
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/eng/css/app.css">
     </head>
     <body>
         @section('sidebar')

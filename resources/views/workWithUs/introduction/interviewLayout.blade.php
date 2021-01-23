@@ -34,5 +34,5 @@
 
 @section('script')
     @parent
-    {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
+    {{-- <script src="/eng/js/app.js"></script> --}}
 @endsection

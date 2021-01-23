@@ -1,6 +1,6 @@
 <header class="header">
     <a href="/" class="header__logo">
-        <img src="/images/common/logo.png" alt="SAMA">
+        <img src="/eng/images/common/logo.png" alt="SAMA">
     </a>
 
     <nav class="header__nav">
@@ -67,7 +67,7 @@
 
     <div class="header-search">
         <div class="header-search__box">
-            <form action="/other/search" method="get">
+            <form action="/eng/other/search" method="get">
                 <div class="header-search__box--input">
                     <input type="text" name="keyword" placeholder="Search Sama">
                     <button type="submit" class="header-search__box--button">검색</button>

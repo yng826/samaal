@@ -124,7 +124,7 @@
                     &::before {
                         content: "";
                         counter-increment: step;
-                        background: $titleColor url("/images/work/hire_progress_check.png") no-repeat;
+                        background: $titleColor url("/eng/images/work/hire_progress_check.png") no-repeat;
                         background-size: contain;
                         border: 5px solid $titleColor;
                     }
@@ -432,7 +432,7 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background: url("/images/common/icon_check.png") no-repeat center;
+            background: url("/eng/images/common/icon_check.png") no-repeat center;
             background-size: cover;
         }
     }
@@ -554,7 +554,7 @@
         top: 20px;
         width: 22px;
         height: 22px;
-        background: url("/images/common/btn_close.png") no-repeat right / contain;
+        background: url("/eng/images/common/btn_close.png") no-repeat right / contain;
         font-size: 0;
     }
 }
@@ -712,39 +712,39 @@
     }
 
     .title-production {
-        background: url("/images/work/img_production.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_production.png") no-repeat right center / 85px 67px;
     }
 
     .title-sales {
-        background: url("/images/work/img_sales.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_sales.png") no-repeat right center / 85px 67px;
     }
 
     .title-warranty {
-        background: url("/images/work/img_warranty.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_warranty.png") no-repeat right center / 85px 67px;
     }
 
     .title-businessSupport {
-        background: url("/images/work/img_businessSupport.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_businessSupport.png") no-repeat right center / 85px 67px;
     }
 
     .title-productionSupport {
-        background: url("/images/work/img_productionSupport.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_productionSupport.png") no-repeat right center / 85px 67px;
     }
 
     .title-rnd {
-        background: url("/images/work/img_rnd.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_rnd.png") no-repeat right center / 85px 67px;
     }
 
     .title-equipment {
-        background: url("/images/work/img_equipment.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_equipment.png") no-repeat right center / 85px 67px;
     }
 
     .title-safety {
-        background: url("/images/work/img_safety.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_safety.png") no-repeat right center / 85px 67px;
     }
 
     .title-it {
-        background: url("/images/work/img_it.png") no-repeat right center / 85px 67px;
+        background: url("/eng/images/work/img_it.png") no-repeat right center / 85px 67px;
     }
 
 }
@@ -1067,7 +1067,7 @@
                 right: 0;
                 width: 72px;
                 height: 56px;
-                background: url("/images/work/icon_search.png") no-repeat center  / 36px;
+                background: url("/eng/images/work/icon_search.png") no-repeat center  / 36px;
                 vertical-align: middle;
             }
         }
@@ -1373,7 +1373,7 @@
                             transform: translateY(-50%);
                             width: 9px;
                             height: 17px;
-                            background: url("/images/common/pagenation_next.png")no-repeat;
+                            background: url("/eng/images/common/pagenation_next.png")no-repeat;
                             background-size: contain;
                         }
                     }
@@ -1735,39 +1735,39 @@
         }
 
         .title-production {
-            background: url("/images/work/img_production.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_production.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-sales {
-            background: url("/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-warranty {
-            background: url("/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-businessSupport {
-            background: url("/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-productionSupport {
-            background: url("/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-rnd {
-            background: url("/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-equipment {
-            background: url("/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-safety {
-            background: url("/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-it {
-            background: url("/images/work/img_it.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_it.png") no-repeat right center / vw(85px 67px);
         }
 
     }
@@ -1935,7 +1935,7 @@
                 .btn-search {
                     width: vw(72px);
                     height: vw(56px);
-                    background: url("/images/work/icon_search.png") no-repeat center  / vw(36px);
+                    background: url("/eng/images/work/icon_search.png") no-repeat center  / vw(36px);
                 }
             }
 
@@ -2351,39 +2351,39 @@
         }
 
         .title-production {
-            background: url("/images/work/img_production.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_production.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-sales {
-            background: url("/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-warranty {
-            background: url("/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-businessSupport {
-            background: url("/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-productionSupport {
-            background: url("/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-rnd {
-            background: url("/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-equipment {
-            background: url("/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-safety {
-            background: url("/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-it {
-            background: url("/images/work/img_it.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_it.png") no-repeat right center / vw(85px 67px);
         }
 
     }
@@ -2555,7 +2555,7 @@
                 .btn-search {
                     width: vw(144px);
                     height: vw(112px);
-                    background: url("/images/work/icon_search.png") no-repeat center  / vw(72px);
+                    background: url("/eng/images/work/icon_search.png") no-repeat center  / vw(72px);
                 }
             }
 
@@ -3089,39 +3089,39 @@
         }
 
         .title-production {
-            background: url("/images/work/img_production.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_production.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-sales {
-            background: url("/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_sales.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-warranty {
-            background: url("/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_warranty.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-businessSupport {
-            background: url("/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_businessSupport.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-productionSupport {
-            background: url("/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_productionSupport.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-rnd {
-            background: url("/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_rnd.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-equipment {
-            background: url("/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_equipment.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-safety {
-            background: url("/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_safety.png") no-repeat right center / vw(85px 67px);
         }
 
         .title-it {
-            background: url("/images/work/img_it.png") no-repeat right center / vw(85px 67px);
+            background: url("/eng/images/work/img_it.png") no-repeat right center / vw(85px 67px);
         }
 
     }
@@ -3312,7 +3312,7 @@
                     padding: vw(14px 17px);
                     width: vw(80px);
                     height: vw(75px);
-                    background: url("/images/work/icon_search.png") no-repeat center / vw(46px) vw(46px);
+                    background: url("/eng/images/work/icon_search.png") no-repeat center / vw(46px) vw(46px);
                 }
             }
 

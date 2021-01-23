@@ -20,23 +20,23 @@
             <div class="about-heritage__slide">
                 <div class="about-heritage__slide--img swiper-container">
                     <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1969.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1974.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1981.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1982.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1984.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1990.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1993.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1995.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_1998.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2005.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2006.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2007.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2012_01.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2012_02.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2012.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2016.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="/images/about/heritage/slide_2017.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1969.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1974.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1981.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1982.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1984.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1990.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1993.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1995.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_1998.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_2005.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_2006.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_2007.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_2012_01.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_2012_02.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_2012.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_2016.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/eng/images/about/heritage/slide_2017.jpg" alt=""></div>
                     </div>
                 </div>
                 <div class="about-heritage__slide--year swiper-container">

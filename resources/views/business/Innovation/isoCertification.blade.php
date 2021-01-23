@@ -14,10 +14,10 @@
         <div class="contents-wrap__tab speciality-iso__tab">
             <ul>
                 <li class="tab-item">
-                    <a href="/business/innovation/rnd">R&D</a>
+                    <a href="/eng/business/innovation/rnd">R&D</a>
                 </li>
                 <li class="tab-item on">
-                    <a href="/business/innovation/iso_certification">Certifications</a>
+                    <a href="/eng/business/innovation/iso_certification">Certifications</a>
                 </li>
             </ul>
         </div>
@@ -44,8 +44,8 @@
                             <td>
                                 {{ $certification->first_date }}
                                 <div class="file-box">
-                                    <a href="/business/innovation/iso_certification/file-download?id={{ $certification->id }}" class="btn-download">PDF파일</a>
-                                    <a href="/storage/{{ $certification->img_file_path }}" class="btn-preview">미리보기</a>
+                                    <a href="/eng/business/innovation/iso_certification/file-download?id={{ $certification->id }}" class="btn-download">PDF파일</a>
+                                    <a href="/eng/storage/{{ $certification->img_file_path }}" class="btn-preview">미리보기</a>
                                 </div>
                             </td>
                         </tr>

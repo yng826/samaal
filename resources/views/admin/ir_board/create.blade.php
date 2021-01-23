@@ -51,6 +51,9 @@
                                 </div>
                                 @if ( $board->img_file_name )
                                 <div class="form-group">
+                                    <div>
+                                        <img src="/eng/storage/{{$board->img_file_path}}" alt="" style="max-height: 200px">
+                                    </div>
                                     <input type="checkbox" name="del_img" id="del_img" class="">
                                     <label for="del_img">이미지 삭제</label>
                                 </div>
@@ -194,12 +197,12 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/eng/css/admin.css">
 @stop
 
 @section('js')
-    <script src="{{ mix('/js/admin/manifest.js') }}"></script>
-    <script src="{{ mix('/js/admin/vendor.js') }}"></script>
+    <script src="/eng/js/admin/manifest.js"></script>
+    <script src="/eng/js/admin/vendor.js"></script>
 @stop
 
 

@@ -14,6 +14,6 @@
         <h1>hello</h1>
         <passport-clients></passport-clients>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js"></script>
 </body>
 </html>

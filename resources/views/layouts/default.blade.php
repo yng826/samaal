@@ -13,7 +13,7 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>{{ config('app.name', '삼아알미늄') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/eng/css/app.css" rel="stylesheet">
 </head>
 <body class={{ $bodyClass ?? '' }}>
     <div id="app">
@@ -28,10 +28,10 @@
 
     @section('script')
     <!-- Scripts -->
-    <script src="{{ mix('js/manifest.js') }}"></script>
-    <script src="{{ mix('js/vendor.js') }}"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ mix('js/question.js')}}"></script>
+    <script src="/eng/js/manifest.js"></script>
+    <script src="/eng/js/vendor.js"></script>
+    <script src="/eng/js/app.js"></script>
+    <script src="/eng/js/question.js"></script>
     <!-- Scripts -->
     @show
 </body>

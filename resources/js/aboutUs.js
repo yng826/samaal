@@ -46,7 +46,7 @@ const about = () => {
         }).done(function(data) {
             $('div[name=title]').html(data.new.title);
             $('div[name=contents]').html(data.new.contents);
-            $('img[name=id]').attr('src','/admin/news_info/file-download?id='+data.new.id);
+            $('img[name=id]').attr('src','/eng/admin/news_info/file-download?id='+data.new.id);
         });
     }
 

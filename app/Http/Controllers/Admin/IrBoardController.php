@@ -29,7 +29,7 @@ class IrBoardController extends Controller
      */
     public function create()
     {
-        $action = '/admin/ir_board';
+        $action = '/eng/admin/ir_board';
         return view('admin.ir_board.create', [
             'action' => $action,
         ]);
@@ -93,7 +93,7 @@ class IrBoardController extends Controller
   /*  public function show($id)
     {
         $boards = DB::table('ir_boards')->where('id', $id)->first();
-        $action = "/admin/ir_boards";
+        $action = "/eng/admin/ir_boards";
 
         return view('admin.ir_boards.'.$id, [
             'board'=> $boards,
@@ -111,7 +111,7 @@ class IrBoardController extends Controller
     {
         $board = DB::table('ir_boards')->where('id', $id)->first();
 
-        $action = "/admin/ir_board/{$id}";
+        $action = "/eng/admin/ir_board/{$id}";
 
         return view('admin.ir_board.create', [
             'board'=> $board,

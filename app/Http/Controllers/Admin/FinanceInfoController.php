@@ -31,7 +31,7 @@ class FinanceInfoController extends Controller
     {
         $new_info_year = date("Y");
         //echo 'show:'. $new_info_year;
-        $action = '/admin/finance_info';
+        $action = '/eng/admin/finance_info';
         return view('admin.finance_info.create', [
             'action' => $action,
             'new_info_year' => $new_info_year,
@@ -91,7 +91,7 @@ class FinanceInfoController extends Controller
     public function edit($info_year)
     {
         $info = DB::table('finance_infos')->where('info_year', $info_year)->first();
-        $action = "/admin/finance_info/{$info_year}";
+        $action = "/eng/admin/finance_info/{$info_year}";
 
         return view('admin.finance_info.create', [
             'info'=> $info,
