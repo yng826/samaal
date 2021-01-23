@@ -61,7 +61,7 @@ class IsoCertificationController extends Controller
                         'created_at' => now()
                     ]);
 
-        return redirect('/kor/admin/iso_certification');
+        return redirect('/admin/iso_certification');
     }
 
     /**
@@ -84,7 +84,7 @@ class IsoCertificationController extends Controller
     public function edit($id)
     {
         $certification = DB::table('iso_certifications')->where('id', $id)->first();
-        $action = "/admin/iso_certification/{$id}";
+        $action = "/kor/admin/iso_certification/{$id}";
 
         return view('admin.iso_certification.create', [
             'certification'=> $certification,
@@ -128,7 +128,7 @@ class IsoCertificationController extends Controller
                         'updated_at' => now()
                     ]);
 
-        return redirect('/kor/admin/iso_certification');
+        return redirect('/admin/iso_certification');
     }
 
     /**
@@ -141,7 +141,7 @@ class IsoCertificationController extends Controller
     {
         $affected = DB::table('iso_certifications')->where('id', $id)->delete();
 
-        return redirect('/kor/admin/iso_certification');
+        return redirect('/admin/iso_certification');
     }
 
     /**

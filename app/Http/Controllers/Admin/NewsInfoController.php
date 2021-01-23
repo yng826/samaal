@@ -68,7 +68,7 @@ class NewsInfoController extends Controller
             ]);
         }
 
-        return redirect('/kor/admin/news_info');
+        return redirect('/admin/news_info');
 
     }
 
@@ -81,7 +81,7 @@ class NewsInfoController extends Controller
   /*  public function show($id)
     {
         $infos = DB::table('news_infos')->where('id', $id)->first();
-        $action = "/admin/news_infos";
+        $action = "/kor/admin/news_infos";
 
         return view('admin.news_infos.'.$id, [
             'info'=> $infos,
@@ -98,7 +98,7 @@ class NewsInfoController extends Controller
     public function edit($id)
     {
         $info = DB::table('news_infos')->where('id', $id)->first();
-        $action = "/admin/news_info/{$id}";
+        $action = "/kor/admin/news_info/{$id}";
 
         return view('admin.news_info.create', [
             'info'=> $info,
@@ -137,7 +137,7 @@ class NewsInfoController extends Controller
             'use_yn'=> $request->use_yn,
             'updated_at' => now(),
           ]);
-        return redirect('/kor/admin/news_info');
+        return redirect('/admin/news_info');
 
     }
 
@@ -167,6 +167,6 @@ class NewsInfoController extends Controller
         $affected = DB::table('news_infos')
         ->where('id', $id)
         ->delete();
-        return redirect('/kor/admin/news_info');
+        return redirect('/admin/news_info');
     }
 }

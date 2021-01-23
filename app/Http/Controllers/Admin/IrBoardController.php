@@ -80,7 +80,7 @@ class IrBoardController extends Controller
             ]);
         }
 
-        return redirect('/kor/admin/ir_board');
+        return redirect('/admin/ir_board');
 
     }
 
@@ -93,7 +93,7 @@ class IrBoardController extends Controller
   /*  public function show($id)
     {
         $boards = DB::table('ir_boards')->where('id', $id)->first();
-        $action = "/admin/ir_boards";
+        $action = "/kor/admin/ir_boards";
 
         return view('admin.ir_boards.'.$id, [
             'board'=> $boards,
@@ -111,7 +111,7 @@ class IrBoardController extends Controller
     {
         $board = DB::table('ir_boards')->where('id', $id)->first();
 
-        $action = "/admin/ir_board/{$id}";
+        $action = "/kor/admin/ir_board/{$id}";
 
         return view('admin.ir_board.create', [
             'board'=> $board,
@@ -193,6 +193,6 @@ class IrBoardController extends Controller
         $affected = DB::table('ir_boards')
         ->where('id', $id)
         ->delete();
-        return redirect('/kor/admin/ir_board');
+        return redirect('/admin/ir_board');
     }
 }

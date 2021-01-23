@@ -95,7 +95,7 @@ class QuestionBoardController extends Controller
     public function show($id)
     {
         // $boards = DB::table('question_boards')->where('id', $id)->first();
-        // $action = "/admin/finance_info/{$id}";
+        // $action = "/kor/admin/finance_info/{$id}";
 
         // return view('board.question_board.list', [
         //     'boards' => $boards,

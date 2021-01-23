@@ -59,7 +59,7 @@ class RecruitController extends Controller
                         'created_at' => now()
                     ]);
 
-        return redirect('/kor/admin/recruit');
+        return redirect('/admin/recruit');
     }
 
     /**
@@ -83,7 +83,7 @@ class RecruitController extends Controller
     {
         $recruit = DB::table('recruits')->where('id', $id)->first();
         $recruit_keywords = DB::table('recruit_keywords')->where('recruit_id', $id)->get();
-        $action = "/admin/recruit/{$id}";
+        $action = "/kor/admin/recruit/{$id}";
 
         return view('admin.recruit.create', [
             'recruit'=> $recruit,
@@ -127,7 +127,7 @@ class RecruitController extends Controller
             }
         }
 
-        return redirect('/kor/admin/recruit');
+        return redirect('/admin/recruit');
     }
 
     /**
@@ -140,6 +140,6 @@ class RecruitController extends Controller
     {
         $affected = DB::table('recruits')->where('id', $id)->delete();
 
-        return redirect('/kor/admin/recruit');
+        return redirect('/admin/recruit');
     }
 }

@@ -6,6 +6,7 @@ use App\Custom\SmtpEmail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class QuestionAdminController extends Controller
 {
@@ -53,7 +54,7 @@ class QuestionAdminController extends Controller
     public function show($id)
     {
         $board = DB::table('question_boards')->where('id', $id)->first();
-        $action = "/admin/question_admin";
+        $action = "/kor/admin/question_admin";
 
         return view('admin.question_admin.show', [
             'board'=> $board,
@@ -70,7 +71,7 @@ class QuestionAdminController extends Controller
     public function edit($id)
     {
         $board = DB::table('question_boards')->where('id', $id)->first();
-        $action = "/admin/question_admin/{$id}";
+        $action = "/kor/admin/question_admin/{$id}";
 
         return view('admin.question_admin.create', [
             'board'=> $board,
@@ -111,7 +112,7 @@ class QuestionAdminController extends Controller
         $mail['text'] = $text;
         SmtpEmail::email($mail);
 
-        return redirect('/kor/admin/question_admin');
+        return redirect('/admin/question_admin');
     }
 
     /**

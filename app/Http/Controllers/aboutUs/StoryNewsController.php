@@ -58,7 +58,7 @@ class StoryNewsController extends Controller
     public function show($id)
     {
         $news = DB::table('news_infos')->where('id', $id)->first();
-        $action = "/admin/news_infos";
+        $action = "/kor/admin/news_infos";
 
         debug($news);
 

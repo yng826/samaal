@@ -91,7 +91,7 @@ class UserController extends Controller
                 'created_at' => now()
             ]);
         }
-        return redirect('/kor/admin/user');
+        return redirect('/admin/user');
 
 
     }
@@ -115,7 +115,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = DB::table('users')->where('id', $id)->first();
-        $action = "/admin/user/{$id}";
+        $action = "/kor/admin/user/{$id}";
 
         return view('admin.user.create', [
             'user'=> $user,
@@ -148,7 +148,7 @@ class UserController extends Controller
             'updated_at' => now(),
           ]);
 
-        return redirect('/kor/admin/user');
+        return redirect('/admin/user');
 
     }
 
@@ -163,6 +163,6 @@ class UserController extends Controller
         $affected = DB::table('users')
         ->where('id', $id)
         ->delete();
-        return redirect('/kor/admin/user');
+        return redirect('/admin/user');
     }
 }

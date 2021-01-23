@@ -64,7 +64,7 @@ class SitemapController extends Controller
                     'created_at' => now()
                 ]);
 
-        return redirect('/kor/admin/sitemap');
+        return redirect('/admin/sitemap');
     }
 
     /**
@@ -90,7 +90,7 @@ class SitemapController extends Controller
 
         $sitemap = DB::table('sitemaps')->where('id', $id)->first();
         $sitemap_keywords = DB::table('sitemap_keywords')->where('sitemap_id', $id)->get();
-        $action = "/admin/sitemap/{$id}";
+        $action = "/kor/admin/sitemap/{$id}";
 
         return view('admin.sitemap.create', [
             'categorys'=> $categorys,
@@ -137,7 +137,7 @@ class SitemapController extends Controller
             }
         }
 
-        return redirect('/kor/admin/sitemap');
+        return redirect('/admin/sitemap');
     }
 
     /**
@@ -160,7 +160,7 @@ class SitemapController extends Controller
                             'updated_at' => now(),
                         ]);
         }
-        return redirect('/kor/admin/sitemap');
+        return redirect('/admin/sitemap');
     }
 
     /**
@@ -174,7 +174,7 @@ class SitemapController extends Controller
         $affected = DB::table('sitemaps')->where('id', $id)->delete();
         $affected = DB::table('sitemap_keywords')->where('sitemap_id', $id)->delete();
 
-        return redirect('/kor/admin/sitemap');
+        return redirect('/admin/sitemap');
     }
 
     /**

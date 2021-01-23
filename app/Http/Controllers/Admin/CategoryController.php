@@ -60,7 +60,7 @@ class CategoryController extends Controller
             ]);
         }
 
-        return redirect('/kor/admin/category');
+        return redirect('/admin/category');
 
     }
 
@@ -73,7 +73,7 @@ class CategoryController extends Controller
   /*  public function show($id)
     {
         $boards = DB::table('sitemap_categorys')->where('id', $id)->first();
-        $action = "/admin/sitemap_categorys";
+        $action = "/kor/admin/sitemap_categorys";
 
         return view('admin.sitemap_categorys.'.$id, [
             'board'=> $boards,
@@ -91,7 +91,7 @@ class CategoryController extends Controller
     {
         $category = DB::table('sitemap_categorys')->where('id', $id)->first();
 
-        $action = "/admin/category/{$id}";
+        $action = "/kor/admin/category/{$id}";
 
         return view('admin.category.create', [
             'category'=> $category,
@@ -115,7 +115,7 @@ class CategoryController extends Controller
             'category'=> $request->category,
             'updated_at' => now(),
           ]);
-        return redirect('/kor/admin/category');
+        return redirect('/admin/category');
 
     }
 
@@ -130,6 +130,6 @@ class CategoryController extends Controller
         $affected = DB::table('sitemap_categorys')
         ->where('id', $id)
         ->delete();
-        return redirect('/kor/admin/category');
+        return redirect('/admin/category');
     }
 }

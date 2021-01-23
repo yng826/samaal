@@ -67,7 +67,7 @@ class FinanceInfoController extends Controller
                 'created_at' => now()
             ]
         );
-        return redirect('/kor/admin/finance_info/'.$request->info_year.'/edit')->with('success','저장에 성공했습니다.');
+        return redirect('/admin/finance_info/'.$request->info_year.'/edit')->with('success','저장에 성공했습니다.');
     }
 
     /**
@@ -93,7 +93,7 @@ class FinanceInfoController extends Controller
     public function edit($info_year)
     {
         $info = DB::table('finance_infos')->where('info_year', $info_year)->first();
-        $action = "/admin/finance_info/{$info_year}";
+        $action = "/kor/admin/finance_info/{$info_year}";
 
         return view('admin.finance_info.create', [
             'info'=> $info,
@@ -129,7 +129,7 @@ class FinanceInfoController extends Controller
             'separate_total'=> $request->separate_total ?? 0,
             'updated_at' => now()
           ]);
-          return redirect('/kor/admin/finance_info/'.$request->info_year.'/edit')->with('success','저장에 성공했습니다.');
+          return redirect('/admin/finance_info/'.$request->info_year.'/edit')->with('success','저장에 성공했습니다.');
     }
 
     /**
@@ -143,6 +143,6 @@ class FinanceInfoController extends Controller
         $affected = DB::table('finance_infos')
         ->where('info_year', $info_year)
         ->delete();
-        return redirect('/kor/admin/finance_info');
+        return redirect('/admin/finance_info');
     } */
 }

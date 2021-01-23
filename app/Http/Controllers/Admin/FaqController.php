@@ -52,7 +52,7 @@ class FaqController extends Controller
                         'created_at' => now()
                     ]);
 
-        return redirect('/kor/admin/faq');
+        return redirect('/admin/faq');
     }
 
     /**
@@ -75,7 +75,7 @@ class FaqController extends Controller
     public function edit($id)
     {
         $faq = DB::table('faqs')->where('id', $id)->first();
-        $action = "/admin/faq/{$id}";
+        $action = "/kor/admin/faq/{$id}";
 
         return view('admin.faq.create', [
             'faq'=> $faq,
@@ -101,7 +101,7 @@ class FaqController extends Controller
                         'updated_at' => now()
                     ]);
 
-        return redirect('/kor/admin/faq');
+        return redirect('/admin/faq');
     }
 
     /**
@@ -114,6 +114,6 @@ class FaqController extends Controller
     {
         $affected = DB::table('faqs')->where('id', $id)->delete();
 
-        return redirect('/kor/admin/faq');
+        return redirect('/admin/faq');
     }
 }
