@@ -62,6 +62,10 @@
                         <div class="form-group ml-1">
                             <button type="button" class="btn btn-danger text-white btn-delete" data-recruit_id="{{$recruit_id}}">전체삭제</button>
                         </div>
+                        <span class="mr-1 ml-5">|</span>
+                        <div class="form-group ml-1">
+                            <button type="button" class="btn btn-danger text-white btn-delete-selected">선택삭제</button>
+                        </div>
                     </div>
                 </div>
             </div>

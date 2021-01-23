@@ -385,7 +385,8 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin,recruit'])->group(funct
     Route::get('recruit/{recruit_id}/job/{ids}/detail-excel-download', [RecruitJobController::class, 'detailExcelDownload']);
     Route::get('recruit/{recruit_id}/job/{ids}/detail-sms', [RecruitJobController::class, 'smsShow']);
     Route::post('recruit/{recruit_id}/job/{ids}/detail-sms', [RecruitJobController::class, 'smsSend']);
-    Route::delete('recruit/{recruit_id}/job', [RecruitJobController::class, 'deleteUser']);
+    Route::delete('recruit/{recruit_id}/job', [RecruitJobController::class, 'deleteUserAll']);
+    Route::delete('job', [RecruitJobController::class, 'deleteUser']);
     Route::resource('recruit.job', Admin\RecruitJobController::class);
 });
 

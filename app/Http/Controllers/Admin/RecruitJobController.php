@@ -513,7 +513,17 @@ class RecruitJobController extends Controller
         return redirect("/admin/recruit/{$recruit_id}/job/{$job_ids}/detail-sms")->with('success','문자전송에 성공했습니다.');
     }
 
-    public function deleteUser(Request $request, $recruit_id)
+    public function deleteUser(Request $request)
+    {
+        $job_ids = $request->input('ids');
+        $job_ids = explode(',', $job_ids);
+        $success = Job::whereIn('id', $job_ids)->delete();
+        $result = [];
+        $result['result'] = $success ? 'success' : 'fail';
+        return $result;
+    }
+
+    public function deleteUserAll(Request $request, $recruit_id)
     {
         $success = Job::where('recruit_id', '=', $recruit_id)->delete();
         $result = [];
