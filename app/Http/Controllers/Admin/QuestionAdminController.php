@@ -120,9 +120,22 @@ class QuestionAdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        DB::table('question_boards')->where('id', '=', $id)->delete();
-        return redirect('/admin/question_admin')->with('success','삭제에 성공했습니다.');
+        $ids = $request->input('ids');
+        $ids = explode(',', $ids);
+        // dd($ids);
+        $delete = DB::table('question_boards')->whereIn('id', $ids)->delete();
+
+        if ( $delete ) {
+            $result = [
+                'result' => 'success'
+            ];
+        } else {
+            $result = [
+                'result' => 'fail'
+            ];
+        }
+        return $result;
     }
 }

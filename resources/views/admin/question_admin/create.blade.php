@@ -60,55 +60,12 @@
                 <div class="row">
                     <div class="col-12">
                         <button type="button" class="btn btn-primary text-white save-btn">저장</button>
-                        <button type="button" class="btn btn-danger text-white btn-del">삭제</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
-<script>
-    const board_create = () => {
-
-        const init = () => {
-            event_listener();
-        };
-
-        const event_listener = () => {
-
-             //저장 버튼 클릭시
-            $('.save-btn').on('click', function() {
-                if (validation()) {
-                     $('.news-form').submit();
-                }
-            });
-
-            $('.btn-del').on('click', function(e){
-                if (confirm('삭제하시겠습니까?')) {
-                    $('[name="_method"]').val('DELETE');
-                    $('.news-form').submit();
-                }
-            });
-        }
-
-        const validation = () => {
-
-            if ($('textarea[name=answer]').val() == '' || $('textarea[name=answer]').val() == null) {
-                alert('답변을 입력해주세요.');
-                $('textarea[name=answer]').focus();
-                return false;
-            }
-            return true;
-        }
-
-        init();
-    }
-
-    window.onload = function(){
-        board_create();
-    }
-</script>
 @endsection
 
 @section('css')
@@ -118,6 +75,7 @@
 @section('js')
     <script src="/eng/js/admin/manifest.js"></script>
     <script src="/eng/js/admin/vendor.js"></script>
+    <script src="/eng/js/admin/question.js"></script>
 @stop
 
 

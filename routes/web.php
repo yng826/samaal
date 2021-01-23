@@ -271,6 +271,7 @@ Route::prefix('admin')->middleware('auth', 'roles:admin,editor')->group(function
     Route::resource('faq', Admin\FaqController::class);
 
     Route::resource('question_admin', Admin\QuestionAdminController::class);
+    Route::delete('question', [QuestionAdminController::class, 'destroy']);
     Route::get('question_admin/{id}', [QuestionAdminController::class, 'show'])
             ->where('id', '[0-9]+');
 });
