@@ -149,6 +149,56 @@ const job_list = () => {
             });
             $(location).attr('href','/eng/admin/recruit/'+$('select[name=recruit_id]').val()+'/job/'+ids+'/detail-sms');
         });
+        //선택삭제 클릭시
+        $('.btn-delete-selected').on('click', function() {
+            let ids = '';
+            $('input[name=id-check]:checked').each(function(index, item) {
+                ids += (index>0 ? ',' : '') + $(this).val();
+            });
+            let valid = confirm('선택한 지원내역을 삭제합니다');
+            if ( !valid ) {
+                return false;
+            }
+            let recruit_id = $(this).data('recruit_id');
+            $.ajax({
+                type: "DELETE",
+                url: "/eng/admin/job/",
+                data: {
+                    ids: ids
+                },
+                dataType: "json",
+                success: function (response) {
+                    if (response.result == 'success') {
+                        alert('삭제되었습니다');
+                        window.location.reload();
+                    } else {
+                        alert('문제가 발생했습니다.');
+                    }
+                }
+            });
+        });
+
+        $('.btn-delete').on('click', function(e){
+            let valid = confirm('지원내역을 전체 삭제합니다');
+            if ( !valid ) {
+                return false;
+            }
+            let recruit_id = $(this).data('recruit_id');
+            $.ajax({
+                type: "DELETE",
+                url: "/eng/admin/recruit/" + recruit_id + '/job',
+                data: "data",
+                dataType: "json",
+                success: function (response) {
+                    if (response.result == 'success') {
+                        alert('삭제되었습니다');
+                        window.location.reload();
+                    } else {
+                        alert('문제가 발생했습니다.');
+                    }
+                }
+            });
+        });
     }
 
     /* 체크박스 설정 */
