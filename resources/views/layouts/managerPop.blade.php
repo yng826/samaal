@@ -3,9 +3,6 @@
     <h3>담당자</h3>
 </div>
 
-@php
-    debug($business)
-@endphp
 <div class="manager-pop__list">
     <dl>
         <dt>담당자</dt>
