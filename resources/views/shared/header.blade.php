@@ -1,5 +1,5 @@
 <header class="header">
-    <a href="/" class="header__logo">
+    <a href="/kor" class="header__logo">
         <img src="/kor/images/common/logo.png" alt="SAMA">
     </a>
 
