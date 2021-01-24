@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\HearderServiceProvider::class,
         App\Providers\FooterServiceProvider::class,
+        App\Providers\NoticeServiceProvider::class,
 
     ],
 
