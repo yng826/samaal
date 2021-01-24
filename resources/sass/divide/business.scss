@@ -903,7 +903,7 @@
             border: none;
             box-sizing: border-box;
             border: 1px solid #e8ecef;
-            font-size: 12px;
+            font-size: 20px;
 
             &::placeholder {
                 font-size: 18px;
@@ -980,15 +980,19 @@
         }
 
         .input-gorup {
+            @extend %clear;
 
             &__item {
                 display: inline-block;
                 width:46%;
                 vertical-align: middle;
+                margin-top: 1px;
+
                 &.hidden {
                     display: none;
                     &.show {
                         display: inline-block;
+                        float: right;
                     }
                 }
             }
@@ -997,8 +1001,9 @@
                 position: relative;
                 display: inline-block;
                 vertical-align: middle;
-                margin-top: 5px;
                 width: 46%;
+                float: right;
+                margin-top: 1px;
 
                 &::after {
                     content: "";
@@ -2235,6 +2240,7 @@
                 height: vw(140px);
                 padding: vw(30px);
                 border-radius: vw(5px);
+                font-size: vw(20px);
 
                 &::placeholder {
                     font-size: vw(18px);
@@ -2293,8 +2299,8 @@
                 }
 
                 &__select {
-                    margin-top: 5px;
                     width: 46%;
+                    float: right;
                 }
 
                 &__at {

@@ -133,6 +133,21 @@ const common = () => {
         });
     }
 
+    const main_modal = () => {
+        if($(".main-modal").length){
+            $(".popup-mask").addClass("show");
+        }
+
+        $(".popup-mask").on("click",function(){
+            $(".main-modal").hide();
+        });
+
+        $(".main-modal__close").on("click",function(){
+            $(".main-modal").hide();
+            $(".popup-mask").removeClass("show");
+        });
+    }
+
     const common_init = () => {
         header_lang();
         header_search();
@@ -141,6 +156,7 @@ const common = () => {
         footer_top();
         question_pop();
         // introHeader();
+        main_modal();
     };
 
     common_init();
