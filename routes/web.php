@@ -371,6 +371,7 @@ Route::prefix('admin')->middleware('auth', 'roles:admin,editor')->group(function
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
 
     Route::resource('faq', Admin\FaqController::class);
+    Route::resource('notice', Admin\NoticeController::class);
 
     Route::resource('question_admin', Admin\QuestionAdminController::class);
     Route::delete('question', [QuestionAdminController::class, 'destroy']);

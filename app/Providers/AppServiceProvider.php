@@ -104,6 +104,11 @@ class AppServiceProvider extends ServiceProvider
                         'text' => 'FAQ 관리',
                         'url'  => 'admin/faq',
                         'icon' => 'fas fa-fw fa-comments',
+                    ]);$event->menu->add('사이트');
+                    $event->menu->add([
+                        'text' => '팝업 관리',
+                        'url'  => 'admin/notice',
+                        'icon' => 'fas fa-fw fa-archive',
                     ]);
                 }
 
