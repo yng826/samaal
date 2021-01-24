@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container user-{{ $user ? 'update':'create'}}">
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -105,14 +105,37 @@
                 alert('사용자명을 입력해주세요.');
                 $('input[name=name]').focus();
                 return false;
-            }else if ($('input[name=email]').val() == '' || $('input[name=email]').val() == null) {
+            }
+            if ($('input[name=email]').val() == '' || $('input[name=email]').val() == null) {
                 alert('이메일을 입력해주세요.');
                 $('input[name=email]').focus();
                 return false;
-            }else if ($('input[name=password]').val() == '' || $('input[name=password]').val() == null) {
-                alert('비밀번호를 입력해주세요.');
-                $('input[name=password]').focus();
-                return false;
+            }
+            if ($('.container').hasClass('user-create')) {
+                if ($('input[name=password]').val() == '' || $('input[name=password]').val() == null) {
+                    alert('비밀번호를 입력해주세요.');
+                    $('input[name=password]').focus();
+                    return false;
+                }
+
+                var pw = $('input[name=password]').val();
+                var num = pw.search(/[0-9]/g);
+                var eng = pw.search(/[a-z]/ig);
+                var spe = pw.search(/[`~!@#$%^&*()|₩₩₩'₩";:₩/?]/gi);
+
+                if(pw.length < 8 || pw.length > 20){
+                    alert("비밀번호 8자리 ~ 20자리 이내로 입력해주세요.");
+                    $('input[name=password]').focus();
+                    return false;
+                }else if(pw.search(/\s/) != -1){
+                    alert("비밀번호는 공백 없이 입력해주세요.");
+                    $('input[name=password]').focus();
+                    return false;
+                }else if(num < 0 || eng < 0 || spe < 0 ){
+                    alert("비밀번호 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+                    $('input[name=password]').focus();
+                    return false;
+                }
             }
 
              /* 이메일 체크 */
@@ -123,25 +146,6 @@
                 alert('이메일 형식이 올바르지 않습니다.');
                 $('input[name=email]').focus();
 
-                return false;
-            }
-
-            var pw = $('input[name=password]').val();
-            var num = pw.search(/[0-9]/g);
-            var eng = pw.search(/[a-z]/ig);
-            var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-
-            if(pw.length < 8 || pw.length > 20){
-                alert("비밀번호 8자리 ~ 20자리 이내로 입력해주세요.");
-                $('input[name=password]').focus();
-                return false;
-            }else if(pw.search(/\s/) != -1){
-                alert("비밀번호는 공백 없이 입력해주세요.");
-                $('input[name=password]').focus();
-                return false;
-            }else if(num < 0 || eng < 0 || spe < 0 ){
-                alert("비밀번호 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
-                $('input[name=password]').focus();
                 return false;
             }
 
