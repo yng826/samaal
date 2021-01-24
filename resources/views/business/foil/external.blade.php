@@ -25,7 +25,7 @@
 
 @section('info__value')
     <em>미래가치</em>
-    <p>국내외 모든 전지업체로<br>
+    <p>국내외 모든 전지 업체로<br>
         공급될 것으로 전망합니다</p>
 @endsection
 
