@@ -108,8 +108,8 @@ class IsoCertificationController extends Controller
     {
         $certification = DB::table('iso_certifications')->where('id', $request->id)->first();
 
-        $file =  Storage::get($certification->pdf_file_path);
+        $file_path = 'storage/'.$certification->pdf_file_path;
 
-        return response($file, 200, ['Content-Disposition' => "attachment; filename={$certification->pdf_file_name}"]);
+        return response()->download($file_path, $certification->pdf_file_name);
     }
 }
