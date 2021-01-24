@@ -24,6 +24,7 @@
                             <th class="text-center">번호</th>
                             <th class="text-center">제목</th>
                             <th class="text-center">버튼색상</th>
+                            <th class="text-center">순서</th>
                             <th class="text-center">사용여부</th>
                             <th class="text-center">등록일</th>
                             <th class="text-center">관리</th>
@@ -33,6 +34,7 @@
                             <td class="text-center">{{ $notice->id }}</td>
                             <td class="text-center">{{ $notice->title }}</td>
                             <td class="text-center"><span class="text-light" style="background-color: #{{ $notice->button_color }}">#{{ $notice->button_color }}</span></td>
+                            <td class="text-center">{{ $notice->order}}</td>
                             <td class="text-center">{{ $notice->is_use ? '사용': '미사용'}}</td>
                             <td class="text-center">{{ $notice->updated_at ?? $notice->created_at}}</td>
                             <td class="text-center">

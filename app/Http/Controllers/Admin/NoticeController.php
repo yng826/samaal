@@ -15,7 +15,10 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        $notices = DB::table('notices')->orderBy('id', 'desc')->paginate(10);
+        $notices = DB::table('notices')
+            ->orderBy('order', 'ASC')
+            ->orderBy('id', 'desc')
+            ->paginate(10);
 
         return view('admin.notice.list', [
             'notices' => $notices,
