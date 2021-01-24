@@ -17,7 +17,7 @@
 @endsection
 
 @section('info__text')
-    Produced to replace a product dependent on imports in the 1960s, this is Sama's first ever product. It has excellent barrierity against moisture and gas.
+    Produced to replace a product dependent on imports in the 1960s, this is Sama's first-ever product. It has excellent barrierity against moisture and gas.
 @endsection
 
 @section('info__value')

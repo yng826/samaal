@@ -9,7 +9,7 @@
         </div>
         <div class="privacy-wrap__contents ">
             <p>
-                Sam-A Aluminum Co., Ltd., protects the personal information of users in accordance with the Personal Information Protection Act and the Act on Promotion of Information and Communications Network Utilization and Information Protection. The following personal information management policy is established and disclosed so that we can properly handle users' complaints related to personal information.
+                Sam-A Aluminium Co., Ltd., protects the personal information of users in accordance with the Personal Information Protection Act and the Act on Promotion of Information and Communications Network Utilization and Information Protection. The following personal information management policy is established and disclosed so that we can properly handle users' complaints related to personal information.
             </p>
             <p>
                 <em>1. Personal information items for collection and purposes of processing</em>

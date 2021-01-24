@@ -3,7 +3,7 @@
 @section('detail__title')
     Aluminium Foil for LIB Pouch
     <p>
-       An exterior packaging material that contributes to weight reduction of automobiles by adjusting various sizes and shapes compared to cylindrical battery
+       An exterior packaging material that contributes to a weight reduction of automobiles by adjusting various sizes and shapes compared to cylindrical battery
     </p>
 @endsection
 
