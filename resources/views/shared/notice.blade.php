@@ -1,3 +1,4 @@
+@if (count($notices))
 <div id="notice" class="main-modal">
     @foreach ($notices as $notice)
     <div class="notice-group main-modal__wrap">
@@ -7,3 +8,4 @@
     @endforeach
     <button type="button" class="main-modal__close">닫기</button>
 </div>
+@endif
