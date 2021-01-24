@@ -932,6 +932,47 @@
     }
 }
 
+/* modal pop */
+.main-modal {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 285px;
+    height: auto;
+    padding: 0 10px 20px;
+    background-color: #2b4985;
+    z-index: 101;
+
+    &__wrap {
+        padding-top: 20px;
+    }
+
+    &__title {
+        font-size: 25px;
+        font-weight: 400;
+        color: #fff;
+    }
+
+    &__link {
+        display: block;
+        margin-top: 10px;
+        padding: 10px 0;
+        font-size: 18px;
+        text-align: center;
+        color: #fff;
+    }
+
+    &__close {
+        display: block;
+        margin: 50px auto 0;
+        padding: 5px 50px;
+        font-size: 18px;
+        text-align: center;
+        background-color: #465470;
+        color: #fff;
+    }
+}
+
 
 /* 웹 1600 사이즈 */
 @media all and (max-width: 1600px) {
@@ -2482,6 +2523,32 @@
             table {
                 width: 100%;
             }
+        }
+    }
+
+    /* modal pop */
+    .main-modal {
+        width: vw(400px);
+        padding: vw(0 10px 20px);
+
+        &__wrap {
+            padding-top: vw(20px);
+        }
+
+        &__title {
+            font-size: vw(30px);
+        }
+
+        &__link {
+            margin-top: vw(10px);
+            padding: vw(10px 0);
+            font-size: vw(25px);
+        }
+
+        &__close {
+            margin: vw(50px auto 0);
+            padding: vw(5px 50px);
+            font-size: vw(25px);
         }
     }
 

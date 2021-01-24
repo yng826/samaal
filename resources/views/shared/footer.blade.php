@@ -126,6 +126,5 @@
     </form>
 </div>
 <div class="popup-mask"></div>
-@include('shared.notice')
 {{-- <script src="/kor/js/question.js"></script> --}}
 

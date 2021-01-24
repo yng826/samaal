@@ -110,7 +110,7 @@
                 </div>
             </div>
         </div>
-
+        @include('shared.notice')
         @include('shared.footer')
         @yield('popup-container')
     </div>
