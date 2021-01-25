@@ -821,6 +821,7 @@
         }
 
         li {
+            @extend %clear;
             margin-bottom: 20px;
             font-size: 0;
         }
@@ -835,6 +836,7 @@
 
         select {
             display: block;
+            float: right;
             width: 100%;
             padding: 0 30px;
             background-color: #e8ecef;
