@@ -10,6 +10,7 @@
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
         <link rel="stylesheet" href="/eng/css/app.css">
         <link rel="icon" href="/eng/images/favicon.ico" type="image/x-icon">
+        @include('shared.gtm-header')
     </head>
     <body class="business">
         <div id="app">

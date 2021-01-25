@@ -14,6 +14,7 @@
     <title>삼아알미늄</title>
     <!-- Styles -->
     <link href="/eng/css/app.css" rel="stylesheet">
+    @include('shared.gtm-header')
 </head>
 <body>
     @include('shared.header')

@@ -11,6 +11,7 @@
         <link rel="icon" href="/eng/images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="/eng/css/app.css">
         <script src="js/app.js"></script>
+        @include('shared.gtm-header')
     </head>
     <body>
         <div class="intro-section">

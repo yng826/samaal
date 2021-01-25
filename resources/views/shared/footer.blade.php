@@ -120,4 +120,4 @@
 </div>
 <div class="popup-mask"></div>
 {{-- <script src="/eng/js/question.js"></script> --}}
-
+@include('shared.gtm-footer')
