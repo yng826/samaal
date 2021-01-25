@@ -14,6 +14,7 @@
     <title>{{ config('app.name', '삼아알미늄') }}</title>
     <!-- Styles -->
     <link href="/kor/css/app.css" rel="stylesheet">
+    @include('shared.gtm-header')
 </head>
 <body class={{ $bodyClass ?? '' }}>
     <div id="main">
@@ -26,7 +27,7 @@
                         <em>삼아</em>가 만드는<br> <em>지속 가능한 세상</em>
                     </h2>
                     <div class="main-wrap__section--button">
-                        <a href="/intro">더 알아보기</a>
+                        <a href="/kor/intro">더 알아보기</a>
                     </div>
                 </div>
                 <div class="section main-wrap__section--img">
