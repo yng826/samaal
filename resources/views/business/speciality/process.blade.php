@@ -26,22 +26,22 @@
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">압연</span>
                     <strong class="lang-english">Rolling</strong>
-                    <a href="https://www.youtube.com/embed/y-hvWlZ0Vdg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_1')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">분리, 분단</span>
                     <strong class="lang-english">Separating / Slitting</strong>
-                    <a href="https://www.youtube.com/embed/VUle8_sEG7M?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_2')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">연화</span>
                     <strong class="lang-english">Annealing</strong>
-                    <a href="https://www.youtube.com/embed/HNb5OE9o9cg?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_3')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">포장</span>
                     <strong class="lang-english">Packaging</strong>
-                    <a href="https://www.youtube.com/embed/sW3hHj2l47Q?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_4')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>
             <p class="process-layout__text">
@@ -98,22 +98,22 @@
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">인쇄</span>
                     <strong class="lang-english">Printing</strong>
-                    <a href="https://www.youtube.com/embed/XKEUDSpvNTU?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_5')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">접합</span>
                     <strong class="lang-english">Laminating</strong>
-                    <a href="https://www.youtube.com/embed/3ZFpeeNK_dE?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_6')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">분단</span>
                     <strong class="lang-english">Slitting</strong>
-                    <a href="https://www.youtube.com/embed/B6zh5mTWKgE?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_7')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">제대</span>
                     <strong class="lang-english">Bag Making</strong>
-                    <a href="https://www.youtube.com/embed/U5iFUflg36Y?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_8')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">동영상 보기</a>
                 </li>
             </ul>
             <p class="process-layout__text">
