@@ -10,7 +10,7 @@
     <meta property="og:description" content="SAMA">
     <meta property="og:id" content="sama">
     <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/eng/images/favicon.ico" type="image/x-icon">
     <title>{{ config('app.name', '삼아알미늄') }}</title>
     <!-- Styles -->
     <link href="/eng/css/app.css" rel="stylesheet">
