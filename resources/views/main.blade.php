@@ -27,7 +27,7 @@
                         Creating <em>a Sustainable World</em>
                     </h2>
                     <div class="main-wrap__section--button">
-                        <a href="/intro">More</a>
+                        <a href="/eng/intro">More</a>
                     </div>
                 </div>
                 <div class="section main-wrap__section--img">
