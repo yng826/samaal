@@ -17,7 +17,7 @@
 @endsection
 
 @section('info__text')
-    Our material for heated rear-view mirror heaters have unique characteristics by being well-etched and maintaining electric resistance stability. It is used not only for rear-view mirror heaters, but also for steering wheels and heated seats, giving the driver a comfortable driving experience.
+    Our material for heated rear-view mirror heaters has unique characteristics by being well-etched and maintaining electric resistance stability. It is used not only for rear-view mirror heaters, but also for steering wheels and heated seats, giving the driver a comfortable driving experience.
 @endsection
 
 @section('info__value')

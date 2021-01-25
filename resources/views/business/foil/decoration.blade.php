@@ -1,7 +1,7 @@
 @extends('layouts.business')
 
 @section('detail__title')
-    High-gloss aluminium Foil for Decoration
+    High-gloss Aluminium Foil for Decoration
     <p>
         High-quality, high-gloss aluminium foil for high-end packaging
     </p>

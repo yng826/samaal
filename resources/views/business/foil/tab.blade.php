@@ -13,7 +13,7 @@
 @endsection
 
 @section('info__title')
-    Please develop an LIB lead tab that can be <span>used in various devices</span>!
+    Please develop a LIB lead tab that can be <span>used in various devices</span>!
 @endsection
 
 @section('info__text')

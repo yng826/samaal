@@ -45,7 +45,7 @@
             </ul>
             <p class="process-layout__text">
                 Cutting-edge rolling mills with ultra-high speed & widest width of 2,100mm,<br>
-                as well as the latest production facilities such as seperators, <br>
+                as well as the latest production facilities such as separators, <br>
                 slitters, pinhole detectors, etc.<br>
                 <span>First in Korea to successfully produce 4.5㎛ aluminium foil</span>
 

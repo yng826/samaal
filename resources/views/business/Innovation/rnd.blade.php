@@ -25,7 +25,7 @@
     <div class="contents-wrap__section innovation-rnd__contents">
         <h3>
             Creativity is limitless<br>
-            <p>Sama's state-of-the-art research facilities and expanded organization are the key source of<br> new technologies and ground-breaking products </p>
+            <p>Sama's state-of-the-art research facilities and expanded organization are the key sources of<br> new technologies and ground-breaking products </p>
         </h3>
         <div class="innovation-rnd__text">
             <p>Sama's R&D strives to be the world's best by achieving the highest quality and creating values based on our understanding of customer needs and products.</p>
