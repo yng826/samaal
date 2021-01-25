@@ -9,7 +9,7 @@
         <meta property="og:id" content="sama">
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
         <link rel="stylesheet" href="/kor/css/app.css">
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/kor/images/favicon.ico" type="image/x-icon">
     </head>
     <body class="business">
         <div id="app">

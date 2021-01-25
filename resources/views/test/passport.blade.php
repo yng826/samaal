@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="삼아알미늄">
     <meta property="og:id" content="sama">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/kor/images/favicon.ico" type="image/x-icon">
     <title>Document</title>
 
     <link rel="stylesheet" href="/kor/css/vendor.css">
