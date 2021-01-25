@@ -17,7 +17,7 @@ $bodyClass = 'about';
                 <li class="about-storyNews__list-item">
                         <a href="/eng/about-us/story-news/{{$info->id}}" class="news-btn" id="news-btn-{{ $info->id }}">
                         <input type="hidden"  value="{{ $info->id }}">
-                        <figure style="{{ 'background-image:url(/storage/'.$info->img_file_path.')' }}">
+                        <figure style="{{ 'background-image:url(/eng/storage/'.$info->img_file_path.')' }}">
                             {{-- <img src="/eng/storage/{{ $info->img_file_path }}" alt=""> --}}
                         </figure>
                         <div class="about-storyNews__list-item--text">
