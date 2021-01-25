@@ -7,16 +7,16 @@ const question = () => {
 
     const event_listener = () => {
 
-        $('#email-txt, #email-all-txt').val('').removeClass('show');
-        $('.question-pop').on('change', '#email-select, #email-all-select', function(e) {
-            console.log('direct');
-            if ($(this).val() == 'direct') {
-                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').addClass('show');
-                $('.input-gorup__select').removeClass('show');
-            } else {
-                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').val('').removeClass('show');
-            }
-        });
+        // $('#email-txt, #email-all-txt').val('').removeClass('show');
+        // $('.question-pop').on('change', '#email-select, #email-all-select', function(e) {
+        //     console.log('direct');
+        //     if ($(this).val() == 'direct') {
+        //         $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').addClass('show');
+        //         $('.input-gorup__select').removeClass('show');
+        //     } else {
+        //         $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').val('').removeClass('show');
+        //     }
+        // });
 
         // $('.save-btn').on('click', (e) => {
         //     let _form = $(this).closest('form');

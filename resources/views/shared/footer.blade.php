@@ -60,7 +60,7 @@
         <ul>
             <li>
                 <h4>Title</h4>
-                <input type="text" class="form-control" name="title" id ="title-all" placeholder="">
+                <input type="text" class="form-control" name="title" id ="title-all" placeholder="Please input">
             </li>
             <li>
                 <h4>Categories</h4>
@@ -74,10 +74,10 @@
             <li>
                 <h4>E-mail address</h4>
                 <div class="input-gorup">
-                    <input type="text" class="form-control input-gorup__item" id="email-all-first" placeholder="">
+                    <input type="text" class="form-control input-gorup__item" id="email-all-first" placeholder="Please input">
                     <em class="input-gorup__at">@</em>
-                    <input type="text" class="form-control input-gorup__item hidden" id="email-all-txt" placeholder="">
-                    <div class="input-gorup__select">
+                    <input type="text" class="form-control input-gorup__item" id="email-all-txt" placeholder="Please input">
+                    {{-- <div class="input-gorup__select">
                         <select class="form-control w-auto mr-1 " id="email-all-select">
                             <option value="">::Select::</option>
                             <option value="naver.com">naver.com</option>
@@ -85,13 +85,13 @@
                             <option value="gmail.com">gmail.com</option>
                             <option value="direct">Direct Input</option>
                         </select>
-                    </div>
+                    </div> --}}
                     <input type="hidden" name="email" id="email-all">
                 </div>
             </li>
             <li>
                 <h4>Contents</h4>
-                <textarea rows="5" class="form-control tinymce-editor" name="question" id ="question-all" placeholder=""></textarea>
+                <textarea rows="5" class="form-control tinymce-editor" name="question" id ="question-all" placeholder="Please input"></textarea>
             </li>
             <li>
                 <h4>Privacy Policy</h4>
