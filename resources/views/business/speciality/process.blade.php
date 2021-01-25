@@ -25,22 +25,22 @@
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">Rolling </span>
                     {{-- <strong class="lang-english">Rolling</strong> --}}
-                    <a href="https://www.youtube.com/embed/oZ1L0wVKx5s?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_1')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">Separating / Slitting</span>
                     {{-- <strong class="lang-english">Separating / Slitting</strong> --}}
-                    <a href="https://www.youtube.com/embed/Tu5Tigu9_70?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_2')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">Annealing</span>
                     {{-- <strong class="lang-english">Annealing</strong> --}}
-                    <a href="https://www.youtube.com/embed/4Jw101Vt8qA?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_3')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
                 <li class="process-layout__list--item content-01__list--item">
                     <span class="lang-korea">Packaging</span>
                     {{-- <strong class="lang-english">Packaging</strong> --}}
-                    <a href="https://www.youtube.com/embed/POYjMeZK0Mc?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_4')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
             </ul>
             <p class="process-layout__text">
@@ -95,22 +95,22 @@
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">Printing</span>
                     {{-- <strong class="lang-english">Printing</strong> --}}
-                    <a href="https://www.youtube.com/embed/kB7y8SreoTE?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_5')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">Laminating</span>
                     {{-- <strong class="lang-english">Laminator</strong> --}}
-                    <a href="https://www.youtube.com/embed/8CO6Va0C-S4?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_6')}}-S4?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">Slitting</span>
                     {{-- <strong class="lang-english">Slitting</strong> --}}
-                    <a href="https://www.youtube.com/embed/xwzwaP2pPJw?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_7')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
                 <li class="process-layout__list--item content-02__list--item">
                     <span class="lang-korea">Bag Making</span>
                     {{-- <strong class="lang-english">Bag Making</strong> --}}
-                    <a href="https://www.youtube.com/embed/qN8BQEiCV08?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
+                    <a href="https://www.youtube.com/embed/{{env('YOUTUBE_8')}}?enablejsapi=1&autoplay=true&origin={{ config('app.url')}}" class="popup-btn">View Film</a>
                 </li>
             </ul>
             <p class="process-layout__text">
