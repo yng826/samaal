@@ -342,9 +342,6 @@ Route::prefix('admin')->group(function () {
     Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
 
 });
-Route::get('role', function () {
-    return 'auth';
-})->middleware(['roles:admin']);
 
 Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::post('menu/order-update', [AdminMenuController::class, 'orderUpdate']);
@@ -393,30 +390,6 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin,recruit'])->group(funct
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('mypage', Admin\MypageController::class);
-});
-
-Auth::routes([
-    'register' => false, // Registration Routes...
-    'reset' => false, // Password Reset Routes...
-    'verify' => false, // Email Verification Routes...
-]);
-
-Route::get('/confirm-password', function () {
-    return view('auth.passwords.confirm');
-})->middleware(['auth'])->name('auth.passwords.confirm');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('passport', function() {
-    return view('test.passport');
-})->middleware('auth');
-
-Route::get('/test', function() {
-    return view('test.vue');
-});
-
-Route::get('session', function () {
-    return Session::get('access_token');
 });
 
 /*
