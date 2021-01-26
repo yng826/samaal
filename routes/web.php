@@ -49,10 +49,6 @@ Route::get('intro', function () {
     return view('intro');
 });
 
-Route::get('sample', function () {
-    return view('sample');
-});
-
 Route::prefix('about-us')->group(function() {
     // /about-us/heriatage
     Route::get('location/poseung', function () {
