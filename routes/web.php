@@ -278,3 +278,9 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin,recruit'])->group(funct
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('mypage', Admin\MypageController::class);
 });
+
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
