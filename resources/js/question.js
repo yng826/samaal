@@ -11,31 +11,12 @@ const question = () => {
         $('.question-pop').on('change', '#email-select, #email-all-select', function(e) {
             console.log('직접 입력');
             if ($(this).val() == '직접 입력') {
-                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').addClass('show');
+                $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').addClass('show').trigger('focus');
                 $('.input-gorup__select').removeClass('show');
             } else {
                 $('#email-' + (e.target.id=='email-all-select' ? 'all-' : '') + 'txt').val('').removeClass('show');
             }
         });
-
-        // $('.save-btn').on('click', (e) => {
-        //     let _form = $(this).closest('form');
-        //     console.log(_form);
-        //     e.preventDefault();
-        //     if ( validation() ) {
-        //         Swal.fire({
-        //             title: '확인되었습니다!',
-        //             icon: 'success',
-        //             confirmButtonText: '확인'
-        //         });
-
-        //         console.log('form submit');
-        //         //axios.post();
-        //         // $(".layer-popup").removeClass('show');
-        //         // $(".popup-mask").removeClass('show');
-        //         $(".question-form").trigger('submit');
-        //     }
-        // });
 
         $('.save-btn, .save-btn-all').on('click', (e) => {
             e.preventDefault();
