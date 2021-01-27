@@ -59,7 +59,8 @@ const financial = () => {
                               return numberWithCommas(value);
                             },
                             beginAtZero:true,
-                            maxTicksLimit: 6
+                            maxTicksLimit: 6,
+                            max: 300000
                           }
                     }],
                     xAxes: [{
@@ -457,8 +458,7 @@ const financial = () => {
                               return numberWithCommas(value);
                             },
                             beginAtZero:true,
-                            maxTicksLimit: 6,
-                            max: 300000
+                            maxTicksLimit: 6
                           }
                     }],
                     xAxes: [{
