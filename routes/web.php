@@ -388,6 +388,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('mypage', Admin\MypageController::class);
 });
 
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 /*
 Route::get('send2', function () {
     $text = "Hello";
