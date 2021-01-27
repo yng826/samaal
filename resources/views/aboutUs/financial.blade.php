@@ -31,42 +31,42 @@
                 <h3>매출액</h3>
                 <h6>(단위: 백만원)</h6>
                 <div>
-                    <canvas id="sales"></canvas>
+                    <canvas id="sales"  height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>영업이익</h3>
                 <h6>(단위: 백만원)</h6>
                 <div>
-                    <canvas id="operating_income"></canvas>
+                    <canvas id="operating_income"  height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>당기순이익</h3>
                 <h6>(단위: 백만원)</h6>
                 <div>
-                    <canvas id="net_income"></canvas>
+                    <canvas id="net_income"  height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>자산</h3>
                 <h6>(단위: 백만원)</h6>
                 <div>
-                    <canvas id="assets"></canvas>
+                    <canvas id="assets"  height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>부채</h3>
                 <h6>(단위: 백만원)</h6>
                 <div>
-                    <canvas id="liability"></canvas>
+                    <canvas id="liability"  height="264"></canvas>
                 </div>
             </div>
             <div class="about-ir__chart">
                 <h3>자본</h3>
                 <h6>(단위: 백만원)</h6>
                 <div>
-                    <canvas id="total"></canvas>
+                    <canvas id="total"  height="264"></canvas>
                 </div>
             </div>
         </div>
