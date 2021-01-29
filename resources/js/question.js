@@ -159,7 +159,7 @@ const question = () => {
         /* 이메일 체크 */
         if(chk) {
             var regexEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-            var inputEmail = $("#email-all-first").val() + '@' + ($("#email-all-select").val()=='direct' ? $("#email-all-txt").val() : $("#email-all-select").val());
+            var inputEmail = $("#email-first").val() + '@' + $("#email-txt").val();
 
             if(!regexEmail.test(inputEmail)) {
                 message = "Please enter a valid email address.";
