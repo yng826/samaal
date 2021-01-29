@@ -1,6 +1,7 @@
 
 @php
-$bodyClass = 'about';
+    $bodyClass = 'about';
+    $meta_desc = $news->desc ?? '';
 @endphp
 
 @extends('layouts.default')

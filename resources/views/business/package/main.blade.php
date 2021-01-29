@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 포장재 제품';
+    $meta_desc = '포장재 제품';
 @endphp
 
 @extends('layouts.default')

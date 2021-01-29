@@ -1,9 +1,11 @@
 <html>
     <head>
-        <title>{{ config('app.name', '삼아알미늄') }} | 제품 | {{ $meta_desc ?? '' }}</title>
+        <title>{{ $meta_title ?? '' }}</title>
+        <meta name="title" content="{{ $meta_title ?? '' }}">
+        <meta name="description" content="{{ $meta_desc ?? '' }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta property="og:title" content="삼아알미늄 | 제품 | {{ $meta_desc ?? '' }}">
+        <meta property="og:title" content="{{ $meta_title ?? '' }}">
         <meta property="og:type" content="website">
         <meta property="og:description" content="{{ $meta_desc ?? '' }}">
         <meta property="og:id" content="sama">

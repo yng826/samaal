@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 이노베이션 | 인증현황';
+    $meta_desc = '인증현황';
 @endphp
 
 @extends('layouts.default')

@@ -1,6 +1,8 @@
 
 @php
-$bodyClass = 'about';
+    $bodyClass = 'about';
+    $meta_title = '삼아알미늄 | 스토리 & 뉴스';
+    $meta_desc = '스토리 & 뉴스';
 @endphp
 
 @extends('layouts.default')

@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about';
+    $meta_title = '삼아알미늄 | 헤리티지존';
+    $meta_desc = '헤리티지존';
 @endphp
 
 @extends('layouts.default')

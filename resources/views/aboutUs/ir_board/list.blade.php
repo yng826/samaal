@@ -1,5 +1,24 @@
 @php
     $bodyClass = 'about-ir';
+    $meta_title = '삼아알미늄 | 재무정보 | ';
+    switch ($id) {
+        case 'consolidated':
+            $meta_title .= '연결재무제표';
+            $meta_desc = '연결재무제표';
+            break;
+        case 'separate':
+            $meta_title .= '별도재무제표';
+            $meta_desc = '별도재무제표';
+            break;
+        case 'board':
+            $meta_title .= '전자공고';
+            $meta_desc = '전자공고';
+            break;
+        default:
+            $meta_title .= '재무제표';
+            $meta_desc = '재무제표';
+            break;
+    }
 @endphp
 
 @extends('layouts.default')

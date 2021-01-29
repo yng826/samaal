@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | 리필파우치';
+    $meta_desc = '리필파우치';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

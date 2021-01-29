@@ -1,4 +1,5 @@
 @php
+    $meta_title = '삼아알미늄 | 제품 | Capacitor용';
     $meta_desc = 'Capacitor용';
 @endphp
 

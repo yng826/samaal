@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | 자동차용 사이드 미러 열선용 소재';
+    $meta_desc = '자동차용 사이드 미러 열선용 소재';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | 진공단열재용 필름';
+    $meta_desc = '진공단열재용 필름';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

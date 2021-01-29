@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | 알루미늄 페이스트';
+    $meta_desc = '알루미늄 페이스트';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

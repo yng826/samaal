@@ -1,5 +1,6 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | LIB 외장재용';
     $meta_desc = 'LIB 외장재용';
 @endphp
 

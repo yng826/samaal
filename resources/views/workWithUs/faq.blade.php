@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'work';
+    $meta_title = '삼아알미늄 | FAQ';
+    $meta_desc = 'FAQ';
 @endphp
 
 @extends('layouts.default')

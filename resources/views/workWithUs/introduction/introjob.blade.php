@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'workWithUs';
+    $meta_title = '삼아알미늄 | 직무소개';
+    $meta_desc = '직무소개';
 @endphp
 
 @extends('layouts.default')

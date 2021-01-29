@@ -1,5 +1,6 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | Hair Line';
     $meta_desc = 'Hair Line';
 @endphp
 

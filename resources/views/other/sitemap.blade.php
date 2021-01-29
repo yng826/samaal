@@ -1,3 +1,8 @@
+@php
+    $meta_title = '삼아알미늄 | 사이트맵';
+    $meta_desc = '사이트맵';
+@endphp
+
 @extends('layouts.default')
 
 @section('contents')

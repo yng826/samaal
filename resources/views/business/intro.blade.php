@@ -1,6 +1,7 @@
 @php
     $bodyClass = 'business';
-    $meta_desc = '제품';
+    $meta_title = '삼아알미늄 | 삼아가 만드는 지속 가능한 세상';
+    $meta_desc = '삼아가 만드는 지속 가능한 세상';
 @endphp
 
 @extends('layouts.default')

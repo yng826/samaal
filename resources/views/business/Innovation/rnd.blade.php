@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 이노베이션 | 연구개발';
+    $meta_desc = '연구개발';
 @endphp
 
 @extends('layouts.default')

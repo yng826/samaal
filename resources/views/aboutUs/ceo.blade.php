@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about-ceo';
+    $meta_title = '삼아알미늄 | CEO 메시지';
+    $meta_desc = 'CEO 메시지';
 @endphp
 
 @extends('layouts.default')

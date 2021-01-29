@@ -1,5 +1,6 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | 제약포장재용';
     $meta_desc = '제약포장재용';
 @endphp
 

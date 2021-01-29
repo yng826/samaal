@@ -1,5 +1,6 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | 열교환기용 Fin재';
     $meta_desc = '열교환기용 Fin재';
 @endphp
 

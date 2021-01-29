@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | 레토르트 포장재';
+    $meta_desc = '레토르트 포장재';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

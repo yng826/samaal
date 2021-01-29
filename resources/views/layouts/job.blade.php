@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <title>{{ $meta_title ?? '' }}</title>
+    <meta name="title" content="{{ $meta_title ?? '' }}">
+    <meta name="description" content="{{ $meta_desc ?? '' }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta property="og:title" content="삼아알미늄">
+    <meta property="og:title" content="{{ $meta_title ?? '' }}">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="삼아알미늄">
+    <meta property="og:description" content="{{ $meta_desc ?? '' }}">
     <meta property="og:id" content="sama">
     <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
     <link rel="icon" href="/kor/images/favicon.ico" type="image/x-icon">

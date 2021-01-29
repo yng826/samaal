@@ -1,3 +1,8 @@
+@php
+    $meta_title = '삼아알미늄 | 통합검색';
+    $meta_desc = '통합검색';
+@endphp
+
 @extends('layouts.default')
 
 @section('contents')

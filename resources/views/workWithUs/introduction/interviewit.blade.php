@@ -1,5 +1,7 @@
 @php
     $introductionBgColor = 'blue-color';
+    $meta_title = '삼아알미늄 | 직무인터뷰 | IT부문';
+    $meta_desc = 'IT부문';
 @endphp
 @extends('workWithUs.introduction.interviewLayout')
 

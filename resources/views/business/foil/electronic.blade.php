@@ -1,5 +1,6 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | LIB 양극집전체용 전자기기용';
     $meta_desc = 'LIB 양극집전체용 전자기기용';
 @endphp
 

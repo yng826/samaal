@@ -1,5 +1,6 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 알루미늄 호일 제품';
     $meta_desc = '알루미늄 호일 제품';
 @endphp
 

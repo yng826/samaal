@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about';
+    $meta_title = '삼아알미늄 | 연혁';
+    $meta_desc = '연혁';
 @endphp
 
 @extends('layouts.default')

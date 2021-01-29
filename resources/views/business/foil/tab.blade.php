@@ -1,5 +1,6 @@
 @php
     $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | LIB Tab재';
     $meta_desc = 'LIB Tab재';
 @endphp
 

@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about';
+    $meta_title = '삼아알미늄 | 서울사무소';
+    $meta_desc = '서울사무소';
 @endphp
 
 @extends('layouts.default')

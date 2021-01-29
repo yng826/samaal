@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about';
+    $meta_title = '삼아알미늄 | CI';
+    $meta_desc = 'CI';
 @endphp
 
 @extends('layouts.default')

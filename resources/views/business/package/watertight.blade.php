@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = '삼아알미늄 | 제품 | 초발수 리드';
+    $meta_desc = '초발수 리드';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')
