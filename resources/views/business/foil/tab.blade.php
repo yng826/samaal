@@ -1,3 +1,8 @@
+@php
+    $bodyClass = 'business';
+    $meta_desc = 'LIB Tab재';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

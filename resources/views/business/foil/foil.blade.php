@@ -1,3 +1,8 @@
+@php
+    $bodyClass = 'business';
+    $meta_desc = '연포장용';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

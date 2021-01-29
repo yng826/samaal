@@ -1,3 +1,8 @@
+@php
+    $bodyClass = 'business';
+    $meta_desc = '열교환기용 Fin재';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

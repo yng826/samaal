@@ -1,3 +1,7 @@
+@php
+    $meta_desc = 'Capacitor용';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

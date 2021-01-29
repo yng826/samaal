@@ -1,3 +1,8 @@
+@php
+    $bodyClass = 'business';
+    $meta_desc = 'LIB 양극집전체용 자동차용';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

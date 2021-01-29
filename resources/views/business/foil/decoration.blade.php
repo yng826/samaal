@@ -1,3 +1,8 @@
+@php
+    $bodyClass = 'business';
+    $meta_desc = 'Decoration용';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

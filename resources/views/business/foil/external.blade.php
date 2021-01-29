@@ -1,3 +1,8 @@
+@php
+    $bodyClass = 'business';
+    $meta_desc = 'LIB 외장재용';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

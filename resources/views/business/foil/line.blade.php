@@ -1,3 +1,8 @@
+@php
+    $bodyClass = 'business';
+    $meta_desc = 'Hair Line';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

@@ -1,5 +1,6 @@
 @php
     $bodyClass = 'business';
+    $meta_desc = '알루미늄 호일 제품';
 @endphp
 
 @extends('layouts.default')
