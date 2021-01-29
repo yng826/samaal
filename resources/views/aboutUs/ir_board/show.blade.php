@@ -1,6 +1,6 @@
 @php
     $bodyClass = 'about-ir';
-    $meta_title = '재무정보 | 전자공고 | 감사의견';
+    $meta_title = '삼아알미늄 | 재무정보 | 전자공고 | 감사의견';
     $meta_desc = '감사의견';
 @endphp
 

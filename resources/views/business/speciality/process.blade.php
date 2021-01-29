@@ -1,7 +1,7 @@
 @php
     $bodyClass = 'business';
-    $meta_title = '삼아알미늄 | 공정과정 | 압연';
-    $meta_desc = '압연';
+    $meta_title = '삼아알미늄 | 공정과정';
+    $meta_desc = '공정과정';
 @endphp
 
 @extends('layouts.default')
