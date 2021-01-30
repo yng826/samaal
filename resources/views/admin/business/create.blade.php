@@ -30,6 +30,12 @@
                         </ul>
                     </div>
                 @endif
+                @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+                @endif
                 @if ($message = Session::get('success'))
                 <div class="alert alert-success alert-block">
                     <button type="button" class="close" data-dismiss="alert">×</button>
@@ -207,4 +213,39 @@
 @section('js')
     <script src="/kor/js/admin/manifest.js"></script>
     <script src="/kor/js/admin/vendor.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.business-form').on('submit', function(e){
+                if ( !validation() ) {
+                    e.preventDefault();
+                }
+            });
+
+            function validation() {
+
+                if ($('input[name=url]').val() == '' || $('input[name=url]').val() == null) {
+                    alert('url을 입력해주세요.');
+                    $('input[name=url]').focus();
+                    return false;
+                }
+                if ($('select[name=type]').val() == '' || $('select[name=type]').val() == null) {
+                    alert('제품종류를 선택해주세요.');
+                    $('select[name=type]').focus();
+                    return false;
+                }
+                if ($('input[name=product]').val() == '' || $('input[name=product]').val() == null) {
+                    alert('제품키를 입력해주세요.');
+                    $('input[name=product]').focus();
+                    return false;
+                }
+                if ($('input[name=view]').val() == '' || $('input[name=view]').val() == null) {
+                    alert('view파일 경로를 입력해주세요.');
+                    $('input[name=view]').focus();
+                    return false;
+                }
+
+                return true;
+            }
+        });
+    </script>
 @stop

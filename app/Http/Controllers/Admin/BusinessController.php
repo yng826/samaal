@@ -46,6 +46,10 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
+        $old = Business::where('url', '=', $request->url)->first();
+        if ( $old ) {
+            return back()->withInput()->with('error','사용중인 url입니다');
+        }
         $img_file_1_path = '';
         $img_file_1_name = '';
         $img_file_2_path = '';
