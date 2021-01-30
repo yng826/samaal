@@ -51,9 +51,9 @@
                         <div class="form-group">
                             <label for="">종류</label>
                             <select name="type" id="" class="form-control">
-                                <option value="foil">foil</option>
-                                <option value="package">package</option>
-                                <option value="industry">industry</option>
+                                <option value="foil" {{ isset($business->type) && $business->type == 'foil' ? 'selected' : ''}}>foil</option>
+                                <option value="package" {{ isset($business->type) && $business->type == 'package' ? 'selected' : ''}}>package</option>
+                                <option value="industry" {{ isset($business->type) && $business->type == 'industry' ? 'selected' : ''}}>industry</option>
                             </select>
                         </div>
                         <div class="form-group">
