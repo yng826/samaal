@@ -79,14 +79,6 @@
                     </a>
                 </div>
             </div>
-            <div class="foil-box__inline mr-5">
-                {{-- 추가 제품 --}}
-                <!-- 주석 제거후 사용 --
-                <a href="foil/test" class="foil-box--item item-test">
-                    <p class="foil-box__text">Test</p>
-                </a>
-                <!-- 주석 제거후 사용 -->
-            </div>
         </div>
     </main>
     <style>
