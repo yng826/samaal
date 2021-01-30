@@ -1,7 +1,8 @@
 
 @php
     $bodyClass = 'about';
-    $meta_desc = $news->desc ?? '';
+    $meta_title = $news->title ? '삼아알미늄 | '.$news->title : '';
+    $meta_desc = $news->title ?? '';
 @endphp
 
 @extends('layouts.default')
