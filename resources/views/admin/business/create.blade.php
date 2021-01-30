@@ -43,6 +43,18 @@
                             <input type="text" class="form-control" name="url" value="{{$business->url ?? ''}}" {{$url_disabled}}>
                         </div>
                         <div class="form-group">
+                            <label for="">종류</label>
+                            <select name="type" id="" class="form-control">
+                                <option value="foil">foil</option>
+                                <option value="package">package</option>
+                                <option value="industry">industry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">제품key</label>
+                            <input type="text" class="form-control" name="product" value="{{$business->product ?? ''}}">
+                        </div>
+                        <div class="form-group">
                             <label for="">문의 제목</label>
                             <input type="question_title" class="form-control" name="question_title" value="{{$business->question_title ?? ''}}" placeholder="입력해주세요.">
                         </div>

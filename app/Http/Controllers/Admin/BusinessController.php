@@ -59,6 +59,8 @@ class BusinessController extends Controller
         $business = new Business();
         $business->url = $request->url;
         $business->question_title = $request->question_title;
+        $business->type = $request->type;
+        $business->product = $request->product;
         $business->name = $request->name;
         $business->tel = $request->tel;
         $business->tel_view = $request->tel_view;
@@ -156,6 +158,8 @@ class BusinessController extends Controller
         $img_file_5_name = '';
         $business = Business::find($id);
         $business->question_title = $request->question_title;
+        $business->type = $request->type;
+        $business->product = $request->product;
         $business->name = $request->name;
         $business->tel = $request->tel;
         $business->tel_view = $request->tel_view;
