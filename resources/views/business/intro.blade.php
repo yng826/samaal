@@ -30,15 +30,6 @@
                 <div class="swiper-slide">
                     <h2>Innovation</h2>
                     <a href="/kor/business/innovation/rnd" class="slide-info__link">더 알아보기</a>
-                    {{-- <a href="#" class="slide-info__link innovation-btn">더 알아보기</a>
-                    <ul class="innovation-btn__box">
-                        <li>
-                            <a href="/kor/business/innovation/rnd">R&D</a>
-                        </li>
-                        <li>
-                            <a href="/kor/business/innovation/iso_certification">인증현황</a>
-                        </li>
-                    </ul> --}}
                 </div>
             </div>
         </div>

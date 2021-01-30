@@ -22,6 +22,16 @@ class BusinessController extends Controller
         ]);
     }
 
+    public function intro(Request $request)
+    {
+        $uri = $request->segment(2);
+        $models = ModelsBusiness::where('type', '=', $uri)->get();
+        return view("business.{$uri}.main",[
+            'models' => $models,
+            'page' => $uri,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

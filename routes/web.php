@@ -88,15 +88,9 @@ Route::prefix('business')->group(function() {
             'bodyClass' => 'business'
         ]);
     });
-    Route::get('foil', function () {
-        return view('business.foil.main');
-    });
-    Route::get('package', function () {
-        return view('business.package.main');
-    });
-    Route::get('industry', function () {
-        return view('business.industry.main');
-    });
+    Route::get('foil', [BusinessController::class, 'intro']);
+    Route::get('package', [BusinessController::class, 'intro']);
+    Route::get('industry', [BusinessController::class, 'intro']);
     // Route::get('{type}/{product}', [BusinessController::class, 'index']);
     Route::get('foil/capacitor', [BusinessController::class, 'index']);
     Route::get('foil/foil', [BusinessController::class, 'index']);

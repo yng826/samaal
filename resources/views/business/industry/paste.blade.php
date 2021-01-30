@@ -14,8 +14,13 @@
 @endsection
 
 @section('swiper-container')
-    <div class="swiper-slide"><div class="slide-img" style="background-image:url(/kor/images/business/foil/img_paste.jpg);"></div></div>
-    <div class="swiper-slide"><div class="slide-img" style="background-image:url(/kor/images/business/foil/img_paste_hover.jpg);"></div></div>
+@foreach ([1,2,3,4,5] as $i)
+    @if( $business['img_file_'.$i.'_path'] )
+    <div class="swiper-slide">
+        <div class="slide-img" style="background-image:url(/kor/storage/{{$business['img_file_'.$i.'_path']}});"></div>
+    </div>
+    @endif
+@endforeach
 @endsection
 
 @section('info__title')
