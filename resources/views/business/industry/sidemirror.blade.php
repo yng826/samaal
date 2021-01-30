@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | Laminated Film for Rear View Mirror Heater';
+    $meta_desc = 'Laminated Film for Rear View Mirror Heater';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

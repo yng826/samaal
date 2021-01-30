@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Innovation | R&D';
+    $meta_desc = 'R&D';
 @endphp
 
 @extends('layouts.default')

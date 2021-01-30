@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Search';
+    $meta_desc = 'Search';
+@endphp
+
 @extends('layouts.default')
 
 @section('contents')

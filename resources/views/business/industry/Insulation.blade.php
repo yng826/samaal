@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | High Barrier Film for Vacuum Insulation Panel';
+    $meta_desc = 'High Barrier Film for Vacuum Insulation Panel';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | ALU-ALU Cold Forming Foil';
+    $meta_desc = 'ALU-ALU Cold Forming Foil';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

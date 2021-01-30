@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | Refill Pouch';
+    $meta_desc = 'Refill Pouch';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

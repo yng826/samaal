@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Products | Hair Line Aluminium Foil';
+    $meta_desc = 'Hair Line Aluminium Foil';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

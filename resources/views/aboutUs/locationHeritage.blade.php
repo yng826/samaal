@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about';
+    $meta_title = 'Sama Aluminium | Heritage Zone';
+    $meta_desc = 'Heritage Zone';
 @endphp
 
 @extends('layouts.default')

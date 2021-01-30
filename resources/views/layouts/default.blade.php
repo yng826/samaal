@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <title>{{ $meta_title ?? '' }}</title>
     <meta charset="utf-8">
+    <meta name="title" content="{{ $meta_title ?? '' }}">
+    <meta name="description" content="{{ $meta_desc ?? '' }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="SAMA">
+    <meta property="og:title" content="{{ $meta_title ?? '' }}">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="SAMA">
+    <meta property="og:description" content="{{ $meta_desc ?? '' }}">
     <meta property="og:id" content="sama">
     <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
     <!-- CSRF Token -->

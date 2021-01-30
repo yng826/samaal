@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | Aluminium Paste';
+    $meta_desc = 'Aluminium Paste';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

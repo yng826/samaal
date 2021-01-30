@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | Aluminium-backed Paper for Cigarette Packaging';
+    $meta_desc = 'Aluminium-backed Paper for Cigarette Packaging';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

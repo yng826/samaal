@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about-ceo';
+    $meta_title = 'Sama Aluminium | Message from CEO';
+    $meta_desc = 'Message from CEO';
 @endphp
 
 @extends('layouts.default')

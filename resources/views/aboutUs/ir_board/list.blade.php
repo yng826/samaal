@@ -1,5 +1,24 @@
 @php
     $bodyClass = 'about-ir';
+    $meta_title = 'Sama Aluminium | Business Performance | ';
+    switch ($id) {
+        case 'consolidated':
+            $meta_title .= 'Consolidated Finacial Statement';
+            $meta_desc = 'Consolidated Finacial Statement';
+            break;
+        case 'separate':
+            $meta_title .= 'Separate Finacial Statement';
+            $meta_desc = 'Separate Finacial Statement';
+            break;
+        case 'board':
+            $meta_title .= 'Electronic Disclosure';
+            $meta_desc = 'Electronic Disclosure';
+            break;
+        default:
+            $meta_title .= 'Electronic Disclosure';
+            $meta_desc = 'Electronic Disclosure';
+            break;
+    }
 @endphp
 
 @extends('layouts.default')

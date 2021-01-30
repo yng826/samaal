@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about';
+    $meta_title = 'Sama Aluminium | Busan Office';
+    $meta_desc = 'Busan Office';
 @endphp
 
 @extends('layouts.default')

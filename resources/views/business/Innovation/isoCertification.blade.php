@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Innovation | Certification';
+    $meta_desc = 'Certification';
 @endphp
 
 @extends('layouts.default')

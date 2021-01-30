@@ -1,5 +1,7 @@
 @php
     $bodyClass = 'about';
+    $meta_title = 'Sama Aluminium | Poseung Factory';
+    $meta_desc = 'Poseung Factory';
 @endphp
 
 @extends('layouts.default')

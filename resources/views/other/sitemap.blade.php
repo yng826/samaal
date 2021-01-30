@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Sitemap';
+    $meta_desc = 'Sitemap';
+@endphp
+
 @extends('layouts.default')
 
 @section('contents')

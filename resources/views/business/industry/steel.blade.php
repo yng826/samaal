@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | Steel/Aluminium Laminated Tape';
+    $meta_desc = 'Steel/Aluminium Laminated Tape';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

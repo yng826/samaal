@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Products | LIB Tab';
+    $meta_desc = 'LIB Tab';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

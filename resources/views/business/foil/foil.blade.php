@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Products | Aluminium Foil for Flexible Packaging';
+    $meta_desc = 'Aluminium Foil for Flexible Packaging';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

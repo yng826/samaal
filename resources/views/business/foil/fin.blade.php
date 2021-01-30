@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Products | Finstock for Heat Exchanger';
+    $meta_desc = 'Finstock for Heat Exchanger';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

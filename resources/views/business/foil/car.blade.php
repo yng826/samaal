@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Products | LIB Cathode Foil for Automotive';
+    $meta_desc = 'LIB Cathode Foil for Automotive';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | Water-repellent Lid Film';
+    $meta_desc = 'Water-repellent Lid Film';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

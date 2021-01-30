@@ -1,6 +1,8 @@
 
 @php
 $bodyClass = 'about';
+    $meta_title = 'Sama Aluminium | Story & News';
+    $meta_desc = 'Story & News';
 @endphp
 
 @extends('layouts.default')

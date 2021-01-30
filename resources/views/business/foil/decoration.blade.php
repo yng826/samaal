@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Products | High-gloss Aluminium Foil for Decoration';
+    $meta_desc = 'High-gloss Aluminium Foil for Decoration';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

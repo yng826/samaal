@@ -1,3 +1,9 @@
+@php
+    $bodyClass = 'business';
+    $meta_title = 'Sama Aluminium | Products | Retortable Packaging';
+    $meta_desc = 'Retortable Packaging';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

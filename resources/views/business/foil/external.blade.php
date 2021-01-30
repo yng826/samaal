@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Products | Aluminium Foil for LIB Pouch';
+    $meta_desc = 'Aluminium Foil for LIB Pouch';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

@@ -1,3 +1,8 @@
+@php
+    $meta_title = 'Sama Aluminium | Products | Aluminium Foil for Electrical Capacitor';
+    $meta_desc = 'Aluminium Foil for Electrical Capacitor';
+@endphp
+
 @extends('layouts.business')
 
 @section('detail__title')

@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <title>Sama Aluminium</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Sama Aluminium">
+    <meta name="description" content="Sama Aluminium">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta property="og:title" content="SAMA">
+    <meta property="og:title" content="Sama Aluminium">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="SAMA">
+    <meta property="og:description" content="Sama Aluminium">
     <meta property="og:id" content="sama">
     <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
     <link rel="icon" href="/eng/images/favicon.ico" type="image/x-icon">
-    <title>{{ config('app.name', '삼아알미늄') }}</title>
     <!-- Styles -->
     <link href="/eng/css/app.css" rel="stylesheet">
     @include('shared.gtm-header')

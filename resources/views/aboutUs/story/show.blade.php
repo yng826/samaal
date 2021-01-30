@@ -1,6 +1,8 @@
 
 @php
 $bodyClass = 'about';
+    $meta_title = $news->title ? 'Sama Aluminium | '.$news->title : '';
+    $meta_desc = $news->title ?? '';
 @endphp
 
 @extends('layouts.default')

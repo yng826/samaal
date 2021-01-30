@@ -1,11 +1,13 @@
 <html>
     <head>
-        <title>{{ config('app.name', '삼아알미늄') }}</title>
+        <title>{{ $meta_title ?? '' }}</title>
+        <meta name="title" content="{{ $meta_title ?? '' }}">
+        <meta name="description" content="{{ $meta_desc ?? '' }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta property="og:title" content="SAMA">
+        <meta property="og:title" content="{{ $meta_title ?? '' }}">
         <meta property="og:type" content="website">
-        <meta property="og:description" content="SAMA">
+        <meta property="og:description" content="{{ $meta_desc ?? '' }}">
         <meta property="og:id" content="sama">
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
         <link rel="stylesheet" href="/eng/css/app.css">
