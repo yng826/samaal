@@ -69,7 +69,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">이미지파일</label>
+                                    <label for="">이미지파일(Intro화면)</label>
                                     <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file_1">
                                     <input type="hidden" name="img_file_1_path" value="{{$business->img_file_1_path ?? ''}}">
                                     <input type="text" name="img_file_1_name" readonly class="form-control" value="{{$business->img_file_1_name ?? ''}}">
@@ -90,7 +90,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">이미지파일</label>
+                                    <label for="">이미지파일(Intro화면 hover)</label>
                                     <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file_2">
                                     <input type="hidden" name="img_file_2_path" value="{{$business->img_file_2_path ?? ''}}">
                                     <input type="text" name="img_file_2_name" readonly class="form-control" value="{{$business->img_file_2_name ?? ''}}">
@@ -100,6 +100,69 @@
                                 <div class="form-group">
                                     <div>
                                         <img src="/kor/storage/{{$business->img_file_2_path}}" alt="" style="max-height: 200px">
+                                    </div>
+                                    <input type="checkbox" name="del_img" id="del_img" class="">
+                                    <label for="del_img">이미지 삭제</label>
+                                </div>
+                                @endif
+                                @endif
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">이미지파일</label>
+                                    <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file_3">
+                                    <input type="hidden" name="img_file_3_path" value="{{$business->img_file_3_path ?? ''}}">
+                                    <input type="text" name="img_file_3_name" readonly class="form-control" value="{{$business->img_file_3_name ?? ''}}">
+                                </div>
+                                @if ( isset($business) )
+                                @if ( $business->img_file_3_name )
+                                <div class="form-group">
+                                    <div>
+                                        <img src="/kor/storage/{{$business->img_file_3_path}}" alt="" style="max-height: 200px">
+                                    </div>
+                                    <input type="checkbox" name="del_img" id="del_img" class="">
+                                    <label for="del_img">이미지 삭제</label>
+                                </div>
+                                @endif
+                                @endif
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">이미지파일</label>
+                                    <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file_4">
+                                    <input type="hidden" name="img_file_4_path" value="{{$business->img_file_4_path ?? ''}}">
+                                    <input type="text" name="img_file_4_name" readonly class="form-control" value="{{$business->img_file_4_name ?? ''}}">
+                                </div>
+                                @if ( isset($business) )
+                                @if ( $business->img_file_4_name )
+                                <div class="form-group">
+                                    <div>
+                                        <img src="/kor/storage/{{$business->img_file_4_path}}" alt="" style="max-height: 200px">
+                                    </div>
+                                    <input type="checkbox" name="del_img" id="del_img" class="">
+                                    <label for="del_img">이미지 삭제</label>
+                                </div>
+                                @endif
+                                @endif
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">이미지파일</label>
+                                    <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file_5">
+                                    <input type="hidden" name="img_file_5_path" value="{{$business->img_file_5_path ?? ''}}">
+                                    <input type="text" name="img_file_5_name" readonly class="form-control" value="{{$business->img_file_5_name ?? ''}}">
+                                </div>
+                                @if ( isset($business) )
+                                @if ( $business->img_file_5_name )
+                                <div class="form-group">
+                                    <div>
+                                        <img src="/kor/storage/{{$business->img_file_5_path}}" alt="" style="max-height: 200px">
                                     </div>
                                     <input type="checkbox" name="del_img" id="del_img" class="">
                                     <label for="del_img">이미지 삭제</label>

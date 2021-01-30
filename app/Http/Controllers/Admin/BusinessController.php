@@ -50,6 +50,12 @@ class BusinessController extends Controller
         $img_file_1_name = '';
         $img_file_2_path = '';
         $img_file_2_name = '';
+        $img_file_3_path = '';
+        $img_file_3_name = '';
+        $img_file_4_path = '';
+        $img_file_4_name = '';
+        $img_file_5_path = '';
+        $img_file_5_name = '';
         if (!empty($request->file('img_file_1'))) {
             $img_file_1_path = $request->file('img_file_1')->store('business'); //이미지파일 저장
             $img_file_1_name = $request->file('img_file_1')->getClientOriginalName();
@@ -57,6 +63,18 @@ class BusinessController extends Controller
         if (!empty($request->file('img_file_2'))) {
             $img_file_2_path = $request->file('img_file_2')->store('business'); //이미지파일 저장
             $img_file_2_name = $request->file('img_file_2')->getClientOriginalName();
+        }
+        if (!empty($request->file('img_file_3'))) {
+            $img_file_3_path = $request->file('img_file_3')->store('business'); //이미지파일 저장
+            $img_file_3_name = $request->file('img_file_3')->getClientOriginalName();
+        }
+        if (!empty($request->file('img_file_4'))) {
+            $img_file_4_path = $request->file('img_file_4')->store('business'); //이미지파일 저장
+            $img_file_4_name = $request->file('img_file_4')->getClientOriginalName();
+        }
+        if (!empty($request->file('img_file_5'))) {
+            $img_file_5_path = $request->file('img_file_5')->store('business'); //이미지파일 저장
+            $img_file_5_name = $request->file('img_file_5')->getClientOriginalName();
         }
         $business = new Business();
         $business->url = $request->url;
@@ -69,6 +87,12 @@ class BusinessController extends Controller
         $business->img_file_1_name = $img_file_1_name;
         $business->img_file_2_path = $img_file_2_path;
         $business->img_file_2_name = $img_file_2_name;
+        $business->img_file_3_path = $img_file_3_path;
+        $business->img_file_3_name = $img_file_3_name;
+        $business->img_file_4_path = $img_file_4_path;
+        $business->img_file_4_name = $img_file_4_name;
+        $business->img_file_5_path = $img_file_5_path;
+        $business->img_file_5_name = $img_file_5_name;
         $business->view = $request->view;
         $save = $business->save();
         if ($save) {
@@ -124,6 +148,12 @@ class BusinessController extends Controller
         $img_file_1_name = '';
         $img_file_2_path = '';
         $img_file_2_name = '';
+        $img_file_3_path = '';
+        $img_file_3_name = '';
+        $img_file_4_path = '';
+        $img_file_4_name = '';
+        $img_file_5_path = '';
+        $img_file_5_name = '';
         if (!empty($request->file('img_file_1'))) {
             $img_file_1_path = $request->file('img_file_1')->store('business'); //이미지파일 저장
             $img_file_1_name = $request->file('img_file_1')->getClientOriginalName();
@@ -131,6 +161,18 @@ class BusinessController extends Controller
         if (!empty($request->file('img_file_2'))) {
             $img_file_2_path = $request->file('img_file_2')->store('business'); //이미지파일 저장
             $img_file_2_name = $request->file('img_file_2')->getClientOriginalName();
+        }
+        if (!empty($request->file('img_file_3'))) {
+            $img_file_3_path = $request->file('img_file_3')->store('business'); //이미지파일 저장
+            $img_file_3_name = $request->file('img_file_3')->getClientOriginalName();
+        }
+        if (!empty($request->file('img_file_4'))) {
+            $img_file_4_path = $request->file('img_file_4')->store('business'); //이미지파일 저장
+            $img_file_4_name = $request->file('img_file_4')->getClientOriginalName();
+        }
+        if (!empty($request->file('img_file_5'))) {
+            $img_file_5_path = $request->file('img_file_5')->store('business'); //이미지파일 저장
+            $img_file_5_name = $request->file('img_file_5')->getClientOriginalName();
         }
         $business = Business::find($id);
         $business->question_title = $request->question_title;
@@ -142,6 +184,12 @@ class BusinessController extends Controller
         $business->img_file_1_name = $img_file_1_name;
         $business->img_file_2_path = $img_file_2_path;
         $business->img_file_2_name = $img_file_2_name;
+        $business->img_file_3_path = $img_file_3_path;
+        $business->img_file_3_name = $img_file_3_name;
+        $business->img_file_4_path = $img_file_4_path;
+        $business->img_file_4_name = $img_file_4_name;
+        $business->img_file_5_path = $img_file_5_path;
+        $business->img_file_5_name = $img_file_5_name;
         $business->view = $request->view;
         $save = $business->save();
 
