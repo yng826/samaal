@@ -47,4 +47,17 @@
             </div>
         </div>
     </main>
+    <style>
+    @foreach ($models as $model)
+        .business-foil .foil-box .item-{{$model->product}} {
+            background-image: url(/eng/storage/{{$model->img_file_1_path}});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .business-foil .foil-box .item-{{$model->product}}:hover {
+            background-image: url(/eng/storage/{{$model->img_file_2_path}});
+        }
+    @endforeach
+    </style>
 @endsection

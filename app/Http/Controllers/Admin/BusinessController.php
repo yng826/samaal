@@ -29,7 +29,13 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        //
+        // $business = new Business;
+        $action = "/eng/admin/business";
+        return view('admin.business.create', [
+            'action' => $action,
+            'url_disabled' => '',
+            // 'business' => $business
+        ]);
     }
 
     /**
@@ -40,7 +46,66 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $old = Business::where('url', '=', $request->url)->first();
+        if ( $old ) {
+            return back()->withInput()->with('error','사용중인 url입니다');
+        }
+        $img_file_1_path = '';
+        $img_file_1_name = '';
+        $img_file_2_path = '';
+        $img_file_2_name = '';
+        $img_file_3_path = '';
+        $img_file_3_name = '';
+        $img_file_4_path = '';
+        $img_file_4_name = '';
+        $img_file_5_path = '';
+        $img_file_5_name = '';
+        $business = new Business();
+        $business->url = $request->url;
+        $business->question_title = $request->question_title;
+        $business->type = $request->type;
+        $business->product = $request->product;
+        $business->name = $request->name;
+        $business->tel = $request->tel;
+        $business->tel_view = $request->tel_view;
+        $business->email = $request->email;
+        $business->view = $request->view;
+        if (!empty($request->file('img_file_1'))) {
+            $img_file_1_path = $request->file('img_file_1')->store('business'); //이미지파일 저장
+            $img_file_1_name = $request->file('img_file_1')->getClientOriginalName();
+            $business->img_file_1_path = $img_file_1_path;
+            $business->img_file_1_name = $img_file_1_name;
+        }
+        if (!empty($request->file('img_file_2'))) {
+            $img_file_2_path = $request->file('img_file_2')->store('business'); //이미지파일 저장
+            $img_file_2_name = $request->file('img_file_2')->getClientOriginalName();
+            $business->img_file_2_path = $img_file_2_path;
+            $business->img_file_2_name = $img_file_2_name;
+        }
+        if (!empty($request->file('img_file_3'))) {
+            $img_file_3_path = $request->file('img_file_3')->store('business'); //이미지파일 저장
+            $img_file_3_name = $request->file('img_file_3')->getClientOriginalName();
+            $business->img_file_3_path = $img_file_3_path;
+            $business->img_file_3_name = $img_file_3_name;
+        }
+        if (!empty($request->file('img_file_4'))) {
+            $img_file_4_path = $request->file('img_file_4')->store('business'); //이미지파일 저장
+            $img_file_4_name = $request->file('img_file_4')->getClientOriginalName();
+            $business->img_file_4_path = $img_file_4_path;
+            $business->img_file_4_name = $img_file_4_name;
+        }
+        if (!empty($request->file('img_file_5'))) {
+            $img_file_5_path = $request->file('img_file_5')->store('business'); //이미지파일 저장
+            $img_file_5_name = $request->file('img_file_5')->getClientOriginalName();
+            $business->img_file_5_path = $img_file_5_path;
+            $business->img_file_5_name = $img_file_5_name;
+        }
+        $save = $business->save();
+        if ($save) {
+            return redirect("/admin/business/{$business->id}/edit")->with('success','저장에 성공했습니다.');
+        } else {
+            abort(401);
+        }
     }
 
     /**
@@ -63,8 +128,15 @@ class BusinessController extends Controller
     public function edit($id)
     {
         $business = Business::find($id);
+
+        if(!$business) {
+            abort(404);
+        }
+        $action = "/eng/admin/business/{$id}";
         return view('admin.business.create', [
             'id' => $id,
+            'action' => $action,
+            'url_disabled' => 'disabled',
             'business' => $business
         ]);
     }
@@ -78,12 +150,55 @@ class BusinessController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $img_file_1_path = '';
+        $img_file_1_name = '';
+        $img_file_2_path = '';
+        $img_file_2_name = '';
+        $img_file_3_path = '';
+        $img_file_3_name = '';
+        $img_file_4_path = '';
+        $img_file_4_name = '';
+        $img_file_5_path = '';
+        $img_file_5_name = '';
         $business = Business::find($id);
         $business->question_title = $request->question_title;
+        $business->type = $request->type;
+        $business->product = $request->product;
         $business->name = $request->name;
         $business->tel = $request->tel;
         $business->tel_view = $request->tel_view;
         $business->email = $request->email;
+        $business->view = $request->view;
+        if (!empty($request->file('img_file_1'))) {
+            $img_file_1_path = $request->file('img_file_1')->store('business'); //이미지파일 저장
+            $img_file_1_name = $request->file('img_file_1')->getClientOriginalName();
+            $business->img_file_1_path = $img_file_1_path;
+            $business->img_file_1_name = $img_file_1_name;
+        }
+        if (!empty($request->file('img_file_2'))) {
+            $img_file_2_path = $request->file('img_file_2')->store('business'); //이미지파일 저장
+            $img_file_2_name = $request->file('img_file_2')->getClientOriginalName();
+            $business->img_file_2_path = $img_file_2_path;
+            $business->img_file_2_name = $img_file_2_name;
+        }
+        if (!empty($request->file('img_file_3'))) {
+            $img_file_3_path = $request->file('img_file_3')->store('business'); //이미지파일 저장
+            $img_file_3_name = $request->file('img_file_3')->getClientOriginalName();
+            $business->img_file_3_path = $img_file_3_path;
+            $business->img_file_3_name = $img_file_3_name;
+        }
+        if (!empty($request->file('img_file_4'))) {
+            $img_file_4_path = $request->file('img_file_4')->store('business'); //이미지파일 저장
+            $img_file_4_name = $request->file('img_file_4')->getClientOriginalName();
+            $business->img_file_4_path = $img_file_4_path;
+            $business->img_file_4_name = $img_file_4_name;
+        }
+        if (!empty($request->file('img_file_5'))) {
+            $img_file_5_path = $request->file('img_file_5')->store('business'); //이미지파일 저장
+            $img_file_5_name = $request->file('img_file_5')->getClientOriginalName();
+            $business->img_file_5_path = $img_file_5_path;
+            $business->img_file_5_name = $img_file_5_name;
+        }
         $save = $business->save();
 
         return redirect("/admin/business/{$id}/edit")->with('success','저장에 성공했습니다.');
