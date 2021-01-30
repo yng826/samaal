@@ -51,7 +51,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-12 text-right">
-                    {{-- <a class="btn btn-primary text-white" href="/kor/admin/user/create">사용자 추가</a> --}}
+                    <a class="btn btn-primary text-white" href="/kor/admin/business/create">제품 추가</a>
                 </div>
             </div>
         </div>

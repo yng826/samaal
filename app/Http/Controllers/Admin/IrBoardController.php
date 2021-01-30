@@ -162,7 +162,7 @@ class IrBoardController extends Controller
             'pdf_file_path'=>  $pdf_file_path,
             'updated_at' => now(),
           ]);
-        return redirect("/kor/admin/ir_board/{$id}/edit")->with('success', '저장했습니다');
+        return redirect("/admin/ir_board/{$id}/edit")->with('success', '저장했습니다');
 
     }
 

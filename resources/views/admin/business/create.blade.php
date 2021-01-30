@@ -17,8 +17,10 @@
                 </div>
             </div>
         </div>
-        <form action="/admin/business/{{ $id }}" class="form col-12 col-lg-6 board-form" method="POST">
-            @method('PUT')
+        <form action="{{ $action }}" class="form col-12 col-lg-6 business-form" method="POST" enctype="multipart/form-data">
+            @isset ($business)
+                @method('PUT')
+            @endisset
             @csrf
             <div class="card-body">
                 @if (!empty($error))
@@ -38,7 +40,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">URL</label>
-                            <input type="text" class="form-control" name="url" value="{{$business->url ?? ''}}" disabled>
+                            <input type="text" class="form-control" name="url" value="{{$business->url ?? ''}}" {{$url_disabled}}>
                         </div>
                         <div class="form-group">
                             <label for="">문의 제목</label>
@@ -59,6 +61,52 @@
                         <div class="form-group">
                             <label for="">이메일</label>
                             <input type="email" class="form-control" name="email" value="{{$business->email ?? ''}}"  placeholder="입력해주세요.">
+                        </div>
+                        <div class="form-group">
+                            <label for="">뷰</label>
+                            <input type="text" class="form-control" name="view" value="{{$business->view ?? ''}}"  placeholder="입력해주세요.">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">이미지파일</label>
+                                    <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file_1">
+                                    <input type="hidden" name="img_file_1_path" value="{{$business->img_file_1_path ?? ''}}">
+                                    <input type="text" name="img_file_1_name" readonly class="form-control" value="{{$business->img_file_1_name ?? ''}}">
+                                </div>
+                                @if ( isset($business) )
+                                @if ( $business->img_file_1_name )
+                                <div class="form-group">
+                                    <div>
+                                        <img src="/kor/storage/{{$business->img_file_1_path}}" alt="" style="max-height: 200px">
+                                    </div>
+                                    <input type="checkbox" name="del_img" id="del_img" class="">
+                                    <label for="del_img">이미지 삭제</label>
+                                </div>
+                                @endif
+                                @endif
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">이미지파일</label>
+                                    <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file_2">
+                                    <input type="hidden" name="img_file_2_path" value="{{$business->img_file_2_path ?? ''}}">
+                                    <input type="text" name="img_file_2_name" readonly class="form-control" value="{{$business->img_file_2_name ?? ''}}">
+                                </div>
+                                @if ( isset($business) )
+                                @if ( $business->img_file_2_name )
+                                <div class="form-group">
+                                    <div>
+                                        <img src="/kor/storage/{{$business->img_file_2_path}}" alt="" style="max-height: 200px">
+                                    </div>
+                                    <input type="checkbox" name="del_img" id="del_img" class="">
+                                    <label for="del_img">이미지 삭제</label>
+                                </div>
+                                @endif
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
