@@ -61,7 +61,7 @@
                             <input type="text" class="form-control" name="product" value="{{$business->product ?? ''}}">
                         </div>
                         <div class="form-group">
-                            <label for="">문의 제목</label>
+                            <label for="">제목</label>
                             <input type="question_title" class="form-control" name="question_title" value="{{$business->question_title ?? ''}}" placeholder="입력해주세요.">
                         </div>
                         <div class="form-group">
