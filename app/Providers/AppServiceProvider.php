@@ -113,6 +113,7 @@ class AppServiceProvider extends ServiceProvider
                     ]);
                 }
 
+                /*
                 if (Auth::user()->role == 'admin' || Auth::user()->role == 'recruit') {
                     $event->menu->add('채용');
                     $event->menu->add([
@@ -126,6 +127,7 @@ class AppServiceProvider extends ServiceProvider
                         'icon' => 'fas fa-fw fa-file-signature',
                     ]);
                 }
+                */
             }
         });
     }

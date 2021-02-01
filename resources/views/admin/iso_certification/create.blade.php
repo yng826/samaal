@@ -42,10 +42,12 @@
                         </div>
                         <div class="form-group">
                             <label for="">이미지파일</label>
+                            @isset ($certification)
                             @if ($certification->img_file_name)
                             <div>
                                 <img src="/eng/storage/{{$certification->img_file_path}}" alt="" style="max-height: 200px">
                             </div>
+                            @endif
                             @endif
                             <input type="file" accept=".gif, .jpeg, .jpg, .png" class="d-block" name="img_file">
                             <input type="hidden" name="img_file_name" value="{{$certification->img_file_name ?? ''}}">
@@ -53,10 +55,12 @@
                         </div>
                         <div class="form-group">
                             <label for="">PDF파일</label>
+                            @isset ($certification)
                             @if ($certification->pdf_file_name)
                             <div>
                             <span>{{$certification->pdf_file_name}}</span>
                             </div>
+                            @endif
                             @endif
                             <input type="file" accept=".pdf" class="d-block" name="pdf_file">
                             <input type="hidden" name="pdf_file_name" value="{{$certification->pdf_file_name ?? ''}}">

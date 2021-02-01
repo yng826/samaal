@@ -49,6 +49,7 @@
                                     <input type="hidden" name="img_file_path" value="{{$board->img_file_path ?? ''}}">
                                     <input type="text" name="img_file_name" readonly class="form-control" value="{{$board->img_file_name ?? ''}}">
                                 </div>
+                                @if ( isset($board) )
                                 @if ( $board->img_file_name )
                                 <div class="form-group">
                                     <div>
@@ -58,17 +59,20 @@
                                     <label for="del_img">이미지 삭제</label>
                                 </div>
                                 @endif
+                                @endif
                                 <div class="form-group">
                                     <label for="">PDF파일</label>
                                     <input type="file" accept=".pdf" class="d-block" name="pdf_file">
                                     <input type="text" name="pdf_file_name" readonly class="form-control" value="{{$board->pdf_file_name ?? ''}}">
                                     <input type="hidden" name="pdf_file_path" value="{{$board->pdf_file_path ?? ''}}">
                                 </div>
+                                @if ( isset($board) )
                                 @if ( $board->pdf_file_name )
                                 <div class="form-group">
                                     <input type="checkbox" name="del_img" id="del_img" class="">
                                     <label for="del_img">PDF 삭제</label>
                                 </div>
+                                @endif
                                 @endif
                             </div>
                         </div>
