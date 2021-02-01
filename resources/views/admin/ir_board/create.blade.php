@@ -49,7 +49,7 @@
                                     <input type="hidden" name="img_file_path" value="{{$board->img_file_path ?? ''}}">
                                     <input type="text" name="img_file_name" readonly class="form-control" value="{{$board->img_file_name ?? ''}}">
                                 </div>
-                                @if ( $board->img_file_name )
+                                @if ( isset($board) && $board->img_file_name )
                                 <div class="form-group">
                                     <div>
                                         <img src="/kor/storage/{{$board->img_file_path}}" alt="" style="max-height: 200px">
@@ -64,7 +64,7 @@
                                     <input type="text" name="pdf_file_name" readonly class="form-control" value="{{$board->pdf_file_name ?? ''}}">
                                     <input type="hidden" name="pdf_file_path" value="{{$board->pdf_file_path ?? ''}}">
                                 </div>
-                                @if ( $board->pdf_file_name )
+                                @if ( isset($board) && $board->pdf_file_name )
                                 <div class="form-group">
                                     <input type="checkbox" name="del_img" id="del_img" class="">
                                     <label for="del_img">PDF 삭제</label>

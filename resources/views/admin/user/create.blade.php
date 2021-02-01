@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="container user-{{ $user ? 'update':'create'}}">
+<div class="container user-{{ isset($user) ? 'update':'create'}}">
     <div class="card">
         <div class="card-header">
             <div class="row">

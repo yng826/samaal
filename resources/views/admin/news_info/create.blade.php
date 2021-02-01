@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">이미지 파일</label>
-                            @if ($info->img_file_name)
+                            @if ( isset($info) && $info->img_file_name)
                             <div>
                                 <img src="/kor/storage/{{$info->img_file_path}}" alt="" style="max-height: 200px">
                             </div>
