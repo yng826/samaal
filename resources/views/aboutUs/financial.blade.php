@@ -148,6 +148,7 @@
 @section('script')
     <script>
         var info_year = @json($info_year);
+        var labels = @json($labels);
         var sales = @json($sales);
         var operating_income = @json($operating_income);
         var net_income = @json($net_income);
