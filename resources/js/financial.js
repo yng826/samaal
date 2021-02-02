@@ -20,7 +20,7 @@ const financial = () => {
         var sales = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: info_year,
+                labels: labels,
                 datasets: [{
                     data: window.sales,
                     backgroundColor: [
@@ -102,7 +102,7 @@ const financial = () => {
         var operating_income = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: info_year,
+                labels: labels,
                 datasets: [{
                     data: window.operating_income,
                     backgroundColor: [
@@ -181,7 +181,7 @@ const financial = () => {
         var net_income = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: info_year,
+                labels: labels,
                 datasets: [{
                     data: window.net_income,
                     backgroundColor: [
@@ -260,7 +260,7 @@ const financial = () => {
         var assets = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: info_year,
+                labels: labels,
                 datasets: [{
                     data: window.assets,
                     backgroundColor: [
@@ -339,7 +339,7 @@ const financial = () => {
         var liability = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: info_year,
+                labels: labels,
                 datasets: [{
                     data: window.liability,
                     backgroundColor: [
@@ -419,7 +419,7 @@ const financial = () => {
         var total = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: info_year,
+                labels: labels,
                 datasets: [{
                     data: window.total,
                     backgroundColor: [

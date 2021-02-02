@@ -31,12 +31,17 @@ class FinanceController extends Controller
             $liability = $sortedIR->pluck('connect_liability');
             $total = $sortedIR->pluck('connect_total');
 
-
             $info_year = $ir->sortBy('info_year')->pluck('info_year');
+            $info_quarter = $ir->sortBy('info_quarter')->pluck('info_quarter');
+            $labels = [];
+            foreach ($info_year as $key => $year) {
+                $labels[] = [$year, $info_quarter[$key] ?? ''];
+            }
 
             return view('aboutUs.financial', [
                 'irs'=> $ir->sortBy('info_year'),
                 'info_year'=> $info_year,
+                'labels'=> $labels,
                 'sales'=> $sales,
                 'operating_income'=> $operating_income,
                 'net_income'=> $net_income,
@@ -62,11 +67,16 @@ class FinanceController extends Controller
 
 
             $info_year = $ir->sortBy('info_year')->pluck('info_year');
-            debug($total);
+            $info_quarter = $ir->sortBy('info_quarter')->pluck('info_quarter');
+            $labels = [];
+            foreach ($info_year as $key => $year) {
+                $labels[] = [$year, $info_quarter[$key] ?? ''];
+            }
 
             return view('aboutUs.financial', [
                 'irs'=> $ir->sortBy('info_year'),
                 'info_year'=> $info_year,
+                'labels'=> $labels,
                 'sales'=> $sales,
                 'operating_income'=> $operating_income,
                 'net_income'=> $net_income,
