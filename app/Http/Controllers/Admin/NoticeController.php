@@ -17,7 +17,7 @@ class NoticeController extends Controller
     {
         $notices = DB::table('notices')
             ->orderBy('order', 'ASC')
-            ->orderBy('id', 'desc')
+            ->orderBy('updated_at', 'DESC')
             ->paginate(10);
 
         return view('admin.notice.list', [
@@ -50,6 +50,7 @@ class NoticeController extends Controller
         $saved = DB::table('notices')
                     ->insert([
                         'title'=> $request->title,
+                        'content'=> $request->content,
                         'url'=> $request->url,
                         'button_color'=> $request->button_color,
                         'order'=> $request->order,
@@ -102,6 +103,7 @@ class NoticeController extends Controller
                     ->where('id', $id)
                     ->update([
                         'title'=> $request->title,
+                        'content'=> $request->content,
                         'url'=> $request->url,
                         'button_color'=> $request->button_color,
                         'order'=> $request->order,

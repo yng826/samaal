@@ -31,6 +31,10 @@
                             <input type="hidden" class="form-control" name="id" value="{{$notice->id ?? 0}}">
                         </div>
                         <div class="form-group">
+                            <label for="">내용</label><br>
+                            <input type="text" class="form-control" name="content" value="{{$notice->content ?? ''}}">
+                        </div>
+                        <div class="form-group">
                             <label for="">URL</label><br>
                             <input type="text" class="form-control" name="url" value="{{$notice->url ?? ''}}">
                         </div>
@@ -139,7 +143,6 @@
                 alert('URL을 선택해주세요.');
                 $('input[name=url]').focus();
                 return false;
-
             }
             if ($('input[name=button_color]').val() == '' || $('input[name=button_color]').val() == null) {
                 alert('색상을 선택해주세요.');
