@@ -11,7 +11,7 @@
         <meta property="og:id" content="sama">
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
         <link rel="stylesheet" href="/kor/css/app.css">
-        <link rel="shortcut icon" href="{{env('APP_URL')}}kor/images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="{{env('APP_URL')}}/images/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/kor/images/favicon.ico" type="image/x-icon">
         @include('shared.gtm-header')
     </head>
