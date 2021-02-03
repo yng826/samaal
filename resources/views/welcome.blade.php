@@ -8,6 +8,7 @@
         <meta property="og:description" content="삼아알미늄">
         <meta property="og:id" content="sama">
         <meta property="og:image" content="{{env('APP_URL')}}/img_sns_sama.png" />
+        <link rel="shortcut icon" href="{{env('APP_URL')}}kor/images/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/kor/images/favicon.ico" type="image/x-icon">
 
         <title>Laravel</title>
