@@ -234,13 +234,20 @@ class RecruitJobController extends Controller
                     ->orderBy('id', 'desc')
                     ->get();
 
-
         foreach($jobs as $job) {
             $rowNum++;
             $sheet->setCellValue('B'. $rowNum, empty($job->user) ? '' : $job->user->name);
             $sheet->setCellValue('C'. $rowNum, empty($job->userInfo) ? '' : substr($job->userInfo->birth_day, 0, 4));
             $sheet->setCellValue('D'. $rowNum, empty($job->user) ? '' : $job->user->email);
-            $sheet->setCellValue('E'. $rowNum, vsprintf('%s%s%s-%s%s%s%s-%s%s%s%s', str_split($job->phone_decrypt ?? ''))); //연락처
+            $phone = $job->phone_decrypt;
+            if ( strlen($phone) == 10) {
+                $str_phone = substr($phone,0,3) .'-'. substr($phone,3,3) .'-'. substr($phone,6,4);
+            } else if ( strlen($phone) == 11) {
+                $str_phone = substr($phone,0,3) .'-'. substr($phone,3,4) .'-'. substr($phone,7,4);
+            } else {
+                $str_phone = '';
+            }
+            $sheet->setCellValue('E'. $rowNum, $str_phone); //연락처
 
             if(!empty($job->educations)) {
                 $education = collect($job->educations)->sortByDesc('edu_end')->first();
@@ -260,9 +267,10 @@ class RecruitJobController extends Controller
             }
         }
 
+        $date = date('Y-m-d H:i:s');
 
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="채용지원리스트.xlsx"');
+        header('Content-Disposition: attachment;filename="채용지원리스트-'.$date.'.xlsx"');
         header('Cache-Control: max-age=0');
 
         $writer = new Xlsx($spreadsheet);
@@ -326,13 +334,24 @@ class RecruitJobController extends Controller
             }
             $sheet->setCellValue('K'. $rowNum++, empty($job->recruit) ? '' : $job->recruit->title); //응시부문
 
+
+            $phone = $job->phone_decrypt;
+            if ( strlen($phone) == 10) {
+                $str_phone = substr($phone,0,3) .'-'. substr($phone,3,3) .'-'. substr($phone,6,4);
+            } else if ( strlen($phone) == 11) {
+                $str_phone = substr($phone,0,3) .'-'. substr($phone,3,4) .'-'. substr($phone,7,4);
+            } else {
+                $str_phone = '';
+            }
+
             $rowNum = 11; //인적사항 row num
             $sheet->setCellValue('D'. $rowNum, empty($job->user) ? '' : $job->user->name); //이름
             $sheet->setCellValue('H'. $rowNum, empty($job->userInfo) ? '' : $job->userInfo->name_en); //영문
             $sheet->setCellValue('M'. $rowNum, empty($job->userInfo) ? '' : $job->userInfo->birth_day); //생년월일
             $rowNum += 2;
             $sheet->setCellValue('C'. $rowNum, empty($job->user) ? '' : $job->user->email); //이메일
-            $sheet->setCellValue('L'. $rowNum, vsprintf('%s%s%s-%s%s%s%s-%s%s%s%s', str_split($job->phone_decrypt ?? ''))); //연락처
+            // $sheet->setCellValue('L'. $rowNum, vsprintf('%s%s%s-%s%s%s%s-%s%s%s%s', str_split($job->phone_decrypt ?? ''))); //연락처
+            $sheet->setCellValue('L'. $rowNum, $str_phone); //연락처
             $rowNum += 2;
             $sheet->setCellValue('C'. $rowNum, $job->address_1. ' '. $job->address_2); //주소
 
