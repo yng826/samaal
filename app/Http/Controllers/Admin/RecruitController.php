@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Work\Job;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -138,6 +139,21 @@ class RecruitController extends Controller
      */
     public function destroy($id)
     {
+        $job = Job::where('recruit_id', '=', $id)->first();
+        $job_id = $job->id;
+        DB::table('job_applications_award')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_career')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_certificate')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_education')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_highschool')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_hobby_specialty')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_language')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_military')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_oa')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_overseas_study')->where('job_id', '=', $job_id)->delete();
+        DB::table('job_applications_school_activities')->where('job_id', '=', $job_id)->delete();
+        $job->delete();
+
         $affected = DB::table('recruits')->where('id', $id)->delete();
 
         return redirect('/admin/recruit');
