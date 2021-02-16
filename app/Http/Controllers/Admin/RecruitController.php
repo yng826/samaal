@@ -139,20 +139,20 @@ class RecruitController extends Controller
      */
     public function destroy($id)
     {
-        $job = Job::where('recruit_id', '=', $id)->first();
-        $job_id = $job->id;
-        DB::table('job_applications_award')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_career')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_certificate')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_education')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_highschool')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_hobby_specialty')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_language')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_military')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_oa')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_overseas_study')->where('job_id', '=', $job_id)->delete();
-        DB::table('job_applications_school_activities')->where('job_id', '=', $job_id)->delete();
-        $job->delete();
+        $job = Job::where('recruit_id', '=', $id)->get();
+        $job_id = $job->pluck('id');
+        DB::table('job_applications_award')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_career')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_certificate')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_education')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_highschool')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_hobby_specialty')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_language')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_military')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_oa')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_overseas_study')->whereIn('job_id', $job_id)->delete();
+        DB::table('job_applications_school_activities')->whereIn('job_id', $job_id)->delete();
+        Job::where('recruit_id', '=', $id)->delete();
 
         $affected = DB::table('recruits')->where('id', $id)->delete();
 
