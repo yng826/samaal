@@ -36,14 +36,14 @@ class Kernel extends ConsoleKernel
             // 오픈
             $affected = DB::table('recruits')
             ->where('start_date', '<=', date('Y-m-d'))
-            ->where('end_date', '>', date('Y-m-d'))
+            ->where('end_date', '>', date('Y-m-d', strtotime("-1 days")))
             ->where('recruit_status', '<>', 'open')
             ->update(['recruit_status'=> 'open']);
 
             /***/
             // 종료
             $end_recruits = DB::table('recruits')
-                ->where('end_date', '<=', date('Y-m-d'))
+                ->where('end_date', '<=', date('Y-m-d', strtotime("-1 days")))
                 ->where('recruit_status', '<>', 'closed')
                 ->get();
             $query = DB::getQueryLog();
