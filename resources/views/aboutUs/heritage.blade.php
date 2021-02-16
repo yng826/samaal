@@ -25,7 +25,7 @@
             <div class="about-heritage__slide">
                 <div class="about-heritage__slide--img swiper-container">
                     <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="/kor/images/about/heritage/slide_1969.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="/kor/images/about/heritage/slide_1969.jpg" alt="삼아알미늄 담배포장지 : 우수한 보향 및 보습성으로 삼아 설립부터 현재까지 생산 중인 담배용 내포장재"></div>
                     <div class="swiper-slide"><img src="/kor/images/about/heritage/slide_1974.jpg" alt=""></div>
                     <div class="swiper-slide"><img src="/kor/images/about/heritage/slide_1981.jpg" alt=""></div>
                     <div class="swiper-slide"><img src="/kor/images/about/heritage/slide_1982.jpg" alt=""></div>
