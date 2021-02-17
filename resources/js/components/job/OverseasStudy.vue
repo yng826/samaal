@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_contents">연수내용</label>
-                    <input type="text" name="overseas_study_contents" :class="maxLength(item.overseas_study_contents, 43)" v-model="item.overseas_study_contents" placeholder="입력해주세요">
+                    <input type="text" name="overseas_study_contents" :class="maxLength(item.overseas_study_contents, 36)" v-model="item.overseas_study_contents" placeholder="입력해주세요">
                 </div>
             </div>
         </form>
@@ -232,10 +232,10 @@ export default {
                     });
                     temp = true;
                     return false;
-                } else if ( element.overseas_study_contents && element.overseas_study_contents.length > 43) {
+                } else if ( element.overseas_study_contents && element.overseas_study_contents.length > 36) {
                     Swal.fire({
                         title: '저장에 실패했습니다!',
-                        text: '연수내용은 43자 이내로 작성해주세요',
+                        text: '연수내용은 36자 이내로 작성해주세요',
                         icon: 'error',
                         confirmButtonText: '확인'
                     });

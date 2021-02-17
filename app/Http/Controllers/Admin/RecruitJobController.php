@@ -458,8 +458,9 @@ class RecruitJobController extends Controller
             $rowNum = 68; //PC사용능력 row num
             $oas = collect($job->oas)->take(3)->all();
             foreach($oas as $oa) {
-                $sheet->setCellValue('C'. $rowNum++, $oa->oa_name); //사용 가능 OA
-                $sheet->setCellValue('M'. ++$rowNum, $oa->level_ko); //수준
+                $sheet->setCellValue('C'. $rowNum, $oa->oa_name); //사용 가능 OA
+                $sheet->setCellValue('M'. $rowNum, $oa->level_ko); //수준
+                $rowNum += 2;
             }
 
             $rowNum = 80; //자기소개서1 row num

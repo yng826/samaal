@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="school_activities_contents">활동내용</label>
-                    <input type="text" name="school_activities_contents" :class="maxLength(item.school_activities_contents, 32)" v-model="item.school_activities_contents" placeholder="입력해주세요">
+                    <input type="text" name="school_activities_contents" :class="maxLength(item.school_activities_contents, 30)" v-model="item.school_activities_contents" placeholder="입력해주세요">
                 </div>
             </div>
         </form>
@@ -194,10 +194,10 @@ export default {
                     });
                     temp = true;
                     return false;
-                } else if ( element.school_activities_contents && element.school_activities_contents.length > 32) {
+                } else if ( element.school_activities_contents && element.school_activities_contents.length > 30) {
                     Swal.fire({
                         title: '저장에 실패했습니다!',
-                        text: '활동내용은 32자 이내로 작성해주세요',
+                        text: '활동내용은 30자 이내로 작성해주세요',
                         icon: 'error',
                         confirmButtonText: '확인'
                     });

@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="career_role">담당업무</label>
-                    <input type="text" name="career_role" :class="maxLength(item.career_role, 56)" v-model="item.career_role" placeholder="입력해주세요">
+                    <input type="text" name="career_role" :class="maxLength(item.career_role, 43)" v-model="item.career_role" placeholder="입력해주세요">
                 </div>
             </div>
         </form>
@@ -191,10 +191,10 @@ export default {
                     });
                     temp = true;
                     return false;
-                } else if ( element.career_role && element.career_role.length > 56) {
+                } else if ( element.career_role && element.career_role.length > 43) {
                     Swal.fire({
                         title: '저장에 실패했습니다!',
-                        text: '담당업무는 56자 이내로 작성해주세요',
+                        text: '담당업무는 43자 이내로 작성해주세요',
                         icon: 'error',
                         confirmButtonText: '확인'
                     });
