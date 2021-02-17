@@ -18,12 +18,16 @@
                     <input type="text" name="career_name" :class="maxLength(item.career_name, 30)" v-model="item.career_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
-                    <label for="career_position">직위/근무부서</label>
+                    <label for="career_position">직위</label>
                     <input type="text" name="career_position" :class="maxLength(item.career_position, 15)" v-model="item.career_position" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
+                    <label for="career_department">근무부서</label>
+                    <input type="text" name="career_department" :class="maxLength(item.career_department, 15)" v-model="item.career_department" placeholder="입력해주세요">
+                </div>
+                <div class="form-group">
                     <label for="career_role">담당업무</label>
-                    <input type="text" name="career_role" :class="maxLength(item.career_role, 15)" v-model="item.career_role" placeholder="입력해주세요">
+                    <input type="text" name="career_role" :class="maxLength(item.career_role, 56)" v-model="item.career_role" placeholder="입력해주세요">
                 </div>
             </div>
         </form>
@@ -102,6 +106,7 @@ export default {
                 career_end: "",
                 career_name: "",
                 career_position: "",
+                career_department: "",
                 career_role: "",
             });
         },
@@ -174,11 +179,47 @@ export default {
             });
 
         },
+        validation: function() {
+            let temp = null;
+            let valid = this.items.some(element => {
+                if ( element.career_role == '' || element.career_role == undefined) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '담당업무를 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.career_role && element.career_role.length > 56) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '담당업무는 56자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else {
+                    if ( !temp ) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+
+            return valid;
+        },
         saveItems: function() {
             if ( !this.isSubmitable ) {
                 return false;
             }
             if ( this.isSubmit ) {
+                return false;
+            }
+            const validate = this.validation();
+            if ( !validate ) {
                 return false;
             }
             this.isSubmit = true;

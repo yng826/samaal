@@ -79,6 +79,7 @@ class CareerController extends Controller
                                 'career_end' => $career['career_end'] ? date('Y-m-d', strtotime($career['career_end'])) : null,
                                 'career_name' => $career['career_name'],
                                 'career_position' => $career['career_position'],
+                                'career_department' => $career['career_department'],
                                 'career_role' => $career['career_role'],
                             ]);
             } else {
@@ -89,6 +90,7 @@ class CareerController extends Controller
                                 'career_end' => $career['career_end'] ? date('Y-m-d', strtotime($career['career_end'])) : null,
                                 'career_name' => $career['career_name'],
                                 'career_position' => $career['career_position'],
+                                'career_department' => $career['career_department'],
                                 'career_role' => $career['career_role'],
                             ]);
             }

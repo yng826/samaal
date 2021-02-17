@@ -59,6 +59,7 @@ export const JobStore = new Vuex.Store({
                 career_end: "",
                 career_name: "",
                 career_position: "",
+                career_department: "",
                 career_role: "",
             }]
         },

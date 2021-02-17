@@ -14,15 +14,15 @@
                 </div>
                 <div class="form-group">
                     <label for="school_activities_affiliation">소속</label>
-                    <input type="text" name="school_activities_affiliation" v-model="item.school_activities_affiliation" placeholder="입력해주세요">
+                    <input type="text" name="school_activities_affiliation" :class="maxLength(item.school_activities_affiliation, 32)" v-model="item.school_activities_affiliation" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_activities_role">담당역할</label>
-                    <input type="text" name="school_activities_role" v-model="item.school_activities_role" placeholder="입력해주세요">
+                    <input type="text" name="school_activities_role" :class="maxLength(item.school_activities_role, 20)" v-model="item.school_activities_role" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_activities_contents">활동내용</label>
-                    <input type="text" name="school_activities_contents" v-model="item.school_activities_contents" placeholder="입력해주세요">
+                    <input type="text" name="school_activities_contents" :class="maxLength(item.school_activities_contents, 32)" v-model="item.school_activities_contents" placeholder="입력해주세요">
                 </div>
             </div>
         </form>
@@ -173,11 +173,56 @@ export default {
             });
 
         },
+        validation: function() {
+            let temp = null;
+            let valid = this.items.some(element => {
+                if ( element.school_activities_affiliation && element.school_activities_affiliation.length > 32) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '소속은 32자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.school_activities_role && element.school_activities_role.length > 20) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '담당역할은 20자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.school_activities_contents && element.school_activities_contents.length > 32) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '활동내용은 32자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else {
+                    if ( !temp ) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+
+            return valid;
+        },
         saveItems: function() {
             if ( !this.isSubmitable ) {
                 return false;
             }
             if ( this.isSubmit ) {
+                return false;
+            }
+            const validate = this.validation();
+            if ( !validate ) {
                 return false;
             }
             this.isSubmit = true;

@@ -23,15 +23,15 @@
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_name">연수명</label>
-                    <input type="text" name="overseas_study_name" v-model="item.overseas_study_name" placeholder="입력해주세요">
+                    <input type="text" name="overseas_study_name" :class="maxLength(item.overseas_study_name, 16)" v-model="item.overseas_study_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_purpose">연수목적</label>
-                    <input type="text" name="overseas_study_purpose" v-model="item.overseas_study_purpose" placeholder="입력해주세요">
+                    <input type="text" name="overseas_study_purpose" :class="maxLength(item.overseas_study_purpose, 16)" v-model="item.overseas_study_purpose" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_contents">연수내용</label>
-                    <input type="text" name="overseas_study_contents" v-model="item.overseas_study_contents" placeholder="입력해주세요">
+                    <input type="text" name="overseas_study_contents" :class="maxLength(item.overseas_study_contents, 43)" v-model="item.overseas_study_contents" placeholder="입력해주세요">
                 </div>
             </div>
         </form>
@@ -184,6 +184,74 @@ export default {
             });
 
         },
+        validation: function() {
+            let temp = null;
+            let valid = this.items.some(element => {
+                if ( element.overseas_study_name == '' || element.overseas_study_name == undefined) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '연수명을 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.overseas_study_name && element.overseas_study_name.length > 16) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '연수명은 16자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.overseas_study_purpose == '' || element.overseas_study_purpose == undefined) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '연수목적을 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.overseas_study_purpose && element.overseas_study_purpose.length > 16) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '연수목적은 16자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.overseas_study_contents == '' || element.overseas_study_contents == undefined) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '연수내용을 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else if ( element.overseas_study_contents && element.overseas_study_contents.length > 43) {
+                    Swal.fire({
+                        title: '저장에 실패했습니다!',
+                        text: '연수내용은 43자 이내로 작성해주세요',
+                        icon: 'error',
+                        confirmButtonText: '확인'
+                    });
+                    temp = true;
+                    return false;
+                } else {
+                    if ( !temp ) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+
+            return valid;
+        },
         saveItems: function() {
             if ( !this.isSubmitable ) {
                 return false;
@@ -191,8 +259,11 @@ export default {
             if ( this.isSubmit ) {
                 return false;
             }
+            const validate = this.validation();
+            if ( !validate ) {
+                return false;
+            }
             this.isSubmit = true;
-            console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
             url = '/kor/api/job-detail/overseas_study/' + this.job_id;

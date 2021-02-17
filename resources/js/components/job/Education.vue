@@ -314,7 +314,7 @@ export default {
                 }
             });
 
-            console.log(valid);
+            // console.log(valid);
         },
         saveItems: function() {
             if ( !this.isSubmitable ) {
