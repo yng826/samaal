@@ -51,7 +51,9 @@
                             <table class="table">
                                 <tr>
                                     <td class="text-center" rowspan="4">
+                                        @if ( isset($job->file_path) )
                                         <img src="/kor/storage/{{ $job->file_path }}" height="150" />
+                                        @endif
                                     </td>
                                     <th class="text-center">한글</th>
                                     <td>{{ $job->user->name ?? '' }}</td>

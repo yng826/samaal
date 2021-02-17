@@ -95,8 +95,8 @@ class RecruitListController extends Controller
             abort(404);
         }
 
-        debug($recruit);
-        debug($keywords);
+        // debug($recruit);
+        // debug($keywords);
 
         // return json_encode($recruit);
         return view('workWithUs.recruit.show', [
