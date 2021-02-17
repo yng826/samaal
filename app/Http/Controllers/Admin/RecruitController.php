@@ -152,6 +152,9 @@ class RecruitController extends Controller
         DB::table('job_applications_oa')->whereIn('job_id', $job_id)->delete();
         DB::table('job_applications_overseas_study')->whereIn('job_id', $job_id)->delete();
         DB::table('job_applications_school_activities')->whereIn('job_id', $job_id)->delete();
+        $users = $job->pluck('user_id');
+        DB::table('user_info')->whereIn('id', $users)->delete();
+        DB::table('user')->whereIn('id', $job_id)->where('role','=','user')->delete();
         Job::where('recruit_id', '=', $id)->delete();
 
         $affected = DB::table('recruits')->where('id', $id)->delete();
