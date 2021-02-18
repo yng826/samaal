@@ -447,6 +447,9 @@
             color: white;
             background-color: #2b4985;
             padding: 10px;
+            &.btn-caution {
+                width: 180px;
+            }
         }
     }
 

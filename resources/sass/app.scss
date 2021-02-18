@@ -227,10 +227,14 @@ input, select {
 
 .main-color {color:#2b4985;}
 .text-bold {font-weight:bold;}
+.text-red {color: #F33;}
 
 // margin
 .mt-5 { margin-top: 5px; }
 .mb-5 { margin-bottom: 5px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-15 { margin-bottom: 15px; }
+.mb-20 { margin-bottom: 20px; }
 
 @import "./divide/main";
 @import "./divide/layout";

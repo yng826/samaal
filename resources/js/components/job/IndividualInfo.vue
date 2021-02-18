@@ -169,6 +169,7 @@ export default {
             emailVendor: null,
             selectEdit: false,
             agree: false,
+            caution: false,
             passwordRules: [
 				{ message:'하나이상의 소문자가 있어야 합니다.', regex:/[a-z]+/ },
 				// { message:"One uppercase letter required.",  regex:/[A-Z]+/ },
@@ -395,38 +396,12 @@ export default {
                     this.$store.state.hobby_specialty = res.data.hobby_specialty ? res.data.hobby_specialty : this.$store.getters.getDefaultHobbySpecialty;
                     this.isSubmit = false;
                 } else {
-
-                    Swal.fire({
-                        title: '권한이 없습니다',
-                        icon: 'error',
-                        confirmButtonText: '확인',
-                        allowOutsideClick: false
-                    }).then(result => {
-                        if (result.isConfirmed) {
-                            this.$root.$emit('closePopup');
-                            if ( this.isAuth) {
-                                // window.location.href = '/kor/work-with-us/job/';
-                            } else {
-                                // window.location.href = '/kor/work-with-us/recruit/';
-                            }
-                        }
-                    });
+                    this.$root.$emit('closePopup');
                 }
             })
             .catch(err => {
-                console.error(err);
-                this.isSubmit = false;
-                Swal.fire({
-                    title: '권한이 없습니다',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    allowOutsideClick: false
-                }).then(result => {
-                    if (result.isConfirmed) {
-                        this.$root.$emit('closePopup');
-                        this.$root.$emit('openPopup', 'login');
-                    }
-                });
+                this.$root.$emit('closePopup');
+                this.$root.$emit('openPopup', 'login');
             })
         },
         validation: function() {
