@@ -6,16 +6,16 @@
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <div class="form-group">
                     <label for="award_name">시상명</label>
-                    <input type="text" name="award_name" v-model="item.award_name" placeholder="입력해주세요">
+                    <input type="text" name="award_name" :disabled="status == 'submit'" v-model="item.award_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="award_group_name">단체명</label>
-                    <input type="text" name="award_group_name" v-model="item.award_group_name" placeholder="입력해주세요">
+                    <input type="text" name="award_group_name" :disabled="status == 'submit'" v-model="item.award_group_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="award_date">수상일</label>
                     <div class="input_date-group input-group">
-                        <Datepicker class="inline-block" name="award_date" :language="ko" v-model="item.award_date" format="yyyy-MM-dd"></Datepicker>
+                        <Datepicker class="inline-block" name="award_date" :language="ko" :disabled="status == 'submit'" v-model="item.award_date" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
             </div>

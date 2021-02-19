@@ -6,13 +6,13 @@
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
                 <div class="form-group">
                     <label for="oa_name">사용가능OA</label>
-                    <input type="text" name="oa_name" v-model="item.oa_name" placeholder="입력해주세요">
+                    <input type="text" name="oa_name" :disabled="status == 'submit'" v-model="item.oa_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="oa_level">OA수준</label>
                     <div class="input-group">
                         <div class="select-container" >
-                            <select type="text" name="oa_level" v-model="item.oa_level">
+                            <select type="text" name="oa_level" :disabled="status == 'submit'" v-model="item.oa_level">
                                 <option v-for="level in levels" :value="level.value" :key="level.value">{{level.name}}</option>
                             </select>
                         </div>

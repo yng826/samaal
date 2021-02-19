@@ -3,12 +3,12 @@
         <form>
             <div class="form-wrap">
                 <h3>병역사항</h3>
-                <input type="hidden" name="id" v-model="item.id">
+                <input type="hidden" name="id" :disabled="status == 'submit'" v-model="item.id">
                 <div class="form-group">
                     <label for="military_discharge">제대구분</label>
                     <div class="input-group">
                         <div class="select-container" >
-                            <select type="text" name="military_discharge" v-model="item.military_discharge">
+                            <select type="text" name="military_discharge" :disabled="status == 'submit'" v-model="item.military_discharge">
                                 <option v-for="discharge in discharges" :value="discharge.value" :key="discharge.value">{{discharge.name}}</option>
                             </select>
                         </div>
@@ -16,25 +16,25 @@
                 </div>
                 <div class="form-group">
                     <label for="military_type">군별</label>
-                    <input type="text" name="military_type" v-model="item.military_type" placeholder="(예) 육군/해군/공군/해병대 등">
+                    <input type="text" name="military_type" :disabled="status == 'submit'" v-model="item.military_type" placeholder="(예) 육군/해군/공군/해병대 등">
                 </div>
                 <div class="form-group">
                     <label for="military_class">병과</label>
-                    <input type="text" name="military_class" v-model="item.military_class" placeholder="(예) 보병/포병 등">
+                    <input type="text" name="military_class" :disabled="status == 'submit'" v-model="item.military_class" placeholder="(예) 보병/포병 등">
                 </div>
                 <div class="form-group">
                     <label for="military_rank">계급</label>
-                    <input type="text" name="military_rank" v-model="item.military_rank" placeholder="입력해주세요">
+                    <input type="text" name="military_rank" :disabled="status == 'submit'" v-model="item.military_rank" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="military_exemption">군면제사유</label>
-                    <input type="text" name="military_exemption" v-model="item.military_exemption" placeholder="입력해주세요">
+                    <input type="text" name="military_exemption" :disabled="status == 'submit'" v-model="item.military_exemption" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="military_veterans_affair">보훈대상여부</label>
                     <div class="input-group">
                         <div class="select-container" >
-                            <select type="text" name="military_veterans_affair" v-model="item.military_veterans_affair">
+                            <select type="text" name="military_veterans_affair" :disabled="status == 'submit'" v-model="item.military_veterans_affair">
                                 <option v-for="affair in affairs" :value="affair.value" :key="affair.value">{{affair.name}}</option>
                             </select>
                         </div>
@@ -43,9 +43,9 @@
                 <div class="form-group">
                     <label for="military_duration_start">군복무기간</label>
                     <div class="input_date-group input-group">
-                        <InputMask class="inline-block" name="military_duration_start" v-model="item.military_duration_start" mask="9999-99" />
+                        <InputMask class="inline-block" name="military_duration_start" :disabled="status == 'submit'" v-model="item.military_duration_start" mask="9999-99" />
                         <span class="from-arrow">~</span>
-                        <InputMask class="inline-block" name="military_duration_end" v-model="item.military_duration_end" mask="9999-99" />
+                        <InputMask class="inline-block" name="military_duration_end" :disabled="status == 'submit'" v-model="item.military_duration_end" mask="9999-99" />
                     </div>
                 </div>
             </div>

@@ -3,14 +3,14 @@
         <form>
             <div class="form-wrap">
                 <h3>취미/특기</h3>
-                <input type="hidden" name="id" v-model="item.id">
+                <input type="hidden" name="id" :disabled="status == 'submit'" v-model="item.id">
                 <div class="form-group">
                     <label for="hobby">취미</label>
-                    <input type="text" name="hobby" v-model="item.hobby" placeholder="입력해주세요">
+                    <input type="text" name="hobby" :disabled="status == 'submit'" v-model="item.hobby" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="specialty">특기</label>
-                    <input type="text" name="specialty" v-model="item.specialty" placeholder="입력해주세요">
+                    <input type="text" name="specialty" :disabled="status == 'submit'" v-model="item.specialty" placeholder="입력해주세요">
                 </div>
             </div>
         </form>

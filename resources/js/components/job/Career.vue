@@ -8,26 +8,26 @@
                 <div class="form-group">
                     <label for="career_start">근무기간</label>
                     <div class="input_date-group input-group">
-                        <InputMask class="inline-block" name="career_start" v-model="item.career_start" mask="9999-99"/>
+                        <InputMask class="inline-block" name="career_start" :disabled="status == 'submit'" v-model="item.career_start" mask="9999-99"/>
                         <span class="from-arrow">~</span>
-                        <InputMask class="inline-block" name="career_end" v-model="item.career_end" mask="9999-99"/>
+                        <InputMask class="inline-block" name="career_end" :disabled="status == 'submit'" v-model="item.career_end" mask="9999-99"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="career_name">직장명</label>
-                    <input type="text" name="career_name" :class="maxLength(item.career_name, 30)" v-model="item.career_name" placeholder="입력해주세요">
+                    <input type="text" name="career_name" :class="maxLength(item.career_name, 30)" :disabled="status == 'submit'" v-model="item.career_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="career_position">직위</label>
-                    <input type="text" name="career_position" :class="maxLength(item.career_position, 15)" v-model="item.career_position" placeholder="입력해주세요">
+                    <input type="text" name="career_position" :class="maxLength(item.career_position, 15)" :disabled="status == 'submit'" v-model="item.career_position" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="career_department">근무부서</label>
-                    <input type="text" name="career_department" :class="maxLength(item.career_department, 15)" v-model="item.career_department" placeholder="입력해주세요">
+                    <input type="text" name="career_department" :class="maxLength(item.career_department, 15)" :disabled="status == 'submit'" v-model="item.career_department" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="career_role">담당업무</label>
-                    <input type="text" name="career_role" :class="maxLength(item.career_role, 43)" v-model="item.career_role" placeholder="입력해주세요">
+                    <input type="text" name="career_role" :class="maxLength(item.career_role, 43)" :disabled="status == 'submit'" v-model="item.career_role" placeholder="입력해주세요">
                 </div>
             </div>
         </form>

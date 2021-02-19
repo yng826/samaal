@@ -1,12 +1,12 @@
 <template>
     <div class="button-groups">
-        <p class="mb-20 text-red" v-if="isEdit && step==2 && !isCaution">개별 항목별로 저장하지 않은 정보는 유실될 수 있으니<br>꼭 저장버튼을 눌러주세요</p>
-        <button class="btn-caution" v-if="isEdit && step==2 && !isCaution" @click="cautionCheck">확인</button>
-        <button v-if="isEdit && step==2 && isCaution" @click="changeStep(3)">자기소개서 {{isOpen ?'작성' : ''}} &gt;&gt;</button>
-        <button v-if="isEdit && step==3" @click="changeStep(2)">&lt;&lt; 이력서 {{isOpen ? '수정' : ''}}</button>
+        <p class="mb-20 text-red" v-if="isEdit && step==2 && !isCaution && status != 'submit'">개별 항목별로 저장하지 않은 정보는 유실될 수 있으니<br>꼭 저장버튼을 눌러주세요</p>
+        <button class="btn-caution" v-if="isEdit && step==2 && !isCaution && status != 'submit'" @click="cautionCheck">확인</button>
+        <button v-if="isEdit && step==2 && (isCaution || status == 'submit')" @click="changeStep(3)">자기소개서 {{isOpen && status != 'submit' ?'작성' : ''}} &gt;&gt;</button>
+        <button v-if="isEdit && step==3" @click="changeStep(2)">&lt;&lt; 이력서 {{isOpen && status != 'submit' ? '수정' : ''}}</button>
         <button v-if="isEdit && step==3 && isOpen" @click="changeStep(4)">제출전 확인 &gt;&gt;</button>
-        <button v-if="isEdit && step==4" @click="changeStep(3)">&lt;&lt; 자기소개서 수정</button>
-        <button v-if="isEdit && step==4 && isOpen" @click="checkApplicant">제출</button>
+        <button v-if="isEdit && step==4" @click="changeStep(3)">&lt;&lt; 자기소개서 {{isOpen && status != 'submit' ? '수정' : ''}}</button>
+        <button v-if="isEdit && step==4 && isOpen && status != 'submit'" @click="checkApplicant">제출</button>
         <VSpinner v-if="isSubmit" class="v-spinner"></VSpinner>
     </div>
 </template>

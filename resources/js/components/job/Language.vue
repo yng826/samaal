@@ -8,30 +8,30 @@
                     <label for="language_type_option">구분</label>
                     <div class="input-group">
                         <div class="select-container" >
-                            <select type="text" name="language_type_option" v-model="item.language_type_option" @change="changeTypes($event, id)">
+                            <select type="text" name="language_type_option" :disabled="status == 'submit'" v-model="item.language_type_option" @change="changeTypes($event, id)">
                                 <option v-for="type in types" :value="type.value" :key="type.value">{{type.name}}</option>
                             </select>
                         </div>
-                        <input type="text" v-if="item.language_type_option == 'etc'" name="language_type" v-model="item.language_type" placeholder="입력해주세요">
+                        <input type="text" v-if="item.language_type_option == 'etc'" name="language_type" :disabled="status == 'submit'" v-model="item.language_type" placeholder="입력해주세요">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="language_name">TEST명</label>
-                    <input type="text" name="language_name" v-model="item.language_name" placeholder="입력해주세요">
+                    <input type="text" name="language_name" :disabled="status == 'submit'" v-model="item.language_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="language_grade">점수/등급</label>
-                    <input type="text" name="language_grade" v-model="item.language_grade" placeholder="점수 또는 등급을 입력해주세요">
+                    <input type="text" name="language_grade" :disabled="status == 'submit'" v-model="item.language_grade" placeholder="점수 또는 등급을 입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="language_grade_full">만점</label>
-                    <input type="text" name="language_grade_full" v-model="item.language_grade_full" placeholder="만점을 입력해주세요">
+                    <input type="text" name="language_grade_full" :disabled="status == 'submit'" v-model="item.language_grade_full" placeholder="만점을 입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="language_level">회화수준</label>
                     <div class="input-group">
                         <div class="select-container" >
-                            <select type="text" name="language_level" v-model="item.language_level">
+                            <select type="text" name="language_level" :disabled="status == 'submit'" v-model="item.language_level">
                                 <option v-for="level in levels" :value="level.value" :key="level.value">{{level.name}}</option>
                             </select>
                         </div>
@@ -40,7 +40,7 @@
                 <div class="form-group">
                     <label for="language_start">인증일</label>
                     <div class="input_date-group input-group">
-                        <Datepicker class="inline-block" name="language_start" :language="ko" v-model="item.language_start" format="yyyy-MM-dd"></Datepicker>
+                        <Datepicker class="inline-block" name="language_start" :language="ko" :disabled="status == 'submit'" v-model="item.language_start" format="yyyy-MM-dd"></Datepicker>
                     </div>
                 </div>
             </div>

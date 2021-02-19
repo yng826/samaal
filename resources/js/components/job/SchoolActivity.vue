@@ -7,22 +7,22 @@
                 <div class="form-group">
                     <label for="school_activities_start">기간</label>
                     <div class="input_date-group input-group">
-                        <InputMask class="inline-block" name="school_activities_start" mask="9999-99" v-model="item.school_activities_start" format="yyyy-MM-dd" />
+                        <InputMask class="inline-block" name="school_activities_start" mask="9999-99" :disabled="status == 'submit'" v-model="item.school_activities_start" format="yyyy-MM-dd" />
                         <span class="from-arrow">~</span>
-                        <InputMask class="inline-block" name="school_activities_end" mask="9999-99" v-model="item.school_activities_end" format="yyyy-MM-dd" />
+                        <InputMask class="inline-block" name="school_activities_end" mask="9999-99" :disabled="status == 'submit'" v-model="item.school_activities_end" format="yyyy-MM-dd" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="school_activities_affiliation">소속</label>
-                    <input type="text" name="school_activities_affiliation" :class="maxLength(item.school_activities_affiliation, 32)" v-model="item.school_activities_affiliation" placeholder="입력해주세요">
+                    <input type="text" name="school_activities_affiliation" :class="maxLength(item.school_activities_affiliation, 32)" :disabled="status == 'submit'" v-model="item.school_activities_affiliation" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_activities_role">담당역할</label>
-                    <input type="text" name="school_activities_role" :class="maxLength(item.school_activities_role, 20)" v-model="item.school_activities_role" placeholder="입력해주세요">
+                    <input type="text" name="school_activities_role" :class="maxLength(item.school_activities_role, 20)" :disabled="status == 'submit'" v-model="item.school_activities_role" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_activities_contents">활동내용</label>
-                    <input type="text" name="school_activities_contents" :class="maxLength(item.school_activities_contents, 30)" v-model="item.school_activities_contents" placeholder="입력해주세요">
+                    <input type="text" name="school_activities_contents" :class="maxLength(item.school_activities_contents, 30)" :disabled="status == 'submit'" v-model="item.school_activities_contents" placeholder="입력해주세요">
                 </div>
             </div>
         </form>

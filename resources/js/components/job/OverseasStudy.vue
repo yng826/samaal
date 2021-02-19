@@ -4,34 +4,34 @@
             <div class="form-wrap">
                 <h3>해외연수</h3>
                 <button class="float-right btn btn-danger" @click.prevent="removeItem(item.id, id)" v-if="isOpen">삭제</button>
-                <input type="hidden" name="id" v-model="item.id">
+                <input type="hidden" name="id" :disabled="status == 'submit'" v-model="item.id">
                 <div class="form-group">
                     <label for="country_name">국가/도시</label>
-                    <input type="text" name="country_name" v-model="item.country_name" placeholder="입력해주세요">
+                    <input type="text" name="country_name" :disabled="status == 'submit'" v-model="item.country_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_name">학교/단체</label>
-                    <input type="text" name="school_name" v-model="item.school_name" placeholder="입력해주세요">
+                    <input type="text" name="school_name" :disabled="status == 'submit'" v-model="item.school_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_start">기간</label>
                     <div class="input_date-group input-group">
-                        <InputMask class="inline-block" name="overseas_study_start" v-model="item.overseas_study_start" mask="9999-99"/>
+                        <InputMask class="inline-block" name="overseas_study_start" :disabled="status == 'submit'" v-model="item.overseas_study_start" mask="9999-99"/>
                         <span class="from-arrow">~</span>
-                        <InputMask class="inline-block" name="overseas_study_end" v-model="item.overseas_study_end" mask="9999-99"/>
+                        <InputMask class="inline-block" name="overseas_study_end" :disabled="status == 'submit'" v-model="item.overseas_study_end" mask="9999-99"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_name">연수명</label>
-                    <input type="text" name="overseas_study_name" :class="maxLength(item.overseas_study_name, 16)" v-model="item.overseas_study_name" placeholder="입력해주세요">
+                    <input type="text" name="overseas_study_name" :class="maxLength(item.overseas_study_name, 16)" :disabled="status == 'submit'" v-model="item.overseas_study_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_purpose">연수목적</label>
-                    <input type="text" name="overseas_study_purpose" :class="maxLength(item.overseas_study_purpose, 16)" v-model="item.overseas_study_purpose" placeholder="입력해주세요">
+                    <input type="text" name="overseas_study_purpose" :class="maxLength(item.overseas_study_purpose, 16)" :disabled="status == 'submit'" v-model="item.overseas_study_purpose" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="overseas_study_contents">연수내용</label>
-                    <input type="text" name="overseas_study_contents" :class="maxLength(item.overseas_study_contents, 36)" v-model="item.overseas_study_contents" placeholder="입력해주세요">
+                    <input type="text" name="overseas_study_contents" :class="maxLength(item.overseas_study_contents, 36)" :disabled="status == 'submit'" v-model="item.overseas_study_contents" placeholder="입력해주세요">
                 </div>
             </div>
         </form>

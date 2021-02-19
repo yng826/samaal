@@ -22,24 +22,24 @@
                 <h3>인적사항</h3>
                 <div class="form-group">
                     <label for="">성명(한글)</label>
-                    <input type="text" name="name" v-model="user.name" placeholder="입력해주세요." />
+                    <input type="text" name="name" :disabled="status == 'submit'" v-model="user.name" placeholder="입력해주세요." />
                 </div>
                 <div class="form-group">
                     <label for="">성명(영문)</label>
-                    <input type="text" name="name_en" v-model="user_info.name_en" placeholder="입력해주세요." />
+                    <input type="text" name="name_en" :disabled="status == 'submit'" v-model="user_info.name_en" placeholder="입력해주세요." />
                 </div>
                 <div class="form-group">
                     <label for="">생년월일</label>
-                    <InputMask type="text" :disabled="inputMaskEnable" name="birth_day" mask="9999-99-99" v-model="user_info.birth_day" maskChar=" " placeholder="입력해주세요."/>
+                    <InputMask type="text" :disabled="status == 'submit' || inputMaskEnable" name="birth_day" mask="9999-99-99" v-model="user_info.birth_day" maskChar=" " placeholder="입력해주세요."/>
                 </div>
                 <div class="form-group">
                     <label for="">휴대폰번호</label>
-                    <InputMask name="phone_decrypt" :disabled="inputMaskEnable" mask="999 9999 9999" v-model="job.phone_decrypt" maskChar=" " placeholder="입력해주세요." />
+                    <InputMask name="phone_decrypt" :disabled="status == 'submit' || inputMaskEnable" mask="999 9999 9999" v-model="job.phone_decrypt" maskChar=" " placeholder="입력해주세요." />
                 </div>
                 <div class="form-group">
                     <label for="">E-MAIL</label>
                     <div class="input-group">
-                        <input type="text" name="email" :disabled="job.id || isAuth" :value="mode == 'edit' ? this.email : this.createEmail" @input="onInputEmail" placeholder="입력해주세요." />
+                        <input type="text" name="email" :disabled="status == 'submit' || job.id || isAuth" :value="mode == 'edit' ? this.email : this.createEmail" @input="onInputEmail" placeholder="입력해주세요." />
                         <span v-if="emailEditable">@</span>
                         <input type="text" name="email_vendor_input" :value="this.emailVendor" @input="onInputVendor" :readonly="!selectEdit" v-if="emailEditable" placeholder="입력 또는 선택해주세요." />
                         <div class="select-container" v-if="emailEditable">
@@ -58,18 +58,18 @@
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
-                    <input type="password" name="password" id="password" v-model="password" ref="password" placeholder="8자이상 영문/숫자/기호 조합" />
+                    <input type="password" name="password" id="password" :disabled="status == 'submit'" v-model="password" ref="password" placeholder="8자이상 영문/숫자/기호 조합" />
                 </div>
                 <div class="form-group">
                     <label for="password_confirm">비밀번호재입력</label>
-                    <input type="password" name="password_confirm" id="password_confirm" v-model="password_confirm" ref="password_confirm" placeholder="8자이상 영문/숫자/기호 조합" />
+                    <input type="password" name="password_confirm" id="password_confirm" :disabled="status == 'submit'" v-model="password_confirm" ref="password_confirm" placeholder="8자이상 영문/숫자/기호 조합" />
                 </div>
                 <div class="form-group">
                     <label for="">현거주지</label>
                     <div class="input-group">
-                        <input type="text" name="address_1" v-model="job.address_1" placeholder="검색해주세요." @click="onClickPost" readonly />
+                        <input type="text" name="address_1" :disabled="status == 'submit'" v-model="job.address_1" placeholder="검색해주세요." @click="onClickPost" readonly />
                         <DaumPost style="" @complete="onSearch" v-show="showPost" />
-                        <input type="text" name="address_2" v-model="job.address_2" placeholder="입력해주세요." />
+                        <input type="text" name="address_2" :disabled="status == 'submit'" v-model="job.address_2" placeholder="입력해주세요." />
                     </div>
                 </div>
             </div>

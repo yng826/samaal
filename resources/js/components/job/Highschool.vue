@@ -6,18 +6,18 @@
                 <h3>학력사항(고등학교)</h3>
                 <div class="form-group">
                     <label for="school_name">학교명</label>
-                    <input type="text" name="school_name" :class="maxLength(item.school_name, 10)" v-model="item.school_name" placeholder="입력해주세요">
+                    <input type="text" name="school_name" :class="maxLength(item.school_name, 10)" :disabled="status == 'submit'" v-model="item.school_name" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_address">소재지</label>
-                    <input type="text" name="school_address" :class="maxLength(item.school_address, 10)" v-model="item.school_address" placeholder="입력해주세요">
+                    <input type="text" name="school_address" :class="maxLength(item.school_address, 10)" :disabled="status == 'submit'" v-model="item.school_address" placeholder="입력해주세요">
                 </div>
                 <div class="form-group">
                     <label for="school_major">계열</label>
-                    <!-- <input type="text" name="school_major" v-model="item.school_major" placeholder="입력해주세요"> -->
+                    <!-- <input type="text" name="school_major" :disabled="status == 'submit'" v-model="item.school_major" placeholder="입력해주세요"> -->
                     <div class="input-group">
                         <div class="select-container" >
-                            <select type="text" name="school_major" v-model="item.school_major">
+                            <select type="text" name="school_major" :disabled="status == 'submit'" v-model="item.school_major">
                                 <option v-for="major in majors" :value="major.value" :key="major.value">{{major.name}}</option>
                             </select>
                         </div>
@@ -27,7 +27,7 @@
                     <label for="graduation">졸업구분</label>
                     <div class="input-group">
                         <div class="select-container" >
-                            <select type="text" name="school_graduation" v-model="item.school_graduation">
+                            <select type="text" name="school_graduation" :disabled="status == 'submit'" v-model="item.school_graduation">
                                 <option v-for="graduation in graduations" :value="graduation.value" :key="graduation.value">{{graduation.name}}</option>
                             </select>
                         </div>
@@ -36,9 +36,9 @@
                 <div class="form-group">
                     <label for="school_start">재학기간</label>
                     <div class="input_date-group input-group">
-                        <InputMask class="inline-block" name="school_start" mask="9999-99" v-model="item.school_start" format="yyyy-MM-dd" />
+                        <InputMask class="inline-block" name="school_start" mask="9999-99" :disabled="status == 'submit'" v-model="item.school_start" format="yyyy-MM-dd" />
                         <span class="from-arrow">~</span>
-                        <InputMask class="inline-block" name="school_end" mask="9999-99" v-model="item.school_end" format="yyyy-MM-dd" />
+                        <InputMask class="inline-block" name="school_end" mask="9999-99" :disabled="status == 'submit'" v-model="item.school_end" format="yyyy-MM-dd" />
                     </div>
                 </div>
             </div>

@@ -3,11 +3,11 @@
         <form>
             <div class="form-wrap">
                 <h3>자기소개서</h3>
-                <input type="hidden" name="id" v-model="this.job_id">
+                <input type="hidden" name="id" :disabled="status == 'submit'" v-model="this.job_id">
                 <div class="form-group">
                     <label class="full-width">본인에대한 소개를 자유롭게 작성해주시기 바랍니다. </label>
                     <!-- <span>({{ this.item.cover_letter ? this.item.cover_letter.length : 0 }}/7000)</span> -->
-                    <textarea class="" name="cover_letter" id="cover_letter" rows="15" v-model="item.cover_letter" @change="setChanged"></textarea>
+                    <textarea class="" name="cover_letter" id="cover_letter" rows="15" :disabled="status == 'submit'" v-model="item.cover_letter" @change="setChanged"></textarea>
                 </div>
             </div>
         </form>
