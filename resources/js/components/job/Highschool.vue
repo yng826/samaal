@@ -84,9 +84,6 @@ export default {
         status() {
             return this.$store.state.job.status
         },
-        status() {
-            return this.$store.state.job.status
-        }
     },
     data: function() {
         return {

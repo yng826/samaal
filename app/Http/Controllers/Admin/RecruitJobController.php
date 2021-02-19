@@ -132,7 +132,8 @@ class RecruitJobController extends Controller
         $affected = DB::table('job_applications')
                     ->where('id', $id)
                     ->update([
-                        'pass'=> $request->pass
+                        'pass' => $request->pass,
+                        'status' => $request->status,
                     ]);
 
         return redirect("/admin/recruit/{$recruit_id}/job/{$id}");

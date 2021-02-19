@@ -244,10 +244,10 @@ const job_edit = () => {
     }
 
     const validation = () => {
-        if ($('select[name=pass]').val() == '' || $('select[name=pass]').val() == null) {
-            alert('처리상태를 선택해주세요.');
-            return false;
-        }
+        // if ($('select[name=pass]').val() == '' || $('select[name=pass]').val() == null) {
+        //     alert('처리상태를 선택해주세요.');
+        //     return false;
+        // }
         return true;
     }
 

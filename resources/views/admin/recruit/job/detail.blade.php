@@ -11,16 +11,23 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-8 col-xl-9">
+                <div class="col-xl-4 col-sm-12">
                     <h3>채용 지원자 상세</h3>
                 </div>
-                <div class="col-4 col-xl-3">
+                <div class="col-xl-8 col-sm-12">
                     <div class="form-inline">
                         @if ( $job->status == 'submit' )
-                            <form action="/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST">
+                            <form action="/kor/admin/recruit/{{ $job->recruit_id }}/job/{{ $job->id }}" id="job-form" method="POST" class="form-inline">
                                 @method('PUT')
                                 @csrf
-                                <div class="form-group form-inline">
+                                <div class="form-group mr-1">
+                                    <select class="form-control w-auto mr-1" name="status">
+                                        <option value="">::이력서상태::</option>
+                                        <option value="submit" {{ $job->status == 'submit' ? 'selected' :''}}>제출</option>
+                                        <option value="saved" {{ $job->status == 'saved' ? 'selected' :''}}>미제출</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mr-1">
                                     <select class="form-control w-auto mr-1" name="pass">
                                         <option value="">::합격상태::</option>
                                         <option value="pass" {{ $job->pass == 'pass' ? 'selected' :''}}>합격</option>
