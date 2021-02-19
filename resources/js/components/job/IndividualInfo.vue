@@ -265,49 +265,55 @@ export default {
         if ( this.mode == 'create' ) {
             this.$store.state.step = 1;
         }
-        if (this.isAuth) {
-            if (this.mode == 'create') {
-                Swal.fire({
-                    title: '작성한 지원서가 있습니다.',
-                    icon: 'info',
-                    text: '작성하신 지원서를 불러옵니다.',
-                    confirmButtonText: '확인',
-                    allowOutsideClick: false
-                }).then(result => {
-                    window.location.href = '/kor/work-with-us/recruit/' + this.recruit_id + '/edit';
-                });
-            } else {
-                let user = getUser();
-                this.$store.state.user = user;
-                console.log(this.isAuth);
-                this.getInfo();
-                this.$store.state.job.recruit_id = this.recruit_id;
-                // this.$store.state.user.email = user.user.email;
-            }
-            this.isSubmit = false;
-        } else {
-            // this.$root.$emit('openPopup', 'login');
-            if ( this.mode == 'edit' ) {
-                Swal.fire({
-                    title: '로그인해주세요!',
-                    icon: 'info',
-                    confirmButtonText: '확인',
-                    allowOutsideClick: false
-                }).then(result => {
-                    this.$root.$emit('openPopup', 'login');
-                    this.$store.state.step = 0;
-                    // alert();
-                });
-            }
-            this.isSubmit = false;
-        }
+        this.init();
         this.$root.$on('closePopup', (args) => {
             console.log(args);
             this.showPost = false;
             $('body').css('overflow', '');
         })
+        this.$root.$on('getInfo', () => {
+            console.log('individual info :: getInfo');
+            this.init();
+        });
     },
     methods: {
+        init: function() {
+            if (this.isAuth) {
+                if (this.mode == 'create') {
+                    Swal.fire({
+                        title: '작성한 지원서가 있습니다.',
+                        icon: 'info',
+                        text: '작성하신 지원서를 불러옵니다.',
+                        confirmButtonText: '확인',
+                        allowOutsideClick: false
+                    }).then(result => {
+                        window.location.href = '/kor/work-with-us/recruit/' + this.recruit_id + '/edit';
+                    });
+                } else {
+                    let user = getUser();
+                    this.$store.state.user = user;
+                    this.getInfo();
+                    this.$store.state.job.recruit_id = this.recruit_id;
+                    // this.$store.state.user.email = user.user.email;
+                }
+                this.isSubmit = false;
+            } else {
+                // this.$root.$emit('openPopup', 'login');
+                if ( this.mode == 'edit' ) {
+                    Swal.fire({
+                        title: '로그인해주세요!',
+                        icon: 'info',
+                        confirmButtonText: '확인',
+                        allowOutsideClick: false
+                    }).then(result => {
+                        this.$root.$emit('openPopup', 'login');
+                        this.$store.state.step = 0;
+                        // alert();
+                    });
+                }
+                this.isSubmit = false;
+            }
+        },
         onInputEmail: function(e) {
             this.createEmail = e.target.value;
             this.user.email = this.createEmail + '@' + this.emailVendor;
@@ -360,7 +366,6 @@ export default {
                 console.log('getInfo:', res.data);
                 if ( res.data ) {
                     // console.log(res.data.recruit.recruit_status);
-                    // console.log(res.data);
                     this.$store.state.recruit_status = res.data.status == 'submit' ? 'closed' : res.data.recruit.recruit_status;
                     this.$store.state.job = {
                         address_1: res.data.address_1,
@@ -382,18 +387,18 @@ export default {
                         name: res.data.user.name,
                         email: res.data.user.email,
                     } : this.$store.getters.getUser;
-                    this.$store.state.user_info = res.data.user_info ? res.data.user_info : this.$store.getters.getDefaultUserInfo;
-                    this.$store.state.award = res.data.awards.length ? res.data.awards : this.$store.getters.getDefaultAwards;
-                    this.$store.state.career = res.data.careers.length ? res.data.careers : this.$store.getters.getDefaultCareers;
-                    this.$store.state.certificate = res.data.certificates.length ? res.data.certificates : this.$store.getters.getDefaultCertificates;
-                    this.$store.state.highschool = res.data.highschool ? res.data.highschool : this.$store.getters.getDefaultHighschool;
-                    this.$store.state.education = res.data.educations.length ? res.data.educations : this.$store.getters.getDefaultEducations;
-                    this.$store.state.language = res.data.languages.length ? res.data.languages : this.$store.getters.getDefaultLanguages;
-                    this.$store.state.military = res.data.military ? res.data.military : this.$store.getters.getDefaultMilitary;
-                    this.$store.state.oa = res.data.oas.length ? res.data.oas : this.$store.getters.getDefaultOas;
-                    this.$store.state.oversea = res.data.overseas_studys.length ? res.data.overseas_studys : this.$store.getters.getDefaultOverseasStudys;
-                    this.$store.state.school_activities = res.data.school_activities.length ? res.data.school_activities : this.$store.getters.getDefaultSchoolActivities;
-                    this.$store.state.hobby_specialty = res.data.hobby_specialty ? res.data.hobby_specialty : this.$store.getters.getDefaultHobbySpecialty;
+                    this.$store.state.user_info = res.data.user_info ? res.data.user_info : {user_id: "",name_en: "",birth_day: "",};
+                    this.$store.state.award = res.data.awards.length ? res.data.awards : [{id: "",award_name: "",award_group_name: "",award_date: "",}];
+                    this.$store.state.career = res.data.careers.length ? res.data.careers : [{id: '',career_start: "",career_end: "",career_name: "",career_position: "",career_department: "",career_role: "",}];
+                    this.$store.state.certificate = res.data.certificates.length ? res.data.certificates : [{id: "",certificate_name: "",certificate_issuer: "",certificate_date: "",}];
+                    this.$store.state.highschool = res.data.highschool ? res.data.highschool : {id: "",school_name: "",school_major: "",school_time: "",school_address: "",school_start: "",school_end: "",school_graduation: "",};
+                    this.$store.state.education = res.data.educations.length ? res.data.educations : [{id: "",school_name: "",edu_major: "",edu_type: "",edu_time: "",edu_entrance: "",edu_graduation: "",edu_location: "",edu_grade: "",edu_grade_full: "",edu_start: "",edu_end: "",graduation: "",}];
+                    this.$store.state.language = res.data.languages.length ? res.data.languages : [{id: "",language_type: "",language_start: "",language_end: "",language_name: "",language_grade: "",language_level: "",}];
+                    this.$store.state.military = res.data.military ? res.data.military : {id: '',job_id: '',military_type: '',military_discharge: '',military_rank: '',military_exemption: '',military_veterans_affair: '',military_duration_start: '',military_duration_end: '',};
+                    this.$store.state.oa = res.data.oas.length ? res.data.oas : [{id: "",oa_name: "",oa_level: "",}];
+                    this.$store.state.oversea = res.data.overseas_studys.length ? res.data.overseas_studys : [{id: "",country_name: "",school_name: "",overseas_study_start: "",overseas_study_end: "",overseas_study_name: "",overseas_study_position: "",overseas_study_role: "",}];
+                    this.$store.state.school_activities = res.data.school_activities.length ? res.data.school_activities : [{id: "",school_activities_start: "",school_activities_end: "",school_activities_affiliation: "",school_activities_role: "",school_activities_contents: "",}];
+                    this.$store.state.hobby_specialty = res.data.hobby_specialty ? res.data.hobby_specialty : {id: "",hobby: "",specialty: ""};
                     this.isSubmit = false;
                 } else {
                     this.$root.$emit('closePopup');

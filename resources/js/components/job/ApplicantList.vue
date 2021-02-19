@@ -54,30 +54,10 @@ export default {
                 this.items = res.data.data
             })
             .catch(err => {
-                // console.error(err);
-                Swal.fire({
-                    title: '권한이 없습니다',
-                    icon: 'error',
-                    confirmButtonText: '확인',
-                    allowOutsideClick: false
-                }).then(result => {
-                    if (result.isConfirmed) {
-                        this.$root.$emit('openPopup', 'login');
-                    }
-                });
+                this.$root.$emit('openPopup', 'login');
             });
         } else {
-            console.log('no auth');
-            Swal.fire({
-                title: '권한이 없습니다',
-                icon: 'error',
-                confirmButtonText: '확인',
-                allowOutsideClick: false
-            }).then(result => {
-                if (result.isConfirmed) {
-                    this.$root.$emit('openPopup', 'login');
-                }
-            });
+            this.$root.$emit('openPopup', 'login');
         }
     },
     methods: {

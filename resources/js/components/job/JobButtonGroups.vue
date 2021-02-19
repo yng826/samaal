@@ -95,6 +95,9 @@ export default {
                     this.$store.state.step = step;
                 }
                 // console.log( 'check photo', this.photo );
+            } else if ( step == 2 && this.step == 3 ) {
+                this.$root.$emit('getInfo');
+                this.$store.state.step = step;
             } else if ( step == 4 ) {
                 if ( this.$store.state.isChanged ) {
                     Swal.fire({

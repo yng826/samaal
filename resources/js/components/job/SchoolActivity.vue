@@ -74,7 +74,6 @@ export default {
     },
     data: function() {
         return {
-            ko: ko,
             isAuth: false,
             isSubmit: false,
         }
