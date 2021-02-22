@@ -36,7 +36,10 @@
                                 <span class="">{{$item->career =='new' ? '신입': '경력'}}</span>
                                 <span class="">{{$item->job_type}}</span>
                             </div>
-                            <h3>{{ $item->title }}</h3>
+                            @php
+                                $title_array = array_pad(explode('-', $item->title), 2, null);
+                            @endphp
+                            <h3>{{ $title_array[0] }}<br/>- {{ $title_array[1] }}</h3>
                             <div class="keywords">
                                 <ul>
                                     @foreach ($item->keywords as $keyword)
