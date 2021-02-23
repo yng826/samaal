@@ -1,3 +1,7 @@
+@php
+    $meta_title = '삼아알미늄 | 채용공고';
+    $meta_desc = '채용공고';
+@endphp
 @extends('layouts.default')
 
 @section('contents')
