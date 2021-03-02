@@ -58,10 +58,10 @@
                             <button type="button" class="btn btn-warning ml-1 detail-sms-btn" disabled>선택 문자전송</button>
                             <a href="" class="detail-excel-href"></a>
                         </div>
-                        <span class="mr-1 ml-5">|</span>
+                        {{-- <span class="mr-1 ml-5">|</span>
                         <div class="form-group ml-1">
                             <button type="button" class="btn btn-danger text-white btn-delete" data-recruit_id="{{$recruit_id}}">전체삭제</button>
-                        </div>
+                        </div> --}}
                         <span class="mr-1 ml-5">|</span>
                         <div class="form-group ml-1">
                             <button type="button" class="btn btn-danger text-white btn-delete-selected">선택삭제</button>
@@ -86,9 +86,9 @@
                         @foreach ($jobs as $job)
                         <tr>
                             <td class="text-center">
-                                @if ($job->status != 'saved')
-                                    <input type="checkbox" name="id-check" value="{{ $job->id }}">
-                                @endif
+                                <input type="checkbox" name="id-check" value="{{ $job->id }}">
+                                {{-- @if ($job->status != 'saved')
+                                @endif --}}
                             </td>
                             <td class="text-center">{{ $job->id }}</td>
                             <td class="text-center">{{ $job->user->name }}</td>

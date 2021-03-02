@@ -38,20 +38,17 @@ class RecruitJobController extends Controller
         }
 
         $whereStatus = [];
-        if (empty($request->status)) {
-            $whereStatus = 'submit';
-            switch ($recruit->recruit_status) {
-                default:
-                    break;
-            }
-        } else {
+        if (!empty($request->status)) {
             $whereStatus = $request->status;
         }
         // dd($where);
 
         $pass = $request->pass;
         $jobs = Job::where('recruit_id', '=', $recruit_id)
-            ->where('status', '=', $whereStatus)
+            // ->where('status', '=', $whereStatus)
+            ->when($whereStatus, function($query, $whereStatus) {
+                return $query->where('status', '=', $whereStatus);
+            })
             ->when($pass, function( $query, $pass) {
                 // dd($pass);
                 return $query->where('pass', $pass);
@@ -538,9 +535,32 @@ class RecruitJobController extends Controller
     {
         $job_ids = $request->input('ids');
         $job_ids = explode(',', $job_ids);
-        $success = Job::whereIn('id', $job_ids)->delete();
+        foreach ($job_ids as $key => $job_id) {
+            DB::table('job_applications_award')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_career')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_certificate')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_education')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_highschool')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_hobby_specialty')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_language')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_military')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_oa')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_overseas_study')->where('job_id', '=', $job_id)->delete();
+            DB::table('job_applications_school_activities')->where('job_id', '=', $job_id)->delete();
+
+            $job = Job::where('id', '=', $job_id)->first();
+            $user_id = $job->user_id;
+            DB::table('user_infos')
+                ->where('id', '=', $user_id)
+                ->delete();
+            $job->delete();
+            DB::table('users')
+                ->where('id', '=', $user_id)
+                ->where('role','=','user')
+                ->delete();
+        }
         $result = [];
-        $result['result'] = $success ? 'success' : 'fail';
+        $result['result'] ='success';
         return $result;
     }
 
