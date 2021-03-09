@@ -79,6 +79,8 @@ class AppServiceProvider extends ServiceProvider
                         'url'  => 'admin/notice',
                         'icon' => 'fas fa-fw fa-archive',
                     ]);
+                }
+                if (Auth::user()->role == 'admin' || Auth::user()->role == 'editor' || Auth::user()->role == 'recruit') {
                     $event->menu->add('회사정보');
                     $event->menu->add([
                         'text' => '재무정보 관리',
@@ -100,6 +102,8 @@ class AppServiceProvider extends ServiceProvider
                         'url'  => 'admin/news_info',
                         'icon' => 'fas fa-fw fa-newspaper',
                     ]);
+                }
+                if (Auth::user()->role == 'admin' || Auth::user()->role == 'editor') {
                     $event->menu->add('문의');
                     $event->menu->add([
                         'text' => '문의 관리',
