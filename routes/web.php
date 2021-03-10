@@ -343,19 +343,18 @@ Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::resource('business', Admin\BusinessController::class);
 });
 
-Route::prefix('admin')->middleware(['auth', 'roles:admin,editor'])->group(function () {
+Route::prefix('admin')->middleware('auth', 'roles:admin,editor,recruit')->group(function () {
     Route::resource('finance_info', Admin\FinanceInfoController::class);
-});
 
-Route::prefix('admin')->middleware('auth', 'roles:admin,editor')->group(function () {
-    //Route::get('ir_board/file-download', [IrBoardController::class, 'fileDownload']);
     Route::resource('ir_board', Admin\IrBoardController::class);
-
-    //Route::get('news_info/file-download', [NewsInfoController::class, 'fileDownload']);
-    Route::resource('news_info', Admin\NewsInfoController::class);
 
     Route::get('iso_certification/file-download', [AdminIsoCertificationController::class, 'fileDownload']);
     Route::resource('iso_certification', Admin\IsoCertificationController::class);
+
+    Route::resource('news_info', Admin\NewsInfoController::class);
+});
+
+Route::prefix('admin')->middleware(['auth', 'roles:admin,editor'])->group(function () {
 
     Route::resource('faq', Admin\FaqController::class);
     Route::resource('notice', Admin\NoticeController::class);
