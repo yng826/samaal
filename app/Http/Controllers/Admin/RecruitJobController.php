@@ -54,6 +54,8 @@ class RecruitJobController extends Controller
                 return $query->where('pass', $pass);
             })
             ->with(['user'])
+            ->orderBy('updated_at', 'asc')
+            ->orderBy('created_at', 'asc')
             ->orderBy('id', 'desc')
             ->paginate(30);
 
