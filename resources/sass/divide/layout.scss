@@ -1152,6 +1152,8 @@
             .question-btn {
                 width: vw(60px);
                 height: vw(60px);
+                max-width: 70px;
+                max-height: 70px;
                 border-radius: vw(50px);
                 cursor: pointer;
 
@@ -1572,6 +1574,8 @@
             .question-btn {
                 width: vw(120px);
                 height: vw(120px);
+                max-width: 100px;
+                max-height: 100px;
                 border-radius: vw(120px);
                 cursor: pointer;
 
