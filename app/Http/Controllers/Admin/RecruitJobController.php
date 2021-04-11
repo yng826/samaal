@@ -231,7 +231,8 @@ class RecruitJobController extends Controller
         $jobs = Job::where('recruit_id', $recruit_id)
                     ->where('status', '!=', 'saved')
                     ->with(['user', 'userInfo', 'educations'])
-                    ->orderBy('id', 'desc')
+                    ->orderBy('updated_at', 'asc')
+                    ->orderBy('created_at', 'asc')
                     ->get();
 
         foreach($jobs as $job) {
