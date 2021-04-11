@@ -133,7 +133,9 @@ const job_list = () => {
         $('.search-btn').on('click', function() {
             let status = $('select[name=status]').val();
             let pass = $('select[name=pass]').val();
-            $(location).attr('href','/kor/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+ status + '&pass=' + pass);
+            let search_type = $('select[name=search_type]').val();
+            let search_text = $('[name=search_text]').val();
+            $(location).attr('href','/kor/admin/recruit/'+$('select[name=recruit_id]').val()+'/job?status='+ status + '&pass=' + pass + '&search_type=' + search_type + '&search_text=' + search_text);
         });
         //전체요약 클릭시
         $('.list-excel-btn').on('click', function() {

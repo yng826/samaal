@@ -44,14 +44,22 @@ class RecruitJobController extends Controller
         // dd($where);
 
         $pass = $request->pass;
+        $search_type = $request->search_type;
+        $search_text = $request->search_text;
         $jobs = Job::where('recruit_id', '=', $recruit_id)
-            // ->where('status', '=', $whereStatus)
             ->when($whereStatus, function($query, $whereStatus) {
                 return $query->where('status', '=', $whereStatus);
             })
             ->when($pass, function( $query, $pass) {
-                // dd($pass);
                 return $query->where('pass', $pass);
+            })
+            ->when($search_type, function( $query, $search_type) use ($search_text) {
+                if ( $search_type == 'name') {
+                    $user = User::where('name','like', '%'.$search_text.'%')->get();
+                } else {
+                    $user = User::where('email', 'like', '%'.$search_text.'%')->get();
+                }
+                return $query->whereIn('user_id', $user->pluck('id'));
             })
             ->with(['user'])
             ->orderBy('updated_at', 'asc')
@@ -63,6 +71,8 @@ class RecruitJobController extends Controller
             'recruit_id' => $recruit_id,
             'status' => $request->status,
             'pass' => $request->pass,
+            'search_type' => $search_type,
+            'search_text' => $search_text,
             'recruits' => $recruits,
             'jobs' => $jobs,
         ]);

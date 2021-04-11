@@ -48,10 +48,22 @@
                                 <option value="failure" {{ $pass == 'failure' ? 'selected' :''}}>불합격</option>
                             </select>
                         </div>
+                        <span class="ml-3 mr-3">|</span>
+                        <div class="form-group">
+                            <label class="mr-1">검색종류</label>
+                            <select class="form-control w-auto" name="search_type">
+                                <option value="">::전체::</option>
+                                <option value="name" {{ $search_type == 'name' ? 'selected' :''}}>이름</option>
+                                <option value="email" {{ $search_type == 'email' ? 'selected' :''}}>이메일</option>
+                            </select>
+                            <input type="text" class="form-control" name="search_text" value="{{$search_text}}">
+                        </div>
                         <div class="form-group ml-1">
                             <button type="button" class="btn btn-info text-white search-btn">검색</button>
                         </div>
-                        <span class="mr-1 ml-1">|</span>
+                    </div>
+                    <div class="form-inline">
+                        {{-- <span class="mr-1 ml-1">|</span> --}}
                         <div class="form-group">
                             <button type="button" class="btn btn-info text-white list-excel-btn">전체요약</button>
                             <button type="button" class="btn btn-success text-white ml-1 detail-excel-btn" disabled>선택 Excel</button>
