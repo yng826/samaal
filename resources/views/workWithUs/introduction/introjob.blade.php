@@ -92,7 +92,7 @@
                             제품생산에 필요한 원자재를 적기에 구매하여 제공한다.
                         </li>
                     </ul>
-                    <span class="text-team">소속팀 : 기획감사팀, 총무팀, 경리팀, 구매팀</span>
+                    <span class="text-team">소속팀 : 기획·인사팀, 총무팀, 경리팀, 재무팀</span>
                     <a href="/kor/work-with-us/introduction/interview-businessSupport" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
@@ -143,7 +143,7 @@
                             개조개선에 대한 계획수립 및 작업을 진행한다.
                         </li>
                     </ul>
-                    <span class="text-team">소속팀: 설비기술팀, 관리기술팀, 보전팀</span>
+                    <span class="text-team">소속팀: 설비기술팀, 보전팀</span>
                     <a href="/kor/work-with-us/introduction/interview-equipment" class="btn-link">직무 인터뷰 보기</a>
                 </div>
             </li>
