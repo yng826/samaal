@@ -66,7 +66,6 @@ export default {
     },
     mounted: function() {
         this.$root.$on('openPopup', (args1) => {
-            console.log('open Join', args1);
             if (args1 == 'join') {
                 this.isOpen = true;
             }
@@ -76,7 +75,6 @@ export default {
         });
         this.isAuth = getAuth();
         if ( this.isCheckAuth ) {
-            console.log('is check auth');
             if ( this.isAuth ) {
                 // this.gotoJob();
             }
@@ -128,7 +126,6 @@ export default {
                     msg: '비밀번호를 입력해주세요',
                 };
             }
-            console.log(this.password.length);
             if ( this.password.length >= 16 ) {
                 return {
                     result: false,
@@ -179,9 +176,7 @@ export default {
                 recruit_id: this.recruit_id,
             });
 
-            console.log(logged);
             logged.then( res => {
-                console.log( res );
                 this.isSubmit = false;
                 if ( res.result == 'success' ) {
                     Swal.fire({

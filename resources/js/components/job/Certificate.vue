@@ -173,7 +173,7 @@ export default {
                 return false;
             }
             this.isSubmit = true;
-            console.log(this.$store.state);
+            // console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
             url = '/kor/api/job-detail/certificate/' + this.job_id;

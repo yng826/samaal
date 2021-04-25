@@ -118,8 +118,6 @@ export default {
             .then(res => {
                 this.isSubmit = false;
                 this.$store.state.isChanged = false;
-                console.log(this.$store.state.job);
-                console.log(res);
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',

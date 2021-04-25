@@ -139,7 +139,6 @@ export default {
                 return false;
             }
             this.isSubmit = true;
-            console.log(this.$store.state);
             this.$store.state.military.job_id = this.job_id;
 
             let headers = getHeader();
@@ -155,7 +154,6 @@ export default {
             .then(res => {
                 this.$store.state.military.id = res.data.id;
                 this.isSubmit = false;
-                console.log(this.$store.state.military);
                 Swal.fire({
                     title: '저장되었습니다!',
                     icon: 'success',

@@ -26,8 +26,6 @@ export default {
         document.head.appendChild(daumScript);
         // console.log(daumScript);
         daumScript.onload = function() {
-            console.log(self);
-            console.log(self.$refs);
             new daum.Postcode({
                 width: '100%',
                 height: '100%',

@@ -48,7 +48,6 @@ export default {
     },
     mounted: function() {
         this.$root.$on('openPopup', (args1) => {
-            console.log('FindPassword:::open popup', args1);
             if (args1 == 'password') {
                 this.isOpen = true;
             }
@@ -56,11 +55,9 @@ export default {
         this.$root.$on('closePopup', (args1) => {
             this.isOpen = false;
         });
-        console.log(this.is_check_auth);
         if (this.isAuthProp) {
             // this.isAuth = getAuth();
         }
-        console.log(this.isAuth);
         // require('../../job/User')
     },
     methods: {
@@ -106,9 +103,7 @@ export default {
                 phone: this.phone,
             });
 
-            console.log(finded);
             finded.then( res => {
-                console.log( res );
                 this.isSubmit = false;
 
                 if ( res.data.result == 'success' ) {

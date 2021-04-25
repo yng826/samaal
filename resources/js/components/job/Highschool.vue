@@ -104,7 +104,6 @@ export default {
         }
     },
     mounted: function() {
-        console.log(this.item);
     },
     methods: {
         validation: function() {
@@ -170,7 +169,6 @@ export default {
                 return false;
             }
             const validate = this.validation();
-            console.log(validate.msg);
             if ( !validate.result ) {
                 Swal.fire({
                     text: validate.msg,
@@ -181,7 +179,6 @@ export default {
                 return false;
             }
             this.isSubmit = true;
-            console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
             url = '/kor/api/job-detail/highschool/' + this.$store.state.job.id;

@@ -328,7 +328,6 @@ export default {
             //     return false;
             // }
             this.isSubmit = true;
-            console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
             url = '/kor/api/job-detail/education/' + this.$store.state.job.id;

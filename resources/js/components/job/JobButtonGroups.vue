@@ -70,7 +70,7 @@ export default {
         }
     },
     mounted: function() {
-        console.log(this.mode);
+        // console.log(this.mode);
         // this.isAuth = getAuth();
     },
     methods: {

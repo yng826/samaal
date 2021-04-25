@@ -225,7 +225,6 @@ export default {
                 return false;
             }
             this.isSubmit = true;
-            console.log(this.$store.state);
             let headers = getHeader();
             let url, method;
             url = '/kor/api/job-detail/school_activities/' + this.job_id;

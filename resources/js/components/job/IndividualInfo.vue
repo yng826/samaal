@@ -267,12 +267,10 @@ export default {
         }
         this.init();
         this.$root.$on('closePopup', (args) => {
-            console.log(args);
             this.showPost = false;
             $('body').css('overflow', '');
         })
         this.$root.$on('getInfo', () => {
-            console.log('individual info :: getInfo');
             this.init();
         });
     },
@@ -323,7 +321,6 @@ export default {
             this.user.email = this.createEmail + '@' + this.emailVendor;
         },
         onSelectEmail: function(e) {
-            console.log(e.target.value);
             if ( e.target.value == 'manual') {
                 this.selectEdit = true;
                 this.emailVendor = null;
@@ -339,20 +336,17 @@ export default {
             // $(window).scrollTop($(document).height());
         },
         onSearch: function(data) {
-            console.log(data);
             this.showPost = false;
             this.job.address_1 = data.address;
             $('body').css('overflow', '');
         },
         picSelect: function (e){
-            console.log(e);
             const file = e.target.files[0];
             var reader = new FileReader();
             reader.readAsDataURL(file);
 
             //로드 한 후
             reader.onload = () => {
-                console.log(reader.result);
                 this.preview = reader.result ;
             };
         },
@@ -363,9 +357,7 @@ export default {
             })
             .then(res => {
                 this.isSubmit = false;
-                console.log('getInfo:', res.data);
                 if ( res.data ) {
-                    // console.log(res.data.recruit.recruit_status);
                     this.$store.state.recruit_status = res.data.status == 'submit' ? 'closed' : res.data.recruit.recruit_status;
                     this.$store.state.job = {
                         address_1: res.data.address_1,
@@ -565,7 +557,6 @@ export default {
                 headers: headers,
             })
             .then(res => {
-                console.log(res);
                 this.isSubmit = false;
                 if (res.data.result == 'success') {
                     this.preview = null;
@@ -582,7 +573,6 @@ export default {
                         confirmButtonText: '확인',
                         allowOutsideClick: false
                     }).then(result => {
-                        console.log(res.data.type == 'join');
                         if (result.isConfirmed ) {
                             if ( this.mode == 'create' ) {
                                 window.location.href = '/kor/work-with-us/recruit/' + this.recruit_id + '/edit'

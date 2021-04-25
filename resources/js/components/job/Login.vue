@@ -53,7 +53,6 @@ export default {
     mounted: function() {
         this.$root.$on('openPopup', (args1, args2) => {
             if (args1 == 'login') {
-                console.log('open Login');
                 this.isOpen = true;
             }
             if (args2) {
@@ -63,7 +62,6 @@ export default {
         this.$root.$on('closePopup', (args1) => {
             this.isOpen = false;
         });
-        console.log(this.is_check_auth);
         this.isAuth = getAuth();
         if ( this.is_check_auth ) {
             if (this.isAuth) {
@@ -121,10 +119,7 @@ export default {
                 password: this.password,
             });
 
-            console.log(logged);
             logged.then( res => {
-                console.log(this.recruit_id);
-                console.log( res );
                 this.isSubmit = false;
                 if ( res.data.logged == true) {
                     // console.log(res.data.job , this.recruit_id);

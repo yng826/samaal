@@ -50,7 +50,7 @@ export default {
         this.isAuth = getAuth();
         if ( this.isAuth ) {
             const user = getUser();
-            console.log( Promise);
+            // console.log( Promise);
             axios.get('/kor/api/work-with-us/job/', {
                 'headers': getHeader()
             })
@@ -74,7 +74,7 @@ export default {
             this.isAuth = getAuth();
             if ( this.isAuth ) {
                 const user = getUser();
-                console.log( Promise);
+                // console.log( Promise);
                 axios.delete('/kor/api/work-with-us/job/' + id, {
                     'headers': getHeader()
                 })
@@ -89,7 +89,7 @@ export default {
                         this.items = res.data.list;
                         return false;
                     }
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
                 .catch(err => {
                     this.$root.$emit('openPopup', 'login');
