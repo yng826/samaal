@@ -6,7 +6,7 @@
                     <th>공고명</th>
                     <th>접수기한</th>
                     <th>지원정보</th>
-                    <th>삭제신청</th>
+                    <th>삭제</th>
                     <th>상태</th>
                 </tr>
             </thead>
@@ -65,11 +65,23 @@ export default {
         }
     },
     methods: {
-        onDeleteClick: function(id) {
+        onDeleteClick: async function(id) {
+            let title;
             if ( this.items.length == 1 ) {
-                if( !confirm('지원서와 개인정보가 같이 삭제됩니다.')) {
-                    return false;
-                }
+                title = '지원서와 개인정보가\n같이 삭제됩니다. \n삭제하시겠습니까?';
+            } else {
+                title = '삭제하시겠습니까?';
+            }
+            let deleteConfirm = await Swal.fire({
+                title: title,
+                showDenyButton: true,
+                allowOutsideClick: false,
+                confirmButtonText: `네`,
+                denyButtonText: `아니오`,
+                allowOutsideClick: false,
+                });
+            if(deleteConfirm.isDenied) {
+                return false;
             }
             this.isAuth = getAuth();
             if ( this.isAuth ) {
