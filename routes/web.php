@@ -102,6 +102,8 @@ Route::prefix('business')->group(function() {
     Route::get('foil/car', [BusinessController::class, 'index']);
     Route::get('foil/external', [BusinessController::class, 'index']);
     Route::get('foil/tab', [BusinessController::class, 'index']);
+    // 심규진_20210416
+    // Route::get('foil/test', [BusinessController::class, 'index']);
 
     Route::get('package/retort', [BusinessController::class, 'index']);
     Route::get('package/watertight', [BusinessController::class, 'index']);
