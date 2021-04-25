@@ -6,6 +6,7 @@
                     <th>공고명</th>
                     <th>접수기한</th>
                     <th>지원정보</th>
+                    <th>삭제신청</th>
                     <th>상태</th>
                 </tr>
             </thead>
@@ -15,6 +16,9 @@
                     <td>{{ item.recruit.end_date }}</td>
                     <td>
                         <a :href="'/kor/work-with-us/recruit/'+ item.recruit_id + '/edit'"  class="btn btn-primary">{{buttonText}}</a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-danger" @click="onDeleteClick(item.id)">삭제</a>
                     </td>
                     <td>{{ item.status_ko }}</td>
                 </tr>
@@ -61,6 +65,39 @@ export default {
         }
     },
     methods: {
+        onDeleteClick: function(id) {
+            if ( this.items.length == 1 ) {
+                if( !confirm('지원서와 개인정보가 같이 삭제됩니다.')) {
+                    return false;
+                }
+            }
+            this.isAuth = getAuth();
+            if ( this.isAuth ) {
+                const user = getUser();
+                console.log( Promise);
+                axios.delete('/kor/api/work-with-us/job/' + id, {
+                    'headers': getHeader()
+                })
+                .then((res)=> {
+                    if (res.data.result == 'success') {
+                        Swal.fire({
+                            title: '삭제되었습니다!',
+                            icon: 'error',
+                            confirmButtonText: '확인',
+                            allowOutsideClick: false,
+                        });
+                        this.items = res.data.list;
+                        return false;
+                    }
+                    console.log(res.data);
+                })
+                .catch(err => {
+                    this.$root.$emit('openPopup', 'login');
+                });
+            } else {
+                this.$root.$emit('openPopup', 'login');
+            }
+        }
     }
 }
 </script>

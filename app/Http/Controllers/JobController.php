@@ -33,7 +33,8 @@ class JobController extends Controller
     {
         if ( $request->wantsJson() ) {
             $user = request()->user();
-            $items = Job::where('user_id', $user->id)->with(['user', 'recruit','educations'])->get();
+            $items = Job::where('user_id', $user->id)
+            ->with(['user', 'recruit','educations'])->get();
             return ResourcesJob::collection($items);
         } else {
 
@@ -195,6 +196,13 @@ class JobController extends Controller
         $formData = $request->all();
         $job = Job::find($id);
 
+        $user = $request->user();
+        $result = [];
+        if ( $job->user_id != $user->id) {
+            $result['result'] = 'error';
+            $result['code'] = 401;
+            return $result;
+        }
         if ( isset($formData['cover_letter']) ) {
             $job->cover_letter = $formData['cover_letter'];
             $job->is_cover_letter = Str::length($job->cover_letter) > 0 ? 1 : 0;
@@ -252,9 +260,47 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $job = Job::find($id);
+        $recruit_id = $job->recruit_id;
+        $user = $request->user();
+        $result = [];
+        if ( $job->user_id != $user->id) {
+            $result['result'] = 'error';
+            $result['code'] = 401;
+            return $result;
+        }
+
+        DB::table('job_applications_award')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_career')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_certificate')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_education')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_highschool')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_hobby_specialty')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_language')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_military')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_oa')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_overseas_study')->where('job_id', $job->id)->delete();
+        DB::table('job_applications_school_activities')->where('job_id', $job->id)->delete();
+        $deleted = $job->delete();
+
+        $list = Job::where('user_id', $user->id)
+            ->where('recruit_id', $recruit_id)
+            ->get();
+        if ( count($list) > 0 ) {
+            $list = Job::where('user_id', $user->id)
+                ->where('recruit_id', $recruit_id)
+                ->with(['user', 'recruit','educations'])
+                ->get();
+        } else {
+            DB::table('user_infos')->where('id', $user->id)->delete();
+            DB::table('users')->where('id', $user->id)->delete();
+        }
+        $result['result'] = 'success';
+        $result['list'] = $list;
+        $result['deleted'] = $deleted;
+        return $result;
     }
 
     public function check(Request $request)
