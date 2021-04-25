@@ -80,6 +80,15 @@
                     </a>
                 </div>
             </div>
+
+            <!-- 심규진_20210416 -->
+            <!-- <div class="foil-box__block">
+                <div class="foil-box__block--item">
+                    <a href="foil/test" class="foil-box--item item-test">
+                        <p class="foil-box__text">TEST</p>
+                    </a>
+                </div> 
+            </div> -->
         </div>
     </main>
     <style>
