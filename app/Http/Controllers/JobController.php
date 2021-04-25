@@ -293,9 +293,11 @@ class JobController extends Controller
                 ->where('recruit_id', $recruit_id)
                 ->with(['user', 'recruit','educations'])
                 ->get();
+            $result['delete_user'] = false;
         } else {
             DB::table('user_infos')->where('id', $user->id)->delete();
             DB::table('users')->where('id', $user->id)->delete();
+            $result['delete_user'] = true;
         }
         $result['result'] = 'success';
         $result['list'] = $list;

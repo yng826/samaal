@@ -85,7 +85,12 @@ export default {
                             icon: 'error',
                             confirmButtonText: '확인',
                             allowOutsideClick: false,
+                        }).then( result => {
+                            window.location.href = '/kor/work-with-us/recruit';
                         });
+                        if ( res.data.delete_user ) {
+                            window.localStorage.removeItem('authUser');
+                        }
                         this.items = res.data.list;
                         return false;
                     }

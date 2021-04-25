@@ -25,7 +25,7 @@ class User {
         let authUser = {};
         authUser.access_token = data.token.accessToken;
         authUser.user = data.user;
-        console.log('setAuth:::', authUser);
+        // console.log('setAuth:::', authUser);
         window.localStorage.setItem('authUser', JSON.stringify(authUser));
     }
 
