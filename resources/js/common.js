@@ -117,7 +117,9 @@ const common = () => {
     }
 
     const question_pop = () => {
-        console.log('question pop');
+        setTimeout(() => {
+            $('.question-btn').css('display', 'block');
+        }, 500);
 
         $('body').on('click', '.question-btn' , function () {
             $(".all-q-pop").addClass('show');
