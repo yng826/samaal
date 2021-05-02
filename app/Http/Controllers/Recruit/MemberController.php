@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\UserInfo;
 use App\Models\Work\Job;
 use App\Models\Work\Recruit;
+use App\Models\Work\RecruitsIndex;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -74,8 +75,19 @@ class MemberController extends Controller
             $user_info->address_1 = $address_1;
             $user_info->address_2 = $address_2;
 
+            $max = DB::table('recruits_index')->where('recruit_id', $recruit_id)->first();
+            if ($max) {
+                $recruit_index = RecruitsIndex::where('recruit_id', $recruit_id)->first();
+                $recruit_index->num++;
+            } else {
+                $recruit_index = new RecruitsIndex();
+                $recruit_index->recruit_id = $recruit_id;
+                $recruit_index->num = 1;
+            }
+            $recruit_index->save();
             $job = new Job();
             $job->recruit_id = $recruit_id;
+            $job->num = $recruit_index->num;
             $job->phone_encrypt = Crypt::encryptString($phone_decrypt);
             $job->phone_last = substr($phone_decrypt, -4);
             $job->address_1 = $address_1;

@@ -102,7 +102,7 @@
                                 {{-- @if ($job->status != 'saved')
                                 @endif --}}
                             </td>
-                            <td class="text-center">{{ $job->id }}</td>
+                            <td class="text-center">{{ $job->num }}</td>
                             <td class="text-center">{{ $job->user->name }}</td>
                             <td class="text-center">{{ $job->ko_status }}
                                 @if ($job->status == 'saved')

@@ -7,6 +7,7 @@ use App\Http\Resources\Job as ResourcesJob;
 use App\Models\User;
 use App\Models\UserInfo;
 use App\Models\work\Job;
+use App\Models\Work\RecruitsIndex;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
@@ -67,17 +68,6 @@ class JobController extends Controller
     public function store(Request $request)
     {
         $formData = $request->all();
-        // $validator = Validator::make($request->all(),
-        //       [
-        //       'name' => 'required',
-        //       'name_en' => 'required',
-        //       'birth_day' => 'required',
-        //       'file' => 'required|mimes:jpg,jpeg,png|max:2048',
-        //      ]);
-
-        // if ($validator->fails()) {
-        //         return response()->json(['error'=>$validator->errors()], 401);
-        // } else {
         $job = Job::where([
             'user_id' => $formData['user_id'],
             'recruit_id' => $formData['recruit_id'],
@@ -112,6 +102,17 @@ class JobController extends Controller
                 $filePath = $request->file('pic')->store('job');
                 $filePath = $filePath;
             }
+            $max = DB::table('recruits_index')->where('recruit_id', $formData['recruit_id'])->first();
+            if ($max) {
+                $recruit_index = RecruitsIndex::where('recruit_id', $formData['recruit_id'])->first();
+                $recruit_index->num++;
+            } else {
+                $recruit_index = new RecruitsIndex();
+                $recruit_index->recruit_id = $formData['recruit_id'];
+                $recruit_index->num = 1;
+            }
+            $recruit_index->save();
+
             $job = new Job;
             $job->recruit_id = $formData['recruit_id'];
             $job->phone_last = substr($phone_decrypt,-4);
@@ -121,6 +122,7 @@ class JobController extends Controller
             $job->user_id = $user->id;
             $job->file_path = $filePath;
             $job->status = 'saved';
+            $job->num = $recruit_index->num;
             $job->save();
 
             $result = [];
