@@ -114,6 +114,85 @@
                 </div>
             </div>
         </div>
+
+
+         <!-- 20210429_심규진 모달창 테스트 -->
+        <!-- <style>
+            .bgTmp {
+                position:absolute; 
+                width:100%; 
+                content:''; 
+                height:483%; 
+                background-color:rgba(0, 0, 0, 0.5); 
+                top:0; 
+                left:0; 
+                z-index:100
+            }
+
+            .modalTmp {
+                position:absolute; 
+                top:10%; 
+                left:10%; 
+                width:300px; 
+                height:auto; 
+                padding:0 10px 20px; 
+                background-color:white; 
+                z-index:101;
+                /* background-image:url('/kor/images/main/no_img.gif') */
+            }
+
+            .modalContentTmp {
+                padding: 20px 30px 20px 30px;
+            }
+
+            .modalCloseTmp {
+                display:block;
+                font-size:18px;
+                text-align:center;
+                color:#fff;
+                margin:50px auto 0;
+                padding:5px 50px;
+                background-color:#465470
+            }
+
+            @media (max-width:767px) {
+                .modalTmp {
+                    width:80%;
+                    padding:0 1.3333333333vw 2.6666666667vw
+                }
+
+                .modalCloseTmp {
+                    margin:6.6666666667vw auto 0;
+                    padding:.6666666667vw 6.6666666667vw;
+                    font-size:3.3333333333vw
+                }
+            }
+        </style>
+        <div id="bgTmp" class="bgTmp"></div>
+        <div id="noticeTmp" class="modalTmp">
+            <div class="modalContentTmp">
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+                <p>TEST1 입니다. TEST1 입니다.</p>
+            </div>
+            <button type="button" class="modalCloseTmp" onClick='document.getElementById("noticeTmp").style.display = "none"; document.getElementById("bgTmp").style.display = "none"'>닫기</button>
+        </div> -->
+
         @include('shared.notice')
         @include('shared.footer')
         @yield('popup-container')
@@ -121,7 +200,7 @@
 
 
     @section('script')
-    <!-- Scripts -->
+    <!-- Scripts -->    
     <script src="/kor/js/manifest.js"></script>
     <script src="/kor/js/vendor.js"></script>
     <script src="/kor/js/app.js"></script>
