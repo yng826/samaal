@@ -365,7 +365,7 @@
             z-index: 2;
             right: 2%;
             bottom: 1%;
-            display: block;
+            display: none;
             width: 173px;
             height: 60px;
             max-width: 180px;
@@ -1155,7 +1155,7 @@
                 width: vw(60px);
                 height: vw(60px);
                 max-width: 130px;
-                max-height: 70px;
+                // max-height: 70px;
                 border-radius: vw(50px);
                 cursor: pointer;
 
